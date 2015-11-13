@@ -26,18 +26,19 @@ class PropertyCodes
     const SPEED = 'speed';
     const TOUGHNESS = 'toughness';
     const WOUNDS_LIMIT = 'wounds_limit';
-    
+
     // native
     const INFRAVISION = 'infravision';
     const NATIVE_REGENERATION = 'native_regeneration';
-    
+
     // remarkable senses
+    const REMARKABLE_SENSE = 'remarkable_sense';
     const HEARING = 'hearing';
     const SIGHT = 'sight';
     const SMELL = 'smell';
     const TASTE = 'taste';
     const TOUCH = 'touch';
-    
+
     // restrictions
     const REQUIRES_DM_AGREEMENT = 'requires_dm_agreement';
 }
