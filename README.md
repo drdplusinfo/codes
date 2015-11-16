@@ -1,1 +1,1 @@
-Codes of races, sub-races and properties to define their standard. 
+Codes of races, sub-races, properties and professions to define their standard. 
