@@ -11,6 +11,21 @@ class PropertyCodes
     const INTELLIGENCE = 'intelligence';
     const CHARISMA = 'charisma';
 
+    /**
+     * @return array|string[]
+     */
+    public static function getBaseProperties()
+    {
+        return [
+            self::STRENGTH,
+            self::AGILITY,
+            self::KNACK,
+            self::WILL,
+            self::INTELLIGENCE,
+            self::CHARISMA
+        ];
+    }
+
     // body
     const HEIGHT_IN_CM = 'height_in_cm';
     const WEIGHT_IN_KG = 'weight_in_kg';
