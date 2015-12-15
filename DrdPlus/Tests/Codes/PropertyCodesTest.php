@@ -19,7 +19,7 @@ class PropertyCodesTest extends \PHPUnit_Framework_TestCase
                 PropertyCodes::INTELLIGENCE,
                 PropertyCodes::CHARISMA
             ],
-            PropertyCodes::getBaseProperties()
+            PropertyCodes::getBasePropertyCodes()
         );
     }
 }

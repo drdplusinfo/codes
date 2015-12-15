@@ -14,7 +14,7 @@ class PropertyCodes
     /**
      * @return array|string[]
      */
-    public static function getBaseProperties()
+    public static function getBasePropertyCodes()
     {
         return [
             self::STRENGTH,
