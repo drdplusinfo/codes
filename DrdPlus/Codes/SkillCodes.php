@@ -97,6 +97,7 @@ class SkillCodes
     }
 
     // COMBINED
+    const BIG_HANDWORK = 'big_handwork';
     const COOKING = 'cooking';
     const DANCING = 'dancing';
     const DUSK_SIGHT = 'dusk_sight';
@@ -119,6 +120,7 @@ class SkillCodes
     public static function getCombinedSkillCodes()
     {
         return [
+            self::BIG_HANDWORK,
             self::COOKING,
             self::DANCING,
             self::DUSK_SIGHT,

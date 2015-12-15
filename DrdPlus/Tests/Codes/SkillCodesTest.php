@@ -125,6 +125,7 @@ class SkillCodesTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals(
             [
+                SkillCodes::BIG_HANDWORK,
                 SkillCodes::COOKING,
                 SkillCodes::DANCING,
                 SkillCodes::DUSK_SIGHT,
@@ -148,6 +149,7 @@ class SkillCodesTest extends \PHPUnit_Framework_TestCase
         );
         $this->assertEquals(
             [
+                'big_handwork',
                 'cooking',
                 'dancing',
                 'dusk_sight',
