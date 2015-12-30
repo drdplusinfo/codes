@@ -62,7 +62,7 @@ class SkillCodes
     const ETIQUETTE_OF_UNDERWORLD = 'etiquette_of_underworld';
     const FOREIGN_LANGUAGE = 'foreign_language';
     const GEOGRAPHY_OF_A_COUNTRY = 'geography_of_a_country';
-    const HANDLING_OF_MAGICAL_ITEMS = 'handling_of_magical_items';
+    const HANDLING_WITH_MAGICAL_ITEMS = 'handling_with_magical_items';
     const HISTORIOGRAPHY = 'historiography';
     const KNOWLEDGE_OF_A_CITY = 'knowledge_of_a_city';
     const KNOWLEDGE_OF_WORLD = 'knowledge_of_world';
@@ -82,7 +82,7 @@ class SkillCodes
             self::ETIQUETTE_OF_UNDERWORLD,
             self::FOREIGN_LANGUAGE,
             self::GEOGRAPHY_OF_A_COUNTRY,
-            self::HANDLING_OF_MAGICAL_ITEMS,
+            self::HANDLING_WITH_MAGICAL_ITEMS,
             self::HISTORIOGRAPHY,
             self::KNOWLEDGE_OF_A_CITY,
             self::KNOWLEDGE_OF_WORLD,
