@@ -104,7 +104,7 @@ class SkillCodes
     const FIGHT_WITH_SHOOTING_WEAPONS = 'fight_with_shooting_weapons';
     const FIRST_AID = 'first_aid';
     const GAMBLING = 'gambling';
-    const HANDING_WITH_ANIMALS = 'handing_with_animals';
+    const HANDLING_WITH_ANIMALS = 'handling_with_animals';
     const HANDWORK = 'handwork';
     const HERBALISM = 'herbalism';
     const HUNTING_AND_FISHING = 'hunting_and_fishing';
@@ -127,7 +127,7 @@ class SkillCodes
             self::FIGHT_WITH_SHOOTING_WEAPONS,
             self::FIRST_AID,
             self::GAMBLING,
-            self::HANDING_WITH_ANIMALS,
+            self::HANDLING_WITH_ANIMALS,
             self::HANDWORK,
             self::HERBALISM,
             self::HUNTING_AND_FISHING,
