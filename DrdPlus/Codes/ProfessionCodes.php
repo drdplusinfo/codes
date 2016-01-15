@@ -4,11 +4,11 @@ namespace DrdPlus\Codes;
 class ProfessionCodes
 {
     const FIGHTER = 'fighter';
-    const WIZARD = 'wizard';
-    const PRIEST = 'priest';
-    const THEURGIST = 'theurgist';
-    const RANGER = 'ranger';
     const THIEF = 'thief';
+    const RANGER = 'ranger';
+    const WIZARD = 'wizard';
+    const THEURGIST = 'theurgist';
+    const PRIEST = 'priest';
 
     /**
      * @return array|string[]
@@ -17,11 +17,11 @@ class ProfessionCodes
     {
         return [
             self::FIGHTER,
-            self::WIZARD,
-            self::PRIEST,
-            self::THEURGIST,
+            self::THIEF,
             self::RANGER,
-            self::THIEF
+            self::WIZARD,
+            self::THEURGIST,
+            self::PRIEST,
         ];
     }
 

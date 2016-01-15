@@ -11,17 +11,17 @@ class ProfessionCodesTest extends \PHPUnit_Framework_TestCase
     public function I_can_get_all_profession_codes_at_once()
     {
         $this->assertEquals(
-            ['fighter', 'wizard', 'priest', 'theurgist', 'ranger', 'thief'],
+            ['fighter', 'thief', 'ranger', 'wizard', 'theurgist', 'priest'],
             ProfessionCodes::getProfessionCodes()
         );
         $this->assertEquals(
             [
                 ProfessionCodes::FIGHTER,
-                ProfessionCodes::WIZARD,
-                ProfessionCodes::PRIEST,
-                ProfessionCodes::THEURGIST,
+                ProfessionCodes::THIEF,
                 ProfessionCodes::RANGER,
-                ProfessionCodes::THIEF
+                ProfessionCodes::WIZARD,
+                ProfessionCodes::THEURGIST,
+                ProfessionCodes::PRIEST,
             ],
             ProfessionCodes::getProfessionCodes()
         );
