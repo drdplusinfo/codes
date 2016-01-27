@@ -1,7 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
-class RaceCodes
+use Granam\Strict\Object\StrictObject;
+
+class RaceCodes extends StrictObject
 {
     const HUMAN = 'human';
     const COMMON = 'common';
