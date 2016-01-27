@@ -59,7 +59,7 @@ class RaceCodesTest extends \PHPUnit_Framework_TestCase
             ],
             RaceCodes::getSubRaceCodes()
         );
-        $reflection = new \ReflectionClass(RaceCodes::getClass());
+        $reflection = new \ReflectionClass('\DrdPlus\Codes\RaceCodes');
         $this->assertSame(
             array_values($reflection->getConstants()),
             array_merge(array_unique($this->keysToFlatValues(RaceCodes::getSubRaceCodes())))
