@@ -34,6 +34,9 @@ class SkillCodes
     const SHIELD_USAGE = 'shield_usage';
     const SWIMMING = 'swimming';
 
+    /**
+     * @return array|string[]
+     */
     public static function getPhysicalSkillCodes()
     {
         return [
@@ -74,6 +77,9 @@ class SkillCodes
     const THEOLOGY = 'theology';
     const ZOOLOGY = 'zoology';
 
+    /**
+     * @return array|string[]
+     */
     public static function getPsychicalSkillCodes()
     {
         return [
@@ -117,6 +123,9 @@ class SkillCodes
     const SINGING = 'singing';
     const STATUARY = 'statuary';
 
+    /**
+     * @return array|string[]
+     */
     public static function getCombinedSkillCodes()
     {
         return [
