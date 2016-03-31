@@ -10,7 +10,7 @@ class PropertyCodesTest extends \PHPUnit_Framework_TestCase
      */
     public function I_can_get_base_properties_at_once()
     {
-        $this->assertEquals(
+        self::assertEquals(
             [
                 PropertyCodes::STRENGTH,
                 PropertyCodes::AGILITY,

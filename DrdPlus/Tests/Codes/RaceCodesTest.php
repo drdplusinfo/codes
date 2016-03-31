@@ -10,7 +10,7 @@ class RaceCodesTest extends \PHPUnit_Framework_TestCase
      */
     public function I_can_get_race_codes_at_once()
     {
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'human',
                 'elf',
@@ -28,7 +28,7 @@ class RaceCodesTest extends \PHPUnit_Framework_TestCase
      */
     public function I_cant_get_subrace_codes()
     {
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'human' => [
                     'common',
@@ -60,11 +60,11 @@ class RaceCodesTest extends \PHPUnit_Framework_TestCase
             RaceCodes::getSubRaceCodes()
         );
         $reflection = new \ReflectionClass('\DrdPlus\Codes\RaceCodes');
-        $this->assertSame(
+        self::assertSame(
             array_values($reflection->getConstants()),
             array_merge(array_unique($this->keysToFlatValues(RaceCodes::getSubRaceCodes())))
         );
-        $this->assertEquals(
+        self::assertEquals(
             RaceCodes::getRaceCodes(),
             array_keys(RaceCodes::getSubRaceCodes())
         );

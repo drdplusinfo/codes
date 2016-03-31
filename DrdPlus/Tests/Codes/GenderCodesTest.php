@@ -10,6 +10,6 @@ class GenderCodesTest extends \PHPUnit_Framework_TestCase
      */
     public function I_acn_get_all_genders_at_once()
     {
-        $this->assertEquals(['male', 'female'], GenderCodes::getGenderCodes());
+        self::assertEquals(['male', 'female'], GenderCodes::getGenderCodes());
     }
 }

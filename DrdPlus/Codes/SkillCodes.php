@@ -151,4 +151,13 @@ class SkillCodes
         ];
     }
 
+    public static function getSkillCodes()
+    {
+        return array_merge(
+            self::getPhysicalSkillCodes(),
+            self::getPsychicalSkillCodes(),
+            self::getCombinedSkillCodes()
+        );
+    }
+
 }

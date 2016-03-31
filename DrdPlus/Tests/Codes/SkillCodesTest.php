@@ -10,11 +10,11 @@ class SkillCodesTest extends \PHPUnit_Framework_TestCase
      */
     public function I_can_get_all_types_at_once()
     {
-        $this->assertEquals(
+        self::assertEquals(
             ['physical', 'psychical', 'combined'],
             SkillCodes::getSkillTypes()
         );
-        $this->assertEquals(
+        self::assertEquals(
             [SkillCodes::PHYSICAL, SkillCodes::PSYCHICAL, SkillCodes::COMBINED],
             SkillCodes::getSkillTypes()
         );
@@ -25,7 +25,7 @@ class SkillCodesTest extends \PHPUnit_Framework_TestCase
      */
     public function I_can_get_physical_skill_codes_at_once()
     {
-        $this->assertEquals(
+        self::assertEquals(
             [
                 SkillCodes::ARMOR_WEARING,
                 SkillCodes::ATHLETICS,
@@ -46,7 +46,7 @@ class SkillCodesTest extends \PHPUnit_Framework_TestCase
             ],
             SkillCodes::getPhysicalSkillCodes()
         );
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'armor_wearing',
                 'athletics',
@@ -74,7 +74,7 @@ class SkillCodesTest extends \PHPUnit_Framework_TestCase
      */
     public function I_can_get_psychical_skill_codes_at_once()
     {
-        $this->assertEquals(
+        self::assertEquals(
             [
                 SkillCodes::ASTRONOMY,
                 SkillCodes::BOTANY,
@@ -95,7 +95,7 @@ class SkillCodesTest extends \PHPUnit_Framework_TestCase
             ],
             SkillCodes::getPsychicalSkillCodes()
         );
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'astronomy',
                 'botany',
@@ -123,7 +123,7 @@ class SkillCodesTest extends \PHPUnit_Framework_TestCase
      */
     public function I_can_get_combined_skill_codes()
     {
-        $this->assertEquals(
+        self::assertEquals(
             [
                 SkillCodes::BIG_HANDWORK,
                 SkillCodes::COOKING,
@@ -147,7 +147,7 @@ class SkillCodesTest extends \PHPUnit_Framework_TestCase
             ],
             SkillCodes::getCombinedSkillCodes()
         );
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'big_handwork',
                 'cooking',
@@ -170,6 +170,72 @@ class SkillCodesTest extends \PHPUnit_Framework_TestCase
                 'statuary'
             ],
             SkillCodes::getCombinedSkillCodes()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_get_all_codes_at_once()
+    {
+        self::assertSame(
+            [
+                // physical
+                SkillCodes::ARMOR_WEARING,
+                SkillCodes::ATHLETICS,
+                SkillCodes::BLACKSMITHING,
+                SkillCodes::BOAT_DRIVING,
+                SkillCodes::CART_DRIVING,
+                SkillCodes::CITY_MOVING,
+                SkillCodes::CLIMBING_AND_HILLWALKING,
+                SkillCodes::FAST_MARSH,
+                SkillCodes::FIGHT_WITH_WEAPON,
+                SkillCodes::FLYING,
+                SkillCodes::FOREST_MOVING,
+                SkillCodes::MOVING_IN_MOUNTAINS,
+                SkillCodes::RIDING,
+                SkillCodes::SAILING,
+                SkillCodes::SHIELD_USAGE,
+                SkillCodes::SWIMMING,
+                // psychical
+                SkillCodes::ASTRONOMY,
+                SkillCodes::BOTANY,
+                SkillCodes::ETIQUETTE_OF_UNDERWORLD,
+                SkillCodes::FOREIGN_LANGUAGE,
+                SkillCodes::GEOGRAPHY_OF_A_COUNTRY,
+                SkillCodes::HANDLING_WITH_MAGICAL_ITEMS,
+                SkillCodes::HISTORIOGRAPHY,
+                SkillCodes::KNOWLEDGE_OF_A_CITY,
+                SkillCodes::KNOWLEDGE_OF_WORLD,
+                SkillCodes::MAPS_DRAWING,
+                SkillCodes::MYTHOLOGY,
+                SkillCodes::READING_AND_WRITING,
+                SkillCodes::SOCIAL_ETIQUETTE,
+                SkillCodes::TECHNOLOGY,
+                SkillCodes::THEOLOGY,
+                SkillCodes::ZOOLOGY,
+                // combined
+                SkillCodes::BIG_HANDWORK,
+                SkillCodes::COOKING,
+                SkillCodes::DANCING,
+                SkillCodes::DUSK_SIGHT,
+                SkillCodes::FIGHT_WITH_SHOOTING_WEAPONS,
+                SkillCodes::FIRST_AID,
+                SkillCodes::GAMBLING,
+                SkillCodes::HANDLING_WITH_ANIMALS,
+                SkillCodes::HANDWORK,
+                SkillCodes::HERBALISM,
+                SkillCodes::HUNTING_AND_FISHING,
+                SkillCodes::KNOTTING,
+                SkillCodes::PAINTING,
+                SkillCodes::PEDAGOGY,
+                SkillCodes::PLAYING_ON_MUSIC_INSTRUMENT,
+                SkillCodes::SEDUCTION,
+                SkillCodes::SHOWMANSHIP,
+                SkillCodes::SINGING,
+                SkillCodes::STATUARY
+            ],
+            SkillCodes::getSkillCodes()
         );
     }
 }
