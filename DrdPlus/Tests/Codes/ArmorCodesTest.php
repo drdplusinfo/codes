@@ -30,6 +30,7 @@ class ArmorCodesTest extends \PHPUnit_Framework_TestCase
     {
         self::assertSame(
             [
+                'without_helm',
                 'leather_cap',
                 'chainmail_hood',
                 'conical_helm',

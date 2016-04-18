@@ -29,6 +29,7 @@ class ArmorCodes
         ];
     }
 
+    const WITHOUT_HELM = 'without_helm';
     const LEATHER_CAP = 'leather_cap';
     const CHAINMAIL_HOOD = 'chainmail_hood';
     const CONICAL_HELM = 'conical_helm';
@@ -39,6 +40,7 @@ class ArmorCodes
     public static function getHelmCodes()
     {
         return [
+            self::WITHOUT_HELM,
             self::LEATHER_CAP,
             self::CHAINMAIL_HOOD,
             self::CONICAL_HELM,
