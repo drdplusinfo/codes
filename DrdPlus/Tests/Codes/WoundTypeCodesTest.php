@@ -1,19 +1,19 @@
 <?php
 namespace DrdPlus\Tests\Codes;
 
-use DrdPlus\Codes\ShieldCodes;
+use DrdPlus\Codes\WoundTypeCodes;
 
-class ShieldCodesTest extends \PHPUnit_Framework_TestCase
+class WoundTypeCodesTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
      */
     public function I_can_get_shield_codes_at_once()
     {
-        $reflection = new \ReflectionClass('\DrdPlus\Codes\ShieldCodes');
+        $reflection = new \ReflectionClass('\DrdPlus\Codes\WoundTypeCodes');
         self::assertSame(
             array_values($reflection->getConstants()),
-            ShieldCodes::getShieldCodes()
+            WoundTypeCodes::getWoundTypeCodes()
         );
     }
 }

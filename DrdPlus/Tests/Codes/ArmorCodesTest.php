@@ -1,5 +1,7 @@
 <?php
-namespace DrdPlus\Codes;
+namespace DrdPlus\Tests\Codes;
+
+use DrdPlus\Codes\ArmorCodes;
 
 class ArmorCodesTest extends \PHPUnit_Framework_TestCase
 {
