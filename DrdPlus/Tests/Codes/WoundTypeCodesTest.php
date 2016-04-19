@@ -10,6 +10,10 @@ class WoundTypeCodesTest extends \PHPUnit_Framework_TestCase
      */
     public function I_can_get_shield_codes_at_once()
     {
+        self::assertSame(
+            ['crush', 'stab', 'cut'],
+            WoundTypeCodes::getWoundTypeCodes()
+        );
         $reflection = new \ReflectionClass('\DrdPlus\Codes\WoundTypeCodes');
         self::assertSame(
             array_values($reflection->getConstants()),

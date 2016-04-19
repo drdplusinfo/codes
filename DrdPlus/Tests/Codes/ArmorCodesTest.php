@@ -16,11 +16,23 @@ class ArmorCodesTest extends \PHPUnit_Framework_TestCase
                 'padded_armor',
                 'leather_armor',
                 'hobnailed_armor',
-                'chainmail',
+                'chainmail_armor',
                 'scale_armor',
                 'plate_armor',
                 'full_plate_armor',
             ],
+            ArmorCodes::getBodyArmorCodes()
+        );
+        $bodyArmorCodesReflection = new \ReflectionClass('\DrdPlus\Codes\ArmorCodes');
+        self::assertSame(
+            array_values( // re-setting indexes
+                array_filter(
+                    array_values($bodyArmorCodesReflection->getConstants()),
+                    function ($code) {
+                        return strpos($code, 'armor') !== false;
+                    }
+                )
+            ),
             ArmorCodes::getBodyArmorCodes()
         );
     }
@@ -40,6 +52,21 @@ class ArmorCodesTest extends \PHPUnit_Framework_TestCase
                 'barrel_helm',
                 'great_helm',
             ],
+            ArmorCodes::getHelmCodes()
+        );
+        $bodyArmorCodesReflection = new \ReflectionClass('\DrdPlus\Codes\ArmorCodes');
+        self::assertSame(
+            array_values( // re-setting indexes
+                array_filter(
+                    array_values($bodyArmorCodesReflection->getConstants()),
+                    function ($code) {
+                        return
+                            strpos($code, 'helm') !== false
+                            || strpos($code, 'cap') !== false
+                            || strpos($code, 'hood') !== false;
+                    }
+                )
+            ),
             ArmorCodes::getHelmCodes()
         );
     }
