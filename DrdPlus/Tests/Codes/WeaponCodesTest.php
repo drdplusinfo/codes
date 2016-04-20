@@ -208,6 +208,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getStaffAndSpearCodes()
         );
     }
+
     /**
      * @test
      */
@@ -240,6 +241,42 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
                 )
             ),
             WeaponCodes::getSwordCodes()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_get_voulges_and_trident_codes()
+    {
+        self::assertSame(
+            [
+                'pitchfork',
+                'light_voulge',
+                'light_trident',
+                'halberd',
+                'heavy_voulge',
+                'heavy_trident',
+                'heavy_halberd',
+            ],
+            WeaponCodes::getVoulgeAndTridentCodes()
+        );
+
+        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
+        self::assertSame(
+            array_values( // re-setting indexes
+                array_filter(
+                    array_values($weaponCodesReflection->getConstants()),
+                    function ($code) {
+                        return
+                            strpos($code, 'pitchfork') !== false
+                            || strpos($code, 'voulge') !== false
+                            || strpos($code, 'trident') !== false
+                            || strpos($code, 'halberd') !== false;
+                    }
+                )
+            ),
+            WeaponCodes::getVoulgeAndTridentCodes()
         );
     }
 }

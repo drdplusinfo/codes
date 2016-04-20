@@ -104,6 +104,9 @@ class WeaponCodes
     const SABER = 'saber';
     const HEAVY_SABER = 'heavy_saber';
 
+    /**
+     * @return array|string[]
+     */
     public static function getSaberAndBowieKnifeCodes()
     {
         return [
@@ -126,6 +129,9 @@ class WeaponCodes
     const PIKE = 'pike';
     const METAL_STAFF = 'metal_staff';
 
+    /**
+     * @return array|string[]
+     */
     public static function getStaffAndSpearCodes()
     {
         return [
@@ -150,6 +156,9 @@ class WeaponCodes
     const BARBARIAN_SWORD = 'barbarian_sword';
     const TWO_HANDED_SWORD = 'two_handed_sword';
 
+    /**
+     * @return array|string[]
+     */
     public static function getSwordCodes()
     {
         return [
@@ -160,6 +169,31 @@ class WeaponCodes
             self::ONE_AND_HALF_HANDED_SWORD,
             self::BARBARIAN_SWORD,
             self::TWO_HANDED_SWORD
+        ];
+    }
+
+    // voulges and tridents
+    const PITCHFORK = 'pitchfork';
+    const LIGHT_VOULGE = 'light_voulge';
+    const LIGHT_TRIDENT = 'light_trident';
+    const HALBERD = 'halberd';
+    const HEAVY_VOULGE = 'heavy_voulge';
+    const HEAVY_TRIDENT = 'heavy_trident';
+    const HEAVY_HALBERD = 'heavy_halberd';
+
+    /**
+     * @return array|string[]
+     */
+    public static function getVoulgeAndTridentCodes()
+    {
+        return [
+            self::PITCHFORK,
+            self::LIGHT_VOULGE,
+            self::LIGHT_TRIDENT,
+            self::HALBERD,
+            self::HEAVY_VOULGE,
+            self::HEAVY_TRIDENT,
+            self::HEAVY_HALBERD,
         ];
     }
 }
