@@ -247,6 +247,9 @@ class WeaponCodes
     const FLAME_ARROW = 'flame_arrow';
     const SILVER_ARROW = 'silver_arrow';
 
+    /**
+     * @return array|string[]
+     */
     public static function getArrowCodes()
     {
         return [
@@ -258,6 +261,46 @@ class WeaponCodes
             self::CRIPPLING_ARROW,
             self::FLAME_ARROW,
             self::SILVER_ARROW,
+        ];
+    }
+
+    // crossbows
+    const MINICROSSBOW = 'minicrossbow';
+    const LIGHT_CROSSBOW = 'light_crossbow';
+    const MILITARY_CROSSBOW = 'military_crossbow';
+    const HEAVY_CROSSBOW = 'heavy_crossbow';
+
+    /**
+     * @return array|string[]
+     */
+    public static function getCrossbowCodes()
+    {
+        return [
+            self::MINICROSSBOW,
+            self::LIGHT_CROSSBOW,
+            self::MILITARY_CROSSBOW,
+            self::HEAVY_CROSSBOW,
+        ];
+    }
+
+    // darts
+    const BASIC_DART = 'basic_dart';
+    const WAR_DART = 'war_dart';
+    const PIERCING_DART = 'piercing_dart';
+    const HOLLOW_DART = 'hollow_dart';
+    const SILVER_DART = 'silver_dart';
+
+    /**
+     * @return array|string[]
+     */
+    public static function getDartCodes()
+    {
+        return [
+            self::BASIC_DART,
+            self::WAR_DART,
+            self::PIERCING_DART,
+            self::HOLLOW_DART,
+            self::SILVER_DART,
         ];
     }
 }

@@ -375,4 +375,63 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getArrowCodes()
         );
     }
+
+    /**
+     * @test
+     */
+    public function I_can_get_crossbow_codes()
+    {
+        self::assertSame(
+            [
+                'minicrossbow',
+                'light_crossbow',
+                'military_crossbow',
+                'heavy_crossbow',
+            ],
+            WeaponCodes::getCrossbowCodes()
+        );
+
+        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
+        self::assertSame(
+            array_values( // re-setting indexes
+                array_filter(
+                    array_values($weaponCodesReflection->getConstants()),
+                    function ($code) {
+                        return strpos($code, 'crossbow') !== false;
+                    }
+                )
+            ),
+            WeaponCodes::getCrossbowCodes()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_get_dart_codes()
+    {
+        self::assertSame(
+            [
+                'basic_dart',
+                'war_dart',
+                'piercing_dart',
+                'hollow_dart',
+                'silver_dart',
+            ],
+            WeaponCodes::getDartCodes()
+        );
+
+        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
+        self::assertSame(
+            array_values( // re-setting indexes
+                array_filter(
+                    array_values($weaponCodesReflection->getConstants()),
+                    function ($code) {
+                        return strpos($code, 'dart') !== false;
+                    }
+                )
+            ),
+            WeaponCodes::getDartCodes()
+        );
+    }
 }
