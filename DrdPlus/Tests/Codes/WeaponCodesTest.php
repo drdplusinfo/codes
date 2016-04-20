@@ -103,4 +103,39 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getMaceAndClubCodes()
         );
     }
+
+    /**
+     * @test
+     */
+    public function I_can_get_morningstar_and_morgenstern_codes_at_once()
+    {
+        self::assertSame(
+            [
+                'light_morgenstern',
+                'morgenstern',
+                'heavy_morgenstern',
+                'flail',
+                'morningstar',
+                'hobnailed_flail',
+                'heavy_morningstar',
+            ],
+            WeaponCodes::getMorningstarAndMorgensternCodes()
+        );
+
+        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
+        self::assertSame(
+            array_values( // re-setting indexes
+                array_filter(
+                    array_values($weaponCodesReflection->getConstants()),
+                    function ($code) {
+                        return
+                            strpos($code, 'morgenstern') !== false
+                            || strpos($code, 'flail') !== false
+                            || strpos($code, 'morningstar') !== false;
+                    }
+                )
+            ),
+            WeaponCodes::getMorningstarAndMorgensternCodes()
+        );
+    }
 }

@@ -54,6 +54,9 @@ class WeaponCodes
     const TWO_HANDED_CLUB = 'two_handed_club';
     const HEAVY_SLEDGEHAMMER = 'heavy_sledgehammer';
 
+    /**
+     * @return array|string[]
+     */
     public static function getMaceAndClubCodes()
     {
         return [
@@ -66,6 +69,31 @@ class WeaponCodes
             self::WAR_HAMMER,
             self::TWO_HANDED_CLUB,
             self::HEAVY_SLEDGEHAMMER,
+        ];
+    }
+
+    // morningstars and morgensterns
+    const LIGHT_MORGENSTERN = 'light_morgenstern';
+    const MORGENSTERN = 'morgenstern';
+    const HEAVY_MORGENSTERN = 'heavy_morgenstern';
+    const FLAIL = 'flail';
+    const MORNINGSTAR = 'morningstar';
+    const HOBNAILED_FLAIL = 'hobnailed_flail';
+    const HEAVY_MORNINGSTAR = 'heavy_morningstar';
+
+    /**
+     * @return array|string[]
+     */
+    public static function getMorningstarAndMorgensternCodes()
+    {
+        return [
+            self::LIGHT_MORGENSTERN,
+            self::MORGENSTERN,
+            self::HEAVY_MORGENSTERN,
+            self::FLAIL,
+            self::MORNINGSTAR,
+            self::HOBNAILED_FLAIL,
+            self::HEAVY_MORNINGSTAR,
         ];
     }
 }
