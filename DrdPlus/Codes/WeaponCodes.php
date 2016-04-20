@@ -114,4 +114,30 @@ class WeaponCodes
             self::HEAVY_SABER
         ];
     }
+
+    // staffs and spears
+    const LIGHT_SPEAR = 'light_spear';
+    const SHORTENED_STAFF = 'shortened_staff';
+    const LIGHT_STAFF = 'light_staff';
+    const SPEAR = 'spear';
+    const HOBNAILED_STAFF = 'hobnailed_staff';
+    const LONG_SPEAR = 'long_spear';
+    const HEAVY_HOBNAILED_STAFF = 'heavy_hobnailed_staff';
+    const PIKE = 'pike';
+    const METAL_STAFF = 'metal_staff';
+
+    public static function getStaffAndSpearCodes()
+    {
+        return [
+            self::LIGHT_SPEAR,
+            self::SHORTENED_STAFF,
+            self::LIGHT_STAFF,
+            self::SPEAR,
+            self::HOBNAILED_STAFF,
+            self::LONG_SPEAR,
+            self::HEAVY_HOBNAILED_STAFF,
+            self::PIKE,
+            self::METAL_STAFF
+        ];
+    }
 }

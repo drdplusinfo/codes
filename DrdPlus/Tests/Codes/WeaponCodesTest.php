@@ -171,4 +171,41 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getSaberAndBowieKnifeCodes()
         );
     }
+
+    /**
+     * @test
+     */
+    public function I_can_get_staff_and_spear_codes()
+    {
+        self::assertSame(
+            [
+                'light_spear',
+                'shortened_staff',
+                'light_staff',
+                'spear',
+                'hobnailed_staff',
+                'long_spear',
+                'heavy_hobnailed_staff',
+                'pike',
+                'metal_staff',
+            ],
+            WeaponCodes::getStaffAndSpearCodes()
+        );
+
+        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
+        self::assertSame(
+            array_values( // re-setting indexes
+                array_filter(
+                    array_values($weaponCodesReflection->getConstants()),
+                    function ($code) {
+                        return
+                            strpos($code, 'spear') !== false
+                            || strpos($code, 'staff') !== false
+                            || strpos($code, 'pike') !== false;
+                    }
+                )
+            ),
+            WeaponCodes::getStaffAndSpearCodes()
+        );
+    }
 }
