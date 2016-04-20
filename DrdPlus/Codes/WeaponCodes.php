@@ -303,4 +303,33 @@ class WeaponCodes
             self::SILVER_DART,
         ];
     }
+
+    // throwing weapons
+    const ROCK = 'rock';
+    const THROWING_DAGGER = 'throwing_dagger';
+    const LIGHT_THROWING_AXE = 'light_throwing_axe';
+    const WAR_THROWING_AXE = 'war_throwing_axe';
+    const THROWING_HAMMER = 'throwing_hammer';
+    const SHURIKEN = 'shuriken';
+    /* + spear */
+    const JAVELIN = 'javelin';
+    const SLING = 'sling';
+
+    /**
+     * @return array|string[]
+     */
+    public static function getThrowingWeaponCodes()
+    {
+        return [
+            self::ROCK,
+            self::THROWING_DAGGER,
+            self::LIGHT_THROWING_AXE,
+            self::WAR_THROWING_AXE,
+            self::THROWING_HAMMER,
+            self::SHURIKEN,
+            self::SPEAR,
+            self::JAVELIN,
+            self::SLING,
+        ];
+    }
 }

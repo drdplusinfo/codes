@@ -26,7 +26,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
                 array_filter(
                     array_values($weaponCodesReflection->getConstants()),
                     function ($code) {
-                        return strpos($code, 'axe') !== false;
+                        return strpos($code, 'axe') !== false && strpos($code, 'throwing') === false;
                     }
                 )
             ),
@@ -58,7 +58,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
                     function ($code) {
                         return
                             (strpos($code, 'knife') !== false && strpos($code, 'bowie') === false)
-                            || strpos($code, 'dagger') !== false;
+                            || (strpos($code, 'dagger') !== false && strpos($code, 'throwing') === false);
                     }
                 )
             ),
@@ -96,7 +96,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
                             strpos($code, 'cudgel') !== false
                             || strpos($code, 'club') !== false
                             || strpos($code, 'mace') !== false
-                            || strpos($code, 'hammer') !== false;
+                            || (strpos($code, 'hammer') !== false && (strpos($code, 'throwing') === false));
                     }
                 )
             ),
@@ -433,5 +433,44 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             ),
             WeaponCodes::getDartCodes()
         );
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_get_throwing_weapon_codes()
+    {
+        self::assertSame(
+            [
+                'rock',
+                'throwing_dagger',
+                'light_throwing_axe',
+                'war_throwing_axe',
+                'throwing_hammer',
+                'shuriken',
+                'spear',
+                'javelin',
+                'sling',
+            ],
+            WeaponCodes::getThrowingWeaponCodes()
+        );
+
+        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
+        $expectedValues = array_filter(
+            array_values($weaponCodesReflection->getConstants()),
+            function ($code) {
+                return
+                    strpos($code, 'rock') !== false
+                    || strpos($code, 'throwing') !== false
+                    || strpos($code, 'shuriken') !== false
+                    || $code === 'spear'
+                    || strpos($code, 'javelin') !== false
+                    || strpos($code, 'sling') !== false;
+            }
+        );
+        sort($expectedValues);
+        $givenValues = WeaponCodes::getThrowingWeaponCodes();
+        sort($givenValues);
+        self::assertSame($expectedValues, $givenValues);
     }
 }
