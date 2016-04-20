@@ -342,4 +342,37 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getBowCodes()
         );
     }
+
+    /**
+     * @test
+     */
+    public function I_can_get_arrow_codes()
+    {
+        self::assertSame(
+            [
+                'basic_arrow',
+                'long_range_arrow',
+                'war_arrow',
+                'piercing_arrow',
+                'hollow_arrow',
+                'crippling_arrow',
+                'flame_arrow',
+                'silver_arrow',
+            ],
+            WeaponCodes::getArrowCodes()
+        );
+
+        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
+        self::assertSame(
+            array_values( // re-setting indexes
+                array_filter(
+                    array_values($weaponCodesReflection->getConstants()),
+                    function ($code) {
+                        return strpos($code, 'arrow') !== false;
+                    }
+                )
+            ),
+            WeaponCodes::getArrowCodes()
+        );
+    }
 }

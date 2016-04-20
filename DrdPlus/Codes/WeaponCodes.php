@@ -236,4 +236,28 @@ class WeaponCodes
             self::POWER_BOW,
         ];
     }
+
+    // arrows
+    const BASIC_ARROW = 'basic_arrow';
+    const LONG_RANGE_ARROW = 'long_range_arrow';
+    const WAR_ARROW = 'war_arrow';
+    const PIERCING_ARROW = 'piercing_arrow';
+    const HOLLOW_ARROW = 'hollow_arrow';
+    const CRIPPLING_ARROW = 'crippling_arrow';
+    const FLAME_ARROW = 'flame_arrow';
+    const SILVER_ARROW = 'silver_arrow';
+
+    public static function getArrowCodes()
+    {
+        return [
+            self::BASIC_ARROW,
+            self::LONG_RANGE_ARROW,
+            self::WAR_ARROW,
+            self::PIERCING_ARROW,
+            self::HOLLOW_ARROW,
+            self::CRIPPLING_ARROW,
+            self::FLAME_ARROW,
+            self::SILVER_ARROW,
+        ];
+    }
 }
