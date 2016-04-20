@@ -57,7 +57,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
                     array_values($weaponCodesReflection->getConstants()),
                     function ($code) {
                         return
-                            strpos($code, 'knife') !== false
+                            (strpos($code, 'knife') !== false && strpos($code, 'bowie') === false)
                             || strpos($code, 'dagger') !== false;
                     }
                 )
@@ -136,6 +136,39 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
                 )
             ),
             WeaponCodes::getMorningstarAndMorgensternCodes()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_get_saber_and_bowie_knife_codes_at_once()
+    {
+        self::assertSame(
+            [
+                'machete',
+                'light_saber',
+                'bowie_knife',
+                'saber',
+                'heavy_saber',
+            ],
+            WeaponCodes::getSaberAndBowieKnifeCodes()
+        );
+
+        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
+        self::assertSame(
+            array_values( // re-setting indexes
+                array_filter(
+                    array_values($weaponCodesReflection->getConstants()),
+                    function ($code) {
+                        return
+                            strpos($code, 'machete') !== false
+                            || strpos($code, 'bowie') !== false
+                            || strpos($code, 'saber') !== false;
+                    }
+                )
+            ),
+            WeaponCodes::getSaberAndBowieKnifeCodes()
         );
     }
 }

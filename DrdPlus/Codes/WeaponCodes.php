@@ -96,4 +96,22 @@ class WeaponCodes
             self::HEAVY_MORNINGSTAR,
         ];
     }
+
+    // sabers and bowie knifes
+    const MACHETE = 'machete';
+    const LIGHT_SABER = 'light_saber';
+    const BOWIE_KNIFE = 'bowie_knife';
+    const SABER = 'saber';
+    const HEAVY_SABER = 'heavy_saber';
+
+    public static function getSaberAndBowieKnifeCodes()
+    {
+        return [
+            self::MACHETE,
+            self::LIGHT_SABER,
+            self::BOWIE_KNIFE,
+            self::SABER,
+            self::HEAVY_SABER
+        ];
+    }
 }
