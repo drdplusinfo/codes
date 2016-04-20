@@ -279,4 +279,37 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getVoulgeAndTridentCodes()
         );
     }
+
+    /**
+     * @test
+     */
+    public function I_can_get_unarmed_codes()
+    {
+        self::assertSame(
+            [
+                'hand',
+                'hobnailed_glove',
+                'leg',
+                'hobnailed_boot',
+            ],
+            WeaponCodes::getUnarmedCodes()
+        );
+
+        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
+        self::assertSame(
+            array_values( // re-setting indexes
+                array_filter(
+                    array_values($weaponCodesReflection->getConstants()),
+                    function ($code) {
+                        return
+                            strpos($code, 'hand') !== false
+                            || strpos($code, 'glove') !== false
+                            || strpos($code, 'leg') !== false
+                            || strpos($code, 'boot') !== false;
+                    }
+                )
+            ),
+            WeaponCodes::getUnarmedCodes()
+        );
+    }
 }

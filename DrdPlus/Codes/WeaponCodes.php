@@ -196,4 +196,20 @@ class WeaponCodes
             self::HEAVY_HALBERD,
         ];
     }
+
+    // unarmed
+    const HAND = 'hand';
+    const HOBNAILED_GLOVE = 'hobnailed_glove';
+    const LEG = 'leg';
+    const HOBNAILED_BOOT = 'hobnailed_boot';
+
+    public static function getUnarmedCodes()
+    {
+        return [
+            self::HAND,
+            self::HOBNAILED_GLOVE,
+            self::LEG,
+            self::HOBNAILED_BOOT,
+        ];
+    }
 }
