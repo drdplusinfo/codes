@@ -302,7 +302,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
                     array_values($weaponCodesReflection->getConstants()),
                     function ($code) {
                         return
-                            strpos($code, 'hand') !== false
+                            (strpos($code, 'hand') !== false && strpos($code, 'handed') === false)
                             || strpos($code, 'glove') !== false
                             || strpos($code, 'leg') !== false
                             || strpos($code, 'boot') !== false;
