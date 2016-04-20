@@ -208,4 +208,38 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getStaffAndSpearCodes()
         );
     }
+    /**
+     * @test
+     */
+    public function I_can_get_sword_codes()
+    {
+        self::assertSame(
+            [
+                'short_sword',
+                'hanger',
+                'glaive',
+                'long_sword',
+                'one_and_half_handed_sword',
+                'barbarian_sword',
+                'two_handed_sword',
+            ],
+            WeaponCodes::getSwordCodes()
+        );
+
+        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
+        self::assertSame(
+            array_values( // re-setting indexes
+                array_filter(
+                    array_values($weaponCodesReflection->getConstants()),
+                    function ($code) {
+                        return
+                            strpos($code, 'sword') !== false
+                            || strpos($code, 'hanger') !== false
+                            || strpos($code, 'glaive') !== false;
+                    }
+                )
+            ),
+            WeaponCodes::getSwordCodes()
+        );
+    }
 }

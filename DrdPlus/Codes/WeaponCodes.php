@@ -140,4 +140,26 @@ class WeaponCodes
             self::METAL_STAFF
         ];
     }
+
+    // swords
+    const SHORT_SWORD = 'short_sword';
+    const HANGER = 'hanger';
+    const GLAIVE = 'glaive';
+    const LONG_SWORD = 'long_sword';
+    const ONE_AND_HALF_HANDED_SWORD = 'one_and_half_handed_sword';
+    const BARBARIAN_SWORD = 'barbarian_sword';
+    const TWO_HANDED_SWORD = 'two_handed_sword';
+
+    public static function getSwordCodes()
+    {
+        return [
+            self::SHORT_SWORD,
+            self::HANGER,
+            self::GLAIVE,
+            self::LONG_SWORD,
+            self::ONE_AND_HALF_HANDED_SWORD,
+            self::BARBARIAN_SWORD,
+            self::TWO_HANDED_SWORD
+        ];
+    }
 }
