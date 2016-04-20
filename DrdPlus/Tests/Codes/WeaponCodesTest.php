@@ -356,7 +356,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
                 'piercing_arrow',
                 'hollow_arrow',
                 'crippling_arrow',
-                'flame_arrow',
+                'incendiary_arrow',
                 'silver_arrow',
             ],
             WeaponCodes::getArrowCodes()

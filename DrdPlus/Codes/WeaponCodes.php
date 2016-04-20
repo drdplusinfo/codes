@@ -244,7 +244,7 @@ class WeaponCodes
     const PIERCING_ARROW = 'piercing_arrow';
     const HOLLOW_ARROW = 'hollow_arrow';
     const CRIPPLING_ARROW = 'crippling_arrow';
-    const FLAME_ARROW = 'flame_arrow';
+    const INCENDIARY_ARROW = 'incendiary_arrow';
     const SILVER_ARROW = 'silver_arrow';
 
     /**
@@ -259,7 +259,7 @@ class WeaponCodes
             self::PIERCING_ARROW,
             self::HOLLOW_ARROW,
             self::CRIPPLING_ARROW,
-            self::FLAME_ARROW,
+            self::INCENDIARY_ARROW,
             self::SILVER_ARROW,
         ];
     }
