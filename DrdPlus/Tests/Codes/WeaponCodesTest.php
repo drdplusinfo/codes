@@ -312,4 +312,34 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getUnarmedCodes()
         );
     }
+
+    /**
+     * @test
+     */
+    public function I_can_get_bow_codes()
+    {
+        self::assertSame(
+            [
+                'short_bow',
+                'long_bow',
+                'short_composite_bow',
+                'long_composite_bow',
+                'power_bow',
+            ],
+            WeaponCodes::getBowCodes()
+        );
+
+        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
+        self::assertSame(
+            array_values( // re-setting indexes
+                array_filter(
+                    array_values($weaponCodesReflection->getConstants()),
+                    function ($code) {
+                        return strpos($code, '_bow') !== false;
+                    }
+                )
+            ),
+            WeaponCodes::getBowCodes()
+        );
+    }
 }

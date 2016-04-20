@@ -203,6 +203,9 @@ class WeaponCodes
     const LEG = 'leg';
     const HOBNAILED_BOOT = 'hobnailed_boot';
 
+    /**
+     * @return array|string[]
+     */
     public static function getUnarmedCodes()
     {
         return [
@@ -210,6 +213,27 @@ class WeaponCodes
             self::HOBNAILED_GLOVE,
             self::LEG,
             self::HOBNAILED_BOOT,
+        ];
+    }
+
+    // bows
+    const SHORT_BOW = 'short_bow';
+    const LONG_BOW = 'long_bow';
+    const SHORT_COMPOSITE_BOW = 'short_composite_bow';
+    const LONG_COMPOSITE_BOW = 'long_composite_bow';
+    const POWER_BOW = 'power_bow';
+
+    /**
+     * @return array|string[]
+     */
+    public static function getBowCodes()
+    {
+        return [
+            self::SHORT_BOW,
+            self::LONG_BOW,
+            self::SHORT_COMPOSITE_BOW,
+            self::LONG_COMPOSITE_BOW,
+            self::POWER_BOW,
         ];
     }
 }
