@@ -19,7 +19,7 @@ class ActivityDifficultyTypeCodesTest extends \PHPUnit_Framework_TestCase
                 'toilsome_activity',
                 'very_hard_activity',
             ],
-            ActivityDifficultyTypeCodes::getActivityTypeCodes()
+            ActivityDifficultyTypeCodes::getActivityDifficultyTypeCodes()
         );
 
         $reflection = new \ReflectionClass(ActivityDifficultyTypeCodes::class);

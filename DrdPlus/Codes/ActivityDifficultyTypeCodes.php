@@ -13,7 +13,7 @@ class ActivityDifficultyTypeCodes
     /**
      * @return array|string[]
      */
-    public static function getActivityTypeCodes()
+    public static function getActivityDifficultyTypeCodes()
     {
         return [
             self::SLEEPING_OR_REST_IN_BED,
