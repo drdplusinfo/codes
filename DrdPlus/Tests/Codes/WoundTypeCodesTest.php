@@ -3,21 +3,17 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\WoundTypeCodes;
 
-class WoundTypeCodesTest extends \PHPUnit_Framework_TestCase
+class WoundTypeCodesTest extends AbstractCodesTableTest
 {
     /**
      * @test
      */
-    public function I_can_get_shield_codes_at_once()
+    public function I_can_get_shield_codes()
     {
         self::assertSame(
-            ['crush', 'stab', 'cut'],
+            $expectedCodes = ['crush', 'stab', 'cut'],
             WoundTypeCodes::getWoundTypeCodes()
         );
-        $reflection = new \ReflectionClass(WoundTypeCodes::class);
-        self::assertSame(
-            array_values($reflection->getConstants()),
-            WoundTypeCodes::getWoundTypeCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 }

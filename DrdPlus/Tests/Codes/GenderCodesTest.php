@@ -3,13 +3,17 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\GenderCodes;
 
-class GenderCodesTest extends \PHPUnit_Framework_TestCase
+class GenderCodesTest extends AbstractCodesTableTest
 {
     /**
      * @test
      */
-    public function I_acn_get_all_genders_at_once()
+    public function I_can_get_all_gender_codes()
     {
-        self::assertEquals(['male', 'female'], GenderCodes::getGenderCodes());
+        self::assertEquals(
+            $expectedCodes = ['male', 'female'],
+            GenderCodes::getGenderCodes()
+        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 }

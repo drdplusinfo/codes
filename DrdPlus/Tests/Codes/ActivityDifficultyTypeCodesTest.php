@@ -22,6 +22,6 @@ class ActivityDifficultyTypeCodesTest extends AbstractCodesTableTest
             ActivityDifficultyTypeCodes::getActivityDifficultyTypeCodes()
         );
 
-        $this->I_can_get_codes_as_constants($expectedActivityCodes);
+        $this->I_can_get_codes_by_same_named_constants($expectedActivityCodes);
     }
 }

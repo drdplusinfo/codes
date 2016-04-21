@@ -3,15 +3,15 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\RaceCodes;
 
-class RaceCodesTest extends \PHPUnit_Framework_TestCase
+class RaceCodesTest extends AbstractCodesTableTest
 {
     /**
      * @test
      */
-    public function I_can_get_race_codes_at_once()
+    public function I_can_get_race_codes()
     {
         self::assertEquals(
-            [
+            $expectedCodes = [
                 'human',
                 'elf',
                 'dwarf',
@@ -21,6 +21,7 @@ class RaceCodesTest extends \PHPUnit_Framework_TestCase
             ],
             RaceCodes::getRaceCodes()
         );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -75,7 +76,9 @@ class RaceCodesTest extends \PHPUnit_Framework_TestCase
         $flat = [];
         foreach ($tableLike as $key => $row) {
             array_unshift($row, $key);
-            $flat = array_merge($flat, $row);
+            foreach ($row as $value) {
+                $flat[] = $value;
+            }
         }
 
         return $flat;

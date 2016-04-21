@@ -3,23 +3,24 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\PropertyCodes;
 
-class PropertyCodesTest extends \PHPUnit_Framework_TestCase
+class PropertyCodesTest extends AbstractCodesTableTest
 {
     /**
      * @test
      */
-    public function I_can_get_base_properties_at_once()
+    public function I_can_get_base_property_codes()
     {
         self::assertEquals(
-            [
-                PropertyCodes::STRENGTH,
-                PropertyCodes::AGILITY,
-                PropertyCodes::KNACK,
-                PropertyCodes::WILL,
-                PropertyCodes::INTELLIGENCE,
-                PropertyCodes::CHARISMA
+            $expectedCodes = [
+                'strength',
+                'agility',
+                'knack',
+                'will',
+                'intelligence',
+                'charisma'
             ],
             PropertyCodes::getBasePropertyCodes()
         );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 }

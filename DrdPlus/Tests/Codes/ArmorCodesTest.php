@@ -3,15 +3,15 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\ArmorCodes;
 
-class ArmorCodesTest extends \PHPUnit_Framework_TestCase
+class ArmorCodesTest extends AbstractCodesTableTest
 {
     /**
      * @test
      */
-    public function I_can_get_armor_codes_at_once()
+    public function I_can_get_armor_codes()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'without_armor',
                 'padded_armor',
                 'leather_armor',
@@ -23,27 +23,16 @@ class ArmorCodesTest extends \PHPUnit_Framework_TestCase
             ],
             ArmorCodes::getBodyArmorCodes()
         );
-        $bodyArmorCodesReflection = new \ReflectionClass(ArmorCodes::class);
-        self::assertSame(
-            array_values( // re-setting indexes
-                array_filter(
-                    array_values($bodyArmorCodesReflection->getConstants()),
-                    function ($code) {
-                        return strpos($code, 'armor') !== false;
-                    }
-                )
-            ),
-            ArmorCodes::getBodyArmorCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
      * @test
      */
-    public function I_can_get_helm_codes_at_once()
+    public function I_can_get_helm_codes()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'without_helm',
                 'leather_cap',
                 'chainmail_hood',
@@ -54,20 +43,6 @@ class ArmorCodesTest extends \PHPUnit_Framework_TestCase
             ],
             ArmorCodes::getHelmCodes()
         );
-        $bodyArmorCodesReflection = new \ReflectionClass(ArmorCodes::class);
-        self::assertSame(
-            array_values( // re-setting indexes
-                array_filter(
-                    array_values($bodyArmorCodesReflection->getConstants()),
-                    function ($code) {
-                        return
-                            strpos($code, 'helm') !== false
-                            || strpos($code, 'cap') !== false
-                            || strpos($code, 'hood') !== false;
-                    }
-                )
-            ),
-            ArmorCodes::getHelmCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 }

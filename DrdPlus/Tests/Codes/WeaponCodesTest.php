@@ -3,28 +3,16 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\WeaponCodes;
 
-class WeaponCodesTest extends \PHPUnit_Framework_TestCase
+class WeaponCodesTest extends AbstractCodesTableTest
 {
-    /**
-     * @var array|string[]
-     */
-    private static $weaponCodesConstants;
-
-    protected function setUp()
-    {
-        if (!isset(self::$weaponCodesConstants)) {
-            $weaponCodesReflection = new \ReflectionClass(WeaponCodes::class);
-            self::$weaponCodesConstants = $weaponCodesReflection->getConstants();
-        }
-    }
 
     /**
      * @test
      */
-    public function I_can_get_axe_codes_at_once()
+    public function I_can_get_axe_codes()
     {
         self::assertSame(
-            $expectedCodes = $expectedCodes = [
+            $expectedCodes = [
                 'light_axe',
                 'axe',
                 'war_axe',
@@ -36,19 +24,10 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
-    private function I_can_get_codes_by_same_named_constants(array $codes)
-    {
-        foreach ($codes as $code) {
-            $codeConstantName = strtoupper($code);
-            self::assertArrayHasKey($codeConstantName, self::$weaponCodesConstants);
-            self::assertSame(self::$weaponCodesConstants[$codeConstantName], $code);
-        }
-    }
-
     /**
      * @test
      */
-    public function I_can_get_knife_and_dagger_codes_at_once()
+    public function I_can_get_knife_and_dagger_codes()
     {
         self::assertSame(
             $expectedCodes = [
@@ -67,7 +46,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function I_can_get_mace_and_club_codes_at_once()
+    public function I_can_get_mace_and_club_codes()
     {
         self::assertSame(
             $expectedCodes = [
@@ -90,7 +69,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function I_can_get_morningstar_and_morgenstern_codes_at_once()
+    public function I_can_get_morningstar_and_morgenstern_codes()
     {
         self::assertSame(
             $expectedCodes = [
@@ -111,7 +90,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function I_can_get_saber_and_bowie_knife_codes_at_once()
+    public function I_can_get_saber_and_bowie_knife_codes()
     {
         self::assertSame(
             $expectedCodes = [

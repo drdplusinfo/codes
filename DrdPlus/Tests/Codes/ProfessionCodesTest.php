@@ -3,27 +3,17 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\ProfessionCodes;
 
-class ProfessionCodesTest extends \PHPUnit_Framework_TestCase
+class ProfessionCodesTest extends AbstractCodesTableTest
 {
     /**
      * @test
      */
-    public function I_can_get_all_profession_codes_at_once()
+    public function I_can_get_all_profession_codes()
     {
         self::assertEquals(
-            ['fighter', 'thief', 'ranger', 'wizard', 'theurgist', 'priest'],
+            $expectedCodes = ['fighter', 'thief', 'ranger', 'wizard', 'theurgist', 'priest'],
             ProfessionCodes::getProfessionCodes()
         );
-        self::assertEquals(
-            [
-                ProfessionCodes::FIGHTER,
-                ProfessionCodes::THIEF,
-                ProfessionCodes::RANGER,
-                ProfessionCodes::WIZARD,
-                ProfessionCodes::THEURGIST,
-                ProfessionCodes::PRIEST,
-            ],
-            ProfessionCodes::getProfessionCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 }

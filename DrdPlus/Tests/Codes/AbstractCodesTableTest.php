@@ -6,7 +6,7 @@ abstract class AbstractCodesTableTest extends \PHPUnit_Framework_TestCase
     /**
      * @param array|string[] $expectedCodes
      */
-    protected function I_can_get_codes_as_constants(array $expectedCodes)
+    protected function I_can_get_codes_by_same_named_constants(array $expectedCodes)
     {
         $reflection = new \ReflectionClass($this->getSutClass());
         $constants = $reflection->getConstants();

@@ -3,15 +3,15 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\ShieldCodes;
 
-class ShieldCodesTest extends \PHPUnit_Framework_TestCase
+class ShieldCodesTest extends AbstractCodesTableTest
 {
     /**
      * @test
      */
-    public function I_can_get_shield_codes_at_once()
+    public function I_can_get_shield_codes()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'buckler',
                 'small_shield',
                 'medium_shield',
@@ -20,10 +20,6 @@ class ShieldCodesTest extends \PHPUnit_Framework_TestCase
             ],
             ShieldCodes::getShieldCodes()
         );
-        $shieldCodesReflection = new \ReflectionClass(ShieldCodes::class);
-        self::assertSame(
-            array_values($shieldCodesReflection->getConstants()),
-            ShieldCodes::getShieldCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 }

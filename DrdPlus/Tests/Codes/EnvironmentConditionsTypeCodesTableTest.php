@@ -8,7 +8,7 @@ class EnvironmentConditionsTypeCodesTableTest extends AbstractCodesTableTest
     /**
      * @test
      */
-    public function I_can_get_environment_conditions_type_codes_at_once()
+    public function I_can_get_environment_conditions_type_codes()
     {
         self::assertSame(
             $expectedCodes = [
@@ -19,6 +19,6 @@ class EnvironmentConditionsTypeCodesTableTest extends AbstractCodesTableTest
             ],
             EnvironmentConditionsTypeCodesTable::getEnvironmentConditionsTypeCodes()
         );
-        $this->I_can_get_codes_as_constants($expectedCodes);
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 }
