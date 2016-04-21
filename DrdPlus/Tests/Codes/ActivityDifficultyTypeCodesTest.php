@@ -1,9 +1,9 @@
 <?php
 namespace DrdPlus\Tests\Codes;
 
-use DrdPlus\Codes\ActivityTypeCodes;
+use DrdPlus\Codes\ActivityDifficultyTypeCodes;
 
-class ActivityTypeCodesTest extends \PHPUnit_Framework_TestCase
+class ActivityDifficultyTypeCodesTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
@@ -19,10 +19,10 @@ class ActivityTypeCodesTest extends \PHPUnit_Framework_TestCase
                 'toilsome_activity',
                 'very_hard_activity',
             ],
-            ActivityTypeCodes::getActivityTypeCodes()
+            ActivityDifficultyTypeCodes::getActivityTypeCodes()
         );
 
-        $reflection = new \ReflectionClass(ActivityTypeCodes::class);
+        $reflection = new \ReflectionClass(ActivityDifficultyTypeCodes::class);
         $constants = $reflection->getConstants();
         foreach ($expectedActivityCodes as $expectedActivityCode) {
             $constantName = strtoupper($expectedActivityCode);
