@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\ActivityDifficultyTypeCodes;
 
-class ActivityDifficultyTypeCodesTest extends \PHPUnit_Framework_TestCase
+class ActivityDifficultyTypeCodesTest extends AbstractCodesTableTest
 {
     /**
      * @test
@@ -22,12 +22,6 @@ class ActivityDifficultyTypeCodesTest extends \PHPUnit_Framework_TestCase
             ActivityDifficultyTypeCodes::getActivityDifficultyTypeCodes()
         );
 
-        $reflection = new \ReflectionClass(ActivityDifficultyTypeCodes::class);
-        $constants = $reflection->getConstants();
-        foreach ($expectedActivityCodes as $expectedActivityCode) {
-            $constantName = strtoupper($expectedActivityCode);
-            self::assertArrayHasKey($constantName, $constants);
-            self::assertSame($constants[$constantName], $expectedActivityCode);
-        }
+        $this->I_can_get_codes_as_constants($expectedActivityCodes);
     }
 }
