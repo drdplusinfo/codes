@@ -332,4 +332,19 @@ class WeaponCodes
             self::SLING,
         ];
     }
+
+    // sling stones
+    const SLING_STONE_LIGHT = 'sling_stone_light';
+    const SLING_STONE_HEAVIER = 'sling_stone_heavier';
+
+    /**
+     * @return array|string[]
+     */
+    public static function getSlingStoneCodes()
+    {
+        return [
+            self::SLING_STONE_LIGHT,
+            self::SLING_STONE_HEAVIER,
+        ];
+    }
 }

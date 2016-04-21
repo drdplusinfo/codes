@@ -6,12 +6,25 @@ use DrdPlus\Codes\WeaponCodes;
 class WeaponCodesTest extends \PHPUnit_Framework_TestCase
 {
     /**
+     * @var array|string[]
+     */
+    private static $weaponCodesConstants;
+
+    protected function setUp()
+    {
+        if (!isset(self::$weaponCodesConstants)) {
+            $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
+            self::$weaponCodesConstants = $weaponCodesReflection->getConstants();
+        }
+    }
+
+    /**
      * @test
      */
     public function I_can_get_axe_codes_at_once()
     {
         self::assertSame(
-            [
+            $expectedCodes = $expectedCodes = [
                 'light_axe',
                 'axe',
                 'war_axe',
@@ -20,18 +33,16 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getAxeCodes()
         );
 
-        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
-        self::assertSame(
-            array_values( // re-setting indexes
-                array_filter(
-                    array_values($weaponCodesReflection->getConstants()),
-                    function ($code) {
-                        return strpos($code, 'axe') !== false && strpos($code, 'throwing') === false;
-                    }
-                )
-            ),
-            WeaponCodes::getAxeCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
+    }
+
+    private function I_can_get_codes_by_same_named_constants(array $codes)
+    {
+        foreach ($codes as $code) {
+            $codeConstantName = strtoupper($code);
+            self::assertArrayHasKey($codeConstantName, self::$weaponCodesConstants);
+            self::assertSame(self::$weaponCodesConstants[$codeConstantName], $code);
+        }
     }
 
     /**
@@ -40,7 +51,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     public function I_can_get_knife_and_dagger_codes_at_once()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'knife',
                 'dagger',
                 'stabbing_dagger',
@@ -50,20 +61,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getKnifeAndDaggerCodes()
         );
 
-        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
-        self::assertSame(
-            array_values( // re-setting indexes
-                array_filter(
-                    array_values($weaponCodesReflection->getConstants()),
-                    function ($code) {
-                        return
-                            (strpos($code, 'knife') !== false && strpos($code, 'bowie') === false)
-                            || (strpos($code, 'dagger') !== false && strpos($code, 'throwing') === false);
-                    }
-                )
-            ),
-            WeaponCodes::getKnifeAndDaggerCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -72,7 +70,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     public function I_can_get_mace_and_club_codes_at_once()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'cudgel',
                 'club',
                 'hobnailed_club',
@@ -86,22 +84,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getMaceAndClubCodes()
         );
 
-        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
-        self::assertSame(
-            array_values( // re-setting indexes
-                array_filter(
-                    array_values($weaponCodesReflection->getConstants()),
-                    function ($code) {
-                        return
-                            strpos($code, 'cudgel') !== false
-                            || strpos($code, 'club') !== false
-                            || strpos($code, 'mace') !== false
-                            || (strpos($code, 'hammer') !== false && (strpos($code, 'throwing') === false));
-                    }
-                )
-            ),
-            WeaponCodes::getMaceAndClubCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -110,7 +93,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     public function I_can_get_morningstar_and_morgenstern_codes_at_once()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'light_morgenstern',
                 'morgenstern',
                 'heavy_morgenstern',
@@ -122,21 +105,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getMorningstarAndMorgensternCodes()
         );
 
-        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
-        self::assertSame(
-            array_values( // re-setting indexes
-                array_filter(
-                    array_values($weaponCodesReflection->getConstants()),
-                    function ($code) {
-                        return
-                            strpos($code, 'morgenstern') !== false
-                            || strpos($code, 'flail') !== false
-                            || strpos($code, 'morningstar') !== false;
-                    }
-                )
-            ),
-            WeaponCodes::getMorningstarAndMorgensternCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -145,7 +114,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     public function I_can_get_saber_and_bowie_knife_codes_at_once()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'machete',
                 'light_saber',
                 'bowie_knife',
@@ -155,21 +124,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getSaberAndBowieKnifeCodes()
         );
 
-        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
-        self::assertSame(
-            array_values( // re-setting indexes
-                array_filter(
-                    array_values($weaponCodesReflection->getConstants()),
-                    function ($code) {
-                        return
-                            strpos($code, 'machete') !== false
-                            || strpos($code, 'bowie') !== false
-                            || strpos($code, 'saber') !== false;
-                    }
-                )
-            ),
-            WeaponCodes::getSaberAndBowieKnifeCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -178,7 +133,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     public function I_can_get_staff_and_spear_codes()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'light_spear',
                 'shortened_staff',
                 'light_staff',
@@ -192,21 +147,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getStaffAndSpearCodes()
         );
 
-        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
-        self::assertSame(
-            array_values( // re-setting indexes
-                array_filter(
-                    array_values($weaponCodesReflection->getConstants()),
-                    function ($code) {
-                        return
-                            strpos($code, 'spear') !== false
-                            || strpos($code, 'staff') !== false
-                            || strpos($code, 'pike') !== false;
-                    }
-                )
-            ),
-            WeaponCodes::getStaffAndSpearCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -215,7 +156,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     public function I_can_get_sword_codes()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'short_sword',
                 'hanger',
                 'glaive',
@@ -227,21 +168,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getSwordCodes()
         );
 
-        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
-        self::assertSame(
-            array_values( // re-setting indexes
-                array_filter(
-                    array_values($weaponCodesReflection->getConstants()),
-                    function ($code) {
-                        return
-                            strpos($code, 'sword') !== false
-                            || strpos($code, 'hanger') !== false
-                            || strpos($code, 'glaive') !== false;
-                    }
-                )
-            ),
-            WeaponCodes::getSwordCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -250,7 +177,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     public function I_can_get_voulges_and_trident_codes()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'pitchfork',
                 'light_voulge',
                 'light_trident',
@@ -262,22 +189,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getVoulgeAndTridentCodes()
         );
 
-        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
-        self::assertSame(
-            array_values( // re-setting indexes
-                array_filter(
-                    array_values($weaponCodesReflection->getConstants()),
-                    function ($code) {
-                        return
-                            strpos($code, 'pitchfork') !== false
-                            || strpos($code, 'voulge') !== false
-                            || strpos($code, 'trident') !== false
-                            || strpos($code, 'halberd') !== false;
-                    }
-                )
-            ),
-            WeaponCodes::getVoulgeAndTridentCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -286,7 +198,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     public function I_can_get_unarmed_codes()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'hand',
                 'hobnailed_glove',
                 'leg',
@@ -295,22 +207,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getUnarmedCodes()
         );
 
-        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
-        self::assertSame(
-            array_values( // re-setting indexes
-                array_filter(
-                    array_values($weaponCodesReflection->getConstants()),
-                    function ($code) {
-                        return
-                            (strpos($code, 'hand') !== false && strpos($code, 'handed') === false)
-                            || strpos($code, 'glove') !== false
-                            || strpos($code, 'leg') !== false
-                            || strpos($code, 'boot') !== false;
-                    }
-                )
-            ),
-            WeaponCodes::getUnarmedCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -319,7 +216,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     public function I_can_get_bow_codes()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'short_bow',
                 'long_bow',
                 'short_composite_bow',
@@ -329,18 +226,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getBowCodes()
         );
 
-        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
-        self::assertSame(
-            array_values( // re-setting indexes
-                array_filter(
-                    array_values($weaponCodesReflection->getConstants()),
-                    function ($code) {
-                        return strpos($code, '_bow') !== false;
-                    }
-                )
-            ),
-            WeaponCodes::getBowCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -349,7 +235,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     public function I_can_get_arrow_codes()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'basic_arrow',
                 'long_range_arrow',
                 'war_arrow',
@@ -362,18 +248,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getArrowCodes()
         );
 
-        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
-        self::assertSame(
-            array_values( // re-setting indexes
-                array_filter(
-                    array_values($weaponCodesReflection->getConstants()),
-                    function ($code) {
-                        return strpos($code, 'arrow') !== false;
-                    }
-                )
-            ),
-            WeaponCodes::getArrowCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -382,7 +257,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     public function I_can_get_crossbow_codes()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'minicrossbow',
                 'light_crossbow',
                 'military_crossbow',
@@ -391,18 +266,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getCrossbowCodes()
         );
 
-        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
-        self::assertSame(
-            array_values( // re-setting indexes
-                array_filter(
-                    array_values($weaponCodesReflection->getConstants()),
-                    function ($code) {
-                        return strpos($code, 'crossbow') !== false;
-                    }
-                )
-            ),
-            WeaponCodes::getCrossbowCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -411,7 +275,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     public function I_can_get_dart_codes()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'basic_dart',
                 'war_dart',
                 'piercing_dart',
@@ -421,18 +285,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getDartCodes()
         );
 
-        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
-        self::assertSame(
-            array_values( // re-setting indexes
-                array_filter(
-                    array_values($weaponCodesReflection->getConstants()),
-                    function ($code) {
-                        return strpos($code, 'dart') !== false;
-                    }
-                )
-            ),
-            WeaponCodes::getDartCodes()
-        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -441,7 +294,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     public function I_can_get_throwing_weapon_codes()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'rock',
                 'throwing_dagger',
                 'light_throwing_axe',
@@ -455,22 +308,22 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
             WeaponCodes::getThrowingWeaponCodes()
         );
 
-        $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
-        $expectedValues = array_filter(
-            array_values($weaponCodesReflection->getConstants()),
-            function ($code) {
-                return
-                    strpos($code, 'rock') !== false
-                    || strpos($code, 'throwing') !== false
-                    || strpos($code, 'shuriken') !== false
-                    || $code === 'spear'
-                    || strpos($code, 'javelin') !== false
-                    || strpos($code, 'sling') !== false;
-            }
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_get_sling_stone_codes()
+    {
+        self::assertSame(
+            $expectedCodes = [
+                'sling_stone_light',
+                'sling_stone_heavier',
+            ],
+            WeaponCodes::getSlingStoneCodes()
         );
-        sort($expectedValues);
-        $givenValues = WeaponCodes::getThrowingWeaponCodes();
-        sort($givenValues);
-        self::assertSame($expectedValues, $givenValues);
+
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 }
