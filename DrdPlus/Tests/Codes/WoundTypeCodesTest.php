@@ -14,7 +14,7 @@ class WoundTypeCodesTest extends \PHPUnit_Framework_TestCase
             ['crush', 'stab', 'cut'],
             WoundTypeCodes::getWoundTypeCodes()
         );
-        $reflection = new \ReflectionClass('\DrdPlus\Codes\WoundTypeCodes');
+        $reflection = new \ReflectionClass(WoundTypeCodes::class);
         self::assertSame(
             array_values($reflection->getConstants()),
             WoundTypeCodes::getWoundTypeCodes()

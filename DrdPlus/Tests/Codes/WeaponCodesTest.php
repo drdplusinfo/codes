@@ -13,7 +13,7 @@ class WeaponCodesTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         if (!isset(self::$weaponCodesConstants)) {
-            $weaponCodesReflection = new \ReflectionClass('\DrdPlus\Codes\WeaponCodes');
+            $weaponCodesReflection = new \ReflectionClass(WeaponCodes::class);
             self::$weaponCodesConstants = $weaponCodesReflection->getConstants();
         }
     }

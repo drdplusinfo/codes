@@ -20,7 +20,7 @@ class ShieldCodesTest extends \PHPUnit_Framework_TestCase
             ],
             ShieldCodes::getShieldCodes()
         );
-        $shieldCodesReflection = new \ReflectionClass('\DrdPlus\Codes\ShieldCodes');
+        $shieldCodesReflection = new \ReflectionClass(ShieldCodes::class);
         self::assertSame(
             array_values($shieldCodesReflection->getConstants()),
             ShieldCodes::getShieldCodes()

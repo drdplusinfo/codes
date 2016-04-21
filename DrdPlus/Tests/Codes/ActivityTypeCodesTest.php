@@ -22,7 +22,7 @@ class ActivityTypeCodesTest extends \PHPUnit_Framework_TestCase
             ActivityTypeCodes::getActivityTypeCodes()
         );
 
-        $reflection = new \ReflectionClass('\DrdPlus\Codes\ActivityTypeCodes');
+        $reflection = new \ReflectionClass(ActivityTypeCodes::class);
         $constants = $reflection->getConstants();
         foreach ($expectedActivityCodes as $expectedActivityCode) {
             $constantName = strtoupper($expectedActivityCode);

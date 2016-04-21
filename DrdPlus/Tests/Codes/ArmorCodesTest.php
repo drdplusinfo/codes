@@ -23,7 +23,7 @@ class ArmorCodesTest extends \PHPUnit_Framework_TestCase
             ],
             ArmorCodes::getBodyArmorCodes()
         );
-        $bodyArmorCodesReflection = new \ReflectionClass('\DrdPlus\Codes\ArmorCodes');
+        $bodyArmorCodesReflection = new \ReflectionClass(ArmorCodes::class);
         self::assertSame(
             array_values( // re-setting indexes
                 array_filter(
@@ -54,7 +54,7 @@ class ArmorCodesTest extends \PHPUnit_Framework_TestCase
             ],
             ArmorCodes::getHelmCodes()
         );
-        $bodyArmorCodesReflection = new \ReflectionClass('\DrdPlus\Codes\ArmorCodes');
+        $bodyArmorCodesReflection = new \ReflectionClass(ArmorCodes::class);
         self::assertSame(
             array_values( // re-setting indexes
                 array_filter(
