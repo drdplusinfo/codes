@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\WoundsOriginCodes;
 
-class WoundsOriginCodesTest extends \PHPUnit_Framework_TestCase
+class WoundsOriginCodesTest extends AbstractCodesTableTest
 {
     /**
      * @test
@@ -11,18 +11,13 @@ class WoundsOriginCodesTest extends \PHPUnit_Framework_TestCase
     public function I_can_get_all_wounds_origin_codes_at_once()
     {
         self::assertSame(
-            [
+            $expectedCodes = [
                 'mechanical',
                 'psychical',
                 'elemental',
             ],
             WoundsOriginCodes::getWoundsOfOriginCodes()
         );
-
-        $reflection = new \ReflectionClass(WoundsOriginCodes::class);
-        self::assertSame(array_values($reflection->getConstants()), WoundsOriginCodes::getWoundsOfOriginCodes());
-        foreach ($reflection->getConstants() as $constantName => $constantValue) {
-            self::assertSame(strtolower($constantName), $constantValue);
-        }
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 }
