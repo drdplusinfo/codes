@@ -66,4 +66,23 @@ class WoundsOriginCodesTest extends AbstractCodesTableTest
             ]
         ];
     }
+
+    /**
+     * @test
+     */
+    public function I_can_get_origins_with_type_codes_at_once()
+    {
+        self::assertSame(
+            array_merge(
+                $this->getExpectedTypeOfMechanicalWoundsCodes(),
+                array_filter(
+                    $this->getExpectedWoundsOriginCodes(),
+                    function ($woundsOriginCode) {
+                        return $woundsOriginCode !== 'mechanical';
+                    }
+                )
+            ),
+            WoundsOriginCodes::getOriginsWithTypeCodes()
+        );
+    }
 }

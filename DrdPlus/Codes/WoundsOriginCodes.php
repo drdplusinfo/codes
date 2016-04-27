@@ -31,7 +31,21 @@ class WoundsOriginCodes
         return [
             self::MECHANICAL_STAB,
             self::MECHANICAL_CUT,
+            self::MECHANICAL_CRUSH
+        ];
+    }
+
+    /**
+     * @return array|string[]
+     */
+    public static function getOriginsWithTypeCodes()
+    {
+        return [
+            self::MECHANICAL_STAB,
+            self::MECHANICAL_CUT,
             self::MECHANICAL_CRUSH,
+            self::PSYCHICAL,
+            self::ELEMENTAL
         ];
     }
 }
