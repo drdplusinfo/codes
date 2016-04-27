@@ -10,12 +10,28 @@ class WoundsOriginCodes
     /**
      * @return array|string[]
      */
-    public static function getWoundsOfOriginCodes()
+    public static function getWoundsOriginCodes()
     {
         return [
             self::MECHANICAL,
             self::PSYCHICAL,
             self::ELEMENTAL
+        ];
+    }
+
+    const MECHANICAL_STAB = 'mechanical_stab';
+    const MECHANICAL_CUT = 'mechanical_cut';
+    const MECHANICAL_CRUSH = 'mechanical_crush';
+
+    /**
+     * @return array|string[]
+     */
+    public static function getTypeOfMechanicalWoundsCodes()
+    {
+        return [
+            self::MECHANICAL_STAB,
+            self::MECHANICAL_CUT,
+            self::MECHANICAL_CRUSH,
         ];
     }
 }
