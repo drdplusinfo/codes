@@ -27,6 +27,7 @@ class PropertyCodes
     }
 
     // body
+    const AGE = 'age';
     const HEIGHT_IN_CM = 'height_in_cm';
     const WEIGHT_IN_KG = 'weight_in_kg';
     const WEIGHT = 'weight';
