@@ -1,7 +1,7 @@
 <?php
 namespace DrdPlus\Codes;
 
-class AfflictionByWoundCodes
+class AfflictionByWoundDomainCodes
 {
     const PHYSICAL = 'physical';
     const PSYCHICAL = 'psychical';
