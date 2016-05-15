@@ -38,7 +38,7 @@ class WoundsOriginCodes
     /**
      * @return array|string[]
      */
-    public static function getOriginsWithTypeCodes()
+    public static function getOriginAndTypeCodes()
     {
         return [
             self::MECHANICAL_STAB,
