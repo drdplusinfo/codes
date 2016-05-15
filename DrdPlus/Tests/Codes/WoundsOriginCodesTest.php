@@ -82,7 +82,7 @@ class WoundsOriginCodesTest extends AbstractCodesTableTest
                     }
                 )
             ),
-            WoundsOriginCodes::getOriginAndTypeCodes()
+            WoundsOriginCodes::getOriginWithTypeCodes()
         );
     }
 }
