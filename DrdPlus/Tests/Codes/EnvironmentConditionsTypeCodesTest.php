@@ -1,9 +1,9 @@
 <?php
 namespace DrdPlus\Tests\Codes;
 
-use DrdPlus\Codes\EnvironmentConditionsTypeCodesTable;
+use DrdPlus\Codes\EnvironmentConditionsTypeCodes;
 
-class EnvironmentConditionsTypeCodesTableTest extends AbstractCodesTableTest
+class EnvironmentConditionsTypeCodesTest extends AbstractCodesTest
 {
     /**
      * @test
@@ -17,7 +17,7 @@ class EnvironmentConditionsTypeCodesTableTest extends AbstractCodesTableTest
                 'impaired_conditions',
                 'good_conditions',
             ],
-            EnvironmentConditionsTypeCodesTable::getEnvironmentConditionsTypeCodes()
+            EnvironmentConditionsTypeCodes::getEnvironmentConditionsTypeCodes()
         );
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }

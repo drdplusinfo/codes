@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\ProfessionCodes;
 
-class ProfessionCodesTest extends AbstractCodesTableTest
+class ProfessionCodesTest extends AbstractCodesTest
 {
     /**
      * @test

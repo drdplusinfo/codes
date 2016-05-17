@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\SkillCodes;
 
-class SkillCodesTest extends AbstractCodesTableTest
+class SkillCodesTest extends AbstractCodesTest
 {
 
     private static $expectedSkillTypeCodes = ['physical', 'psychical', 'combined'];

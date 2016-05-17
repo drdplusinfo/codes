@@ -1,7 +1,7 @@
 <?php
 namespace DrdPlus\Codes;
 
-class EnvironmentConditionsTypeCodesTable
+class EnvironmentConditionsTypeCodes
 {
     const FOUL_CONDITIONS = 'foul_conditions';
     const BAD_CONDITIONS = 'bad_conditions';

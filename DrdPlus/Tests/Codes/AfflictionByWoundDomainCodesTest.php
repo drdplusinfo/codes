@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\AfflictionByWoundDomainCodes;
 
-class AfflictionByWoundDomainCodesTest extends AbstractCodesTableTest
+class AfflictionByWoundDomainCodesTest extends AbstractCodesTest
 {
     /**
      * @test

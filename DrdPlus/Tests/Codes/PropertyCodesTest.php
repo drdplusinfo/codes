@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\PropertyCodes;
 
-class PropertyCodesTest extends AbstractCodesTableTest
+class PropertyCodesTest extends AbstractCodesTest
 {
     /**
      * @test

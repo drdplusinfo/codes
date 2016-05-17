@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\ActivityDifficultyTypeCodes;
 
-class ActivityDifficultyTypeCodesTest extends AbstractCodesTableTest
+class ActivityDifficultyTypeCodesTest extends AbstractCodesTest
 {
     /**
      * @test

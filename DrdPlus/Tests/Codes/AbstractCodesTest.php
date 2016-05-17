@@ -1,7 +1,7 @@
 <?php
 namespace DrdPlus\Tests\Codes;
 
-abstract class AbstractCodesTableTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractCodesTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @param array|string[] $expectedCodes
