@@ -42,7 +42,7 @@ class PropertyCodes
     const SENSES = 'senses';
     const SPEED = 'speed';
     const TOUGHNESS = 'toughness';
-    const WOUNDS_LIMIT = 'wounds_limit';
+    const WOUND_BOUNDARY = 'wound_boundary';
 
     // native
     const INFRAVISION = 'infravision';
