@@ -38,7 +38,7 @@ class PropertyCodes
     const DANGEROUSNESS = 'dangerousness';
     const DIGNITY = 'dignity';
     const ENDURANCE = 'endurance';
-    const FATIGUE_LIMIT = 'fatigue_limit';
+    const FATIGUE_BOUNDARY = 'fatigue_boundary';
     const SENSES = 'senses';
     const SPEED = 'speed';
     const TOUGHNESS = 'toughness';
