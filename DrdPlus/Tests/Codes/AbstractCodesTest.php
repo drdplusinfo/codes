@@ -3,6 +3,12 @@ namespace DrdPlus\Tests\Codes;
 
 abstract class AbstractCodesTest extends \PHPUnit_Framework_TestCase
 {
+
+    /**
+     * @test
+     */
+    abstract public function I_can_get_all_codes_at_once();
+
     /**
      * @param array|string[] $expectedCodes
      */

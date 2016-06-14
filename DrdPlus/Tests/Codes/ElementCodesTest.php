@@ -8,7 +8,7 @@ class ElementCodesTest extends AbstractCodesTest
     /**
      * @test
      */
-    public function I_can_get_element_codes_at_once()
+    public function I_can_get_all_codes_at_once()
     {
         self::assertSame(
             [

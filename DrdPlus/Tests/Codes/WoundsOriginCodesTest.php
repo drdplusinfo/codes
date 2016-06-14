@@ -8,7 +8,7 @@ class WoundsOriginCodesTest extends AbstractCodesTest
     /**
      * @test
      */
-    public function I_can_get_all_wounds_origin_codes_at_once()
+    public function I_can_get_all_codes_at_once()
     {
         self::assertSame(
             $this->getExpectedWoundsOriginCodes(),

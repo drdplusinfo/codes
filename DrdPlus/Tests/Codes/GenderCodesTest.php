@@ -8,7 +8,7 @@ class GenderCodesTest extends AbstractCodesTest
     /**
      * @test
      */
-    public function I_can_get_all_gender_codes()
+    public function I_can_get_all_codes_at_once()
     {
         self::assertEquals(
             $expectedCodes = ['male', 'female'],

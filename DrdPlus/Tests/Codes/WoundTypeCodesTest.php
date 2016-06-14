@@ -8,7 +8,7 @@ class WoundTypeCodesTest extends AbstractCodesTest
     /**
      * @test
      */
-    public function I_can_get_wound_type_codes()
+    public function I_can_get_all_codes_at_once()
     {
         self::assertSame(
             $expectedCodes = ['crush', 'stab', 'cut'],

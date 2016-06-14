@@ -311,7 +311,7 @@ class WeaponCodes
     const WAR_THROWING_AXE = 'war_throwing_axe';
     const THROWING_HAMMER = 'throwing_hammer';
     const SHURIKEN = 'shuriken';
-    /* + spear */
+    /* + self::SPEAR */
     const JAVELIN = 'javelin';
     const SLING = 'sling';
 
@@ -346,5 +346,29 @@ class WeaponCodes
             self::SLING_STONE_LIGHT,
             self::SLING_STONE_HEAVIER,
         ];
+    }
+
+    /**
+     * @return array|string[]
+     */
+    public static function getWeaponCodes()
+    {
+        return array_merge(
+            self::getAxeCodes(),
+            self::getKnifeAndDaggerCodes(),
+            self::getMaceAndClubCodes(),
+            self::getMorningstarAndMorgensternCodes(),
+            self::getSaberAndBowieKnifeCodes(),
+            self::getStaffAndSpearCodes(),
+            self::getSwordCodes(),
+            self::getVoulgeAndTridentCodes(),
+            self::getUnarmedCodes(),
+            self::getBowCodes(),
+            self::getArrowCodes(),
+            self::getCrossbowCodes(),
+            self::getDartCodes(),
+            self::getThrowingWeaponCodes(),
+            self::getSlingStoneCodes()
+        );
     }
 }

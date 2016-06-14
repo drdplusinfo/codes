@@ -8,7 +8,13 @@ class RaceCodesTest extends AbstractCodesTest
     /**
      * @test
      */
-    public function I_can_get_race_codes()
+    public function I_can_get_all_codes_at_once()
+    {
+        $this->I_can_get_race_codes();
+        $this->I_cant_get_subrace_codes();
+    }
+
+    private function I_can_get_race_codes()
     {
         self::assertEquals(
             $expectedCodes = [
@@ -24,10 +30,7 @@ class RaceCodesTest extends AbstractCodesTest
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
-    /**
-     * @test
-     */
-    public function I_cant_get_subrace_codes()
+    private function I_cant_get_subrace_codes()
     {
         self::assertEquals(
             [

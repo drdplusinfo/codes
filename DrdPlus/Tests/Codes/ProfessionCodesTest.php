@@ -8,7 +8,7 @@ class ProfessionCodesTest extends AbstractCodesTest
     /**
      * @test
      */
-    public function I_can_get_all_profession_codes()
+    public function I_can_get_all_codes_at_once()
     {
         self::assertEquals(
             $expectedCodes = ['fighter', 'thief', 'ranger', 'wizard', 'theurgist', 'priest'],

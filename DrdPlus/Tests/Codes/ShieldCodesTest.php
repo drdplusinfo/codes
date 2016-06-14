@@ -8,7 +8,7 @@ class ShieldCodesTest extends AbstractCodesTest
     /**
      * @test
      */
-    public function I_can_get_shield_codes()
+    public function I_can_get_all_codes_at_once()
     {
         self::assertSame(
             $expectedCodes = [

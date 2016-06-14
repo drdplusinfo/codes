@@ -5,7 +5,6 @@ use DrdPlus\Codes\WeaponCodes;
 
 class WeaponCodesTest extends AbstractCodesTest
 {
-
     /**
      * @test
      */
@@ -305,4 +304,121 @@ class WeaponCodesTest extends AbstractCodesTest
 
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
+
+    /**
+     * @test
+     */
+    public function I_can_get_all_codes_at_once()
+    {
+        self::assertSame(
+            [
+                // axes
+                'light_axe',
+                'axe',
+                'war_axe',
+                'two_handed_axe',
+                // knifes and daggers
+                'knife',
+                'dagger',
+                'stabbing_dagger',
+                'long_knife',
+                'long_dagger',
+                // maces and clubs
+                'cudgel',
+                'club',
+                'hobnailed_club',
+                'light_mace',
+                'mace',
+                'heavy_club',
+                'war_hammer',
+                'two_handed_club',
+                'heavy_sledgehammer',
+                // morningstars and morgensterns
+                'light_morgenstern',
+                'morgenstern',
+                'heavy_morgenstern',
+                'flail',
+                'morningstar',
+                'hobnailed_flail',
+                'heavy_morningstar',
+                // sabers and bowie knifes
+                'machete',
+                'light_saber',
+                'bowie_knife',
+                'saber',
+                'heavy_saber',
+                // staffs and spears
+                'light_spear',
+                'shortened_staff',
+                'light_staff',
+                'spear',
+                'hobnailed_staff',
+                'long_spear',
+                'heavy_hobnailed_staff',
+                'pike',
+                'metal_staff',
+                // swords
+                'short_sword',
+                'hanger',
+                'glaive',
+                'long_sword',
+                'one_and_half_handed_sword',
+                'barbarian_sword',
+                'two_handed_sword',
+                // voulges and tridents
+                'pitchfork',
+                'light_voulge',
+                'light_trident',
+                'halberd',
+                'heavy_voulge',
+                'heavy_trident',
+                'heavy_halberd',
+                // unarmed
+                'hand',
+                'hobnailed_glove',
+                'leg',
+                'hobnailed_boot',
+                // bows
+                'short_bow',
+                'long_bow',
+                'short_composite_bow',
+                'long_composite_bow',
+                'power_bow',
+                // arrows
+                'basic_arrow',
+                'long_range_arrow',
+                'war_arrow',
+                'piercing_arrow',
+                'hollow_arrow',
+                'crippling_arrow',
+                'incendiary_arrow',
+                'silver_arrow',
+                // crossbows
+                'minicrossbow',
+                'light_crossbow',
+                'military_crossbow',
+                'heavy_crossbow',
+                // darts
+                'basic_dart',
+                'war_dart',
+                'piercing_dart',
+                'hollow_dart',
+                'silver_dart',
+                // throwing weapons
+                'rock',
+                'throwing_dagger',
+                'light_throwing_axe',
+                'war_throwing_axe',
+                'throwing_hammer',
+                'shuriken',
+                'spear',
+                'javelin',
+                'sling',
+                'sling_stone_light',
+                'sling_stone_heavier',
+            ],
+            WeaponCodes::getWeaponCodes()
+        );
+    }
+
 }

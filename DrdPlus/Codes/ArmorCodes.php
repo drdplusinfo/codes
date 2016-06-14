@@ -37,6 +37,9 @@ class ArmorCodes
     const BARREL_HELM = 'barrel_helm';
     const GREAT_HELM = 'great_helm';
 
+    /**
+     * @return array|string[]
+     */
     public static function getHelmCodes()
     {
         return [
@@ -48,5 +51,16 @@ class ArmorCodes
             self::BARREL_HELM,
             self::GREAT_HELM
         ];
+    }
+
+    /**
+     * @return array|string[]
+     */
+    public static function getArmorCodes()
+    {
+        return array_merge(
+            self::getBodyArmorCodes(),
+            self::getHelmCodes()
+        );
     }
 }
