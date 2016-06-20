@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\TerrainCode;
 
-class TerrainCodeTest extends AbstractCodesTest
+class TerrainCodeTest extends AbstractCodeTest
 {
     /**
      * @test

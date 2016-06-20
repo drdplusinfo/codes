@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\PropertyCode;
 
-class PropertyCodeTest extends AbstractCodesTest
+class PropertyCodeTest extends AbstractCodeTest
 {
     /**
      * @test
@@ -84,8 +84,6 @@ class PropertyCodeTest extends AbstractCodesTest
      */
     public function I_can_get_remarkable_property_codes()
     {
-        $this->I_can_get_codes_by_same_named_constants(['remarkable_sense']);
-
         self::assertEquals(
             $expectedCodes = [
                 'hearing',

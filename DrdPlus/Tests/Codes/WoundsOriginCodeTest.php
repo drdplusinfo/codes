@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\WoundsOriginCode;
 
-class WoundsOriginCodeTest extends AbstractCodesTest
+class WoundsOriginCodeTest extends AbstractCodeTest
 {
     /**
      * @test
@@ -11,78 +11,42 @@ class WoundsOriginCodeTest extends AbstractCodesTest
     public function I_can_get_all_codes_at_once()
     {
         self::assertSame(
-            $this->getExpectedWoundsOriginCodes(),
+            [
+                'psychical',
+                'elemental',
+                'mechanical_stab',
+                'mechanical_cut',
+                'mechanical_crush',
+            ],
             WoundsOriginCode::getWoundsOriginCodes()
         );
     }
 
-    private function getExpectedWoundsOriginCodes()
-    {
-        return [
-            'mechanical',
-            'psychical',
-            'elemental',
-        ];
-    }
-
     /**
      * @test
+     * @dataProvider provideOriginAndAnswersToType
+     * @param string $origin
+     * @param bool $isPsychical
+     * @param bool $isElemental
+     * @param bool $isMechanical
      */
-    public function I_can_get_type_of_mechanical_wounds_codes_at_once()
+    public function I_can_ask_it_if_is_mechanical($origin, $isPsychical, $isElemental, $isMechanical)
     {
-        self::assertSame(
-            $this->getExpectedTypeOfMechanicalWoundsCodes(),
-            WoundsOriginCode::getTypeOfMechanicalWoundsCodes()
-        );
+        $woundsOriginCode = WoundsOriginCode::getIt($origin);
+        self::assertSame($origin, $woundsOriginCode->getValue());
+        self::assertSame($isPsychical, $woundsOriginCode->isPsychical());
+        self::assertSame($isElemental, $woundsOriginCode->isElemental());
+        self::assertSame($isMechanical, $woundsOriginCode->isMechanical());
     }
 
-    private function getExpectedTypeOfMechanicalWoundsCodes()
+    public function provideOriginAndAnswersToType()
     {
         return [
-            'mechanical_stab',
-            'mechanical_cut',
-            'mechanical_crush',
+            ['psychical', true, false, false],
+            ['elemental', false, true, false],
+            ['mechanical_stab', false, false, true],
+            ['mechanical_cut', false, false, true],
+            ['mechanical_crush', false, false, true],
         ];
-    }
-
-    /**
-     * @test
-     * @dataProvider provideAllExpectedCodes
-     * @param array $expectedCodes
-     */
-    public function I_can_get_codes_by_same_named_constants(array $expectedCodes)
-    {
-        parent::I_can_get_codes_by_same_named_constants($expectedCodes);
-    }
-
-    public function provideAllExpectedCodes()
-    {
-        return [
-            [
-                array_merge(
-                    $this->getExpectedWoundsOriginCodes(),
-                    $this->getExpectedTypeOfMechanicalWoundsCodes()
-                )
-            ]
-        ];
-    }
-
-    /**
-     * @test
-     */
-    public function I_can_get_origins_with_type_codes_at_once()
-    {
-        self::assertSame(
-            array_merge(
-                $this->getExpectedTypeOfMechanicalWoundsCodes(),
-                array_filter(
-                    $this->getExpectedWoundsOriginCodes(),
-                    function ($woundsOriginCode) {
-                        return $woundsOriginCode !== 'mechanical';
-                    }
-                )
-            ),
-            WoundsOriginCode::getOriginWithTypeCodes()
-        );
     }
 }

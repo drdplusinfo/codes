@@ -9,7 +9,7 @@ class AfflictionByWoundDomainCode extends Code
     /**
      * @return array|string[]
      */
-    public static function getAfflictionDomainCodes()
+    public static function getAfflictionByWoundDomainCodes()
     {
         return [
             self::PHYSICAL,

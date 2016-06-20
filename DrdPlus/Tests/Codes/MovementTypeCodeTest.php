@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\MovementTypeCode;
 
-class MovementTypeCodeTest extends AbstractCodesTest
+class MovementTypeCodeTest extends AbstractCodeTest
 {
     /**
      * @test
@@ -17,7 +17,7 @@ class MovementTypeCodeTest extends AbstractCodesTest
                 'run',
                 'sprint'
             ],
-            MovementTypeCode::getMovementTypCodes()
+            MovementTypeCode::getMovementTypeCodes()
         );
     }
 }

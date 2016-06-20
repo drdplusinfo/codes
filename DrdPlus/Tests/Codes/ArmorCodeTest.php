@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\ArmorCode;
 
-class ArmorCodeTest extends AbstractCodesTest
+class ArmorCodeTest extends AbstractCodeTest
 {
     /**
      * @test

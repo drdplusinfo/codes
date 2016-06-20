@@ -1,24 +1,13 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static WoundsOriginCode getIt($codeValue)
+ */
 class WoundsOriginCode extends Code
 {
-    const MECHANICAL = 'mechanical';
     const PSYCHICAL = 'psychical';
     const ELEMENTAL = 'elemental';
-
-    /**
-     * @return array|string[]
-     */
-    public static function getWoundsOriginCodes()
-    {
-        return [
-            self::MECHANICAL,
-            self::PSYCHICAL,
-            self::ELEMENTAL
-        ];
-    }
-
     const MECHANICAL_STAB = 'mechanical_stab';
     const MECHANICAL_CUT = 'mechanical_cut';
     const MECHANICAL_CRUSH = 'mechanical_crush';
@@ -26,9 +15,11 @@ class WoundsOriginCode extends Code
     /**
      * @return array|string[]
      */
-    public static function getTypeOfMechanicalWoundsCodes()
+    public static function getWoundsOriginCodes()
     {
         return [
+            self::PSYCHICAL,
+            self::ELEMENTAL,
             self::MECHANICAL_STAB,
             self::MECHANICAL_CUT,
             self::MECHANICAL_CRUSH
@@ -36,16 +27,26 @@ class WoundsOriginCode extends Code
     }
 
     /**
-     * @return array|string[]
+     * @return bool
      */
-    public static function getOriginWithTypeCodes()
+    public function isPsychical()
     {
-        return [
-            self::MECHANICAL_STAB,
-            self::MECHANICAL_CUT,
-            self::MECHANICAL_CRUSH,
-            self::PSYCHICAL,
-            self::ELEMENTAL
-        ];
+        return $this->getValue() === self::PSYCHICAL;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isElemental()
+    {
+        return $this->getValue() === self::ELEMENTAL;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isMechanical()
+    {
+        return in_array($this->getValue(), [self::MECHANICAL_STAB, self::MECHANICAL_CUT, self::MECHANICAL_CRUSH], true);
     }
 }

@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\WoundTypeCode;
 
-class WoundTypeCodeTest extends AbstractCodesTest
+class WoundTypeCodeTest extends AbstractCodeTest
 {
     /**
      * @test

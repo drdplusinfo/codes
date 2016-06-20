@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\AfflictionByWoundDomainCode;
 
-class AfflictionByWoundDomainCodeTest extends AbstractCodesTest
+class AfflictionByWoundDomainCodeTest extends AbstractCodeTest
 {
     /**
      * @test
@@ -12,7 +12,7 @@ class AfflictionByWoundDomainCodeTest extends AbstractCodesTest
     {
         self::assertSame(
             $expectedCodes = ['physical', 'psychical'],
-            AfflictionByWoundDomainCode::getAfflictionDomainCodes()
+            AfflictionByWoundDomainCode::getAfflictionByWoundDomainCodes()
         );
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }

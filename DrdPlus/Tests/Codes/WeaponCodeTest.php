@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\WeaponCode;
 
-class WeaponCodeTest extends AbstractCodesTest
+class WeaponCodeTest extends AbstractCodeTest
 {
     /**
      * @test
@@ -311,7 +311,7 @@ class WeaponCodeTest extends AbstractCodesTest
     public function I_can_get_all_codes_at_once()
     {
         self::assertSame(
-            [
+            $expectedValues = [
                 // axes
                 'light_axe',
                 'axe',
@@ -411,13 +411,18 @@ class WeaponCodeTest extends AbstractCodesTest
                 'war_throwing_axe',
                 'throwing_hammer',
                 'shuriken',
-                'spear',
+                // 'spear',
                 'javelin',
                 'sling',
                 'sling_stone_light',
                 'sling_stone_heavier',
             ],
-            WeaponCode::getWeaponCodes()
+            WeaponCode::getWeaponCodes(),
+            'There are ' . (
+            count($missingOrDifferent = array_diff_assoc($expectedValues, WeaponCode::getWeaponCodes())) > 0
+                ? 'missing values or different keys in given: ' . var_export($missingOrDifferent, true)
+                : 'superfluous values or different keys in given: ' . var_export(array_diff_assoc(WeaponCode::getWeaponCodes(), $expectedValues), true)
+            )
         );
     }
 

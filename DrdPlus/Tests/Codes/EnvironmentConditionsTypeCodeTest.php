@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\EnvironmentConditionsTypeCode;
 
-class EnvironmentConditionsTypeCodeTest extends AbstractCodesTest
+class EnvironmentConditionsTypeCodeTest extends AbstractCodeTest
 {
     /**
      * @test

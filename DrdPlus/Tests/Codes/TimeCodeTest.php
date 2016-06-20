@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\TimeCode;
 
-class TimeCodeTest extends AbstractCodesTest
+class TimeCodeTest extends AbstractCodeTest
 {
     /**
      * @test

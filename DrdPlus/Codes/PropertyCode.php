@@ -92,7 +92,6 @@ class PropertyCode extends Code
     }
 
     // remarkable senses
-    const REMARKABLE_SENSE = 'remarkable_sense';
     const HEARING = 'hearing';
     const SIGHT = 'sight';
     const SMELL = 'smell';

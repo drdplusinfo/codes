@@ -353,22 +353,26 @@ class WeaponCode extends Code
      */
     public static function getWeaponCodes()
     {
-        return array_merge(
-            self::getAxeCodes(),
-            self::getKnifeAndDaggerCodes(),
-            self::getMaceAndClubCodes(),
-            self::getMorningstarAndMorgensternCodes(),
-            self::getSaberAndBowieKnifeCodes(),
-            self::getStaffAndSpearCodes(),
-            self::getSwordCodes(),
-            self::getVoulgeAndTridentCodes(),
-            self::getUnarmedCodes(),
-            self::getBowCodes(),
-            self::getArrowCodes(),
-            self::getCrossbowCodes(),
-            self::getDartCodes(),
-            self::getThrowingWeaponCodes(),
-            self::getSlingStoneCodes()
+        return array_values( // to get continual integer keys
+            array_unique(
+                array_merge(
+                    self::getAxeCodes(),
+                    self::getKnifeAndDaggerCodes(),
+                    self::getMaceAndClubCodes(),
+                    self::getMorningstarAndMorgensternCodes(),
+                    self::getSaberAndBowieKnifeCodes(),
+                    self::getStaffAndSpearCodes(),
+                    self::getSwordCodes(),
+                    self::getVoulgeAndTridentCodes(),
+                    self::getUnarmedCodes(),
+                    self::getBowCodes(),
+                    self::getArrowCodes(),
+                    self::getCrossbowCodes(),
+                    self::getDartCodes(),
+                    self::getThrowingWeaponCodes(),
+                    self::getSlingStoneCodes()
+                )
+            )
         );
     }
 }

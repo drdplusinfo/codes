@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\RaceCode;
 
-class RaceCodeTest extends AbstractCodesTest
+class RaceCodeTest extends AbstractCodeTest
 {
     /**
      * @test
@@ -86,4 +86,23 @@ class RaceCodeTest extends AbstractCodesTest
 
         return $flat;
     }
+
+    /**
+     * @test
+     */
+    public function All_constants_can_be_given_by_getter()
+    {
+        $constantValues = (new \ReflectionClass(RaceCode::class))->getConstants();
+        sort($constantValues); // re-index by numbers
+        $givenValues = RaceCode::getRaceCodes();
+        foreach (RaceCode::getSubRaceCodes() as $singleRaceSubRaceCodes) {
+            foreach ($singleRaceSubRaceCodes as $singleRaceSubRaceCode) {
+                $givenValues[] = $singleRaceSubRaceCode;
+            }
+        }
+        $givenValues = array_unique($givenValues);
+        sort($givenValues);
+        self::assertSame($constantValues, $givenValues);
+    }
+
 }

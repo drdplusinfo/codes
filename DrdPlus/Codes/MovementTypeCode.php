@@ -11,7 +11,7 @@ class MovementTypeCode extends Code
     /**
      * @return array|string[]
      */
-    public static function getMovementTypCodes()
+    public static function getMovementTypeCodes()
     {
         return [
             self::WALK,

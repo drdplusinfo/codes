@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\GenderCode;
 
-class GenderCodeTest extends AbstractCodesTest
+class GenderCodeTest extends AbstractCodeTest
 {
     /**
      * @test

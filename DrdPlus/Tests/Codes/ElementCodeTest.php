@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\ElementCode;
 
-class ElementCodeTest extends AbstractCodesTest
+class ElementCodeTest extends AbstractCodeTest
 {
     /**
      * @test

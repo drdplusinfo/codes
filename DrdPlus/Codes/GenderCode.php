@@ -3,7 +3,6 @@ namespace DrdPlus\Codes;
 
 class GenderCode extends Code
 {
-    const GENDER = 'gender';
     const MALE = 'male';
     const FEMALE = 'female';
 

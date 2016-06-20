@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\ShieldCode;
 
-class ShieldCodeTest extends AbstractCodesTest
+class ShieldCodeTest extends AbstractCodeTest
 {
     /**
      * @test
