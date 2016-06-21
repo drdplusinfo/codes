@@ -73,6 +73,7 @@ class PropertyCodeTest extends AbstractCodeTest
             $expectedCodes = [
                 'infravision',
                 'native_regeneration',
+                'remarkable_sense',
             ],
             PropertyCode::getNativePropertyCodes()
         );
@@ -92,7 +93,7 @@ class PropertyCodeTest extends AbstractCodeTest
                 'taste',
                 'touch',
             ],
-            PropertyCode::getRemarkablePropertyCodes()
+            PropertyCode::getRemarkableSensePropertyCodes()
         );
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
@@ -140,6 +141,7 @@ class PropertyCodeTest extends AbstractCodeTest
                 'wound_boundary',
                 'infravision',
                 'native_regeneration',
+                'remarkable_sense',
                 'hearing',
                 'sight',
                 'smell',

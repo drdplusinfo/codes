@@ -22,7 +22,7 @@ class PropertyCode extends Code
             self::KNACK,
             self::WILL,
             self::INTELLIGENCE,
-            self::CHARISMA
+            self::CHARISMA,
         ];
     }
 
@@ -77,6 +77,7 @@ class PropertyCode extends Code
     }
 
     // native
+    const REMARKABLE_SENSE = 'remarkable_sense';
     const INFRAVISION = 'infravision';
     const NATIVE_REGENERATION = 'native_regeneration';
 
@@ -88,6 +89,7 @@ class PropertyCode extends Code
         return [
             self::INFRAVISION,
             self::NATIVE_REGENERATION,
+            self::REMARKABLE_SENSE,
         ];
     }
 
@@ -101,7 +103,7 @@ class PropertyCode extends Code
     /**
      * @return array|string[]
      */
-    public static function getRemarkablePropertyCodes()
+    public static function getRemarkableSensePropertyCodes()
     {
         return [
             self::HEARING,
@@ -135,7 +137,7 @@ class PropertyCode extends Code
             self::getBodyPropertyCodes(),
             self::getDerivedPropertyCodes(),
             self::getNativePropertyCodes(),
-            self::getRemarkablePropertyCodes(),
+            self::getRemarkableSensePropertyCodes(),
             self::getRestrictionPropertyCodes()
         );
     }
