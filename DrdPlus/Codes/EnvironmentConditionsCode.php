@@ -1,7 +1,7 @@
 <?php
 namespace DrdPlus\Codes;
 
-class EnvironmentConditionsTypeCode extends Code
+class EnvironmentConditionsCode extends Code
 {
     const FOUL_CONDITIONS = 'foul_conditions';
     const BAD_CONDITIONS = 'bad_conditions';
@@ -11,7 +11,7 @@ class EnvironmentConditionsTypeCode extends Code
     /**
      * @return array|string[]
      */
-    public static function getEnvironmentConditionsTypeCodes()
+    public static function getEnvironmentConditionsCodes()
     {
         return [
             self::FOUL_CONDITIONS,
