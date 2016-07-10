@@ -57,6 +57,8 @@ class PropertyCode extends Code
     const SPEED = 'speed';
     const TOUGHNESS = 'toughness';
     const WOUND_BOUNDARY = 'wound_boundary';
+    const MOVEMENT_SPEED = 'movement_speed';
+    const MAXIMAL_LOAD = 'maximal_load';
 
     /**
      * @return array|string[]
@@ -73,6 +75,8 @@ class PropertyCode extends Code
             self::SPEED,
             self::TOUGHNESS,
             self::WOUND_BOUNDARY,
+            self::MOVEMENT_SPEED,
+            self::MAXIMAL_LOAD,
         ];
     }
 
