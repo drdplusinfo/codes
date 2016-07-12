@@ -1,9 +1,9 @@
 <?php
 namespace DrdPlus\Tests\Codes;
 
-use DrdPlus\Codes\RidingAnimalMovementTypeCode;
+use DrdPlus\Codes\RidingAnimalMovementCode;
 
-class RidingAnimalMovementTypeCodeTest extends AbstractCodeTest
+class RidingAnimalMovementCodeTest extends AbstractCodeTest
 {
 
     /**
@@ -18,7 +18,7 @@ class RidingAnimalMovementTypeCodeTest extends AbstractCodeTest
                 'canter',
                 'gallop'
             ],
-            RidingAnimalMovementTypeCode::getRidingAnimalMovementTypeCodes()
+            RidingAnimalMovementCode::getRidingAnimalMovementCodes()
         );
     }
 }

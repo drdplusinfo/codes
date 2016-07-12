@@ -1,7 +1,7 @@
 <?php
 namespace DrdPlus\Codes;
 
-class RidingAnimalMovementTypeCode extends Code
+class RidingAnimalMovementCode extends Code
 {
     const GAIT = 'gait';
     const TROT = 'trot';
@@ -11,7 +11,7 @@ class RidingAnimalMovementTypeCode extends Code
     /**
      * @return array|string[]
      */
-    public static function getRidingAnimalMovementTypeCodes()
+    public static function getRidingAnimalMovementCodes()
     {
         return [
             self::GAIT,
