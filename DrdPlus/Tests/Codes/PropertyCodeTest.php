@@ -60,7 +60,6 @@ class PropertyCodeTest extends AbstractCodeTest
                 'wound_boundary',
                 'movement_speed',
                 'maximal_load',
-                'maximal_load_in_kg',
             ],
             PropertyCode::getDerivedPropertyCodes()
         );
@@ -144,7 +143,6 @@ class PropertyCodeTest extends AbstractCodeTest
                 'wound_boundary',
                 'movement_speed',
                 'maximal_load',
-                'maximal_load_in_kg',
                 'infravision',
                 'native_regeneration',
                 'remarkable_sense',

@@ -59,7 +59,6 @@ class PropertyCode extends Code
     const WOUND_BOUNDARY = 'wound_boundary';
     const MOVEMENT_SPEED = 'movement_speed';
     const MAXIMAL_LOAD = 'maximal_load';
-    const MAXIMAL_LOAD_IN_KG = 'maximal_load_in_kg';
 
     /**
      * @return array|string[]
@@ -78,7 +77,6 @@ class PropertyCode extends Code
             self::WOUND_BOUNDARY,
             self::MOVEMENT_SPEED,
             self::MAXIMAL_LOAD,
-            self::MAXIMAL_LOAD_IN_KG,
         ];
     }
 
