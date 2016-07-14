@@ -12,6 +12,7 @@ class MovementTypeCodeTest extends AbstractCodeTest
     {
         self::assertSame(
             [
+                'waiting',
                 'walk',
                 'rush',
                 'run',

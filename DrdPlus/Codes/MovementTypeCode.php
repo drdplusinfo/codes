@@ -3,6 +3,7 @@ namespace DrdPlus\Codes;
 
 class MovementTypeCode extends Code
 {
+    const WAITING = 'waiting';
     const WALK = 'walk';
     const RUSH = 'rush';
     const RUN = 'run';
@@ -14,6 +15,7 @@ class MovementTypeCode extends Code
     public static function getMovementTypeCodes()
     {
         return [
+            self::WAITING,
             self::WALK,
             self::RUSH,
             self::RUN,
