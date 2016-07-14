@@ -13,10 +13,12 @@ class RidingAnimalMovementCodeTest extends AbstractCodeTest
     {
         self::assertSame(
             [
+                'still',
                 'gait',
                 'trot',
                 'canter',
-                'gallop'
+                'gallop',
+                'jumping'
             ],
             RidingAnimalMovementCode::getRidingAnimalMovementCodes()
         );
