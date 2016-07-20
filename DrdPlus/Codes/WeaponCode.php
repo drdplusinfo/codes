@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static WeaponCode getIt($code)
+ */
 class WeaponCode extends Code
 {
     // axes
@@ -374,5 +377,125 @@ class WeaponCode extends Code
                 )
             )
         );
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAxe()
+    {
+        return in_array($this->getValue(), self::getAxeCodes(), true);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isKnifeOrDagger()
+    {
+        return in_array($this->getValue(), self::getKnifeAndDaggerCodes(), true);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isMaceOrClub()
+    {
+        return in_array($this->getValue(), self::getMaceAndClubCodes(), true);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isMorningStarOrMorgenstern()
+    {
+        return in_array($this->getValue(), self::getMorningstarAndMorgensternCodes(), true);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSaberOrBowieKnife()
+    {
+        return in_array($this->getValue(), self::getSaberAndBowieKnifeCodes(), true);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isStaffOrSpear()
+    {
+        return in_array($this->getValue(), self::getStaffAndSpearCodes(), true);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSword()
+    {
+        return in_array($this->getValue(), self::getSwordCodes(), true);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isVoulgeOrTrident()
+    {
+        return in_array($this->getValue(), self::getVoulgeAndTridentCodes(), true);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isUnarmed()
+    {
+        return in_array($this->getValue(), self::getUnarmedCodes(), true);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isBow()
+    {
+        return in_array($this->getValue(), self::getBowCodes(), true);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isArrow()
+    {
+        return in_array($this->getValue(), self::getArrowCodes(), true);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isCrossbow()
+    {
+        return in_array($this->getValue(), self::getCrossbowCodes(), true);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDart()
+    {
+        return in_array($this->getValue(), self::getDartCodes(), true);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isThrowingWeapon()
+    {
+        return in_array($this->getValue(), self::getThrowingWeaponCodes(), true);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSlingStone()
+    {
+        return in_array($this->getValue(), self::getSlingStoneCodes(), true);
     }
 }

@@ -426,4 +426,159 @@ class WeaponCodeTest extends AbstractCodeTest
         );
     }
 
+    /**
+     * @test
+     */
+    public function I_can_ask_code_if_is_specific_weapon_type()
+    {
+        $questions = [
+            'isAxe', 'isKnifeOrDagger', 'isMaceOrClub', 'isMorningStarOrMorgenstern', 'isSaberOrBowieKnife',
+            'isStaffOrSpear', 'isSword', 'isVoulgeOrTrident', 'isUnarmed', 'isBow', 'isArrow', 'isCrossbow',
+            'isDart', 'isThrowingWeapon', 'isSlingStone'
+        ];
+        foreach (WeaponCode::getAxeCodes() as $codeValue) {
+            $code = WeaponCode::getIt($codeValue);
+            self::assertTrue($code->isAxe());
+            foreach ($questions as $question) {
+                if ($question !== 'isAxe') {
+                    self::assertFalse($code->$question());
+                }
+            }
+        }
+        foreach (WeaponCode::getKnifeAndDaggerCodes() as $codeValue) {
+            $code = WeaponCode::getIt($codeValue);
+            self::assertTrue($code->isKnifeOrDagger());
+            foreach ($questions as $question) {
+                if ($question !== 'isKnifeOrDagger') {
+                    self::assertFalse($code->$question());
+                }
+            }
+        }
+        foreach (WeaponCode::getMaceAndClubCodes() as $codeValue) {
+            $code = WeaponCode::getIt($codeValue);
+            self::assertTrue($code->isMaceOrClub());
+            foreach ($questions as $question) {
+                if ($question !== 'isMaceOrClub') {
+                    self::assertFalse($code->$question());
+                }
+            }
+        }
+        foreach (WeaponCode::getMorningstarAndMorgensternCodes() as $codeValue) {
+            $code = WeaponCode::getIt($codeValue);
+            self::assertTrue($code->isMorningStarOrMorgenstern());
+            foreach ($questions as $question) {
+                if ($question !== 'isMorningStarOrMorgenstern') {
+                    self::assertFalse($code->$question());
+                }
+            }
+        }
+        foreach (WeaponCode::getSaberAndBowieKnifeCodes() as $codeValue) {
+            $code = WeaponCode::getIt($codeValue);
+            self::assertTrue($code->isSaberOrBowieKnife());
+            foreach ($questions as $question) {
+                if ($question !== 'isSaberOrBowieKnife') {
+                    self::assertFalse($code->$question());
+                }
+            }
+        }
+        foreach (WeaponCode::getStaffAndSpearCodes() as $codeValue) {
+            $code = WeaponCode::getIt($codeValue);
+            self::assertTrue($code->isStaffOrSpear());
+            foreach ($questions as $question) {
+                if ($question !== 'isStaffOrSpear') {
+                    if ($question !== 'isThrowingWeapon' || $codeValue !== WeaponCode::SPEAR) {
+                        self::assertFalse($code->$question());
+                    } else {
+                        self::assertTrue($code->$question());
+                    }
+                }
+            }
+        }
+        foreach (WeaponCode::getSwordCodes() as $codeValue) {
+            $code = WeaponCode::getIt($codeValue);
+            self::assertTrue($code->isSword());
+            foreach ($questions as $question) {
+                if ($question !== 'isSword') {
+                    self::assertFalse($code->$question());
+                }
+            }
+        }
+        foreach (WeaponCode::getVoulgeAndTridentCodes() as $codeValue) {
+            $code = WeaponCode::getIt($codeValue);
+            self::assertTrue($code->isVoulgeOrTrident());
+            foreach ($questions as $question) {
+                if ($question !== 'isVoulgeOrTrident') {
+                    self::assertFalse($code->$question());
+                }
+            }
+        }
+        foreach (WeaponCode::getUnarmedCodes() as $codeValue) {
+            $code = WeaponCode::getIt($codeValue);
+            self::assertTrue($code->isUnarmed());
+            foreach ($questions as $question) {
+                if ($question !== 'isUnarmed') {
+                    self::assertFalse($code->$question());
+                }
+            }
+        }
+        foreach (WeaponCode::getBowCodes() as $codeValue) {
+            $code = WeaponCode::getIt($codeValue);
+            self::assertTrue($code->isBow());
+            foreach ($questions as $question) {
+                if ($question !== 'isBow') {
+                    self::assertFalse($code->$question());
+                }
+            }
+        }
+        foreach (WeaponCode::getArrowCodes() as $codeValue) {
+            $code = WeaponCode::getIt($codeValue);
+            self::assertTrue($code->isArrow());
+            foreach ($questions as $question) {
+                if ($question !== 'isArrow') {
+                    self::assertFalse($code->$question());
+                }
+            }
+        }
+        foreach (WeaponCode::getCrossbowCodes() as $codeValue) {
+            $code = WeaponCode::getIt($codeValue);
+            self::assertTrue($code->isCrossbow());
+            foreach ($questions as $question) {
+                if ($question !== 'isCrossbow') {
+                    self::assertFalse($code->$question());
+                }
+            }
+        }
+        foreach (WeaponCode::getDartCodes() as $codeValue) {
+            $code = WeaponCode::getIt($codeValue);
+            self::assertTrue($code->isDart());
+            foreach ($questions as $question) {
+                if ($question !== 'isDart') {
+                    self::assertFalse($code->$question());
+                }
+            }
+        }
+        foreach (WeaponCode::getThrowingWeaponCodes() as $codeValue) {
+            $code = WeaponCode::getIt($codeValue);
+            self::assertTrue($code->isThrowingWeapon());
+            foreach ($questions as $question) {
+                if ($question !== 'isThrowingWeapon') {
+                    if ($question !== 'isStaffOrSpear' || $codeValue !== WeaponCode::SPEAR) {
+                        self::assertFalse($code->$question());
+                    } else {
+                        self::assertTrue($code->$question(), "{$codeValue} should be {$question}");
+                    }
+                }
+            }
+        }
+        foreach (WeaponCode::getSlingStoneCodes() as $codeValue) {
+            $code = WeaponCode::getIt($codeValue);
+            self::assertTrue($code->isSlingStone());
+            foreach ($questions as $question) {
+                if ($question !== 'isSlingStone') {
+                    self::assertFalse($code->$question());
+                }
+            }
+        }
+    }
+
 }
