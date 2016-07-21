@@ -1,10 +1,19 @@
 <?php
 namespace DrdPlus\Tests\Codes;
 
+use DrdPlus\Codes\ArmamentCode;
 use DrdPlus\Codes\WeaponCode;
 
 class WeaponCodeTest extends AbstractCodeTest
 {
+    /**
+     * @test
+     */
+    public function It_is_armament_code()
+    {
+        self::assertInstanceOf(ArmamentCode::class, WeaponCode::getIt(WeaponCode::AXE));
+    }
+
     /**
      * @test
      */

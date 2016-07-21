@@ -4,7 +4,7 @@ namespace DrdPlus\Codes;
 /**
  * @method static WeaponCode getIt($code)
  */
-class WeaponCode extends Code
+class WeaponCode extends ArmamentCode
 {
     // axes
     const LIGHT_AXE = 'light_axe';

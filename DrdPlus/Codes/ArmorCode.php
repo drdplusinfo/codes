@@ -1,7 +1,10 @@
 <?php
 namespace DrdPlus\Codes;
 
-class ArmorCode extends Code
+/**
+ * @method static ArmorCode getIt($code)
+ */
+class ArmorCode extends ArmamentCode
 {
     const WITHOUT_ARMOR = 'without_armor';
     const PADDED_ARMOR = 'padded_armor';
