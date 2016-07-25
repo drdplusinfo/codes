@@ -339,7 +339,11 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         foreach (MeleeWeaponCode::getStaffAndSpearCodes() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMeleeWeapon());
-            self::assertFalse($code->isShootingWeapon());
+            if ($codeValue !== MeleeWeaponCode::SPEAR) {
+                self::assertFalse($code->isShootingWeapon());
+            } else {
+                self::assertTrue($code->isShootingWeapon());
+            }
             self::assertTrue($code->isStaffOrSpear());
             foreach ($questions as $question) {
                 if ($question !== 'isStaffOrSpear') {

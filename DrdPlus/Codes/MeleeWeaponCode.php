@@ -252,7 +252,7 @@ class MeleeWeaponCode extends WeaponCode
      */
     public function isShootingWeapon()
     {
-        return false;
+        return $this->getValue() === self::SPEAR; // spear can be used both as a shooting and melee weapon
     }
 
     /**

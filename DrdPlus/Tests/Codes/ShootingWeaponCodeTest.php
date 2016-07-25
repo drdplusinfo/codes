@@ -233,8 +233,11 @@ class ShootingWeaponCodeTest extends WeaponCodeTest
         foreach (ShootingWeaponCode::getThrowingWeaponCodes() as $codeValue) {
             $code = ShootingWeaponCode::getIt($codeValue);
             self::assertTrue($code->isShootingWeapon());
-            self::assertFalse($code->isMeleeWeapon());
-            self::assertTrue($code->isThrowingWeapon());
+            if ($codeValue !== ShootingWeaponCode::SPEAR) {
+                self::assertFalse($code->isMeleeWeapon());
+            } else {
+                self::assertTrue($code->isMeleeWeapon());
+            }
             foreach ($questions as $question) {
                 if ($question !== 'isThrowingWeapon') {
                     if ($question !== 'isStaffOrSpear' || $codeValue !== ShootingWeaponCode::SPEAR) {
