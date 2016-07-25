@@ -250,9 +250,9 @@ class MeleeWeaponCode extends WeaponCode
     /**
      * @return bool
      */
-    public function isShootingWeapon()
+    public function isRangeWeapon()
     {
-        return $this->getValue() === self::SPEAR; // spear can be used both as a shooting and melee weapon
+        return $this->getValue() === self::SPEAR; // spear can be used both as a range and melee weapon
     }
 
     /**

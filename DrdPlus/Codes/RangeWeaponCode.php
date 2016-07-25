@@ -2,9 +2,9 @@
 namespace DrdPlus\Codes;
 
 /**
- * @method static ShootingWeaponCode getIt($code)
+ * @method static RangeWeaponCode getIt($code)
  */
-class ShootingWeaponCode extends WeaponCode
+class RangeWeaponCode extends WeaponCode
 {
 
     // bows
@@ -142,7 +142,7 @@ class ShootingWeaponCode extends WeaponCode
     /**
      * @return array|string[]
      */
-    public static function getShootingWeaponCodes()
+    public static function getRangeWeaponCodes()
     {
         return array_values( // to get continual integer keys
             array_merge(
@@ -161,13 +161,13 @@ class ShootingWeaponCode extends WeaponCode
      */
     public function isMeleeWeapon()
     {
-        return $this->getValue() === self::SPEAR; // spear can be used both as a shooting and melee weapon
+        return $this->getValue() === self::SPEAR; // spear can be used both as a range and melee weapon
     }
 
     /**
      * @return bool
      */
-    public function isShootingWeapon()
+    public function isRangeWeapon()
     {
         return true;
     }

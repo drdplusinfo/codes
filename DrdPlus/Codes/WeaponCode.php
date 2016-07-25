@@ -15,5 +15,5 @@ abstract class WeaponCode extends ArmamentCode
     /**
      * @return bool
      */
-    abstract public function isShootingWeapon();
+    abstract public function isRangeWeapon();
 }
