@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static ShieldCode getIt($codeValue)
+ */
 class ShieldCode extends Code
 {
     const BUCKLER = 'buckler';

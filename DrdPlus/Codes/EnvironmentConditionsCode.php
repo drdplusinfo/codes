@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static EnvironmentConditionsCode getIt($codeValue)
+ */
 class EnvironmentConditionsCode extends Code
 {
     const FOUL_CONDITIONS = 'foul_conditions';

@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static TerrainCode getIt($codeValue)
+ */
 class TerrainCode extends Code
 {
     const ROAD = 'road';

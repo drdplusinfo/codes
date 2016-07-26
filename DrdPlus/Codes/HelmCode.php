@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static HelmCode getIt($codeValue)
+ */
 class HelmCode extends ArmorCode
 {
 

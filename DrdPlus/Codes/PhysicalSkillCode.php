@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static PhysicalSkillCode getIt($codeValue)
+ */
 class PhysicalSkillCode extends SkillCode
 {
     // PHYSICAL

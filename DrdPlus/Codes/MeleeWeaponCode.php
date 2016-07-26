@@ -2,7 +2,7 @@
 namespace DrdPlus\Codes;
 
 /**
- * @method static MeleeWeaponCode getIt($code)
+ * @method static MeleeWeaponCode getIt($codeValue)
  */
 class MeleeWeaponCode extends WeaponCode
 {

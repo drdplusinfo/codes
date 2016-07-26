@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\Code;
 
-abstract class SkillCodeTest extends AbstractCodeTest
+abstract class SkillCodeTest extends CodeTest
 {
     /**
      * @test

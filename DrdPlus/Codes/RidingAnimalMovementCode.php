@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static RidingAnimalMovementCode getIt($codeValue)
+ */
 class RidingAnimalMovementCode extends Code
 {
     const STILL = 'still';

@@ -1,9 +1,6 @@
 <?php
 namespace DrdPlus\Codes;
 
-/**
- * @method static ArmorCode getIt($code)
- */
 abstract class ArmorCode extends ArmamentCode
 {
     /**

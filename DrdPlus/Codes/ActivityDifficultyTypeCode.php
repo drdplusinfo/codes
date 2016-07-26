@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static ActivityDifficultyTypeCode getIt($codeValue)
+ */
 class ActivityDifficultyTypeCode extends Code
 {
     const SLEEPING_OR_REST_IN_BED = 'sleeping_or_rest_in_bed';

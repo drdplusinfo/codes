@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static GenderCode getIt($codeValue)
+ */
 class GenderCode extends Code
 {
     const MALE = 'male';

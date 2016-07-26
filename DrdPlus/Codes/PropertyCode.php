@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static PropertyCode getIt($codeValue)
+ */
 class PropertyCode extends Code
 {
     // base

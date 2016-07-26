@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\MovementTypeCode;
 
-class MovementTypeCodeTest extends AbstractCodeTest
+class MovementTypeCodeTest extends CodeTest
 {
     /**
      * @test

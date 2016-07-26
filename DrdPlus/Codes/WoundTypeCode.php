@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static WoundTypeCode getIt($codeValue)
+ */
 class WoundTypeCode extends Code
 {
     const CRUSH = 'crush';

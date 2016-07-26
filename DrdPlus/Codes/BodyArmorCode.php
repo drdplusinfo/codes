@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static BodyArmorCode getIt($codeValue)
+ */
 class BodyArmorCode extends ArmorCode
 {
     const WITHOUT_ARMOR = 'without_armor';

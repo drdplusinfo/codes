@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static RaceCode getIt($codeValue)
+ */
 class RaceCode extends Code
 {
     const HUMAN = 'human';

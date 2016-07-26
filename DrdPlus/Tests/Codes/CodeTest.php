@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\Code;
 
-abstract class AbstractCodeTest extends \PHPUnit_Framework_TestCase
+abstract class CodeTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -79,9 +79,10 @@ abstract class AbstractCodeTest extends \PHPUnit_Framework_TestCase
         $constantValues = (new \ReflectionClass($sutClass))->getConstants();
         sort($constantValues); // re-index by numbers
         $allValuesGetter = $this->getAllValuesGetter();
+        /** @var string[] $givenValues */
         $givenValues = $sutClass::$allValuesGetter();
         $expectedIndex = 0;
-        foreach (array_keys($givenValues) as $index) {
+        foreach ($givenValues as $index => $value) {
             self::assertSame($expectedIndex, $index, 'Indexes of all values should be continual.');
             $expectedIndex++;
         }
@@ -115,10 +116,27 @@ abstract class AbstractCodeTest extends \PHPUnit_Framework_TestCase
     {
         $sutClass = $this->getSutClass();
         $allValuesGetter = $this->getAllValuesGetter();
+        /** @var string[] $givenValues */
         $givenValues = $sutClass::$allValuesGetter();
         foreach ($givenValues as $givenValue) {
             $code = $sutClass::getIt($givenValue);
             self::assertSame($givenValue, (string)$code);
         }
+    }
+
+    /**
+     * @test
+     */
+    public function I_get_whispered_current_code_as_return_value_of_factory_method()
+    {
+        $reflectionClass = new \ReflectionClass($this->getSutClass());
+        $classBaseName = preg_replace('~^.*[\\\](\w+)$~', '$1', $this->getSutClass());
+        self::assertSame(<<<PHPDOC
+/**
+ * @method static {$classBaseName} getIt(\$codeValue)
+ */
+PHPDOC
+            , $reflectionClass->getDocComment()
+        );
     }
 }

@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static ElementCode getIt($codeValue)
+ */
 class ElementCode extends Code
 {
     const FIRE = 'fire';

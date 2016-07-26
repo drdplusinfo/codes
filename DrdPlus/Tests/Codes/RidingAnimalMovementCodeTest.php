@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\RidingAnimalMovementCode;
 
-class RidingAnimalMovementCodeTest extends AbstractCodeTest
+class RidingAnimalMovementCodeTest extends CodeTest
 {
 
     /**

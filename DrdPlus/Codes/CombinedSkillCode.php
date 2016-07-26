@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static CombinedSkillCode getIt($codeValue)
+ */
 class CombinedSkillCode extends SkillCode
 {
 

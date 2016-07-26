@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static TimeCode getIt($codeValue)
+ */
 class TimeCode extends Code
 {
     const ROUND = 'round';

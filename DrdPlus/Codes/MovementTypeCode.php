@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static MovementTypeCode getIt($codeValue)
+ */
 class MovementTypeCode extends Code
 {
     const WAITING = 'waiting';

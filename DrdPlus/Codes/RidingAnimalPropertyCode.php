@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static RidingAnimalPropertyCode getIt($codeValue)
+ */
 class RidingAnimalPropertyCode extends Code
 {
     const SPEED = PropertyCode::SPEED;

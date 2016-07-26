@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static ProfessionCode getIt($codeValue)
+ */
 class ProfessionCode extends Code
 {
     const FIGHTER = 'fighter';

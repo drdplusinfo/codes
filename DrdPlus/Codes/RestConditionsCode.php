@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static RestConditionsCode getIt($codeValue)
+ */
 class RestConditionsCode extends Code
 {
     const HALF_TIME_OF_REST_OR_SLEEP = 'half_time_of_rest_or_sleep';

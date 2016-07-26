@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static SkillTypeCode getIt($codeValue)
+ */
 class SkillTypeCode extends Code
 {
     const PHYSICAL = 'physical';

@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\RestConditionsCode;
 
-class RestConditionsCodeTest extends AbstractCodeTest
+class RestConditionsCodeTest extends CodeTest
 {
     /**
      * @test

@@ -1,6 +1,9 @@
 <?php
 namespace DrdPlus\Codes;
 
+/**
+ * @method static PsychicalSkillCode getIt($codeValue)
+ */
 class PsychicalSkillCode extends SkillCode
 {
 
