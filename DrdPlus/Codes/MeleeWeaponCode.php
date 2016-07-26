@@ -327,4 +327,19 @@ class MeleeWeaponCode extends WeaponCode
         return in_array($this->getValue(), self::getUnarmedCodes(), true);
     }
 
+    /**
+     * @return RangeWeaponCode
+     * @throws \DrdPlus\Codes\Exceptions\CanNotBeConvertedToRangeWeaponCode
+     */
+    public function convertToRangeWeaponCodeEquivalent()
+    {
+        if (!$this->isRangeWeapon()) {
+            throw new Exceptions\CanNotBeConvertedToRangeWeaponCode(
+                "Melee weapon code {$this} can not be converted to range weapon code"
+            );
+        }
+
+        return RangeWeaponCode::getIt($this->getValue());
+    }
+
 }

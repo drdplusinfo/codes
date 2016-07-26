@@ -219,4 +219,35 @@ class RangeWeaponCode extends WeaponCode
     {
         return in_array($this->getValue(), self::getSlingStoneCodes(), true);
     }
+
+    /**
+     * @return bool
+     */
+    public function isProjectile()
+    {
+        return $this->isArrow() || $this->isDart() || $this->isSlingStone();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isShootingWeapon()
+    {
+        return $this->isBow() || $this->isCrossbow();
+    }
+
+    /**
+     * @return MeleeWeaponCode
+     * @throws \DrdPlus\Codes\Exceptions\CanNotBeConvertedToMeleeWeaponCode
+     */
+    public function convertToMeleeWeaponCodeEquivalent()
+    {
+        if (!$this->isMeleeWeapon()) {
+            throw new Exceptions\CanNotBeConvertedToMeleeWeaponCode(
+                "Range weapon code {$this} can not be converted to melee weapon code"
+            );
+        }
+
+        return MeleeWeaponCode::getIt($this->getValue());
+    }
 }

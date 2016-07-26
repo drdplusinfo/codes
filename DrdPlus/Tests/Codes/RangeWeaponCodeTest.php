@@ -1,6 +1,7 @@
 <?php
 namespace DrdPlus\Tests\Codes;
 
+use DrdPlus\Codes\MeleeWeaponCode;
 use DrdPlus\Codes\RangeWeaponCode;
 
 class RangeWeaponCodeTest extends WeaponCodeTest
@@ -259,6 +260,31 @@ class RangeWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_convert_spear_to_melee_weapon_code()
+    {
+        $rangeSpear = RangeWeaponCode::getIt(RangeWeaponCode::SPEAR);
+        self::assertInstanceOf(RangeWeaponCode::class, $rangeSpear);
+        $meleeSpear = $rangeSpear->convertToMeleeWeaponCodeEquivalent();
+        self::assertNotSame($rangeSpear, $meleeSpear);
+        self::assertInstanceOf(MeleeWeaponCode::class, $meleeSpear);
+        self::assertSame(MeleeWeaponCode::getIt(MeleeWeaponCode::SPEAR), $meleeSpear);
+    }
+
+    /**
+     * @test
+     * @expectedException \DrdPlus\Codes\Exceptions\CanNotBeConvertedToMeleeWeaponCode
+     * @expectedExceptionMessageRegExp ~minicrossbow~
+     */
+    public function I_can_not_convert_anything_to_melee_weapon_code()
+    {
+        $rangeWeapon = RangeWeaponCode::getIt(RangeWeaponCode::MINICROSSBOW);
+        self::assertFalse($rangeWeapon->isMeleeWeapon());
+        $rangeWeapon->convertToMeleeWeaponCodeEquivalent();
     }
 
 }

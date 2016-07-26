@@ -2,6 +2,7 @@
 namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\MeleeWeaponCode;
+use DrdPlus\Codes\RangeWeaponCode;
 
 class MeleeWeaponCodeTest extends WeaponCodeTest
 {
@@ -390,4 +391,28 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         }
     }
 
+    /**
+     * @test
+     */
+    public function I_can_convert_spear_to_range_weapon_code()
+    {
+        $meleeSpear = MeleeWeaponCode::getIt(MeleeWeaponCode::SPEAR);
+        self::assertInstanceOf(MeleeWeaponCode::class, $meleeSpear);
+        $rangeSpear = $meleeSpear->convertToRangeWeaponCodeEquivalent();
+        self::assertNotSame($meleeSpear, $rangeSpear);
+        self::assertInstanceOf(RangeWeaponCode::class, $rangeSpear);
+        self::assertSame(RangeWeaponCode::getIt(RangeWeaponCode::SPEAR), $rangeSpear);
+    }
+
+    /**
+     * @test
+     * @expectedException \DrdPlus\Codes\Exceptions\CanNotBeConvertedToRangeWeaponCode
+     * @expectedExceptionMessageRegExp ~cudgel~
+     */
+    public function I_can_not_convert_anything_to_melee_weapon_code()
+    {
+        $rangeWeapon = MeleeWeaponCode::getIt(MeleeWeaponCode::CUDGEL);
+        self::assertFalse($rangeWeapon->isRangeWeapon());
+        $rangeWeapon->convertToRangeWeaponCodeEquivalent();
+    }
 }
