@@ -307,6 +307,11 @@ class RangeWeaponCodeTest extends WeaponCodeTest
         self::assertSame($isThrowing, $rangeWeaponCode->isThrowingWeapon());
         self::assertSame($isShooting, $rangeWeaponCode->isShootingWeapon());
         self::assertSame($isProjectile, $rangeWeaponCode->isProjectile());
+        if ($rangeWeaponCode->getValue() !== RangeWeaponCode::SPEAR) {
+            self::assertFalse($rangeWeaponCode->isMeleeWeapon());
+        } else {
+            self::assertTrue($rangeWeaponCode->isMeleeWeapon());
+        }
     }
 
     public function provideCodeAndUsage()

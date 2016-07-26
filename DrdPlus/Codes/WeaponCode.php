@@ -18,12 +18,28 @@ abstract class WeaponCode extends ArmamentCode
     abstract public function isRangeWeapon();
 
     /**
-     * @return WeaponCode
+     * @return bool
+     */
+    abstract public function isShootingWeapon();
+
+    /**
+     * @return bool
+     */
+    abstract public function isThrowingWeapon();
+
+    /**
+     * @return bool
+     */
+    abstract public function isProjectile();
+
+    /**
+     * @return MeleeWeaponCode
      */
     abstract public function convertToMeleeWeaponCodeEquivalent();
 
     /**
-     * @return WeaponCode
+     * @return RangeWeaponCode
      */
     abstract public function convertToRangeWeaponCodeEquivalent();
+
 }

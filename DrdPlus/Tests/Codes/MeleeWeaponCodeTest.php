@@ -416,4 +416,24 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         self::assertFalse($rangeWeapon->isRangeWeapon());
         $rangeWeapon->convertToRangeWeaponCodeEquivalent();
     }
+
+    /**
+     * @test
+     */
+    public function I_get_from_melee_code_negative_answer_to_most_range_question()
+    {
+        foreach (MeleeWeaponCode::getMeleeWeaponCodes() as $meleeWeaponCode) {
+            $meleeWeaponCode = MeleeWeaponCode::getIt($meleeWeaponCode);
+            self::assertTrue($meleeWeaponCode->isMeleeWeapon());
+            if ($meleeWeaponCode->getValue() !== MeleeWeaponCode::SPEAR) {
+                self::assertFalse($meleeWeaponCode->isRangeWeapon());
+                self::assertFalse($meleeWeaponCode->isThrowingWeapon());
+            } else {
+                self::assertTrue($meleeWeaponCode->isRangeWeapon());
+                self::assertTrue($meleeWeaponCode->isThrowingWeapon());
+            }
+            self::assertFalse($meleeWeaponCode->isShootingWeapon());
+            self::assertFalse($meleeWeaponCode->isProjectile());
+        }
+    }
 }
