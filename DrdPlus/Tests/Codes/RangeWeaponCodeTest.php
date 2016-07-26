@@ -287,4 +287,70 @@ class RangeWeaponCodeTest extends WeaponCodeTest
         $rangeWeapon->convertToMeleeWeaponCodeEquivalent();
     }
 
+    /**
+     * @test
+     * @dataProvider provideCodeAndUsage
+     * @param $rangeWeaponCodeValue
+     * @param bool $isThrowing
+     * @param bool $isShooting
+     * @param bool $isProjectile
+     */
+    public function I_can_distinguish_throwing_and_shooting_weapon_and_projectile(
+        $rangeWeaponCodeValue,
+        $isThrowing,
+        $isShooting,
+        $isProjectile
+    )
+    {
+        $rangeWeaponCode = RangeWeaponCode::getIt($rangeWeaponCodeValue);
+        self::assertSame($isThrowing, $rangeWeaponCode->isThrowingWeapon());
+        self::assertSame($isShooting, $rangeWeaponCode->isShootingWeapon());
+        self::assertSame($isProjectile, $rangeWeaponCode->isProjectile());
+    }
+
+    public function provideCodeAndUsage()
+    {
+        return [
+            // bows
+            ['short_bow', false, true, false],
+            ['long_bow', false, true, false],
+            ['short_composite_bow', false, true, false],
+            ['long_composite_bow', false, true, false],
+            ['power_bow', false, true, false],
+            // arrows
+            ['basic_arrow', false, false, true],
+            ['long_range_arrow', false, false, true],
+            ['war_arrow', false, false, true],
+            ['piercing_arrow', false, false, true],
+            ['hollow_arrow', false, false, true],
+            ['crippling_arrow', false, false, true],
+            ['incendiary_arrow', false, false, true],
+            ['silver_arrow', false, false, true],
+            // crossbows
+            ['minicrossbow', false, true, false],
+            ['light_crossbow', false, true, false],
+            ['military_crossbow', false, true, false],
+            ['heavy_crossbow', false, true, false],
+            // darts
+            ['basic_dart', false, false, true],
+            ['war_dart', false, false, true],
+            ['piercing_dart', false, false, true],
+            ['hollow_dart', false, false, true],
+            ['silver_dart', false, false, true],
+            // throwing weapons
+            ['rock', true, false, false],
+            ['throwing_dagger', true, false, false],
+            ['light_throwing_axe', true, false, false],
+            ['war_throwing_axe', true, false, false],
+            ['throwing_hammer', true, false, false],
+            ['shuriken', true, false, false],
+            ['spear', true, false, false],
+            ['javelin', true, false, false],
+            ['sling', true, false, false],
+            // throwing but projectile
+            ['sling_stone_light', false, false, true],
+            ['sling_stone_heavier', false, false, true],
+        ];
+    }
+
 }

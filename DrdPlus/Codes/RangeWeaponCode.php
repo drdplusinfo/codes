@@ -207,17 +207,17 @@ class RangeWeaponCode extends WeaponCode
     /**
      * @return bool
      */
-    public function isThrowingWeapon()
+    public function isSlingStone()
     {
-        return in_array($this->getValue(), self::getThrowingWeaponCodes(), true);
+        return in_array($this->getValue(), self::getSlingStoneCodes(), true);
     }
 
     /**
      * @return bool
      */
-    public function isSlingStone()
+    public function isThrowingWeapon()
     {
-        return in_array($this->getValue(), self::getSlingStoneCodes(), true);
+        return in_array($this->getValue(), self::getThrowingWeaponCodes(), true);
     }
 
     /**
