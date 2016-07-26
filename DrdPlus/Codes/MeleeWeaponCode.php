@@ -342,4 +342,12 @@ class MeleeWeaponCode extends WeaponCode
         return RangeWeaponCode::getIt($this->getValue());
     }
 
+    /**
+     * @return MeleeWeaponCode
+     */
+    public function convertToMeleeWeaponCodeEquivalent()
+    {
+        return $this;
+    }
+
 }

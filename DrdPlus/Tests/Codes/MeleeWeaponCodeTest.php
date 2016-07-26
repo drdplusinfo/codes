@@ -398,6 +398,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     {
         $meleeSpear = MeleeWeaponCode::getIt(MeleeWeaponCode::SPEAR);
         self::assertInstanceOf(MeleeWeaponCode::class, $meleeSpear);
+        self::assertSame($meleeSpear, $meleeSpear->convertToMeleeWeaponCodeEquivalent());
         $rangeSpear = $meleeSpear->convertToRangeWeaponCodeEquivalent();
         self::assertNotSame($meleeSpear, $rangeSpear);
         self::assertInstanceOf(RangeWeaponCode::class, $rangeSpear);
