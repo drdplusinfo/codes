@@ -6,7 +6,7 @@ namespace DrdPlus\Codes;
  */
 class MeleeWeaponCode extends WeaponCode
 {
-// axes
+    // axes
     const LIGHT_AXE = 'light_axe';
     const AXE = 'axe';
     const WAR_AXE = 'war_axe';
