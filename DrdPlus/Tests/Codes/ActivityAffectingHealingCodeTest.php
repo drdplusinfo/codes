@@ -1,9 +1,9 @@
 <?php
 namespace DrdPlus\Tests\Codes;
 
-use DrdPlus\Codes\ActivityDifficultyTypeCode;
+use DrdPlus\Codes\ActivityAffectingHealingCode;
 
-class ActivityDifficultyTypeCodeTest extends CodeTest
+class ActivityAffectingHealingCodeTest extends CodeTest
 {
     /**
      * @test
@@ -19,7 +19,7 @@ class ActivityDifficultyTypeCodeTest extends CodeTest
                 'toilsome_activity',
                 'very_hard_activity',
             ],
-            ActivityDifficultyTypeCode::getActivityDifficultyTypeCodes()
+            ActivityAffectingHealingCode::getActivityAffectingHealingCodes()
         );
 
         $this->I_can_get_codes_by_same_named_constants($expectedActivityCodes);

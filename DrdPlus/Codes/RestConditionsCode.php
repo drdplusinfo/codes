@@ -8,10 +8,10 @@ class RestConditionsCode extends Code
 {
     const HALF_TIME_OF_REST_OR_SLEEP = 'half_time_of_rest_or_sleep';
     const QUARTER_TIME_OF_REST_OR_SLEEP = 'quarter_time_of_rest_or_sleep';
-    const FOUL_CONDITIONS = EnvironmentConditionsCode::FOUL_CONDITIONS;
-    const BAD_CONDITIONS = EnvironmentConditionsCode::BAD_CONDITIONS;
-    const IMPAIRED_CONDITIONS = EnvironmentConditionsCode::IMPAIRED_CONDITIONS;
-    const GOOD_CONDITIONS = EnvironmentConditionsCode::GOOD_CONDITIONS;
+    const FOUL_CONDITIONS = ConditionsAffectingHealingCode::FOUL_CONDITIONS;
+    const BAD_CONDITIONS = ConditionsAffectingHealingCode::BAD_CONDITIONS;
+    const IMPAIRED_CONDITIONS = ConditionsAffectingHealingCode::IMPAIRED_CONDITIONS;
+    const GOOD_CONDITIONS = ConditionsAffectingHealingCode::GOOD_CONDITIONS;
 
     /**
      * @return array|string[]

@@ -2,9 +2,9 @@
 namespace DrdPlus\Codes;
 
 /**
- * @method static EnvironmentConditionsCode getIt($codeValue)
+ * @method static ConditionsAffectingHealingCode getIt($codeValue)
  */
-class EnvironmentConditionsCode extends Code
+class ConditionsAffectingHealingCode extends Code
 {
     const FOUL_CONDITIONS = 'foul_conditions';
     const BAD_CONDITIONS = 'bad_conditions';
@@ -14,7 +14,7 @@ class EnvironmentConditionsCode extends Code
     /**
      * @return array|string[]
      */
-    public static function getEnvironmentConditionsCodes()
+    public static function getConditionsAffectingHealingCodes()
     {
         return [
             self::FOUL_CONDITIONS,
