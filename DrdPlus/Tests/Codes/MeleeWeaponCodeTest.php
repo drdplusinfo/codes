@@ -279,7 +279,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     public function I_can_ask_code_if_is_specific_weapon_type()
     {
         $questions = [
-            'isAxe', 'isKnifeOrDagger', 'isMaceOrClub', 'isMorningStarOrMorgenstern', 'isSaberOrBowieKnife',
+            'isAxe', 'isKnifeOrDagger', 'isMaceOrClub', 'isMorningstarOrMorgenstern', 'isSaberOrBowieKnife',
             'isStaffOrSpear', 'isSword', 'isVoulgeOrTrident', 'isUnarmed'
         ];
         foreach (MeleeWeaponCode::getAxeCodes() as $codeValue) {
@@ -319,9 +319,9 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMeleeWeapon());
             self::assertFalse($code->isRangeWeapon());
-            self::assertTrue($code->isMorningStarOrMorgenstern());
+            self::assertTrue($code->isMorningstarOrMorgenstern());
             foreach ($questions as $question) {
-                if ($question !== 'isMorningStarOrMorgenstern') {
+                if ($question !== 'isMorningstarOrMorgenstern') {
                     self::assertFalse($code->$question());
                 }
             }

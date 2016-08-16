@@ -306,7 +306,7 @@ class MeleeWeaponCode extends WeaponCode
     /**
      * @return bool
      */
-    public function isMorningStarOrMorgenstern()
+    public function isMorningstarOrMorgenstern()
     {
         return in_array($this->getValue(), self::getMorningstarAndMorgensternCodes(), true);
     }
