@@ -6,6 +6,7 @@ namespace DrdPlus\Codes;
  */
 class ShieldCode extends Code
 {
+    const WITHOUT_SHIELD = 'without_shield';
     const BUCKLER = 'buckler';
     const SMALL_SHIELD = 'small_shield';
     const MEDIUM_SHIELD = 'medium_shield';
@@ -18,6 +19,7 @@ class ShieldCode extends Code
     public static function getShieldCodes()
     {
         return [
+            self::WITHOUT_SHIELD,
             self::BUCKLER,
             self::SMALL_SHIELD,
             self::MEDIUM_SHIELD,

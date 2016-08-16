@@ -12,6 +12,7 @@ class ShieldCodeTest extends CodeTest
     {
         self::assertSame(
             $expectedCodes = [
+                'without_shield',
                 'buckler',
                 'small_shield',
                 'medium_shield',
