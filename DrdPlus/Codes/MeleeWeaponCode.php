@@ -4,7 +4,7 @@ namespace DrdPlus\Codes;
 /**
  * @method static MeleeWeaponCode getIt($codeValue)
  */
-class MeleeWeaponCode extends WeaponCode
+class MeleeWeaponCode extends MeleeArmamentCode
 {
     // axes
     const LIGHT_AXE = 'light_axe';
@@ -237,6 +237,14 @@ class MeleeWeaponCode extends WeaponCode
                 self::getUnarmedCodes()
             )
         );
+    }
+
+    /**
+     * @return bool
+     */
+    public function isShield()
+    {
+        return false;
     }
 
     /**

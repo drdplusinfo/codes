@@ -159,7 +159,7 @@ class RangeWeaponCode extends WeaponCode
     /**
      * @return bool
      */
-    public function isMeleeWeapon()
+    public function isMeleeArmament()
     {
         return $this->getValue() === self::SPEAR; // spear can be used both as a range and melee weapon
     }
@@ -242,7 +242,7 @@ class RangeWeaponCode extends WeaponCode
      */
     public function convertToMeleeWeaponCodeEquivalent()
     {
-        if (!$this->isMeleeWeapon()) {
+        if (!$this->isMeleeArmament()) {
             throw new Exceptions\CanNotBeConvertedToMeleeWeaponCode(
                 "Range weapon code {$this} can not be converted to melee weapon code"
             );

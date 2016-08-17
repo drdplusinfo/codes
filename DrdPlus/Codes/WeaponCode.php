@@ -8,7 +8,7 @@ abstract class WeaponCode extends ArmamentCode
      * If is not range, is melee
      * @return bool
      */
-    abstract public function isMeleeWeapon();
+    abstract public function isMeleeArmament();
 
     /**
      * If is not melee, is range
