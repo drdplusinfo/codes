@@ -10,7 +10,7 @@ class WeaponCategoryCode extends Code
     const AXE = 'axe';
     const KNIFE_OR_DAGGER = 'knife_or_dagger';
     const MACE_OR_CLUB = 'mace_or_club';
-    const MORNING_STAR_OR_MORGENSTERN = 'morning_star_or_morgenstern';
+    const MORNINGSTAR_OR_MORGENSTERN = 'morningstar_or_morgenstern';
     const SABER_OR_BOWIE_KNIFE = 'saber_or_bowie_knife';
     const STAFF_OR_SPEAR = 'staff_or_spear';
     const SWORD = 'sword';
@@ -26,7 +26,7 @@ class WeaponCategoryCode extends Code
             self::AXE,
             self::KNIFE_OR_DAGGER,
             self::MACE_OR_CLUB,
-            self::MORNING_STAR_OR_MORGENSTERN,
+            self::MORNINGSTAR_OR_MORGENSTERN,
             self::SABER_OR_BOWIE_KNIFE,
             self::STAFF_OR_SPEAR,
             self::SWORD,
