@@ -1,7 +1,7 @@
 <?php
 namespace DrdPlus\Codes;
 
-abstract class MeleeArmamentCode extends WeaponCode
+abstract class MeleeWeaponlikeCode extends WeaponlikeCode
 {
     /**
      * @return bool

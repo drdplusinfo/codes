@@ -1,18 +1,18 @@
 <?php
 namespace DrdPlus\Tests\Codes;
 
-use DrdPlus\Codes\MeleeArmamentCode;
+use DrdPlus\Codes\MeleeWeaponlikeCode;
 
-abstract class MeleeArmamentCodeTest extends WeaponCodeTest
+abstract class MeleeWeaponlikeCodeTest extends WeaponlikeCodeTest
 {
     /**
      * @test
      */
     public function It_is_melee_armament_code()
     {
-        self::assertTrue(is_a($this->getSutClass(), MeleeArmamentCode::class, true));
+        self::assertTrue(is_a($this->getSutClass(), MeleeWeaponlikeCode::class, true));
         $reflection = new \ReflectionClass($this->getSutClass());
-        /** @var MeleeArmamentCode $meleeArmamentCode */
+        /** @var MeleeWeaponlikeCode $meleeArmamentCode */
         $meleeArmamentCode = $reflection->newInstanceWithoutConstructor();
         self::assertTrue($meleeArmamentCode->isMeleeArmament());
     }
@@ -23,7 +23,7 @@ abstract class MeleeArmamentCodeTest extends WeaponCodeTest
     public function It_is_not_range_nor_shooting_nor_throwing_weapon_nor_projectile_code()
     {
         $reflection = new \ReflectionClass($this->getSutClass());
-        /** @var MeleeArmamentCode $meleeArmamentCode */
+        /** @var MeleeWeaponlikeCode $meleeArmamentCode */
         $meleeArmamentCode = $reflection->newInstanceWithoutConstructor();
         self::assertFalse($meleeArmamentCode->isRangeWeapon());
         self::assertFalse($meleeArmamentCode->isShootingWeapon());

@@ -4,7 +4,7 @@ namespace DrdPlus\Tests\Codes;
 use DrdPlus\Codes\MeleeWeaponCode;
 use DrdPlus\Codes\RangeWeaponCode;
 
-class RangeWeaponCodeTest extends WeaponCodeTest
+class RangeWeaponCodeTest extends WeaponlikeCodeTest
 {
 
     /**

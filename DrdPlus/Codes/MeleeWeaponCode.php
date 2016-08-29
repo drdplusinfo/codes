@@ -4,7 +4,7 @@ namespace DrdPlus\Codes;
 /**
  * @method static MeleeWeaponCode getIt($codeValue)
  */
-class MeleeWeaponCode extends MeleeArmamentCode
+class MeleeWeaponCode extends MeleeWeaponlikeCode
 {
     // axes
     const LIGHT_AXE = 'light_axe';

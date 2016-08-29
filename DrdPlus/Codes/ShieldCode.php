@@ -4,7 +4,7 @@ namespace DrdPlus\Codes;
 /**
  * @method static ShieldCode getIt($codeValue)
  */
-class ShieldCode extends MeleeArmamentCode
+class ShieldCode extends MeleeWeaponlikeCode
 {
     const WITHOUT_SHIELD = 'without_shield';
     const BUCKLER = 'buckler';

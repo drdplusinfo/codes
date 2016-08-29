@@ -1,7 +1,7 @@
 <?php
 namespace DrdPlus\Codes;
 
-abstract class WeaponCode extends ArmamentCode
+abstract class WeaponlikeCode extends ArmamentCode
 {
 
     /**

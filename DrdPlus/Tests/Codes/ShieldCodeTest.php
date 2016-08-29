@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\ShieldCode;
 
-class ShieldCodeTest extends MeleeArmamentCodeTest
+class ShieldCodeTest extends MeleeWeaponlikeCodeTest
 {
     /**
      * @test
