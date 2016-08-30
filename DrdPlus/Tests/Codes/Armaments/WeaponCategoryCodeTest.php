@@ -1,7 +1,8 @@
 <?php
-namespace DrdPlus\Tests\Codes;
+namespace DrdPlus\Tests\Codes\Armaments;
 
-use DrdPlus\Codes\WeaponCategoryCode;
+use DrdPlus\Codes\Armaments\WeaponCategoryCode;
+use DrdPlus\Tests\Codes\CodeTest;
 
 class WeaponCategoryCodeTest extends CodeTest
 {
@@ -20,7 +21,7 @@ class WeaponCategoryCodeTest extends CodeTest
                 'staff_or_spear',
                 'sword',
                 'voulge_or_trident',
-                'unarmed'
+                'unarmed',
             ],
             WeaponCategoryCode::getMeleeWeaponCategoryCodes()
         );

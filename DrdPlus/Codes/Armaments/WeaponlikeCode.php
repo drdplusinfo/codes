@@ -1,7 +1,9 @@
 <?php
-namespace DrdPlus\Codes;
+namespace DrdPlus\Codes\Armaments;
 
-abstract class WeaponlikeCode extends ArmamentCode
+use DrdPlus\Codes\Code;
+
+abstract class WeaponlikeCode extends Code implements ArmamentCode
 {
     /**
      * @return bool

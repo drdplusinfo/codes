@@ -1,7 +1,7 @@
 <?php
-namespace DrdPlus\Tests\Codes;
+namespace DrdPlus\Tests\Codes\Armaments;
 
-use DrdPlus\Codes\WeaponCode;
+use DrdPlus\Codes\Armaments\WeaponCode;
 
 abstract class WeaponCodeTest extends WeaponlikeCodeTest
 {

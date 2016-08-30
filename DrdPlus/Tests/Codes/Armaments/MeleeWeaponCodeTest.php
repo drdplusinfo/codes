@@ -1,8 +1,8 @@
 <?php
-namespace DrdPlus\Tests\Codes;
+namespace DrdPlus\Tests\Codes\Armaments;
 
-use DrdPlus\Codes\MeleeWeaponCode;
-use DrdPlus\Codes\RangeWeaponCode;
+use DrdPlus\Codes\Armaments\MeleeWeaponCode;
+use DrdPlus\Codes\Armaments\RangeWeaponCode;
 
 class MeleeWeaponCodeTest extends WeaponCodeTest
 {
@@ -431,7 +431,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
 
     /**
      * @test
-     * @expectedException \DrdPlus\Codes\Exceptions\CanNotBeConvertedToRangeWeaponCode
+     * @expectedException \DrdPlus\Codes\Armaments\Exceptions\CanNotBeConvertedToRangeWeaponCode
      * @expectedExceptionMessageRegExp ~cudgel~
      */
     public function I_can_not_convert_anything_to_melee_weapon_code()

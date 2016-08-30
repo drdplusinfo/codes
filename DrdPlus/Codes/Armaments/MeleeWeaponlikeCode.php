@@ -1,5 +1,5 @@
 <?php
-namespace DrdPlus\Codes;
+namespace DrdPlus\Codes\Armaments;
 
 interface MeleeWeaponlikeCode
 {

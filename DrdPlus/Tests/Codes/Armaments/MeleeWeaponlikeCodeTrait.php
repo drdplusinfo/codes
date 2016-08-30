@@ -1,8 +1,8 @@
 <?php
-namespace DrdPlus\Tests\Codes;
+namespace DrdPlus\Tests\Codes\Armaments;
 
-use DrdPlus\Codes\MeleeWeaponlikeCode;
-use DrdPlus\Codes\WeaponlikeCode;
+use DrdPlus\Codes\Armaments\MeleeWeaponlikeCode;
+use DrdPlus\Codes\Armaments\WeaponlikeCode;
 
 trait MeleeWeaponlikeCodeTrait
 {

@@ -1,5 +1,5 @@
 <?php
-namespace DrdPlus\Codes;
+namespace DrdPlus\Codes\Armaments;
 
 /**
  * @method static HelmCode getIt($codeValue)

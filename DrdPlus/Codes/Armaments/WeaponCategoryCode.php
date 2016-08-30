@@ -1,5 +1,6 @@
 <?php
-namespace DrdPlus\Codes;
+namespace DrdPlus\Codes\Armaments;
+use DrdPlus\Codes\Code;
 
 /**
  * @method static WeaponCategoryCode getIt($codeValue)

@@ -1,5 +1,5 @@
 <?php
-namespace DrdPlus\Codes\Exceptions;
+namespace DrdPlus\Codes\Armaments\Exceptions;
 
 class CanNotBeConverted extends \LogicException implements Logic
 {

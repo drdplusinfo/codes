@@ -1,5 +1,5 @@
 <?php
-namespace DrdPlus\Codes;
+namespace DrdPlus\Codes\Armaments;
 
 /**
  * @method static RangeWeaponCode getIt($codeValue)
@@ -238,7 +238,7 @@ class RangeWeaponCode extends WeaponCode
 
     /**
      * @return MeleeWeaponCode
-     * @throws \DrdPlus\Codes\Exceptions\CanNotBeConvertedToMeleeWeaponCode
+     * @throws \DrdPlus\Codes\Armaments\Exceptions\CanNotBeConvertedToMeleeWeaponCode
      */
     public function convertToMeleeWeaponCodeEquivalent()
     {

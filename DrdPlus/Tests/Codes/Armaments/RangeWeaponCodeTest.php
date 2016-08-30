@@ -1,8 +1,8 @@
 <?php
-namespace DrdPlus\Tests\Codes;
+namespace DrdPlus\Tests\Codes\Armaments;
 
-use DrdPlus\Codes\MeleeWeaponCode;
-use DrdPlus\Codes\RangeWeaponCode;
+use DrdPlus\Codes\Armaments\MeleeWeaponCode;
+use DrdPlus\Codes\Armaments\RangeWeaponCode;
 
 class RangeWeaponCodeTest extends WeaponCodeTest
 {
@@ -289,7 +289,7 @@ class RangeWeaponCodeTest extends WeaponCodeTest
 
     /**
      * @test
-     * @expectedException \DrdPlus\Codes\Exceptions\CanNotBeConvertedToMeleeWeaponCode
+     * @expectedException \DrdPlus\Codes\Armaments\Exceptions\CanNotBeConvertedToMeleeWeaponCode
      * @expectedExceptionMessageRegExp ~minicrossbow~
      */
     public function I_can_not_convert_anything_to_melee_weapon_code()

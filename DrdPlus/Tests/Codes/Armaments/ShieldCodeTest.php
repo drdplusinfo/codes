@@ -1,7 +1,7 @@
 <?php
-namespace DrdPlus\Tests\Codes;
+namespace DrdPlus\Tests\Codes\Armaments;
 
-use DrdPlus\Codes\ShieldCode;
+use DrdPlus\Codes\Armaments\ShieldCode;
 
 class ShieldCodeTest extends WeaponlikeCodeTest
 {
@@ -55,7 +55,7 @@ class ShieldCodeTest extends WeaponlikeCodeTest
 
     /**
      * @test
-     * @expectedException \DrdPlus\Codes\Exceptions\CanNotBeConvertedToMeleeWeaponCode
+     * @expectedException \DrdPlus\Codes\Armaments\Exceptions\CanNotBeConvertedToMeleeWeaponCode
      */
     public function I_can_not_convert_it_to_melee_weapon_code()
     {
@@ -64,7 +64,7 @@ class ShieldCodeTest extends WeaponlikeCodeTest
 
     /**
      * @test
-     * @expectedException \DrdPlus\Codes\Exceptions\CanNotBeConvertedToRangeWeaponCode
+     * @expectedException \DrdPlus\Codes\Armaments\Exceptions\CanNotBeConvertedToRangeWeaponCode
      */
     public function I_can_not_convert_it_to_range_weapon_code()
     {

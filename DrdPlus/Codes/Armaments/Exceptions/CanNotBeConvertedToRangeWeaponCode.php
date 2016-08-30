@@ -1,5 +1,5 @@
 <?php
-namespace DrdPlus\Codes\Exceptions;
+namespace DrdPlus\Codes\Armaments\Exceptions;
 
 class CanNotBeConvertedToRangeWeaponCode extends CanNotBeConverted
 {
