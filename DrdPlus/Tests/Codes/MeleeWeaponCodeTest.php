@@ -4,8 +4,32 @@ namespace DrdPlus\Tests\Codes;
 use DrdPlus\Codes\MeleeWeaponCode;
 use DrdPlus\Codes\RangeWeaponCode;
 
-class MeleeWeaponCodeTest extends MeleeWeaponlikeCodeTest
+class MeleeWeaponCodeTest extends WeaponCodeTest
 {
+    use MeleeWeaponlikeCodeTrait;
+
+    /**
+     * @test
+     */
+    public function It_is_melee_weapon_code()
+    {
+        $reflection = new \ReflectionClass($this->getSutClass());
+        /** @var MeleeWeaponCode $meleeWeaponCode */
+        $meleeWeaponCode = $reflection->newInstanceWithoutConstructor();
+        self::assertInstanceOf(MeleeWeaponCode::class, $meleeWeaponCode);
+        self::assertTrue($meleeWeaponCode->isMeleeWeapon());
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_easily_find_out_if_is_melee_armament()
+    {
+        $reflection = new \ReflectionClass($this->getSutClass());
+        /** @var MeleeWeaponCode $sut */
+        $sut = $reflection->newInstanceWithoutConstructor();
+        self::assertTrue($sut->isMeleeArmament());
+    }
 
     /**
      * @test
@@ -280,7 +304,7 @@ class MeleeWeaponCodeTest extends MeleeWeaponlikeCodeTest
     {
         $questions = [
             'isAxe', 'isKnifeOrDagger', 'isMaceOrClub', 'isMorningstarOrMorgenstern', 'isSaberOrBowieKnife',
-            'isStaffOrSpear', 'isSword', 'isVoulgeOrTrident', 'isUnarmed'
+            'isStaffOrSpear', 'isSword', 'isVoulgeOrTrident', 'isUnarmed',
         ];
         foreach (MeleeWeaponCode::getAxeCodes() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);

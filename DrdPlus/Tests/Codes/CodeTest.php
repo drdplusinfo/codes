@@ -28,7 +28,7 @@ abstract class CodeTest extends \PHPUnit_Framework_TestCase
     /**
      * @return string|Code
      */
-    protected function getSutClass()
+    public function getSutClass()
     {
         return preg_replace('~[\\\]Tests([\\\].+)Test$~', '$1', static::class);
     }

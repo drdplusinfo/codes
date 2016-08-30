@@ -4,8 +4,19 @@ namespace DrdPlus\Tests\Codes;
 use DrdPlus\Codes\MeleeWeaponCode;
 use DrdPlus\Codes\RangeWeaponCode;
 
-class RangeWeaponCodeTest extends WeaponlikeCodeTest
+class RangeWeaponCodeTest extends WeaponCodeTest
 {
+
+    /**
+     * @test
+     */
+    public function I_can_easily_find_out_if_is_melee_armament()
+    {
+        $reflection = new \ReflectionClass($this->getSutClass());
+        /** @var RangeWeaponCode $sut */
+        $sut = $reflection->newInstanceWithoutConstructor();
+        self::assertFalse($sut->isMeleeArmament());
+    }
 
     /**
      * @test
@@ -185,7 +196,7 @@ class RangeWeaponCodeTest extends WeaponlikeCodeTest
     public function I_can_ask_code_if_is_specific_weapon_type()
     {
         $questions = [
-            'isBow', 'isArrow', 'isCrossbow', 'isDart', 'isThrowingWeapon', 'isSlingStone'
+            'isBow', 'isArrow', 'isCrossbow', 'isDart', 'isThrowingWeapon', 'isSlingStone',
         ];
         foreach (RangeWeaponCode::getBowCodes() as $codeValue) {
             $code = RangeWeaponCode::getIt($codeValue);

@@ -4,7 +4,7 @@ namespace DrdPlus\Codes;
 /**
  * @method static MeleeWeaponCode getIt($codeValue)
  */
-class MeleeWeaponCode extends MeleeWeaponlikeCode
+class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
 {
     // axes
     const LIGHT_AXE = 'light_axe';
@@ -117,7 +117,7 @@ class MeleeWeaponCode extends MeleeWeaponlikeCode
             self::LIGHT_SABER,
             self::BOWIE_KNIFE,
             self::SABER,
-            self::HEAVY_SABER
+            self::HEAVY_SABER,
         ];
     }
 
@@ -146,7 +146,7 @@ class MeleeWeaponCode extends MeleeWeaponlikeCode
             self::LONG_SPEAR,
             self::HEAVY_HOBNAILED_STAFF,
             self::PIKE,
-            self::METAL_STAFF
+            self::METAL_STAFF,
         ];
     }
 
@@ -171,7 +171,7 @@ class MeleeWeaponCode extends MeleeWeaponlikeCode
             self::LONG_SWORD,
             self::ONE_AND_HALF_HANDED_SWORD,
             self::BARBARIAN_SWORD,
-            self::TWO_HANDED_SWORD
+            self::TWO_HANDED_SWORD,
         ];
     }
 
@@ -245,6 +245,14 @@ class MeleeWeaponCode extends MeleeWeaponlikeCode
     public function isShield()
     {
         return false;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isMeleeArmament()
+    {
+        return true;
     }
 
     /**

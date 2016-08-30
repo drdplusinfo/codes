@@ -4,7 +4,7 @@ namespace DrdPlus\Codes;
 /**
  * @method static ShieldCode getIt($codeValue)
  */
-class ShieldCode extends MeleeWeaponlikeCode
+class ShieldCode extends WeaponlikeCode implements MeleeWeaponlikeCode
 {
     const WITHOUT_SHIELD = 'without_shield';
     const BUCKLER = 'buckler';
@@ -24,14 +24,14 @@ class ShieldCode extends MeleeWeaponlikeCode
             self::SMALL_SHIELD,
             self::MEDIUM_SHIELD,
             self::HEAVY_SHIELD,
-            self::PAVISE
+            self::PAVISE,
         ];
     }
 
     /**
      * @return bool
      */
-    public function isShield()
+    public function isMeleeArmament()
     {
         return true;
     }
@@ -42,6 +42,14 @@ class ShieldCode extends MeleeWeaponlikeCode
     public function isMeleeWeapon()
     {
         return false;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isShield()
+    {
+        return true;
     }
 
     /**

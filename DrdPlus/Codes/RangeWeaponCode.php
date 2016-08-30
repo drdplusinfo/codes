@@ -4,7 +4,7 @@ namespace DrdPlus\Codes;
 /**
  * @method static RangeWeaponCode getIt($codeValue)
  */
-class RangeWeaponCode extends WeaponlikeCode
+class RangeWeaponCode extends WeaponCode
 {
 
     // bows

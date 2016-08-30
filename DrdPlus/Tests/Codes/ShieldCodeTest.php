@@ -3,8 +3,10 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\ShieldCode;
 
-class ShieldCodeTest extends MeleeWeaponlikeCodeTest
+class ShieldCodeTest extends WeaponlikeCodeTest
 {
+    use MeleeWeaponlikeCodeTrait;
+
     /**
      * @test
      */
@@ -17,11 +19,22 @@ class ShieldCodeTest extends MeleeWeaponlikeCodeTest
                 'small_shield',
                 'medium_shield',
                 'heavy_shield',
-                'pavise'
+                'pavise',
             ],
             ShieldCode::getShieldCodes()
         );
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_easily_find_out_if_is_melee_armament()
+    {
+        $reflection = new \ReflectionClass($this->getSutClass());
+        /** @var ShieldCode $sut */
+        $sut = $reflection->newInstanceWithoutConstructor();
+        self::assertTrue($sut->isMeleeArmament());
     }
 
     /**
