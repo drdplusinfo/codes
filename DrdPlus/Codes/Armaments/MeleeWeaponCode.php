@@ -242,14 +242,6 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     /**
      * @return bool
      */
-    public function isShield()
-    {
-        return false;
-    }
-
-    /**
-     * @return bool
-     */
     public function isMeleeArmament()
     {
         return true;

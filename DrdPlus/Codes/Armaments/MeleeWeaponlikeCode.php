@@ -1,7 +1,7 @@
 <?php
 namespace DrdPlus\Codes\Armaments;
 
-interface MeleeWeaponlikeCode
+interface MeleeWeaponlikeCode extends WeaponlikeCode
 {
     /**
      * @return bool

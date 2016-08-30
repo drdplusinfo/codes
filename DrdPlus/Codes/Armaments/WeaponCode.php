@@ -1,8 +1,26 @@
 <?php
 namespace DrdPlus\Codes\Armaments;
 
-abstract class WeaponCode extends WeaponlikeCode
+use DrdPlus\Codes\Code;
+
+abstract class WeaponCode extends Code implements WeaponlikeCode
 {
+    /**
+     * @return bool
+     */
+    public function isArmor()
+    {
+        return false;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isWeaponlike()
+    {
+        return true;
+    }
+
     /**
      * @return bool
      */
