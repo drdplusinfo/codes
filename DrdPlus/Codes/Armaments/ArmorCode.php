@@ -3,7 +3,7 @@ namespace DrdPlus\Codes\Armaments;
 
 use DrdPlus\Codes\Code;
 
-abstract class ArmorCode extends Code implements ArmamentCode
+abstract class ArmorCode extends Code implements ProtectiveArmamentCode
 {
     /**
      * @return bool
@@ -18,9 +18,25 @@ abstract class ArmorCode extends Code implements ArmamentCode
     /**
      * @return bool
      */
+    public function isProtectiveArmament()
+    {
+        return true;
+    }
+
+    /**
+     * @return bool
+     */
     public function isArmor()
     {
         return true;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isShield()
+    {
+        return false;
     }
 
     /**

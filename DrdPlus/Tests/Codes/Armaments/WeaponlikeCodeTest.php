@@ -15,7 +15,6 @@ abstract class WeaponlikeCodeTest extends ArmamentCodeTest
         /** @var WeaponlikeCode $sut */
         $sut = $reflection->newInstanceWithoutConstructor();
         self::assertInstanceOf(WeaponlikeCode::class, $sut);
-        self::assertFalse($sut->isArmor());
         self::assertTrue($sut->isWeaponlike());
     }
 

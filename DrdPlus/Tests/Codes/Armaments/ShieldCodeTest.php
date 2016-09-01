@@ -1,11 +1,24 @@
 <?php
 namespace DrdPlus\Tests\Codes\Armaments;
 
+use DrdPlus\Codes\Armaments\ProtectiveArmamentCode;
 use DrdPlus\Codes\Armaments\ShieldCode;
 
-class ShieldCodeTest extends WeaponlikeCodeTest
+class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCodeTest
 {
     use MeleeWeaponlikeCodeTrait;
+
+    /**
+     * @test
+     */
+    public function I_can_easily_find_out_if_is_protective_armament()
+    {
+        $reflection = new \ReflectionClass($this->getSutClass());
+        /** @var ShieldCode $sut */
+        $sut = $reflection->newInstanceWithoutConstructor();
+        self::assertTrue($sut->isProtectiveArmament());
+        self::assertInstanceOf(ProtectiveArmamentCode::class, $sut);
+    }
 
     /**
      * @test
@@ -43,6 +56,7 @@ class ShieldCodeTest extends WeaponlikeCodeTest
     public function I_can_easily_find_out_if_is_shield()
     {
         self::assertTrue(ShieldCode::getIt(ShieldCode::BUCKLER)->isShield());
+        self::assertFalse(ShieldCode::getIt(ShieldCode::BUCKLER)->isArmor());
     }
 
     /**

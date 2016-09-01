@@ -1,11 +1,12 @@
 <?php
 namespace DrdPlus\Codes\Armaments;
+
 use DrdPlus\Codes\Code;
 
 /**
  * @method static ShieldCode getIt($codeValue)
  */
-class ShieldCode extends Code implements MeleeWeaponlikeCode
+class ShieldCode extends Code implements MeleeWeaponlikeCode, ProtectiveArmamentCode
 {
     const WITHOUT_SHIELD = 'without_shield';
     const BUCKLER = 'buckler';
@@ -27,6 +28,14 @@ class ShieldCode extends Code implements MeleeWeaponlikeCode
             self::HEAVY_SHIELD,
             self::PAVISE,
         ];
+    }
+
+    /**
+     * @return bool
+     */
+    public function isProtectiveArmament()
+    {
+        return true;
     }
 
     /**

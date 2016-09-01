@@ -1,16 +1,15 @@
 <?php
 namespace DrdPlus\Codes\Armaments;
 
-interface ArmamentCode
+interface ProtectiveArmamentCode extends ArmamentCode
 {
     /**
      * @return bool
      */
-    public function isProtectiveArmament();
+    public function isArmor();
 
     /**
      * @return bool
      */
-    public function isWeaponlike();
-
+    public function isShield();
 }

@@ -8,7 +8,7 @@ abstract class WeaponCode extends Code implements WeaponlikeCode
     /**
      * @return bool
      */
-    public function isArmor()
+    public function isProtectiveArmament()
     {
         return false;
     }
