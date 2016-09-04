@@ -85,4 +85,13 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
         ShieldCode::getIt(ShieldCode::BUCKLER)->convertToRangedWeaponCodeEquivalent();
     }
 
+    /**
+     * @test
+     */
+    public function I_can_ask_it_if_is_without_shield()
+    {
+        self::assertTrue(ShieldCode::getIt(ShieldCode::WITHOUT_SHIELD)->isWithoutShield());
+        self::assertFalse(ShieldCode::getIt(ShieldCode::HEAVY_SHIELD)->isWithoutShield());
+    }
+
 }

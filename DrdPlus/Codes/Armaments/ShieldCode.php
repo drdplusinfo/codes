@@ -130,4 +130,12 @@ class ShieldCode extends Code implements MeleeWeaponlikeCode, ProtectiveArmament
         );
     }
 
+    /**
+     * @return bool
+     */
+    public function isWithoutShield()
+    {
+        return $this->getValue() === self::WITHOUT_SHIELD;
+    }
+
 }
