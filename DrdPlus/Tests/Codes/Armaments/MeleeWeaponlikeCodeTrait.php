@@ -24,7 +24,7 @@ trait MeleeWeaponlikeCodeTrait
         $reflection = new \ReflectionClass($this->getSutClass());
         /** @var WeaponlikeCode $meleeWeaponlikeCode */
         $meleeWeaponlikeCode = $reflection->newInstanceWithoutConstructor();
-        self::assertFalse($meleeWeaponlikeCode->isRangeWeapon());
+        self::assertFalse($meleeWeaponlikeCode->isRangedWeapon());
         self::assertFalse($meleeWeaponlikeCode->isShootingWeapon());
         self::assertFalse($meleeWeaponlikeCode->isThrowingWeapon());
         self::assertFalse($meleeWeaponlikeCode->isProjectile());

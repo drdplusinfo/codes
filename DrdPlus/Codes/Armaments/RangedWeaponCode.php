@@ -2,9 +2,9 @@
 namespace DrdPlus\Codes\Armaments;
 
 /**
- * @method static RangeWeaponCode getIt($codeValue)
+ * @method static RangedWeaponCode getIt($codeValue)
  */
-class RangeWeaponCode extends WeaponCode
+class RangedWeaponCode extends WeaponCode
 {
 
     // bows
@@ -142,7 +142,7 @@ class RangeWeaponCode extends WeaponCode
     /**
      * @return array|string[]
      */
-    public static function getRangeWeaponCodes()
+    public static function getRangedWeaponCodes()
     {
         return array_values( // to get continual integer keys
             array_merge(
@@ -167,7 +167,7 @@ class RangeWeaponCode extends WeaponCode
     /**
      * @return bool
      */
-    public function isRangeWeapon()
+    public function isRangedWeapon()
     {
         return true;
     }
@@ -252,9 +252,9 @@ class RangeWeaponCode extends WeaponCode
     }
 
     /**
-     * @return RangeWeaponCode
+     * @return RangedWeaponCode
      */
-    public function convertToRangeWeaponCodeEquivalent()
+    public function convertToRangedWeaponCodeEquivalent()
     {
         return $this;
     }

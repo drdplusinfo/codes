@@ -2,9 +2,9 @@
 namespace DrdPlus\Tests\Codes\Armaments;
 
 use DrdPlus\Codes\Armaments\MeleeWeaponCode;
-use DrdPlus\Codes\Armaments\RangeWeaponCode;
+use DrdPlus\Codes\Armaments\RangedWeaponCode;
 
-class RangeWeaponCodeTest extends WeaponCodeTest
+class RangedWeaponCodeTest extends WeaponCodeTest
 {
 
     /**
@@ -13,7 +13,7 @@ class RangeWeaponCodeTest extends WeaponCodeTest
     public function I_can_easily_find_out_if_is_melee_armament()
     {
         $reflection = new \ReflectionClass($this->getSutClass());
-        /** @var RangeWeaponCode $sut */
+        /** @var RangedWeaponCode $sut */
         $sut = $reflection->newInstanceWithoutConstructor();
         self::assertFalse($sut->isMeleeArmament());
     }
@@ -31,7 +31,7 @@ class RangeWeaponCodeTest extends WeaponCodeTest
                 'long_composite_bow',
                 'power_bow',
             ],
-            RangeWeaponCode::getBowCodes()
+            RangedWeaponCode::getBowCodes()
         );
 
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
@@ -53,7 +53,7 @@ class RangeWeaponCodeTest extends WeaponCodeTest
                 'incendiary_arrow',
                 'silver_arrow',
             ],
-            RangeWeaponCode::getArrowCodes()
+            RangedWeaponCode::getArrowCodes()
         );
 
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
@@ -71,7 +71,7 @@ class RangeWeaponCodeTest extends WeaponCodeTest
                 'military_crossbow',
                 'heavy_crossbow',
             ],
-            RangeWeaponCode::getCrossbowCodes()
+            RangedWeaponCode::getCrossbowCodes()
         );
 
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
@@ -90,7 +90,7 @@ class RangeWeaponCodeTest extends WeaponCodeTest
                 'hollow_dart',
                 'silver_dart',
             ],
-            RangeWeaponCode::getDartCodes()
+            RangedWeaponCode::getDartCodes()
         );
 
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
@@ -113,7 +113,7 @@ class RangeWeaponCodeTest extends WeaponCodeTest
                 'javelin',
                 'sling',
             ],
-            RangeWeaponCode::getThrowingWeaponCodes()
+            RangedWeaponCode::getThrowingWeaponCodes()
         );
 
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
@@ -129,7 +129,7 @@ class RangeWeaponCodeTest extends WeaponCodeTest
                 'sling_stone_light',
                 'sling_stone_heavier',
             ],
-            RangeWeaponCode::getSlingStoneCodes()
+            RangedWeaponCode::getSlingStoneCodes()
         );
 
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
@@ -181,11 +181,11 @@ class RangeWeaponCodeTest extends WeaponCodeTest
                 'sling_stone_light',
                 'sling_stone_heavier',
             ],
-            RangeWeaponCode::getRangeWeaponCodes(),
+            RangedWeaponCode::getRangedWeaponCodes(),
             'There are ' . (
-            count($missingOrDifferent = array_diff_assoc($expectedValues, RangeWeaponCode::getRangeWeaponCodes())) > 0
+            count($missingOrDifferent = array_diff_assoc($expectedValues, RangedWeaponCode::getRangedWeaponCodes())) > 0
                 ? 'missing values or different keys in given: ' . var_export($missingOrDifferent, true)
-                : 'superfluous values or different keys in given: ' . var_export(array_diff_assoc(RangeWeaponCode::getRangeWeaponCodes(), $expectedValues), true)
+                : 'superfluous values or different keys in given: ' . var_export(array_diff_assoc(RangedWeaponCode::getRangedWeaponCodes(), $expectedValues), true)
             )
         );
     }
@@ -198,9 +198,9 @@ class RangeWeaponCodeTest extends WeaponCodeTest
         $questions = [
             'isBow', 'isArrow', 'isCrossbow', 'isDart', 'isThrowingWeapon', 'isSlingStone',
         ];
-        foreach (RangeWeaponCode::getBowCodes() as $codeValue) {
-            $code = RangeWeaponCode::getIt($codeValue);
-            self::assertTrue($code->isRangeWeapon());
+        foreach (RangedWeaponCode::getBowCodes() as $codeValue) {
+            $code = RangedWeaponCode::getIt($codeValue);
+            self::assertTrue($code->isRangedWeapon());
             self::assertFalse($code->isMeleeArmament());
             self::assertTrue($code->isBow());
             foreach ($questions as $question) {
@@ -209,9 +209,9 @@ class RangeWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (RangeWeaponCode::getArrowCodes() as $codeValue) {
-            $code = RangeWeaponCode::getIt($codeValue);
-            self::assertTrue($code->isRangeWeapon());
+        foreach (RangedWeaponCode::getArrowCodes() as $codeValue) {
+            $code = RangedWeaponCode::getIt($codeValue);
+            self::assertTrue($code->isRangedWeapon());
             self::assertFalse($code->isMeleeArmament());
             self::assertTrue($code->isArrow());
             foreach ($questions as $question) {
@@ -220,9 +220,9 @@ class RangeWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (RangeWeaponCode::getCrossbowCodes() as $codeValue) {
-            $code = RangeWeaponCode::getIt($codeValue);
-            self::assertTrue($code->isRangeWeapon());
+        foreach (RangedWeaponCode::getCrossbowCodes() as $codeValue) {
+            $code = RangedWeaponCode::getIt($codeValue);
+            self::assertTrue($code->isRangedWeapon());
             self::assertFalse($code->isMeleeArmament());
             self::assertTrue($code->isCrossbow());
             foreach ($questions as $question) {
@@ -231,9 +231,9 @@ class RangeWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (RangeWeaponCode::getDartCodes() as $codeValue) {
-            $code = RangeWeaponCode::getIt($codeValue);
-            self::assertTrue($code->isRangeWeapon());
+        foreach (RangedWeaponCode::getDartCodes() as $codeValue) {
+            $code = RangedWeaponCode::getIt($codeValue);
+            self::assertTrue($code->isRangedWeapon());
             self::assertFalse($code->isMeleeArmament());
             self::assertTrue($code->isDart());
             foreach ($questions as $question) {
@@ -242,17 +242,17 @@ class RangeWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (RangeWeaponCode::getThrowingWeaponCodes() as $codeValue) {
-            $code = RangeWeaponCode::getIt($codeValue);
-            self::assertTrue($code->isRangeWeapon());
-            if ($codeValue !== RangeWeaponCode::SPEAR) {
+        foreach (RangedWeaponCode::getThrowingWeaponCodes() as $codeValue) {
+            $code = RangedWeaponCode::getIt($codeValue);
+            self::assertTrue($code->isRangedWeapon());
+            if ($codeValue !== RangedWeaponCode::SPEAR) {
                 self::assertFalse($code->isMeleeArmament());
             } else {
                 self::assertTrue($code->isMeleeArmament());
             }
             foreach ($questions as $question) {
                 if ($question !== 'isThrowingWeapon') {
-                    if ($question !== 'isStaffOrSpear' || $codeValue !== RangeWeaponCode::SPEAR) {
+                    if ($question !== 'isStaffOrSpear' || $codeValue !== RangedWeaponCode::SPEAR) {
                         self::assertFalse($code->$question());
                     } else {
                         self::assertTrue($code->$question(), "{$codeValue} should be {$question}");
@@ -260,9 +260,9 @@ class RangeWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (RangeWeaponCode::getSlingStoneCodes() as $codeValue) {
-            $code = RangeWeaponCode::getIt($codeValue);
-            self::assertTrue($code->isRangeWeapon());
+        foreach (RangedWeaponCode::getSlingStoneCodes() as $codeValue) {
+            $code = RangedWeaponCode::getIt($codeValue);
+            self::assertTrue($code->isRangedWeapon());
             self::assertFalse($code->isMeleeArmament());
             self::assertTrue($code->isSlingStone());
             foreach ($questions as $question) {
@@ -278,9 +278,9 @@ class RangeWeaponCodeTest extends WeaponCodeTest
      */
     public function I_can_convert_spear_to_melee_weapon_code()
     {
-        $rangeSpear = RangeWeaponCode::getIt(RangeWeaponCode::SPEAR);
-        self::assertInstanceOf(RangeWeaponCode::class, $rangeSpear);
-        self::assertSame($rangeSpear, $rangeSpear->convertToRangeWeaponCodeEquivalent());
+        $rangeSpear = RangedWeaponCode::getIt(RangedWeaponCode::SPEAR);
+        self::assertInstanceOf(RangedWeaponCode::class, $rangeSpear);
+        self::assertSame($rangeSpear, $rangeSpear->convertToRangedWeaponCodeEquivalent());
         $meleeSpear = $rangeSpear->convertToMeleeWeaponCodeEquivalent();
         self::assertNotSame($rangeSpear, $meleeSpear);
         self::assertInstanceOf(MeleeWeaponCode::class, $meleeSpear);
@@ -294,7 +294,7 @@ class RangeWeaponCodeTest extends WeaponCodeTest
      */
     public function I_can_not_convert_anything_to_melee_weapon_code()
     {
-        $rangeWeapon = RangeWeaponCode::getIt(RangeWeaponCode::MINICROSSBOW);
+        $rangeWeapon = RangedWeaponCode::getIt(RangedWeaponCode::MINICROSSBOW);
         self::assertFalse($rangeWeapon->isMeleeArmament());
         $rangeWeapon->convertToMeleeWeaponCodeEquivalent();
     }
@@ -314,11 +314,11 @@ class RangeWeaponCodeTest extends WeaponCodeTest
         $isProjectile
     )
     {
-        $rangeWeaponCode = RangeWeaponCode::getIt($rangeWeaponCodeValue);
+        $rangeWeaponCode = RangedWeaponCode::getIt($rangeWeaponCodeValue);
         self::assertSame($isThrowing, $rangeWeaponCode->isThrowingWeapon());
         self::assertSame($isShooting, $rangeWeaponCode->isShootingWeapon());
         self::assertSame($isProjectile, $rangeWeaponCode->isProjectile());
-        if ($rangeWeaponCode->getValue() !== RangeWeaponCode::SPEAR) {
+        if ($rangeWeaponCode->getValue() !== RangedWeaponCode::SPEAR) {
             self::assertFalse($rangeWeaponCode->isMeleeArmament());
         } else {
             self::assertTrue($rangeWeaponCode->isMeleeArmament());

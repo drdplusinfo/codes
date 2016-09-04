@@ -81,7 +81,7 @@ class ShieldCode extends Code implements MeleeWeaponlikeCode, ProtectiveArmament
     /**
      * @return bool
      */
-    public function isRangeWeapon()
+    public function isRangedWeapon()
     {
         return false;
     }
@@ -123,7 +123,7 @@ class ShieldCode extends Code implements MeleeWeaponlikeCode, ProtectiveArmament
     /**
      * @throws Exceptions\CanNotBeConvertedToRangeWeaponCode
      */
-    public function convertToRangeWeaponCodeEquivalent()
+    public function convertToRangedWeaponCodeEquivalent()
     {
         throw new Exceptions\CanNotBeConvertedToRangeWeaponCode(
             "Shield code {$this} can not be converted to range weapon code"

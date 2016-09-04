@@ -258,7 +258,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     /**
      * @return bool
      */
-    public function isRangeWeapon()
+    public function isRangedWeapon()
     {
         return $this->isShootingWeapon() || $this->isThrowingWeapon() || $this->isProjectile();
     }
@@ -360,18 +360,18 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     }
 
     /**
-     * @return RangeWeaponCode
+     * @return RangedWeaponCode
      * @throws \DrdPlus\Codes\Armaments\Exceptions\CanNotBeConvertedToRangeWeaponCode
      */
-    public function convertToRangeWeaponCodeEquivalent()
+    public function convertToRangedWeaponCodeEquivalent()
     {
-        if (!$this->isRangeWeapon()) {
+        if (!$this->isRangedWeapon()) {
             throw new Exceptions\CanNotBeConvertedToRangeWeaponCode(
                 "Melee weapon code {$this} can not be converted to range weapon code"
             );
         }
 
-        return RangeWeaponCode::getIt($this->getValue());
+        return RangedWeaponCode::getIt($this->getValue());
     }
 
     /**

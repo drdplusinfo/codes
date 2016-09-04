@@ -2,7 +2,7 @@
 namespace DrdPlus\Tests\Codes\Armaments;
 
 use DrdPlus\Codes\Armaments\MeleeWeaponCode;
-use DrdPlus\Codes\Armaments\RangeWeaponCode;
+use DrdPlus\Codes\Armaments\RangedWeaponCode;
 
 class MeleeWeaponCodeTest extends WeaponCodeTest
 {
@@ -309,7 +309,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         foreach (MeleeWeaponCode::getAxeCodes() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMeleeArmament());
-            self::assertFalse($code->isRangeWeapon());
+            self::assertFalse($code->isRangedWeapon());
             self::assertTrue($code->isAxe());
             foreach ($questions as $question) {
                 if ($question !== 'isAxe') {
@@ -320,7 +320,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         foreach (MeleeWeaponCode::getKnifeAndDaggerCodes() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMeleeArmament());
-            self::assertFalse($code->isRangeWeapon());
+            self::assertFalse($code->isRangedWeapon());
             self::assertTrue($code->isKnifeOrDagger());
             foreach ($questions as $question) {
                 if ($question !== 'isKnifeOrDagger') {
@@ -331,7 +331,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         foreach (MeleeWeaponCode::getMaceAndClubCodes() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMeleeArmament());
-            self::assertFalse($code->isRangeWeapon());
+            self::assertFalse($code->isRangedWeapon());
             self::assertTrue($code->isMaceOrClub());
             foreach ($questions as $question) {
                 if ($question !== 'isMaceOrClub') {
@@ -342,7 +342,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         foreach (MeleeWeaponCode::getMorningstarAndMorgensternCodes() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMeleeArmament());
-            self::assertFalse($code->isRangeWeapon());
+            self::assertFalse($code->isRangedWeapon());
             self::assertTrue($code->isMorningstarOrMorgenstern());
             foreach ($questions as $question) {
                 if ($question !== 'isMorningstarOrMorgenstern') {
@@ -353,7 +353,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         foreach (MeleeWeaponCode::getSaberAndBowieKnifeCodes() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMeleeArmament());
-            self::assertFalse($code->isRangeWeapon());
+            self::assertFalse($code->isRangedWeapon());
             self::assertTrue($code->isSaberOrBowieKnife());
             foreach ($questions as $question) {
                 if ($question !== 'isSaberOrBowieKnife') {
@@ -365,9 +365,9 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMeleeArmament());
             if ($codeValue !== MeleeWeaponCode::SPEAR) {
-                self::assertFalse($code->isRangeWeapon());
+                self::assertFalse($code->isRangedWeapon());
             } else {
-                self::assertTrue($code->isRangeWeapon());
+                self::assertTrue($code->isRangedWeapon());
             }
             self::assertTrue($code->isStaffOrSpear());
             foreach ($questions as $question) {
@@ -383,7 +383,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         foreach (MeleeWeaponCode::getSwordCodes() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMeleeArmament());
-            self::assertFalse($code->isRangeWeapon());
+            self::assertFalse($code->isRangedWeapon());
             self::assertTrue($code->isSword());
             foreach ($questions as $question) {
                 if ($question !== 'isSword') {
@@ -394,7 +394,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         foreach (MeleeWeaponCode::getVoulgeAndTridentCodes() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMeleeArmament());
-            self::assertFalse($code->isRangeWeapon());
+            self::assertFalse($code->isRangedWeapon());
             self::assertTrue($code->isVoulgeOrTrident());
             foreach ($questions as $question) {
                 if ($question !== 'isVoulgeOrTrident') {
@@ -405,7 +405,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         foreach (MeleeWeaponCode::getUnarmedCodes() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMeleeArmament());
-            self::assertFalse($code->isRangeWeapon());
+            self::assertFalse($code->isRangedWeapon());
             self::assertTrue($code->isUnarmed());
             foreach ($questions as $question) {
                 if ($question !== 'isUnarmed') {
@@ -423,10 +423,10 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         $meleeSpear = MeleeWeaponCode::getIt(MeleeWeaponCode::SPEAR);
         self::assertInstanceOf(MeleeWeaponCode::class, $meleeSpear);
         self::assertSame($meleeSpear, $meleeSpear->convertToMeleeWeaponCodeEquivalent());
-        $rangeSpear = $meleeSpear->convertToRangeWeaponCodeEquivalent();
+        $rangeSpear = $meleeSpear->convertToRangedWeaponCodeEquivalent();
         self::assertNotSame($meleeSpear, $rangeSpear);
-        self::assertInstanceOf(RangeWeaponCode::class, $rangeSpear);
-        self::assertSame(RangeWeaponCode::getIt(RangeWeaponCode::SPEAR), $rangeSpear);
+        self::assertInstanceOf(RangedWeaponCode::class, $rangeSpear);
+        self::assertSame(RangedWeaponCode::getIt(RangedWeaponCode::SPEAR), $rangeSpear);
     }
 
     /**
@@ -437,8 +437,8 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     public function I_can_not_convert_anything_to_melee_weapon_code()
     {
         $wantItRange = MeleeWeaponCode::getIt(MeleeWeaponCode::CUDGEL);
-        self::assertFalse($wantItRange->isRangeWeapon());
-        $wantItRange->convertToRangeWeaponCodeEquivalent();
+        self::assertFalse($wantItRange->isRangedWeapon());
+        $wantItRange->convertToRangedWeaponCodeEquivalent();
     }
 
     /**
@@ -450,10 +450,10 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
             $meleeWeaponCode = MeleeWeaponCode::getIt($meleeWeaponCode);
             self::assertTrue($meleeWeaponCode->isMeleeArmament());
             if ($meleeWeaponCode->getValue() !== MeleeWeaponCode::SPEAR) {
-                self::assertFalse($meleeWeaponCode->isRangeWeapon());
+                self::assertFalse($meleeWeaponCode->isRangedWeapon());
                 self::assertFalse($meleeWeaponCode->isThrowingWeapon());
             } else {
-                self::assertTrue($meleeWeaponCode->isRangeWeapon());
+                self::assertTrue($meleeWeaponCode->isRangedWeapon());
                 self::assertTrue($meleeWeaponCode->isThrowingWeapon());
             }
             self::assertFalse($meleeWeaponCode->isShootingWeapon());

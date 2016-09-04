@@ -82,7 +82,7 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
      */
     public function I_can_not_convert_it_to_range_weapon_code()
     {
-        ShieldCode::getIt(ShieldCode::BUCKLER)->convertToRangeWeaponCodeEquivalent();
+        ShieldCode::getIt(ShieldCode::BUCKLER)->convertToRangedWeaponCodeEquivalent();
     }
 
 }

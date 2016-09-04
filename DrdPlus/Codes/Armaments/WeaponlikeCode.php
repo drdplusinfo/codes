@@ -11,11 +11,11 @@ interface WeaponlikeCode extends ArmamentCode
     public function isMeleeArmament();
 
     /**
-     * If is not melee, is range
+     * If is not melee, is ranged
      *
      * @return bool
      */
-    public function isRangeWeapon();
+    public function isRangedWeapon();
 
     /**
      * If is range, can be shooting, throwing or a projectile
@@ -49,8 +49,8 @@ interface WeaponlikeCode extends ArmamentCode
     public function convertToMeleeWeaponCodeEquivalent();
 
     /**
-     * @return RangeWeaponCode
+     * @return RangedWeaponCode
      */
-    public function convertToRangeWeaponCodeEquivalent();
+    public function convertToRangedWeaponCodeEquivalent();
 
 }
