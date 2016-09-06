@@ -90,10 +90,10 @@ abstract class CodeTest extends \PHPUnit_Framework_TestCase
         self::assertSame(
             $constantValues,
             $givenValues,
-            "Used getter {$allValuesGetter}. There are " . (
-            count($missingOrDifferent = array_diff_assoc($constantValues, $givenValues)) > 0
-                ? 'missing values or different keys in given: ' . var_export($missingOrDifferent, true)
-                : 'superfluous values or different keys in given: ' . var_export(array_diff_assoc($givenValues, $constantValues), true)
+            'There are ' . (
+            count($missingOrDifferent = array_diff($constantValues, $givenValues)) > 0
+                ? "missing values from '{$allValuesGetter}' " . var_export($missingOrDifferent, true)
+                : "superfluous values from '{$allValuesGetter}' " . var_export(array_diff($givenValues, $constantValues), true)
             )
         );
     }
