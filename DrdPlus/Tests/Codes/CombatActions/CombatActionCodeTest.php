@@ -21,6 +21,7 @@ class CombatActionCodeTest extends CodeTest
                 'concentration_on_defense',
                 'put_out_easily_accessible_item',
                 'put_out_hardly_accessible_item',
+                'hand_over_item',
                 'standing',
                 'sitting_or_on_kneels',
                 'putting_on_armor',

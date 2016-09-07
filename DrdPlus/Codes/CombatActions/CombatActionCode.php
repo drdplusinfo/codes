@@ -16,6 +16,7 @@ class CombatActionCode extends Code
     const CONCENTRATION_ON_DEFENSE = 'concentration_on_defense'; // this is moved to generic combat action despite its categorization as melee in PPH
     const PUT_OUT_EASILY_ACCESSIBLE_ITEM = 'put_out_easily_accessible_item'; // from belt or ground etc.
     const PUT_OUT_HARDLY_ACCESSIBLE_ITEM = 'put_out_hardly_accessible_item'; // from backpack or just using both hands
+    const HAND_OVER_ITEM = 'hand_over_item';
     const STANDING = 'standing';
     const SITTING_OR_ON_KNEELS = 'sitting_or_on_kneels';
     const PUTTING_ON_ARMOR = 'putting_on_armor';
@@ -36,6 +37,7 @@ class CombatActionCode extends Code
             self::CONCENTRATION_ON_DEFENSE,
             self::PUT_OUT_EASILY_ACCESSIBLE_ITEM,
             self::PUT_OUT_HARDLY_ACCESSIBLE_ITEM,
+            self::HAND_OVER_ITEM,
             self::STANDING,
             self::SITTING_OR_ON_KNEELS,
             self::PUTTING_ON_ARMOR,
