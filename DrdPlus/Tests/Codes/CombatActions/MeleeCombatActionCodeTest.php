@@ -1,6 +1,7 @@
 <?php
 namespace DrdPlus\Tests\Codes\CombatActions;
 
+use DrdPlus\Codes\CombatActions\CombatActionCode;
 use DrdPlus\Codes\CombatActions\MeleeCombatActionCode;
 use DrdPlus\Tests\Codes\CodeTest;
 
@@ -39,4 +40,32 @@ class MeleeCombatActionCodeTest extends CodeTest
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
+    /**
+     * @test
+     */
+    public function I_can_get_melee_only_codes()
+    {
+        $expectedMeleeOnly = array_diff(
+            array_values((new \ReflectionClass(MeleeCombatActionCode::class))->getConstants()),
+            CombatActionCode::getCombatActionCodes()
+        );
+        self::assertSame($expectedMeleeOnly, MeleeCombatActionCode::getMeleeOnlyCombatActionCodes());
+    }
+
+    /**
+     * @test
+     */
+    public function Melee_only_codes_are_marked_so()
+    {
+        $reflection = new \ReflectionClass(MeleeCombatActionCode::class);
+        foreach ($reflection->getConstants() as $name => $value) {
+            $meleeCombatActionCode = MeleeCombatActionCode::getIt($value);
+            self::assertTrue($meleeCombatActionCode->isForMelee());
+            self::assertSame(
+                defined(CombatActionCode::class . '::' . $name),
+                $meleeCombatActionCode->isForRanged(),
+                'Only constant defined in parent CombatActionCode should be usable for ranged attack'
+            );
+        }
+    }
 }

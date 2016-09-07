@@ -16,18 +16,49 @@ class MeleeCombatActionCode extends CombatActionCode
     const ATTACK_ON_DISABLED_OPPONENT = 'attack_on_disabled_opponent';
     const HANDOVER_ITEM = 'handover_item';
 
+    /**
+     * @return array|string[]
+     */
+    public static function getMeleeOnlyCombatActionCodes()
+    {
+        return [
+            self::HEADLESS_ATTACK,
+            self::COVER_OF_ALLY,
+            self::FIGHT_WITH_TWO_WEAPONS,
+            self::FLAT_ATTACK,
+            self::PRESSURE,
+            self::RETREAT,
+            self::ATTACK_ON_DISABLED_OPPONENT,
+            self::HANDOVER_ITEM,
+        ];
+    }
+
+    /**
+     * @return array|string[]
+     */
     public static function getMeleeCombatActionCodes()
     {
-        $combatActions = self::getCombatActionCodes();
-        $combatActions[] = self::HEADLESS_ATTACK;
-        $combatActions[] = self::COVER_OF_ALLY;
-        $combatActions[] = self::FIGHT_WITH_TWO_WEAPONS;
-        $combatActions[] = self::FLAT_ATTACK;
-        $combatActions[] = self::PRESSURE;
-        $combatActions[] = self::RETREAT;
-        $combatActions[] = self::ATTACK_ON_DISABLED_OPPONENT;
-        $combatActions[] = self::HANDOVER_ITEM;
+        return array_merge(
+            self::getCombatActionCodes(),
+            self::getMeleeOnlyCombatActionCodes()
+        );
+    }
 
-        return $combatActions;
+    /**
+     * @return bool
+     */
+    public function isForMelee()
+    {
+        // any action represented by this code can be used for melee attack
+        return true;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isForRanged()
+    {
+        // only actions inherited from generic combat actions can be used for ranged attack
+        return !in_array($this->getValue(), self::getMeleeOnlyCombatActionCodes(), true);
     }
 }

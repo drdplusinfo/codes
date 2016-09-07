@@ -40,4 +40,20 @@ class CombatActionCode extends Code
             self::REDUCED_VISIBILITY,
         ];
     }
+
+    /**
+     * @return bool
+     */
+    public function isForMelee()
+    {
+        return true;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isForRanged()
+    {
+        return true;
+    }
 }

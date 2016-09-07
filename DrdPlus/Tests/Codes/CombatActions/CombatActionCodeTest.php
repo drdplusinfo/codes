@@ -32,4 +32,13 @@ class CombatActionCodeTest extends CodeTest
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
+    /**
+     * @test
+     */
+    public function It_is_both_for_melee_and_ranged()
+    {
+        self::assertTrue(CombatActionCode::getIt(CombatActionCode::BLINDFOLD_FIGHT)->isForMelee());
+        self::assertTrue(CombatActionCode::getIt(CombatActionCode::CONCENTRATION_ON_DEFENSE)->isForRanged());
+    }
+
 }
