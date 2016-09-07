@@ -9,6 +9,8 @@ use DrdPlus\Codes\Code;
 class CombatActionCode extends Code
 {
     // See PPH page 107-109
+    const MOVE = 'move';
+    const RUN = 'run';
     const STANDARD_ATTACK = 'standard_attack';
     const SWAP_WEAPONS = 'swap_weapons';
     const CONCENTRATION_ON_DEFENSE = 'concentration_on_defense'; // this is moved to generic combat action despite its categorization as melee in PPH
@@ -27,6 +29,8 @@ class CombatActionCode extends Code
     public static function getCombatActionCodes()
     {
         return [
+            self::MOVE,
+            self::RUN,
             self::STANDARD_ATTACK,
             self::SWAP_WEAPONS,
             self::CONCENTRATION_ON_DEFENSE,

@@ -14,6 +14,8 @@ class CombatActionCodeTest extends CodeTest
     {
         self::assertSame(
             $expectedCodes = [
+                'move',
+                'run',
                 'standard_attack',
                 'swap_weapons',
                 'concentration_on_defense',
