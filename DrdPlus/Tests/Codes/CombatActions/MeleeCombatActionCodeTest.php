@@ -28,7 +28,7 @@ class MeleeCombatActionCodeTest extends CodeTest
                 'putting_on_armor',
                 'attack_from_behind',
                 'blindfold_fight',
-                'reduced_visibility',
+                'fight_in_reduced_visibility',
                 'headless_attack',
                 'cover_of_ally',
                 'fight_with_two_weapons',

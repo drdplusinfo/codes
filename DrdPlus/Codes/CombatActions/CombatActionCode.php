@@ -22,7 +22,7 @@ class CombatActionCode extends Code
     const PUTTING_ON_ARMOR = 'putting_on_armor';
     const ATTACK_FROM_BEHIND = 'attack_from_behind';
     const BLINDFOLD_FIGHT = 'blindfold_fight';
-    const REDUCED_VISIBILITY = 'reduced_visibility';
+    const FIGHT_IN_REDUCED_VISIBILITY = 'fight_in_reduced_visibility';
 
     /**
      * @return array|string[]
@@ -43,7 +43,7 @@ class CombatActionCode extends Code
             self::PUTTING_ON_ARMOR,
             self::ATTACK_FROM_BEHIND,
             self::BLINDFOLD_FIGHT,
-            self::REDUCED_VISIBILITY,
+            self::FIGHT_IN_REDUCED_VISIBILITY,
         ];
     }
 
