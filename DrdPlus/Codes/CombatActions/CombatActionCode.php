@@ -23,6 +23,7 @@ class CombatActionCode extends Code
     const ATTACK_FROM_BEHIND = 'attack_from_behind';
     const BLINDFOLD_FIGHT = 'blindfold_fight';
     const FIGHT_IN_REDUCED_VISIBILITY = 'fight_in_reduced_visibility';
+    const ATTACK_ON_DISABLED_OPPONENT = 'attack_on_disabled_opponent'; // this is moved to generic combat action despite its categorization as melee in PPH
 
     /**
      * @return array|string[]
@@ -44,6 +45,7 @@ class CombatActionCode extends Code
             self::ATTACK_FROM_BEHIND,
             self::BLINDFOLD_FIGHT,
             self::FIGHT_IN_REDUCED_VISIBILITY,
+            self::ATTACK_ON_DISABLED_OPPONENT,
         ];
     }
 

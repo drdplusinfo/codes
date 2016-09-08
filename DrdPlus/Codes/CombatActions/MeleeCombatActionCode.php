@@ -13,7 +13,6 @@ class MeleeCombatActionCode extends CombatActionCode
     const FLAT_ATTACK = 'flat_attack';
     const PRESSURE = 'pressure';
     const RETREAT = 'retreat';
-    const ATTACK_ON_DISABLED_OPPONENT = 'attack_on_disabled_opponent';
     const HANDOVER_ITEM = 'handover_item';
 
     /**
@@ -28,7 +27,6 @@ class MeleeCombatActionCode extends CombatActionCode
             self::FLAT_ATTACK,
             self::PRESSURE,
             self::RETREAT,
-            self::ATTACK_ON_DISABLED_OPPONENT,
             self::HANDOVER_ITEM,
         ];
     }

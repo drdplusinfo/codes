@@ -28,6 +28,7 @@ class CombatActionCodeTest extends CodeTest
                 'attack_from_behind',
                 'blindfold_fight',
                 'fight_in_reduced_visibility',
+                'attack_on_disabled_opponent',
             ],
             CombatActionCode::getCombatActionCodes(),
             'difference: ' . implode(',', array_diff($expectedCodes, CombatActionCode::getCombatActionCodes()))
