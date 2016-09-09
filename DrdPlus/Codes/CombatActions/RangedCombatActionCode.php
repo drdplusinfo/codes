@@ -7,11 +7,11 @@ namespace DrdPlus\Codes\CombatActions;
 class RangedCombatActionCode extends CombatActionCode
 {
     // See PPH page 108
-    const AIMED_SHOOT = 'aimed_shoot';
+    const AIMED_SHOT = 'aimed_shot';
 
     public static function getRangedOnlyCombatActionCodes()
     {
-        return [self::AIMED_SHOOT];
+        return [self::AIMED_SHOT];
     }
 
     /**
@@ -20,7 +20,7 @@ class RangedCombatActionCode extends CombatActionCode
     public static function getRangedCombatActionCodes()
     {
         $rangedCombatActions = self::getCombatActionCodes();
-        $rangedCombatActions[] = self::AIMED_SHOOT;
+        $rangedCombatActions[] = self::AIMED_SHOT;
 
         return $rangedCombatActions;
     }
@@ -31,7 +31,7 @@ class RangedCombatActionCode extends CombatActionCode
     public function isForMelee()
     {
         // only actions inherited from generic combat actions can be used for melee attack
-        return $this->getValue() !== self::AIMED_SHOOT;
+        return $this->getValue() !== self::AIMED_SHOT;
     }
 
     /**

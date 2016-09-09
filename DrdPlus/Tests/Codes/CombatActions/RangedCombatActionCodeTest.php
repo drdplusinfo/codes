@@ -30,7 +30,7 @@ class RangedCombatActionCodeTest extends CodeTest
                 'blindfold_fight',
                 'fight_in_reduced_visibility',
                 'attack_on_disabled_opponent',
-                'aimed_shoot',
+                'aimed_shot',
             ],
             RangedCombatActionCode::getRangedCombatActionCodes()
         );
