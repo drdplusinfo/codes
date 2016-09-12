@@ -11,7 +11,8 @@ class CombatActionCode extends Code
     // See PPH page 107-109
     const MOVE = 'move';
     const RUN = 'run';
-    const STANDARD_ATTACK = 'standard_attack';
+    const STANDARD_MELEE_ATTACK = 'standard_melee_attack';
+    const STANDARD_RANGED_ATTACK = 'standard_ranged_attack';
     const SWAP_WEAPONS = 'swap_weapons';
     const CONCENTRATION_ON_DEFENSE = 'concentration_on_defense'; // this is moved to generic combat action despite its categorization as melee in PPH
     const PUT_OUT_EASILY_ACCESSIBLE_ITEM = 'put_out_easily_accessible_item'; // from belt or ground etc.
@@ -35,7 +36,8 @@ class CombatActionCode extends Code
         return [
             self::MOVE,
             self::RUN,
-            self::STANDARD_ATTACK,
+            self::STANDARD_MELEE_ATTACK,
+            self::STANDARD_RANGED_ATTACK,
             self::SWAP_WEAPONS,
             self::CONCENTRATION_ON_DEFENSE,
             self::PUT_OUT_EASILY_ACCESSIBLE_ITEM,

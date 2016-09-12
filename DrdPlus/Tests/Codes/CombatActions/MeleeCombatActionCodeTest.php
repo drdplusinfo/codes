@@ -17,7 +17,8 @@ class MeleeCombatActionCodeTest extends CodeTest
             $expectedCodes = [
                 'move',
                 'run',
-                'standard_attack',
+                'standard_melee_attack',
+                'standard_ranged_attack',
                 'swap_weapons',
                 'concentration_on_defense',
                 'put_out_easily_accessible_item',
