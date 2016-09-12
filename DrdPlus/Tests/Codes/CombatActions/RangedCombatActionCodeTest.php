@@ -26,6 +26,8 @@ class RangedCombatActionCodeTest extends CodeTest
                 'sitting_or_on_kneels',
                 'getting_up',
                 'putting_on_armor',
+                'putting_on_armor_with_help',
+                'helping_to_put_on_armor',
                 'attack_from_behind',
                 'blindfold_fight',
                 'fight_in_reduced_visibility',

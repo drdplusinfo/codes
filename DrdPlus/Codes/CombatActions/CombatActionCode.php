@@ -20,6 +20,8 @@ class CombatActionCode extends Code
     const SITTING_OR_ON_KNEELS = 'sitting_or_on_kneels';
     const GETTING_UP = 'getting_up';
     const PUTTING_ON_ARMOR = 'putting_on_armor';
+    const PUTTING_ON_ARMOR_WITH_HELP = 'putting_on_armor_with_help';
+    const HELPING_TO_PUT_ON_ARMOR = 'helping_to_put_on_armor';
     const ATTACK_FROM_BEHIND = 'attack_from_behind';
     const BLINDFOLD_FIGHT = 'blindfold_fight';
     const FIGHT_IN_REDUCED_VISIBILITY = 'fight_in_reduced_visibility';
@@ -42,6 +44,8 @@ class CombatActionCode extends Code
             self::SITTING_OR_ON_KNEELS,
             self::GETTING_UP,
             self::PUTTING_ON_ARMOR,
+            self::PUTTING_ON_ARMOR_WITH_HELP,
+            self::HELPING_TO_PUT_ON_ARMOR,
             self::ATTACK_FROM_BEHIND,
             self::BLINDFOLD_FIGHT,
             self::FIGHT_IN_REDUCED_VISIBILITY,
