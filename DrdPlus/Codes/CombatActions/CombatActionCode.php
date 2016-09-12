@@ -22,7 +22,7 @@ class CombatActionCode extends Code
     const PUTTING_ON_ARMOR = 'putting_on_armor';
     const PUTTING_ON_ARMOR_WITH_HELP = 'putting_on_armor_with_help';
     const HELPING_TO_PUT_ON_ARMOR = 'helping_to_put_on_armor';
-    const ATTACK_FROM_BEHIND = 'attack_from_behind';
+    const ATTACKED_FROM_BEHIND = 'attacked_from_behind';
     const BLINDFOLD_FIGHT = 'blindfold_fight';
     const FIGHT_IN_REDUCED_VISIBILITY = 'fight_in_reduced_visibility';
     const ATTACK_ON_DISABLED_OPPONENT = 'attack_on_disabled_opponent'; // this is moved to generic combat action despite its categorization as melee in PPH
@@ -46,7 +46,7 @@ class CombatActionCode extends Code
             self::PUTTING_ON_ARMOR,
             self::PUTTING_ON_ARMOR_WITH_HELP,
             self::HELPING_TO_PUT_ON_ARMOR,
-            self::ATTACK_FROM_BEHIND,
+            self::ATTACKED_FROM_BEHIND,
             self::BLINDFOLD_FIGHT,
             self::FIGHT_IN_REDUCED_VISIBILITY,
             self::ATTACK_ON_DISABLED_OPPONENT,

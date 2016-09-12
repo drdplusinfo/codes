@@ -27,7 +27,7 @@ class CombatActionCodeTest extends CodeTest
                 'putting_on_armor',
                 'putting_on_armor_with_help',
                 'helping_to_put_on_armor',
-                'attack_from_behind',
+                'attacked_from_behind',
                 'blindfold_fight',
                 'fight_in_reduced_visibility',
                 'attack_on_disabled_opponent',
