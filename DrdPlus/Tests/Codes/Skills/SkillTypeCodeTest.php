@@ -1,7 +1,7 @@
 <?php
-namespace DrdPlus\Tests\Codes;
+namespace DrdPlus\Tests\Codes\Skills;
 
-use DrdPlus\Codes\SkillTypeCode;
+use DrdPlus\Codes\Skills\SkillTypeCode;
 
 class SkillTypeCodeTest extends SkillCodeTest
 {

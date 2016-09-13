@@ -1,5 +1,5 @@
 <?php
-namespace DrdPlus\Codes;
+namespace DrdPlus\Codes\Skills;
 
 /**
  * @method static PsychicalSkillCode getIt($codeValue)

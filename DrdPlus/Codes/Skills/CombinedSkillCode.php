@@ -1,5 +1,5 @@
 <?php
-namespace DrdPlus\Codes;
+namespace DrdPlus\Codes\Skills;
 
 /**
  * @method static CombinedSkillCode getIt($codeValue)
@@ -12,7 +12,8 @@ class CombinedSkillCode extends SkillCode
     const COOKING = 'cooking';
     const DANCING = 'dancing';
     const DUSK_SIGHT = 'dusk_sight';
-    const FIGHT_WITH_SHOOTING_WEAPONS = 'fight_with_shooting_weapons';
+    const FIGHT_WITH_BOWS = 'fight_with_bows';
+    const FIGHT_WITH_CROSSBOWS = 'fight_with_crossbows';
     const FIRST_AID = 'first_aid';
     const GAMBLING = 'gambling';
     const HANDLING_WITH_ANIMALS = 'handling_with_animals';
@@ -38,7 +39,8 @@ class CombinedSkillCode extends SkillCode
             self::COOKING,
             self::DANCING,
             self::DUSK_SIGHT,
-            self::FIGHT_WITH_SHOOTING_WEAPONS,
+            self::FIGHT_WITH_BOWS,
+            self::FIGHT_WITH_CROSSBOWS,
             self::FIRST_AID,
             self::GAMBLING,
             self::HANDLING_WITH_ANIMALS,
@@ -52,7 +54,7 @@ class CombinedSkillCode extends SkillCode
             self::SEDUCTION,
             self::SHOWMANSHIP,
             self::SINGING,
-            self::STATUARY
+            self::STATUARY,
         ];
     }
 }

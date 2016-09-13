@@ -1,7 +1,8 @@
 <?php
-namespace DrdPlus\Tests\Codes;
+namespace DrdPlus\Tests\Codes\Skills;
 
 use DrdPlus\Codes\Code;
+use DrdPlus\Tests\Codes\CodeTest;
 
 abstract class SkillCodeTest extends CodeTest
 {

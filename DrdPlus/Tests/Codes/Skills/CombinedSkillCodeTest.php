@@ -1,7 +1,7 @@
 <?php
-namespace DrdPlus\Tests\Codes;
+namespace DrdPlus\Tests\Codes\Skills;
 
-use DrdPlus\Codes\CombinedSkillCode;
+use DrdPlus\Codes\Skills\CombinedSkillCode;
 
 class CombinedSkillCodeTest extends SkillCodeTest
 {
@@ -16,7 +16,8 @@ class CombinedSkillCodeTest extends SkillCodeTest
                 'cooking',
                 'dancing',
                 'dusk_sight',
-                'fight_with_shooting_weapons',
+                'fight_with_bows',
+                'fight_with_crossbows',
                 'first_aid',
                 'gambling',
                 'handling_with_animals',

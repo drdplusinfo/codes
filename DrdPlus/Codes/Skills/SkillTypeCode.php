@@ -1,5 +1,6 @@
 <?php
-namespace DrdPlus\Codes;
+namespace DrdPlus\Codes\Skills;
+use DrdPlus\Codes\Code;
 
 /**
  * @method static SkillTypeCode getIt($codeValue)

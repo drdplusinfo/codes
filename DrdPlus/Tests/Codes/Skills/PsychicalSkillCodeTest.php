@@ -1,7 +1,7 @@
 <?php
-namespace DrdPlus\Tests\Codes;
+namespace DrdPlus\Tests\Codes\Skills;
 
-use DrdPlus\Codes\PsychicalSkillCode;
+use DrdPlus\Codes\Skills\PsychicalSkillCode;
 
 class PsychicalSkillCodeTest extends SkillCodeTest
 {
