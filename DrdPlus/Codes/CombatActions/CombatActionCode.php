@@ -11,8 +11,13 @@ class CombatActionCode extends Code
     // See PPH page 107-109
     const MOVE = 'move';
     const RUN = 'run';
-    const STANDARD_MELEE_ATTACK = 'standard_melee_attack';
-    const STANDARD_RANGED_ATTACK = 'standard_ranged_attack';
+    const MAIN_HAND_ONLY_MELEE_ATTACK = 'main_hand_only_melee_attack';
+    const OFFHAND_ONLY_MELEE_ATTACK = 'offhand_only_melee_attack';
+    const BOTH_HANDS_MELEE_ATTACK = 'both_hands_melee_attack';
+    const MAIN_HAND_ONLY_RANGED_ATTACK = 'main_hand_only_ranged_attack'; // possible with crossbow
+    const OFFHAND_ONLY_RANGED_ATTACK = 'offhand_only_ranged_attack'; // mini crossbow
+    const BOTH_HANDS_RANGED_ATTACK = 'both_hands_ranged_attack';
+//    'fight_with_two_weapons' is automatic when bearing two weapons (not weapon and shield)
     const SWAP_WEAPONS = 'swap_weapons';
     const CONCENTRATION_ON_DEFENSE = 'concentration_on_defense'; // this is moved to generic combat action despite its categorization as melee in PPH
     const PUT_OUT_EASILY_ACCESSIBLE_ITEM = 'put_out_easily_accessible_item'; // from belt or ground etc.
@@ -36,8 +41,12 @@ class CombatActionCode extends Code
         return [
             self::MOVE,
             self::RUN,
-            self::STANDARD_MELEE_ATTACK,
-            self::STANDARD_RANGED_ATTACK,
+            self::MAIN_HAND_ONLY_MELEE_ATTACK,
+            self::OFFHAND_ONLY_MELEE_ATTACK,
+            self::BOTH_HANDS_MELEE_ATTACK,
+            self::MAIN_HAND_ONLY_RANGED_ATTACK,
+            self::OFFHAND_ONLY_RANGED_ATTACK,
+            self::BOTH_HANDS_RANGED_ATTACK,
             self::SWAP_WEAPONS,
             self::CONCENTRATION_ON_DEFENSE,
             self::PUT_OUT_EASILY_ACCESSIBLE_ITEM,

@@ -9,7 +9,6 @@ class MeleeCombatActionCode extends CombatActionCode
     // See PPH page 107-109
     const HEADLESS_ATTACK = 'headless_attack';
     const COVER_OF_ALLY = 'cover_of_ally';
-    const FIGHT_WITH_TWO_WEAPONS = 'fight_with_two_weapons';
     const FLAT_ATTACK = 'flat_attack';
     const PRESSURE = 'pressure';
     const RETREAT = 'retreat';
@@ -23,7 +22,6 @@ class MeleeCombatActionCode extends CombatActionCode
         return [
             self::HEADLESS_ATTACK,
             self::COVER_OF_ALLY,
-            self::FIGHT_WITH_TWO_WEAPONS,
             self::FLAT_ATTACK,
             self::PRESSURE,
             self::RETREAT,
