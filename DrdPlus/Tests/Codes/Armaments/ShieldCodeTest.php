@@ -47,7 +47,7 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
         $reflection = new \ReflectionClass($this->getSutClass());
         /** @var ShieldCode $sut */
         $sut = $reflection->newInstanceWithoutConstructor();
-        self::assertTrue($sut->isMeleeArmament());
+        self::assertTrue($sut->isMelee());
     }
 
     /**

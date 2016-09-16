@@ -242,7 +242,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     /**
      * @return bool
      */
-    public function isMeleeArmament()
+    public function isMelee()
     {
         return true;
     }
@@ -258,7 +258,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     /**
      * @return bool
      */
-    public function isRangedWeapon()
+    public function isRanged()
     {
         return $this->isShootingWeapon() || $this->isThrowingWeapon() || $this->isProjectile();
     }
@@ -365,7 +365,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function convertToRangedWeaponCodeEquivalent()
     {
-        if (!$this->isRangedWeapon()) {
+        if (!$this->isRanged()) {
             throw new Exceptions\CanNotBeConvertedToRangeWeaponCode(
                 "Melee weapon code {$this} can not be converted to range weapon code"
             );

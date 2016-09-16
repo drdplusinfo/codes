@@ -8,14 +8,14 @@ interface WeaponlikeCode extends ArmamentCode
      *
      * @return bool
      */
-    public function isMeleeArmament();
+    public function isMelee();
 
     /**
      * If is not melee, is ranged
      *
      * @return bool
      */
-    public function isRangedWeapon();
+    public function isRanged();
 
     /**
      * If is range, can be shooting, throwing or a projectile

@@ -57,7 +57,7 @@ class ShieldCode extends Code implements MeleeWeaponlikeCode, ProtectiveArmament
     /**
      * @return bool
      */
-    public function isMeleeArmament()
+    public function isMelee()
     {
         return true;
     }
@@ -81,7 +81,7 @@ class ShieldCode extends Code implements MeleeWeaponlikeCode, ProtectiveArmament
     /**
      * @return bool
      */
-    public function isRangedWeapon()
+    public function isRanged()
     {
         return false;
     }
