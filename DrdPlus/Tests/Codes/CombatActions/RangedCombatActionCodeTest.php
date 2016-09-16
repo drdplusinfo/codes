@@ -19,7 +19,7 @@ class RangedCombatActionCodeTest extends CodeTest
                 'run',
                 'main_hand_only_melee_attack',
                 'offhand_only_melee_attack',
-                'both_hands_melee_attack',
+                'two_hands_melee_attack',
                 'main_hand_only_ranged_attack',
                 'offhand_only_ranged_attack',
                 'two_hands_ranged_attack',

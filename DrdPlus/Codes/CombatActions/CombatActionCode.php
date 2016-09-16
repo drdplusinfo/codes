@@ -13,7 +13,7 @@ class CombatActionCode extends Code
     const RUN = 'run';
     const MAIN_HAND_ONLY_MELEE_ATTACK = 'main_hand_only_melee_attack';
     const OFFHAND_ONLY_MELEE_ATTACK = 'offhand_only_melee_attack';
-    const BOTH_HANDS_MELEE_ATTACK = 'both_hands_melee_attack';
+    const TWO_HANDS_MELEE_ATTACK = 'two_hands_melee_attack';
     const MAIN_HAND_ONLY_RANGED_ATTACK = 'main_hand_only_ranged_attack'; // possible with crossbow
     const OFFHAND_ONLY_RANGED_ATTACK = 'offhand_only_ranged_attack'; // mini crossbow
     const TWO_HANDS_RANGED_ATTACK = 'two_hands_ranged_attack';
@@ -43,7 +43,7 @@ class CombatActionCode extends Code
             self::RUN,
             self::MAIN_HAND_ONLY_MELEE_ATTACK,
             self::OFFHAND_ONLY_MELEE_ATTACK,
-            self::BOTH_HANDS_MELEE_ATTACK,
+            self::TWO_HANDS_MELEE_ATTACK,
             self::MAIN_HAND_ONLY_RANGED_ATTACK,
             self::OFFHAND_ONLY_RANGED_ATTACK,
             self::TWO_HANDS_RANGED_ATTACK,
