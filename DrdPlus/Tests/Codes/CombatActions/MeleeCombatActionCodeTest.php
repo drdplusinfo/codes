@@ -37,12 +37,12 @@ class MeleeCombatActionCodeTest extends CodeTest
                 'blindfold_fight',
                 'fight_in_reduced_visibility',
                 'attack_on_disabled_opponent',
+                'handover_item',
                 'headless_attack',
                 'cover_of_ally',
                 'flat_attack',
                 'pressure',
                 'retreat',
-                'handover_item',
             ],
             MeleeCombatActionCode::getMeleeCombatActionCodes()
         );

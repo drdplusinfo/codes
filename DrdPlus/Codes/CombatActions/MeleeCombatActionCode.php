@@ -12,7 +12,6 @@ class MeleeCombatActionCode extends CombatActionCode
     const FLAT_ATTACK = 'flat_attack';
     const PRESSURE = 'pressure';
     const RETREAT = 'retreat';
-    const HANDOVER_ITEM = 'handover_item';
 
     /**
      * @return array|string[]
@@ -25,7 +24,6 @@ class MeleeCombatActionCode extends CombatActionCode
             self::FLAT_ATTACK,
             self::PRESSURE,
             self::RETREAT,
-            self::HANDOVER_ITEM,
         ];
     }
 
