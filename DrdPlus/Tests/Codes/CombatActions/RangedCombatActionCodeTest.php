@@ -23,6 +23,7 @@ class RangedCombatActionCodeTest extends CodeTest
                 'main_hand_only_ranged_attack',
                 'offhand_only_ranged_attack',
                 'two_hands_ranged_attack',
+                'two_hands_defense',
                 'swap_weapons',
                 'concentration_on_defense',
                 'put_out_easily_accessible_item',
