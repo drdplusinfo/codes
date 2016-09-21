@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static TimeCode getIt($codeValue)
  */
-class TimeCode extends Code
+class TimeCode extends AbstractCode
 {
     const ROUND = 'round';
     const MINUTE = 'minute';

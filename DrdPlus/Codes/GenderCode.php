@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static GenderCode getIt($codeValue)
  */
-class GenderCode extends Code
+class GenderCode extends AbstractCode
 {
     const MALE = 'male';
     const FEMALE = 'female';

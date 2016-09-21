@@ -2,9 +2,18 @@
 namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\Code;
+use DrdPlus\Codes\Partials\AbstractCode;
 
 abstract class CodeTest extends \PHPUnit_Framework_TestCase
 {
+
+    /**
+     * @test
+     */
+    public function It_is_code()
+    {
+        self::assertTrue(is_a($this->getSutClass(), Code::class, true));
+    }
 
     /**
      * @test
@@ -26,7 +35,7 @@ abstract class CodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return string|Code
+     * @return string|AbstractCode
      */
     public function getSutClass()
     {
@@ -50,7 +59,7 @@ abstract class CodeTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException \DrdPlus\Codes\Exceptions\UnknownValueForCode
+     * @expectedException \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
      * @expectedExceptionMessageRegExp ~da Vinci~
      */
     public function I_can_not_create_code_from_unknown_value()

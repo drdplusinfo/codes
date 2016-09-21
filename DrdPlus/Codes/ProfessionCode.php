@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static ProfessionCode getIt($codeValue)
  */
-class ProfessionCode extends Code
+class ProfessionCode extends AbstractCode
 {
     const FIGHTER = 'fighter';
     const THIEF = 'thief';

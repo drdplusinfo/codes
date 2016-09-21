@@ -1,12 +1,12 @@
 <?php
 namespace DrdPlus\Codes\CombatActions;
 
-use DrdPlus\Codes\Code;
+use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static CombatActionCode getIt($codeValue)
  */
-class CombatActionCode extends Code
+class CombatActionCode extends AbstractCode
 {
     // See PPH page 107-109
     const MOVE = 'move';

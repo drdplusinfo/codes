@@ -1,11 +1,12 @@
 <?php
 namespace DrdPlus\Codes\Skills;
-use DrdPlus\Codes\Code;
+
+use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static SkillTypeCode getIt($codeValue)
  */
-class SkillTypeCode extends Code
+class SkillTypeCode extends AbstractCode
 {
     const PHYSICAL = 'physical';
     const PSYCHICAL = 'psychical';

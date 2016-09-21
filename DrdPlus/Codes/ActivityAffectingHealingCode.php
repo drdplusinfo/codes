@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static ActivityAffectingHealingCode getIt($codeValue)
  */
-class ActivityAffectingHealingCode extends Code
+class ActivityAffectingHealingCode extends AbstractCode
 {
     const SLEEPING_OR_REST_IN_BED = 'sleeping_or_rest_in_bed';
     const LOUNGING_AND_RESTING = 'lounging_and_resting';

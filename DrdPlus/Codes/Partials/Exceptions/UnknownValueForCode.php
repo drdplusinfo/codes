@@ -1,5 +1,5 @@
 <?php
-namespace DrdPlus\Codes\Exceptions;
+namespace DrdPlus\Codes\Partials\Exceptions;
 
 class UnknownValueForCode extends \InvalidArgumentException implements Logic
 {

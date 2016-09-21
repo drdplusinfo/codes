@@ -1,11 +1,12 @@
 <?php
 namespace DrdPlus\Codes\Armaments;
-use DrdPlus\Codes\Code;
+
+use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static WeaponCategoryCode getIt($codeValue)
  */
-class WeaponCategoryCode extends Code
+class WeaponCategoryCode extends AbstractCode
 {
     // melee weapon categories
     const AXE = 'axe';

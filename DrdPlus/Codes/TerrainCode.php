@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static TerrainCode getIt($codeValue)
  */
-class TerrainCode extends Code
+class TerrainCode extends AbstractCode
 {
     const ROAD = 'road';
     const MEADOW = 'meadow';

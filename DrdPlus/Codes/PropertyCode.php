@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static PropertyCode getIt($codeValue)
  */
-class PropertyCode extends Code
+class PropertyCode extends AbstractCode
 {
     // base
     const STRENGTH = 'strength';

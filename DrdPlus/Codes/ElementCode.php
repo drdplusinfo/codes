@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static ElementCode getIt($codeValue)
  */
-class ElementCode extends Code
+class ElementCode extends AbstractCode
 {
     const FIRE = 'fire';
     const WATER = 'water';

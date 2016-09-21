@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static RidingAnimalCode getIt($codeValue)
  */
-class RidingAnimalCode extends Code
+class RidingAnimalCode extends AbstractCode
 {
     const HORSE = 'horse';
     const DRAFT_HORSE = 'draft_horse';

@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static RestConditionsCode getIt($codeValue)
  */
-class RestConditionsCode extends Code
+class RestConditionsCode extends AbstractCode
 {
     const HALF_TIME_OF_REST_OR_SLEEP = 'half_time_of_rest_or_sleep';
     const QUARTER_TIME_OF_REST_OR_SLEEP = 'quarter_time_of_rest_or_sleep';

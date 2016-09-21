@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static AfflictionByWoundDomainCode getIt($codeValue)
  */
-class AfflictionByWoundDomainCode extends Code
+class AfflictionByWoundDomainCode extends AbstractCode
 {
     const PHYSICAL = 'physical';
     const PSYCHICAL = 'psychical';
@@ -16,7 +18,7 @@ class AfflictionByWoundDomainCode extends Code
     {
         return [
             self::PHYSICAL,
-            self::PSYCHICAL
+            self::PSYCHICAL,
         ];
     }
 

@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static MovementTypeCode getIt($codeValue)
  */
-class MovementTypeCode extends Code
+class MovementTypeCode extends AbstractCode
 {
     const WAITING = 'waiting';
     const WALK = 'walk';

@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static WoundsOriginCode getIt($codeValue)
  */
-class WoundsOriginCode extends Code
+class WoundsOriginCode extends AbstractCode
 {
     const PSYCHICAL = 'psychical';
     const ELEMENTAL = 'elemental';
@@ -22,7 +24,7 @@ class WoundsOriginCode extends Code
             self::ELEMENTAL,
             self::MECHANICAL_STAB,
             self::MECHANICAL_CUT,
-            self::MECHANICAL_CRUSH
+            self::MECHANICAL_CRUSH,
         ];
     }
 

@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static RidingAnimalPropertyCode getIt($codeValue)
  */
-class RidingAnimalPropertyCode extends Code
+class RidingAnimalPropertyCode extends AbstractCode
 {
     const SPEED = PropertyCode::SPEED;
     const ENDURANCE = PropertyCode::ENDURANCE;

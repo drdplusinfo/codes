@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static ConditionsAffectingHealingCode getIt($codeValue)
  */
-class ConditionsAffectingHealingCode extends Code
+class ConditionsAffectingHealingCode extends AbstractCode
 {
     const FOUL_CONDITIONS = 'foul_conditions';
     const BAD_CONDITIONS = 'bad_conditions';

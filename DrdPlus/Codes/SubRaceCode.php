@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static SubRaceCode getIt($codeValue)
  */
-class SubRaceCode extends Code
+class SubRaceCode extends AbstractCode
 {
     // human
     const COMMON = 'common';

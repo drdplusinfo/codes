@@ -1,9 +1,9 @@
 <?php
 namespace DrdPlus\Codes\Armaments;
 
-use DrdPlus\Codes\Code;
+use DrdPlus\Codes\Partials\AbstractCode;
 
-abstract class ArmorCode extends Code implements ProtectiveArmamentCode
+abstract class ArmorCode extends AbstractCode implements ProtectiveArmamentCode
 {
     /**
      * @return bool

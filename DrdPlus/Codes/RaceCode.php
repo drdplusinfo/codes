@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static RaceCode getIt($codeValue)
  */
-class RaceCode extends Code
+class RaceCode extends AbstractCode
 {
     const HUMAN = 'human';
     const ELF = 'elf';

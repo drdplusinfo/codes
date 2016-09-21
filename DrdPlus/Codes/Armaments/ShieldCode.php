@@ -1,12 +1,12 @@
 <?php
 namespace DrdPlus\Codes\Armaments;
 
-use DrdPlus\Codes\Code;
+use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static ShieldCode getIt($codeValue)
  */
-class ShieldCode extends Code implements MeleeWeaponlikeCode, ProtectiveArmamentCode
+class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, ProtectiveArmamentCode
 {
     const WITHOUT_SHIELD = 'without_shield';
     const BUCKLER = 'buckler';

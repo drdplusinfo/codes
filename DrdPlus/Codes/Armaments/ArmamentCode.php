@@ -1,7 +1,9 @@
 <?php
 namespace DrdPlus\Codes\Armaments;
 
-interface ArmamentCode
+use DrdPlus\Codes\Code;
+
+interface ArmamentCode extends Code
 {
     /**
      * @return bool

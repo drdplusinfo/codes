@@ -1,10 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\AbstractCode;
+
 /**
  * @method static RidingAnimalMovementCode getIt($codeValue)
  */
-class RidingAnimalMovementCode extends Code
+class RidingAnimalMovementCode extends AbstractCode
 {
     const STILL = 'still';
     const GAIT = 'gait';
@@ -24,7 +26,7 @@ class RidingAnimalMovementCode extends Code
             self::TROT,
             self::CANTER,
             self::GALLOP,
-            self::JUMPING
+            self::JUMPING,
         ];
     }
 
