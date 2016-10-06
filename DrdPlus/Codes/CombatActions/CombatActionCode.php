@@ -17,6 +17,8 @@ class CombatActionCode extends AbstractCode
     const MAIN_HAND_ONLY_RANGED_ATTACK = 'main_hand_only_ranged_attack'; // possible with crossbow
     const OFFHAND_ONLY_RANGED_ATTACK = 'offhand_only_ranged_attack'; // mini crossbow
     const TWO_HANDS_RANGED_ATTACK = 'two_hands_ranged_attack';
+    const MAIN_HAND_ONLY_DEFENSE = 'main_hand_only_defense';
+    const OFFHAND_ONLY_DEFENSE = 'offhand_only_defense';
     const TWO_HANDS_DEFENSE = 'two_hands_defense';
     // 'fight_with_two_weapons' is automatic when bearing two weapons (not weapon and shield)
     const SWAP_WEAPONS = 'swap_weapons';
@@ -49,6 +51,8 @@ class CombatActionCode extends AbstractCode
             self::MAIN_HAND_ONLY_RANGED_ATTACK,
             self::OFFHAND_ONLY_RANGED_ATTACK,
             self::TWO_HANDS_RANGED_ATTACK,
+            self::MAIN_HAND_ONLY_DEFENSE,
+            self::OFFHAND_ONLY_DEFENSE,
             self::TWO_HANDS_DEFENSE,
             self::SWAP_WEAPONS,
             self::CONCENTRATION_ON_DEFENSE,
