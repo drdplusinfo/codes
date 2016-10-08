@@ -21,5 +21,15 @@ abstract class WeaponlikeCodeTest extends ArmamentCodeTest
     /**
      * @test
      */
-    abstract public function I_can_easily_find_out_if_is_melee_armament();
+    abstract public function I_can_easily_find_out_if_is_weapon();
+
+    /**
+     * @test
+     */
+    abstract public function I_can_easily_find_out_if_is_shield();
+
+    /**
+     * @test
+     */
+    abstract public function I_can_easily_find_out_if_is_melee();
 }

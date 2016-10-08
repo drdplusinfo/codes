@@ -18,6 +18,16 @@ interface WeaponlikeCode extends ArmamentCode
     public function isRanged();
 
     /**
+     * @return bool
+     */
+    public function isShield();
+
+    /**
+     * @return bool
+     */
+    public function isWeapon();
+
+    /**
      * If is range, can be shooting, throwing or a projectile
      *
      * @return bool
@@ -37,11 +47,6 @@ interface WeaponlikeCode extends ArmamentCode
      * @return bool
      */
     public function isProjectile();
-
-    /**
-     * @return bool
-     */
-    public function isShield();
 
     /**
      * @return MeleeWeaponCode

@@ -24,6 +24,14 @@ abstract class WeaponCode extends AbstractCode implements WeaponlikeCode
     /**
      * @return bool
      */
+    public function isWeapon()
+    {
+        return true;
+    }
+
+    /**
+     * @return bool
+     */
     public function isShield()
     {
         return false;

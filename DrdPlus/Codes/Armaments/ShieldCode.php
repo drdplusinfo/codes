@@ -63,9 +63,11 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     }
 
     /**
+     * Shield CAN be used as a weapon (is weapon-like), but it is NOT a standard weapon (is not a weapon)
+     *
      * @return bool
      */
-    public function isMeleeWeapon()
+    public function isWeapon()
     {
         return false;
     }
@@ -76,6 +78,14 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     public function isShield()
     {
         return true;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isMeleeWeapon()
+    {
+        return false;
     }
 
     /**

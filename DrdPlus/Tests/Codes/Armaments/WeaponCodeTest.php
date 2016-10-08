@@ -18,4 +18,27 @@ abstract class WeaponCodeTest extends WeaponlikeCodeTest
         self::assertFalse($sut->isShield());
         self::assertFalse($sut->isProtectiveArmament());
     }
+
+    /**
+     * @test
+     */
+    public function I_can_easily_find_out_if_is_weapon()
+    {
+        $reflection = new \ReflectionClass($this->getSutClass());
+        /** @var WeaponCode $sut */
+        $sut = $reflection->newInstanceWithoutConstructor();
+        self::assertTrue($sut->isWeapon());
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_easily_find_out_if_is_shield()
+    {
+        $reflection = new \ReflectionClass($this->getSutClass());
+        /** @var WeaponCode $sut */
+        $sut = $reflection->newInstanceWithoutConstructor();
+        self::assertFalse($sut->isShield());
+    }
+
 }
