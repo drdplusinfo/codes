@@ -13,11 +13,10 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
      */
     public function It_is_melee_weapon_code()
     {
-        $reflection = new \ReflectionClass($this->getSutClass());
-        /** @var MeleeWeaponCode $meleeWeaponCode */
-        $meleeWeaponCode = $reflection->newInstanceWithoutConstructor();
-        self::assertInstanceOf(MeleeWeaponCode::class, $meleeWeaponCode);
-        self::assertTrue($meleeWeaponCode->isMeleeWeapon());
+        /** @var MeleeWeaponCode $sut */
+        $sut = $this->getSut();
+        self::assertInstanceOf(MeleeWeaponCode::class, $sut);
+        self::assertTrue($sut->isMeleeWeapon());
     }
 
     /**
@@ -25,9 +24,8 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
      */
     public function I_can_easily_find_out_if_is_melee()
     {
-        $reflection = new \ReflectionClass($this->getSutClass());
         /** @var MeleeWeaponCode $sut */
-        $sut = $reflection->newInstanceWithoutConstructor();
+        $sut = $this->getSut();
         self::assertTrue($sut->isMelee());
     }
 
@@ -475,6 +473,37 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     public function I_can_easily_find_out_if_is_melee_weapon()
     {
         self::assertTrue(MeleeWeaponCode::getIt(MeleeWeaponCode::CLUB)->isMeleeWeapon());
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_easily_find_out_if_weapon_is_unarmed_in_fact()
+    {
+        foreach (MeleeWeaponCode::getMeleeWeaponCodes() as $meleeWeaponCodeValue) {
+            $meleeWeaponCode = MeleeWeaponCode::getIt($meleeWeaponCodeValue);
+            self::assertSame(
+                in_array($meleeWeaponCodeValue, MeleeWeaponCode::getUnarmedCodes(), true),
+                $meleeWeaponCode->isUnarmed()
+            );
+        }
+        self::assertSame(
+            [
+                MeleeWeaponCode::HAND,
+                MeleeWeaponCode::HOBNAILED_GLOVE,
+                MeleeWeaponCode::LEG,
+                MeleeWeaponCode::HOBNAILED_BOOT,
+            ],
+            MeleeWeaponCode::getUnarmedCodes()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_easily_find_out_if_is_ranged()
+    {
+        self::assertFalse(MeleeWeaponCode::getIt(MeleeWeaponCode::CUDGEL)->isRanged());
     }
 
 }

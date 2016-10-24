@@ -35,11 +35,21 @@ abstract class CodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return string|AbstractCode
+     * @return AbstractCode
      */
-    public function getSutClass()
+    protected function getSutClass()
     {
         return preg_replace('~[\\\]Tests([\\\].+)Test$~', '$1', static::class);
+    }
+
+    /**
+     * @return AbstractCode
+     */
+    protected function getSut()
+    {
+        $sutClass = $this->getSutClass();
+
+        return $sutClass::getIt(current((new \ReflectionClass($sutClass))->getConstants()));
     }
 
     /**

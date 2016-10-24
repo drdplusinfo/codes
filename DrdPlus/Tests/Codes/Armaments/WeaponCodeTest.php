@@ -10,10 +10,8 @@ abstract class WeaponCodeTest extends WeaponlikeCodeTest
      */
     public function It_is_weapon_code()
     {
-        $sutClass = $this->getSutClass();
-        $reflection = new \ReflectionClass($sutClass);
         /** @var WeaponCode $sut */
-        $sut = $reflection->newInstanceWithoutConstructor();
+        $sut = $this->getSut();
         self::assertInstanceOf(WeaponCode::class, $sut);
         self::assertFalse($sut->isShield());
         self::assertFalse($sut->isProtectiveArmament());
@@ -24,9 +22,8 @@ abstract class WeaponCodeTest extends WeaponlikeCodeTest
      */
     public function I_can_easily_find_out_if_is_weapon()
     {
-        $reflection = new \ReflectionClass($this->getSutClass());
         /** @var WeaponCode $sut */
-        $sut = $reflection->newInstanceWithoutConstructor();
+        $sut = $this->getSut();
         self::assertTrue($sut->isWeapon());
     }
 
@@ -35,10 +32,19 @@ abstract class WeaponCodeTest extends WeaponlikeCodeTest
      */
     public function I_can_easily_find_out_if_is_shield()
     {
-        $reflection = new \ReflectionClass($this->getSutClass());
         /** @var WeaponCode $sut */
-        $sut = $reflection->newInstanceWithoutConstructor();
+        $sut = $this->getSut();
         self::assertFalse($sut->isShield());
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_easily_find_out_it_is_not_projectile()
+    {
+        /** @var WeaponCode $sut */
+        $sut = $this->getSut();
+        self::assertFalse($sut->isProjectile());
     }
 
 }

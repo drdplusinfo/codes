@@ -13,11 +13,17 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
      */
     public function I_can_easily_find_out_if_is_protective_armament()
     {
-        $reflection = new \ReflectionClass($this->getSutClass());
-        /** @var ShieldCode $sut */
-        $sut = $reflection->newInstanceWithoutConstructor();
-        self::assertTrue($sut->isProtectiveArmament());
-        self::assertInstanceOf(ProtectiveArmamentCode::class, $sut);
+        $shieldCode = ShieldCode::getIt(ShieldCode::MEDIUM_SHIELD);
+        self::assertTrue($shieldCode->isProtectiveArmament());
+        self::assertInstanceOf(ProtectiveArmamentCode::class, $shieldCode);
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_easily_find_out_if_is_ranged()
+    {
+        self::assertFalse(ShieldCode::getIt(ShieldCode::WITHOUT_SHIELD)->isRanged());
     }
 
     /**
@@ -99,10 +105,18 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
     /**
      * @test
      */
-    public function I_can_ask_it_if_is_without_shield()
+    public function I_can_easily_find_out_it_is_not_projectile()
     {
-        self::assertTrue(ShieldCode::getIt(ShieldCode::WITHOUT_SHIELD)->isWithoutShield());
-        self::assertFalse(ShieldCode::getIt(ShieldCode::HEAVY_SHIELD)->isWithoutShield());
+        self::assertFalse(ShieldCode::getIt(ShieldCode::BUCKLER)->isProjectile());
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_easily_find_out_if_weapon_is_unarmed_in_fact()
+    {
+        self::assertTrue(ShieldCode::getIt(ShieldCode::WITHOUT_SHIELD)->isUnarmed());
+        self::assertFalse(ShieldCode::getIt(ShieldCode::HEAVY_SHIELD)->isUnarmed());
     }
 
 }

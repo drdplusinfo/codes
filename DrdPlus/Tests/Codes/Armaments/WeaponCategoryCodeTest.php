@@ -29,20 +29,33 @@ class WeaponCategoryCodeTest extends CodeTest
     }
 
     /**
-     * test
+     * @test
      */
-    public function I_can_get_range_weapon_category_codes()
+    public function I_can_get_ranged_weapon_category_codes()
     {
         self::assertSame(
             $expectedCodes = [
                 'bow',
                 'crossbow',
                 'throwing_weapon',
+            ],
+            WeaponCategoryCode::getRangedWeaponCategoryCodes()
+        );
+        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_get_projectile_category_codes()
+    {
+        self::assertSame(
+            $expectedCodes = [
                 'arrow',
                 'dart',
                 'sling_stone',
             ],
-            WeaponCategoryCode::getRangeWeaponCategoryCodes()
+            WeaponCategoryCode::getProjectilesCategoryCodes()
         );
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }

@@ -3,26 +3,31 @@ namespace DrdPlus\Codes\Armaments;
 
 interface WeaponlikeCode extends ArmamentCode
 {
+
     /**
-     * If is not range, is melee
+     * If is not ranged weapon-like, is melee weapon-like (weapon or shield)
      *
      * @return bool
      */
     public function isMelee();
 
     /**
-     * If is not melee, is ranged
+     * If is not melee weapon-like, is ranged-weaponlike.
      *
      * @return bool
      */
     public function isRanged();
 
     /**
+     * Even shield can be used for (desperate) attack - that is why is weapon-like.
+     *
      * @return bool
      */
     public function isShield();
 
     /**
+     * Is it primarily a weapon, not a shield or something like that?
+     *
      * @return bool
      */
     public function isWeapon();
@@ -42,13 +47,6 @@ interface WeaponlikeCode extends ArmamentCode
     public function isThrowingWeapon();
 
     /**
-     * If is range, can be a projectile or shooting or throwing
-     *
-     * @return bool
-     */
-    public function isProjectile();
-
-    /**
      * @return MeleeWeaponCode
      */
     public function convertToMeleeWeaponCodeEquivalent();
@@ -57,5 +55,10 @@ interface WeaponlikeCode extends ArmamentCode
      * @return RangedWeaponCode
      */
     public function convertToRangedWeaponCodeEquivalent();
+
+    /**
+     * @return bool
+     */
+    public function isUnarmed();
 
 }

@@ -26,6 +26,14 @@ abstract class ArmorCode extends AbstractCode implements ProtectiveArmamentCode
     /**
      * @return bool
      */
+    public function isProjectile()
+    {
+        return false;
+    }
+
+    /**
+     * @return bool
+     */
     public function isArmor()
     {
         return true;

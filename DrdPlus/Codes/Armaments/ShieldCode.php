@@ -49,7 +49,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @return bool
      */
-    public function isWeaponlike()
+    public function isMelee()
     {
         return true;
     }
@@ -57,7 +57,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @return bool
      */
-    public function isMelee()
+    public function isWeaponlike()
     {
         return true;
     }
@@ -143,7 +143,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @return bool
      */
-    public function isWithoutShield()
+    public function isUnarmed()
     {
         return $this->getValue() === self::WITHOUT_SHIELD;
     }

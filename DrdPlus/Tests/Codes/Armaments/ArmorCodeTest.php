@@ -16,9 +16,8 @@ abstract class ArmorCodeTest extends ArmamentCodeTest implements ProtectiveArmam
      */
     public function I_can_easily_find_out_if_is_protective_armament()
     {
-        $reflection = new \ReflectionClass($this->getSutClass());
         /** @var ArmorCode $sut */
-        $sut = $reflection->newInstanceWithoutConstructor();
+        $sut = $this->getSut();
         self::assertTrue($sut->isProtectiveArmament());
         self::assertInstanceOf(ProtectiveArmamentCode::class, $sut);
     }
@@ -28,13 +27,12 @@ abstract class ArmorCodeTest extends ArmamentCodeTest implements ProtectiveArmam
      */
     public function It_is_armor_code()
     {
-        $sutClass = $this->getSutClass();
-        $reflection = new \ReflectionClass($sutClass);
         /** @var ArmorCode $sut */
-        $sut = $sutClass::getIt(current($reflection->getConstants()));
+        $sut = $this->getSut();
         self::assertInstanceOf(ArmorCode::class, $sut);
         self::assertTrue($sut->isArmor());
         self::assertFalse($sut->isShield());
         self::assertFalse($sut->isWeaponlike());
+        self::assertFalse($sut->isProjectile());
     }
 }

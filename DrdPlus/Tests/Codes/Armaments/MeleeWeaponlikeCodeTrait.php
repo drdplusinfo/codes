@@ -2,8 +2,10 @@
 namespace DrdPlus\Tests\Codes\Armaments;
 
 use DrdPlus\Codes\Armaments\MeleeWeaponlikeCode;
-use DrdPlus\Codes\Armaments\WeaponlikeCode;
 
+/**
+ * @method MeleeWeaponlikeCode getSut
+ */
 trait MeleeWeaponlikeCodeTrait
 {
     /**
@@ -11,9 +13,8 @@ trait MeleeWeaponlikeCodeTrait
      */
     public function It_is_melee_weaponlike_code()
     {
-        $reflection = new \ReflectionClass($this->getSutClass());
-        $meleeWeaponlikeCode = $reflection->newInstanceWithoutConstructor();
-        self::assertInstanceOf(MeleeWeaponlikeCode::class, $meleeWeaponlikeCode);
+        $sut = $this->getSut();
+        self::assertInstanceOf(MeleeWeaponlikeCode::class, $sut);
     }
 
     /**
@@ -21,13 +22,11 @@ trait MeleeWeaponlikeCodeTrait
      */
     public function It_is_not_range_nor_shooting_nor_throwing_weapon_nor_projectile_code()
     {
-        $reflection = new \ReflectionClass($this->getSutClass());
-        /** @var WeaponlikeCode $meleeWeaponlikeCode */
-        $meleeWeaponlikeCode = $reflection->newInstanceWithoutConstructor();
-        self::assertFalse($meleeWeaponlikeCode->isRanged());
-        self::assertFalse($meleeWeaponlikeCode->isShootingWeapon());
-        self::assertFalse($meleeWeaponlikeCode->isThrowingWeapon());
-        self::assertFalse($meleeWeaponlikeCode->isProjectile());
+        $sut = $this->getSut();
+        self::assertFalse($sut->isRanged());
+        self::assertFalse($sut->isShootingWeapon());
+        self::assertFalse($sut->isThrowingWeapon());
+        self::assertFalse($sut->isProjectile());
     }
 
     /**

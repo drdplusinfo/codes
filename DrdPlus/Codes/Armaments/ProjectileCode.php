@@ -3,7 +3,7 @@ namespace DrdPlus\Codes\Armaments;
 
 use DrdPlus\Codes\Partials\AbstractCode;
 
-abstract class WeaponCode extends AbstractCode implements WeaponlikeCode
+abstract class ProjectileCode extends AbstractCode implements ArmamentCode
 {
     /**
      * @return bool
@@ -18,22 +18,6 @@ abstract class WeaponCode extends AbstractCode implements WeaponlikeCode
      */
     public function isWeaponlike()
     {
-        return true;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isWeapon()
-    {
-        return true;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isShield()
-    {
         return false;
     }
 
@@ -42,7 +26,21 @@ abstract class WeaponCode extends AbstractCode implements WeaponlikeCode
      */
     public function isProjectile()
     {
-        return false;
+        return true;
     }
 
+    /**
+     * @return bool
+     */
+    abstract public function isArrow();
+
+    /**
+     * @return bool
+     */
+    abstract public function isDart();
+
+    /**
+     * @return bool
+     */
+    abstract public function isSlingStone();
 }

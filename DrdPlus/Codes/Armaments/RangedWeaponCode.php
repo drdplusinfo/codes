@@ -28,33 +28,6 @@ class RangedWeaponCode extends WeaponCode
         ];
     }
 
-    // arrows
-    const BASIC_ARROW = 'basic_arrow';
-    const LONG_RANGE_ARROW = 'long_range_arrow';
-    const WAR_ARROW = 'war_arrow';
-    const PIERCING_ARROW = 'piercing_arrow';
-    const HOLLOW_ARROW = 'hollow_arrow';
-    const CRIPPLING_ARROW = 'crippling_arrow';
-    const INCENDIARY_ARROW = 'incendiary_arrow';
-    const SILVER_ARROW = 'silver_arrow';
-
-    /**
-     * @return array|string[]
-     */
-    public static function getArrowCodes()
-    {
-        return [
-            self::BASIC_ARROW,
-            self::LONG_RANGE_ARROW,
-            self::WAR_ARROW,
-            self::PIERCING_ARROW,
-            self::HOLLOW_ARROW,
-            self::CRIPPLING_ARROW,
-            self::INCENDIARY_ARROW,
-            self::SILVER_ARROW,
-        ];
-    }
-
     // crossbows
     const MINICROSSBOW = 'minicrossbow';
     const LIGHT_CROSSBOW = 'light_crossbow';
@@ -71,27 +44,6 @@ class RangedWeaponCode extends WeaponCode
             self::LIGHT_CROSSBOW,
             self::MILITARY_CROSSBOW,
             self::HEAVY_CROSSBOW,
-        ];
-    }
-
-    // darts
-    const BASIC_DART = 'basic_dart';
-    const WAR_DART = 'war_dart';
-    const PIERCING_DART = 'piercing_dart';
-    const HOLLOW_DART = 'hollow_dart';
-    const SILVER_DART = 'silver_dart';
-
-    /**
-     * @return array|string[]
-     */
-    public static function getDartCodes()
-    {
-        return [
-            self::BASIC_DART,
-            self::WAR_DART,
-            self::PIERCING_DART,
-            self::HOLLOW_DART,
-            self::SILVER_DART,
         ];
     }
 
@@ -124,21 +76,6 @@ class RangedWeaponCode extends WeaponCode
         ];
     }
 
-    // sling stones
-    const SLING_STONE_LIGHT = 'sling_stone_light';
-    const SLING_STONE_HEAVIER = 'sling_stone_heavier';
-
-    /**
-     * @return array|string[]
-     */
-    public static function getSlingStoneCodes()
-    {
-        return [
-            self::SLING_STONE_LIGHT,
-            self::SLING_STONE_HEAVIER,
-        ];
-    }
-
     /**
      * @return array|string[]
      */
@@ -147,11 +84,8 @@ class RangedWeaponCode extends WeaponCode
         return array_values( // to get continual integer keys
             array_merge(
                 self::getBowCodes(),
-                self::getArrowCodes(),
                 self::getCrossbowCodes(),
-                self::getDartCodes(),
-                self::getThrowingWeaponCodes(),
-                self::getSlingStoneCodes()
+                self::getThrowingWeaponCodes()
             )
         );
     }
@@ -183,14 +117,6 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return bool
      */
-    public function isArrow()
-    {
-        return in_array($this->getValue(), self::getArrowCodes(), true);
-    }
-
-    /**
-     * @return bool
-     */
     public function isCrossbow()
     {
         return in_array($this->getValue(), self::getCrossbowCodes(), true);
@@ -199,33 +125,9 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return bool
      */
-    public function isDart()
-    {
-        return in_array($this->getValue(), self::getDartCodes(), true);
-    }
-
-    /**
-     * @return bool
-     */
-    public function isSlingStone()
-    {
-        return in_array($this->getValue(), self::getSlingStoneCodes(), true);
-    }
-
-    /**
-     * @return bool
-     */
     public function isThrowingWeapon()
     {
         return in_array($this->getValue(), self::getThrowingWeaponCodes(), true);
-    }
-
-    /**
-     * @return bool
-     */
-    public function isProjectile()
-    {
-        return $this->isArrow() || $this->isDart() || $this->isSlingStone();
     }
 
     /**
@@ -257,6 +159,16 @@ class RangedWeaponCode extends WeaponCode
     public function convertToRangedWeaponCodeEquivalent()
     {
         return $this;
+    }
+
+    /**
+     * There is currently no ranged weapon which left your hand empty.
+     *
+     * @return bool
+     */
+    public function isUnarmed()
+    {
+        return false;
     }
 
 }

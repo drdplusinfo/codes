@@ -40,28 +40,6 @@ class RangedWeaponCodeTest extends WeaponCodeTest
     /**
      * @test
      */
-    public function I_can_get_arrow_codes()
-    {
-        self::assertSame(
-            $expectedCodes = [
-                'basic_arrow',
-                'long_range_arrow',
-                'war_arrow',
-                'piercing_arrow',
-                'hollow_arrow',
-                'crippling_arrow',
-                'incendiary_arrow',
-                'silver_arrow',
-            ],
-            RangedWeaponCode::getArrowCodes()
-        );
-
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
-    }
-
-    /**
-     * @test
-     */
     public function I_can_get_crossbow_codes()
     {
         self::assertSame(
@@ -72,25 +50,6 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 'heavy_crossbow',
             ],
             RangedWeaponCode::getCrossbowCodes()
-        );
-
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
-    }
-
-    /**
-     * @test
-     */
-    public function I_can_get_dart_codes()
-    {
-        self::assertSame(
-            $expectedCodes = [
-                'basic_dart',
-                'war_dart',
-                'piercing_dart',
-                'hollow_dart',
-                'silver_dart',
-            ],
-            RangedWeaponCode::getDartCodes()
         );
 
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
@@ -122,22 +81,6 @@ class RangedWeaponCodeTest extends WeaponCodeTest
     /**
      * @test
      */
-    public function I_can_get_sling_stone_codes()
-    {
-        self::assertSame(
-            $expectedCodes = [
-                'sling_stone_light',
-                'sling_stone_heavier',
-            ],
-            RangedWeaponCode::getSlingStoneCodes()
-        );
-
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
-    }
-
-    /**
-     * @test
-     */
     public function I_can_get_all_codes_at_once()
     {
         self::assertSame(
@@ -148,26 +91,11 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 'short_composite_bow',
                 'long_composite_bow',
                 'power_bow',
-                // arrows
-                'basic_arrow',
-                'long_range_arrow',
-                'war_arrow',
-                'piercing_arrow',
-                'hollow_arrow',
-                'crippling_arrow',
-                'incendiary_arrow',
-                'silver_arrow',
                 // crossbows
                 'minicrossbow',
                 'light_crossbow',
                 'military_crossbow',
                 'heavy_crossbow',
-                // darts
-                'basic_dart',
-                'war_dart',
-                'piercing_dart',
-                'hollow_dart',
-                'silver_dart',
                 // throwing weapons
                 'rock',
                 'throwing_dagger',
@@ -178,8 +106,6 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 'spear',
                 'javelin',
                 'sling',
-                'sling_stone_light',
-                'sling_stone_heavier',
             ],
             RangedWeaponCode::getRangedWeaponCodes(),
             'There are ' . (
@@ -196,7 +122,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
     public function I_can_ask_code_if_is_specific_weapon_type()
     {
         $questions = [
-            'isBow', 'isArrow', 'isCrossbow', 'isDart', 'isThrowingWeapon', 'isSlingStone',
+            'isBow', 'isCrossbow', 'isThrowingWeapon',
         ];
         foreach (RangedWeaponCode::getBowCodes() as $codeValue) {
             $code = RangedWeaponCode::getIt($codeValue);
@@ -209,17 +135,6 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (RangedWeaponCode::getArrowCodes() as $codeValue) {
-            $code = RangedWeaponCode::getIt($codeValue);
-            self::assertTrue($code->isRanged());
-            self::assertFalse($code->isMelee());
-            self::assertTrue($code->isArrow());
-            foreach ($questions as $question) {
-                if ($question !== 'isArrow') {
-                    self::assertFalse($code->$question());
-                }
-            }
-        }
         foreach (RangedWeaponCode::getCrossbowCodes() as $codeValue) {
             $code = RangedWeaponCode::getIt($codeValue);
             self::assertTrue($code->isRanged());
@@ -227,17 +142,6 @@ class RangedWeaponCodeTest extends WeaponCodeTest
             self::assertTrue($code->isCrossbow());
             foreach ($questions as $question) {
                 if ($question !== 'isCrossbow') {
-                    self::assertFalse($code->$question());
-                }
-            }
-        }
-        foreach (RangedWeaponCode::getDartCodes() as $codeValue) {
-            $code = RangedWeaponCode::getIt($codeValue);
-            self::assertTrue($code->isRanged());
-            self::assertFalse($code->isMelee());
-            self::assertTrue($code->isDart());
-            foreach ($questions as $question) {
-                if ($question !== 'isDart') {
                     self::assertFalse($code->$question());
                 }
             }
@@ -257,17 +161,6 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                     } else {
                         self::assertTrue($code->$question(), "{$codeValue} should be {$question}");
                     }
-                }
-            }
-        }
-        foreach (RangedWeaponCode::getSlingStoneCodes() as $codeValue) {
-            $code = RangedWeaponCode::getIt($codeValue);
-            self::assertTrue($code->isRanged());
-            self::assertFalse($code->isMelee());
-            self::assertTrue($code->isSlingStone());
-            foreach ($questions as $question) {
-                if ($question !== 'isSlingStone') {
-                    self::assertFalse($code->$question());
                 }
             }
         }
@@ -305,19 +198,17 @@ class RangedWeaponCodeTest extends WeaponCodeTest
      * @param $rangeWeaponCodeValue
      * @param bool $isThrowing
      * @param bool $isShooting
-     * @param bool $isProjectile
      */
-    public function I_can_distinguish_throwing_and_shooting_weapon_and_projectile(
+    public function I_can_distinguish_throwing_and_shooting_weapon(
         $rangeWeaponCodeValue,
         $isThrowing,
-        $isShooting,
-        $isProjectile
+        $isShooting
     )
     {
         $rangeWeaponCode = RangedWeaponCode::getIt($rangeWeaponCodeValue);
+        self::assertFalse($rangeWeaponCode->isProjectile());
         self::assertSame($isThrowing, $rangeWeaponCode->isThrowingWeapon());
         self::assertSame($isShooting, $rangeWeaponCode->isShootingWeapon());
-        self::assertSame($isProjectile, $rangeWeaponCode->isProjectile());
         if ($rangeWeaponCode->getValue() !== RangedWeaponCode::SPEAR) {
             self::assertFalse($rangeWeaponCode->isMelee());
         } else {
@@ -334,27 +225,10 @@ class RangedWeaponCodeTest extends WeaponCodeTest
             ['short_composite_bow', false, true, false],
             ['long_composite_bow', false, true, false],
             ['power_bow', false, true, false],
-            // arrows
-            ['basic_arrow', false, false, true],
-            ['long_range_arrow', false, false, true],
-            ['war_arrow', false, false, true],
-            ['piercing_arrow', false, false, true],
-            ['hollow_arrow', false, false, true],
-            ['crippling_arrow', false, false, true],
-            ['incendiary_arrow', false, false, true],
-            ['silver_arrow', false, false, true],
-            // crossbows
             ['minicrossbow', false, true, false],
             ['light_crossbow', false, true, false],
             ['military_crossbow', false, true, false],
             ['heavy_crossbow', false, true, false],
-            // darts
-            ['basic_dart', false, false, true],
-            ['war_dart', false, false, true],
-            ['piercing_dart', false, false, true],
-            ['hollow_dart', false, false, true],
-            ['silver_dart', false, false, true],
-            // throwing weapons
             ['rock', true, false, false],
             ['throwing_dagger', true, false, false],
             ['light_throwing_axe', true, false, false],
@@ -364,10 +238,23 @@ class RangedWeaponCodeTest extends WeaponCodeTest
             ['spear', true, false, false],
             ['javelin', true, false, false],
             ['sling', true, false, false],
-            // throwing but projectile
-            ['sling_stone_light', false, false, true],
-            ['sling_stone_heavier', false, false, true],
         ];
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_easily_find_out_if_weapon_is_unarmed_in_fact()
+    {
+        self::assertFalse(RangedWeaponCode::getIt(RangedWeaponCode::LONG_COMPOSITE_BOW)->isUnarmed());
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_easily_find_out_if_is_ranged()
+    {
+        self::assertTrue(RangedWeaponCode::getIt(RangedWeaponCode::MILITARY_CROSSBOW)->isRanged());
     }
 
 }

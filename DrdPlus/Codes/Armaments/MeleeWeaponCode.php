@@ -240,6 +240,8 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     }
 
     /**
+     * Both melee weapons and shields are melee.
+     *
      * @return bool
      */
     public function isMelee()
@@ -248,6 +250,8 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     }
 
     /**
+     * Note: Shield is weaponlike, but not a weapon.
+     *
      * @return bool
      */
     public function isMeleeWeapon()
@@ -256,11 +260,13 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     }
 
     /**
+     * Even melee weapon can be ranged (currently spear only).
+     *
      * @return bool
      */
     public function isRanged()
     {
-        return $this->isShootingWeapon() || $this->isThrowingWeapon() || $this->isProjectile();
+        return $this->isShootingWeapon() || $this->isThrowingWeapon();
     }
 
     /**
@@ -277,14 +283,6 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     public function isThrowingWeapon()
     {
         return $this->getValue() === self::SPEAR; // spear can be used both as a throwing and melee weapon
-    }
-
-    /**
-     * @return bool
-     */
-    public function isProjectile()
-    {
-        return false;
     }
 
     /**

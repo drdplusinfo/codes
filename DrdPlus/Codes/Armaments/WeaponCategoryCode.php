@@ -42,22 +42,32 @@ class WeaponCategoryCode extends AbstractCode
     // shooting weapons
     const BOW = 'bow';
     const CROSSBOW = 'crossbow';
-    // projectiles
-    const ARROW = 'arrow';
-    const DART = 'dart';
-    const SLING_STONE = 'sling_stone';
     // throwing weapons
     const THROWING_WEAPON = 'throwing_weapon';
 
     /**
      * @return array|string[]
      */
-    public static function getRangeWeaponCategoryCodes()
+    public static function getRangedWeaponCategoryCodes()
     {
         return [
             self::BOW,
             self::CROSSBOW,
             self::THROWING_WEAPON,
+        ];
+    }
+
+    // projectiles
+    const ARROW = 'arrow';
+    const DART = 'dart';
+    const SLING_STONE = 'sling_stone';
+
+    /**
+     * @return array|string[]
+     */
+    public static function getProjectilesCategoryCodes()
+    {
+        return [
             self::ARROW,
             self::DART,
             self::SLING_STONE,
@@ -71,7 +81,8 @@ class WeaponCategoryCode extends AbstractCode
     {
         return array_merge(
             self::getMeleeWeaponCategoryCodes(),
-            self::getRangeWeaponCategoryCodes()
+            self::getRangedWeaponCategoryCodes(),
+            self::getProjectilesCategoryCodes()
         );
     }
 }
