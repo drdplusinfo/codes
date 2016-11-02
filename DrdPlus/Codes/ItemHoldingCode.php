@@ -20,7 +20,31 @@ class ItemHoldingCode extends AbstractCode
         return [
             self::TWO_HANDS,
             self::MAIN_HAND,
-            self::OFFHAND
+            self::OFFHAND,
         ];
+    }
+
+    /**
+     * @return bool
+     */
+    public function holdsByTwoHands()
+    {
+        return $this->getValue() === self::TWO_HANDS;
+    }
+
+    /**
+     * @return bool
+     */
+    public function holdsByMainHand()
+    {
+        return $this->getValue() === self::MAIN_HAND;
+    }
+
+    /**
+     * @return bool
+     */
+    public function holdsByOffhand()
+    {
+        return $this->getValue() === self::OFFHAND;
     }
 }
