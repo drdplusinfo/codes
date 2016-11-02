@@ -12,7 +12,10 @@ abstract class CodeTest extends \PHPUnit_Framework_TestCase
      */
     public function It_is_code()
     {
-        self::assertTrue(is_a($this->getSutClass(), Code::class, true));
+        self::assertTrue(
+            is_a($this->getSutClass(), Code::class, true),
+            $this->getSutClass() . ' is not an instance of ' . Code::class
+        );
     }
 
     /**
