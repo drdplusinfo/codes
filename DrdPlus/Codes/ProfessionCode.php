@@ -8,6 +8,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class ProfessionCode extends AbstractCode
 {
+    const COMMONER = 'commoner';
     const FIGHTER = 'fighter';
     const THIEF = 'thief';
     const RANGER = 'ranger';
@@ -21,6 +22,7 @@ class ProfessionCode extends AbstractCode
     public static function getProfessionCodes()
     {
         return [
+            self::COMMONER,
             self::FIGHTER,
             self::THIEF,
             self::RANGER,
