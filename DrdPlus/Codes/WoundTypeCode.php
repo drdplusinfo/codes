@@ -23,4 +23,28 @@ class WoundTypeCode extends AbstractCode
             self::CUT,
         ];
     }
+
+    /**
+     * @return bool
+     */
+    public function isCrush()
+    {
+        return $this->getValue() === self::CRUSH;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isStab()
+    {
+        return $this->getValue() === self::STAB;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isCut()
+    {
+        return $this->getValue() === self::CUT;
+    }
 }
