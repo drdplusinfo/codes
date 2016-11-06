@@ -34,6 +34,7 @@ class PropertyCode extends AbstractCode
     // body
     const AGE = 'age';
     const HEIGHT_IN_CM = 'height_in_cm';
+    const HEIGHT = 'height';
     const WEIGHT_IN_KG = 'weight_in_kg';
     const WEIGHT = 'weight';
     const SIZE = 'size';
@@ -46,6 +47,7 @@ class PropertyCode extends AbstractCode
         return [
             self::AGE,
             self::HEIGHT_IN_CM,
+            self::HEIGHT,
             self::WEIGHT_IN_KG,
             self::WEIGHT,
             self::SIZE,

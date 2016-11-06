@@ -33,6 +33,7 @@ class PropertyCodeTest extends CodeTest
             $expectedCodes = [
                 'age',
                 'height_in_cm',
+                'height',
                 'weight_in_kg',
                 'weight',
                 'size',
@@ -129,6 +130,7 @@ class PropertyCodeTest extends CodeTest
                 'charisma',
                 'age',
                 'height_in_cm',
+                'height',
                 'weight_in_kg',
                 'weight',
                 'size',
