@@ -47,4 +47,13 @@ class ItemHoldingCode extends AbstractCode
     {
         return $this->getValue() === self::OFFHAND;
     }
+
+    /**
+     * @return bool
+     */
+    public function holdsByOneHand()
+    {
+        return in_array($this->getValue(), [self::OFFHAND, self::MAIN_HAND], true);
+    }
+
 }

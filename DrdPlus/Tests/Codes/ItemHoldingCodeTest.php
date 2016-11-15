@@ -31,6 +31,7 @@ class ItemHoldingCodeTest extends CodeTest
         self::assertSame($itemHolding->holdsByTwoHands(), $holdsByTwoHands);
         self::assertSame($itemHolding->holdsByMainHand(), $holdsByMainHand);
         self::assertSame($itemHolding->holdsByOffhand(), $holdsByOffhand);
+        self::assertSame($itemHolding->holdsByOneHand(), !$holdsByTwoHands);
     }
 
     public function provideHoldingExpectation()
