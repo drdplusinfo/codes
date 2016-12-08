@@ -10,6 +10,7 @@
   },
   "require": {
     "php": ">=5.5.0",
+    "roave/security-advisories": "dev-master",
     "granam/string": "dev-master"
   },
   "require-dev": {
