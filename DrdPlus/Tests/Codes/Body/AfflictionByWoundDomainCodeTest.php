@@ -1,7 +1,8 @@
 <?php
-namespace DrdPlus\Tests\Codes;
+namespace DrdPlus\Tests\Codes\Body;
 
-use DrdPlus\Codes\AfflictionByWoundDomainCode;
+use DrdPlus\Codes\Body\AfflictionByWoundDomainCode;
+use DrdPlus\Tests\Codes\CodeTest;
 
 class AfflictionByWoundDomainCodeTest extends CodeTest
 {

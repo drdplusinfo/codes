@@ -1,9 +1,10 @@
 <?php
-namespace DrdPlus\Tests\Codes;
+namespace DrdPlus\Tests\Codes\Body;
 
-use DrdPlus\Codes\ConditionsAffectingHealingCode;
+use DrdPlus\Codes\Body\RestConditionsCode;
+use DrdPlus\Tests\Codes\CodeTest;
 
-class ConditionsAffectingHealingCodeTest extends CodeTest
+class RestConditionsCodeTest extends CodeTest
 {
     /**
      * @test
@@ -12,12 +13,14 @@ class ConditionsAffectingHealingCodeTest extends CodeTest
     {
         self::assertSame(
             $expectedCodes = [
+                'half_time_of_rest_or_sleep',
+                'quarter_time_of_rest_or_sleep',
                 'foul_conditions',
                 'bad_conditions',
                 'impaired_conditions',
                 'good_conditions',
             ],
-            ConditionsAffectingHealingCode::getConditionsAffectingHealingCodes()
+            RestConditionsCode::getRestConditionsCodes()
         );
         $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }

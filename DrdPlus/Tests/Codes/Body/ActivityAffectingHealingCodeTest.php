@@ -1,7 +1,8 @@
 <?php
-namespace DrdPlus\Tests\Codes;
+namespace DrdPlus\Tests\Codes\Body;
 
-use DrdPlus\Codes\ActivityAffectingHealingCode;
+use DrdPlus\Codes\Body\ActivityAffectingHealingCode;
+use DrdPlus\Tests\Codes\CodeTest;
 
 class ActivityAffectingHealingCodeTest extends CodeTest
 {

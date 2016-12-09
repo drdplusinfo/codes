@@ -1,11 +1,29 @@
 <?php
 namespace DrdPlus\Tests\Codes\Armaments;
 
+use DrdPlus\Codes\Armaments\Exceptions\CanNotBeConvertedToMeleeWeaponCode;
 use DrdPlus\Codes\Armaments\MeleeWeaponCode;
 use DrdPlus\Codes\Armaments\RangedWeaponCode;
+use DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode;
 
 class RangedWeaponCodeTest extends WeaponCodeTest
 {
+
+    /**
+     * @param string $weaponlikeCode
+     * @param string $interferingCodeClass
+     * @return bool
+     */
+    protected function isSameCodeAllowedFor($weaponlikeCode, $interferingCodeClass)
+    {
+        try {
+            return is_a(RangedWeaponCode::getIt($weaponlikeCode)->convertToMeleeWeaponCodeEquivalent(), $interferingCodeClass);
+        } catch (CanNotBeConvertedToMeleeWeaponCode $canNotBeConvertedToMeleeWeaponCode) {
+            return false;
+        } catch (UnknownValueForCode $unknownValueForCode) {
+            return false;
+        }
+    }
 
     /**
      * @test

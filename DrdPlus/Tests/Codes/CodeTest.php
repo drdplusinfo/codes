@@ -38,7 +38,7 @@ abstract class CodeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return AbstractCode
+     * @return AbstractCode|string
      */
     protected function getSutClass()
     {
@@ -83,7 +83,7 @@ abstract class CodeTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException \Granam\Scalar\Tools\Exceptions\WrongParameterType
+     * @expectedException \Doctrineum\String\Exceptions\UnexpectedValueToEnum
      * @expectedExceptionMessageRegExp ~\DateTime~
      */
     public function I_can_not_create_code_from_invalid_value_format()

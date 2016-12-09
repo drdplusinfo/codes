@@ -9,6 +9,16 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
     use MeleeWeaponlikeCodeTrait;
 
     /**
+     * @param string $weaponlikeCode
+     * @param string $interferingCodeClass
+     * @return bool
+     */
+    protected function isSameCodeAllowedFor($weaponlikeCode, $interferingCodeClass)
+    {
+        return false;
+    }
+
+    /**
      * @test
      */
     public function I_can_easily_find_out_if_is_protective_armament()

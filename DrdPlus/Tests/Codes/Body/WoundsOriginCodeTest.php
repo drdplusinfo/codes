@@ -1,7 +1,8 @@
 <?php
-namespace DrdPlus\Tests\Codes;
+namespace DrdPlus\Tests\Codes\Body;
 
-use DrdPlus\Codes\WoundsOriginCode;
+use DrdPlus\Codes\Body\WoundsOriginCode;
+use DrdPlus\Tests\Codes\CodeTest;
 
 class WoundsOriginCodeTest extends CodeTest
 {

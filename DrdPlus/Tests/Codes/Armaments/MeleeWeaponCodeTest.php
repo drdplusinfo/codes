@@ -1,12 +1,30 @@
 <?php
 namespace DrdPlus\Tests\Codes\Armaments;
 
+use DrdPlus\Codes\Armaments\Exceptions\CanNotBeConvertedToRangeWeaponCode;
 use DrdPlus\Codes\Armaments\MeleeWeaponCode;
 use DrdPlus\Codes\Armaments\RangedWeaponCode;
+use DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode;
 
 class MeleeWeaponCodeTest extends WeaponCodeTest
 {
     use MeleeWeaponlikeCodeTrait;
+
+    /**
+     * @param string $weaponlikeCode
+     * @param string $interferingCodeClass
+     * @return bool
+     */
+    protected function isSameCodeAllowedFor($weaponlikeCode, $interferingCodeClass)
+    {
+        try {
+            return is_a(MeleeWeaponCode::getIt($weaponlikeCode)->convertToRangedWeaponCodeEquivalent(), $interferingCodeClass);
+        } catch (CanNotBeConvertedToRangeWeaponCode $canNotBeConvertedToRangeWeaponCode) {
+            return false;
+        } catch (UnknownValueForCode $unknownValueForCode) {
+            return false;
+        }
+    }
 
     /**
      * @test

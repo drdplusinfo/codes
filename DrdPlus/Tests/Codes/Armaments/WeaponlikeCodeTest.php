@@ -10,13 +10,45 @@ abstract class WeaponlikeCodeTest extends ArmamentCodeTest
      */
     public function It_is_weaponlike_code()
     {
-        $sutClass = $this->getSutClass();
-        $reflection = new \ReflectionClass($sutClass);
+        $reflection = new \ReflectionClass($this->getSutClass());
         /** @var WeaponlikeCode $sut */
         $sut = $reflection->newInstanceWithoutConstructor();
         self::assertInstanceOf(WeaponlikeCode::class, $sut);
         self::assertTrue($sut->isWeaponlike());
     }
+
+    private static $weaponlikeCodes = [];
+
+    /**
+     * This is important for weaponlike code as an enum - to be easily determined by @see WeaponlikeCodeEnumType
+     *
+     * @test
+     */
+    public function Has_unique_codes_across_all_weaponlikes()
+    {
+        $sutClass = $this->getSutClass();
+        $reflection = new \ReflectionClass($sutClass);
+        $sameCodes = [];
+        foreach (self::$weaponlikeCodes as $otherCodeClass => $weaponlikeCodes) {
+            // looking for same values
+            foreach (array_intersect($weaponlikeCodes, $reflection->getConstants()) as $sameCode) {
+                if (!$this->isSameCodeAllowedFor($sameCode, $otherCodeClass)) {
+                    $sameCodes[] = "$sameCode (from codes $sutClass and $otherCodeClass)";
+                }
+            }
+        }
+        if (count($sameCodes) > 0) {
+            self::fail('Weaponlike codes have same values: ' . implode(',', $sameCodes));
+        }
+        self::$weaponlikeCodes[$sutClass] = $reflection->getConstants();
+    }
+
+    /**
+     * @param string $weaponlikeCode
+     * @param string $interferingCodeClass
+     * @return bool
+     */
+    abstract protected function isSameCodeAllowedFor($weaponlikeCode, $interferingCodeClass);
 
     /**
      * @test
