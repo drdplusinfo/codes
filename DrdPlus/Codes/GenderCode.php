@@ -14,7 +14,7 @@ class GenderCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getGenderCodes()
+    public static function getPossibleValues()
     {
         return [
             self::MALE,

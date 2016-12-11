@@ -30,10 +30,10 @@ class MeleeCombatActionCode extends CombatActionCode
     /**
      * @return array|string[]
      */
-    public static function getMeleeCombatActionCodes()
+    public static function getPossibleValues()
     {
         return array_merge(
-            self::getCombatActionCodes(),
+            parent::getPossibleValues(),
             self::getMeleeOnlyCombatActionCodes()
         );
     }

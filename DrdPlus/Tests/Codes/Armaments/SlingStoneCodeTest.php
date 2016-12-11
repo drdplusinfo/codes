@@ -5,17 +5,6 @@ use DrdPlus\Codes\Armaments\SlingStoneCode;
 
 class SlingStoneCodeTest extends ProjectileCodeTest
 {
-    /**
-     * @test
-     */
-    public function I_can_get_all_codes_at_once()
-    {
-        self::assertSame(
-            $expectedValues = ['sling_stone_light', 'sling_stone_heavier'],
-            SlingStoneCode::getSlingStoneCodes()
-        );
-        $this->I_can_get_codes_by_same_named_constants($expectedValues);
-    }
 
     /**
      * @test

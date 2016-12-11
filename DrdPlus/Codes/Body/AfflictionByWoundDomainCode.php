@@ -14,7 +14,7 @@ class AfflictionByWoundDomainCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getAfflictionByWoundDomainCodes()
+    public static function getPossibleValues()
     {
         return [
             self::PHYSICAL,

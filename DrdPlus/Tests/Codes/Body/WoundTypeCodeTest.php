@@ -2,22 +2,10 @@
 namespace DrdPlus\Tests\Codes\Body;
 
 use DrdPlus\Codes\Body\WoundTypeCode;
-use DrdPlus\Tests\Codes\CodeTest;
+use DrdPlus\Tests\Codes\AbstractCodeTest;
 
-class WoundTypeCodeTest extends CodeTest
+class WoundTypeCodeTest extends AbstractCodeTest
 {
-    /**
-     * @test
-     */
-    public function I_can_get_all_codes_at_once()
-    {
-        self::assertSame(
-            $expectedCodes = ['crush', 'stab', 'cut'],
-            WoundTypeCode::getWoundTypeCodes()
-        );
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
-    }
-
     /**
      * @test
      * @dataProvider provideType

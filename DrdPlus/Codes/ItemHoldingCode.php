@@ -15,7 +15,7 @@ class ItemHoldingCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getItemHoldingCodes()
+    public static function getPossibleValues()
     {
         return [
             self::TWO_HANDS,

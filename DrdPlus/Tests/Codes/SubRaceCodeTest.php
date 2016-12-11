@@ -4,7 +4,7 @@ namespace DrdPlus\Tests\Codes;
 use DrdPlus\Codes\RaceCode;
 use DrdPlus\Codes\SubRaceCode;
 
-class SubRaceCodeTest extends CodeTest
+class SubRaceCodeTest extends AbstractCodeTest
 {
     /**
      * @test
@@ -40,15 +40,15 @@ class SubRaceCodeTest extends CodeTest
                     'goblin',
                 ],
             ],
-            SubRaceCode::getRaceToSubRaceCodes()
+            SubRaceCode::getRaceToSubRaceValues()
         );
         self::assertSame(
-            SubRaceCode::getSubRaceCodes(),
-            array_merge(array_unique($this->toFlatValues(SubRaceCode::getRaceToSubRaceCodes())))
+            SubRaceCode::getPossibleValues(),
+            array_merge(array_unique($this->toFlatValues(SubRaceCode::getRaceToSubRaceValues())))
         );
         self::assertEquals(
-            RaceCode::getRaceCodes(),
-            array_keys(SubRaceCode::getRaceToSubRaceCodes())
+            RaceCode::getPossibleValues(),
+            array_keys(SubRaceCode::getRaceToSubRaceValues())
         );
     }
 
@@ -67,27 +67,6 @@ class SubRaceCodeTest extends CodeTest
         }
 
         return $flat;
-    }
-
-    /**
-     * @test
-     */
-    public function I_can_get_all_codes_at_once()
-    {
-        self::assertSame(
-            [
-                'common',
-                'highlander',
-                'green',
-                'dark',
-                'wood',
-                'mountain',
-                'wild',
-                'skurut',
-                'goblin',
-            ],
-            SubRaceCode::getSubRaceCodes()
-        );
     }
 
 }

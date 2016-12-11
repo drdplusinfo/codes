@@ -19,7 +19,7 @@ class PropertyCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getBasePropertyCodes()
+    public static function getBasePropertyPossibleValues()
     {
         return [
             self::STRENGTH,
@@ -42,7 +42,7 @@ class PropertyCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getBodyPropertyCodes()
+    public static function getBodyPropertyPossibleValues()
     {
         return [
             self::AGE,
@@ -70,7 +70,7 @@ class PropertyCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getDerivedPropertyCodes()
+    public static function getDerivedPropertyPossibleValues()
     {
         return [
             self::BEAUTY,
@@ -95,7 +95,7 @@ class PropertyCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getNativePropertyCodes()
+    public static function getNativePropertyPossibleValues()
     {
         return [
             self::INFRAVISION,
@@ -114,7 +114,7 @@ class PropertyCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getRemarkableSensePropertyCodes()
+    public static function getRemarkableSensePropertyPossibleValues()
     {
         return [
             self::HEARING,
@@ -131,7 +131,7 @@ class PropertyCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getRestrictionPropertyCodes()
+    public static function getRestrictionPropertyPossibleValues()
     {
         return [
             self::REQUIRES_DM_AGREEMENT,
@@ -141,15 +141,15 @@ class PropertyCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getPropertyCodes()
+    public static function getPossibleValues()
     {
         return array_merge(
-            self::getBasePropertyCodes(),
-            self::getBodyPropertyCodes(),
-            self::getDerivedPropertyCodes(),
-            self::getNativePropertyCodes(),
-            self::getRemarkableSensePropertyCodes(),
-            self::getRestrictionPropertyCodes()
+            self::getBasePropertyPossibleValues(),
+            self::getBodyPropertyPossibleValues(),
+            self::getDerivedPropertyPossibleValues(),
+            self::getNativePropertyPossibleValues(),
+            self::getRemarkableSensePropertyPossibleValues(),
+            self::getRestrictionPropertyPossibleValues()
         );
     }
 }

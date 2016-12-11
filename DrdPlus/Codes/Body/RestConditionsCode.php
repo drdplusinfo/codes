@@ -18,7 +18,7 @@ class RestConditionsCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getRestConditionsCodes()
+    public static function getPossibleValues()
     {
         return [
             self::HALF_TIME_OF_REST_OR_SLEEP,

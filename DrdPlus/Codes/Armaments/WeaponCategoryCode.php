@@ -22,7 +22,7 @@ class WeaponCategoryCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getMeleeWeaponCategoryCodes()
+    public static function getMeleeWeaponCategoryValues()
     {
         return [
             self::AXE,
@@ -48,7 +48,7 @@ class WeaponCategoryCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getRangedWeaponCategoryCodes()
+    public static function getRangedWeaponCategoryValues()
     {
         return [
             self::BOW,
@@ -65,7 +65,7 @@ class WeaponCategoryCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getProjectilesCategoryCodes()
+    public static function getProjectilesCategoryValues()
     {
         return [
             self::ARROW,
@@ -77,12 +77,12 @@ class WeaponCategoryCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getWeaponCategoryCodes()
+    public static function getPossibleValues()
     {
         return array_merge(
-            self::getMeleeWeaponCategoryCodes(),
-            self::getRangedWeaponCategoryCodes(),
-            self::getProjectilesCategoryCodes()
+            self::getMeleeWeaponCategoryValues(),
+            self::getRangedWeaponCategoryValues(),
+            self::getProjectilesCategoryValues()
         );
     }
 }

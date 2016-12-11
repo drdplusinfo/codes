@@ -18,7 +18,7 @@ class TimeCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getTimeCodes()
+    public static function getPossibleValues()
     {
         return [
             self::ROUND,

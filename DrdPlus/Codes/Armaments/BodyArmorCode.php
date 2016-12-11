@@ -18,7 +18,7 @@ class BodyArmorCode extends ArmorCode
     /**
      * @return array|string[]
      */
-    public static function getBodyArmorCodes()
+    public static function getPossibleValues()
     {
         return [
             self::WITHOUT_ARMOR,

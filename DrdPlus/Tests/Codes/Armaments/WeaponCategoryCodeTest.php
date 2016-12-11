@@ -2,9 +2,9 @@
 namespace DrdPlus\Tests\Codes\Armaments;
 
 use DrdPlus\Codes\Armaments\WeaponCategoryCode;
-use DrdPlus\Tests\Codes\CodeTest;
+use DrdPlus\Tests\Codes\AbstractCodeTest;
 
-class WeaponCategoryCodeTest extends CodeTest
+class WeaponCategoryCodeTest extends AbstractCodeTest
 {
     /**
      * @test
@@ -23,9 +23,8 @@ class WeaponCategoryCodeTest extends CodeTest
                 'voulge_or_trident',
                 'unarmed',
             ],
-            WeaponCategoryCode::getMeleeWeaponCategoryCodes()
+            WeaponCategoryCode::getMeleeWeaponCategoryValues()
         );
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -39,9 +38,8 @@ class WeaponCategoryCodeTest extends CodeTest
                 'crossbow',
                 'throwing_weapon',
             ],
-            WeaponCategoryCode::getRangedWeaponCategoryCodes()
+            WeaponCategoryCode::getRangedWeaponCategoryValues()
         );
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -55,35 +53,7 @@ class WeaponCategoryCodeTest extends CodeTest
                 'dart',
                 'sling_stone',
             ],
-            WeaponCategoryCode::getProjectilesCategoryCodes()
-        );
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
-    }
-
-    /**
-     * @test
-     */
-    public function I_can_get_all_codes_at_once()
-    {
-        self::assertSame(
-            [
-                'axe',
-                'knife_or_dagger',
-                'mace_or_club',
-                'morningstar_or_morgenstern',
-                'saber_or_bowie_knife',
-                'staff_or_spear',
-                'sword',
-                'voulge_or_trident',
-                'unarmed',
-                'bow',
-                'crossbow',
-                'throwing_weapon',
-                'arrow',
-                'dart',
-                'sling_stone',
-            ],
-            WeaponCategoryCode::getWeaponCategoryCodes()
+            WeaponCategoryCode::getProjectilesCategoryValues()
         );
     }
 

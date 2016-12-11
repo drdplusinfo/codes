@@ -39,28 +39,9 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
     /**
      * @test
      */
-    public function I_can_get_all_codes_at_once()
-    {
-        self::assertSame(
-            $expectedCodes = [
-                'without_shield',
-                'buckler',
-                'small_shield',
-                'medium_shield',
-                'heavy_shield',
-                'pavise',
-            ],
-            ShieldCode::getShieldCodes()
-        );
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
-    }
-
-    /**
-     * @test
-     */
     public function I_can_easily_find_out_if_is_melee()
     {
-        $reflection = new \ReflectionClass($this->getSutClass());
+        $reflection = new \ReflectionClass(self::getSutClass());
         /** @var ShieldCode $sut */
         $sut = $reflection->newInstanceWithoutConstructor();
         self::assertTrue($sut->isMelee());
@@ -71,7 +52,7 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
      */
     public function I_can_easily_find_out_if_is_weapon()
     {
-        $reflection = new \ReflectionClass($this->getSutClass());
+        $reflection = new \ReflectionClass(self::getSutClass());
         /** @var ShieldCode $sut */
         $sut = $reflection->newInstanceWithoutConstructor();
         self::assertFalse($sut->isWeapon());

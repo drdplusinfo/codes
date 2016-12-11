@@ -18,7 +18,7 @@ class RaceCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getRaceCodes()
+    public static function getPossibleValues()
     {
         return [
             self::HUMAN,

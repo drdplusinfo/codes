@@ -30,7 +30,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
      */
     public function I_can_easily_find_out_if_is_melee()
     {
-        $reflection = new \ReflectionClass($this->getSutClass());
+        $reflection = new \ReflectionClass(self::getSutClass());
         /** @var RangedWeaponCode $sut */
         $sut = $reflection->newInstanceWithoutConstructor();
         self::assertFalse($sut->isMelee());
@@ -49,10 +49,8 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 'long_composite_bow',
                 'power_bow',
             ],
-            RangedWeaponCode::getBowCodes()
+            RangedWeaponCode::getBowValues()
         );
-
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -67,10 +65,8 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 'military_crossbow',
                 'heavy_crossbow',
             ],
-            RangedWeaponCode::getCrossbowCodes()
+            RangedWeaponCode::getCrossbowValues()
         );
-
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -90,16 +86,14 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 'javelin',
                 'sling',
             ],
-            RangedWeaponCode::getThrowingWeaponCodes()
+            RangedWeaponCode::getThrowingWeaponValues()
         );
-
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
      * @test
      */
-    public function I_can_get_all_codes_at_once()
+    public function I_can_get_all_codes_at_once_or_by_same_named_constant()
     {
         self::assertSame(
             $expectedValues = [
@@ -125,11 +119,11 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 'javelin',
                 'sling',
             ],
-            RangedWeaponCode::getRangedWeaponCodes(),
+            RangedWeaponCode::getPossibleValues(),
             'There are ' . (
-            count($missingOrDifferent = array_diff_assoc($expectedValues, RangedWeaponCode::getRangedWeaponCodes())) > 0
+            count($missingOrDifferent = array_diff_assoc($expectedValues, RangedWeaponCode::getPossibleValues())) > 0
                 ? 'missing values or different keys in given: ' . var_export($missingOrDifferent, true)
-                : 'superfluous values or different keys in given: ' . var_export(array_diff_assoc(RangedWeaponCode::getRangedWeaponCodes(), $expectedValues), true)
+                : 'superfluous values or different keys in given: ' . var_export(array_diff_assoc(RangedWeaponCode::getPossibleValues(), $expectedValues), true)
             )
         );
     }
@@ -142,7 +136,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
         $questions = [
             'isBow', 'isCrossbow', 'isThrowingWeapon',
         ];
-        foreach (RangedWeaponCode::getBowCodes() as $codeValue) {
+        foreach (RangedWeaponCode::getBowValues() as $codeValue) {
             $code = RangedWeaponCode::getIt($codeValue);
             self::assertTrue($code->isRanged());
             self::assertFalse($code->isMelee());
@@ -153,7 +147,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (RangedWeaponCode::getCrossbowCodes() as $codeValue) {
+        foreach (RangedWeaponCode::getCrossbowValues() as $codeValue) {
             $code = RangedWeaponCode::getIt($codeValue);
             self::assertTrue($code->isRanged());
             self::assertFalse($code->isMelee());
@@ -164,7 +158,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (RangedWeaponCode::getThrowingWeaponCodes() as $codeValue) {
+        foreach (RangedWeaponCode::getThrowingWeaponValues() as $codeValue) {
             $code = RangedWeaponCode::getIt($codeValue);
             self::assertTrue($code->isRanged());
             if ($codeValue !== RangedWeaponCode::SPEAR) {

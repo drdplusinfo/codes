@@ -61,8 +61,6 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
             ],
             MeleeWeaponCode::getAxeCodes()
         );
-
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -80,8 +78,6 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
             ],
             MeleeWeaponCode::getKnifeAndDaggerCodes()
         );
-
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -103,8 +99,6 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
             ],
             MeleeWeaponCode::getMaceAndClubCodes()
         );
-
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -124,8 +118,6 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
             ],
             MeleeWeaponCode::getMorningstarAndMorgensternCodes()
         );
-
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -143,8 +135,6 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
             ],
             MeleeWeaponCode::getSaberAndBowieKnifeCodes()
         );
-
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -166,8 +156,6 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
             ],
             MeleeWeaponCode::getStaffAndSpearCodes()
         );
-
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -187,8 +175,6 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
             ],
             MeleeWeaponCode::getSwordCodes()
         );
-
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -208,8 +194,6 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
             ],
             MeleeWeaponCode::getVoulgeAndTridentCodes()
         );
-
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -226,14 +210,12 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
             ],
             MeleeWeaponCode::getUnarmedCodes()
         );
-
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
      * @test
      */
-    public function I_can_get_all_codes_at_once()
+    public function I_can_get_all_codes_at_once_or_by_same_named_constant()
     {
         self::assertSame(
             $expectedValues = [
@@ -304,11 +286,11 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 'leg',
                 'hobnailed_boot',
             ],
-            MeleeWeaponCode::getMeleeWeaponCodes(),
+            MeleeWeaponCode::getPossibleValues(),
             'There are ' . (
-            count($missingOrDifferent = array_diff_assoc($expectedValues, MeleeWeaponCode::getMeleeWeaponCodes())) > 0
+            count($missingOrDifferent = array_diff_assoc($expectedValues, MeleeWeaponCode::getPossibleValues())) > 0
                 ? 'missing values or different keys in given: ' . var_export($missingOrDifferent, true)
-                : 'superfluous values or different keys in given: ' . var_export(array_diff_assoc(MeleeWeaponCode::getMeleeWeaponCodes(), $expectedValues), true)
+                : 'superfluous values or different keys in given: ' . var_export(array_diff_assoc(MeleeWeaponCode::getPossibleValues(), $expectedValues), true)
             )
         );
     }
@@ -462,7 +444,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
      */
     public function I_get_from_melee_code_negative_answer_to_most_range_question()
     {
-        foreach (MeleeWeaponCode::getMeleeWeaponCodes() as $meleeWeaponCode) {
+        foreach (MeleeWeaponCode::getPossibleValues() as $meleeWeaponCode) {
             $meleeWeaponCode = MeleeWeaponCode::getIt($meleeWeaponCode);
             self::assertTrue($meleeWeaponCode->isMelee());
             if ($meleeWeaponCode->getValue() !== MeleeWeaponCode::SPEAR) {
@@ -498,7 +480,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
      */
     public function I_can_easily_find_out_if_weapon_is_unarmed_in_fact()
     {
-        foreach (MeleeWeaponCode::getMeleeWeaponCodes() as $meleeWeaponCodeValue) {
+        foreach (MeleeWeaponCode::getPossibleValues() as $meleeWeaponCodeValue) {
             $meleeWeaponCode = MeleeWeaponCode::getIt($meleeWeaponCodeValue);
             self::assertSame(
                 in_array($meleeWeaponCodeValue, MeleeWeaponCode::getUnarmedCodes(), true),

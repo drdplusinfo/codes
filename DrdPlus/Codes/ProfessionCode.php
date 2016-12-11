@@ -19,7 +19,7 @@ class ProfessionCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getProfessionCodes()
+    public static function getPossibleValues()
     {
         return [
             self::COMMONER,

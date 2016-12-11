@@ -28,7 +28,7 @@ class PsychicalSkillCode extends SkillCode
     /**
      * @return array|string[]
      */
-    public static function getPsychicalSkillCodes()
+    public static function getPossibleValues()
     {
         return [
             self::ASTRONOMY,

@@ -5,17 +5,6 @@ use DrdPlus\Codes\Armaments\DartCode;
 
 class DartCodeTest extends ProjectileCodeTest
 {
-    /**
-     * @test
-     */
-    public function I_can_get_all_codes_at_once()
-    {
-        self::assertSame(
-            $expectedValues = ['basic_dart', 'war_dart', 'piercing_dart', 'hollow_dart', 'silver_dart'],
-            DartCode::getDartCodes()
-        );
-        $this->I_can_get_codes_by_same_named_constants($expectedValues);
-    }
 
     /**
      * @test

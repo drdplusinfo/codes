@@ -17,9 +17,9 @@ class RangedCombatActionCode extends CombatActionCode
     /**
      * @return array|\string[]
      */
-    public static function getRangedCombatActionCodes()
+    public static function getPossibleValues()
     {
-        $rangedCombatActions = self::getCombatActionCodes();
+        $rangedCombatActions = parent::getPossibleValues();
         $rangedCombatActions[] = self::AIMED_SHOT;
 
         return $rangedCombatActions;

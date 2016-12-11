@@ -30,7 +30,7 @@ class CombatActionCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getCombatActionCodes()
+    public static function getPossibleValues()
     {
         return [
             self::MOVE,

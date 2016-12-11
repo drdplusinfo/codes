@@ -3,9 +3,9 @@ namespace DrdPlus\Tests\Codes\Armaments;
 
 use DrdPlus\Codes\Armaments\ArmamentCode;
 use DrdPlus\Codes\Code;
-use DrdPlus\Tests\Codes\CodeTest;
+use DrdPlus\Tests\Codes\AbstractCodeTest;
 
-abstract class ArmamentCodeTest extends CodeTest
+abstract class ArmamentCodeTest extends AbstractCodeTest
 {
     /**
      * @test
@@ -20,6 +20,6 @@ abstract class ArmamentCodeTest extends CodeTest
      */
     public function It_is_armament_code()
     {
-        self::assertTrue(is_a($this->getSutClass(), ArmamentCode::class, true));
+        self::assertTrue(is_a(self::getSutClass(), ArmamentCode::class, true));
     }
 }

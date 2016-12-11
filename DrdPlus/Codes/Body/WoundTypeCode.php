@@ -15,7 +15,7 @@ class WoundTypeCode extends AbstractCode
     /**
      * @return array|string
      */
-    public static function getWoundTypeCodes()
+    public static function getPossibleValues()
     {
         return [
             self::CRUSH,

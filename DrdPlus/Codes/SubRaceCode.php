@@ -37,7 +37,7 @@ class SubRaceCode extends AbstractCode
     /**
      * @return array|string[][]
      */
-    public static function getRaceToSubRaceCodes()
+    public static function getRaceToSubRaceValues()
     {
         return [
             RaceCode::HUMAN => [
@@ -72,7 +72,7 @@ class SubRaceCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getSubRaceCodes()
+    public static function getPossibleValues()
     {
         return [
             self::COMMON,

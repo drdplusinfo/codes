@@ -26,7 +26,7 @@ class RidingAnimalCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getRidingAnimalCodes()
+    public static function getPossibleValues()
     {
         return [
             self::HORSE,

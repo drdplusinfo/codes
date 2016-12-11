@@ -15,7 +15,7 @@ class DartCode extends ProjectileCode
     /**
      * @return array|string[]
      */
-    public static function getDartCodes()
+    public static function getPossibleValues()
     {
         return [
             self::BASIC_DART,

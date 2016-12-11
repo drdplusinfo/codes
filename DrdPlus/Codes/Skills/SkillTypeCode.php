@@ -15,7 +15,7 @@ class SkillTypeCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getSkillTypeCodes()
+    public static function getPossibleValues()
     {
         return [self::PHYSICAL, self::PSYCHICAL, self::COMBINED];
     }

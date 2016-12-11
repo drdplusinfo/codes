@@ -16,7 +16,7 @@ class ConditionsAffectingHealingCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getConditionsAffectingHealingCodes()
+    public static function getPossibleValues()
     {
         return [
             self::FOUL_CONDITIONS,

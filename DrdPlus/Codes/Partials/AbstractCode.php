@@ -1,14 +1,24 @@
 <?php
 namespace DrdPlus\Codes\Partials;
 
+use Doctrineum\Scalar\ScalarEnum;
 use Doctrineum\Scalar\ScalarEnumInterface;
-use Doctrineum\String\StringEnum;
 use DrdPlus\Codes\Code;
 use Granam\Tools\ValueDescriber;
 
 /** @noinspection SingletonFactoryPatternViolationInspection */
-abstract class AbstractCode extends StringEnum implements Code
+abstract class AbstractCode extends ScalarEnum implements Code
 {
+
+    /**
+     * @return array|string[]
+     * @throws \LogicException
+     */
+    public static function getPossibleValues()
+    {
+        throw new \LogicException('Not implemented');
+    }
+
     /**
      * @param string $codeValue
      * @return AbstractCode|ScalarEnumInterface

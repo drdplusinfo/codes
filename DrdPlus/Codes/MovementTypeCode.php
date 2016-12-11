@@ -17,7 +17,7 @@ class MovementTypeCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getMovementTypeCodes()
+    public static function getPossibleValues()
     {
         return [
             self::WAITING,

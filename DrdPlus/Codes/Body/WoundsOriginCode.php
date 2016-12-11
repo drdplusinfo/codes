@@ -17,7 +17,7 @@ class WoundsOriginCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getWoundsOriginCodes()
+    public static function getPossibleValues()
     {
         return [
             self::PSYCHICAL,

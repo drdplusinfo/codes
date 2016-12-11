@@ -38,7 +38,7 @@ class PhysicalSkillCode extends SkillCode
     /**
      * @return array|string[]
      */
-    public static function getPhysicalSkillCodes()
+    public static function getPossibleValues()
     {
         return [
             self::ARMOR_WEARING,

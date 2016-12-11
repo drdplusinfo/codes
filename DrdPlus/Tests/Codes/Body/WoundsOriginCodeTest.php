@@ -2,14 +2,14 @@
 namespace DrdPlus\Tests\Codes\Body;
 
 use DrdPlus\Codes\Body\WoundsOriginCode;
-use DrdPlus\Tests\Codes\CodeTest;
+use DrdPlus\Tests\Codes\AbstractCodeTest;
 
-class WoundsOriginCodeTest extends CodeTest
+class WoundsOriginCodeTest extends AbstractCodeTest
 {
     /**
      * @test
      */
-    public function I_can_get_all_codes_at_once()
+    public function I_can_get_all_codes_at_once_or_by_same_named_constant()
     {
         self::assertSame(
             [
@@ -19,7 +19,7 @@ class WoundsOriginCodeTest extends CodeTest
                 'mechanical_cut',
                 'mechanical_crush',
             ],
-            WoundsOriginCode::getWoundsOriginCodes()
+            WoundsOriginCode::getPossibleValues()
         );
     }
 

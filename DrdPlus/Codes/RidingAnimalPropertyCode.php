@@ -17,7 +17,7 @@ class RidingAnimalPropertyCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getRidingAnimalPropertyCodes()
+    public static function getPossibleValues()
     {
         return [
             self::SPEED,

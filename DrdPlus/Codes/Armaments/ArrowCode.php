@@ -18,7 +18,7 @@ class ArrowCode extends ProjectileCode
     /**
      * @return array|string[]
      */
-    public static function getArrowCodes()
+    public static function getPossibleValues()
     {
         return [
             self::BASIC_ARROW,

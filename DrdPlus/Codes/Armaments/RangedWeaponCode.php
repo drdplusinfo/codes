@@ -17,7 +17,7 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return array|string[]
      */
-    public static function getBowCodes()
+    public static function getBowValues()
     {
         return [
             self::SHORT_BOW,
@@ -37,7 +37,7 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return array|string[]
      */
-    public static function getCrossbowCodes()
+    public static function getCrossbowValues()
     {
         return [
             self::MINICROSSBOW,
@@ -61,7 +61,7 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return array|string[]
      */
-    public static function getThrowingWeaponCodes()
+    public static function getThrowingWeaponValues()
     {
         return [
             self::ROCK,
@@ -79,13 +79,13 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return array|string[]
      */
-    public static function getRangedWeaponCodes()
+    public static function getPossibleValues()
     {
         return array_values( // to get continual integer keys
             array_merge(
-                self::getBowCodes(),
-                self::getCrossbowCodes(),
-                self::getThrowingWeaponCodes()
+                self::getBowValues(),
+                self::getCrossbowValues(),
+                self::getThrowingWeaponValues()
             )
         );
     }
@@ -111,7 +111,7 @@ class RangedWeaponCode extends WeaponCode
      */
     public function isBow()
     {
-        return in_array($this->getValue(), self::getBowCodes(), true);
+        return in_array($this->getValue(), self::getBowValues(), true);
     }
 
     /**
@@ -119,7 +119,7 @@ class RangedWeaponCode extends WeaponCode
      */
     public function isCrossbow()
     {
-        return in_array($this->getValue(), self::getCrossbowCodes(), true);
+        return in_array($this->getValue(), self::getCrossbowValues(), true);
     }
 
     /**
@@ -127,7 +127,7 @@ class RangedWeaponCode extends WeaponCode
      */
     public function isThrowingWeapon()
     {
-        return in_array($this->getValue(), self::getThrowingWeaponCodes(), true);
+        return in_array($this->getValue(), self::getThrowingWeaponValues(), true);
     }
 
     /**

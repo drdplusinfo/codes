@@ -10,7 +10,7 @@ abstract class WeaponlikeCodeTest extends ArmamentCodeTest
      */
     public function It_is_weaponlike_code()
     {
-        $reflection = new \ReflectionClass($this->getSutClass());
+        $reflection = new \ReflectionClass(self::getSutClass());
         /** @var WeaponlikeCode $sut */
         $sut = $reflection->newInstanceWithoutConstructor();
         self::assertInstanceOf(WeaponlikeCode::class, $sut);
@@ -20,13 +20,13 @@ abstract class WeaponlikeCodeTest extends ArmamentCodeTest
     private static $weaponlikeCodes = [];
 
     /**
-     * This is important for weaponlike code as an enum - to be easily determined by @see WeaponlikeCodeEnumType
+     * This is important for weaponlike code as an enum - to be easily determined by @see CodeType
      *
      * @test
      */
     public function Has_unique_codes_across_all_weaponlikes()
     {
-        $sutClass = $this->getSutClass();
+        $sutClass = self::getSutClass();
         $reflection = new \ReflectionClass($sutClass);
         $sameCodes = [];
         foreach (self::$weaponlikeCodes as $otherCodeClass => $weaponlikeCodes) {

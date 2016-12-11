@@ -20,7 +20,7 @@ class TerrainCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getTerrainCodes()
+    public static function getPossibleValues()
     {
         return [
             self::ROAD,

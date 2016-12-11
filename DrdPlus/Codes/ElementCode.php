@@ -16,7 +16,7 @@ class ElementCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getElementCodes()
+    public static function getPossibleValues()
     {
         return [
             self::FIRE,

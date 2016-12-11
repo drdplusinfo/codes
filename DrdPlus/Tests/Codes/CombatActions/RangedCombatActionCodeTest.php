@@ -3,42 +3,10 @@ namespace DrdPlus\Tests\Codes\CombatActions;
 
 use DrdPlus\Codes\CombatActions\CombatActionCode;
 use DrdPlus\Codes\CombatActions\RangedCombatActionCode;
-use DrdPlus\Tests\Codes\CodeTest;
+use DrdPlus\Tests\Codes\AbstractCodeTest;
 
-class RangedCombatActionCodeTest extends CodeTest
+class RangedCombatActionCodeTest extends AbstractCodeTest
 {
-
-    /**
-     * @test
-     */
-    public function I_can_get_all_codes_at_once()
-    {
-        self::assertSame(
-            $expectedCodes = [
-                'move',
-                'run',
-                'swap_weapons',
-                'concentration_on_defense',
-                'put_out_easily_accessible_item',
-                'put_out_hardly_accessible_item',
-                'laying',
-                'sitting_or_on_kneels',
-                'getting_up',
-                'putting_on_armor',
-                'putting_on_armor_with_help',
-                'helping_to_put_on_armor',
-                'attacked_from_behind',
-                'blindfold_fight',
-                'fight_in_reduced_visibility',
-                'attack_on_disabled_opponent',
-                'handover_item',
-                'aimed_shot',
-            ],
-            RangedCombatActionCode::getRangedCombatActionCodes()
-        );
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
-    }
-
     /**
      * @test
      */
@@ -46,7 +14,7 @@ class RangedCombatActionCodeTest extends CodeTest
     {
         $expectedMeleeOnly = array_diff(
             array_values((new \ReflectionClass(RangedCombatActionCode::class))->getConstants()),
-            CombatActionCode::getCombatActionCodes()
+            CombatActionCode::getPossibleValues()
         );
         self::assertSame($expectedMeleeOnly, RangedCombatActionCode::getRangedOnlyCombatActionCodes());
     }

@@ -18,7 +18,7 @@ class ActivityAffectingHealingCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getActivityAffectingHealingCodes()
+    public static function getPossibleValues()
     {
         return [
             self::SLEEPING_OR_REST_IN_BED,

@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\PropertyCode;
 
-class PropertyCodeTest extends CodeTest
+class PropertyCodeTest extends AbstractCodeTest
 {
     /**
      * @test
@@ -19,9 +19,8 @@ class PropertyCodeTest extends CodeTest
                 'intelligence',
                 'charisma'
             ],
-            PropertyCode::getBasePropertyCodes()
+            PropertyCode::getBasePropertyPossibleValues()
         );
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -38,9 +37,8 @@ class PropertyCodeTest extends CodeTest
                 'weight',
                 'size',
             ],
-            PropertyCode::getBodyPropertyCodes()
+            PropertyCode::getBodyPropertyPossibleValues()
         );
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -62,9 +60,8 @@ class PropertyCodeTest extends CodeTest
                 'movement_speed',
                 'maximal_load',
             ],
-            PropertyCode::getDerivedPropertyCodes()
+            PropertyCode::getDerivedPropertyPossibleValues()
         );
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -78,9 +75,8 @@ class PropertyCodeTest extends CodeTest
                 'native_regeneration',
                 'remarkable_sense',
             ],
-            PropertyCode::getNativePropertyCodes()
+            PropertyCode::getNativePropertyPossibleValues()
         );
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -96,9 +92,8 @@ class PropertyCodeTest extends CodeTest
                 'taste',
                 'touch',
             ],
-            PropertyCode::getRemarkableSensePropertyCodes()
+            PropertyCode::getRemarkableSensePropertyPossibleValues()
         );
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
     }
 
     /**
@@ -110,53 +105,7 @@ class PropertyCodeTest extends CodeTest
             $expectedCodes = [
                 'requires_dm_agreement',
             ],
-            PropertyCode::getRestrictionPropertyCodes()
-        );
-        $this->I_can_get_codes_by_same_named_constants($expectedCodes);
-    }
-
-    /**
-     * @test
-     */
-    public function I_can_get_all_codes_at_once()
-    {
-        self::assertSame(
-            [
-                'strength',
-                'agility',
-                'knack',
-                'will',
-                'intelligence',
-                'charisma',
-                'age',
-                'height_in_cm',
-                'height',
-                'weight_in_kg',
-                'weight',
-                'size',
-                'beauty',
-                'dangerousness',
-                'dignity',
-                'endurance',
-                'fatigue_boundary',
-                'senses',
-                'speed',
-                'toughness',
-                'wound_boundary',
-                'movement_speed',
-                'maximal_load',
-                'infravision',
-                'native_regeneration',
-                'remarkable_sense',
-                'hearing',
-                'sight',
-                'smell',
-                'taste',
-                'touch',
-                'requires_dm_agreement',
-            ],
-            PropertyCode::getPropertyCodes()
+            PropertyCode::getRestrictionPropertyPossibleValues()
         );
     }
-
 }
