@@ -1,5 +1,5 @@
 <?php
-namespace DrdPlus\Codes\Tests\EnumTypes;
+namespace DrdPlus\Tests\Codes\EnumTypes;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
@@ -37,13 +37,16 @@ abstract class AbstractCodeTypeTest extends AbstractSelfRegisteringTypeTest
         $typeClass = $this->getTypeClass();
         $typeClass::registerSelf();
         $typeName = $this->getExpectedTypeName();
-        self::assertTrue(Type::hasType($typeName));
+        self::assertTrue(Type::hasType($typeName), "Type of name '{$typeName}' is not registered");
 
         $testedType = Type::getType($typeName);
         $platform = $this->createPlatform();
 
         foreach ($this->getRelatedCodeClasses() as $relatedCodeClass) {
-            self::assertTrue($typeClass::hasSubTypeEnum($relatedCodeClass));
+            self::assertTrue(
+                $typeClass::hasSubTypeEnum($relatedCodeClass),
+                "Sub-type enum of a class '{$relatedCodeClass}' is not registered"
+            );
             foreach ($relatedCodeClass::getPossibleValues() as $possibleValue) {
                 $asPhp = $testedType->convertToPHPValue($relatedCodeClass . '::' . $possibleValue, $platform);
                 self::assertInstanceOf($relatedCodeClass, $asPhp);
@@ -66,7 +69,7 @@ abstract class AbstractCodeTypeTest extends AbstractSelfRegisteringTypeTest
      */
     private function getRelatedCodeClasses()
     {
-        $relatedRootCodeClass = $this->getRegisteredClass();
+        $relatedRootCodeClass = $this->getRelatedRootCodeClass();
         $codeReflection = new \ReflectionClass(Code::class);
         $rootDir = dirname($codeReflection->getFileName());
 
@@ -79,6 +82,17 @@ abstract class AbstractCodeTypeTest extends AbstractSelfRegisteringTypeTest
         }
 
         return $relatedCodeClasses;
+    }
+
+    private function getRelatedRootCodeClass()
+    {
+        $relatedRootCodeClass = preg_replace('~\\\EnumTypes(\\\.+)Type$~', '$1', $this->getTypeClass());
+        self::assertTrue(
+            class_exists($relatedRootCodeClass) || interface_exists($relatedRootCodeClass),
+            "Invalid $relatedRootCodeClass root code class estimated from " . $this->getTypeClass()
+        );
+
+        return $relatedRootCodeClass;
     }
 
     /**
@@ -94,14 +108,14 @@ abstract class AbstractCodeTypeTest extends AbstractSelfRegisteringTypeTest
             if ($folder->isDot()) {
                 continue;
             }
-            $namespace = rtrim($rootNamespace, '\\') . '\\' . $folder->getBasename();
             if ($folder->isDir()) {
-                foreach ($this->getConcreteClassesFromDir($folder->getPath(), $namespace) as $concreteClass) {
+                $namespace = rtrim($rootNamespace, '\\') . '\\' . $folder->getBasename();
+                foreach ($this->getConcreteClassesFromDir($folder->getPathname(), $namespace) as $concreteClass) {
                     $concreteClasses[] = $concreteClass;
                 }
             } else {
-                $className = $namespace . '\\' . $folder->getBasename('.php');
-                if (class_exists($className) && (new \ReflectionClass($className))->isInstantiable()) {
+                $className = $rootNamespace . '\\' . $folder->getBasename('.php');
+                if (class_exists($className) && !(new \ReflectionClass($className))->isAbstract()) {
                     $concreteClasses[] = $className;
                 }
             }

@@ -39,11 +39,11 @@ use DrdPlus\Codes\TimeCode;
 
 class CodeType extends AbstractCodeType
 {
-    const CODE_TYPE = 'code_type';
+    const CODE = 'code';
 
-    public static function registerAllCodeTypes()
+    public static function registerSelf()
     {
-        self::registerSelf();
+        parent::registerSelf();
         // ARMAMENTS
         static::registerCodeAsSubType(ArrowCode::getIt(ArrowCode::BASIC_ARROW));
         static::registerCodeAsSubType(BodyArmorCode::getIt(BodyArmorCode::CHAINMAIL_ARMOR));
@@ -91,7 +91,7 @@ class CodeType extends AbstractCodeType
      */
     public function getName()
     {
-        return self::CODE_TYPE;
+        return self::CODE;
     }
 
 }
