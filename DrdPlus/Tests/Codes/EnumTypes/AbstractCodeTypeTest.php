@@ -12,15 +12,10 @@ abstract class AbstractCodeTypeTest extends AbstractSelfRegisteringTypeTest
 {
     protected function setUp()
     {
-        // remove tested type from registration
+        // remove all types from registration
         $_typesMap = new \ReflectionProperty(Type::class, '_typesMap');
         $_typesMap->setAccessible(true);
-        $map = $_typesMap->getValue();
-        $typeName = $this->getExpectedTypeName();
-        if (array_key_exists($typeName, $map)) {
-            unset($map[$typeName]);
-        }
-        $_typesMap->setValue($map);
+        $_typesMap->setValue([]);
 
         // remove any subtypes from registration
         $subTypeEnums = new \ReflectionProperty(ScalarEnumType::class, 'subTypeEnums');
@@ -33,15 +28,22 @@ abstract class AbstractCodeTypeTest extends AbstractSelfRegisteringTypeTest
      */
     public function I_can_register_all_codes_at_once()
     {
+        $typeName = $this->getExpectedTypeName();
+        self::assertFalse(Type::hasType($typeName), "Type of name '{$typeName}' should not be registered yet");
         /** @var ScalarEnumType $typeClass */
         $typeClass = $this->getTypeClass();
+        foreach ($this->getRelatedCodeClasses() as $relatedCodeClass) {
+            self::assertFalse(
+                $typeClass::hasSubTypeEnum($relatedCodeClass),
+                "Sub-type enum of a class '{$relatedCodeClass}' should not be registered yet"
+            );
+        }
+
         $typeClass::registerSelf();
-        $typeName = $this->getExpectedTypeName();
         self::assertTrue(Type::hasType($typeName), "Type of name '{$typeName}' is not registered");
 
         $testedType = Type::getType($typeName);
         $platform = $this->createPlatform();
-
         foreach ($this->getRelatedCodeClasses() as $relatedCodeClass) {
             self::assertTrue(
                 $typeClass::hasSubTypeEnum($relatedCodeClass),
