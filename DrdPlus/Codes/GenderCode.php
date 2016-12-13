@@ -16,9 +16,22 @@ class GenderCode extends AbstractCode
      */
     public static function getPossibleValues()
     {
-        return [
-            self::MALE,
-            self::FEMALE,
-        ];
+        return [self::MALE, self::FEMALE];
+    }
+
+    /**
+     * @return bool
+     */
+    public function isMale()
+    {
+        return $this->getValue() === self::MALE;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isFemale()
+    {
+        return $this->getValue() === self::FEMALE;
     }
 }

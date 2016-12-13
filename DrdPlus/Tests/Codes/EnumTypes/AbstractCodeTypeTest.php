@@ -56,6 +56,7 @@ abstract class AbstractCodeTypeTest extends AbstractSelfRegisteringTypeTest
                 self::assertSame($possibleValue, $asPhp->getValue());
             }
         }
+        $typeClass::registerSelf(); // test if can call registering repeatedly
     }
 
     /**
