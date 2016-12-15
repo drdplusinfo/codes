@@ -4,9 +4,9 @@ namespace DrdPlus\Codes\Environment;
 use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
- * @method static LightingQualityCode getIt($codeValue)
+ * @method static LightConditionsCode getIt($codeValue)
  */
-class LightingQualityCode extends AbstractCode
+class LightConditionsCode extends AbstractCode
 {
     const DARK = 'dark';
     const CLOUDY_STAR_NIGHT = 'cloudy_star_night';

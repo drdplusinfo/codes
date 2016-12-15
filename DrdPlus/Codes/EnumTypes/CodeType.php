@@ -23,7 +23,7 @@ use DrdPlus\Codes\ElementCode;
 use DrdPlus\Codes\Environment\LightSourceCode;
 use DrdPlus\Codes\GenderCode;
 use DrdPlus\Codes\ItemHoldingCode;
-use DrdPlus\Codes\Environment\LightingQualityCode;
+use DrdPlus\Codes\Environment\LightConditionsCode;
 use DrdPlus\Codes\MovementTypeCode;
 use DrdPlus\Codes\ProfessionCode;
 use DrdPlus\Codes\PropertyCode;
@@ -69,7 +69,7 @@ class CodeType extends AbstractCodeType
         static::registerCodeAsSubType(RangedCombatActionCode::getIt(RangedCombatActionCode::AIMED_SHOT));
         // ENVIRONMENT
         static::registerCodeAsSubType(TerrainCode::getIt(TerrainCode::DESERT));
-        static::registerCodeAsSubType(LightingQualityCode::getIt(LightingQualityCode::STRONG_DAYLIGHT));
+        static::registerCodeAsSubType(LightConditionsCode::getIt(LightConditionsCode::STRONG_DAYLIGHT));
         static::registerCodeAsSubType(LightSourceCode::getIt(LightSourceCode::BALEFIRE));
         // SKILLS
         static::registerCodeAsSubType(CombinedSkillCode::getIt(CombinedSkillCode::BIG_HANDWORK));
