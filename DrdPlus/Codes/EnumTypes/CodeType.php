@@ -20,6 +20,7 @@ use DrdPlus\Codes\CombatActions\CombatActionCode;
 use DrdPlus\Codes\CombatActions\MeleeCombatActionCode;
 use DrdPlus\Codes\CombatActions\RangedCombatActionCode;
 use DrdPlus\Codes\ElementCode;
+use DrdPlus\Codes\Environment\LightSourceCode;
 use DrdPlus\Codes\GenderCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Environment\LightingQualityCode;
@@ -66,6 +67,10 @@ class CodeType extends AbstractCodeType
         static::registerCodeAsSubType(CombatActionCode::getIt(CombatActionCode::ATTACKED_FROM_BEHIND));
         static::registerCodeAsSubType(MeleeCombatActionCode::getIt(MeleeCombatActionCode::COVER_OF_ALLY));
         static::registerCodeAsSubType(RangedCombatActionCode::getIt(RangedCombatActionCode::AIMED_SHOT));
+        // ENVIRONMENT
+        static::registerCodeAsSubType(TerrainCode::getIt(TerrainCode::DESERT));
+        static::registerCodeAsSubType(LightingQualityCode::getIt(LightingQualityCode::STRONG_DAYLIGHT));
+        static::registerCodeAsSubType(LightSourceCode::getIt(LightSourceCode::BALEFIRE));
         // SKILLS
         static::registerCodeAsSubType(CombinedSkillCode::getIt(CombinedSkillCode::BIG_HANDWORK));
         static::registerCodeAsSubType(PhysicalSkillCode::getIt(PhysicalSkillCode::ATHLETICS));
@@ -75,7 +80,6 @@ class CodeType extends AbstractCodeType
         static::registerCodeAsSubType(ElementCode::getIt(ElementCode::AIR));
         static::registerCodeAsSubType(GenderCode::getIt(GenderCode::FEMALE));
         static::registerCodeAsSubType(ItemHoldingCode::getIt(ItemHoldingCode::MAIN_HAND));
-        static::registerCodeAsSubType(LightingQualityCode::getIt(LightingQualityCode::STRONG_DAYLIGHT));
         static::registerCodeAsSubType(MovementTypeCode::getIt(MovementTypeCode::RUN));
         static::registerCodeAsSubType(ProfessionCode::getIt(ProfessionCode::COMMONER));
         static::registerCodeAsSubType(PropertyCode::getIt(PropertyCode::AGE));
@@ -84,7 +88,6 @@ class CodeType extends AbstractCodeType
         static::registerCodeAsSubType(RidingAnimalMovementCode::getIt(RidingAnimalMovementCode::CANTER));
         static::registerCodeAsSubType(RidingAnimalPropertyCode::getIt(RidingAnimalPropertyCode::DEFIANCE));
         static::registerCodeAsSubType(SubRaceCode::getIt(SubRaceCode::COMMON));
-        static::registerCodeAsSubType(TerrainCode::getIt(TerrainCode::DESERT));
         static::registerCodeAsSubType(TimeCode::getIt(TimeCode::DAY));
     }
 
