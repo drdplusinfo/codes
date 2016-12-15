@@ -22,6 +22,7 @@ use DrdPlus\Codes\CombatActions\RangedCombatActionCode;
 use DrdPlus\Codes\ElementCode;
 use DrdPlus\Codes\GenderCode;
 use DrdPlus\Codes\ItemHoldingCode;
+use DrdPlus\Codes\LightingQualityCode;
 use DrdPlus\Codes\MovementTypeCode;
 use DrdPlus\Codes\ProfessionCode;
 use DrdPlus\Codes\PropertyCode;
@@ -74,6 +75,7 @@ class CodeType extends AbstractCodeType
         static::registerCodeAsSubType(ElementCode::getIt(ElementCode::AIR));
         static::registerCodeAsSubType(GenderCode::getIt(GenderCode::FEMALE));
         static::registerCodeAsSubType(ItemHoldingCode::getIt(ItemHoldingCode::MAIN_HAND));
+        static::registerCodeAsSubType(LightingQualityCode::getIt(LightingQualityCode::STRONG_DAYLIGHT));
         static::registerCodeAsSubType(MovementTypeCode::getIt(MovementTypeCode::RUN));
         static::registerCodeAsSubType(ProfessionCode::getIt(ProfessionCode::COMMONER));
         static::registerCodeAsSubType(PropertyCode::getIt(PropertyCode::AGE));
