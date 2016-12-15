@@ -22,7 +22,7 @@ use DrdPlus\Codes\CombatActions\RangedCombatActionCode;
 use DrdPlus\Codes\ElementCode;
 use DrdPlus\Codes\GenderCode;
 use DrdPlus\Codes\ItemHoldingCode;
-use DrdPlus\Codes\LightingQualityCode;
+use DrdPlus\Codes\Environment\LightingQualityCode;
 use DrdPlus\Codes\MovementTypeCode;
 use DrdPlus\Codes\ProfessionCode;
 use DrdPlus\Codes\PropertyCode;
@@ -35,7 +35,7 @@ use DrdPlus\Codes\Skills\PhysicalSkillCode;
 use DrdPlus\Codes\Skills\PsychicalSkillCode;
 use DrdPlus\Codes\Skills\SkillTypeCode;
 use DrdPlus\Codes\SubRaceCode;
-use DrdPlus\Codes\TerrainCode;
+use DrdPlus\Codes\Environment\TerrainCode;
 use DrdPlus\Codes\TimeCode;
 
 class CodeType extends AbstractCodeType
