@@ -21,6 +21,7 @@ use DrdPlus\Codes\CombatActions\MeleeCombatActionCode;
 use DrdPlus\Codes\CombatActions\RangedCombatActionCode;
 use DrdPlus\Codes\ElementCode;
 use DrdPlus\Codes\Environment\LightSourceCode;
+use DrdPlus\Codes\Environment\LightSourceEnvironmentCode;
 use DrdPlus\Codes\GenderCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Environment\LightConditionsCode;
@@ -68,9 +69,10 @@ class CodeType extends AbstractCodeType
         static::registerCodeAsSubType(MeleeCombatActionCode::getIt(MeleeCombatActionCode::COVER_OF_ALLY));
         static::registerCodeAsSubType(RangedCombatActionCode::getIt(RangedCombatActionCode::AIMED_SHOT));
         // ENVIRONMENT
-        static::registerCodeAsSubType(TerrainCode::getIt(TerrainCode::DESERT));
         static::registerCodeAsSubType(LightConditionsCode::getIt(LightConditionsCode::STRONG_DAYLIGHT));
         static::registerCodeAsSubType(LightSourceCode::getIt(LightSourceCode::BALEFIRE));
+        static::registerCodeAsSubType(LightSourceEnvironmentCode::getIt(LightSourceEnvironmentCode::MIRROR_BEHIND_LIGHT_SOURCE));
+        static::registerCodeAsSubType(TerrainCode::getIt(TerrainCode::DESERT));
         // SKILLS
         static::registerCodeAsSubType(CombinedSkillCode::getIt(CombinedSkillCode::BIG_HANDWORK));
         static::registerCodeAsSubType(PhysicalSkillCode::getIt(PhysicalSkillCode::ATHLETICS));
