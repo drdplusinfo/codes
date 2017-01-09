@@ -10,7 +10,7 @@ class PlayerDecisionCode extends AbstractCode
 {
     const EXCEPTIONAL_PROPERTIES = 'exceptional_properties';
     const COMBINATION_OF_PROPERTIES_AND_BACKGROUND = 'combination_of_properties_and_background';
-    const GOOD_REAR = 'good_rear';
+    const GOOD_BACKGROUND = 'good_background';
 
     /**
      * @return array|string[]
@@ -20,7 +20,7 @@ class PlayerDecisionCode extends AbstractCode
         return [
             self::EXCEPTIONAL_PROPERTIES,
             self::COMBINATION_OF_PROPERTIES_AND_BACKGROUND,
-            self::GOOD_REAR,
+            self::GOOD_BACKGROUND,
         ];
     }
 

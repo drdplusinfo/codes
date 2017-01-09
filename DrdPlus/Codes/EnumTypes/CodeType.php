@@ -23,7 +23,6 @@ use DrdPlus\Codes\CombatActions\RangedCombatActionCode;
 use DrdPlus\Codes\ElementCode;
 use DrdPlus\Codes\Environment\LightSourceCode;
 use DrdPlus\Codes\Environment\LightSourceEnvironmentCode;
-use DrdPlus\Codes\FateCode;
 use DrdPlus\Codes\GenderCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Environment\LightConditionsCode;
@@ -84,7 +83,6 @@ class CodeType extends AbstractCodeType
         // OTHERS
         static::registerCodeAsSubType(ChoiceCode::class);
         static::registerCodeAsSubType(ElementCode::class);
-        static::registerCodeAsSubType(FateCode::class);
         static::registerCodeAsSubType(GenderCode::class);
         static::registerCodeAsSubType(ItemHoldingCode::class);
         static::registerCodeAsSubType(PlayerDecisionCode::class);
