@@ -5,4 +5,5 @@ use DrdPlus\Tests\Codes\EnumTypes\AbstractCodeTypeTest;
 
 class HelmCodeTypeTest extends AbstractCodeTypeTest
 {
+
 }

@@ -10,7 +10,7 @@ class GenderCodeType extends AbstractCodeType
     public static function registerSelf()
     {
         parent::registerSelf();
-        static::registerCodeAsSubType(GenderCode::getIt(GenderCode::FEMALE) /* any gender - just need an instance */);
+        static::registerCodeAsSubType(GenderCode::class);
     }
 
     /**

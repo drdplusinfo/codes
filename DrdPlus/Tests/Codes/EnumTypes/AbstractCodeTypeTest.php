@@ -6,6 +6,7 @@ use Doctrine\DBAL\Types\Type;
 use Doctrineum\Scalar\ScalarEnumType;
 use Doctrineum\Tests\SelfRegisteringType\AbstractSelfRegisteringTypeTest;
 use DrdPlus\Codes\Code;
+use DrdPlus\Codes\EnumTypes\AbstractCodeType;
 use DrdPlus\Codes\Partials\AbstractCode;
 
 abstract class AbstractCodeTypeTest extends AbstractSelfRegisteringTypeTest
@@ -30,7 +31,7 @@ abstract class AbstractCodeTypeTest extends AbstractSelfRegisteringTypeTest
     {
         $typeName = $this->getExpectedTypeName();
         self::assertFalse(Type::hasType($typeName), "Type of name '{$typeName}' should not be registered yet");
-        /** @var ScalarEnumType $typeClass */
+        /** @var AbstractCodeType $typeClass */
         $typeClass = $this->getTypeClass();
         foreach ($this->getRelatedCodeClasses() as $relatedCodeClass) {
             self::assertFalse(
@@ -125,5 +126,31 @@ abstract class AbstractCodeTypeTest extends AbstractSelfRegisteringTypeTest
         }
 
         return $concreteClasses;
+    }
+
+    /**
+     * @test
+     * @expectedException \DrdPlus\Codes\EnumTypes\Exceptions\UnknownCodeClass
+     * @expectedExceptionMessageRegExp ~non-existing-class~
+     */
+    public function I_can_not_register_non_existing_class()
+    {
+        $reflectionClass = new \ReflectionClass(self::getSutClass());
+        $registerCodeAsSubType = $reflectionClass->getMethod('registerCodeAsSubType');
+        $registerCodeAsSubType->setAccessible(true);
+        $registerCodeAsSubType->invoke($reflectionClass->newInstanceWithoutConstructor(), 'non-existing-class');
+    }
+
+    /**
+     * @test
+     * @expectedException \DrdPlus\Codes\EnumTypes\Exceptions\ExpectedEnumClass
+     * @expectedExceptionMessageRegExp ~stdClass~
+     */
+    public function I_can_not_register_non_enum_class()
+    {
+        $reflectionClass = new \ReflectionClass(self::getSutClass());
+        $registerCodeAsSubType = $reflectionClass->getMethod('registerCodeAsSubType');
+        $registerCodeAsSubType->setAccessible(true);
+        $registerCodeAsSubType->invoke($reflectionClass->newInstanceWithoutConstructor(), \stdClass::class);
     }
 }

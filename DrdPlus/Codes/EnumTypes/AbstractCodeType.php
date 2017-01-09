@@ -3,27 +3,41 @@ namespace DrdPlus\Codes\EnumTypes;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrineum\Scalar\Exceptions\UnexpectedValueToDatabaseValue;
+use Doctrineum\Scalar\ScalarEnum;
 use Doctrineum\Scalar\ScalarEnumType;
 use DrdPlus\Codes\Code;
+use Granam\Scalar\Tools\ToString;
 use Granam\Tools\ValueDescriber;
 
+/**
+ * @method static registerSelf
+ */
 abstract class AbstractCodeType extends ScalarEnumType
 {
-
     /**
-     * @param Code $code
+     * @param string $codeClass
      * @return bool
+     * @throws \DrdPlus\Codes\EnumTypes\Exceptions\UnknownCodeClass
+     * @throws \DrdPlus\Codes\EnumTypes\Exceptions\ExpectedEnumClass
      */
-    protected static function registerCodeAsSubType(Code $code)
+    protected static function registerCodeAsSubType($codeClass)
     {
-        $codeClass = get_class($code);
+        $sanitizedCodeClass = ToString::toString($codeClass);
+        if (!class_exists($sanitizedCodeClass)) {
+            throw new Exceptions\UnknownCodeClass('Given code class has not been found: ' . ValueDescriber::describe($codeClass));
+        }
+        if (!is_a($sanitizedCodeClass, ScalarEnum::class, true)) {
+            throw new Exceptions\ExpectedEnumClass(
+                'Given class is not an enum: ' . ValueDescriber::describe($codeClass)
+            );
+        }
         /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
-        if (static::hasSubTypeEnum($codeClass)) {
+        if (static::hasSubTypeEnum($sanitizedCodeClass)) {
             return false;
         }
 
         /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
-        return static::addSubTypeEnum($codeClass, '~^' . preg_quote($codeClass, '~') . '::\w+$~');
+        return static::addSubTypeEnum($sanitizedCodeClass, '~^' . preg_quote($sanitizedCodeClass, '~') . '::\w+$~');
     }
 
     /**
@@ -58,7 +72,7 @@ abstract class AbstractCodeType extends ScalarEnumType
         $valueForEnum = parent::prepareValueForEnum($valueForEnum);
 
         // like DrdPlus\Codes\Armaments\MeleeWeaponCode::light_axe = light_axe
-        return preg_replace('~[^:]+::~', '', $valueForEnum);
+        return preg_replace('~^[^:]+::~', '', $valueForEnum);
     }
 
 }
