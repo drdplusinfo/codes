@@ -10,7 +10,7 @@ class FateCode extends AbstractCode
 {
     const FATE_OF_EXCEPTIONAL_PROPERTIES = 'fate_of_exceptional_properties';
     const FATE_OF_COMBINATION = 'fate_of_combination';
-    const FATE_OF_GOOD_REAR = 'fate_of_good_rear';
+    const FATE_OF_GOOD_BACKGROUND = 'fate_of_good_background';
 
     /**
      * @return array|string[]
@@ -20,7 +20,7 @@ class FateCode extends AbstractCode
         return [
             self::FATE_OF_EXCEPTIONAL_PROPERTIES,
             self::FATE_OF_COMBINATION,
-            self::FATE_OF_GOOD_REAR,
+            self::FATE_OF_GOOD_BACKGROUND,
         ];
     }
 }
