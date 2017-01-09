@@ -22,6 +22,7 @@ use DrdPlus\Codes\CombatActions\RangedCombatActionCode;
 use DrdPlus\Codes\ElementCode;
 use DrdPlus\Codes\Environment\LightSourceCode;
 use DrdPlus\Codes\Environment\LightSourceEnvironmentCode;
+use DrdPlus\Codes\FateCode;
 use DrdPlus\Codes\GenderCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Environment\LightConditionsCode;
@@ -80,6 +81,7 @@ class CodeType extends AbstractCodeType
         static::registerCodeAsSubType(SkillTypeCode::getIt(SkillTypeCode::COMBINED));
         // OTHERS
         static::registerCodeAsSubType(ElementCode::getIt(ElementCode::AIR));
+        static::registerCodeAsSubType(FateCode::getIt(FateCode::FATE_OF_GOOD_REAR));
         static::registerCodeAsSubType(GenderCode::getIt(GenderCode::FEMALE));
         static::registerCodeAsSubType(ItemHoldingCode::getIt(ItemHoldingCode::MAIN_HAND));
         static::registerCodeAsSubType(MovementTypeCode::getIt(MovementTypeCode::RUN));
