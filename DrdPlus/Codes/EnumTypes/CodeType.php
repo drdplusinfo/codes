@@ -27,6 +27,7 @@ use DrdPlus\Codes\FateCode;
 use DrdPlus\Codes\GenderCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Environment\LightConditionsCode;
+use DrdPlus\Codes\PlayerDecisionCode;
 use DrdPlus\Codes\ProfessionCode;
 use DrdPlus\Codes\PropertyCode;
 use DrdPlus\Codes\RaceCode;
@@ -86,6 +87,7 @@ class CodeType extends AbstractCodeType
         static::registerCodeAsSubType(FateCode::class);
         static::registerCodeAsSubType(GenderCode::class);
         static::registerCodeAsSubType(ItemHoldingCode::class);
+        static::registerCodeAsSubType(PlayerDecisionCode::class);
         static::registerCodeAsSubType(MovementTypeCode::class);
         static::registerCodeAsSubType(ProfessionCode::class);
         static::registerCodeAsSubType(PropertyCode::class);
