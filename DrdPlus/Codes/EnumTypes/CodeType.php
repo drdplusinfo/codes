@@ -16,6 +16,7 @@ use DrdPlus\Codes\Body\ConditionsAffectingHealingCode;
 use DrdPlus\Codes\Body\RestConditionsCode;
 use DrdPlus\Codes\Body\WoundsOriginCode;
 use DrdPlus\Codes\Body\WoundTypeCode;
+use DrdPlus\Codes\ChoiceCode;
 use DrdPlus\Codes\CombatActions\CombatActionCode;
 use DrdPlus\Codes\CombatActions\MeleeCombatActionCode;
 use DrdPlus\Codes\CombatActions\RangedCombatActionCode;
@@ -80,6 +81,7 @@ class CodeType extends AbstractCodeType
         static::registerCodeAsSubType(PsychicalSkillCode::class);
         static::registerCodeAsSubType(SkillTypeCode::class);
         // OTHERS
+        static::registerCodeAsSubType(ChoiceCode::class);
         static::registerCodeAsSubType(ElementCode::class);
         static::registerCodeAsSubType(FateCode::class);
         static::registerCodeAsSubType(GenderCode::class);
