@@ -4,9 +4,9 @@ namespace DrdPlus\Codes;
 use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
- * @method static PlayerDecisionCode getIt($codeValue)
+ * @method static FateCode getIt($codeValue)
  */
-class PlayerDecisionCode extends AbstractCode
+class FateCode extends AbstractCode
 {
     const EXCEPTIONAL_PROPERTIES = 'exceptional_properties';
     const COMBINATION_OF_PROPERTIES_AND_BACKGROUND = 'combination_of_properties_and_background';
