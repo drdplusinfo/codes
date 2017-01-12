@@ -19,7 +19,7 @@ abstract class AbstractCodeTypeTest extends AbstractSelfRegisteringTypeTest
         $_typesMap->setValue([]);
 
         // remove any subtypes from registration
-        $subTypeEnums = new \ReflectionProperty(ScalarEnumType::class, 'subTypeEnums');
+        $subTypeEnums = new \ReflectionProperty(ScalarEnumType::class, 'enumSubTypesMap');
         $subTypeEnums->setAccessible(true);
         $subTypeEnums->setValue([]);
     }
