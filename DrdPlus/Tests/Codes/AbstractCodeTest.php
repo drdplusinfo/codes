@@ -13,7 +13,7 @@ abstract class AbstractCodeTest extends TestWithMockery
 
     protected function setUp()
     {
-        self::assertContains('\\Tests\\', static::class, 'Tested coCode test has to be in Tests namespace');
+        self::assertContains(__NAMESPACE__, static::class, 'Code test has to be in "Tests" namespace');
     }
 
     /**
