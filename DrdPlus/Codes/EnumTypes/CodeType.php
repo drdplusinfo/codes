@@ -16,7 +16,6 @@ use DrdPlus\Codes\Body\ConditionsAffectingHealingCode;
 use DrdPlus\Codes\Body\RestConditionsCode;
 use DrdPlus\Codes\Body\WoundsOriginCode;
 use DrdPlus\Codes\Body\WoundTypeCode;
-use DrdPlus\Codes\ChoiceCode;
 use DrdPlus\Codes\CombatActions\CombatActionCode;
 use DrdPlus\Codes\CombatActions\MeleeCombatActionCode;
 use DrdPlus\Codes\CombatActions\RangedCombatActionCode;
@@ -26,7 +25,6 @@ use DrdPlus\Codes\Environment\LightSourceEnvironmentCode;
 use DrdPlus\Codes\GenderCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Environment\LightConditionsCode;
-use DrdPlus\Codes\FateCode;
 use DrdPlus\Codes\ProfessionCode;
 use DrdPlus\Codes\PropertyCode;
 use DrdPlus\Codes\RaceCode;
@@ -41,6 +39,8 @@ use DrdPlus\Codes\Skills\SkillTypeCode;
 use DrdPlus\Codes\SubRaceCode;
 use DrdPlus\Codes\Environment\TerrainCode;
 use DrdPlus\Codes\TimeCode;
+use DrdPlus\Codes\History\ChoiceCode;
+use DrdPlus\Codes\History\FateCode;
 
 class CodeType extends AbstractCodeType
 {
@@ -75,17 +75,18 @@ class CodeType extends AbstractCodeType
         static::registerCodeAsSubType(LightSourceCode::class);
         static::registerCodeAsSubType(LightSourceEnvironmentCode::class);
         static::registerCodeAsSubType(TerrainCode::class);
+        // HISTORY
+        static::registerCodeAsSubType(ChoiceCode::class);
+        static::registerCodeAsSubType(FateCode::class);
         // SKILLS
         static::registerCodeAsSubType(CombinedSkillCode::class);
         static::registerCodeAsSubType(PhysicalSkillCode::class);
         static::registerCodeAsSubType(PsychicalSkillCode::class);
         static::registerCodeAsSubType(SkillTypeCode::class);
         // OTHERS
-        static::registerCodeAsSubType(ChoiceCode::class);
         static::registerCodeAsSubType(ElementCode::class);
         static::registerCodeAsSubType(GenderCode::class);
         static::registerCodeAsSubType(ItemHoldingCode::class);
-        static::registerCodeAsSubType(FateCode::class);
         static::registerCodeAsSubType(MovementTypeCode::class);
         static::registerCodeAsSubType(ProfessionCode::class);
         static::registerCodeAsSubType(PropertyCode::class);

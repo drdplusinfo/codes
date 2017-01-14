@@ -1,7 +1,8 @@
 <?php
-namespace DrdPlus\Codes\EnumTypes;
+namespace DrdPlus\Codes\History\EnumTypes;
 
-use DrdPlus\Codes\FateCode;
+use DrdPlus\Codes\EnumTypes\AbstractCodeType;
+use DrdPlus\Codes\History\FateCode;
 
 class FateCodeType extends AbstractCodeType
 {

@@ -1,5 +1,5 @@
 <?php
-namespace DrdPlus\Codes;
+namespace DrdPlus\Codes\History;
 
 use DrdPlus\Codes\Partials\AbstractCode;
 

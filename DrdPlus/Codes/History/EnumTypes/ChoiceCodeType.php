@@ -1,7 +1,8 @@
 <?php
-namespace DrdPlus\Codes\EnumTypes;
+namespace DrdPlus\Codes\History\EnumTypes;
 
-use DrdPlus\Codes\ChoiceCode;
+use DrdPlus\Codes\EnumTypes\AbstractCodeType;
+use DrdPlus\Codes\History\ChoiceCode;
 
 class ChoiceCodeType extends AbstractCodeType
 {
