@@ -11,6 +11,11 @@ use Granam\Tests\Tools\TestWithMockery;
 abstract class AbstractCodeTest extends TestWithMockery
 {
 
+    protected function setUp()
+    {
+        self::assertContains('\\Tests\\', static::class, 'Tested coCode test has to be in Tests namespace');
+    }
+
     /**
      * @test
      */

@@ -23,6 +23,7 @@ use DrdPlus\Codes\ElementCode;
 use DrdPlus\Codes\Environment\LightSourceCode;
 use DrdPlus\Codes\Environment\LightSourceEnvironmentCode;
 use DrdPlus\Codes\GenderCode;
+use DrdPlus\Codes\History\BackgroundCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Environment\LightConditionsCode;
 use DrdPlus\Codes\ProfessionCode;
@@ -78,6 +79,7 @@ class CodeType extends AbstractCodeType
         // HISTORY
         static::registerCodeAsSubType(ChoiceCode::class);
         static::registerCodeAsSubType(FateCode::class);
+        static::registerCodeAsSubType(BackgroundCode::class);
         // SKILLS
         static::registerCodeAsSubType(CombinedSkillCode::class);
         static::registerCodeAsSubType(PhysicalSkillCode::class);
