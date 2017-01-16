@@ -16,7 +16,7 @@ class RangedCombatActionCodeTest extends AbstractCodeTest
             array_values((new \ReflectionClass(RangedCombatActionCode::class))->getConstants()),
             CombatActionCode::getPossibleValues()
         );
-        self::assertSame($expectedMeleeOnly, RangedCombatActionCode::getRangedOnlyCombatActionCodes());
+        self::assertSame($expectedMeleeOnly, RangedCombatActionCode::getRangedOnlyCombatActionValues());
     }
 
     /**

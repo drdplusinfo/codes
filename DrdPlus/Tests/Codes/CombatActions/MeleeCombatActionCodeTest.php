@@ -17,7 +17,7 @@ class MeleeCombatActionCodeTest extends AbstractCodeTest
             array_values((new \ReflectionClass(MeleeCombatActionCode::class))->getConstants()),
             CombatActionCode::getPossibleValues()
         );
-        self::assertSame($expectedMeleeOnly, MeleeCombatActionCode::getMeleeOnlyCombatActionCodes());
+        self::assertSame($expectedMeleeOnly, MeleeCombatActionCode::getMeleeOnlyCombatActionValues());
     }
 
     /**

@@ -9,7 +9,7 @@ class RangedCombatActionCode extends CombatActionCode
     // See PPH page 108
     const AIMED_SHOT = 'aimed_shot';
 
-    public static function getRangedOnlyCombatActionCodes()
+    public static function getRangedOnlyCombatActionValues()
     {
         return [self::AIMED_SHOT];
     }
@@ -32,14 +32,5 @@ class RangedCombatActionCode extends CombatActionCode
     {
         // only actions inherited from generic combat actions can be used for melee attack
         return $this->getValue() !== self::AIMED_SHOT;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isForRanged()
-    {
-        // any action represented by this code can be used for ranged attack
-        return true;
     }
 }

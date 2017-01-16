@@ -16,7 +16,7 @@ class MeleeCombatActionCode extends CombatActionCode
     /**
      * @return array|string[]
      */
-    public static function getMeleeOnlyCombatActionCodes()
+    public static function getMeleeOnlyCombatActionValues()
     {
         return [
             self::HEADLESS_ATTACK,
@@ -34,17 +34,8 @@ class MeleeCombatActionCode extends CombatActionCode
     {
         return array_merge(
             parent::getPossibleValues(),
-            self::getMeleeOnlyCombatActionCodes()
+            self::getMeleeOnlyCombatActionValues()
         );
-    }
-
-    /**
-     * @return bool
-     */
-    public function isForMelee()
-    {
-        // any action represented by this code can be used for melee attack
-        return true;
     }
 
     /**
@@ -53,6 +44,6 @@ class MeleeCombatActionCode extends CombatActionCode
     public function isForRanged()
     {
         // only actions inherited from generic combat actions can be used for ranged attack
-        return !in_array($this->getValue(), self::getMeleeOnlyCombatActionCodes(), true);
+        return !in_array($this->getValue(), self::getMeleeOnlyCombatActionValues(), true);
     }
 }
