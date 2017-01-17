@@ -4,9 +4,9 @@ namespace DrdPlus\Codes\History;
 use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
- * @method static BackgroundCode getIt($codeValue)
+ * @method static ExceptionalityCode getIt($codeValue)
  */
-class BackgroundCode extends AbstractCode
+class ExceptionalityCode extends AbstractCode
 {
     const ANCESTRY = 'ancestry';
     const POSSESSION = 'possession';
