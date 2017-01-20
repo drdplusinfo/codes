@@ -4,6 +4,8 @@
 [![Test Coverage](https://codeclimate.com/github/jaroslavtyc/drd-plus-codes/badges/coverage.svg)](https://codeclimate.com/github/jaroslavtyc/drd-plus-codes/coverage)
 [![License](https://poser.pugx.org/drd-plus/codes/license)](https://packagist.org/packages/drd-plus/codes)
 
+*Codes **MUST NOT** use a DrdPlus library*
+
 Codes defining standard for
 
  - armaments
