@@ -10,6 +10,7 @@ use DrdPlus\Codes\Armaments\RangedWeaponCode;
 use DrdPlus\Codes\Armaments\ShieldCode;
 use DrdPlus\Codes\Armaments\SlingStoneCode;
 use DrdPlus\Codes\Armaments\WeaponCategoryCode;
+use DrdPlus\Codes\BasePropertyCode;
 use DrdPlus\Codes\Body\ActivityAffectingHealingCode;
 use DrdPlus\Codes\Body\AfflictionByWoundDomainCode;
 use DrdPlus\Codes\Body\ConditionsAffectingHealingCode;
@@ -93,6 +94,7 @@ class CodeType extends AbstractCodeType
         static::registerCodeAsSubType(ItemHoldingCode::class);
         static::registerCodeAsSubType(MovementTypeCode::class);
         static::registerCodeAsSubType(ProfessionCode::class);
+        static::registerCodeAsSubType(BasePropertyCode::class);
         static::registerCodeAsSubType(PropertyCode::class);
         static::registerCodeAsSubType(RaceCode::class);
         static::registerCodeAsSubType(RidingAnimalCode::class);

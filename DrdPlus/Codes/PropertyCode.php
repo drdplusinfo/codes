@@ -1,34 +1,17 @@
 <?php
 namespace DrdPlus\Codes;
 
-use DrdPlus\Codes\Partials\AbstractCode;
-
 /**
  * @method static PropertyCode getIt($codeValue)
  */
-class PropertyCode extends AbstractCode
+class PropertyCode extends BasePropertyCode
 {
-    // base
-    const STRENGTH = 'strength';
-    const AGILITY = 'agility';
-    const KNACK = 'knack';
-    const WILL = 'will';
-    const INTELLIGENCE = 'intelligence';
-    const CHARISMA = 'charisma';
-
     /**
      * @return array|string[]
      */
     public static function getBasePropertyPossibleValues()
     {
-        return [
-            self::STRENGTH,
-            self::AGILITY,
-            self::KNACK,
-            self::WILL,
-            self::INTELLIGENCE,
-            self::CHARISMA,
-        ];
+        return parent::getPossibleValues();
     }
 
     // body
