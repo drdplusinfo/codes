@@ -11,7 +11,7 @@ class ChoiceCodeType extends AbstractCodeType
     public static function registerSelf()
     {
         parent::registerSelf();
-        static::registerCodeAsSubType(ChoiceCode::class);
+        static::registerCode(ChoiceCode::class);
     }
 
     /**

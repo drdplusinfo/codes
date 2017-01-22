@@ -41,7 +41,10 @@ abstract class AbstractCodeTypeTest extends AbstractSelfRegisteringTypeTest
         }
 
         $typeClass::registerSelf();
-        self::assertTrue(Type::hasType($typeName), "Type of name '{$typeName}' is not registered");
+        self::assertTrue(
+            Type::hasType($typeName),
+            "Type of name '{$typeName}' is not registered. Have you used expected '_code' suffix ?"
+        );
 
         $testedType = Type::getType($typeName);
         $platform = $this->createPlatform();
@@ -57,7 +60,7 @@ abstract class AbstractCodeTypeTest extends AbstractSelfRegisteringTypeTest
                 self::assertSame($possibleValue, $asPhp->getValue());
             }
         }
-        $typeClass::registerSelf(); // test if can call registering repeatedly
+        $typeClass::registerSelf(); // tests if can call registering repeatedly
     }
 
     /**
@@ -136,9 +139,9 @@ abstract class AbstractCodeTypeTest extends AbstractSelfRegisteringTypeTest
     public function I_can_not_register_non_existing_class()
     {
         $reflectionClass = new \ReflectionClass(self::getSutClass());
-        $registerCodeAsSubType = $reflectionClass->getMethod('registerCodeAsSubType');
-        $registerCodeAsSubType->setAccessible(true);
-        $registerCodeAsSubType->invoke($reflectionClass->newInstanceWithoutConstructor(), 'non-existing-class');
+        $registerCode = $reflectionClass->getMethod('registerCode');
+        $registerCode->setAccessible(true);
+        $registerCode->invoke($reflectionClass->newInstanceWithoutConstructor(), 'non-existing-class');
     }
 
     /**
@@ -149,8 +152,8 @@ abstract class AbstractCodeTypeTest extends AbstractSelfRegisteringTypeTest
     public function I_can_not_register_non_enum_class()
     {
         $reflectionClass = new \ReflectionClass(self::getSutClass());
-        $registerCodeAsSubType = $reflectionClass->getMethod('registerCodeAsSubType');
-        $registerCodeAsSubType->setAccessible(true);
-        $registerCodeAsSubType->invoke($reflectionClass->newInstanceWithoutConstructor(), \stdClass::class);
+        $registerCode = $reflectionClass->getMethod('registerCode');
+        $registerCode->setAccessible(true);
+        $registerCode->invoke($reflectionClass->newInstanceWithoutConstructor(), \stdClass::class);
     }
 }

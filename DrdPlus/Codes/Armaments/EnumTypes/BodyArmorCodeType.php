@@ -11,7 +11,7 @@ class BodyArmorCodeType extends AbstractCodeType
     public static function registerSelf()
     {
         parent::registerSelf();
-        static::registerCodeAsSubType(BodyArmorCode::class);
+        static::registerCode(BodyArmorCode::class);
     }
 
     /**

@@ -11,7 +11,7 @@ class FateCodeType extends AbstractCodeType
     public static function registerSelf()
     {
         parent::registerSelf();
-        static::registerCodeAsSubType(FateCode::class);
+        static::registerCode(FateCode::class);
     }
 
     /**

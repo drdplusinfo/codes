@@ -13,9 +13,9 @@ class WeaponlikeCodeType extends AbstractCodeType
     public static function registerSelf()
     {
         parent::registerSelf();
-        static::registerCodeAsSubType(MeleeWeaponCode::class);
-        static::registerCodeAsSubType(RangedWeaponCode::class);
-        static::registerCodeAsSubType(ShieldCode::class);
+        static::registerCode(MeleeWeaponCode::class);
+        static::registerCode(RangedWeaponCode::class);
+        static::registerCode(ShieldCode::class);
     }
 
     /**

@@ -11,7 +11,7 @@ class HelmCodeType extends AbstractCodeType
     public static function registerSelf()
     {
         parent::registerSelf();
-        static::registerCodeAsSubType(HelmCode::class);
+        static::registerCode(HelmCode::class);
     }
 
     /**

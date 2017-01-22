@@ -20,8 +20,9 @@ abstract class AbstractCodeType extends ScalarEnumType
      * @throws \DrdPlus\Codes\EnumTypes\Exceptions\UnknownCodeClass
      * @throws \DrdPlus\Codes\EnumTypes\Exceptions\ExpectedEnumClass
      */
-    protected static function registerCodeAsSubType($codeClass)
+    protected static function registerCode($codeClass)
     {
+        /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
         $sanitizedCodeClass = ToString::toString($codeClass);
         if (!class_exists($sanitizedCodeClass)) {
             throw new Exceptions\UnknownCodeClass('Given code class has not been found: ' . ValueDescriber::describe($codeClass));
