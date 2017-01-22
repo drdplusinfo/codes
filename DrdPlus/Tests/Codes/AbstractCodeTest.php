@@ -22,6 +22,10 @@ abstract class AbstractCodeTest extends TestWithMockery
     public function It_is_code()
     {
         self::assertTrue(
+            class_exists(self::getSutClass()),
+            self::getSutClass() . ' has not been found, check namespace of its test ' . static::class
+        );
+        self::assertTrue(
             is_a(self::getSutClass(), Code::class, true),
             self::getSutClass() . ' is not an instance of ' . Code::class
         );

@@ -1,7 +1,10 @@
 <?php
-namespace DrdPlus\Tests\Codes;
+namespace DrdPlus\Tests\Codes\Properties;
 
-use DrdPlus\Codes\PropertyCode;
+use DrdPlus\Codes\Properties\BasePropertyCode;
+use DrdPlus\Codes\Properties\PropertyCode;
+use DrdPlus\Codes\Properties\RemarkableSenseCode;
+use DrdPlus\Tests\Codes\AbstractCodeTest;
 
 class PropertyCodeTest extends AbstractCodeTest
 {
@@ -10,17 +13,15 @@ class PropertyCodeTest extends AbstractCodeTest
      */
     public function I_can_get_base_property_codes()
     {
-        self::assertEquals(
-            $expectedCodes = [
-                'strength',
-                'agility',
-                'knack',
-                'will',
-                'intelligence',
-                'charisma'
-            ],
+        self::assertSame(
+            BasePropertyCode::getPossibleValues(),
             PropertyCode::getBasePropertyPossibleValues()
         );
+        $BasePropertyCodeReference = new \ReflectionClass(BasePropertyCode::class);
+        foreach ($BasePropertyCodeReference->getConstants() as $basePropertyConstantName => $value) {
+            self::assertTrue(defined(PropertyCode::class . '::' . $basePropertyConstantName));
+            self::assertSame($value, constant(PropertyCode::class . '::' . $basePropertyConstantName));
+        }
     }
 
     /**
@@ -84,16 +85,15 @@ class PropertyCodeTest extends AbstractCodeTest
      */
     public function I_can_get_remarkable_property_codes()
     {
-        self::assertEquals(
-            $expectedCodes = [
-                'hearing',
-                'sight',
-                'smell',
-                'taste',
-                'touch',
-            ],
+        self::assertSame(
+            RemarkableSenseCode::getPossibleValues(),
             PropertyCode::getRemarkableSensePropertyPossibleValues()
         );
+        $remarkableSenseCodeReflection = new \ReflectionClass(RemarkableSenseCode::class);
+        foreach ($remarkableSenseCodeReflection->getConstants() as $remarkableSenseCodeConstant => $value) {
+            self::assertTrue(defined(PropertyCode::class . '::' . $remarkableSenseCodeConstant));
+            self::assertSame($value, constant(PropertyCode::class . '::' . $remarkableSenseCodeConstant));
+        }
     }
 
     /**

@@ -1,17 +1,26 @@
 <?php
-namespace DrdPlus\Codes;
+namespace DrdPlus\Codes\Properties;
+
+use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static PropertyCode getIt($codeValue)
  */
-class PropertyCode extends BasePropertyCode
+class PropertyCode extends AbstractCode
 {
+    const STRENGTH = BasePropertyCode::STRENGTH;
+    const AGILITY = BasePropertyCode::AGILITY;
+    const KNACK = BasePropertyCode::KNACK;
+    const WILL = BasePropertyCode::WILL;
+    const INTELLIGENCE = BasePropertyCode::INTELLIGENCE;
+    const CHARISMA = BasePropertyCode::CHARISMA;
+
     /**
      * @return array|string[]
      */
     public static function getBasePropertyPossibleValues()
     {
-        return parent::getPossibleValues();
+        return BasePropertyCode::getPossibleValues();
     }
 
     // body
@@ -88,24 +97,18 @@ class PropertyCode extends BasePropertyCode
     }
 
     // remarkable senses
-    const HEARING = 'hearing';
-    const SIGHT = 'sight';
-    const SMELL = 'smell';
-    const TASTE = 'taste';
-    const TOUCH = 'touch';
+    const HEARING = RemarkableSenseCode::HEARING;
+    const SIGHT = RemarkableSenseCode::SIGHT;
+    const SMELL = RemarkableSenseCode::SMELL;
+    const TASTE = RemarkableSenseCode::TASTE;
+    const TOUCH = RemarkableSenseCode::TOUCH;
 
     /**
      * @return array|string[]
      */
     public static function getRemarkableSensePropertyPossibleValues()
     {
-        return [
-            self::HEARING,
-            self::SIGHT,
-            self::SMELL,
-            self::TASTE,
-            self::TOUCH,
-        ];
+        return RemarkableSenseCode::getPossibleValues();
     }
 
     // restrictions

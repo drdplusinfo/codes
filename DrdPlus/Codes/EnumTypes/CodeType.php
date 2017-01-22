@@ -10,7 +10,7 @@ use DrdPlus\Codes\Armaments\RangedWeaponCode;
 use DrdPlus\Codes\Armaments\ShieldCode;
 use DrdPlus\Codes\Armaments\SlingStoneCode;
 use DrdPlus\Codes\Armaments\WeaponCategoryCode;
-use DrdPlus\Codes\BasePropertyCode;
+use DrdPlus\Codes\Properties\BasePropertyCode;
 use DrdPlus\Codes\Body\ActivityAffectingHealingCode;
 use DrdPlus\Codes\Body\AfflictionByWoundDomainCode;
 use DrdPlus\Codes\Body\ConditionsAffectingHealingCode;
@@ -30,7 +30,8 @@ use DrdPlus\Codes\History\ExceptionalityCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Environment\LightConditionsCode;
 use DrdPlus\Codes\ProfessionCode;
-use DrdPlus\Codes\PropertyCode;
+use DrdPlus\Codes\Properties\PropertyCode;
+use DrdPlus\Codes\Properties\RemarkableSenseCode;
 use DrdPlus\Codes\RaceCode;
 use DrdPlus\Codes\Transport\MovementTypeCode;
 use DrdPlus\Codes\Transport\RidingAnimalCode;
@@ -84,24 +85,27 @@ class CodeType extends AbstractCodeType
         static::registerCodeAsSubType(ExceptionalityCode::class);
         static::registerCodeAsSubType(ChoiceCode::class);
         static::registerCodeAsSubType(FateCode::class);
+        // PROPERTIES
+        static::registerCodeAsSubType(BasePropertyCode::class);
+        static::registerCodeAsSubType(PropertyCode::class);
+        static::registerCodeAsSubType(RemarkableSenseCode::class);
         // SKILLS
         static::registerCodeAsSubType(CombinedSkillCode::class);
         static::registerCodeAsSubType(PhysicalSkillCode::class);
         static::registerCodeAsSubType(PsychicalSkillCode::class);
         static::registerCodeAsSubType(SkillTypeCode::class);
+        // TRANSPORT
+        static::registerCodeAsSubType(MovementTypeCode::class);
+        static::registerCodeAsSubType(RidingAnimalCode::class);
+        static::registerCodeAsSubType(RidingAnimalMovementCode::class);
+        static::registerCodeAsSubType(RidingAnimalPropertyCode::class);
         // OTHERS
         static::registerCodeAsSubType(CombatCharacteristicCode::class);
         static::registerCodeAsSubType(ElementCode::class);
         static::registerCodeAsSubType(GenderCode::class);
         static::registerCodeAsSubType(ItemHoldingCode::class);
-        static::registerCodeAsSubType(MovementTypeCode::class);
         static::registerCodeAsSubType(ProfessionCode::class);
-        static::registerCodeAsSubType(BasePropertyCode::class);
-        static::registerCodeAsSubType(PropertyCode::class);
         static::registerCodeAsSubType(RaceCode::class);
-        static::registerCodeAsSubType(RidingAnimalCode::class);
-        static::registerCodeAsSubType(RidingAnimalMovementCode::class);
-        static::registerCodeAsSubType(RidingAnimalPropertyCode::class);
         static::registerCodeAsSubType(SubRaceCode::class);
         static::registerCodeAsSubType(TimeCode::class);
     }
