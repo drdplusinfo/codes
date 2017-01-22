@@ -20,6 +20,7 @@ use DrdPlus\Codes\Body\WoundTypeCode;
 use DrdPlus\Codes\CombatActions\CombatActionCode;
 use DrdPlus\Codes\CombatActions\MeleeCombatActionCode;
 use DrdPlus\Codes\CombatActions\RangedCombatActionCode;
+use DrdPlus\Codes\CombatCharacteristicCode;
 use DrdPlus\Codes\ElementCode;
 use DrdPlus\Codes\Environment\LightSourceCode;
 use DrdPlus\Codes\Environment\LightSourceEnvironmentCode;
@@ -89,6 +90,7 @@ class CodeType extends AbstractCodeType
         static::registerCodeAsSubType(PsychicalSkillCode::class);
         static::registerCodeAsSubType(SkillTypeCode::class);
         // OTHERS
+        static::registerCodeAsSubType(CombatCharacteristicCode::class);
         static::registerCodeAsSubType(ElementCode::class);
         static::registerCodeAsSubType(GenderCode::class);
         static::registerCodeAsSubType(ItemHoldingCode::class);
