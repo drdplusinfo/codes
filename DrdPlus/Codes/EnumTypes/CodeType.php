@@ -30,6 +30,7 @@ use DrdPlus\Codes\History\ExceptionalityCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Environment\LightConditionsCode;
 use DrdPlus\Codes\ProfessionCode;
+use DrdPlus\Codes\Properties\CharacteristicForGameCode;
 use DrdPlus\Codes\Properties\PropertyCode;
 use DrdPlus\Codes\Properties\RemarkableSenseCode;
 use DrdPlus\Codes\RaceCode;
@@ -87,6 +88,8 @@ class CodeType extends AbstractCodeType
         static::registerCode(FateCode::class);
         // PROPERTIES
         static::registerCode(BasePropertyCode::class);
+        static::registerCode(CharacteristicForGameCode::class);
+        static::registerCode(CombatCharacteristicCode::class);
         static::registerCode(PropertyCode::class);
         static::registerCode(RemarkableSenseCode::class);
         // SKILLS
