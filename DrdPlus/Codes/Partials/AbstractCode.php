@@ -4,6 +4,7 @@ namespace DrdPlus\Codes\Partials;
 use Doctrineum\Scalar\ScalarEnum;
 use Doctrineum\Scalar\ScalarEnumInterface;
 use DrdPlus\Codes\Code;
+use Granam\String\StringInterface;
 use Granam\Tools\ValueDescriber;
 
 /** @noinspection SingletonFactoryPatternViolationInspection */
@@ -20,7 +21,7 @@ abstract class AbstractCode extends ScalarEnum implements Code
     }
 
     /**
-     * @param string $codeValue
+     * @param string|StringInterface $codeValue
      * @return AbstractCode|ScalarEnumInterface
      * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
      * @throws \Doctrineum\Scalar\Exceptions\CanNotCreateInstanceOfAbstractEnum
