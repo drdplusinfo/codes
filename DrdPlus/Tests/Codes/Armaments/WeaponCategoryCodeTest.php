@@ -12,7 +12,7 @@ class WeaponCategoryCodeTest extends AbstractCodeTest
     public function I_can_get_melee_weapon_category_codes_at_once()
     {
         self::assertSame(
-            $expectedCodes = [
+            [
                 'axe',
                 'knife_or_dagger',
                 'mace_or_club',
@@ -33,7 +33,7 @@ class WeaponCategoryCodeTest extends AbstractCodeTest
     public function I_can_get_ranged_weapon_category_codes()
     {
         self::assertSame(
-            $expectedCodes = [
+            [
                 'bow',
                 'crossbow',
                 'throwing_weapon',
@@ -48,7 +48,7 @@ class WeaponCategoryCodeTest extends AbstractCodeTest
     public function I_can_get_projectile_category_codes()
     {
         self::assertSame(
-            $expectedCodes = [
+            [
                 'arrow',
                 'dart',
                 'sling_stone',

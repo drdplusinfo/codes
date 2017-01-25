@@ -42,7 +42,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
     public function I_can_get_bow_codes()
     {
         self::assertSame(
-            $expectedCodes = [
+            [
                 'short_bow',
                 'long_bow',
                 'short_composite_bow',
@@ -59,7 +59,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
     public function I_can_get_crossbow_codes()
     {
         self::assertSame(
-            $expectedCodes = [
+            [
                 'minicrossbow',
                 'light_crossbow',
                 'military_crossbow',
@@ -75,7 +75,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
     public function I_can_get_throwing_weapon_codes()
     {
         self::assertSame(
-            $expectedCodes = [
+            [
                 'rock',
                 'throwing_dagger',
                 'light_throwing_axe',

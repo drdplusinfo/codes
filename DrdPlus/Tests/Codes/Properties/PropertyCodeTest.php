@@ -1,7 +1,6 @@
 <?php
 namespace DrdPlus\Tests\Codes\Properties;
 
-use DrdPlus\Codes\Properties\BasePropertyCode;
 use DrdPlus\Codes\Properties\PropertyCode;
 use DrdPlus\Codes\Properties\RemarkableSenseCode;
 use DrdPlus\Tests\Codes\AbstractCodeTest;
@@ -14,14 +13,16 @@ class PropertyCodeTest extends AbstractCodeTest
     public function I_can_get_base_property_codes()
     {
         self::assertSame(
-            BasePropertyCode::getPossibleValues(),
+            [
+                'strength',
+                'agility',
+                'knack',
+                'will',
+                'intelligence',
+                'charisma',
+            ],
             PropertyCode::getBasePropertyPossibleValues()
         );
-        $BasePropertyCodeReference = new \ReflectionClass(BasePropertyCode::class);
-        foreach ($BasePropertyCodeReference->getConstants() as $basePropertyConstantName => $value) {
-            self::assertTrue(defined(PropertyCode::class . '::' . $basePropertyConstantName));
-            self::assertSame($value, constant(PropertyCode::class . '::' . $basePropertyConstantName));
-        }
     }
 
     /**
@@ -30,7 +31,7 @@ class PropertyCodeTest extends AbstractCodeTest
     public function I_can_get_body_property_codes()
     {
         self::assertEquals(
-            $expectedCodes = [
+            [
                 'age',
                 'height_in_cm',
                 'height',
@@ -48,7 +49,7 @@ class PropertyCodeTest extends AbstractCodeTest
     public function I_can_get_derived_property_codes()
     {
         self::assertEquals(
-            $expectedCodes = [
+            [
                 'beauty',
                 'dangerousness',
                 'dignity',
@@ -71,7 +72,7 @@ class PropertyCodeTest extends AbstractCodeTest
     public function I_can_get_native_property_codes()
     {
         self::assertEquals(
-            $expectedCodes = [
+            [
                 'infravision',
                 'native_regeneration',
                 'remarkable_sense',
@@ -102,7 +103,7 @@ class PropertyCodeTest extends AbstractCodeTest
     public function I_can_get_restriction_property_codes()
     {
         self::assertEquals(
-            $expectedCodes = [
+            [
                 'requires_dm_agreement',
             ],
             PropertyCode::getRestrictionPropertyPossibleValues()

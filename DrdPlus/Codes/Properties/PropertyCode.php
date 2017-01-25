@@ -8,19 +8,26 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class PropertyCode extends AbstractCode
 {
-    const STRENGTH = BasePropertyCode::STRENGTH;
-    const AGILITY = BasePropertyCode::AGILITY;
-    const KNACK = BasePropertyCode::KNACK;
-    const WILL = BasePropertyCode::WILL;
-    const INTELLIGENCE = BasePropertyCode::INTELLIGENCE;
-    const CHARISMA = BasePropertyCode::CHARISMA;
+    const STRENGTH = 'strength';
+    const AGILITY = 'agility';
+    const KNACK = 'knack';
+    const WILL = 'will';
+    const INTELLIGENCE = 'intelligence';
+    const CHARISMA = 'charisma';
 
     /**
      * @return array|string[]
      */
     public static function getBasePropertyPossibleValues()
     {
-        return BasePropertyCode::getPossibleValues();
+        return [
+            self::STRENGTH,
+            self::AGILITY,
+            self::KNACK,
+            self::WILL,
+            self::INTELLIGENCE,
+            self::CHARISMA,
+        ];
     }
 
     // body

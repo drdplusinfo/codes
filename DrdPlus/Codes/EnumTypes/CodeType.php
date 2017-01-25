@@ -10,7 +10,6 @@ use DrdPlus\Codes\Armaments\RangedWeaponCode;
 use DrdPlus\Codes\Armaments\ShieldCode;
 use DrdPlus\Codes\Armaments\SlingStoneCode;
 use DrdPlus\Codes\Armaments\WeaponCategoryCode;
-use DrdPlus\Codes\Properties\BasePropertyCode;
 use DrdPlus\Codes\Body\ActivityAffectingHealingCode;
 use DrdPlus\Codes\Body\AfflictionByWoundDomainCode;
 use DrdPlus\Codes\Body\ConditionsAffectingHealingCode;
@@ -87,7 +86,6 @@ class CodeType extends AbstractCodeType
         static::registerCode(ChoiceCode::class);
         static::registerCode(FateCode::class);
         // PROPERTIES
-        static::registerCode(BasePropertyCode::class);
         static::registerCode(CharacteristicForGameCode::class);
         static::registerCode(CombatCharacteristicCode::class);
         static::registerCode(PropertyCode::class);

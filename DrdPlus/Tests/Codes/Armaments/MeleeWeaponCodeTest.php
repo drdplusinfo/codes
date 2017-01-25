@@ -53,7 +53,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     public function I_can_get_axe_codes()
     {
         self::assertSame(
-            $expectedCodes = [
+            [
                 'light_axe',
                 'axe',
                 'war_axe',
@@ -69,7 +69,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     public function I_can_get_knife_and_dagger_codes()
     {
         self::assertSame(
-            $expectedCodes = [
+            [
                 'knife',
                 'dagger',
                 'stabbing_dagger',
@@ -86,7 +86,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     public function I_can_get_mace_and_club_codes()
     {
         self::assertSame(
-            $expectedCodes = [
+            [
                 'cudgel',
                 'club',
                 'hobnailed_club',
@@ -107,7 +107,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     public function I_can_get_morningstar_and_morgenstern_codes()
     {
         self::assertSame(
-            $expectedCodes = [
+            [
                 'light_morgenstern',
                 'morgenstern',
                 'heavy_morgenstern',
@@ -126,7 +126,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     public function I_can_get_saber_and_bowie_knife_codes()
     {
         self::assertSame(
-            $expectedCodes = [
+            [
                 'machete',
                 'light_saber',
                 'bowie_knife',
@@ -143,7 +143,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     public function I_can_get_staff_and_spear_codes()
     {
         self::assertSame(
-            $expectedCodes = [
+            [
                 'light_spear',
                 'shortened_staff',
                 'light_staff',
@@ -164,7 +164,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     public function I_can_get_sword_codes()
     {
         self::assertSame(
-            $expectedCodes = [
+            [
                 'short_sword',
                 'hanger',
                 'glaive',
@@ -183,7 +183,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     public function I_can_get_voulges_and_trident_codes()
     {
         self::assertSame(
-            $expectedCodes = [
+            [
                 'pitchfork',
                 'light_voulge',
                 'light_trident',
@@ -202,7 +202,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     public function I_can_get_unarmed_codes()
     {
         self::assertSame(
-            $expectedCodes = [
+            [
                 'hand',
                 'hobnailed_glove',
                 'leg',
