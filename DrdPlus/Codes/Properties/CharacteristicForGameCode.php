@@ -14,7 +14,7 @@ class CharacteristicForGameCode extends AbstractCode
     const SHOOTING = CombatCharacteristicCode::SHOOTING;
 
     const ATTACK_NUMBER = 'attack_number';
-    const DEFENSE_AGAINST_SHOOTING = 'defense_against_shooting';
+    const DEFENSE_NUMBER_AGAINST_SHOOTING = 'defense_number_against_shooting';
     const DEFENSE_NUMBER = 'defense_number';
     const ENCOUNTER_RANGE = 'encounter_range';
     const FIGHT = 'fight';
@@ -32,7 +32,7 @@ class CharacteristicForGameCode extends AbstractCode
             self::DEFENSE,
             self::SHOOTING,
             self::ATTACK_NUMBER,
-            self::DEFENSE_AGAINST_SHOOTING,
+            self::DEFENSE_NUMBER_AGAINST_SHOOTING,
             self::DEFENSE_NUMBER,
             self::ENCOUNTER_RANGE,
             self::FIGHT,
