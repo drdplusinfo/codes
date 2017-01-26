@@ -51,8 +51,10 @@ abstract class AbstractCode extends ScalarEnum implements Code
     private function guardCodeExistence($codeValue)
     {
         if (!in_array($codeValue, (new \ReflectionClass($this))->getConstants(), true)) {
-            throw new Exceptions\UnknownValueForCode('Given code value is not known: '
-                . ValueDescriber::describe($codeValue));
+            throw new Exceptions\UnknownValueForCode('Given code value '
+                . ValueDescriber::describe($codeValue)
+                . ' is not known to ' . static::class
+            );
         }
     }
 }
