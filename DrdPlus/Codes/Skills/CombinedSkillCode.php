@@ -28,6 +28,7 @@ class CombinedSkillCode extends SkillCode
     const SHOWMANSHIP = 'showmanship';
     const SINGING = 'singing';
     const STATUARY = 'statuary';
+    const TEACHING = 'teaching';
 
     /**
      * @return array|string[]
@@ -55,6 +56,7 @@ class CombinedSkillCode extends SkillCode
             self::SHOWMANSHIP,
             self::SINGING,
             self::STATUARY,
+            self::TEACHING,
         ];
     }
 }
