@@ -21,6 +21,7 @@ use DrdPlus\Codes\CombatActions\MeleeCombatActionCode;
 use DrdPlus\Codes\CombatActions\RangedCombatActionCode;
 use DrdPlus\Codes\CombatCharacteristicCode;
 use DrdPlus\Codes\ElementCode;
+use DrdPlus\Codes\Environment\LandingSurfaceCode;
 use DrdPlus\Codes\Environment\LightSourceCode;
 use DrdPlus\Codes\Environment\LightSourceEnvironmentCode;
 use DrdPlus\Codes\GenderCode;
@@ -78,6 +79,7 @@ class CodeType extends AbstractCodeType
         static::registerCode(MeleeCombatActionCode::class);
         static::registerCode(RangedCombatActionCode::class);
         // ENVIRONMENT
+        static::registerCode(LandingSurfaceCode::class);
         static::registerCode(LightConditionsCode::class);
         static::registerCode(LightSourceCode::class);
         static::registerCode(LightSourceEnvironmentCode::class);
