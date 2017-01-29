@@ -28,6 +28,8 @@ use DrdPlus\Codes\History\AncestryCode;
 use DrdPlus\Codes\History\ExceptionalityCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Environment\LightConditionsCode;
+use DrdPlus\Codes\JumpMovementCode;
+use DrdPlus\Codes\JumpTypeCode;
 use DrdPlus\Codes\ProfessionCode;
 use DrdPlus\Codes\Properties\CharacteristicForGameCode;
 use DrdPlus\Codes\Properties\PropertyCode;
@@ -105,6 +107,8 @@ class CodeType extends AbstractCodeType
         static::registerCode(ElementCode::class);
         static::registerCode(GenderCode::class);
         static::registerCode(ItemHoldingCode::class);
+        static::registerCode(JumpMovementCode::class);
+        static::registerCode(JumpTypeCode::class);
         static::registerCode(ProfessionCode::class);
         static::registerCode(RaceCode::class);
         static::registerCode(SubRaceCode::class);
