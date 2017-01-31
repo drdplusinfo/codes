@@ -3,6 +3,9 @@ namespace DrdPlus\Codes\Environment;
 
 use DrdPlus\Codes\Partials\AbstractCode;
 
+/**
+ * @method static LandingSurfaceCode getIt($codeValue)
+ */
 class LandingSurfaceCode extends AbstractCode
 {
     const DEEP_POWDER = 'deep_powder';
