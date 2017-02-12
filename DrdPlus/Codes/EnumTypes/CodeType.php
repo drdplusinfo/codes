@@ -1,6 +1,7 @@
 <?php
 namespace DrdPlus\Codes\EnumTypes;
 
+use DrdPlus\Codes\ActivityIntensityCode;
 use DrdPlus\Codes\Armaments\ArrowCode;
 use DrdPlus\Codes\Armaments\BodyArmorCode;
 use DrdPlus\Codes\Armaments\DartCode;
@@ -105,6 +106,7 @@ class CodeType extends AbstractCodeType
         static::registerCode(RidingAnimalMovementCode::class);
         static::registerCode(RidingAnimalPropertyCode::class);
         // OTHERS
+        static::registerCode(ActivityIntensityCode::class);
         static::registerCode(CombatCharacteristicCode::class);
         static::registerCode(ElementCode::class);
         static::registerCode(GenderCode::class);
