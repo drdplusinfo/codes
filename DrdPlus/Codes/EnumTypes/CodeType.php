@@ -38,6 +38,7 @@ use DrdPlus\Codes\Properties\CharacteristicForGameCode;
 use DrdPlus\Codes\Properties\PropertyCode;
 use DrdPlus\Codes\Properties\RemarkableSenseCode;
 use DrdPlus\Codes\RaceCode;
+use DrdPlus\Codes\SearchingItemTypeCode;
 use DrdPlus\Codes\Transport\MovementTypeCode;
 use DrdPlus\Codes\Transport\RidingAnimalCode;
 use DrdPlus\Codes\Transport\RidingAnimalMovementCode;
@@ -117,6 +118,7 @@ class CodeType extends AbstractCodeType
         static::registerCode(JumpTypeCode::class);
         static::registerCode(ProfessionCode::class);
         static::registerCode(RaceCode::class);
+        static::registerCode(SearchingItemTypeCode::class);
         static::registerCode(SubRaceCode::class);
         static::registerCode(TimeCode::class);
     }
