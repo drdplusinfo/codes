@@ -13,8 +13,8 @@ class FoodTypeCode extends AbstractCode
     const SLUGS = 'slugs';
     const REPTILES = 'reptiles';
     const RODENTS_OR_BIRDS_EGGS = 'rodents_or_birds_eggs';
-    const AVERAGE_MEET = 'average_meet';
-    const QUALITY_MEET = 'quality_meet';
+    const AVERAGE_MEAT = 'average_meat';
+    const QUALITY_MEAT = 'quality_meat';
 
     /**
      * @return array|string[]
@@ -27,8 +27,8 @@ class FoodTypeCode extends AbstractCode
             self::SLUGS,
             self::REPTILES,
             self::RODENTS_OR_BIRDS_EGGS,
-            self::AVERAGE_MEET,
-            self::QUALITY_MEET,
+            self::AVERAGE_MEAT,
+            self::QUALITY_MEAT,
         ];
     }
 
