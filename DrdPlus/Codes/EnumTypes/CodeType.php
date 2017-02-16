@@ -26,6 +26,7 @@ use DrdPlus\Codes\Environment\ItemStealthinessCode;
 use DrdPlus\Codes\Environment\LandingSurfaceCode;
 use DrdPlus\Codes\Environment\LightSourceCode;
 use DrdPlus\Codes\Environment\LightSourceEnvironmentCode;
+use DrdPlus\Codes\FoodTypeCode;
 use DrdPlus\Codes\GenderCode;
 use DrdPlus\Codes\History\AncestryCode;
 use DrdPlus\Codes\History\ExceptionalityCode;
@@ -112,6 +113,7 @@ class CodeType extends AbstractCodeType
         static::registerCode(ActivityIntensityCode::class);
         static::registerCode(CombatCharacteristicCode::class);
         static::registerCode(ElementCode::class);
+        static::registerCode(FoodTypeCode::class);
         static::registerCode(GenderCode::class);
         static::registerCode(ItemHoldingCode::class);
         static::registerCode(JumpMovementCode::class);
