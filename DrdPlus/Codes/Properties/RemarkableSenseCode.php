@@ -3,6 +3,9 @@ namespace DrdPlus\Codes\Properties;
 
 use DrdPlus\Codes\Partials\AbstractCode;
 
+/**
+ * @method static RemarkableSenseCode getIt($codeValue)
+ */
 class RemarkableSenseCode extends AbstractCode
 {
     const HEARING = 'hearing';

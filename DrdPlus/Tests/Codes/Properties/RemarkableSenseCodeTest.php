@@ -1,9 +1,9 @@
 <?php
 namespace DrdPlus\Tests\Codes\Properties;
 
-use DrdPlus\Codes\Partials\AbstractCode;
+use DrdPlus\Tests\Codes\AbstractCodeTest;
 
-class RemarkableSenseCodeTest extends AbstractCode
+class RemarkableSenseCodeTest extends AbstractCodeTest
 {
 
 }

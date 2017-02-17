@@ -2,10 +2,13 @@
 namespace DrdPlus\Tests\Codes\Armaments;
 
 use DrdPlus\Codes\Code;
-use Granam\Tests\Exceptions\Tools\AbstractExceptionsHierarchyTest;
+use Granam\Tests\ExceptionsHierarchy\Exceptions\AbstractExceptionsHierarchyTest;
 
-class ExceptionsHierarchyTest extends AbstractExceptionsHierarchyTest
+class ArmamentCodesExceptionsHierarchyTest extends AbstractExceptionsHierarchyTest
 {
+    /**
+     * @return string
+     */
     protected function getTestedNamespace()
     {
         return str_replace('\Tests', '', __NAMESPACE__);
