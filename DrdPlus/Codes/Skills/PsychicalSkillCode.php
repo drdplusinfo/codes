@@ -10,7 +10,7 @@ class PsychicalSkillCode extends SkillCode
     // PSYCHICAL
     const ASTRONOMY = 'astronomy';
     const BOTANY = 'botany';
-    const ETIQUETTE_OF_UNDERWORLD = 'etiquette_of_underworld';
+    const ETIQUETTE_OF_GANGLAND = 'etiquette_of_gangland';
     const FOREIGN_LANGUAGE = 'foreign_language';
     const GEOGRAPHY_OF_A_COUNTRY = 'geography_of_a_country';
     const HANDLING_WITH_MAGICAL_ITEMS = 'handling_with_magical_items';
@@ -33,7 +33,7 @@ class PsychicalSkillCode extends SkillCode
         return [
             self::ASTRONOMY,
             self::BOTANY,
-            self::ETIQUETTE_OF_UNDERWORLD,
+            self::ETIQUETTE_OF_GANGLAND,
             self::FOREIGN_LANGUAGE,
             self::GEOGRAPHY_OF_A_COUNTRY,
             self::HANDLING_WITH_MAGICAL_ITEMS,
