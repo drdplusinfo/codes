@@ -26,6 +26,7 @@ use DrdPlus\Codes\Environment\ItemStealthinessCode;
 use DrdPlus\Codes\Environment\LandingSurfaceCode;
 use DrdPlus\Codes\Environment\LightSourceCode;
 use DrdPlus\Codes\Environment\LightSourceEnvironmentCode;
+use DrdPlus\Codes\Environment\MaterialCode;
 use DrdPlus\Codes\FoodTypeCode;
 use DrdPlus\Codes\GenderCode;
 use DrdPlus\Codes\History\AncestryCode;
@@ -88,6 +89,7 @@ class CodeType extends AbstractCodeType
         static::registerCode(LightConditionsCode::class);
         static::registerCode(LightSourceCode::class);
         static::registerCode(LightSourceEnvironmentCode::class);
+        static::registerCode(MaterialCode::class);
         static::registerCode(TerrainCode::class);
         // HISTORY
         static::registerCode(AncestryCode::class);
