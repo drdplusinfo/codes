@@ -3,6 +3,9 @@ namespace DrdPlus\Codes\Environment;
 
 use DrdPlus\Codes\Partials\AbstractCode;
 
+/**
+ * @method static MaterialCode getIt($codeValue)
+ */
 class MaterialCode extends AbstractCode
 {
     const CLOTH_OR_PAPER_OR_ROPE = 'cloth_or_paper_or_rope';
