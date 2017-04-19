@@ -21,6 +21,7 @@ use DrdPlus\Codes\CombatActions\CombatActionCode;
 use DrdPlus\Codes\CombatActions\MeleeCombatActionCode;
 use DrdPlus\Codes\CombatActions\RangedCombatActionCode;
 use DrdPlus\Codes\CombatCharacteristicCode;
+use DrdPlus\Codes\DistanceCode;
 use DrdPlus\Codes\ElementCode;
 use DrdPlus\Codes\Environment\ItemStealthinessCode;
 use DrdPlus\Codes\Environment\LandingSurfaceCode;
@@ -114,6 +115,7 @@ class CodeType extends AbstractCodeType
         // OTHERS
         static::registerCode(ActivityIntensityCode::class);
         static::registerCode(CombatCharacteristicCode::class);
+        static::registerCode(DistanceCode::class);
         static::registerCode(ElementCode::class);
         static::registerCode(FoodTypeCode::class);
         static::registerCode(GenderCode::class);
@@ -130,7 +132,7 @@ class CodeType extends AbstractCodeType
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return self::CODE;
     }

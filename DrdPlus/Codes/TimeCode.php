@@ -1,12 +1,10 @@
 <?php
 namespace DrdPlus\Codes;
 
-use DrdPlus\Codes\Partials\AbstractCode;
-
 /**
  * @method static TimeCode getIt($codeValue)
  */
-class TimeCode extends AbstractCode
+class TimeCode extends TranslatableCode
 {
     const ROUND = 'round';
     const MINUTE = 'minute';
@@ -28,52 +26,6 @@ class TimeCode extends AbstractCode
             self::MONTH,
             self::YEAR,
         ];
-    }
-
-    /**
-     * @param string $languageCode
-     * @param number $amount
-     * @return string
-     */
-    public function translateTo(string $languageCode, $amount): string
-    {
-        $code = $this->getValue();
-        $translations = $this->getTranslations($languageCode);
-        $plural = $this->convertAmountToPlural($amount);
-        if (($translations[$code][$plural] ?? null) !== null) {
-            return $translations[$code][$plural];
-        }
-        if ($languageCode === 'en') {
-            return str_replace('_', ' ', $code); // just replacing underscores by spaces
-        }
-        trigger_error(
-            "Missing translation for value '{$code}', language '{$languageCode}' and plural '{$plural}'"
-            . ', english will be used instead',
-            E_USER_WARNING
-        );
-        $translations = $this->getTranslations('en');
-        if (($translations[$code][$plural] ?? null) !== null) {
-            return $translations[$code][$plural]; // explicit english translation
-        }
-
-        return str_replace('_', ' ', $code); // just replacing underscores by spaces
-    }
-
-    /**
-     * @param number $amount
-     * @return string
-     */
-    private function convertAmountToPlural($amount): string
-    {
-        $amount = abs($amount);
-        if ($amount <= 1) {
-            return 'one';
-        }
-        if ($amount < 5) {
-            return 'few';
-        }
-
-        return 'many';
     }
 
     private static $translations = [
