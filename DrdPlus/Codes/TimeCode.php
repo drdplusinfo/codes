@@ -32,30 +32,48 @@ class TimeCode extends AbstractCode
 
     /**
      * @param string $languageCode
-     * @param string $plural
+     * @param number $amount
      * @return string
      */
-    public function translateTo(string $languageCode, string $plural = 'one'): string
+    public function translateTo(string $languageCode, number $amount): string
     {
         $code = $this->getValue();
         $translations = $this->getTranslations($languageCode);
-        if (($translations[$code][$plural] ?? null) !== null) {
-            return $translations[$code][$plural];
+        $plural = $this->convertAmountToPlural($amount);
+        if (($translations[$code][$amount] ?? null) !== null) {
+            return $translations[$code][$amount];
         }
         if ($languageCode === 'en') {
             return str_replace('_', ' ', $code); // just replacing underscores by spaces
         }
         trigger_error(
-            "Missing translation for value '{$code}', language '{$languageCode}' and plural '{$plural}'"
+            "Missing translation for value '{$code}', language '{$languageCode}' and plural '{$amount}'"
             . ', english will be used instead',
             E_USER_WARNING
         );
         $translations = $this->getTranslations('en');
-        if (($translations[$code][$plural] ?? null) !== null) {
-            return $translations[$code][$plural]; // explicit english translation
+        if (($translations[$code][$amount] ?? null) !== null) {
+            return $translations[$code][$amount]; // explicit english translation
         }
 
         return str_replace('_', ' ', $code); // just replacing underscores by spaces
+    }
+
+    /**
+     * @param number $amount
+     * @return string
+     */
+    private function convertAmountToPlural(number $amount): string
+    {
+        $amount = abs($amount);
+        if ($amount <= 1) {
+            return 'one';
+        }
+        if ($amount < 5) {
+            return 'few';
+        }
+
+        return 'many';
     }
 
     private static $translations = [
