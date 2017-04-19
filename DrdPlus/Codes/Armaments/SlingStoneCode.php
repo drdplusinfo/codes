@@ -12,7 +12,7 @@ class SlingStoneCode extends ProjectileCode
     /**
      * @return array|string[]
      */
-    public static function getPossibleValues()
+    public static function getPossibleValues(): array
     {
         return [
             self::SLING_STONE_LIGHT,

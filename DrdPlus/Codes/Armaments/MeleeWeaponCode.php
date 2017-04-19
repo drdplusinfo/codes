@@ -222,7 +222,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     /**
      * @return array|string[]
      */
-    public static function getPossibleValues()
+    public static function getPossibleValues(): array
     {
         return array_values( // to get continual integer keys
             array_merge(

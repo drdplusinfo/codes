@@ -15,7 +15,7 @@ abstract class AbstractCode extends ScalarEnum implements Code
      * @return array|string[]
      * @throws \LogicException
      */
-    public static function getPossibleValues()
+    public static function getPossibleValues(): array
     {
         throw new \LogicException(
             'Not implemented. Please overload method ' . __METHOD__ . ' and return all code constants by it.'

@@ -18,7 +18,7 @@ class HelmCode extends ArmorCode
     /**
      * @return array|string[]
      */
-    public static function getPossibleValues()
+    public static function getPossibleValues(): array
     {
         return [
             self::WITHOUT_HELM,

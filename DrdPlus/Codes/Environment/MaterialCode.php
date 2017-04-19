@@ -18,7 +18,7 @@ class MaterialCode extends AbstractCode
     /**
      * @return array
      */
-    public static function getPossibleValues()
+    public static function getPossibleValues(): array
     {
         return [
             self::CLOTH_OR_PAPER_OR_ROPE,

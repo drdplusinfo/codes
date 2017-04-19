@@ -18,7 +18,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @return array|string[]
      */
-    public static function getPossibleValues()
+    public static function getPossibleValues(): array
     {
         return [
             self::WITHOUT_SHIELD,

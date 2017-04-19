@@ -15,7 +15,7 @@ class LightSourceEnvironmentCode extends AbstractCode
     const MIRROR_BEHIND_LIGHT_SOURCE = 'mirror_behind_light_source';
     const THREE_SIDE_MIRROR_DIRECTING_LIGHT_FORWARD = 'three_side_mirror_directing_light_forward';
 
-    public static function getPossibleValues()
+    public static function getPossibleValues(): array
     {
         return [
             self::OPEN_SPACE_OR_ROOM_IN_DARK_UNDERGROUND,
