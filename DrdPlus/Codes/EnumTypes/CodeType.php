@@ -42,6 +42,7 @@ use DrdPlus\Codes\Properties\PropertyCode;
 use DrdPlus\Codes\Properties\RemarkableSenseCode;
 use DrdPlus\Codes\RaceCode;
 use DrdPlus\Codes\SearchingItemTypeCode;
+use DrdPlus\Codes\SpeedCode;
 use DrdPlus\Codes\Transport\MovementTypeCode;
 use DrdPlus\Codes\Transport\RidingAnimalCode;
 use DrdPlus\Codes\Transport\RidingAnimalMovementCode;
@@ -125,6 +126,7 @@ class CodeType extends AbstractCodeType
         static::registerCode(ProfessionCode::class);
         static::registerCode(RaceCode::class);
         static::registerCode(SearchingItemTypeCode::class);
+        static::registerCode(SpeedCode::class);
         static::registerCode(SubRaceCode::class);
         static::registerCode(TimeCode::class);
     }
