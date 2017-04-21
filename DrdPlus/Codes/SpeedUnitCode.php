@@ -2,9 +2,9 @@
 namespace DrdPlus\Codes;
 
 /**
- * @method static SpeedCode getIt($codeValue)
+ * @method static SpeedUnitCode getIt($codeValue)
  */
-class SpeedCode extends TranslatableCode
+class SpeedUnitCode extends TranslatableCode
 {
     const METER_PER_ROUND = 'meter_per_round';
     const KILOMETER_PER_HOUR = 'kilometer_per_hour';

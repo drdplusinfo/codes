@@ -42,7 +42,7 @@ use DrdPlus\Codes\Properties\PropertyCode;
 use DrdPlus\Codes\Properties\RemarkableSenseCode;
 use DrdPlus\Codes\RaceCode;
 use DrdPlus\Codes\SearchingItemTypeCode;
-use DrdPlus\Codes\SpeedCode;
+use DrdPlus\Codes\SpeedUnitCode;
 use DrdPlus\Codes\Transport\MovementTypeCode;
 use DrdPlus\Codes\Transport\RidingAnimalCode;
 use DrdPlus\Codes\Transport\RidingAnimalMovementCode;
@@ -53,7 +53,7 @@ use DrdPlus\Codes\Skills\PsychicalSkillCode;
 use DrdPlus\Codes\Skills\SkillTypeCode;
 use DrdPlus\Codes\SubRaceCode;
 use DrdPlus\Codes\Environment\TerrainCode;
-use DrdPlus\Codes\TimeCode;
+use DrdPlus\Codes\TimeUnitCode;
 use DrdPlus\Codes\History\ChoiceCode;
 use DrdPlus\Codes\History\FateCode;
 
@@ -126,9 +126,9 @@ class CodeType extends AbstractCodeType
         static::registerCode(ProfessionCode::class);
         static::registerCode(RaceCode::class);
         static::registerCode(SearchingItemTypeCode::class);
-        static::registerCode(SpeedCode::class);
+        static::registerCode(SpeedUnitCode::class);
         static::registerCode(SubRaceCode::class);
-        static::registerCode(TimeCode::class);
+        static::registerCode(TimeUnitCode::class);
     }
 
     /**

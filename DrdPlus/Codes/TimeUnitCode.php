@@ -2,9 +2,9 @@
 namespace DrdPlus\Codes;
 
 /**
- * @method static TimeCode getIt($codeValue)
+ * @method static TimeUnitCode getIt($codeValue)
  */
-class TimeCode extends TranslatableCode
+class TimeUnitCode extends TranslatableCode
 {
     const ROUND = 'round';
     const MINUTE = 'minute';
