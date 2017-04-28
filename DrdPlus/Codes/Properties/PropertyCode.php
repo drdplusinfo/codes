@@ -1,12 +1,12 @@
 <?php
 namespace DrdPlus\Codes\Properties;
 
-use DrdPlus\Codes\Partials\AbstractCode;
+use DrdPlus\Codes\TranslatableCode;
 
 /**
  * @method static PropertyCode getIt($codeValue)
  */
-class PropertyCode extends AbstractCode
+class PropertyCode extends TranslatableCode
 {
     const STRENGTH = 'strength';
     const AGILITY = 'agility';
@@ -18,7 +18,7 @@ class PropertyCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getBasePropertyPossibleValues()
+    public static function getBasePropertyPossibleValues(): array
     {
         return [
             self::STRENGTH,
@@ -41,7 +41,7 @@ class PropertyCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getBodyPropertyPossibleValues()
+    public static function getBodyPropertyPossibleValues(): array
     {
         return [
             self::AGE,
@@ -69,7 +69,7 @@ class PropertyCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getDerivedPropertyPossibleValues()
+    public static function getDerivedPropertyPossibleValues(): array
     {
         return [
             self::BEAUTY,
@@ -94,7 +94,7 @@ class PropertyCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getNativePropertyPossibleValues()
+    public static function getNativePropertyPossibleValues(): array
     {
         return [
             self::INFRAVISION,
@@ -113,7 +113,7 @@ class PropertyCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getRemarkableSensePropertyPossibleValues()
+    public static function getRemarkableSensePropertyPossibleValues(): array
     {
         return RemarkableSenseCode::getPossibleValues();
     }
@@ -124,7 +124,7 @@ class PropertyCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getRestrictionPropertyPossibleValues()
+    public static function getRestrictionPropertyPossibleValues(): array
     {
         return [
             self::REQUIRES_DM_AGREEMENT,
@@ -145,4 +145,47 @@ class PropertyCode extends AbstractCode
             self::getRestrictionPropertyPossibleValues()
         );
     }
+
+    private static $translations = [
+        'cs' => [
+            self::STRENGTH => ['one' => 'síla', 'few' => 'síly', 'many' => 'sil'],
+            self::AGILITY => ['one' => 'obratnost', 'few' => 'obratnosti', 'many' => 'obratností'],
+            self::KNACK => ['one' => 'zručnost', 'few' => 'zručnosti', 'many' => 'zručností'],
+            self::WILL => ['one' => 'vůle', 'few' => 'vůle', 'many' => 'vůlí'],
+            self::INTELLIGENCE => ['one' => 'intelligence', 'few' => 'intelligence', 'many' => 'intelligencí'],
+            self::CHARISMA => ['one' => 'charisma', 'few' => 'charismy', 'many' => 'charisem'],
+            self::AGE => ['one' => 'věk', 'few' => 'věky', 'many' => 'věků'],
+            self::HEIGHT_IN_CM => ['one' => 'výška v cm', 'few' => 'výšky cm', 'many' => 'výšek v cm'],
+            self::HEIGHT => ['one' => 'výška', 'few' => 'výšky', 'many' => 'výšek'],
+            self::WEIGHT_IN_KG => ['one' => 'váha v kg', 'few' => 'váhy kg', 'many' => 'váh v kg'],
+            self::WEIGHT => ['one' => 'váha', 'few' => 'váhy', 'many' => 'váh'],
+            self::SIZE => ['one' => 'velikost', 'few' => 'velikosti', 'many' => 'velikostí'],
+            self::BEAUTY => ['one' => 'krása', 'few' => 'krásy', 'many' => 'krás'],
+            self::DANGEROUSNESS => ['one' => 'nebezpečnost', 'few' => 'nebezpečnosti', 'many' => 'nebezpečností'],
+            self::DIGNITY => ['one' => 'důstojnost', 'few' => 'důstojnosti', 'many' => 'důstojností'],
+            self::ENDURANCE => ['one' => 'výdrž', 'few' => 'výdrže', 'many' => 'výdrží'],
+            self::FATIGUE_BOUNDARY => ['one' => 'mez únavy', 'few' => 'meze únavy', 'many' => 'mezí únavy'],
+            self::SENSES => ['one' => 'smysly', 'few' => 'smysly', 'many' => 'smysly'],
+            self::SPEED => ['one' => 'rychlost', 'few' => 'rychlosti', 'many' => 'rychlostí'],
+            self::TOUGHNESS => ['one' => 'odolnost', 'few' => 'odolnosti', 'many' => 'odolností'],
+            self::WOUND_BOUNDARY => ['one' => 'mez zranění', 'few' => 'meze zranění', 'many' => 'meze zranění'],
+            self::MOVEMENT_SPEED => ['one' => 'pohybová rychlost', 'few' => 'pohybové rychlosti', 'many' => 'pohybových rychlostí'],
+            self::MAXIMAL_LOAD => ['one' => 'maximální naložení', 'few' => 'maximální naložení', 'many' => 'maximálních naložení'],
+            self::INFRAVISION => ['one' => 'infravize', 'few' => 'infravize', 'many' => 'infravizí'],
+            self::NATIVE_REGENERATION => ['one' => 'přirozená regenerace', 'few' => 'přirozené regenerace', 'many' => 'přirozených regenerací'],
+            self::REMARKABLE_SENSE => ['one' => 'význačný smysl', 'few' => 'význačné smysly', 'many' => 'význačných smyslů'],
+            self::HEARING => ['one' => 'sluch', 'few' => 'sluchy', 'many' => 'sluchů'],
+            self::SIGHT => ['one' => 'zrak', 'few' => 'zraky', 'many' => 'zraků'],
+            self::SMELL => ['one' => 'čich', 'few' => 'čichy', 'many' => 'čich'],
+            self::TASTE => ['one' => 'chuť', 'few' => 'chutě', 'many' => 'chutí'],
+            self::TOUCH => ['one' => 'hmat', 'few' => 'hmaty', 'many' => 'hmatů'],
+            self::REQUIRES_DM_AGREEMENT => ['one' => 'vyžaduje souhlas PJ', 'few' => 'vyžadují souhlas PJ', 'many' => 'vyžadují souhlas PJ'],
+        ],
+    ];
+
+    protected function getTranslations(string $languageCode): array
+    {
+        return self::$translations[$languageCode] ?? [];
+    }
+
 }

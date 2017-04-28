@@ -54,7 +54,7 @@ abstract class TranslatableCode extends AbstractCode
 
     /**
      * @param string $languageCode
-     * @return array
+     * @return array|string[]
      */
     abstract protected function getTranslations(string $languageCode): array;
 }
