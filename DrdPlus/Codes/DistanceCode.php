@@ -6,8 +6,8 @@ namespace DrdPlus\Codes;
  */
 class DistanceCode extends TranslatableCode
 {
-    const M = 'm';
-    const KM = 'km';
+    const METER = 'meter';
+    const KILOMETER = 'kilometer';
     const LIGHT_YEAR = 'light_year';
 
     /**
@@ -16,16 +16,16 @@ class DistanceCode extends TranslatableCode
     public static function getPossibleValues(): array
     {
         return [
-            self::M,
-            self::KM,
+            self::METER,
+            self::KILOMETER,
             self::LIGHT_YEAR,
         ];
     }
 
     private static $translations = [
         'cs' => [
-            self::M => ['one' => 'm', 'few' => 'm', 'many' => 'm'],
-            self::KM => ['one' => 'km', 'few' => 'km', 'many' => 'km'],
+            self::METER => ['one' => 'metr', 'few' => 'metry', 'many' => 'metrů'],
+            self::KILOMETER => ['one' => 'kilometr', 'few' => 'kilometry', 'many' => 'kilometrů'],
             self::LIGHT_YEAR => ['one' => 'světelný rok', 'few' => 'světelné roky', 'many' => 'světelných let'],
         ],
     ];
