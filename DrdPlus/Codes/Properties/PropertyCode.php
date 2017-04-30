@@ -1,7 +1,7 @@
 <?php
 namespace DrdPlus\Codes\Properties;
 
-use DrdPlus\Codes\TranslatableCode;
+use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static PropertyCode getIt($codeValue)
@@ -147,12 +147,46 @@ class PropertyCode extends TranslatableCode
     }
 
     private static $translations = [
+        'en' => [
+            self::STRENGTH => ['one' => 'strength', 'few' => 'strengths', 'many' => 'strengths'],
+            self::AGILITY => ['one' => 'agility', 'few' => 'agilities', 'many' => 'agilities'],
+            self::KNACK => ['one' => 'knack', 'few' => 'knacks', 'many' => 'knacks'],
+            self::WILL => ['one' => 'will', 'few' => 'wills', 'many' => 'wills'],
+            self::INTELLIGENCE => ['one' => 'intelligence', 'few' => 'intelligences', 'many' => 'intelligences'],
+            self::CHARISMA => ['one' => 'charisma', 'few' => 'charismata', 'many' => 'charismata'],
+            self::AGE => ['one' => 'age', 'few' => 'ages', 'many' => 'ages'],
+            self::HEIGHT_IN_CM => ['one' => 'height in cm', 'few' => 'heights in cm', 'many' => 'heights in cm'],
+            self::HEIGHT => ['one' => 'height', 'few' => 'heights', 'many' => 'heights'],
+            self::WEIGHT_IN_KG => ['one' => 'weight in kg', 'few' => 'weights in kg', 'many' => 'weights in kg'],
+            self::WEIGHT => ['one' => 'weight', 'few' => 'weights', 'many' => 'weights'],
+            self::SIZE => ['one' => 'size', 'few' => 'sizes', 'many' => 'sizes'],
+            self::BEAUTY => ['one' => 'beauty', 'few' => 'beauties', 'many' => 'beauties'],
+            self::DANGEROUSNESS => ['one' => 'dangerousness', 'few' => 'dangerousnesses', 'many' => 'dangerousnesses'],
+            self::DIGNITY => ['one' => 'dignity', 'few' => 'dignities', 'many' => 'dignities'],
+            self::ENDURANCE => ['one' => 'endurance', 'few' => 'endurances', 'many' => 'endurances'],
+            self::FATIGUE_BOUNDARY => ['one' => 'fatigue boundary', 'few' => 'fatigue boundaries', 'many' => 'fatigue boundaries'],
+            self::SENSES => ['one' => 'senses', 'few' => 'senses', 'many' => 'senses'],
+            self::SPEED => ['one' => 'speed', 'few' => 'speeds', 'many' => 'speeds'],
+            self::TOUGHNESS => ['one' => 'toughness', 'few' => 'toughnesses', 'many' => 'toughnesses'],
+            self::WOUND_BOUNDARY => ['one' => 'wound boundary', 'few' => 'wound boundaries', 'many' => 'wound boundaries'],
+            self::MOVEMENT_SPEED => ['one' => 'movement speed', 'few' => 'movement speeds', 'many' => 'movement speeds'],
+            self::MAXIMAL_LOAD => ['one' => 'maximal load', 'few' => 'maximal loads', 'many' => 'maximal loads'],
+            self::INFRAVISION => ['one' => 'infravision', 'few' => 'infravisions', 'many' => 'infravisions'],
+            self::NATIVE_REGENERATION => ['one' => 'native regeneration', 'few' => 'native regenerations', 'many' => 'native regenerations'],
+            self::REMARKABLE_SENSE => ['one' => 'remarkable sense', 'few' => 'remarkable senses', 'many' => 'remarkable senses'],
+            self::HEARING => ['one' => 'hearing', 'few' => 'hearings', 'many' => 'hearings'],
+            self::SIGHT => ['one' => 'sight', 'few' => 'sights', 'many' => 'sights'],
+            self::SMELL => ['one' => 'smell', 'few' => 'smells', 'many' => 'smells'],
+            self::TASTE => ['one' => 'taste', 'few' => 'tastes', 'many' => 'tastes'],
+            self::TOUCH => ['one' => 'touch', 'few' => 'touches', 'many' => 'touches'],
+            self::REQUIRES_DM_AGREEMENT => ['one' => 'requires DM agreement', 'few' => 'requires DM agreements', 'many' => 'requires DM agreements'],
+        ],
         'cs' => [
             self::STRENGTH => ['one' => 'síla', 'few' => 'síly', 'many' => 'sil'],
             self::AGILITY => ['one' => 'obratnost', 'few' => 'obratnosti', 'many' => 'obratností'],
             self::KNACK => ['one' => 'zručnost', 'few' => 'zručnosti', 'many' => 'zručností'],
             self::WILL => ['one' => 'vůle', 'few' => 'vůle', 'many' => 'vůlí'],
-            self::INTELLIGENCE => ['one' => 'intelligence', 'few' => 'intelligence', 'many' => 'intelligencí'],
+            self::INTELLIGENCE => ['one' => 'inteligence', 'few' => 'inteligence', 'many' => 'inteligencí'],
             self::CHARISMA => ['one' => 'charisma', 'few' => 'charismy', 'many' => 'charisem'],
             self::AGE => ['one' => 'věk', 'few' => 'věky', 'many' => 'věků'],
             self::HEIGHT_IN_CM => ['one' => 'výška v cm', 'few' => 'výšky cm', 'many' => 'výšek v cm'],
@@ -168,7 +202,7 @@ class PropertyCode extends TranslatableCode
             self::SENSES => ['one' => 'smysly', 'few' => 'smysly', 'many' => 'smysly'],
             self::SPEED => ['one' => 'rychlost', 'few' => 'rychlosti', 'many' => 'rychlostí'],
             self::TOUGHNESS => ['one' => 'odolnost', 'few' => 'odolnosti', 'many' => 'odolností'],
-            self::WOUND_BOUNDARY => ['one' => 'mez zranění', 'few' => 'meze zranění', 'many' => 'meze zranění'],
+            self::WOUND_BOUNDARY => ['one' => 'mez zranění', 'few' => 'meze zranění', 'many' => 'mezí zranění'],
             self::MOVEMENT_SPEED => ['one' => 'pohybová rychlost', 'few' => 'pohybové rychlosti', 'many' => 'pohybových rychlostí'],
             self::MAXIMAL_LOAD => ['one' => 'maximální naložení', 'few' => 'maximální naložení', 'many' => 'maximálních naložení'],
             self::INFRAVISION => ['one' => 'infravize', 'few' => 'infravize', 'many' => 'infravizí'],
@@ -179,7 +213,7 @@ class PropertyCode extends TranslatableCode
             self::SMELL => ['one' => 'čich', 'few' => 'čichy', 'many' => 'čich'],
             self::TASTE => ['one' => 'chuť', 'few' => 'chutě', 'many' => 'chutí'],
             self::TOUCH => ['one' => 'hmat', 'few' => 'hmaty', 'many' => 'hmatů'],
-            self::REQUIRES_DM_AGREEMENT => ['one' => 'vyžaduje souhlas PJ', 'few' => 'vyžadují souhlas PJ', 'many' => 'vyžadují souhlas PJ'],
+            self::REQUIRES_DM_AGREEMENT => ['one' => 'vyžaduje souhlas PJ', 'few' => 'vyžadují souhlas PJ', 'many' => 'vyžaduje souhlas PJ'],
         ],
     ];
 

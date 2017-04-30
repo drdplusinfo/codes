@@ -1,6 +1,8 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\TranslatableCode;
+
 /**
  * @method static TimeUnitCode getIt($codeValue)
  */
@@ -29,6 +31,14 @@ class TimeUnitCode extends TranslatableCode
     }
 
     private static $translations = [
+        'en' => [
+            self::ROUND => ['one' => 'round', 'few' => 'rounds', 'many' => 'rounds'],
+            self::MINUTE => ['one' => 'minute', 'few' => 'minutes', 'many' => 'minutes'],
+            self::HOUR => ['one' => 'hour', 'few' => 'hours', 'many' => 'hours'],
+            self::DAY => ['one' => 'day', 'few' => 'days', 'many' => 'days'],
+            self::MONTH => ['one' => 'month', 'few' => 'months', 'many' => 'months'],
+            self::YEAR => ['one' => 'year', 'few' => 'years', 'many' => 'years'],
+        ],
         'cs' => [
             self::ROUND => ['one' => 'kolo', 'few' => 'kola', 'many' => 'kol'],
             self::MINUTE => ['one' => 'minuta', 'few' => 'minuty', 'many' => 'minut'],

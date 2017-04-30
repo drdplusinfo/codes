@@ -1,17 +1,18 @@
 <?php
-namespace DrdPlus\Codes;
+namespace DrdPlus\Codes\Partials;
 
-use DrdPlus\Codes\Partials\AbstractCode;
-
+/**
+ * @method static TranslatableCode getIt($codeValue)
+ */
 abstract class TranslatableCode extends AbstractCode
 {
 
     /**
      * @param string $languageCode
-     * @param number $amount
+     * @param int|float $amount
      * @return string
      */
-    public function translateTo(string $languageCode, $amount): string
+    public function translateTo(string $languageCode, $amount = 1): string
     {
         $code = $this->getValue();
         $translations = $this->getTranslations($languageCode);

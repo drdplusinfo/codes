@@ -7,6 +7,7 @@ use Granam\Tests\Tools\TestWithMockery;
 
 class AllCodesTest extends TestWithMockery
 {
+    use GetCodeClassesTrait;
     /**
      * @test
      */
@@ -19,50 +20,6 @@ class AllCodesTest extends TestWithMockery
             );
             self::assertTrue(is_a($codeClass, Code::class, true), $codeClass . ' is not an instance of ' . Code::class);
         }
-    }
-
-    /**
-     * @return array|Code[]
-     */
-    private function getCodeClasses(): array
-    {
-        $codeReflection = new \ReflectionClass(Code::class);
-        $rootDir = dirname($codeReflection->getFileName());
-        $rootNamespace = $codeReflection->getNamespaceName();
-
-        return $this->scanForCodeClasses($rootDir, $rootNamespace);
-    }
-
-    /**
-     * @param string $rootDir
-     * @param string $rootNamespace
-     * @return array
-     */
-    private function scanForCodeClasses(string $rootDir, string $rootNamespace): array
-    {
-        $codeClasses = [];
-        foreach (scandir($rootDir) as $folder) {
-            $folderFullPath = $rootDir . DIRECTORY_SEPARATOR . $folder;
-            if ($folder !== '.' && $folder !== '..') {
-                if (is_dir($folderFullPath)) {
-                    foreach ($this->scanForCodeClasses($folderFullPath, $rootNamespace . '\\' . $folder) as $foundCode) {
-                        $codeClasses[] = $foundCode;
-                    }
-                } else if (is_file($folderFullPath) && preg_match('~(?<classBasename>\w+(?:Code)?)\.php$~', $folder, $matches)) {
-                    $reflectionClass = new \ReflectionClass($rootNamespace . '\\' . $matches['classBasename']);
-                    if (!$reflectionClass->isAbstract() && $reflectionClass->implementsInterface(Code::class)) {
-                        self::assertRegExp(
-                            '~Code$~',
-                            $reflectionClass->getName(),
-                            'Every single code should ends by "Code"'
-                        );
-                        $codeClasses[] = $reflectionClass->getName();
-                    }
-                }
-            }
-        }
-
-        return $codeClasses;
     }
 
     /**
@@ -144,7 +101,7 @@ class AllCodesTest extends TestWithMockery
         $codeClass::getIt('da Vinci');
     }
 
-    public function provideCodeClasses()
+    public function provideCodeClasses(): array
     {
         return array_map(
             function (string $className) {

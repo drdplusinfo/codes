@@ -1,6 +1,8 @@
 <?php
 namespace DrdPlus\Codes;
 
+use DrdPlus\Codes\Partials\TranslatableCode;
+
 /**
  * @method static DistanceCode getIt($codeValue)
  */
@@ -23,6 +25,11 @@ class DistanceCode extends TranslatableCode
     }
 
     private static $translations = [
+        'en' => [
+            self::METER => ['one' => 'meter', 'few' => 'meters', 'many' => 'meters'],
+            self::KILOMETER => ['one' => 'kilometer', 'few' => 'kilometers', 'many' => 'kilometers'],
+            self::LIGHT_YEAR => ['one' => 'light year', 'few' => 'light years', 'many' => 'light years'],
+        ],
         'cs' => [
             self::METER => ['one' => 'metr', 'few' => 'metry', 'many' => 'metrů'],
             self::KILOMETER => ['one' => 'kilometr', 'few' => 'kilometry', 'many' => 'kilometrů'],
