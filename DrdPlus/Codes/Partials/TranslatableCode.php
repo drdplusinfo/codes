@@ -20,6 +20,12 @@ abstract class TranslatableCode extends AbstractCode
         if (($translations[$code][$plural] ?? null) !== null) {
             return $translations[$code][$plural];
         }
+        if ($plural === 'few_decimal') {
+            $plural = 'few';
+            if (($translations[$code][$plural] ?? null) !== null) {
+                return $translations[$code][$plural];
+            }
+        }
         if ($languageCode === 'en') {
             return str_replace('_', ' ', $code); // just replacing underscores by spaces
         }
@@ -43,10 +49,14 @@ abstract class TranslatableCode extends AbstractCode
     private function convertAmountToPlural($amount): string
     {
         $amount = abs($amount);
-        if ($amount <= 1) {
+        if ($amount === 1 || $amount === 1.1) {
             return 'one';
         }
         if ($amount < 5) {
+            if (strpos((string)$amount, '.') !== false) {
+                return 'few_decimal';
+            }
+
             return 'few';
         }
 
