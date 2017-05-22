@@ -49,7 +49,7 @@ abstract class TranslatableCode extends AbstractCode
     private function convertAmountToPlural($amount): string
     {
         $amount = abs($amount);
-        if ($amount === 1 || $amount === 1.1) {
+        if ((float)$amount === 1.0) {
             return 'one';
         }
         if ($amount < 5) {
