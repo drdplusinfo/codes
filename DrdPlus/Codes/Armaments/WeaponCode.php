@@ -1,9 +1,9 @@
 <?php
 namespace DrdPlus\Codes\Armaments;
 
-use DrdPlus\Codes\Partials\AbstractCode;
+use DrdPlus\Codes\Partials\TranslatableCode;
 
-abstract class WeaponCode extends AbstractCode implements WeaponlikeCode
+abstract class WeaponCode extends TranslatableCode implements WeaponlikeCode
 {
     /**
      * @return bool

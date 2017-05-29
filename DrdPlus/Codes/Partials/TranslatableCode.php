@@ -1,22 +1,26 @@
 <?php
 namespace DrdPlus\Codes\Partials;
 
+use Granam\Number\NumberInterface;
+use Granam\Number\Tools\ToNumber;
+
 /**
  * @method static TranslatableCode getIt($codeValue)
  */
-abstract class TranslatableCode extends AbstractCode
+abstract class TranslatableCode extends AbstractCode implements Translatable
 {
 
     /**
      * @param string $languageCode
-     * @param int|float $amount
+     * @param int|NumberInterface $amount
      * @return string
      */
     public function translateTo(string $languageCode, $amount = 1): string
     {
         $code = $this->getValue();
         $translations = $this->getTranslations($languageCode);
-        $plural = $this->convertAmountToPlural($amount);
+        /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
+        $plural = $this->convertAmountToPlural(ToNumber::toNumber($amount));
         if (($translations[$code][$plural] ?? null) !== null) {
             return $translations[$code][$plural];
         }

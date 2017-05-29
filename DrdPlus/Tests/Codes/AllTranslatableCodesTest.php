@@ -132,6 +132,11 @@ class AllTranslatableCodesTest extends TestWithMockery
             'smysly',
             'maximální naložení',
             'infravize',
+            'šavle',
+            'kopí',
+            'vidle',
+            'minikuše',
+            'hvězdice',
         ];
     }
 
@@ -142,6 +147,7 @@ class AllTranslatableCodesTest extends TestWithMockery
     {
         return [
             'smysly',
+            'kopí',
         ];
     }
 
