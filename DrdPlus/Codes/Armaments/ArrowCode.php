@@ -35,7 +35,7 @@ class ArrowCode extends ProjectileCode
     /**
      * @return bool
      */
-    public function isArrow()
+    public function isArrow(): bool
     {
         return true;
     }
@@ -43,7 +43,7 @@ class ArrowCode extends ProjectileCode
     /**
      * @return bool
      */
-    public function isDart()
+    public function isDart(): bool
     {
         return false;
     }
@@ -51,7 +51,7 @@ class ArrowCode extends ProjectileCode
     /**
      * @return bool
      */
-    public function isSlingStone()
+    public function isSlingStone(): bool
     {
         return false;
     }

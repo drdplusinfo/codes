@@ -33,7 +33,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @return bool
      */
-    public function isProtectiveArmament()
+    public function isProtectiveArmament(): bool
     {
         return true;
     }
@@ -41,7 +41,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @return bool
      */
-    public function isArmor()
+    public function isArmor(): bool
     {
         return false;
     }
@@ -49,7 +49,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @return bool
      */
-    public function isMelee()
+    public function isMelee(): bool
     {
         return true;
     }
@@ -57,7 +57,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @return bool
      */
-    public function isWeaponlike()
+    public function isWeaponlike(): bool
     {
         return true;
     }
@@ -67,7 +67,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
      *
      * @return bool
      */
-    public function isWeapon()
+    public function isWeapon(): bool
     {
         return false;
     }
@@ -75,7 +75,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @return bool
      */
-    public function isShield()
+    public function isShield(): bool
     {
         return true;
     }
@@ -83,7 +83,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @return bool
      */
-    public function isMeleeWeapon()
+    public function isMeleeWeapon(): bool
     {
         return false;
     }
@@ -91,7 +91,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @return bool
      */
-    public function isRanged()
+    public function isRanged(): bool
     {
         return false;
     }
@@ -99,7 +99,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @return bool
      */
-    public function isShootingWeapon()
+    public function isShootingWeapon(): bool
     {
         return false;
     }
@@ -107,7 +107,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @return bool
      */
-    public function isThrowingWeapon()
+    public function isThrowingWeapon(): bool
     {
         return false;
     }
@@ -115,7 +115,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @return bool
      */
-    public function isProjectile()
+    public function isProjectile(): bool
     {
         return false;
     }
@@ -123,7 +123,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @throws Exceptions\CanNotBeConvertedToMeleeWeaponCode
      */
-    public function convertToMeleeWeaponCodeEquivalent()
+    public function convertToMeleeWeaponCodeEquivalent(): MeleeWeaponCode
     {
         throw new Exceptions\CanNotBeConvertedToMeleeWeaponCode(
             "Shield code {$this} can not be converted to melee weapon code"
@@ -133,7 +133,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @throws Exceptions\CanNotBeConvertedToRangeWeaponCode
      */
-    public function convertToRangedWeaponCodeEquivalent()
+    public function convertToRangedWeaponCodeEquivalent(): RangedWeaponCode
     {
         throw new Exceptions\CanNotBeConvertedToRangeWeaponCode(
             "Shield code {$this} can not be converted to range weapon code"
@@ -143,7 +143,7 @@ class ShieldCode extends AbstractCode implements MeleeWeaponlikeCode, Protective
     /**
      * @return bool
      */
-    public function isUnarmed()
+    public function isUnarmed(): bool
     {
         return $this->getValue() === self::WITHOUT_SHIELD;
     }

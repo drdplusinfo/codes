@@ -23,7 +23,7 @@ class SlingStoneCode extends ProjectileCode
     /**
      * @return bool
      */
-    public function isSlingStone()
+    public function isSlingStone(): bool
     {
         return true;
     }
@@ -31,7 +31,7 @@ class SlingStoneCode extends ProjectileCode
     /**
      * @return bool
      */
-    public function isArrow()
+    public function isArrow(): bool
     {
         return false;
     }
@@ -39,7 +39,7 @@ class SlingStoneCode extends ProjectileCode
     /**
      * @return bool
      */
-    public function isDart()
+    public function isDart(): bool
     {
         return false;
     }

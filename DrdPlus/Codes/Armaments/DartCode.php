@@ -29,7 +29,7 @@ class DartCode extends ProjectileCode
     /**
      * @return bool
      */
-    public function isDart()
+    public function isDart(): bool
     {
         return true;
     }
@@ -37,7 +37,7 @@ class DartCode extends ProjectileCode
     /**
      * @return bool
      */
-    public function isArrow()
+    public function isArrow(): bool
     {
         return false;
     }
@@ -45,7 +45,7 @@ class DartCode extends ProjectileCode
     /**
      * @return bool
      */
-    public function isSlingStone()
+    public function isSlingStone(): bool
     {
         return false;
     }

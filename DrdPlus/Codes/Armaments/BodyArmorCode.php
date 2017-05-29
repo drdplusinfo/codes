@@ -35,7 +35,7 @@ class BodyArmorCode extends ArmorCode
     /**
      * @return bool
      */
-    public function isHelm()
+    public function isHelm(): bool
     {
         return false;
     }
@@ -43,7 +43,7 @@ class BodyArmorCode extends ArmorCode
     /**
      * @return bool
      */
-    public function isBodyArmor()
+    public function isBodyArmor(): bool
     {
         return true;
     }

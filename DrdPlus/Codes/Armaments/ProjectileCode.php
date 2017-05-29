@@ -8,7 +8,7 @@ abstract class ProjectileCode extends AbstractCode implements ArmamentCode
     /**
      * @return bool
      */
-    public function isProtectiveArmament()
+    public function isProtectiveArmament(): bool
     {
         return false;
     }
@@ -16,7 +16,7 @@ abstract class ProjectileCode extends AbstractCode implements ArmamentCode
     /**
      * @return bool
      */
-    public function isWeaponlike()
+    public function isWeaponlike(): bool
     {
         return false;
     }
@@ -24,7 +24,7 @@ abstract class ProjectileCode extends AbstractCode implements ArmamentCode
     /**
      * @return bool
      */
-    public function isProjectile()
+    public function isProjectile(): bool
     {
         return true;
     }
@@ -32,15 +32,15 @@ abstract class ProjectileCode extends AbstractCode implements ArmamentCode
     /**
      * @return bool
      */
-    abstract public function isArrow();
+    abstract public function isArrow(): bool;
 
     /**
      * @return bool
      */
-    abstract public function isDart();
+    abstract public function isDart(): bool;
 
     /**
      * @return bool
      */
-    abstract public function isSlingStone();
+    abstract public function isSlingStone(): bool;
 }

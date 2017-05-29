@@ -10,20 +10,20 @@ interface ArmamentCode extends Code
      *
      * @return bool
      */
-    public function isProtectiveArmament();
+    public function isProtectiveArmament(): bool;
 
     /**
      * Can be used for attack directly (projectiles can not) ?
      *
      * @return bool
      */
-    public function isWeaponlike();
+    public function isWeaponlike(): bool;
 
     /**
      * Can not be used as a solo weapon, therefore has to be used together with another weapon like a bow ?
      *
      * @return bool
      */
-    public function isProjectile();
+    public function isProjectile(): bool;
 
 }

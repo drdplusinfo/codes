@@ -9,56 +9,56 @@ interface WeaponlikeCode extends ArmamentCode
      *
      * @return bool
      */
-    public function isMelee();
+    public function isMelee(): bool;
 
     /**
      * If is not melee weapon-like, is ranged-weaponlike.
      *
      * @return bool
      */
-    public function isRanged();
+    public function isRanged(): bool;
 
     /**
      * Even shield can be used for (desperate) attack - that is why is weapon-like.
      *
      * @return bool
      */
-    public function isShield();
+    public function isShield(): bool;
 
     /**
      * Is it primarily a weapon, not a shield or something like that?
      *
      * @return bool
      */
-    public function isWeapon();
+    public function isWeapon(): bool;
 
     /**
      * If is range, can be shooting, throwing or a projectile
      *
      * @return bool
      */
-    public function isShootingWeapon();
+    public function isShootingWeapon(): bool;
 
     /**
      * If is range, can be shooting, throwing or a projectile
      *
      * @return bool
      */
-    public function isThrowingWeapon();
+    public function isThrowingWeapon(): bool;
 
     /**
      * @return MeleeWeaponCode
      */
-    public function convertToMeleeWeaponCodeEquivalent();
+    public function convertToMeleeWeaponCodeEquivalent(): MeleeWeaponCode;
 
     /**
      * @return RangedWeaponCode
      */
-    public function convertToRangedWeaponCodeEquivalent();
+    public function convertToRangedWeaponCodeEquivalent(): RangedWeaponCode;
 
     /**
      * @return bool
      */
-    public function isUnarmed();
+    public function isUnarmed(): bool;
 
 }

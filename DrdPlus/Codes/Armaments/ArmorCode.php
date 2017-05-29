@@ -8,17 +8,17 @@ abstract class ArmorCode extends AbstractCode implements ProtectiveArmamentCode
     /**
      * @return bool
      */
-    abstract public function isHelm();
+    abstract public function isHelm(): bool;
 
     /**
      * @return bool
      */
-    abstract public function isBodyArmor();
+    abstract public function isBodyArmor(): bool;
 
     /**
      * @return bool
      */
-    public function isProtectiveArmament()
+    public function isProtectiveArmament(): bool
     {
         return true;
     }
@@ -26,7 +26,7 @@ abstract class ArmorCode extends AbstractCode implements ProtectiveArmamentCode
     /**
      * @return bool
      */
-    public function isProjectile()
+    public function isProjectile(): bool
     {
         return false;
     }
@@ -34,7 +34,7 @@ abstract class ArmorCode extends AbstractCode implements ProtectiveArmamentCode
     /**
      * @return bool
      */
-    public function isArmor()
+    public function isArmor(): bool
     {
         return true;
     }
@@ -42,7 +42,7 @@ abstract class ArmorCode extends AbstractCode implements ProtectiveArmamentCode
     /**
      * @return bool
      */
-    public function isShield()
+    public function isShield(): bool
     {
         return false;
     }
@@ -50,7 +50,7 @@ abstract class ArmorCode extends AbstractCode implements ProtectiveArmamentCode
     /**
      * @return bool
      */
-    public function isWeaponlike()
+    public function isWeaponlike(): bool
     {
         return false;
     }

@@ -17,7 +17,7 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return array|string[]
      */
-    public static function getBowValues()
+    public static function getBowValues(): array
     {
         return [
             self::SHORT_BOW,
@@ -37,7 +37,7 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return array|string[]
      */
-    public static function getCrossbowValues()
+    public static function getCrossbowValues(): array
     {
         return [
             self::MINICROSSBOW,
@@ -61,7 +61,7 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return array|string[]
      */
-    public static function getThrowingWeaponValues()
+    public static function getThrowingWeaponValues(): array
     {
         return [
             self::ROCK,
@@ -93,7 +93,7 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return bool
      */
-    public function isMelee()
+    public function isMelee(): bool
     {
         return $this->getValue() === self::SPEAR; // spear can be used both as a range and melee weapon
     }
@@ -101,7 +101,7 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return bool
      */
-    public function isRanged()
+    public function isRanged(): bool
     {
         return true;
     }
@@ -109,7 +109,7 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return bool
      */
-    public function isBow()
+    public function isBow(): bool
     {
         return in_array($this->getValue(), self::getBowValues(), true);
     }
@@ -117,7 +117,7 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return bool
      */
-    public function isCrossbow()
+    public function isCrossbow(): bool
     {
         return in_array($this->getValue(), self::getCrossbowValues(), true);
     }
@@ -125,7 +125,7 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return bool
      */
-    public function isThrowingWeapon()
+    public function isThrowingWeapon(): bool
     {
         return in_array($this->getValue(), self::getThrowingWeaponValues(), true);
     }
@@ -133,7 +133,7 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return bool
      */
-    public function isShootingWeapon()
+    public function isShootingWeapon(): bool
     {
         return $this->isBow() || $this->isCrossbow();
     }
@@ -142,7 +142,7 @@ class RangedWeaponCode extends WeaponCode
      * @return MeleeWeaponCode
      * @throws \DrdPlus\Codes\Armaments\Exceptions\CanNotBeConvertedToMeleeWeaponCode
      */
-    public function convertToMeleeWeaponCodeEquivalent()
+    public function convertToMeleeWeaponCodeEquivalent(): MeleeWeaponCode
     {
         if (!$this->isMelee()) {
             throw new Exceptions\CanNotBeConvertedToMeleeWeaponCode(
@@ -156,7 +156,7 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return RangedWeaponCode
      */
-    public function convertToRangedWeaponCodeEquivalent()
+    public function convertToRangedWeaponCodeEquivalent(): RangedWeaponCode
     {
         return $this;
     }
@@ -166,7 +166,7 @@ class RangedWeaponCode extends WeaponCode
      *
      * @return bool
      */
-    public function isUnarmed()
+    public function isUnarmed(): bool
     {
         return false;
     }
