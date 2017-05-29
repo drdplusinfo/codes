@@ -14,13 +14,13 @@ class WeaponCategoryCodeTest extends AbstractCodeTest
         self::assertSame(
             [
                 'axe',
-                'knife_or_dagger',
-                'mace_or_club',
-                'morningstar_or_morgenstern',
-                'saber_or_bowie_knife',
-                'staff_or_spear',
+                'knife_and_dagger',
+                'mace_and_club',
+                'morningstar_and_morgenstern',
+                'saber_and_bowie_knife',
+                'staff_and_spear',
                 'sword',
-                'voulge_or_trident',
+                'voulge_and_trident',
                 'unarmed',
             ],
             WeaponCategoryCode::getMeleeWeaponCategoryValues()

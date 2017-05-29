@@ -37,6 +37,7 @@ class AllTranslatableCodesTest extends TestWithMockery
     {
         return [
             'senses',
+            'unarmed',
         ];
     }
 
@@ -137,6 +138,8 @@ class AllTranslatableCodesTest extends TestWithMockery
             'vidle',
             'minikuše',
             'hvězdice',
+            'beze zbraně',
+            'kuše',
         ];
     }
 
@@ -148,6 +151,7 @@ class AllTranslatableCodesTest extends TestWithMockery
         return [
             'smysly',
             'kopí',
+            'beze zbraně',
         ];
     }
 

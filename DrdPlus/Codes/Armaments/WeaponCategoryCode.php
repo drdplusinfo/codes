@@ -1,43 +1,44 @@
 <?php
 namespace DrdPlus\Codes\Armaments;
 
-use DrdPlus\Codes\Partials\AbstractCode;
+use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static WeaponCategoryCode getIt($codeValue)
  */
-class WeaponCategoryCode extends AbstractCode
+class WeaponCategoryCode extends TranslatableCode
 {
-    // melee weapon categories
+    // MELEE WEAPON CATEGORIES
+
     const AXE = 'axe';
-    const KNIFE_OR_DAGGER = 'knife_or_dagger';
-    const MACE_OR_CLUB = 'mace_or_club';
-    const MORNINGSTAR_OR_MORGENSTERN = 'morningstar_or_morgenstern';
-    const SABER_OR_BOWIE_KNIFE = 'saber_or_bowie_knife';
-    const STAFF_OR_SPEAR = 'staff_or_spear';
+    const KNIFE_AND_DAGGER = 'knife_and_dagger';
+    const MACE_AND_CLUB = 'mace_and_club';
+    const MORNINGSTAR_AND_MORGENSTERN = 'morningstar_and_morgenstern';
+    const SABER_AND_BOWIE_KNIFE = 'saber_and_bowie_knife';
+    const STAFF_AND_SPEAR = 'staff_and_spear';
     const SWORD = 'sword';
-    const VOULGE_OR_TRIDENT = 'voulge_or_trident';
+    const VOULGE_AND_TRIDENT = 'voulge_and_trident';
     const UNARMED = 'unarmed';
 
     /**
      * @return array|string[]
      */
-    public static function getMeleeWeaponCategoryValues()
+    public static function getMeleeWeaponCategoryValues(): array
     {
         return [
             self::AXE,
-            self::KNIFE_OR_DAGGER,
-            self::MACE_OR_CLUB,
-            self::MORNINGSTAR_OR_MORGENSTERN,
-            self::SABER_OR_BOWIE_KNIFE,
-            self::STAFF_OR_SPEAR,
+            self::KNIFE_AND_DAGGER,
+            self::MACE_AND_CLUB,
+            self::MORNINGSTAR_AND_MORGENSTERN,
+            self::SABER_AND_BOWIE_KNIFE,
+            self::STAFF_AND_SPEAR,
             self::SWORD,
-            self::VOULGE_OR_TRIDENT,
+            self::VOULGE_AND_TRIDENT,
             self::UNARMED,
         ];
     }
 
-    // range weapon categories
+    // RANGE WEAPON CATEGORIES
 
     // shooting weapons
     const BOW = 'bow';
@@ -48,7 +49,7 @@ class WeaponCategoryCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getRangedWeaponCategoryValues()
+    public static function getRangedWeaponCategoryValues(): array
     {
         return [
             self::BOW,
@@ -65,7 +66,7 @@ class WeaponCategoryCode extends AbstractCode
     /**
      * @return array|string[]
      */
-    public static function getProjectilesCategoryValues()
+    public static function getProjectilesCategoryValues(): array
     {
         return [
             self::ARROW,
@@ -85,4 +86,47 @@ class WeaponCategoryCode extends AbstractCode
             self::getProjectilesCategoryValues()
         );
     }
+
+    private static $translations = [
+        'cs' => [
+            self::AXE => ['one' => 'sekera', 'few' => 'sekery', 'many' => 'seker'],
+            self::KNIFE_AND_DAGGER => ['one' => 'nůž a dýka', 'few' => 'nože a dýky', 'many' => 'nůžů a dýk'],
+            self::MACE_AND_CLUB => ['one' => 'palice a kyj', 'few' => 'palice a kyje', 'many' => 'palicí a kyjů'],
+            self::MORNINGSTAR_AND_MORGENSTERN => ['one' => 'řemdih a biják', 'few' => 'řemdihy a bijáky', 'many' => 'řemdihů a bijáků'],
+            self::SABER_AND_BOWIE_KNIFE => ['one' => 'šavle a tesák', 'few' => 'šavle a tesáky', 'many' => 'šavlí a tesáků'],
+            self::STAFF_AND_SPEAR => ['one' => 'hůl a kopí', 'few' => 'hole a kopí', 'many' => 'holí a kopí'],
+            self::SWORD => ['one' => 'meč', 'few' => 'meče', 'many' => 'mečů'],
+            self::VOULGE_AND_TRIDENT => ['one' => 'Sudlice a trojzubec', 'few' => 'sudlice a trojzubce', 'many' => 'sudlic a trojzubců'],
+            self::UNARMED => ['one' => 'beze zbraně', 'few' => 'beze zbraně', 'many' => 'beze zbraně'],
+            self::BOW => ['one' => 'luk', 'few' => 'luky', 'many' => 'luků'],
+            self::CROSSBOW => ['one' => 'kuše', 'few' => 'kuše', 'many' => 'kuší'],
+            self::THROWING_WEAPON => ['one' => 'vrhací zbraň', 'few' => 'vrhací zbraně', 'many' => 'vrhacích zbraní'],
+            self::ARROW => ['one' => 'šíp', 'few' => 'šípy', 'many' => 'šípů'],
+            self::DART => ['one' => 'šipka', 'few' => 'šipky', 'many' => 'šipek'],
+            self::SLING_STONE => ['one' => 'prakový kámen', 'few' => 'prakové kameny', 'many' => 'prakových kamenů'],
+        ],
+        'en' => [
+            self::AXE => ['one' => 'axe', 'few' => 'axes', 'many' => 'axes'],
+            self::KNIFE_AND_DAGGER => ['one' => 'knife and dagger', 'few' => 'knife and daggers', 'many' => 'knife and daggers'],
+            self::MACE_AND_CLUB => ['one' => 'mace and club', 'few' => 'mace and clubs', 'many' => 'mace and clubs'],
+            self::MORNINGSTAR_AND_MORGENSTERN => ['one' => 'morningstar and morgenstern', 'few' => 'morningstar and morgensterns', 'many' => 'morningstar and morgensterns'],
+            self::SABER_AND_BOWIE_KNIFE => ['one' => 'saber and bowie knife', 'few' => 'saber and bowie knifes', 'many' => 'saber and bowie knifes'],
+            self::STAFF_AND_SPEAR => ['one' => 'staff and spear', 'few' => 'staff and spears', 'many' => 'staff and spears'],
+            self::SWORD => ['one' => 'sword', 'few' => 'swords', 'many' => 'swords'],
+            self::VOULGE_AND_TRIDENT => ['one' => 'voulge and trident', 'few' => 'voulge and tridents', 'many' => 'voulge and tridents'],
+            self::UNARMED => ['one' => 'unarmed', 'few' => 'unarmed', 'many' => 'unarmed'],
+            self::BOW => ['one' => 'bow', 'few' => 'bows', 'many' => 'bows'],
+            self::CROSSBOW => ['one' => 'crossbow', 'few' => 'crossbows', 'many' => 'crossbows'],
+            self::THROWING_WEAPON => ['one' => 'throwing weapon', 'few' => 'throwing weapons', 'many' => 'throwing weapons'],
+            self::ARROW => ['one' => 'arrow', 'few' => 'arrows', 'many' => 'arrows'],
+            self::DART => ['one' => 'dart', 'few' => 'darts', 'many' => 'darts'],
+            self::SLING_STONE => ['one' => 'sling stone', 'few' => 'sling stones', 'many' => 'sling stones'],
+        ],
+    ];
+
+    protected function getTranslations(string $languageCode): array
+    {
+        return self::$translations[$languageCode] ?? [];
+    }
+
 }
