@@ -99,7 +99,7 @@ class AllTranslatableCodesTest extends TestWithMockery
                 self::assertSame($twoInCzech, $threeInCzech = $sut->translateTo('cs', 3));
                 self::assertSame($threeInCzech, $fourInCzech = $sut->translateTo('cs', 4));
                 $fiveInCzech = $sut->translateTo('cs', 5);
-                if (in_array($oneInCzech, $this->getValuesSameInCzechForFewAndMany(), true)) {
+                if (in_array($fourInCzech, $this->getValuesSameInCzechForFewAndMany(), true)) {
                     self::assertSame($fourInCzech, $fiveInCzech);
                 } else {
                     self::assertNotSame(
@@ -152,6 +152,7 @@ class AllTranslatableCodesTest extends TestWithMockery
             'smysly',
             'kopí',
             'beze zbraně',
+            'kněží',
         ];
     }
 
