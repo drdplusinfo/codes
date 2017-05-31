@@ -48,4 +48,32 @@ class BodyArmorCode extends ArmorCode
         return true;
     }
 
+    private static $translations = [
+        'en' => [
+            self::WITHOUT_ARMOR => ['one' => 'without armor'],
+            self::PADDED_ARMOR => ['one' => 'padded armor'],
+            self::LEATHER_ARMOR => ['one' => 'leather armor'],
+            self::HOBNAILED_ARMOR => ['one' => 'hobnailed armor'],
+            self::CHAINMAIL_ARMOR => ['one' => 'chainmail armor'],
+            self::SCALE_ARMOR => ['one' => 'scale armor'],
+            self::PLATE_ARMOR => ['one' => 'plate armor'],
+            self::FULL_PLATE_ARMOR => ['one' => 'full plate armor'],
+        ],
+        'cs' => [
+            self::WITHOUT_ARMOR => ['one' => 'beze zbroje'],
+            self::PADDED_ARMOR => ['one' => 'prošívaná zbroj'],
+            self::LEATHER_ARMOR => ['one' => 'kožená zbroj'],
+            self::HOBNAILED_ARMOR => ['one' => 'pobíjená zbroj'],
+            self::CHAINMAIL_ARMOR => ['one' => 'kroužková zbroj'],
+            self::SCALE_ARMOR => ['one' => 'šupinová zbroj'],
+            self::PLATE_ARMOR => ['one' => 'plátová zbroj'],
+            self::FULL_PLATE_ARMOR => ['one' => 'plná plátová zbroj'],
+        ],
+    ];
+
+    protected function getTranslations(string $languageCode): array
+    {
+        return self::$translations[$languageCode] ?? [];
+    }
+
 }

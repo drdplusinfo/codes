@@ -1,6 +1,7 @@
 <?php
 namespace DrdPlus\Tests\Codes;
 
+use DrdPlus\Codes\Armaments\ArmorCode;
 use DrdPlus\Codes\Partials\TranslatableCode;
 use DrdPlus\Codes\Skills\SkillCode;
 use Granam\Tests\Tools\TestWithMockery;
@@ -45,7 +46,13 @@ class AllTranslatableCodesTest extends TestWithMockery
 
     private function hasSinglesOnly(string $codeClass): bool
     {
-        return is_a($codeClass, SkillCode::class, true);
+        foreach ([SkillCode::class, ArmorCode::class] as $singleOnlyClass) {
+            if (is_a($codeClass, $singleOnlyClass, true)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**

@@ -27,7 +27,7 @@ class HelmCode extends ArmorCode
             self::CONICAL_HELM,
             self::FULL_HELM,
             self::BARREL_HELM,
-            self::GREAT_HELM
+            self::GREAT_HELM,
         ];
     }
 
@@ -45,6 +45,32 @@ class HelmCode extends ArmorCode
     public function isBodyArmor(): bool
     {
         return false;
+    }
+
+    private static $translations = [
+        'en' => [
+            self::WITHOUT_HELM => ['one' => 'without helm'],
+            self::LEATHER_CAP => ['one' => 'leather cap'],
+            self::CHAINMAIL_HOOD => ['one' => 'chainmail hood'],
+            self::CONICAL_HELM => ['one' => 'conical helm'],
+            self::FULL_HELM => ['one' => 'full helm'],
+            self::BARREL_HELM => ['one' => 'barrel helm'],
+            self::GREAT_HELM => ['one' => 'great helm'],
+        ],
+        'cs' => [
+            self::WITHOUT_HELM => ['one' => 'bez pokrývky hlavy'],
+            self::LEATHER_CAP => ['one' => 'kožená čapka'],
+            self::CHAINMAIL_HOOD => ['one' => 'kroužková kukla'],
+            self::CONICAL_HELM => ['one' => 'konická helma'],
+            self::FULL_HELM => ['one' => 'plná přilba'],
+            self::BARREL_HELM => ['one' => 'hrcová přilba'],
+            self::GREAT_HELM => ['one' => 'kbelcová přilba'],
+        ],
+    ];
+
+    protected function getTranslations(string $languageCode): array
+    {
+        return self::$translations[$languageCode] ?? [];
     }
 
 }
