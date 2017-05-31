@@ -30,6 +30,12 @@ abstract class TranslatableCode extends AbstractCode implements Translatable
                 return $translations[$code][$plural];
             }
         }
+        if ($plural !== 'one') {
+            $plural = 'one';
+            if (($translations[$code][$plural] ?? null) !== null) {
+                return $translations[$code][$plural];
+            }
+        }
         if ($languageCode === 'en') {
             return str_replace('_', ' ', $code); // just replacing underscores by spaces
         }

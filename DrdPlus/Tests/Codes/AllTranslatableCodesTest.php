@@ -2,6 +2,7 @@
 namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\Partials\TranslatableCode;
+use DrdPlus\Codes\Skills\SkillCode;
 use Granam\Tests\Tools\TestWithMockery;
 
 class AllTranslatableCodesTest extends TestWithMockery
@@ -14,11 +15,12 @@ class AllTranslatableCodesTest extends TestWithMockery
     public function I_can_get_its_english_translation()
     {
         foreach ($this->getTranslatableCodeClasses() as $codeClass) {
+            $hasSinglesOnly = $this->hasSinglesOnly($codeClass);
             foreach ($codeClass::getPossibleValues() as $value) {
                 $sut = $codeClass::getIt($value);
                 self::assertSame($this->codeToEnglish($value), $sut->translateTo('en'));
                 self::assertSame($sut->translateTo('en'), $sut->translateTo('en', 1));
-                if (in_array($value, $this->getValuesSameInEnglishForAnyNumbers(), true)) {
+                if ($hasSinglesOnly || in_array($value, $this->getValuesSameInEnglishForAnyNumbers(), true)) {
                     self::assertSame($sut->translateTo('en', 1), $sut->translateTo('en', 2));
                 } else {
                     self::assertNotSame(
@@ -39,6 +41,11 @@ class AllTranslatableCodesTest extends TestWithMockery
             'senses',
             'unarmed',
         ];
+    }
+
+    private function hasSinglesOnly(string $codeClass): bool
+    {
+        return is_a($codeClass, SkillCode::class, true);
     }
 
     /**
@@ -72,6 +79,7 @@ class AllTranslatableCodesTest extends TestWithMockery
     public function I_can_get_its_czech_translation()
     {
         foreach ($this->getTranslatableCodeClasses() as $codeClass) {
+            $hasSinglesOnly = $this->hasSinglesOnly($codeClass);
             foreach ($codeClass::getPossibleValues() as $value) {
                 $sut = $codeClass::getIt($value);
                 $oneInEnglish = $this->codeToEnglish($value);
@@ -87,8 +95,12 @@ class AllTranslatableCodesTest extends TestWithMockery
                     );
                 }
                 $twoInCzech = $sut->translateTo('cs', 2);
-                if (in_array($oneInCzech, $this->getValuesSameInCzechForOneAndFew(), true)) {
-                    self::assertSame($oneInCzech, $twoInCzech);
+                if ($hasSinglesOnly || in_array($oneInCzech, $this->getValuesSameInCzechForOneAndFew(), true)) {
+                    self::assertSame(
+                        $oneInCzech,
+                        $twoInCzech,
+                        "Expected same translation in czech from $codeClass for numbers 1 and 2: $oneInCzech, $twoInCzech"
+                    );
                 } else {
                     self::assertNotSame(
                         $oneInCzech,
@@ -99,7 +111,7 @@ class AllTranslatableCodesTest extends TestWithMockery
                 self::assertSame($twoInCzech, $threeInCzech = $sut->translateTo('cs', 3));
                 self::assertSame($threeInCzech, $fourInCzech = $sut->translateTo('cs', 4));
                 $fiveInCzech = $sut->translateTo('cs', 5);
-                if (in_array($fourInCzech, $this->getValuesSameInCzechForFewAndMany(), true)) {
+                if ($hasSinglesOnly || in_array($fourInCzech, $this->getValuesSameInCzechForFewAndMany(), true)) {
                     self::assertSame($fourInCzech, $fiveInCzech);
                 } else {
                     self::assertNotSame(
@@ -167,7 +179,7 @@ class AllTranslatableCodesTest extends TestWithMockery
                 $inEnglish = $this->codeToEnglish($value);
                 $previousErrorReporting = error_reporting(-1 ^ E_USER_WARNING);
                 error_clear_last();
-                self::assertSame($inEnglish, @$sut->translateTo('demonic'));
+                self::assertSame($inEnglish, $sut->translateTo('demonic'));
                 $lastError = error_get_last();
                 error_reporting($previousErrorReporting);
                 error_clear_last();

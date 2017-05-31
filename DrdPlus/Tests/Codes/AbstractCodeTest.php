@@ -104,6 +104,7 @@ abstract class AbstractCodeTest extends TestWithMockery
     {
         $sutClass = self::getSutClass();
         $constantValues = (new \ReflectionClass($sutClass))->getConstants();
+        self::assertCount(count($constantValues), array_unique($constantValues));
         sort($constantValues); // re-index by numbers
         /** @var string[] $givenValues */
         $givenValues = $sutClass::getPossibleValues();

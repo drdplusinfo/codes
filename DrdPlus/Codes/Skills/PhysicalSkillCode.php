@@ -70,4 +70,71 @@ class PhysicalSkillCode extends SkillCode
             self::SWIMMING,
         ];
     }
+
+    private static $translations = [
+        'en' => [
+            self::ARMOR_WEARING => ['one' => 'armor wearing'],
+            self::ATHLETICS => ['one' => 'athletics'],
+            self::BLACKSMITHING => ['one' => 'blacksmithing'],
+            self::BOAT_DRIVING => ['one' => 'boat driving'],
+            self::CART_DRIVING => ['one' => 'cart driving'],
+            self::CITY_MOVING => ['one' => 'city moving'],
+            self::CLIMBING_AND_HILLWALKING => ['one' => 'climbing and hillwalking'],
+            self::FAST_MARSH => ['one' => 'fast marsh'],
+            self::FIGHT_UNARMED => ['one' => 'fight unarmed'],
+            self::FIGHT_WITH_AXES => ['one' => 'fight with axes'],
+            self::FIGHT_WITH_KNIFES_AND_DAGGERS => ['one' => 'fight with knifes and daggers'],
+            self::FIGHT_WITH_MACES_AND_CLUBS => ['one' => 'fight with maces and clubs'],
+            self::FIGHT_WITH_MORNINGSTARS_AND_MORGENSTERNS => ['one' => 'fight with morningstars and morgensterns'],
+            self::FIGHT_WITH_SABERS_AND_BOWIE_KNIFES => ['one' => 'fight with sabers and bowie knifes'],
+            self::FIGHT_WITH_SHIELDS => ['one' => 'fight with shields'],
+            self::FIGHT_WITH_STAFFS_AND_SPEARS => ['one' => 'fight with staffs and spears'],
+            self::FIGHT_WITH_SWORDS => ['one' => 'fight with swords'],
+            self::FIGHT_WITH_THROWING_WEAPONS => ['one' => 'fight with throwing weapons'],
+            self::FIGHT_WITH_TWO_WEAPONS => ['one' => 'fight with two weapons'],
+            self::FIGHT_WITH_VOULGES_AND_TRIDENTS => ['one' => 'fight with voulges and tridents'],
+            self::FLYING => ['one' => 'flying'],
+            self::FOREST_MOVING => ['one' => 'forest moving'],
+            self::MOVING_IN_MOUNTAINS => ['one' => 'moving in mountains'],
+            self::RIDING => ['one' => 'riding'],
+            self::SAILING => ['one' => 'sailing'],
+            self::SHIELD_USAGE => ['one' => 'shield usage'],
+            self::SWIMMING => ['one' => 'swimming'],
+        ],
+        'cs' => [
+            self::ARMOR_WEARING => ['one' => 'nošení zbroje'],
+            self::ATHLETICS => ['one' => 'atletika'],
+            self::BLACKSMITHING => ['one' => 'kovářství'],
+            self::BOAT_DRIVING => ['one' => 'ovládání loďky'],
+            self::CART_DRIVING => ['one' => 'řízení vozu'],
+            self::CITY_MOVING => ['one' => 'pohyb ve městě'],
+            self::CLIMBING_AND_HILLWALKING => ['one' => 'šplh a lezení'],
+            self::FAST_MARSH => ['one' => 'rychlý pochod'],
+            self::FIGHT_UNARMED => ['one' => 'boj beze zbraně'],
+            self::FIGHT_WITH_AXES => ['one' => 'boj se sekerami'],
+            self::FIGHT_WITH_KNIFES_AND_DAGGERS => ['one' => 'boj s noži a dýkami'],
+            self::FIGHT_WITH_MACES_AND_CLUBS => ['one' => 'boj s palicemi a kyji'],
+            self::FIGHT_WITH_MORNINGSTARS_AND_MORGENSTERNS => ['one' => 'boj se řemdihy a bijáky'],
+            self::FIGHT_WITH_SABERS_AND_BOWIE_KNIFES => ['one' => 'boj se šavlemi a tesáky'],
+            self::FIGHT_WITH_SHIELDS => ['one' => 'boj se štítem'],
+            self::FIGHT_WITH_STAFFS_AND_SPEARS => ['one' => 'boj s holemi a kopími'],
+            self::FIGHT_WITH_SWORDS => ['one' => 'boj s meči'],
+            self::FIGHT_WITH_THROWING_WEAPONS => ['one' => 'boj s vrhacími zbraněmi'],
+            self::FIGHT_WITH_TWO_WEAPONS => ['one' => 'boj se dvěma zbraněmi'],
+            self::FIGHT_WITH_VOULGES_AND_TRIDENTS => ['one' => 'boj se sudlicemi a trojzubci'],
+            self::FLYING => ['one' => 'letectví'],
+            self::FOREST_MOVING => ['one' => 'pohyb v lese'],
+            self::MOVING_IN_MOUNTAINS => ['one' => 'pohyb v horách'],
+            self::RIDING => ['one' => 'jezdectví'],
+            self::SAILING => ['one' => 'námořnictví'],
+            self::SHIELD_USAGE => ['one' => 'používání štítu'],
+            self::SWIMMING => ['one' => 'plavání'],
+        ],
+    ];
+
+    protected function getTranslations(string $languageCode): array
+    {
+        return self::$translations[$languageCode] ?? [];
+    }
+
 }
