@@ -58,7 +58,7 @@ class HelmCode extends ArmorCode
             self::GREAT_HELM => ['one' => 'great helm'],
         ],
         'cs' => [
-            self::WITHOUT_HELM => ['one' => 'bez pokrývky hlavy'],
+            self::WITHOUT_HELM => ['one' => 'bez helmy'],
             self::LEATHER_CAP => ['one' => 'kožená čapka'],
             self::CHAINMAIL_HOOD => ['one' => 'kroužková kukla'],
             self::CONICAL_HELM => ['one' => 'konická helma'],
