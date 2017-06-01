@@ -3,6 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\Armaments\ArmorCode;
 use DrdPlus\Codes\Armaments\ShieldCode;
+use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Partials\TranslatableCode;
 use DrdPlus\Codes\Skills\SkillCode;
 use Granam\Tests\Tools\TestWithMockery;
@@ -19,6 +20,7 @@ class AllTranslatableCodesTest extends TestWithMockery
         foreach ($this->getTranslatableCodeClasses() as $codeClass) {
             $hasSinglesOnly = $this->hasSinglesOnly($codeClass);
             foreach ($codeClass::getPossibleValues() as $value) {
+                /** @var TranslatableCode $sut */
                 $sut = $codeClass::getIt($value);
                 self::assertSame($this->codeToEnglish($value), $sut->translateTo('en'));
                 self::assertSame($sut->translateTo('en'), $sut->translateTo('en', 1));
@@ -47,7 +49,7 @@ class AllTranslatableCodesTest extends TestWithMockery
 
     private function hasSinglesOnly(string $codeClass): bool
     {
-        foreach ([SkillCode::class, ArmorCode::class, ShieldCode::class] as $singleOnlyClass) {
+        foreach ([SkillCode::class, ArmorCode::class, ShieldCode::class, ItemHoldingCode::class] as $singleOnlyClass) {
             if (is_a($codeClass, $singleOnlyClass, true)) {
                 return true;
             }
@@ -89,6 +91,7 @@ class AllTranslatableCodesTest extends TestWithMockery
         foreach ($this->getTranslatableCodeClasses() as $codeClass) {
             $hasSinglesOnly = $this->hasSinglesOnly($codeClass);
             foreach ($codeClass::getPossibleValues() as $value) {
+                /** @var TranslatableCode $sut */
                 $sut = $codeClass::getIt($value);
                 $oneInEnglish = $this->codeToEnglish($value);
                 $oneInCzech = $sut->translateTo('cs');
@@ -183,6 +186,7 @@ class AllTranslatableCodesTest extends TestWithMockery
     {
         foreach ($this->getTranslatableCodeClasses() as $codeClass) {
             foreach ($codeClass::getPossibleValues() as $value) {
+                /** @var TranslatableCode $sut */
                 $sut = $codeClass::getIt($value);
                 $inEnglish = $this->codeToEnglish($value);
                 $previousErrorReporting = error_reporting(-1 ^ E_USER_WARNING);

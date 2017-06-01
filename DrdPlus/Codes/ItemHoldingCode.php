@@ -1,12 +1,12 @@
 <?php
 namespace DrdPlus\Codes;
 
-use DrdPlus\Codes\Partials\AbstractCode;
+use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static ItemHoldingCode getIt($codeValue)
  */
-class ItemHoldingCode extends AbstractCode
+class ItemHoldingCode extends TranslatableCode
 {
     const TWO_HANDS = 'two_hands';
     const MAIN_HAND = 'main_hand';
@@ -72,6 +72,24 @@ class ItemHoldingCode extends AbstractCode
         }
 
         return self::getIt(self::MAIN_HAND);
+    }
+
+    private static $translations = [
+        'en' => [
+            self::TWO_HANDS => ['one' => 'two hands'],
+            self::MAIN_HAND => ['one' => 'main hand'],
+            self::OFFHAND => ['one' => 'offhand'],
+        ],
+        'cs' => [
+            self::TWO_HANDS => ['one' => 'obouručně'],
+            self::MAIN_HAND => ['one' => 'v dominantní ruce'],
+            self::OFFHAND => ['one' => 'v druhé ruce'],
+        ],
+    ];
+
+    protected function getTranslations(string $languageCode): array
+    {
+        return self::$translations[$languageCode] ?? [];
     }
 
 }
