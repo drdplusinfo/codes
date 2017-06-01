@@ -126,7 +126,7 @@ class ShieldCode extends TranslatableCode implements MeleeWeaponlikeCode, Protec
     public function convertToMeleeWeaponCodeEquivalent(): MeleeWeaponCode
     {
         throw new Exceptions\CanNotBeConvertedToMeleeWeaponCode(
-            "Shield code {$this} can not be converted to melee weapon code"
+            "No shield code (current is {$this}) can not be converted to melee weapon code"
         );
     }
 
@@ -136,7 +136,7 @@ class ShieldCode extends TranslatableCode implements MeleeWeaponlikeCode, Protec
     public function convertToRangedWeaponCodeEquivalent(): RangedWeaponCode
     {
         throw new Exceptions\CanNotBeConvertedToRangeWeaponCode(
-            "Shield code {$this} can not be converted to range weapon code"
+            "No shield code (current is {$this}) can not be converted to range weapon code"
         );
     }
 

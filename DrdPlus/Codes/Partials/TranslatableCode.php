@@ -4,9 +4,6 @@ namespace DrdPlus\Codes\Partials;
 use Granam\Number\NumberInterface;
 use Granam\Number\Tools\ToNumber;
 
-/**
- * @method static TranslatableCode getIt($codeValue)
- */
 abstract class TranslatableCode extends AbstractCode implements Translatable
 {
 
