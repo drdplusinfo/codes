@@ -39,7 +39,7 @@ class AllTranslatableCodesTest extends TestWithMockery
         }
     }
 
-    private function getValuesSameInEnglishForAnyNumbers(): array
+    protected function getValuesSameInEnglishForAnyNumbers(): array
     {
         return [
             'senses',
@@ -47,7 +47,7 @@ class AllTranslatableCodesTest extends TestWithMockery
         ];
     }
 
-    private function hasSinglesOnly(string $codeClass): bool
+    protected function hasSinglesOnly(string $codeClass): bool
     {
         foreach ([SkillCode::class, ArmorCode::class, ShieldCode::class, ItemHoldingCode::class] as $singleOnlyClass) {
             if (is_a($codeClass, $singleOnlyClass, true)) {
@@ -78,7 +78,7 @@ class AllTranslatableCodesTest extends TestWithMockery
      * @param string $code
      * @return string
      */
-    private function codeToEnglish(string $code): string
+    protected function codeToEnglish(string $code): string
     {
         return str_replace(['_dm_', '_'], ['_DM_', ' '], $code);
     }
@@ -148,7 +148,7 @@ class AllTranslatableCodesTest extends TestWithMockery
     /**
      * @return array|string[]
      */
-    private function getValuesSameInCzechForOneAndFew(): array
+    protected function getValuesSameInCzechForOneAndFew(): array
     {
         return [
             'vůle',
@@ -169,7 +169,7 @@ class AllTranslatableCodesTest extends TestWithMockery
     /**
      * @return array|string[]
      */
-    private function getValuesSameInCzechForFewAndMany(): array
+    protected function getValuesSameInCzechForFewAndMany(): array
     {
         return [
             'smysly',
