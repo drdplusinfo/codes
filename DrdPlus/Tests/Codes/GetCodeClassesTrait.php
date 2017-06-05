@@ -34,7 +34,7 @@ trait GetCodeClassesTrait
      * @param string $rootNamespace
      * @return array
      */
-    private function scanForCodeClasses(string $rootDir, string $rootNamespace): array
+    protected function scanForCodeClasses(string $rootDir, string $rootNamespace): array
     {
         $codeClasses = [];
         foreach (scandir($rootDir) as $folder) {
