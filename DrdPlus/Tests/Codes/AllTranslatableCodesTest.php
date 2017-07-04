@@ -142,7 +142,7 @@ class AllTranslatableCodesTest extends TestWithMockery
      */
     protected function getValuesSameInCzechAndEnglish(): array
     {
-        return ['charisma'];
+        return ['charisma', 'pony'];
     }
 
     /**
@@ -163,6 +163,7 @@ class AllTranslatableCodesTest extends TestWithMockery
             'hvězdice',
             'beze zbraně',
             'kuše',
+            'pony',
         ];
     }
 
@@ -176,6 +177,7 @@ class AllTranslatableCodesTest extends TestWithMockery
             'kopí',
             'beze zbraně',
             'kněží',
+            'pony',
         ];
     }
 
