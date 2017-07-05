@@ -70,9 +70,20 @@ abstract class TranslatableCode extends AbstractCode implements Translatable
         return 'many';
     }
 
+    private $translations;
+
     /**
      * @param string $languageCode
      * @return array|string[]
      */
-    abstract protected function getTranslations(string $languageCode): array;
+    protected function getTranslations(string $languageCode): array
+    {
+        if ($this->translations === null) {
+            $this->translations = $this->fetchTranslations();
+        }
+
+        return $this->translations[$languageCode] ?? [];
+    }
+
+    abstract protected function fetchTranslations(): array;
 }

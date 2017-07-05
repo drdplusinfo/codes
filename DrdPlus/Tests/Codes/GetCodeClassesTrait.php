@@ -37,7 +37,7 @@ trait GetCodeClassesTrait
     protected function scanForCodeClasses(string $rootDir, string $rootNamespace): array
     {
         $codeClasses = [];
-        foreach (scandir($rootDir) as $folder) {
+        foreach (scandir($rootDir, SCANDIR_SORT_NONE) as $folder) {
             $folderFullPath = $rootDir . DIRECTORY_SEPARATOR . $folder;
             if ($folder !== '.' && $folder !== '..') {
                 if (is_dir($folderFullPath)) {

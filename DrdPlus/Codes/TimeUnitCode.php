@@ -50,11 +50,10 @@ class TimeUnitCode extends TranslatableCode
     ];
 
     /**
-     * @param string $languageCode
      * @return array|string[]
      */
-    protected function getTranslations(string $languageCode): array
+    protected function fetchTranslations(): array
     {
-        return self::$translations[$languageCode] ?? [];
+        return self::$translations;
     }
 }

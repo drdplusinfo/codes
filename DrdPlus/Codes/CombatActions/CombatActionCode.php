@@ -56,7 +56,7 @@ class CombatActionCode extends AbstractCode
     /**
      * @return bool
      */
-    public function isForMelee()
+    public function isForMelee(): bool
     {
         return true;
     }
@@ -64,7 +64,7 @@ class CombatActionCode extends AbstractCode
     /**
      * @return bool
      */
-    public function isForRanged()
+    public function isForRanged(): bool
     {
         return true;
     }

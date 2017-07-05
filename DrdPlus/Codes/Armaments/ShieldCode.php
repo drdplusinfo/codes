@@ -167,9 +167,9 @@ class ShieldCode extends TranslatableCode implements MeleeWeaponlikeCode, Protec
         ],
     ];
 
-    protected function getTranslations(string $languageCode): array
+    protected function fetchTranslations(): array
     {
-        return self::$translations[$languageCode] ?? [];
+        return self::$translations;
     }
 
 }

@@ -164,6 +164,7 @@ class AllTranslatableCodesTest extends TestWithMockery
             'beze zbraně',
             'kuše',
             'pony',
+            'stání',
         ];
     }
 
@@ -178,6 +179,7 @@ class AllTranslatableCodesTest extends TestWithMockery
             'beze zbraně',
             'kněží',
             'pony',
+            'stání',
         ];
     }
 

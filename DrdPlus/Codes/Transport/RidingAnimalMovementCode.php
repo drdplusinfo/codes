@@ -1,12 +1,12 @@
 <?php
 namespace DrdPlus\Codes\Transport;
 
-use DrdPlus\Codes\Partials\AbstractCode;
+use DrdPlus\Codes\Partials\FileBasedTranslatableCode;
 
 /**
  * @method static RidingAnimalMovementCode getIt($codeValue)
  */
-class RidingAnimalMovementCode extends AbstractCode
+class RidingAnimalMovementCode extends FileBasedTranslatableCode
 {
     const STILL = 'still';
     const GAIT = 'gait';
@@ -28,6 +28,11 @@ class RidingAnimalMovementCode extends AbstractCode
             self::GALLOP,
             self::JUMPING,
         ];
+    }
+
+    protected function getTranslationsFileName(): string
+    {
+        return __DIR__ . '/data/riding_animal_movement_code.csv';
     }
 
 }
