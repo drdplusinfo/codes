@@ -1,12 +1,12 @@
 <?php
 namespace DrdPlus\Codes\Environment;
 
-use DrdPlus\Codes\Partials\AbstractCode;
+use DrdPlus\Codes\Partials\FileBasedTranslatableCode;
 
 /**
  * @method static LandingSurfaceCode getIt($codeValue)
  */
-class LandingSurfaceCode extends AbstractCode
+class LandingSurfaceCode extends FileBasedTranslatableCode
 {
     const DEEP_POWDER = 'deep_powder';
     const WATER = 'water';
@@ -34,6 +34,11 @@ class LandingSurfaceCode extends AbstractCode
             self::BUMPY_ROCK,
             self::SHARP_ROCKS_OR_POINTED_PALES,
         ];
+    }
+
+    protected function getTranslationsFileName(): string
+    {
+        return __DIR__ . '/data/landing_surfaces.csv';
     }
 
 }

@@ -7,7 +7,7 @@ abstract class FileBasedTranslatableCode extends TranslatableCode
     {
         $handle = fopen($this->getTranslationsFileName(), 'rb');
         $rows = [];
-        while(($row = fgetcsv($handle)) !== false && $row !== null) {
+        while (($row = fgetcsv($handle)) !== false && $row !== null) {
             if ($row !== []) {
                 $rows[] = $row;
             }
@@ -15,7 +15,14 @@ abstract class FileBasedTranslatableCode extends TranslatableCode
         array_shift($rows); // removing header row
         $translations = [];
         foreach ($rows as $row) {
-            $translations[$row[1] /* language */][$row[0]/* code */] = ['one' => $row[2], 'few' => $row[3], 'many' => $row[4]];
+            $translation = ['one' => $row[2]];
+            if (array_key_exists(3, $row)) {
+                $translation['few'] = $row[3];
+                if (array_key_exists(4, $row)) {
+                    $translation['many'] = $row[4];
+                }
+            }
+            $translations[$row[1] /* language */][$row[0]/* code */] = $translation;
         }
 
         return $translations;

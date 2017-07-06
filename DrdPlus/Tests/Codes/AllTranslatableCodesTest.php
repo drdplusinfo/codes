@@ -3,6 +3,7 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\Armaments\ArmorCode;
 use DrdPlus\Codes\Armaments\ShieldCode;
+use DrdPlus\Codes\Environment\LandingSurfaceCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Partials\TranslatableCode;
 use DrdPlus\Codes\Skills\SkillCode;
@@ -49,7 +50,7 @@ class AllTranslatableCodesTest extends TestWithMockery
 
     protected function hasSinglesOnly(string $codeClass): bool
     {
-        foreach ([SkillCode::class, ArmorCode::class, ShieldCode::class, ItemHoldingCode::class] as $singleOnlyClass) {
+        foreach ([SkillCode::class, ArmorCode::class, ShieldCode::class, ItemHoldingCode::class, LandingSurfaceCode::class] as $singleOnlyClass) {
             if (is_a($codeClass, $singleOnlyClass, true)) {
                 return true;
             }
