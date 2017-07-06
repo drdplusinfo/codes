@@ -30,9 +30,22 @@ class RidingAnimalMovementCode extends FileBasedTranslatableCode
         ];
     }
 
+    /**
+     * @return array|string[]
+     */
+    public static function getPossibleValuesWithoutJumping(): array
+    {
+        return [
+            self::STILL,
+            self::GAIT,
+            self::TROT,
+            self::CANTER,
+            self::GALLOP,
+        ];
+    }
+
     protected function getTranslationsFileName(): string
     {
         return __DIR__ . '/data/riding_animal_movement_code.csv';
     }
-
 }
