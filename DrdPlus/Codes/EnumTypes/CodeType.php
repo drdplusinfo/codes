@@ -21,7 +21,7 @@ use DrdPlus\Codes\CombatActions\CombatActionCode;
 use DrdPlus\Codes\CombatActions\MeleeCombatActionCode;
 use DrdPlus\Codes\CombatActions\RangedCombatActionCode;
 use DrdPlus\Codes\CombatCharacteristicCode;
-use DrdPlus\Codes\DistanceUnitCode;
+use DrdPlus\Codes\Units\DistanceUnitCode;
 use DrdPlus\Codes\ElementCode;
 use DrdPlus\Codes\Environment\ItemStealthinessCode;
 use DrdPlus\Codes\Environment\LandingSurfaceCode;
@@ -42,7 +42,7 @@ use DrdPlus\Codes\Properties\PropertyCode;
 use DrdPlus\Codes\Properties\RemarkableSenseCode;
 use DrdPlus\Codes\RaceCode;
 use DrdPlus\Codes\SearchingItemTypeCode;
-use DrdPlus\Codes\SpeedUnitCode;
+use DrdPlus\Codes\Units\SpeedUnitCode;
 use DrdPlus\Codes\Transport\MovementTypeCode;
 use DrdPlus\Codes\Transport\RidingAnimalCode;
 use DrdPlus\Codes\Transport\RidingAnimalMovementCode;
@@ -53,9 +53,10 @@ use DrdPlus\Codes\Skills\PsychicalSkillCode;
 use DrdPlus\Codes\Skills\SkillTypeCode;
 use DrdPlus\Codes\SubRaceCode;
 use DrdPlus\Codes\Environment\TerrainCode;
-use DrdPlus\Codes\TimeUnitCode;
 use DrdPlus\Codes\History\ChoiceCode;
 use DrdPlus\Codes\History\FateCode;
+use DrdPlus\Codes\Units\TimeUnitCode;
+use DrdPlus\Codes\Units\WeightUnitCode;
 
 class CodeType extends AbstractCodeType
 {
@@ -113,10 +114,14 @@ class CodeType extends AbstractCodeType
         static::registerCode(RidingAnimalCode::class);
         static::registerCode(RidingAnimalMovementCode::class);
         static::registerCode(RidingAnimalPropertyCode::class);
+        // UNITS
+        static::registerCode(DistanceUnitCode::class);
+        static::registerCode(SpeedUnitCode::class);
+        static::registerCode(TimeUnitCode::class);
+        static::registerCode(WeightUnitCode::class);
         // OTHERS
         static::registerCode(ActivityIntensityCode::class);
         static::registerCode(CombatCharacteristicCode::class);
-        static::registerCode(DistanceUnitCode::class);
         static::registerCode(ElementCode::class);
         static::registerCode(FoodTypeCode::class);
         static::registerCode(GenderCode::class);
@@ -126,9 +131,7 @@ class CodeType extends AbstractCodeType
         static::registerCode(ProfessionCode::class);
         static::registerCode(RaceCode::class);
         static::registerCode(SearchingItemTypeCode::class);
-        static::registerCode(SpeedUnitCode::class);
         static::registerCode(SubRaceCode::class);
-        static::registerCode(TimeUnitCode::class);
     }
 
     /**

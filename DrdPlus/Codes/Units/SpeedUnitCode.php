@@ -1,5 +1,5 @@
 <?php
-namespace DrdPlus\Codes;
+namespace DrdPlus\Codes\Units;
 
 use DrdPlus\Codes\Partials\TranslatableCode;
 
