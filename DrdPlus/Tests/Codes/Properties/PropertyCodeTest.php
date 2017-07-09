@@ -36,7 +36,7 @@ class PropertyCodeTest extends AbstractCodeTest
                 'height_in_cm',
                 'height',
                 'weight_in_kg',
-                'weight',
+                'body_weight',
                 'size',
             ],
             PropertyCode::getBodyPropertyPossibleValues()
