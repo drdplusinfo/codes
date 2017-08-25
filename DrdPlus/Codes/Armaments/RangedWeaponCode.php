@@ -48,6 +48,7 @@ class RangedWeaponCode extends WeaponCode
     }
 
     // throwing weapons
+    const SAND = 'sand';
     const ROCK = 'rock';
     const THROWING_DAGGER = 'throwing_dagger';
     const LIGHT_THROWING_AXE = 'light_throwing_axe';
@@ -64,6 +65,7 @@ class RangedWeaponCode extends WeaponCode
     public static function getThrowingWeaponValues(): array
     {
         return [
+            self::SAND,
             self::ROCK,
             self::THROWING_DAGGER,
             self::LIGHT_THROWING_AXE,
@@ -182,6 +184,7 @@ class RangedWeaponCode extends WeaponCode
             self::LIGHT_CROSSBOW => ['one' => 'light crossbow', 'few' => 'light crossbows', 'many' => 'light crossbows'],
             self::MILITARY_CROSSBOW => ['one' => 'military crossbow', 'few' => 'military crossbows', 'many' => 'military crossbows'],
             self::HEAVY_CROSSBOW => ['one' => 'heavy crossbow', 'few' => 'heavy crossbows', 'many' => 'heavy crossbows'],
+            self::SAND => ['one' => 'sand', 'few' => 'sands', 'many' => 'sands'],
             self::ROCK => ['one' => 'rock', 'few' => 'rocks', 'many' => 'rocks'],
             self::THROWING_DAGGER => ['one' => 'throwing dagger', 'few' => 'throwing daggers', 'many' => 'throwing daggers'],
             self::LIGHT_THROWING_AXE => ['one' => 'light throwing axe', 'few' => 'light throwing axes', 'many' => 'light throwing axes'],
@@ -202,6 +205,7 @@ class RangedWeaponCode extends WeaponCode
             self::LIGHT_CROSSBOW => ['one' => 'lehká kuše', 'few' => 'lehké kuše', 'many' => 'lehkých kuší'],
             self::MILITARY_CROSSBOW => ['one' => 'válečná kuše', 'few' => 'válečné kuše', 'many' => 'válečných kuší'],
             self::HEAVY_CROSSBOW => ['one' => 'těžká kuše', 'few' => 'těžké kuše', 'many' => 'těžkých kuší'],
+            self::SAND => ['one' => 'písek', 'few' => 'písky', 'many' => 'písků'],
             self::ROCK => ['one' => 'kámen', 'few' => 'kameny', 'many' => 'kamenů'],
             self::THROWING_DAGGER => ['one' => 'vrhací dýka', 'few' => 'vrhací dýky', 'many' => 'vrhacích dýk'],
             self::LIGHT_THROWING_AXE => ['one' => 'lehká vrhací sekera', 'few' => 'lehké vrhací sekery', 'many' => 'lehkých vrhacích seker'],

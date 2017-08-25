@@ -76,6 +76,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
     {
         self::assertSame(
             [
+                'sand',
                 'rock',
                 'throwing_dagger',
                 'light_throwing_axe',
@@ -109,6 +110,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 'military_crossbow',
                 'heavy_crossbow',
                 // throwing weapons
+                'sand',
                 'rock',
                 'throwing_dagger',
                 'light_throwing_axe',
@@ -241,6 +243,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
             ['light_crossbow', false, true, false],
             ['military_crossbow', false, true, false],
             ['heavy_crossbow', false, true, false],
+            ['sand', true, false, false],
             ['rock', true, false, false],
             ['throwing_dagger', true, false, false],
             ['light_throwing_axe', true, false, false],
