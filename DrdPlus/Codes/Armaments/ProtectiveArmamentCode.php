@@ -6,10 +6,10 @@ interface ProtectiveArmamentCode extends ArmamentCode
     /**
      * @return bool
      */
-    public function isArmor();
+    public function isArmor(): bool;
 
     /**
      * @return bool
      */
-    public function isShield();
+    public function isShield(): bool;
 }

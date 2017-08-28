@@ -34,7 +34,7 @@ abstract class ArmorCode extends TranslatableCode implements ProtectiveArmamentC
     /**
      * @return bool
      */
-    public function isArmor(): bool
+    final public function isArmor(): bool
     {
         return true;
     }

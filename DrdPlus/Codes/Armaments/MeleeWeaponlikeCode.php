@@ -8,5 +8,5 @@ interface MeleeWeaponlikeCode extends WeaponlikeCode
      *
      * @return bool
      */
-    public function isMeleeWeapon();
+    public function isMeleeWeapon(): bool;
 }

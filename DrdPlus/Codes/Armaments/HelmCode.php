@@ -34,7 +34,7 @@ class HelmCode extends ArmorCode
     /**
      * @return bool
      */
-    public function isHelm(): bool
+    final public function isHelm(): bool
     {
         return true;
     }

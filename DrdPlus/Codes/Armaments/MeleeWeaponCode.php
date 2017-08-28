@@ -244,7 +244,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      *
      * @return bool
      */
-    public function isMelee(): bool
+    final public function isMelee(): bool
     {
         return true;
     }
@@ -254,7 +254,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      *
      * @return bool
      */
-    public function isMeleeWeapon(): bool
+    final public function isMeleeWeapon(): bool
     {
         return true;
     }

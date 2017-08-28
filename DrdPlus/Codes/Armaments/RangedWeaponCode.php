@@ -103,7 +103,7 @@ class RangedWeaponCode extends WeaponCode
     /**
      * @return bool
      */
-    public function isRanged(): bool
+    final public function isRanged(): bool
     {
         return true;
     }

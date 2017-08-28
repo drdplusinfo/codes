@@ -23,7 +23,7 @@ class SlingStoneCode extends ProjectileCode
     /**
      * @return bool
      */
-    public function isSlingStone(): bool
+    final public function isSlingStone(): bool
     {
         return true;
     }

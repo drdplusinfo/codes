@@ -24,7 +24,7 @@ abstract class WeaponCode extends TranslatableCode implements WeaponlikeCode
     /**
      * @return bool
      */
-    public function isWeapon(): bool
+    final public function isWeapon(): bool
     {
         return true;
     }

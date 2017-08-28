@@ -75,7 +75,7 @@ class ShieldCode extends TranslatableCode implements MeleeWeaponlikeCode, Protec
     /**
      * @return bool
      */
-    public function isShield(): bool
+    final public function isShield(): bool
     {
         return true;
     }

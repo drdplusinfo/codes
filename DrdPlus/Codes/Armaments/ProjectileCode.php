@@ -24,7 +24,7 @@ abstract class ProjectileCode extends AbstractCode implements ArmamentCode
     /**
      * @return bool
      */
-    public function isProjectile(): bool
+    final public function isProjectile(): bool
     {
         return true;
     }

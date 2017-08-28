@@ -35,7 +35,7 @@ class ArrowCode extends ProjectileCode
     /**
      * @return bool
      */
-    public function isArrow(): bool
+    final public function isArrow(): bool
     {
         return true;
     }

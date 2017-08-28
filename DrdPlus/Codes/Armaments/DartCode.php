@@ -29,7 +29,7 @@ class DartCode extends ProjectileCode
     /**
      * @return bool
      */
-    public function isDart(): bool
+    final public function isDart(): bool
     {
         return true;
     }
