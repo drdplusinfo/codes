@@ -14,15 +14,6 @@ class CodeTypeTest extends AbstractCodeTypeTest
         return AncestryCode::class; // for example
     }
 
-    protected function getSomeValueForEnum(): string
-    {
-        $codeClass = AncestryCode::class; // for example
-        $reflectionClass = new \ReflectionClass($codeClass);
-        $constants = $reflectionClass->getConstants();
-
-        return $codeClass . '::' . $constants[array_rand($constants, 1)]; // value prefixed with source class full name
-    }
-
     /**
      * @test
      * @expectedException \Doctrineum\Scalar\Exceptions\EnumClassNotFound

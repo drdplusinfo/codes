@@ -25,15 +25,6 @@ class WeaponlikeCodeTypeTest extends AbstractCodeTypeTest
         parent::I_get_enum_with_empty_string_on_conversion();
     }
 
-    protected function getSomeValueForEnum(): string
-    {
-        $codeClass = MeleeWeaponCode::class; // for example
-        $reflectionClass = new \ReflectionClass($codeClass);
-        $constants = $reflectionClass->getConstants();
-
-        return $codeClass . '::' . $constants[array_rand($constants, 1)]; // value prefixed with source class full name
-    }
-
     /**
      * @test
      * @expectedException \DrdPlus\Codes\Armaments\EnumTypes\Exceptions\ThereIsNoDefaultEnumForWeaponlikeCode

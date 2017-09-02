@@ -28,7 +28,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     }
 
     /**
-     * @return Type|string
+     * @return AbstractCode|string
      */
     protected function getRegisteredClass(): string
     {
@@ -90,7 +90,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
      */
     private function getRelatedCodeClasses(): array
     {
-        $relatedRootCodeClass = $this->getRelatedRootCodeClass();
+        $relatedRootCodeClass = $this->getRegisteredClass();
         $codeReflection = new \ReflectionClass(Code::class);
         $rootDir = dirname($codeReflection->getFileName());
 
@@ -103,17 +103,6 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
         }
 
         return $relatedCodeClasses;
-    }
-
-    private function getRelatedRootCodeClass()
-    {
-        $relatedRootCodeClass = preg_replace('~\\\EnumTypes(\\\.+)Type$~', '$1', $this->getTypeClass());
-        self::assertTrue(
-            class_exists($relatedRootCodeClass) || interface_exists($relatedRootCodeClass),
-            "Invalid $relatedRootCodeClass root code class estimated from " . $this->getTypeClass()
-        );
-
-        return $relatedRootCodeClass;
     }
 
     /**
@@ -221,21 +210,29 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
 
     public function enum_as_database_value_is_string_value_of_that_enum($value = null)
     {
-        parent::enum_as_database_value_is_string_value_of_that_enum($this->getSomeValueForEnum());
+        parent::enum_as_database_value_is_string_value_of_that_enum($this->getSomeValueFromDatabaseForEnum());
     }
 
-    protected function getSomeValueForEnum(): string
+    protected function getSomeValueFromDatabaseForEnum(): string
     {
-        $codeClass = $this->getRelatedRootCodeClass();
+        $codeClass = $this->getRegisteredClass();
+        $enumValue = $this->getSomeEnumValue();
+
+        return $codeClass . '::' . $enumValue; // value prefixed with source class full name
+    }
+
+    protected function getSomeEnumValue(): string
+    {
+        $codeClass = $this->getRegisteredClass();
         $reflectionClass = new \ReflectionClass($codeClass);
         $constants = $reflectionClass->getConstants();
 
-        return $codeClass . '::' . $constants[array_rand($constants, 1)]; // value prefixed with source class full name
+        return $constants[array_rand($constants, 1)];
     }
 
     public function string_to_php_value_is_enum_with_that_string(string $stringFromDb = null)
     {
-        parent::string_to_php_value_is_enum_with_that_string($this->getSomeValueForEnum());
+        parent::string_to_php_value_is_enum_with_that_string($this->getSomeValueFromDatabaseForEnum());
     }
 
     /**
@@ -255,7 +252,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     public function object_with_to_string_to_php_value_is_enum_with_that_string(ScalarInterface $toStringObject = null)
     {
         $platform = $this->getPlatform();
-        $value = $toStringObject ? $toStringObject->__toString() : $this->getSomeValueForEnum();
+        $value = $toStringObject ? $toStringObject->__toString() : $this->getSomeValueFromDatabaseForEnum();
         $enum = $this->createSut()->convertToPHPValue($toStringObject ?? new WithToStringTestObject($value), $platform);
         self::assertInstanceOf($this->getRegisteredClass(), $enum);
         // its always persisted as a sub-type with value prefixed code class
@@ -280,5 +277,20 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     public function I_can_use_subtype()
     {
         self::assertTrue(true, 'Of course I can, whole code philosophy is build on sub-types');
+    }
+
+    /**
+     * @test
+     */
+    public function Code_value_is_prefixed_by_its_class_name_for_database_persistence()
+    {
+        $platform = $this->getPlatform();
+        $enumClass = $this->getRegisteredClass();
+        $enumValue = $this->getSomeEnumValue();
+        $enum = $enumClass::getIt($enumValue);
+        $enumAsDatabaseValue = $this->createSut()->convertToDatabaseValue($enum, $platform);
+        self::assertSame("$enumClass::$enumValue", $enumAsDatabaseValue);
+        $reconstructedEnum = $this->createSut()->convertToPHPValue($enumAsDatabaseValue, $platform);
+        self::assertSame($reconstructedEnum, $enum);
     }
 }
