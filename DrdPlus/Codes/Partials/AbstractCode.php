@@ -12,11 +12,11 @@ abstract class AbstractCode extends ScalarEnum implements Code
 
     /**
      * @return array|string[]
-     * @throws \LogicException
+     * @throws \DrdPlus\Codes\Partials\Exceptions\MethodRequiresOverride
      */
     public static function getPossibleValues(): array
     {
-        throw new \LogicException(
+        throw new Exceptions\MethodRequiresOverride(
             'Not implemented. Please overload method ' . __METHOD__ . ' and return all code constants by it.'
         );
     }

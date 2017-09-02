@@ -155,4 +155,13 @@ PHPDOC
             , $reflectionClass->getDocComment()
         );
     }
+
+    /**
+     * @test
+     * @expectedException \DrdPlus\Codes\Partials\Exceptions\MethodRequiresOverride
+     */
+    public function I_can_not_call_its_possible_values_as_they_are_not_yet_defined()
+    {
+        AbstractCode::getPossibleValues();
+    }
 }
