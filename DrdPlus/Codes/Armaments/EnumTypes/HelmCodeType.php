@@ -8,16 +8,17 @@ class HelmCodeType extends AbstractCodeType
 {
     const HELM_CODE = 'helm_code';
 
-    public static function registerSelf()
+    public static function registerSelf(): bool
     {
         parent::registerSelf();
-        static::registerCode(HelmCode::class);
+
+        return static::registerCode(HelmCode::class);
     }
 
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return self::HELM_CODE;
     }

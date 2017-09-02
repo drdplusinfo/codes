@@ -5,41 +5,31 @@ use DrdPlus\Codes\Partials\TranslatableCode;
 
 abstract class WeaponCode extends TranslatableCode implements WeaponlikeCode
 {
-    /**
-     * @return bool
-     */
+    /** @return bool */
     public function isProtectiveArmament(): bool
     {
         return false;
     }
 
-    /**
-     * @return bool
-     */
+    /** @return bool */
     public function isWeaponlike(): bool
     {
         return true;
     }
 
-    /**
-     * @return bool
-     */
+    /** @return bool */
     final public function isWeapon(): bool
     {
         return true;
     }
 
-    /**
-     * @return bool
-     */
+    /** @return bool */
     public function isShield(): bool
     {
         return false;
     }
 
-    /**
-     * @return bool
-     */
+    /** @return bool */
     public function isProjectile(): bool
     {
         return false;

@@ -7,16 +7,17 @@ class GenderCodeType extends AbstractCodeType
 {
     const GENDER_CODE = 'gender_code';
 
-    public static function registerSelf()
+    public static function registerSelf(): bool
     {
         parent::registerSelf();
-        static::registerCode(GenderCode::class);
+
+        return static::registerCode(GenderCode::class);
     }
 
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return self::GENDER_CODE;
     }

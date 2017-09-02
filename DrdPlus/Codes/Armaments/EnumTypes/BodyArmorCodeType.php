@@ -8,16 +8,17 @@ class BodyArmorCodeType extends AbstractCodeType
 {
     const BODY_ARMOR_CODE = 'body_armor_code';
 
-    public static function registerSelf()
+    public static function registerSelf(): bool
     {
         parent::registerSelf();
-        static::registerCode(BodyArmorCode::class);
+
+        return static::registerCode(BodyArmorCode::class);
     }
 
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return self::BODY_ARMOR_CODE;
     }

@@ -8,16 +8,17 @@ class ChoiceCodeType extends AbstractCodeType
 {
     const CHOICE_CODE = 'choice_code';
 
-    public static function registerSelf()
+    public static function registerSelf(): bool
     {
         parent::registerSelf();
-        static::registerCode(ChoiceCode::class);
+
+        return static::registerCode(ChoiceCode::class);
     }
 
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return self::CHOICE_CODE;
     }

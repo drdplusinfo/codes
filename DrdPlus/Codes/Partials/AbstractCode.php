@@ -7,7 +7,6 @@ use DrdPlus\Codes\Code;
 use Granam\String\StringInterface;
 use Granam\Tools\ValueDescriber;
 
-/** @noinspection SingletonFactoryPatternViolationInspection */
 abstract class AbstractCode extends ScalarEnum implements Code
 {
 
@@ -36,7 +35,7 @@ abstract class AbstractCode extends ScalarEnum implements Code
     }
 
     /**
-     * @param string $codeValue
+     * @param string|Code $codeValue
      * @throws \Doctrineum\Scalar\Exceptions\UnexpectedValueToEnum
      * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
      */

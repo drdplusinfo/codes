@@ -8,16 +8,17 @@ class FateCodeType extends AbstractCodeType
 {
     const FATE_CODE = 'fate_code';
 
-    public static function registerSelf()
+    public static function registerSelf(): bool
     {
         parent::registerSelf();
-        static::registerCode(FateCode::class);
+
+        return static::registerCode(FateCode::class);
     }
 
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return self::FATE_CODE;
     }

@@ -5,25 +5,43 @@ use DrdPlus\Codes\Armaments\MeleeWeaponCode;
 use DrdPlus\Codes\Armaments\RangedWeaponCode;
 use DrdPlus\Codes\Armaments\ShieldCode;
 use DrdPlus\Codes\EnumTypes\AbstractCodeType;
+use Granam\Tools\ValueDescriber;
 
 class WeaponlikeCodeType extends AbstractCodeType
 {
     const WEAPONLIKE_CODE = 'weaponlike_code';
 
-    public static function registerSelf()
+    public static function registerSelf(): bool
     {
-        parent::registerSelf();
-        static::registerCode(MeleeWeaponCode::class);
-        static::registerCode(RangedWeaponCode::class);
-        static::registerCode(ShieldCode::class);
+        $somethingRegistered = parent::registerSelf();
+
+        $somethingRegistered = static::registerCode(MeleeWeaponCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(RangedWeaponCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(ShieldCode::class) || $somethingRegistered;
+
+        return $somethingRegistered;
     }
 
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return self::WEAPONLIKE_CODE;
+    }
+
+    /**
+     * @param bool|float|int|string $enumValue
+     * @return string
+     * @throws \DrdPlus\Codes\Armaments\EnumTypes\Exceptions\ThereIsNoDefaultEnumForWeaponlikeCode
+     */
+    protected static function getDefaultEnumClass($enumValue): string
+    {
+        throw new Exceptions\ThereIsNoDefaultEnumForWeaponlikeCode(
+            'Given code value ' . ValueDescriber::describe($enumValue)
+            . ' do not match to any value from any of registered subtypes: '
+            . MeleeWeaponCode::class . ', ' . RangedWeaponCode::class . ' and ' . ShieldCode::class
+        );
     }
 
 }

@@ -53,11 +53,12 @@ abstract class AbstractCodeTest extends TestWithMockery
     /**
      * @return AbstractCode
      */
-    protected function getSut()
+    protected function getSut(): AbstractCode
     {
         $sutClass = self::getSutClass();
+        $constants = (new \ReflectionClass($sutClass))->getConstants();
 
-        return $sutClass::getIt(current((new \ReflectionClass($sutClass))->getConstants()));
+        return $sutClass::getIt(reset($constants));
     }
 
     /**
@@ -100,7 +101,7 @@ abstract class AbstractCodeTest extends TestWithMockery
     /**
      * @test
      */
-    public function All_constants_can_be_given_by_getter()
+    public function All_public_constants_can_be_given_by_getter()
     {
         $sutClass = self::getSutClass();
         $constantValues = (new \ReflectionClass($sutClass))->getConstants();

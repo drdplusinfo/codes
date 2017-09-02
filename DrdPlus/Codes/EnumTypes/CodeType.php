@@ -62,76 +62,78 @@ class CodeType extends AbstractCodeType
 {
     const CODE = 'code';
 
-    public static function registerSelf()
+    public static function registerSelf(): bool
     {
-        parent::registerSelf();
+        $somethingRegistered = parent::registerSelf();
         // ARMAMENTS
-        static::registerCode(ArrowCode::class);
-        static::registerCode(BodyArmorCode::class);
-        static::registerCode(DartCode::class);
-        static::registerCode(HelmCode::class);
-        static::registerCode(MeleeWeaponCode::class);
-        static::registerCode(RangedWeaponCode::class);
-        static::registerCode(ShieldCode::class);
-        static::registerCode(SlingStoneCode::class);
-        static::registerCode(WeaponCategoryCode::class);
+        $somethingRegistered = static::registerCode(ArrowCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(BodyArmorCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(DartCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(HelmCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(MeleeWeaponCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(RangedWeaponCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(ShieldCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(SlingStoneCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(WeaponCategoryCode::class) || $somethingRegistered;
         // BODY
-        static::registerCode(ActivityAffectingHealingCode::class);
-        static::registerCode(AfflictionByWoundDomainCode::class);
-        static::registerCode(ConditionsAffectingHealingCode::class);
-        static::registerCode(RestConditionsCode::class);
-        static::registerCode(WoundsOriginCode::class);
-        static::registerCode(WoundTypeCode::class);
+        $somethingRegistered = static::registerCode(ActivityAffectingHealingCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(AfflictionByWoundDomainCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(ConditionsAffectingHealingCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(RestConditionsCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(WoundsOriginCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(WoundTypeCode::class) || $somethingRegistered;
         // COMBAT ACTIONS
-        static::registerCode(CombatActionCode::class);
-        static::registerCode(MeleeCombatActionCode::class);
-        static::registerCode(RangedCombatActionCode::class);
+        $somethingRegistered = static::registerCode(CombatActionCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(MeleeCombatActionCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(RangedCombatActionCode::class) || $somethingRegistered;
         // ENVIRONMENT
-        static::registerCode(ItemStealthinessCode::class);
-        static::registerCode(LandingSurfaceCode::class);
-        static::registerCode(LightConditionsCode::class);
-        static::registerCode(LightSourceCode::class);
-        static::registerCode(LightSourceEnvironmentCode::class);
-        static::registerCode(MaterialCode::class);
-        static::registerCode(TerrainCode::class);
+        $somethingRegistered = static::registerCode(ItemStealthinessCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(LandingSurfaceCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(LightConditionsCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(LightSourceCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(LightSourceEnvironmentCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(MaterialCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(TerrainCode::class) || $somethingRegistered;
         // HISTORY
-        static::registerCode(AncestryCode::class);
-        static::registerCode(ExceptionalityCode::class);
-        static::registerCode(ChoiceCode::class);
-        static::registerCode(FateCode::class);
+        $somethingRegistered = static::registerCode(AncestryCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(ExceptionalityCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(ChoiceCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(FateCode::class) || $somethingRegistered;
         // PROPERTIES
-        static::registerCode(CharacteristicForGameCode::class);
-        static::registerCode(CombatCharacteristicCode::class);
-        static::registerCode(PropertyCode::class);
-        static::registerCode(RemarkableSenseCode::class);
-        // SKILLS
-        static::registerCode(CombinedSkillCode::class);
-        static::registerCode(PhysicalSkillCode::class);
-        static::registerCode(PsychicalSkillCode::class);
-        static::registerCode(SkillTypeCode::class);
+        $somethingRegistered = static::registerCode(CharacteristicForGameCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(CombatCharacteristicCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(PropertyCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(RemarkableSenseCode::class) || $somethingRegistered;
+        // SKILL
+        $somethingRegistered = static::registerCode(CombinedSkillCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(PhysicalSkillCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(PsychicalSkillCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(SkillTypeCode::class) || $somethingRegistered;
         // TRANSPORT
-        static::registerCode(MovementTypeCode::class);
-        static::registerCode(RidingAnimalCode::class);
-        static::registerCode(RidingAnimalMovementCode::class);
-        static::registerCode(RidingAnimalPropertyCode::class);
-        // UNITS
-        static::registerCode(DistanceUnitCode::class);
-        static::registerCode(SpeedUnitCode::class);
-        static::registerCode(TimeUnitCode::class);
-        static::registerCode(WeightUnitCode::class);
-        // OTHERS
-        static::registerCode(ActivityIntensityCode::class);
-        static::registerCode(CombatCharacteristicCode::class);
-        static::registerCode(ElementCode::class);
-        static::registerCode(FoodTypeCode::class);
-        static::registerCode(GenderCode::class);
-        static::registerCode(ItemHoldingCode::class);
-        static::registerCode(JumpMovementCode::class);
-        static::registerCode(JumpTypeCode::class);
-        static::registerCode(ProfessionCode::class);
-        static::registerCode(RaceCode::class);
-        static::registerCode(SearchingItemTypeCode::class);
-        static::registerCode(SubRaceCode::class);
+        $somethingRegistered = static::registerCode(MovementTypeCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(RidingAnimalCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(RidingAnimalMovementCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(RidingAnimalPropertyCode::class) || $somethingRegistered;
+        // UNIT
+        $somethingRegistered = static::registerCode(DistanceUnitCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(SpeedUnitCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(TimeUnitCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(WeightUnitCode::class) || $somethingRegistered;
+        // OTHER
+        $somethingRegistered = static::registerCode(ActivityIntensityCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(CombatCharacteristicCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(ElementCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(FoodTypeCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(GenderCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(ItemHoldingCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(JumpMovementCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(JumpTypeCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(ProfessionCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(RaceCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(SearchingItemTypeCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(SubRaceCode::class) || $somethingRegistered;
+
+        return $somethingRegistered;
     }
 
     /**
@@ -141,5 +143,4 @@ class CodeType extends AbstractCodeType
     {
         return self::CODE;
     }
-
 }

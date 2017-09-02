@@ -7,20 +7,21 @@ use Doctrineum\Scalar\ScalarEnum;
 use Doctrineum\Scalar\ScalarEnumType;
 use DrdPlus\Codes\Code;
 use Granam\Scalar\Tools\ToString;
+use Granam\String\StringInterface;
 use Granam\Tools\ValueDescriber;
 
 /**
- * @method static registerSelf
+ * @method static bool registerSelf()
  */
 abstract class AbstractCodeType extends ScalarEnumType
 {
     /**
-     * @param string $codeClass
+     * @param string|StringInterface $codeClass
      * @return bool
      * @throws \DrdPlus\Codes\EnumTypes\Exceptions\UnknownCodeClass
      * @throws \DrdPlus\Codes\EnumTypes\Exceptions\ExpectedEnumClass
      */
-    protected static function registerCode($codeClass)
+    protected static function registerCode($codeClass): bool
     {
         /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
         $sanitizedCodeClass = ToString::toString($codeClass);
@@ -49,7 +50,7 @@ abstract class AbstractCodeType extends ScalarEnumType
      * @return null|string
      * @throws \Doctrineum\Scalar\Exceptions\UnexpectedValueToDatabaseValue
      */
-    public function convertToDatabaseValue($code, AbstractPlatform $platform)
+    public function convertToDatabaseValue($code, AbstractPlatform $platform):? string
     {
         if ($code === null) {
             return null;
@@ -64,11 +65,11 @@ abstract class AbstractCodeType extends ScalarEnumType
     }
 
     /**
-     * @param $valueForEnum
+     * @param string|int|float $valueForEnum
      * @return float|int|null|string
      * @throws \Doctrineum\Scalar\Exceptions\UnexpectedValueToEnum
      */
-    protected function prepareValueForEnum($valueForEnum)
+    protected function prepareValueForEnum($valueForEnum): string
     {
         $valueForEnum = parent::prepareValueForEnum($valueForEnum);
 
