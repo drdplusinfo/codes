@@ -10,15 +10,21 @@ use Granam\Tools\ValueDescriber;
 abstract class AbstractCode extends ScalarEnum implements Code
 {
 
+    protected static $possibleValues;
+
     /**
+     * Overload this by basic array with listed constants. Taking them via Reflection is not the fastest way.
+     *
      * @return array|string[]
-     * @throws \DrdPlus\Codes\Partials\Exceptions\MethodRequiresOverride
      */
     public static function getPossibleValues(): array
     {
-        throw new Exceptions\MethodRequiresOverride(
-            'Not implemented. Please overload method ' . __METHOD__ . ' and return all code constants by it.'
-        );
+        if (static::$possibleValues === null) {
+            $reflectionClass = new \ReflectionClass(static::class);
+            static::$possibleValues = $reflectionClass->getConstants();
+        }
+
+        return static::$possibleValues;
     }
 
     /**
@@ -51,7 +57,7 @@ abstract class AbstractCode extends ScalarEnum implements Code
      */
     private function guardCodeExistence($codeValue)
     {
-        if (!in_array($codeValue, (new \ReflectionClass($this))->getConstants(), true)) {
+        if (!in_array($codeValue, static::getPossibleValues(), true)) {
             throw new Exceptions\UnknownValueForCode('Given code value '
                 . ValueDescriber::describe($codeValue)
                 . ' is not known to ' . static::class

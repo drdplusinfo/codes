@@ -5,16 +5,29 @@ use Granam\Number\NumberInterface;
 use Granam\Number\Tools\ToNumber;
 use Granam\Tools\ValueDescriber;
 
+/**
+ * @method static TranslatableCode getIt($codeValue)
+ */
 abstract class TranslatableCode extends AbstractCode implements Translatable
 {
 
-    private static $customCodes = [];
+    private static $customValues = [];
     private static $customCodeTranslations = [];
 
     protected static $ONE = 'one';
     protected static $FEW = 'few';
     protected static $FEW_DECIMAL = 'few_decimal';
     protected static $MANY = 'many';
+
+    public static function getPossibleValues(): array
+    {
+        return array_merge(parent::getPossibleValues(), static::getCustomValues());
+    }
+
+    protected static function getCustomValues(): array
+    {
+        return self::$customValues[static::class] ?? [];
+    }
 
     /**
      * @param string $languageCode
@@ -88,7 +101,7 @@ abstract class TranslatableCode extends AbstractCode implements Translatable
     protected function getTranslations(string $requiredLanguageCode): array
     {
         if ($this->translations === null) {
-            $translations = self::$customCodeTranslations[$requiredLanguageCode] ?? [];
+            $translations = self::$customCodeTranslations[static::class] ?? [];
             if (count($translations) === 0) {
                 $translations = $this->fetchTranslations();
             } else {
@@ -119,19 +132,35 @@ abstract class TranslatableCode extends AbstractCode implements Translatable
      * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
      * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
      */
-    public static function extendByTranslatedCode(string $newValue, array $translations): bool
+    public static function extendByCustomValue(string $newValue, array $translations): bool
     {
         /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
-        if (in_array($newValue, self::getPossibleValues(), true)) {
+        if (in_array($newValue, static::getPossibleValues(), true)) {
             return false;
         }
-        self::$customCodes[] = $newValue;
+        self::$customValues[static::class][] = $newValue;
+        self::checkTranslationsFormat($translations);
+        foreach ($translations as $languageCode => $languageTranslations) {
+            self::$customCodeTranslations[static::class][$languageCode][$newValue] = $languageTranslations;
+        }
+
+        return true;
+    }
+
+    /**
+     * @param array $translations
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidLanguageCode
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
+     * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
+     */
+    private static function checkTranslationsFormat(array $translations)
+    {
         /**
          * @var string $languageCode
          * @var array|string[] $languageTranslations
          */
         foreach ($translations as $languageCode => $languageTranslations) {
-            if (!preg_match('^[[:alpha:]]{2}$', $languageCode)) {
+            if (!preg_match('~^[[:alpha:]]{2}$~', $languageCode)) {
                 throw new Exceptions\InvalidLanguageCode(
                     'Code of language used for custom code translation should be 2-char string, got ' .
                     var_export($languageCode, true)
@@ -151,10 +180,5 @@ abstract class TranslatableCode extends AbstractCode implements Translatable
                 }
             }
         }
-        foreach ($translations as $languageCode => $languageTranslations) {
-            self::$customCodeTranslations[$languageCode] = $languageTranslations;
-        }
-
-        return true;
     }
 }

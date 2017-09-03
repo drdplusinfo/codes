@@ -142,7 +142,8 @@ class PropertyCode extends TranslatableCode
             self::getDerivedPropertyPossibleValues(),
             self::getNativePropertyPossibleValues(),
             self::getRemarkableSensePropertyPossibleValues(),
-            self::getRestrictionPropertyPossibleValues()
+            self::getRestrictionPropertyPossibleValues(),
+            self::getCustomValues()
         );
     }
 

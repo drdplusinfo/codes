@@ -32,25 +32,6 @@ abstract class AbstractCodeTest extends TestWithMockery
     }
 
     /**
-     * @test
-     */
-    public function I_can_get_all_codes_at_once_or_by_same_named_constant()
-    {
-        $reflection = new \ReflectionClass(self::getSutClass());
-        $constants = $reflection->getConstants();
-        asort($constants);
-        $sutClass = self::getSutClass();
-        $values = $sutClass::getPossibleValues();
-        sort($values);
-        self::assertSame(array_values($constants), $values);
-        foreach ($values as $value) {
-            $constantName = strtoupper($value);
-            self::assertArrayHasKey($constantName, $constants);
-            self::assertSame($constants[$constantName], $value);
-        }
-    }
-
-    /**
      * @return AbstractCode
      */
     protected function getSut(): AbstractCode
@@ -104,16 +85,19 @@ abstract class AbstractCodeTest extends TestWithMockery
     public function All_public_constants_can_be_given_by_getter()
     {
         $sutClass = self::getSutClass();
-        $constantValues = (new \ReflectionClass($sutClass))->getConstants();
-        self::assertCount(count($constantValues), array_unique($constantValues));
-        sort($constantValues); // re-index by numbers
-        /** @var string[] $givenValues */
+        $constants = (new \ReflectionClass($sutClass))->getConstants();
+        self::assertCount(count($constants), array_unique($constants));
         $givenValues = $sutClass::getPossibleValues();
         $expectedIndex = 0;
         foreach ($givenValues as $index => $value) {
             self::assertSame($expectedIndex, $index, 'Indexes of all values should be continual.');
             $expectedIndex++;
+            $constantName = strtoupper($value);
+            self::assertArrayHasKey($constantName, $constants);
+            self::assertSame($constants[$constantName], $value);
         }
+        $constantValues = array_values($constants);
+        sort($constantValues);
         sort($givenValues);
         self::assertSame(
             $constantValues,
@@ -158,10 +142,15 @@ PHPDOC
 
     /**
      * @test
-     * @expectedException \DrdPlus\Codes\Partials\Exceptions\MethodRequiresOverride
      */
-    public function I_can_not_call_its_possible_values_as_they_are_not_yet_defined()
+    public function I_can_call_its_possible_values_even_if_they_are_empty()
     {
-        AbstractCode::getPossibleValues();
+        $sutClass = self::getSutClass();
+        self::assertEmpty(
+            array_diff(
+                array_values((new \ReflectionClass($sutClass))->getConstants()),
+                $sutClass::getPossibleValues()
+            )
+        );
     }
 }

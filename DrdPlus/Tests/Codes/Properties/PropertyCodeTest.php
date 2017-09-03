@@ -3,9 +3,9 @@ namespace DrdPlus\Tests\Codes\Properties;
 
 use DrdPlus\Codes\Properties\PropertyCode;
 use DrdPlus\Codes\Properties\RemarkableSenseCode;
-use DrdPlus\Tests\Codes\AbstractCodeTest;
+use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
 
-class PropertyCodeTest extends AbstractCodeTest
+class PropertyCodeTest extends TranslatableCodeTest
 {
     /**
      * @test
