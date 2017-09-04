@@ -14,9 +14,13 @@ class TranslatableCodeTest extends AbstractCodeTest
         /** @var TranslatableCode $sutClass */
         $sutClass = self::getSutClass();
         self::assertNotContains('foo', $sutClass::getPossibleValues());
-        $sutClass::extendByCustomValue('foo', []);
+        self::assertTrue($sutClass::extendByCustomValue('foo', []));
+        self::assertFalse(
+            $sutClass::extendByCustomValue('foo', ['one' => 'foo']),
+            'Same custom code to register should be skipped'
+        );
         self::assertContains('foo', $sutClass::getPossibleValues());
-        $sutClass::extendByCustomValue('bar', ['cs' => ['one' => 'taková laťka']]);
+        self::assertTrue($sutClass::extendByCustomValue('bar', ['cs' => ['few' => 'taková laťka']]));
         self::assertContains('bar', $sutClass::getPossibleValues());
         if ((new \ReflectionClass($sutClass))->isAbstract()) {
             return;
@@ -85,5 +89,88 @@ class TranslatableCodeTest extends AbstractCodeTest
             return;
         }
         parent::I_can_use_code_object_as_its_string_value();
+    }
+
+    /**
+     * @test
+     * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidLanguageCode
+     * @expectedExceptionMessageRegExp ~a1~
+     */
+    public function I_can_not_use_invalid_language_code_format_for_custom_code()
+    {
+        /** @var TranslatableCode $sutClass */
+        $sutClass = self::getSutClass();
+        try {
+            self::assertTrue(
+                $sutClass::extendByCustomValue('baz', ['cs' => ['one' => 'štěstí']]),
+                'Code should not be already registered for this test'
+            );
+        } catch (\Exception $exception) {
+            self::fail('No exception expected so far: ' . $exception->getMessage());
+        }
+        self::assertTrue(
+            $sutClass::extendByCustomValue('qux', ['a1' => 'anything here']),
+            'Code should not be already registered for this test'
+        );
+    }
+
+    /**
+     * @test
+     * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
+     * @expectedExceptionMessageRegExp ~this should be array~
+     */
+    public function I_can_not_use_invalid_data_format_of_translations_for_custom_code()
+    {
+        /** @var TranslatableCode $sutClass */
+        $sutClass = self::getSutClass();
+        self::assertTrue(
+            $sutClass::extendByCustomValue('foobar', ['uk' => 'this should be array']),
+            'Code should not be already registered for this test'
+        );
+    }
+
+    /**
+     * @test
+     * @expectedException \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
+     * @expectedExceptionMessageRegExp ~all~
+     */
+    public function I_can_not_use_invalid_plural_for_translation_of_custom_code()
+    {
+        /** @var TranslatableCode $sutClass */
+        $sutClass = self::getSutClass();
+        self::assertTrue(
+            $sutClass::extendByCustomValue('foobaz', ['cs' => ['all' => 'have I missed something?']]),
+            'Code should not be already registered for this test'
+        );
+    }
+
+    /**
+     * @test
+     * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
+     * @expectedExceptionMessageRegExp ~NULL~
+     */
+    public function I_can_not_use_non_string_for_translation_of_custom_code()
+    {
+        /** @var TranslatableCode $sutClass */
+        $sutClass = self::getSutClass();
+        self::assertTrue(
+            $sutClass::extendByCustomValue('fooqux', ['cs' => ['one' => null]]),
+            'Code should not be already registered for this test'
+        );
+    }
+
+    /**
+     * @test
+     * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
+     * @expectedExceptionMessageRegExp ~''~
+     */
+    public function I_can_not_use_empty_string_for_translation_of_custom_code()
+    {
+        /** @var TranslatableCode $sutClass */
+        $sutClass = self::getSutClass();
+        self::assertTrue(
+            $sutClass::extendByCustomValue('barfoo', ['cs' => ['one' => '']]),
+            'Code should not be already registered for this test'
+        );
     }
 }

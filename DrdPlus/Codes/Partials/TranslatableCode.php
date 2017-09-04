@@ -166,6 +166,12 @@ abstract class TranslatableCode extends AbstractCode implements Translatable
                     var_export($languageCode, true)
                 );
             }
+            if (!is_array($languageTranslations)) {
+                throw new Exceptions\InvalidTranslationFormat(
+                    'Expected array of translations for singular and plural, got '
+                    . ValueDescriber::describe($languageTranslations) . ' for language ' . $languageCode
+                );
+            }
             foreach ($languageTranslations as $plural => $translation) {
                 if (!in_array($plural, [self::$ONE, self::$FEW, self::$FEW_DECIMAL, self::$MANY], true)) {
                     throw new Exceptions\UnknownTranslationPlural(
