@@ -6,6 +6,14 @@ use DrdPlus\Tests\Codes\AbstractCodeTest;
 
 class TranslatableCodeTest extends AbstractCodeTest
 {
+    public function Method_to_get_default_values_is_not_public()
+    {
+        $sutClass = self::getSutClass();
+        $reflectionClass = new \ReflectionClass($sutClass);
+        $getDefaultValues = $reflectionClass->getMethod('getDefaultValues');
+        self::assertFalse($getDefaultValues->isPublic(), "Method $sutClass::getDefaultValues is not intended to be public");
+    }
+
     /**
      * @test
      */
@@ -17,7 +25,7 @@ class TranslatableCodeTest extends AbstractCodeTest
         self::assertTrue($sutClass::extendByCustomValue('foo', []));
         self::assertFalse(
             $sutClass::extendByCustomValue('foo', ['en' => ['one' => 'foo']]),
-            'Same custom code to register should be skipped'
+            'Same custom code to register should be skipped. Have you overloaded getDefaultValues method?'
         );
         self::assertContains('foo', $sutClass::getPossibleValues());
         self::assertTrue($sutClass::extendByCustomValue('bar', ['cs' => ['one' => 'taková laťka']]));

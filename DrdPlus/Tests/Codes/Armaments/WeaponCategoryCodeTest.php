@@ -2,9 +2,9 @@
 namespace DrdPlus\Tests\Codes\Armaments;
 
 use DrdPlus\Codes\Armaments\WeaponCategoryCode;
-use DrdPlus\Tests\Codes\AbstractCodeTest;
+use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
 
-class WeaponCategoryCodeTest extends AbstractCodeTest
+class WeaponCategoryCodeTest extends TranslatableCodeTest
 {
     /**
      * @test

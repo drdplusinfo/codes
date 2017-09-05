@@ -1,9 +1,9 @@
 <?php
 namespace DrdPlus\Tests\Codes\Transport;
 
-use DrdPlus\Tests\Codes\AbstractCodeTest;
+use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
 
-class RidingAnimalCodeTest extends AbstractCodeTest
+class RidingAnimalCodeTest extends TranslatableCodeTest
 {
 
 }

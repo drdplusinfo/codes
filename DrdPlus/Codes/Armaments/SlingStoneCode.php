@@ -12,7 +12,7 @@ class SlingStoneCode extends ProjectileCode
     /**
      * @return array|string[]
      */
-    public static function getPossibleValues(): array
+    protected static function getDefaultValues(): array
     {
         return [
             self::SLING_STONE_LIGHT,
@@ -42,6 +42,11 @@ class SlingStoneCode extends ProjectileCode
     public function isDart(): bool
     {
         return false;
+    }
+
+    protected function getTranslationsFileName(): string
+    {
+        return __DIR__ . '/translations/sling_stone.csv';
     }
 
 }

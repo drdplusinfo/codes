@@ -2,9 +2,9 @@
 namespace DrdPlus\Tests\Codes\Transport;
 
 use DrdPlus\Codes\Transport\RidingAnimalMovementCode;
-use DrdPlus\Tests\Codes\AbstractCodeTest;
+use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
 
-class RidingAnimalMovementCodeTest extends AbstractCodeTest
+class RidingAnimalMovementCodeTest extends TranslatableCodeTest
 {
     /**
      * @test
@@ -16,6 +16,9 @@ class RidingAnimalMovementCodeTest extends AbstractCodeTest
         $withoutJumping = array_filter($allValues, function (string $movement) {
             return $movement !== RidingAnimalMovementCode::JUMPING;
         });
+        self::assertSame($withoutJumping, RidingAnimalMovementCode::getPossibleValuesWithoutJumping());
+        RidingAnimalMovementCode::extendByCustomValue('slink', []);
+        $withoutJumping[] = 'slink';
         self::assertSame($withoutJumping, RidingAnimalMovementCode::getPossibleValuesWithoutJumping());
     }
 }

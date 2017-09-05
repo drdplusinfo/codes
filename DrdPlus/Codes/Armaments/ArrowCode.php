@@ -18,7 +18,7 @@ class ArrowCode extends ProjectileCode
     /**
      * @return array|string[]
      */
-    public static function getPossibleValues(): array
+    protected static function getDefaultValues(): array
     {
         return [
             self::BASIC_ARROW,
@@ -54,6 +54,11 @@ class ArrowCode extends ProjectileCode
     public function isSlingStone(): bool
     {
         return false;
+    }
+
+    protected function getTranslationsFileName(): string
+    {
+        return __DIR__ . '/translations/arrow_code.csv';
     }
 
 }

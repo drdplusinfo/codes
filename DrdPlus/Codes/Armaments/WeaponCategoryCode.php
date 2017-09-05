@@ -83,7 +83,8 @@ class WeaponCategoryCode extends TranslatableCode
         return array_merge(
             self::getMeleeWeaponCategoryValues(),
             self::getRangedWeaponCategoryValues(),
-            self::getProjectilesCategoryValues()
+            self::getProjectilesCategoryValues(),
+            self::getCustomValues()
         );
     }
 

@@ -1,9 +1,9 @@
 <?php
 namespace DrdPlus\Codes\Armaments;
 
-use DrdPlus\Codes\Partials\AbstractCode;
+use DrdPlus\Codes\Partials\FileBasedTranslatableCode;
 
-abstract class ProjectileCode extends AbstractCode implements ArmamentCode
+abstract class ProjectileCode extends FileBasedTranslatableCode implements ArmamentCode
 {
     /**
      * @return bool

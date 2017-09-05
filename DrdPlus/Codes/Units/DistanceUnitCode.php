@@ -15,7 +15,7 @@ class DistanceUnitCode extends TranslatableCode
     /**
      * @return array|string[]
      */
-    public static function getPossibleValues(): array
+    public static function getDefaultValues(): array
     {
         return [
             self::METER,

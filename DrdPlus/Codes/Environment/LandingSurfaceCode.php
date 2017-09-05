@@ -21,7 +21,7 @@ class LandingSurfaceCode extends FileBasedTranslatableCode
     /**
      * @return array|string[]
      */
-    public static function getPossibleValues(): array
+    protected static function getDefaultValues(): array
     {
         return [
             self::DEEP_POWDER,

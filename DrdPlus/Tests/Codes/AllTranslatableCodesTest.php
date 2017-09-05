@@ -1,12 +1,13 @@
 <?php
 namespace DrdPlus\Tests\Codes;
 
-use DrdPlus\Codes\Armaments\ArmorCode;
 use DrdPlus\Codes\Armaments\ShieldCode;
 use DrdPlus\Codes\Environment\LandingSurfaceCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Partials\TranslatableCode;
 use DrdPlus\Codes\Skills\SkillCode;
+use DrdPlus\Codes\Skills\SkillTypeCode;
+use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
 use Granam\Tests\Tools\TestWithMockery;
 
 class AllTranslatableCodesTest extends TestWithMockery
@@ -19,6 +20,11 @@ class AllTranslatableCodesTest extends TestWithMockery
     public function I_can_get_its_english_translation()
     {
         foreach ($this->getTranslatableCodeClasses() as $codeClass) {
+            $testClass = $this->getTestClass($codeClass);
+            self::assertTrue(
+                is_a($testClass, TranslatableCodeTest::class, true),
+                "Test class $testClass should be a descendant of " . TranslatableCodeTest::class
+            );
             $hasSinglesOnly = $this->hasSinglesOnly($codeClass);
             foreach ($codeClass::getPossibleValues() as $value) {
                 /** @var TranslatableCode $sut */
@@ -50,7 +56,7 @@ class AllTranslatableCodesTest extends TestWithMockery
 
     protected function hasSinglesOnly(string $codeClass): bool
     {
-        foreach ([SkillCode::class, ArmorCode::class, ShieldCode::class, ItemHoldingCode::class, LandingSurfaceCode::class] as $singleOnlyClass) {
+        foreach ([SkillTypeCode::class, SkillCode::class, ShieldCode::class, ItemHoldingCode::class, LandingSurfaceCode::class] as $singleOnlyClass) {
             if (is_a($codeClass, $singleOnlyClass, true)) {
                 return true;
             }
@@ -73,6 +79,14 @@ class AllTranslatableCodesTest extends TestWithMockery
         }
 
         return $translatableCodeClasses;
+    }
+
+    private function getTestClass(string $codeClass): string
+    {
+        $testClass = str_replace('DrdPlus\\', 'DrdPlus\Tests\\', $codeClass) . 'Test';
+        self::assertTrue(class_exists($testClass), "Estimated test class $testClass does not exists");
+
+        return $testClass;
     }
 
     /**
@@ -181,6 +195,8 @@ class AllTranslatableCodesTest extends TestWithMockery
             'kněží',
             'pony',
             'stání',
+            'beze zbrojí',
+            'bez helem',
         ];
     }
 

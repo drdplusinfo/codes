@@ -1,9 +1,9 @@
 <?php
 namespace DrdPlus\Tests\Codes\Units;
 
-use DrdPlus\Tests\Codes\AbstractCodeTest;
+use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
 
-class TimeUnitCodeTest extends AbstractCodeTest
+class TimeUnitCodeTest extends TranslatableCodeTest
 {
 
 }

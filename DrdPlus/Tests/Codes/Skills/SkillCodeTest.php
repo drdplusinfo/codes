@@ -2,9 +2,9 @@
 namespace DrdPlus\Tests\Codes\Skills;
 
 use DrdPlus\Codes\Code;
-use DrdPlus\Tests\Codes\AbstractCodeTest;
+use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
 
-abstract class SkillCodeTest extends AbstractCodeTest
+abstract class SkillCodeTest extends TranslatableCodeTest
 {
     /**
      * @test

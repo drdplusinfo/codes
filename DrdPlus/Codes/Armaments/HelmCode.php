@@ -18,7 +18,7 @@ class HelmCode extends ArmorCode
     /**
      * @return array|string[]
      */
-    public static function getPossibleValues(): array
+    protected static function getDefaultValues(): array
     {
         return [
             self::WITHOUT_HELM,
@@ -47,30 +47,8 @@ class HelmCode extends ArmorCode
         return false;
     }
 
-    private static $translations = [
-        'en' => [
-            self::WITHOUT_HELM => ['one' => 'without helm'],
-            self::LEATHER_CAP => ['one' => 'leather cap'],
-            self::CHAINMAIL_HOOD => ['one' => 'chainmail hood'],
-            self::CONICAL_HELM => ['one' => 'conical helm'],
-            self::FULL_HELM => ['one' => 'full helm'],
-            self::BARREL_HELM => ['one' => 'barrel helm'],
-            self::GREAT_HELM => ['one' => 'great helm'],
-        ],
-        'cs' => [
-            self::WITHOUT_HELM => ['one' => 'bez helmy'],
-            self::LEATHER_CAP => ['one' => 'kožená čapka'],
-            self::CHAINMAIL_HOOD => ['one' => 'kroužková kukla'],
-            self::CONICAL_HELM => ['one' => 'konická helma'],
-            self::FULL_HELM => ['one' => 'plná přilba'],
-            self::BARREL_HELM => ['one' => 'hrcová přilba'],
-            self::GREAT_HELM => ['one' => 'kbelcová přilba'],
-        ],
-    ];
-
-    protected function fetchTranslations(): array
+    protected function getTranslationsFileName(): string
     {
-        return self::$translations;
+        return __DIR__ . '/translations/helm_code.csv';
     }
-
 }

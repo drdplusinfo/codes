@@ -33,7 +33,7 @@ class CombinedSkillCode extends SkillCode
     /**
      * @return array|string[]
      */
-    public static function getPossibleValues(): array
+    protected static function getDefaultValues(): array
     {
         return [
             self::BIG_HANDWORK,

@@ -18,7 +18,7 @@ class RidingAnimalMovementCode extends FileBasedTranslatableCode
     /**
      * @return array|string[]
      */
-    public static function getPossibleValues(): array
+    public static function getDefaultValues(): array
     {
         return [
             self::STILL,
@@ -35,13 +35,7 @@ class RidingAnimalMovementCode extends FileBasedTranslatableCode
      */
     public static function getPossibleValuesWithoutJumping(): array
     {
-        return [
-            self::STILL,
-            self::GAIT,
-            self::TROT,
-            self::CANTER,
-            self::GALLOP,
-        ];
+        return array_values(array_diff(static::getPossibleValues(), [self::JUMPING]));
     }
 
     protected function getTranslationsFileName(): string

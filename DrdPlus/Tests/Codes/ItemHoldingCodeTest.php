@@ -2,8 +2,9 @@
 namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\ItemHoldingCode;
+use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
 
-class ItemHoldingCodeTest extends AbstractCodeTest
+class ItemHoldingCodeTest extends TranslatableCodeTest
 {
     /**
      * @test
