@@ -21,7 +21,12 @@ abstract class TranslatableCode extends AbstractCode implements Translatable
 
     public static function getPossibleValues(): array
     {
-        return array_merge(parent::getPossibleValues(), static::getCustomValues());
+        return array_merge(static::getDefaultValues(), static::getCustomValues());
+    }
+
+    protected static function getDefaultValues(): array
+    {
+        return parent::getPossibleValues();
     }
 
     protected static function getCustomValues(): array

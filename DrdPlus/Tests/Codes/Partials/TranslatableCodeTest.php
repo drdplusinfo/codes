@@ -16,11 +16,11 @@ class TranslatableCodeTest extends AbstractCodeTest
         self::assertNotContains('foo', $sutClass::getPossibleValues());
         self::assertTrue($sutClass::extendByCustomValue('foo', []));
         self::assertFalse(
-            $sutClass::extendByCustomValue('foo', ['one' => 'foo']),
+            $sutClass::extendByCustomValue('foo', ['en' => ['one' => 'foo']]),
             'Same custom code to register should be skipped'
         );
         self::assertContains('foo', $sutClass::getPossibleValues());
-        self::assertTrue($sutClass::extendByCustomValue('bar', ['cs' => ['few' => 'taková laťka']]));
+        self::assertTrue($sutClass::extendByCustomValue('bar', ['cs' => ['one' => 'taková laťka']]));
         self::assertContains('bar', $sutClass::getPossibleValues());
         if ((new \ReflectionClass($sutClass))->isAbstract()) {
             return;
