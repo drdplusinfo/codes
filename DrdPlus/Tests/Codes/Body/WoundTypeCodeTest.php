@@ -2,9 +2,9 @@
 namespace DrdPlus\Tests\Codes\Body;
 
 use DrdPlus\Codes\Body\WoundTypeCode;
-use DrdPlus\Tests\Codes\AbstractCodeTest;
+use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
 
-class WoundTypeCodeTest extends AbstractCodeTest
+class WoundTypeCodeTest extends TranslatableCodeTest
 {
     /**
      * @test
