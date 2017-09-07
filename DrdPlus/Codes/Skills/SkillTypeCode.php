@@ -15,7 +15,7 @@ class SkillTypeCode extends TranslatableCode
     /**
      * @return array|string[]
      */
-    protected static function getDefaultValues(): array
+    public static function getPossibleValues(): array
     {
         return [self::PHYSICAL, self::PSYCHICAL, self::COMBINED];
     }

@@ -14,7 +14,7 @@ class SpeedUnitCode extends TranslatableCode
     /**
      * @return array|string[]
      */
-    protected static function getDefaultValues(): array
+    public static function getPossibleValues(): array
     {
         return [
             self::METER_PER_ROUND,
@@ -22,22 +22,20 @@ class SpeedUnitCode extends TranslatableCode
         ];
     }
 
-    private static $translations = [
-        'en' => [
-            self::METER_PER_ROUND => ['one' => 'meter per round', 'few' => 'meters per round', 'many' => 'meters per round'],
-            self::KILOMETER_PER_HOUR => ['one' => 'kilometer per hour', 'few' => 'kilometers per hour', 'many' => 'kilometers per hour'],
-        ],
-        'cs' => [
-            self::METER_PER_ROUND => ['one' => 'metr za kolo', 'few' => 'metry za kolo', 'many' => 'metrů za kolo'],
-            self::KILOMETER_PER_HOUR => ['one' => 'kilometr za hodinu', 'few' => 'kilometry za hodinu', 'many' => 'kilometrů za hodinu'],
-        ],
-    ];
-
     /**
      * @return array|string[]
      */
     protected function fetchTranslations(): array
     {
-        return self::$translations;
+        return [
+            'en' => [
+                self::METER_PER_ROUND => ['one' => 'meter per round', 'few' => 'meters per round', 'many' => 'meters per round'],
+                self::KILOMETER_PER_HOUR => ['one' => 'kilometer per hour', 'few' => 'kilometers per hour', 'many' => 'kilometers per hour'],
+            ],
+            'cs' => [
+                self::METER_PER_ROUND => ['one' => 'metr za kolo', 'few' => 'metry za kolo', 'many' => 'metrů za kolo'],
+                self::KILOMETER_PER_HOUR => ['one' => 'kilometr za hodinu', 'few' => 'kilometry za hodinu', 'many' => 'kilometrů za hodinu'],
+            ],
+        ];
     }
 }

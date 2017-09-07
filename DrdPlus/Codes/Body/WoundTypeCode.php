@@ -15,7 +15,7 @@ class WoundTypeCode extends TranslatableCode
     /**
      * @return array|string
      */
-    protected static function getDefaultValues(): array
+    public static function getPossibleValues(): array
     {
         return [
             self::CRUSH,
@@ -63,5 +63,4 @@ class WoundTypeCode extends TranslatableCode
             ],
         ];
     }
-
 }

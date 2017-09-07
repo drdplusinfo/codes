@@ -1,12 +1,12 @@
 <?php
 namespace DrdPlus\Codes\Armaments;
 
-use DrdPlus\Codes\Partials\TranslatableCode;
+use DrdPlus\Codes\Partials\TranslatableExtendableCode;
 
 /**
  * @method static ShieldCode getIt($codeValue)
  */
-class ShieldCode extends TranslatableCode implements MeleeWeaponlikeCode, ProtectiveArmamentCode
+class ShieldCode extends TranslatableExtendableCode implements MeleeWeaponlikeCode, ProtectiveArmamentCode
 {
     const WITHOUT_SHIELD = 'without_shield';
     const BUCKLER = 'buckler';
@@ -148,28 +148,26 @@ class ShieldCode extends TranslatableCode implements MeleeWeaponlikeCode, Protec
         return $this->getValue() === self::WITHOUT_SHIELD;
     }
 
-    private static $translations = [
-        'en' => [
-            self::WITHOUT_SHIELD => ['one' => 'without shield'],
-            self::BUCKLER => ['one' => 'buckler'],
-            self::SMALL_SHIELD => ['one' => 'small shield'],
-            self::MEDIUM_SHIELD => ['one' => 'medium shield'],
-            self::HEAVY_SHIELD => ['one' => 'heavy shield'],
-            self::PAVISE => ['one' => 'pavise'],
-        ],
-        'cs' => [
-            self::WITHOUT_SHIELD => ['one' => 'bez štítu'],
-            self::BUCKLER => ['one' => 'pěstní štítek'],
-            self::SMALL_SHIELD => ['one' => 'malý štít'],
-            self::MEDIUM_SHIELD => ['one' => 'střední štít'],
-            self::HEAVY_SHIELD => ['one' => 'velký štít'],
-            self::PAVISE => ['one' => 'pavéza'],
-        ],
-    ];
-
     protected function fetchTranslations(): array
     {
-        return self::$translations;
+        return [
+            'en' => [
+                self::WITHOUT_SHIELD => ['one' => 'without shield'],
+                self::BUCKLER => ['one' => 'buckler'],
+                self::SMALL_SHIELD => ['one' => 'small shield'],
+                self::MEDIUM_SHIELD => ['one' => 'medium shield'],
+                self::HEAVY_SHIELD => ['one' => 'heavy shield'],
+                self::PAVISE => ['one' => 'pavise'],
+            ],
+            'cs' => [
+                self::WITHOUT_SHIELD => ['one' => 'bez štítu'],
+                self::BUCKLER => ['one' => 'pěstní štítek'],
+                self::SMALL_SHIELD => ['one' => 'malý štít'],
+                self::MEDIUM_SHIELD => ['one' => 'střední štít'],
+                self::HEAVY_SHIELD => ['one' => 'velký štít'],
+                self::PAVISE => ['one' => 'pavéza'],
+            ],
+        ];
     }
 
 }

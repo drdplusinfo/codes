@@ -19,7 +19,7 @@ class ProfessionCode extends TranslatableCode
     /**
      * @return array|string[]
      */
-    protected static function getDefaultValues(): array
+    public static function getPossibleValues(): array
     {
         return [
             self::COMMONER,
@@ -32,30 +32,28 @@ class ProfessionCode extends TranslatableCode
         ];
     }
 
-    private static $translations = [
-        'cs' => [
-            self::COMMONER => ['one' => 'obyvatel', 'few' => 'obyvatelé', 'many' => 'obyvatelů'],
-            self::FIGHTER => ['one' => 'bojovník', 'few' => 'bojovníci', 'many' => 'bojovníků'],
-            self::THIEF => ['one' => 'zloděj', 'few' => 'zloději', 'many' => 'zlodějů'],
-            self::RANGER => ['one' => 'hraničář', 'few' => 'hraničáři', 'many' => 'hraničářů'],
-            self::WIZARD => ['one' => 'čaroděj', 'few' => 'čarodějové', 'many' => 'čarodějů'],
-            self::THEURGIST => ['one' => 'theurg', 'few' => 'theurgové', 'many' => 'theurgů'],
-            self::PRIEST => ['one' => 'kněz', 'few' => 'kněží', 'many' => 'kněží'],
-        ],
-        'en' => [
-            self::COMMONER => ['one' => 'commoner', 'few' => 'commoners', 'many' => 'commoners'],
-            self::FIGHTER => ['one' => 'fighter', 'few' => 'fighters', 'many' => 'fighters'],
-            self::THIEF => ['one' => 'thief', 'few' => 'thieves', 'many' => 'thieves'],
-            self::RANGER => ['one' => 'ranger', 'few' => 'rangers', 'many' => 'rangers'],
-            self::WIZARD => ['one' => 'wizard', 'few' => 'wizards', 'many' => 'wizards'],
-            self::THEURGIST => ['one' => 'theurgist', 'few' => 'theurgists', 'many' => 'theurgists'],
-            self::PRIEST => ['one' => 'priest', 'few' => 'priests', 'many' => 'priests'],
-        ],
-    ];
-
     protected function fetchTranslations(): array
     {
-        return self::$translations;
+        return [
+            'cs' => [
+                self::COMMONER => ['one' => 'obyvatel', 'few' => 'obyvatelé', 'many' => 'obyvatelů'],
+                self::FIGHTER => ['one' => 'bojovník', 'few' => 'bojovníci', 'many' => 'bojovníků'],
+                self::THIEF => ['one' => 'zloděj', 'few' => 'zloději', 'many' => 'zlodějů'],
+                self::RANGER => ['one' => 'hraničář', 'few' => 'hraničáři', 'many' => 'hraničářů'],
+                self::WIZARD => ['one' => 'čaroděj', 'few' => 'čarodějové', 'many' => 'čarodějů'],
+                self::THEURGIST => ['one' => 'theurg', 'few' => 'theurgové', 'many' => 'theurgů'],
+                self::PRIEST => ['one' => 'kněz', 'few' => 'kněží', 'many' => 'kněží'],
+            ],
+            'en' => [
+                self::COMMONER => ['one' => 'commoner', 'few' => 'commoners', 'many' => 'commoners'],
+                self::FIGHTER => ['one' => 'fighter', 'few' => 'fighters', 'many' => 'fighters'],
+                self::THIEF => ['one' => 'thief', 'few' => 'thieves', 'many' => 'thieves'],
+                self::RANGER => ['one' => 'ranger', 'few' => 'rangers', 'many' => 'rangers'],
+                self::WIZARD => ['one' => 'wizard', 'few' => 'wizards', 'many' => 'wizards'],
+                self::THEURGIST => ['one' => 'theurgist', 'few' => 'theurgists', 'many' => 'theurgists'],
+                self::PRIEST => ['one' => 'priest', 'few' => 'priests', 'many' => 'priests'],
+            ],
+        ];
     }
 
 }

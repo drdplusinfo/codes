@@ -18,7 +18,7 @@ class WeightUnitCode extends TranslatableCode
         ];
     }
 
-    protected static function getDefaultValues(): array
+    public static function getPossibleValues(): array
     {
         return [self::KG];
     }

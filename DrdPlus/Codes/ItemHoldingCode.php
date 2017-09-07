@@ -15,7 +15,7 @@ class ItemHoldingCode extends TranslatableCode
     /**
      * @return array|string[]
      */
-    protected static function getDefaultValues(): array
+    public static function getPossibleValues(): array
     {
         return [
             self::TWO_HANDS,
@@ -74,22 +74,20 @@ class ItemHoldingCode extends TranslatableCode
         return self::getIt(self::MAIN_HAND);
     }
 
-    private static $translations = [
-        'en' => [
-            self::TWO_HANDS => ['one' => 'two hands'],
-            self::MAIN_HAND => ['one' => 'main hand'],
-            self::OFFHAND => ['one' => 'offhand'],
-        ],
-        'cs' => [
-            self::TWO_HANDS => ['one' => 'obouručně'],
-            self::MAIN_HAND => ['one' => 'v dominantní ruce'],
-            self::OFFHAND => ['one' => 'v druhé ruce'],
-        ],
-    ];
-
     protected function fetchTranslations(): array
     {
-        return self::$translations;
+        return [
+            'en' => [
+                self::TWO_HANDS => ['one' => 'two hands'],
+                self::MAIN_HAND => ['one' => 'main hand'],
+                self::OFFHAND => ['one' => 'offhand'],
+            ],
+            'cs' => [
+                self::TWO_HANDS => ['one' => 'obouručně'],
+                self::MAIN_HAND => ['one' => 'v dominantní ruce'],
+                self::OFFHAND => ['one' => 'v druhé ruce'],
+            ],
+        ];
     }
 
 }

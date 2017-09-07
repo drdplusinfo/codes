@@ -1,9 +1,9 @@
 <?php
 namespace DrdPlus\Codes\Armaments;
 
-use DrdPlus\Codes\Partials\FileBasedTranslatableCode;
+use DrdPlus\Codes\Partials\FileBasedTranslatableExtendableCode;
 
-abstract class ArmorCode extends FileBasedTranslatableCode implements ProtectiveArmamentCode
+abstract class ArmorCode extends FileBasedTranslatableExtendableCode implements ProtectiveArmamentCode
 {
     /**
      * @return bool

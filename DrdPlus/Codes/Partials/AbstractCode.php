@@ -19,12 +19,12 @@ abstract class AbstractCode extends ScalarEnum implements Code
      */
     public static function getPossibleValues(): array
     {
-        if (static::$possibleValues === null) {
+        if ((static::$possibleValues[static::class] ?? null) === null) {
             $reflectionClass = new \ReflectionClass(static::class);
-            static::$possibleValues = $reflectionClass->getConstants();
+            static::$possibleValues[static::class] = array_values($reflectionClass->getConstants());
         }
 
-        return static::$possibleValues;
+        return static::$possibleValues[static::class];
     }
 
     /**

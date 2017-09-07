@@ -15,7 +15,7 @@ class DistanceUnitCode extends TranslatableCode
     /**
      * @return array|string[]
      */
-    public static function getDefaultValues(): array
+    public static function getPossibleValues(): array
     {
         return [
             self::METER,
@@ -24,24 +24,22 @@ class DistanceUnitCode extends TranslatableCode
         ];
     }
 
-    private static $translations = [
-        'en' => [
-            self::METER => ['one' => 'meter', 'one_decimal' => 'meter', 'few' => 'meters', 'many' => 'meters'],
-            self::KILOMETER => ['one' => 'kilometer', 'few' => 'kilometers', 'many' => 'kilometers'],
-            self::LIGHT_YEAR => ['one' => 'light year', 'few' => 'light years', 'many' => 'light years'],
-        ],
-        'cs' => [
-            self::METER => ['one' => 'metr', 'few' => 'metry', 'few_decimal' => 'metru', 'many' => 'metrů'],
-            self::KILOMETER => ['one' => 'kilometr', 'few' => 'kilometry', 'few_decimal' => 'kilometru', 'many' => 'kilometrů'],
-            self::LIGHT_YEAR => ['one' => 'světelný rok', 'few' => 'světelné roky', 'few_decimal' => 'světelného roku', 'many' => 'světelných let'],
-        ],
-    ];
-
     /**
      * @return array|string[]
      */
     protected function fetchTranslations(): array
     {
-        return self::$translations;
+        return [
+            'en' => [
+                self::METER => ['one' => 'meter', 'one_decimal' => 'meter', 'few' => 'meters', 'many' => 'meters'],
+                self::KILOMETER => ['one' => 'kilometer', 'few' => 'kilometers', 'many' => 'kilometers'],
+                self::LIGHT_YEAR => ['one' => 'light year', 'few' => 'light years', 'many' => 'light years'],
+            ],
+            'cs' => [
+                self::METER => ['one' => 'metr', 'few' => 'metry', 'few_decimal' => 'metru', 'many' => 'metrů'],
+                self::KILOMETER => ['one' => 'kilometr', 'few' => 'kilometry', 'few_decimal' => 'kilometru', 'many' => 'kilometrů'],
+                self::LIGHT_YEAR => ['one' => 'světelný rok', 'few' => 'světelné roky', 'few_decimal' => 'světelného roku', 'many' => 'světelných let'],
+            ],
+        ];
     }
 }

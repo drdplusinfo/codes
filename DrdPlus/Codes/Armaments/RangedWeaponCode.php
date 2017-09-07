@@ -173,56 +173,54 @@ class RangedWeaponCode extends WeaponCode
         return false;
     }
 
-    private static $translations = [
-        'en' => [
-            self::SHORT_BOW => ['one' => 'short bow', 'few' => 'short bows', 'many' => 'short bows'],
-            self::LONG_BOW => ['one' => 'long bow', 'few' => 'long bows', 'many' => 'long bows'],
-            self::SHORT_COMPOSITE_BOW => ['one' => 'short composite bow', 'few' => 'short composite bows', 'many' => 'short composite bows'],
-            self::LONG_COMPOSITE_BOW => ['one' => 'long composite bow', 'few' => 'long composite bows', 'many' => 'long composite bows'],
-            self::POWER_BOW => ['one' => 'power bow', 'few' => 'power bows', 'many' => 'power bows'],
-            self::MINICROSSBOW => ['one' => 'minicrossbow', 'few' => 'minicrossbows', 'many' => 'minicrossbows'],
-            self::LIGHT_CROSSBOW => ['one' => 'light crossbow', 'few' => 'light crossbows', 'many' => 'light crossbows'],
-            self::MILITARY_CROSSBOW => ['one' => 'military crossbow', 'few' => 'military crossbows', 'many' => 'military crossbows'],
-            self::HEAVY_CROSSBOW => ['one' => 'heavy crossbow', 'few' => 'heavy crossbows', 'many' => 'heavy crossbows'],
-            self::SAND => ['one' => 'sand', 'few' => 'sands', 'many' => 'sands'],
-            self::ROCK => ['one' => 'rock', 'few' => 'rocks', 'many' => 'rocks'],
-            self::THROWING_DAGGER => ['one' => 'throwing dagger', 'few' => 'throwing daggers', 'many' => 'throwing daggers'],
-            self::LIGHT_THROWING_AXE => ['one' => 'light throwing axe', 'few' => 'light throwing axes', 'many' => 'light throwing axes'],
-            self::WAR_THROWING_AXE => ['one' => 'war throwing axe', 'few' => 'war throwing axes', 'many' => 'war throwing axes'],
-            self::THROWING_HAMMER => ['one' => 'throwing hammer', 'few' => 'throwing hammers', 'many' => 'throwing hammers'],
-            self::SHURIKEN => ['one' => 'shuriken', 'few' => 'shurikens', 'many' => 'shurikens'],
-            self::SPEAR => ['one' => 'spear', 'few' => 'spears', 'many' => 'spears'],
-            self::JAVELIN => ['one' => 'javelin', 'few' => 'javelins', 'many' => 'javelins'],
-            self::SLING => ['one' => 'sling', 'few' => 'slings', 'many' => 'slings'],
-        ],
-        'cs' => [
-            self::SHORT_BOW => ['one' => 'krátký luk', 'few' => 'krátké luky', 'many' => 'krátkých luků'],
-            self::LONG_BOW => ['one' => 'dlouhý luk', 'few' => 'dlouhé luky', 'many' => 'dlouhých luků'],
-            self::SHORT_COMPOSITE_BOW => ['one' => 'krátký skládaný luk', 'few' => 'krátké skládané luky', 'many' => 'krátkých skládaných luků'],
-            self::LONG_COMPOSITE_BOW => ['one' => 'dlouhý skládaný luk', 'few' => 'dlouhé skládané luky', 'many' => 'dlouhých skládaných luků'],
-            self::POWER_BOW => ['one' => 'silový luk', 'few' => 'silové luky', 'many' => 'silových luků'],
-            self::MINICROSSBOW => ['one' => 'minikuše', 'few' => 'minikuše', 'many' => 'minikuší'],
-            self::LIGHT_CROSSBOW => ['one' => 'lehká kuše', 'few' => 'lehké kuše', 'many' => 'lehkých kuší'],
-            self::MILITARY_CROSSBOW => ['one' => 'válečná kuše', 'few' => 'válečné kuše', 'many' => 'válečných kuší'],
-            self::HEAVY_CROSSBOW => ['one' => 'těžká kuše', 'few' => 'těžké kuše', 'many' => 'těžkých kuší'],
-            self::SAND => ['one' => 'písek', 'few' => 'písky', 'many' => 'písků'],
-            self::ROCK => ['one' => 'kámen', 'few' => 'kameny', 'many' => 'kamenů'],
-            self::THROWING_DAGGER => ['one' => 'vrhací dýka', 'few' => 'vrhací dýky', 'many' => 'vrhacích dýk'],
-            self::LIGHT_THROWING_AXE => ['one' => 'lehká vrhací sekera', 'few' => 'lehké vrhací sekery', 'many' => 'lehkých vrhacích seker'],
-            self::WAR_THROWING_AXE => ['one' => 'válečná vrhací sekera', 'few' => 'válečné vrhací sekery', 'many' => 'válečných vrhacích seker'],
-            self::THROWING_HAMMER => ['one' => 'vrhací kladivo', 'few' => 'vrhací kladiva', 'many' => 'vrhacích kladiv'],
-            self::SHURIKEN => ['one' => 'hvězdice', 'few' => 'hvězdice', 'many' => 'hvězdic'],
-            self::SPEAR => ['one' => 'kopí', 'few' => 'kopí', 'many' => 'kopí'],
-            self::JAVELIN => ['one' => 'oštěp', 'few' => 'oštěpy', 'many' => 'oštěpů'],
-            self::SLING => ['one' => 'prak', 'few' => 'praky', 'many' => 'praků'],
-        ],
-    ];
-
     /**
      * @return array|string[]
      */
     protected function fetchTranslations(): array
     {
-        return self::$translations;
+        return [
+            'en' => [
+                self::SHORT_BOW => ['one' => 'short bow', 'few' => 'short bows', 'many' => 'short bows'],
+                self::LONG_BOW => ['one' => 'long bow', 'few' => 'long bows', 'many' => 'long bows'],
+                self::SHORT_COMPOSITE_BOW => ['one' => 'short composite bow', 'few' => 'short composite bows', 'many' => 'short composite bows'],
+                self::LONG_COMPOSITE_BOW => ['one' => 'long composite bow', 'few' => 'long composite bows', 'many' => 'long composite bows'],
+                self::POWER_BOW => ['one' => 'power bow', 'few' => 'power bows', 'many' => 'power bows'],
+                self::MINICROSSBOW => ['one' => 'minicrossbow', 'few' => 'minicrossbows', 'many' => 'minicrossbows'],
+                self::LIGHT_CROSSBOW => ['one' => 'light crossbow', 'few' => 'light crossbows', 'many' => 'light crossbows'],
+                self::MILITARY_CROSSBOW => ['one' => 'military crossbow', 'few' => 'military crossbows', 'many' => 'military crossbows'],
+                self::HEAVY_CROSSBOW => ['one' => 'heavy crossbow', 'few' => 'heavy crossbows', 'many' => 'heavy crossbows'],
+                self::SAND => ['one' => 'sand', 'few' => 'sands', 'many' => 'sands'],
+                self::ROCK => ['one' => 'rock', 'few' => 'rocks', 'many' => 'rocks'],
+                self::THROWING_DAGGER => ['one' => 'throwing dagger', 'few' => 'throwing daggers', 'many' => 'throwing daggers'],
+                self::LIGHT_THROWING_AXE => ['one' => 'light throwing axe', 'few' => 'light throwing axes', 'many' => 'light throwing axes'],
+                self::WAR_THROWING_AXE => ['one' => 'war throwing axe', 'few' => 'war throwing axes', 'many' => 'war throwing axes'],
+                self::THROWING_HAMMER => ['one' => 'throwing hammer', 'few' => 'throwing hammers', 'many' => 'throwing hammers'],
+                self::SHURIKEN => ['one' => 'shuriken', 'few' => 'shurikens', 'many' => 'shurikens'],
+                self::SPEAR => ['one' => 'spear', 'few' => 'spears', 'many' => 'spears'],
+                self::JAVELIN => ['one' => 'javelin', 'few' => 'javelins', 'many' => 'javelins'],
+                self::SLING => ['one' => 'sling', 'few' => 'slings', 'many' => 'slings'],
+            ],
+            'cs' => [
+                self::SHORT_BOW => ['one' => 'krátký luk', 'few' => 'krátké luky', 'many' => 'krátkých luků'],
+                self::LONG_BOW => ['one' => 'dlouhý luk', 'few' => 'dlouhé luky', 'many' => 'dlouhých luků'],
+                self::SHORT_COMPOSITE_BOW => ['one' => 'krátký skládaný luk', 'few' => 'krátké skládané luky', 'many' => 'krátkých skládaných luků'],
+                self::LONG_COMPOSITE_BOW => ['one' => 'dlouhý skládaný luk', 'few' => 'dlouhé skládané luky', 'many' => 'dlouhých skládaných luků'],
+                self::POWER_BOW => ['one' => 'silový luk', 'few' => 'silové luky', 'many' => 'silových luků'],
+                self::MINICROSSBOW => ['one' => 'minikuše', 'few' => 'minikuše', 'many' => 'minikuší'],
+                self::LIGHT_CROSSBOW => ['one' => 'lehká kuše', 'few' => 'lehké kuše', 'many' => 'lehkých kuší'],
+                self::MILITARY_CROSSBOW => ['one' => 'válečná kuše', 'few' => 'válečné kuše', 'many' => 'válečných kuší'],
+                self::HEAVY_CROSSBOW => ['one' => 'těžká kuše', 'few' => 'těžké kuše', 'many' => 'těžkých kuší'],
+                self::SAND => ['one' => 'písek', 'few' => 'písky', 'many' => 'písků'],
+                self::ROCK => ['one' => 'kámen', 'few' => 'kameny', 'many' => 'kamenů'],
+                self::THROWING_DAGGER => ['one' => 'vrhací dýka', 'few' => 'vrhací dýky', 'many' => 'vrhacích dýk'],
+                self::LIGHT_THROWING_AXE => ['one' => 'lehká vrhací sekera', 'few' => 'lehké vrhací sekery', 'many' => 'lehkých vrhacích seker'],
+                self::WAR_THROWING_AXE => ['one' => 'válečná vrhací sekera', 'few' => 'válečné vrhací sekery', 'many' => 'válečných vrhacích seker'],
+                self::THROWING_HAMMER => ['one' => 'vrhací kladivo', 'few' => 'vrhací kladiva', 'many' => 'vrhacích kladiv'],
+                self::SHURIKEN => ['one' => 'hvězdice', 'few' => 'hvězdice', 'many' => 'hvězdic'],
+                self::SPEAR => ['one' => 'kopí', 'few' => 'kopí', 'many' => 'kopí'],
+                self::JAVELIN => ['one' => 'oštěp', 'few' => 'oštěpy', 'many' => 'oštěpů'],
+                self::SLING => ['one' => 'prak', 'few' => 'praky', 'many' => 'praků'],
+            ],
+        ];
     }
 }

@@ -8,6 +8,7 @@ use Granam\Tests\Tools\TestWithMockery;
 class AllCodesTest extends TestWithMockery
 {
     use GetCodeClassesTrait;
+
     /**
      * @test
      */
@@ -34,7 +35,7 @@ class AllCodesTest extends TestWithMockery
             asort($constants);
             $values = $codeClass::getPossibleValues();
             sort($values);
-            self::assertSame(array_values($constants), $values);
+            self::assertSame(array_values($constants), $values, 'Expected different possible values from code ' . $codeClass);
             foreach ($values as $value) {
                 $constantName = strtoupper($value);
                 self::assertArrayHasKey($constantName, $constants);

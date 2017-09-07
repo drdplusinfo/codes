@@ -17,8 +17,5 @@ class RidingAnimalMovementCodeTest extends TranslatableCodeTest
             return $movement !== RidingAnimalMovementCode::JUMPING;
         });
         self::assertSame($withoutJumping, RidingAnimalMovementCode::getPossibleValuesWithoutJumping());
-        RidingAnimalMovementCode::extendByCustomValue('slink', []);
-        $withoutJumping[] = 'slink';
-        self::assertSame($withoutJumping, RidingAnimalMovementCode::getPossibleValuesWithoutJumping());
     }
 }

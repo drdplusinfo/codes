@@ -1,9 +1,9 @@
 <?php
 namespace DrdPlus\Codes\Armaments;
 
-use DrdPlus\Codes\Partials\TranslatableCode;
+use DrdPlus\Codes\Partials\TranslatableExtendableCode;
 
-abstract class WeaponCode extends TranslatableCode implements WeaponlikeCode
+abstract class WeaponCode extends TranslatableExtendableCode implements WeaponlikeCode
 {
     /** @return bool */
     public function isProtectiveArmament(): bool
