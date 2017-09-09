@@ -16,6 +16,11 @@ abstract class TranslatableExtendableCode extends TranslatableCode
         return array_merge(static::getDefaultValues(), static::getCustomValues());
     }
 
+    /**
+     * OVERLOAD this
+     *
+     * @return array
+     */
     protected static function getDefaultValues(): array
     {
         return parent::getPossibleValues();
@@ -32,7 +37,7 @@ abstract class TranslatableExtendableCode extends TranslatableCode
      */
     protected function getTranslations(string $requiredLanguageCode): array
     {
-        if ($this->translations === null) {
+        if ((self::$translations[static::class] ?? null) === null) {
             $translations = self::$customCodeTranslations[static::class] ?? [];
             if (count($translations) === 0) {
                 $translations = $this->fetchTranslations();
@@ -45,7 +50,7 @@ abstract class TranslatableExtendableCode extends TranslatableCode
                     }
                 }
             }
-            $this->translations = $translations;
+            self::$translations[static::class] = $translations;
         }
 
         return parent::getTranslations($requiredLanguageCode);
@@ -69,6 +74,11 @@ abstract class TranslatableExtendableCode extends TranslatableCode
         self::checkTranslationsFormat($translations);
         foreach ($translations as $languageCode => $languageTranslations) {
             self::$customCodeTranslations[static::class][$languageCode][$newValue] = $languageTranslations;
+        }
+        if ((self::$translations[static::class] ?? null) !== null) {
+            foreach ($translations as $languageCode => $languageTranslations) {
+                self::$translations[static::class][$languageCode][$newValue] = $languageTranslations;
+            }
         }
 
         return true;

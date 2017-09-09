@@ -1,12 +1,12 @@
 <?php
 namespace DrdPlus\Codes\Transport;
 
-use DrdPlus\Codes\Partials\TranslatableCode;
+use DrdPlus\Codes\Partials\TranslatableExtendableCode;
 
 /**
  * @method static RidingAnimalCode getIt($codeValue)
  */
-class RidingAnimalCode extends TranslatableCode
+class RidingAnimalCode extends TranslatableExtendableCode
 {
     const HORSE = 'horse';
     const DRAFT_HORSE = 'draft_horse';
@@ -27,7 +27,7 @@ class RidingAnimalCode extends TranslatableCode
     /**
      * @return array|string[]
      */
-    public static function getPossibleValues(): array
+    public static function getDefaultValues(): array
     {
         return [
             self::HORSE,

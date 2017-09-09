@@ -3,9 +3,9 @@ namespace DrdPlus\Tests\Codes\Armaments;
 
 use DrdPlus\Codes\Armaments\ArmamentCode;
 use DrdPlus\Codes\Code;
-use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
+use DrdPlus\Tests\Codes\Partials\TranslatableExtendableCodeTest;
 
-abstract class ArmamentCodeTest extends TranslatableCodeTest
+abstract class ArmamentCodeTest extends TranslatableExtendableCodeTest
 {
     /**
      * @test

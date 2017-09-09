@@ -57,7 +57,7 @@ abstract class TranslatableCode extends AbstractCode implements Translatable
     }
 
     /**
-     * @param number $amount
+     * @param float|int $amount
      * @return string
      */
     private function convertAmountToPlural($amount): string
@@ -77,7 +77,7 @@ abstract class TranslatableCode extends AbstractCode implements Translatable
         return self::$MANY;
     }
 
-    protected $translations;
+    protected static $translations;
 
     /**
      * @param string $requiredLanguageCode
@@ -85,11 +85,11 @@ abstract class TranslatableCode extends AbstractCode implements Translatable
      */
     protected function getTranslations(string $requiredLanguageCode): array
     {
-        if ($this->translations === null) {
-            $this->translations = $this->fetchTranslations();
+        if ((self::$translations[static::class] ?? null) === null) {
+            self::$translations[static::class] = $this->fetchTranslations();
         }
 
-        return $this->translations[$requiredLanguageCode] ?? [];
+        return self::$translations[static::class][$requiredLanguageCode] ?? [];
     }
 
     /**

@@ -18,7 +18,7 @@ class RidingAnimalMovementCode extends FileBasedTranslatableCode
     /**
      * @return array|string[]
      */
-    public static function getDefaultValues(): array
+    public static function getPossibleValues(): array
     {
         return [
             self::STILL,

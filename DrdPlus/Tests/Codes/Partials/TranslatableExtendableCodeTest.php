@@ -20,6 +20,12 @@ class TranslatableExtendableCodeTest extends TranslatableCodeTest
     {
         /** @var TranslatableExtendableCode $sutClass */
         $sutClass = self::getSutClass();
+        $reflectionClass = new \ReflectionClass($sutClass);
+        $translations = $reflectionClass->getProperty('translations');
+        $translations->setAccessible(true);
+        // to reset already initialized translations and force them to be loaded again
+        $translations->setValue(null);
+        $translations->setAccessible(false);
         self::assertNotContains('foo', $sutClass::getPossibleValues());
         self::assertTrue($sutClass::extendByCustomValue('foo', []));
         self::assertFalse(
@@ -34,6 +40,9 @@ class TranslatableExtendableCodeTest extends TranslatableCodeTest
         }
         $bar = $sutClass::getIt('bar');
         self::assertSame('taková laťka', $bar->translateTo('cs'));
+        self::assertTrue($sutClass::extendByCustomValue('baz', ['cs' => ['one' => 'eee, ehm?']]));
+        $bar = $sutClass::getIt('baz');
+        self::assertSame('eee, ehm?', $bar->translateTo('cs'));
     }
 
     /**
@@ -45,22 +54,26 @@ class TranslatableExtendableCodeTest extends TranslatableCodeTest
         $constants = $reflection->getConstants();
         asort($constants);
         $sutClass = self::getSutClass();
-        $values = $sutClass::getPossibleValues();
-        sort($values);
+        $possibleValues = $sutClass::getPossibleValues();
+        sort($possibleValues);
         self::assertSame(
             [],
-            array_diff(array_values($constants), $values),
-            'Some constants are missing in values: ' . implode(',', array_diff(array_values($constants), $values))
+            array_diff(array_values($constants), $possibleValues),
+            'Some constants are missing in possible values: ' . implode(',', array_diff(array_values($constants), $possibleValues))
         );
-        $difference = array_diff($values, array_values($constants));
+        $possibleValuesAndConstantsDifference = array_diff($possibleValues, array_values($constants));
         $reflectionClass = new \ReflectionClass(TranslatableExtendableCode::class);
         $customValuesReflection = $reflectionClass->getProperty('customValues');
         $customValuesReflection->setAccessible(true);
         $customValues = $customValuesReflection->getValue()[$sutClass] ?? [];
-        sort($difference);
+        sort($possibleValuesAndConstantsDifference);
         sort($customValues);
-        self::assertEquals($difference, $customValues);
-        foreach ($values as $value) {
+        self::assertEquals(
+            $possibleValuesAndConstantsDifference,
+            $customValues,
+            'That is strange, have you overloaded getDefaultValues method?'
+        );
+        foreach ($possibleValues as $value) {
             if (in_array($value, $customValues, true)) { // custom values are not as constants
                 continue;
             }
@@ -80,15 +93,15 @@ class TranslatableExtendableCodeTest extends TranslatableCodeTest
         /** @var TranslatableExtendableCode $sutClass */
         $sutClass = self::getSutClass();
         try {
-            self::assertTrue(
-                $sutClass::extendByCustomValue('baz', ['cs' => ['one' => 'štěstí']]),
-                'Code should not be already registered for this test'
-            );
+            $extended = $sutClass::extendByCustomValue('qux', ['cs' => ['one' => 'štěstí']]);
         } catch (\Exception $exception) {
             self::fail('No exception expected so far: ' . $exception->getMessage());
+
+            return;
         }
+        self::assertTrue($extended, 'Code should not be already registered for this test');
         self::assertTrue(
-            $sutClass::extendByCustomValue('qux', ['a1' => 'anything here']),
+            $sutClass::extendByCustomValue('quux', ['a1' => 'anything here']),
             'Code should not be already registered for this test'
         );
     }
