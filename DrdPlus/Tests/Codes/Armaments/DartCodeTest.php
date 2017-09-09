@@ -5,7 +5,6 @@ use DrdPlus\Codes\Armaments\DartCode;
 
 class DartCodeTest extends ProjectileCodeTest
 {
-
     /**
      * @test
      */

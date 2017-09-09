@@ -14,5 +14,4 @@ class BodyArmorCodeTest extends ArmorCodeTest
         self::assertFalse($bodyArmorCode->isHelm());
         self::assertTrue($bodyArmorCode->isBodyArmor());
     }
-
 }

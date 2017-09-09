@@ -11,7 +11,8 @@ abstract class ProjectileCodeTest extends ArmamentCodeTest
     public function It_is_projectile()
     {
         $sutClass = self::getSutClass();
-        $value = current((new \ReflectionClass($sutClass))->getConstants());
+        $constants = (new \ReflectionClass($sutClass))->getConstants();
+        $value = reset($constants);
         /** @var ProjectileCode $sut */
         $sut = $sutClass::getIt($value);
 

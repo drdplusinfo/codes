@@ -13,7 +13,7 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
      * @param string $interferingCodeClass
      * @return bool
      */
-    protected function isSameCodeAllowedFor($weaponlikeCode, $interferingCodeClass)
+    protected function isSameCodeAllowedFor(string $weaponlikeCode, string $interferingCodeClass): bool
     {
         return false;
     }

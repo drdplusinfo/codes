@@ -48,7 +48,7 @@ abstract class WeaponlikeCodeTest extends ArmamentCodeTest
      * @param string $interferingCodeClass
      * @return bool
      */
-    abstract protected function isSameCodeAllowedFor($weaponlikeCode, $interferingCodeClass);
+    abstract protected function isSameCodeAllowedFor(string $weaponlikeCode, string $interferingCodeClass): bool;
 
     /**
      * @test

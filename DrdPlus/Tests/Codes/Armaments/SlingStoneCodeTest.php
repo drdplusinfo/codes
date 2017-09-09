@@ -5,7 +5,6 @@ use DrdPlus\Codes\Armaments\SlingStoneCode;
 
 class SlingStoneCodeTest extends ProjectileCodeTest
 {
-
     /**
      * @test
      */

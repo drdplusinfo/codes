@@ -15,7 +15,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
      * @param string $interferingCodeClass
      * @return bool
      */
-    protected function isSameCodeAllowedFor($weaponlikeCode, $interferingCodeClass)
+    protected function isSameCodeAllowedFor(string $weaponlikeCode, string $interferingCodeClass): bool
     {
         try {
             return is_a(MeleeWeaponCode::getIt($weaponlikeCode)->convertToRangedWeaponCodeEquivalent(), $interferingCodeClass);
