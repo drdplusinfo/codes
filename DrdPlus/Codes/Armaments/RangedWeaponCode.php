@@ -6,6 +6,7 @@ namespace DrdPlus\Codes\Armaments;
  */
 class RangedWeaponCode extends WeaponCode
 {
+    private static $customRangedWeaponCodePerCategory = [];
 
     // bows
     const SHORT_BOW = 'short_bow';
@@ -15,17 +16,23 @@ class RangedWeaponCode extends WeaponCode
     const POWER_BOW = 'power_bow';
 
     /**
+     * @param bool $withCustomValues = true
      * @return array|string[]
      */
-    public static function getBowValues(): array
+    public static function getBowValues(bool $withCustomValues = true): array
     {
-        return [
+        $defaultValues = [
             self::SHORT_BOW,
             self::LONG_BOW,
             self::SHORT_COMPOSITE_BOW,
             self::LONG_COMPOSITE_BOW,
             self::POWER_BOW,
         ];
+        if (!$withCustomValues) {
+            return $defaultValues;
+        }
+
+        return array_merge($defaultValues, static::$customRangedWeaponCodePerCategory[WeaponCategoryCode::BOW] ?? []);
     }
 
     // crossbows
@@ -35,16 +42,22 @@ class RangedWeaponCode extends WeaponCode
     const HEAVY_CROSSBOW = 'heavy_crossbow';
 
     /**
+     * @param bool $withCustomValues = true
      * @return array|string[]
      */
-    public static function getCrossbowValues(): array
+    public static function getCrossbowValues(bool $withCustomValues = true): array
     {
-        return [
+        $defaultValues = [
             self::MINICROSSBOW,
             self::LIGHT_CROSSBOW,
             self::MILITARY_CROSSBOW,
             self::HEAVY_CROSSBOW,
         ];
+        if (!$withCustomValues) {
+            return $defaultValues;
+        }
+
+        return array_merge($defaultValues, static::$customRangedWeaponCodePerCategory[WeaponCategoryCode::CROSSBOW] ?? []);
     }
 
     // throwing weapons
@@ -60,11 +73,12 @@ class RangedWeaponCode extends WeaponCode
     const SLING = 'sling';
 
     /**
+     * @param bool $withCustomValues = true
      * @return array|string[]
      */
-    public static function getThrowingWeaponValues(): array
+    public static function getThrowingWeaponValues(bool $withCustomValues = true): array
     {
-        return [
+        $defaultValues = [
             self::SAND,
             self::ROCK,
             self::THROWING_DAGGER,
@@ -76,6 +90,11 @@ class RangedWeaponCode extends WeaponCode
             self::JAVELIN,
             self::SLING,
         ];
+        if (!$withCustomValues) {
+            return $defaultValues;
+        }
+
+        return array_merge($defaultValues, static::$customRangedWeaponCodePerCategory[WeaponCategoryCode::THROWING_WEAPON] ?? []);
     }
 
     /**
@@ -85,9 +104,9 @@ class RangedWeaponCode extends WeaponCode
     {
         return array_values( // to get continual integer keys
             array_merge(
-                self::getBowValues(),
-                self::getCrossbowValues(),
-                self::getThrowingWeaponValues()
+                self::getBowValues(false /* without custom */),
+                self::getCrossbowValues(false /* without custom */),
+                self::getThrowingWeaponValues(false /* without custom */)
             )
         );
     }
@@ -104,7 +123,13 @@ class RangedWeaponCode extends WeaponCode
             );
         }
 
-        return static::addNewCode($newRangedWeaponCodeValue, $translations);
+        $extended = static::addNewCode($newRangedWeaponCodeValue, $translations);
+        if (!$extended) {
+            return false;
+        }
+        self::$customRangedWeaponCodePerCategory[$rangedWeaponCategoryCode->getValue()][] = $newRangedWeaponCodeValue;
+
+        return true;
     }
 
     /**

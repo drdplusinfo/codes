@@ -59,9 +59,11 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
     {
         $reflection = new \ReflectionClass(self::getSutClass());
         $constants = $reflection->getConstants();
+        self::assertEquals($constants, array_unique($constants));
         asort($constants);
         $sutClass = self::getSutClass();
         $possibleValues = $sutClass::getPossibleValues();
+        self::assertEquals($possibleValues, array_unique($possibleValues), 'Possible values should be unique');
         sort($possibleValues);
         self::assertSame(
             [],
