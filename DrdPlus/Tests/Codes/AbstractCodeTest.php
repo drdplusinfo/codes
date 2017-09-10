@@ -153,4 +153,12 @@ PHPDOC
             )
         );
     }
+
+    /**
+     * @test
+     */
+    public function I_will_get_constant_values_from_reflection_as_fallback()
+    {
+        self::assertSame([], AbstractCode::getPossibleValues());
+    }
 }

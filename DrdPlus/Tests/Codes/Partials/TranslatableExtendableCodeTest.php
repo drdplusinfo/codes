@@ -184,4 +184,12 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
             'Code should not be already registered for this test'
         );
     }
+
+    /**
+     * @test
+     */
+    public function It_uses_parent_values_as_default_if_not_overloaded()
+    {
+        self::assertSame([], TranslatableExtendableCode::getPossibleValues());
+    }
 }

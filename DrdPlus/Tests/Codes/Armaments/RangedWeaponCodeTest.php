@@ -279,4 +279,16 @@ class RangedWeaponCodeTest extends WeaponCodeTest
             WeaponCategoryCode::getRangedWeaponCategoryValues()[array_rand(WeaponCategoryCode::getRangedWeaponCategoryValues())]
         );
     }
+
+    /**
+     * @test
+     * @expectedException \DrdPlus\Codes\Armaments\Exceptions\InvalidWeaponCategoryForNewRangedWeaponCode
+     * @expectedExceptionMessageRegExp ~voulge~
+     */
+    public function I_can_not_add_new_ranged_weapon_code_with_not_melee_category()
+    {
+        $meleeCategory = WeaponCategoryCode::getIt(WeaponCategoryCode::VOULGE_AND_TRIDENT);
+        self::assertFalse($meleeCategory->isRangedWeaponCategory());
+        RangedWeaponCode::addNewRangedWeaponCode('foo', $meleeCategory, []);
+    }
 }

@@ -514,4 +514,15 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         );
     }
 
+    /**
+     * @test
+     * @expectedException \DrdPlus\Codes\Armaments\Exceptions\InvalidWeaponCategoryForNewMeleeWeaponCode
+     * @expectedExceptionMessageRegExp ~throwing~
+     */
+    public function I_can_not_add_new_melee_weapon_code_with_not_melee_category()
+    {
+        $throwingCategory = WeaponCategoryCode::getIt(WeaponCategoryCode::THROWING_WEAPON);
+        self::assertFalse($throwingCategory->isMeleeWeaponCategory());
+        MeleeWeaponCode::addNewMeleeWeaponCode('foo', $throwingCategory, []);
+    }
 }

@@ -12,7 +12,7 @@ class WeaponCategoryCodeTest extends TranslatableCodeTest
     public function I_can_get_melee_weapon_category_codes_at_once()
     {
         self::assertSame(
-            [
+            $codes = [
                 'axe',
                 'knife_and_dagger',
                 'mace_and_club',
@@ -25,6 +25,12 @@ class WeaponCategoryCodeTest extends TranslatableCodeTest
             ],
             WeaponCategoryCode::getMeleeWeaponCategoryValues()
         );
+        foreach ($codes as $code) {
+            $meleeCategory = WeaponCategoryCode::getIt($code);
+            self::assertTrue($meleeCategory->isMeleeWeaponCategory());
+            self::assertFalse($meleeCategory->isRangedWeaponCategory());
+            self::assertFalse($meleeCategory->isProjectileCategory());
+        }
     }
 
     /**
@@ -33,13 +39,15 @@ class WeaponCategoryCodeTest extends TranslatableCodeTest
     public function I_can_get_ranged_weapon_category_codes()
     {
         self::assertSame(
-            [
-                'bow',
-                'crossbow',
-                'throwing_weapon',
-            ],
+            $codes = ['bow', 'crossbow', 'throwing_weapon'],
             WeaponCategoryCode::getRangedWeaponCategoryValues()
         );
+        foreach ($codes as $code) {
+            $rangedCategory = WeaponCategoryCode::getIt($code);
+            self::assertTrue($rangedCategory->isRangedWeaponCategory());
+            self::assertFalse($rangedCategory->isMeleeWeaponCategory());
+            self::assertFalse($rangedCategory->isProjectileCategory());
+        }
     }
 
     /**
@@ -48,13 +56,15 @@ class WeaponCategoryCodeTest extends TranslatableCodeTest
     public function I_can_get_projectile_category_codes()
     {
         self::assertSame(
-            [
-                'arrow',
-                'dart',
-                'sling_stone',
-            ],
+            $codes = ['arrow', 'dart', 'sling_stone'],
             WeaponCategoryCode::getProjectileCategoryValues()
         );
+        foreach ($codes as $code) {
+            $projectileCategory = WeaponCategoryCode::getIt($code);
+            self::assertTrue($projectileCategory->isProjectileCategory());
+            self::assertFalse($projectileCategory->isMeleeWeaponCategory());
+            self::assertFalse($projectileCategory->isRangedWeaponCategory());
+        }
     }
 
 }
