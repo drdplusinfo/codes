@@ -273,11 +273,9 @@ class RangedWeaponCodeTest extends WeaponCodeTest
         self::assertTrue(RangedWeaponCode::getIt(RangedWeaponCode::MILITARY_CROSSBOW)->isRanged());
     }
 
-    protected function getRandomWeaponCategoryCode(): WeaponCategoryCode
+    protected function getWeaponCategoryValues(): array
     {
-        return WeaponCategoryCode::getIt(
-            WeaponCategoryCode::getRangedWeaponCategoryValues()[array_rand(WeaponCategoryCode::getRangedWeaponCategoryValues())]
-        );
+        return WeaponCategoryCode::getRangedWeaponCategoryValues();
     }
 
     /**
@@ -290,5 +288,26 @@ class RangedWeaponCodeTest extends WeaponCodeTest
         $meleeCategory = WeaponCategoryCode::getIt(WeaponCategoryCode::VOULGE_AND_TRIDENT);
         self::assertFalse($meleeCategory->isRangedWeaponCategory());
         RangedWeaponCode::addNewRangedWeaponCode('foo', $meleeCategory, []);
+    }
+
+    /**
+     * @test
+     * @expectedException \DrdPlus\Codes\Armaments\Exceptions\RangedWeaponIsAlreadyInDifferentWeaponCategory
+     */
+    public function I_can_not_extended_it_by_same_code_but_different_category()
+    {
+        $reflectionClass = new \ReflectionClass(RangedWeaponCode::class);
+        $translations = $reflectionClass->getProperty('translations');
+        $translations->setAccessible(true);
+        // to reset already initialized translations and force them to be loaded again
+        $translations->setValue(null);
+        $translations->setAccessible(false);
+        self::assertNotContains('corge', RangedWeaponCode::getPossibleValues());
+        self::assertTrue(
+            RangedWeaponCode::addNewRangedWeaponCode('corge', $someCategory = $this->getRandomWeaponCategoryCode(), [])
+        );
+        $differentCategory = $this->getRandomWeaponCategoryCode($someCategory);
+        self::assertNotEquals($someCategory, $differentCategory);
+        RangedWeaponCode::addNewRangedWeaponCode('corge', $differentCategory, []);
     }
 }

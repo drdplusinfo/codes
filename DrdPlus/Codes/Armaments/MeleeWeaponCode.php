@@ -300,32 +300,58 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
 
     /**
      * @param string $newMeleeWeaponCodeValue
-     * @param WeaponCategoryCode $newWeaponCategoryCode
+     * @param WeaponCategoryCode $meleeWeaponCategoryCode
      * @param array $translations
      * @return bool
      * @throws \DrdPlus\Codes\Armaments\Exceptions\InvalidWeaponCategoryForNewMeleeWeaponCode
+     * @throws \DrdPlus\Codes\Armaments\Exceptions\MeleeWeaponIsAlreadyInDifferentWeaponCategory
      * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidLanguageCode
      * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
      * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
      */
     public static function addNewMeleeWeaponCode(
         string $newMeleeWeaponCodeValue,
-        WeaponCategoryCode $newWeaponCategoryCode,
+        WeaponCategoryCode $meleeWeaponCategoryCode,
         array $translations
     ): bool
     {
-        if (!$newWeaponCategoryCode->isMeleeWeaponCategory()) {
+        if (!$meleeWeaponCategoryCode->isMeleeWeaponCategory()) {
             throw new Exceptions\InvalidWeaponCategoryForNewMeleeWeaponCode(
-                'Expected one of melee weapon categories, got ' . $newWeaponCategoryCode
+                'Expected one of melee weapon categories, got ' . $meleeWeaponCategoryCode
             );
         }
         $extended = parent::addNewCode($newMeleeWeaponCodeValue, $translations);
         if (!$extended) {
+            self::guardSameCategory($newMeleeWeaponCodeValue, $meleeWeaponCategoryCode);
+
             return false;
         }
-        self::$customMeleeWeaponCodePerCategory[$newWeaponCategoryCode->getValue()][] = $newMeleeWeaponCodeValue;
+        self::$customMeleeWeaponCodePerCategory[$meleeWeaponCategoryCode->getValue()][] = $newMeleeWeaponCodeValue;
 
         return true;
+    }
+
+    /**
+     * @param string $meleeWeaponValue
+     * @param WeaponCategoryCode $weaponCategoryCode
+     * @throws \DrdPlus\Codes\Armaments\Exceptions\MeleeWeaponIsAlreadyInDifferentWeaponCategory
+     */
+    private static function guardSameCategory(string $meleeWeaponValue, WeaponCategoryCode $weaponCategoryCode)
+    {
+        if (!in_array($meleeWeaponValue, self::$customMeleeWeaponCodePerCategory[$weaponCategoryCode->getValue()] ?? [], true)) {
+            $alreadyUsedCategory = null;
+            foreach (WeaponCategoryCode::getPossibleValues() as $anotherCategory) {
+                if ($anotherCategory !== $weaponCategoryCode->getValue()
+                    && in_array($meleeWeaponValue, self::$customMeleeWeaponCodePerCategory[$anotherCategory] ?? [], true)
+                ) {
+                    $alreadyUsedCategory = $anotherCategory;
+                }
+            }
+            throw new Exceptions\MeleeWeaponIsAlreadyInDifferentWeaponCategory(
+                "Can not register new melee weapon '$meleeWeaponValue' into category '$weaponCategoryCode'"
+                . " because is already registered in category '$alreadyUsedCategory'"
+            );
+        }
     }
 
     /**

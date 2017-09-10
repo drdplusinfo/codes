@@ -507,11 +507,9 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         self::assertFalse(MeleeWeaponCode::getIt(MeleeWeaponCode::CUDGEL)->isRanged());
     }
 
-    protected function getRandomWeaponCategoryCode(): WeaponCategoryCode
+    protected function getWeaponCategoryValues(): array
     {
-        return WeaponCategoryCode::getIt(
-            WeaponCategoryCode::getMeleeWeaponCategoryValues()[array_rand(WeaponCategoryCode::getMeleeWeaponCategoryValues())]
-        );
+        return WeaponCategoryCode::getMeleeWeaponCategoryValues();
     }
 
     /**
@@ -525,4 +523,26 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         self::assertFalse($throwingCategory->isMeleeWeaponCategory());
         MeleeWeaponCode::addNewMeleeWeaponCode('foo', $throwingCategory, []);
     }
+
+    /**
+     * @test
+     * @expectedException \DrdPlus\Codes\Armaments\Exceptions\MeleeWeaponIsAlreadyInDifferentWeaponCategory
+     */
+    public function I_can_not_extended_it_by_same_code_but_different_category()
+    {
+        $reflectionClass = new \ReflectionClass(MeleeWeaponCode::class);
+        $translations = $reflectionClass->getProperty('translations');
+        $translations->setAccessible(true);
+        // to reset already initialized translations and force them to be loaded again
+        $translations->setValue(null);
+        $translations->setAccessible(false);
+        self::assertNotContains('corge', MeleeWeaponCode::getPossibleValues());
+        self::assertTrue(
+            MeleeWeaponCode::addNewMeleeWeaponCode('corge', $someCategory = $this->getRandomWeaponCategoryCode(), [])
+        );
+        $differentCategory = $this->getRandomWeaponCategoryCode($someCategory);
+        self::assertNotEquals($someCategory, $differentCategory);
+        MeleeWeaponCode::addNewMeleeWeaponCode('corge', $differentCategory, []);
+    }
+
 }

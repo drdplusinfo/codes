@@ -64,9 +64,9 @@ abstract class WeaponCodeTest extends WeaponlikeCodeTest
         self::assertNotContains('foo', $sutClass::getPossibleValues());
         /** like @see \DrdPlus\Codes\Armaments\MeleeWeaponCode::addNewMeleeWeaponCode */
         $addNewCode = 'addNew' . $this->getSutBaseName();
-        self::assertTrue($sutClass::$addNewCode('foo', $this->getRandomWeaponCategoryCode(), []));
+        self::assertTrue($sutClass::$addNewCode('foo', $someCategory = $this->getRandomWeaponCategoryCode(), []));
         self::assertFalse(
-            $sutClass::$addNewCode('foo', $this->getRandomWeaponCategoryCode(), ['en' => ['one' => 'foo']]),
+            $sutClass::$addNewCode('foo', $someCategory, ['en' => ['one' => 'foo']]),
             'Same custom code to register should be skipped. Have you overloaded getDefaultValues method?'
         );
         self::assertContains('foo', $sutClass::getPossibleValues());
@@ -86,7 +86,18 @@ abstract class WeaponCodeTest extends WeaponlikeCodeTest
         self::assertSame('eee, ehm?', $bar->translateTo('cs'));
     }
 
-    abstract protected function getRandomWeaponCategoryCode(): WeaponCategoryCode;
+    protected function getRandomWeaponCategoryCode(WeaponCategoryCode $differentTo = null): WeaponCategoryCode
+    {
+        do {
+            $category = WeaponCategoryCode::getIt(
+                $this->getWeaponCategoryValues()[array_rand($this->getWeaponCategoryValues())]
+            );
+        } while ($differentTo !== null && $category->getValue() === $differentTo->getValue());
+
+        return $category;
+    }
+
+    abstract protected function getWeaponCategoryValues(): array;
 
     /**
      * @test
@@ -188,4 +199,7 @@ abstract class WeaponCodeTest extends WeaponlikeCodeTest
             'Code should not be already registered for this test'
         );
     }
+
+    abstract public function I_can_not_extended_it_by_same_code_but_different_category();
+
 }

@@ -111,6 +111,17 @@ class RangedWeaponCode extends WeaponCode
         );
     }
 
+    /**
+     * @param string $newRangedWeaponCodeValue
+     * @param WeaponCategoryCode $rangedWeaponCategoryCode
+     * @param array $translations
+     * @return bool
+     * @throws \DrdPlus\Codes\Armaments\Exceptions\InvalidWeaponCategoryForNewRangedWeaponCode
+     * @throws \DrdPlus\Codes\Armaments\Exceptions\RangedWeaponIsAlreadyInDifferentWeaponCategory
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidLanguageCode
+     * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
+     */
     public static function addNewRangedWeaponCode(
         string $newRangedWeaponCodeValue,
         WeaponCategoryCode $rangedWeaponCategoryCode,
@@ -125,11 +136,36 @@ class RangedWeaponCode extends WeaponCode
 
         $extended = static::addNewCode($newRangedWeaponCodeValue, $translations);
         if (!$extended) {
+            self::guardSameCategory($newRangedWeaponCodeValue, $rangedWeaponCategoryCode);
+
             return false;
         }
         self::$customRangedWeaponCodePerCategory[$rangedWeaponCategoryCode->getValue()][] = $newRangedWeaponCodeValue;
 
         return true;
+    }
+
+    /**
+     * @param string $meleeWeaponValue
+     * @param WeaponCategoryCode $weaponCategoryCode
+     * @throws \DrdPlus\Codes\Armaments\Exceptions\RangedWeaponIsAlreadyInDifferentWeaponCategory
+     */
+    private static function guardSameCategory(string $meleeWeaponValue, WeaponCategoryCode $weaponCategoryCode)
+    {
+        if (!in_array($meleeWeaponValue, self::$customRangedWeaponCodePerCategory[$weaponCategoryCode->getValue()] ?? [], true)) {
+            $alreadyUsedCategory = null;
+            foreach (WeaponCategoryCode::getPossibleValues() as $anotherCategory) {
+                if ($anotherCategory !== $weaponCategoryCode->getValue()
+                    && in_array($meleeWeaponValue, self::$customRangedWeaponCodePerCategory[$anotherCategory] ?? [], true)
+                ) {
+                    $alreadyUsedCategory = $anotherCategory;
+                }
+            }
+            throw new Exceptions\RangedWeaponIsAlreadyInDifferentWeaponCategory(
+                "Can not register new ranged weapon '$meleeWeaponValue' into category '$weaponCategoryCode'"
+                . " because is already registered in category '$alreadyUsedCategory'"
+            );
+        }
     }
 
     /**
