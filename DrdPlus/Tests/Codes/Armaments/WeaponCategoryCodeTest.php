@@ -53,7 +53,7 @@ class WeaponCategoryCodeTest extends TranslatableCodeTest
                 'dart',
                 'sling_stone',
             ],
-            WeaponCategoryCode::getProjectilesCategoryValues()
+            WeaponCategoryCode::getProjectileCategoryValues()
         );
     }
 

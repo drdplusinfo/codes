@@ -4,6 +4,7 @@ namespace DrdPlus\Tests\Codes\Armaments;
 use DrdPlus\Codes\Armaments\Exceptions\CanNotBeConvertedToRangeWeaponCode;
 use DrdPlus\Codes\Armaments\MeleeWeaponCode;
 use DrdPlus\Codes\Armaments\RangedWeaponCode;
+use DrdPlus\Codes\Armaments\WeaponCategoryCode;
 use DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode;
 
 class MeleeWeaponCodeTest extends WeaponCodeTest
@@ -504,6 +505,13 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     public function I_can_easily_find_out_if_is_ranged()
     {
         self::assertFalse(MeleeWeaponCode::getIt(MeleeWeaponCode::CUDGEL)->isRanged());
+    }
+
+    protected function getRandomWeaponCategoryCode(): WeaponCategoryCode
+    {
+        return WeaponCategoryCode::getIt(
+            WeaponCategoryCode::getMeleeWeaponCategoryValues()[array_rand(WeaponCategoryCode::getMeleeWeaponCategoryValues())]
+        );
     }
 
 }

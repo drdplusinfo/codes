@@ -92,6 +92,21 @@ class RangedWeaponCode extends WeaponCode
         );
     }
 
+    public static function addNewRangedWeaponCode(
+        string $newRangedWeaponCodeValue,
+        WeaponCategoryCode $rangedWeaponCategoryCode,
+        array $translations
+    ): bool
+    {
+        if (!$rangedWeaponCategoryCode->isRangedWeaponCategory()) {
+            throw new Exceptions\InvalidWeaponCategoryForNewRangedWeaponCode(
+                'Expected one of ranged weapon categories, got ' . $rangedWeaponCategoryCode
+            );
+        }
+
+        return static::addNewCode($newRangedWeaponCodeValue, $translations);
+    }
+
     /**
      * @return bool
      */

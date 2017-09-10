@@ -38,6 +38,11 @@ class WeaponCategoryCode extends TranslatableCode
         ];
     }
 
+    public function isMeleeWeaponCategory(): bool
+    {
+        return in_array($this->getValue(), static::getMeleeWeaponCategoryValues(), true);
+    }
+
     // RANGE WEAPON CATEGORIES
 
     // shooting weapons
@@ -58,6 +63,11 @@ class WeaponCategoryCode extends TranslatableCode
         ];
     }
 
+    public function isRangedWeaponCategory(): bool
+    {
+        return in_array($this->getValue(), static::getRangedWeaponCategoryValues(), true);
+    }
+
     // projectiles
     const ARROW = 'arrow';
     const DART = 'dart';
@@ -66,13 +76,18 @@ class WeaponCategoryCode extends TranslatableCode
     /**
      * @return array|string[]
      */
-    public static function getProjectilesCategoryValues(): array
+    public static function getProjectileCategoryValues(): array
     {
         return [
             self::ARROW,
             self::DART,
             self::SLING_STONE,
         ];
+    }
+
+    public function isProjectileCategory(): bool
+    {
+        return in_array($this->getValue(), static::getProjectileCategoryValues(), true);
     }
 
     /**
@@ -83,7 +98,7 @@ class WeaponCategoryCode extends TranslatableCode
         return array_merge(
             self::getMeleeWeaponCategoryValues(),
             self::getRangedWeaponCategoryValues(),
-            self::getProjectilesCategoryValues()
+            self::getProjectileCategoryValues()
         );
     }
 

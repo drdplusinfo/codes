@@ -33,6 +33,19 @@ class BodyArmorCode extends ArmorCode
     }
 
     /**
+     * @param string $bodyArmorCodeValue
+     * @param array $translations
+     * @return bool
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidLanguageCode
+     * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
+     */
+    public static function addNewBodyArmorCode(string $bodyArmorCodeValue, array $translations): bool
+    {
+        return static::addNewCode($bodyArmorCodeValue, $translations);
+    }
+
+    /**
      * @return bool
      */
     public function isHelm(): bool

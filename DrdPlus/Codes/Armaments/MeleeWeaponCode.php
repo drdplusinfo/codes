@@ -6,6 +6,9 @@ namespace DrdPlus\Codes\Armaments;
  */
 class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
 {
+
+    private static $customWeaponCodePerCategory = [];
+
     // axes
     const LIGHT_AXE = 'light_axe';
     const AXE = 'axe';
@@ -17,12 +20,10 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public static function getAxeCodes(): array
     {
-        return [
-            self::LIGHT_AXE,
-            self::AXE,
-            self::WAR_AXE,
-            self::TWO_HANDED_AXE,
-        ];
+        return array_merge(
+            [self::LIGHT_AXE, self::AXE, self::WAR_AXE, self::TWO_HANDED_AXE],
+            self::$customWeaponCodePerCategory[WeaponCategoryCode::AXE] ?? []
+        );
     }
 
     // knifes and daggers
@@ -37,13 +38,10 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public static function getKnifeAndDaggerCodes(): array
     {
-        return [
-            self::KNIFE,
-            self::DAGGER,
-            self::STABBING_DAGGER,
-            self::LONG_KNIFE,
-            self::LONG_DAGGER,
-        ];
+        return array_merge(
+            [self::KNIFE, self::DAGGER, self::STABBING_DAGGER, self::LONG_KNIFE, self::LONG_DAGGER],
+            self::$customWeaponCodePerCategory[WeaponCategoryCode::KNIFE_AND_DAGGER] ?? []
+        );
     }
 
     // maces and clubs
@@ -62,17 +60,20 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public static function getMaceAndClubCodes(): array
     {
-        return [
-            self::CUDGEL,
-            self::CLUB,
-            self::HOBNAILED_CLUB,
-            self::LIGHT_MACE,
-            self::MACE,
-            self::HEAVY_CLUB,
-            self::WAR_HAMMER,
-            self::TWO_HANDED_CLUB,
-            self::HEAVY_SLEDGEHAMMER,
-        ];
+        return array_merge(
+            [
+                self::CUDGEL,
+                self::CLUB,
+                self::HOBNAILED_CLUB,
+                self::LIGHT_MACE,
+                self::MACE,
+                self::HEAVY_CLUB,
+                self::WAR_HAMMER,
+                self::TWO_HANDED_CLUB,
+                self::HEAVY_SLEDGEHAMMER,
+            ],
+            self::$customWeaponCodePerCategory[WeaponCategoryCode::MACE_AND_CLUB] ?? []
+        );
     }
 
     // morningstars and morgensterns
@@ -89,15 +90,18 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public static function getMorningstarAndMorgensternCodes(): array
     {
-        return [
-            self::LIGHT_MORGENSTERN,
-            self::MORGENSTERN,
-            self::HEAVY_MORGENSTERN,
-            self::FLAIL,
-            self::MORNINGSTAR,
-            self::HOBNAILED_FLAIL,
-            self::HEAVY_MORNINGSTAR,
-        ];
+        return array_merge(
+            [
+                self::LIGHT_MORGENSTERN,
+                self::MORGENSTERN,
+                self::HEAVY_MORGENSTERN,
+                self::FLAIL,
+                self::MORNINGSTAR,
+                self::HOBNAILED_FLAIL,
+                self::HEAVY_MORNINGSTAR,
+            ],
+            self::$customWeaponCodePerCategory[WeaponCategoryCode::MORNINGSTAR_AND_MORGENSTERN] ?? []
+        );
     }
 
     // sabers and bowie knifes
@@ -112,13 +116,10 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public static function getSaberAndBowieKnifeCodes(): array
     {
-        return [
-            self::MACHETE,
-            self::LIGHT_SABER,
-            self::BOWIE_KNIFE,
-            self::SABER,
-            self::HEAVY_SABER,
-        ];
+        return array_merge(
+            [self::MACHETE, self::LIGHT_SABER, self::BOWIE_KNIFE, self::SABER, self::HEAVY_SABER],
+            self::$customWeaponCodePerCategory[WeaponCategoryCode::SABER_AND_BOWIE_KNIFE] ?? []
+        );
     }
 
     // staffs and spears
@@ -137,17 +138,20 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public static function getStaffAndSpearCodes(): array
     {
-        return [
-            self::LIGHT_SPEAR,
-            self::SHORTENED_STAFF,
-            self::LIGHT_STAFF,
-            self::SPEAR,
-            self::HOBNAILED_STAFF,
-            self::LONG_SPEAR,
-            self::HEAVY_HOBNAILED_STAFF,
-            self::PIKE,
-            self::METAL_STAFF,
-        ];
+        return array_merge(
+            [
+                self::LIGHT_SPEAR,
+                self::SHORTENED_STAFF,
+                self::LIGHT_STAFF,
+                self::SPEAR,
+                self::HOBNAILED_STAFF,
+                self::LONG_SPEAR,
+                self::HEAVY_HOBNAILED_STAFF,
+                self::PIKE,
+                self::METAL_STAFF,
+            ],
+            self::$customWeaponCodePerCategory[WeaponCategoryCode::STAFF_AND_SPEAR] ?? []
+        );
     }
 
     // swords
@@ -164,15 +168,18 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public static function getSwordCodes(): array
     {
-        return [
-            self::SHORT_SWORD,
-            self::HANGER,
-            self::GLAIVE,
-            self::LONG_SWORD,
-            self::ONE_AND_HALF_HANDED_SWORD,
-            self::BARBARIAN_SWORD,
-            self::TWO_HANDED_SWORD,
-        ];
+        return array_merge(
+            [
+                self::SHORT_SWORD,
+                self::HANGER,
+                self::GLAIVE,
+                self::LONG_SWORD,
+                self::ONE_AND_HALF_HANDED_SWORD,
+                self::BARBARIAN_SWORD,
+                self::TWO_HANDED_SWORD,
+            ],
+            self::$customWeaponCodePerCategory[WeaponCategoryCode::SWORD] ?? []
+        );
     }
 
     // voulges and tridents
@@ -189,15 +196,18 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public static function getVoulgeAndTridentCodes(): array
     {
-        return [
-            self::PITCHFORK,
-            self::LIGHT_VOULGE,
-            self::LIGHT_TRIDENT,
-            self::HALBERD,
-            self::HEAVY_VOULGE,
-            self::HEAVY_TRIDENT,
-            self::HEAVY_HALBERD,
-        ];
+        return array_merge(
+            [
+                self::PITCHFORK,
+                self::LIGHT_VOULGE,
+                self::LIGHT_TRIDENT,
+                self::HALBERD,
+                self::HEAVY_VOULGE,
+                self::HEAVY_TRIDENT,
+                self::HEAVY_HALBERD,
+            ],
+            self::$customWeaponCodePerCategory[WeaponCategoryCode::VOULGE_AND_TRIDENT] ?? []
+        );
     }
 
     // unarmed
@@ -211,12 +221,10 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public static function getUnarmedCodes(): array
     {
-        return [
-            self::HAND,
-            self::HOBNAILED_GLOVE,
-            self::LEG,
-            self::HOBNAILED_BOOT,
-        ];
+        return array_merge(
+            [self::HAND, self::HOBNAILED_GLOVE, self::LEG, self::HOBNAILED_BOOT],
+            self::$customWeaponCodePerCategory[WeaponCategoryCode::UNARMED] ?? []
+        );
     }
 
     /**
@@ -237,6 +245,36 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
                 self::getUnarmedCodes()
             )
         );
+    }
+
+    /**
+     * @param string $newMeleeWeaponCodeValue
+     * @param WeaponCategoryCode $newWeaponCategoryCode
+     * @param array $translations
+     * @return bool
+     * @throws \DrdPlus\Codes\Armaments\Exceptions\InvalidWeaponCategoryForNewMeleeWeaponCode
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidLanguageCode
+     * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
+     */
+    public static function addNewMeleeWeaponCode(
+        string $newMeleeWeaponCodeValue,
+        WeaponCategoryCode $newWeaponCategoryCode,
+        array $translations
+    ): bool
+    {
+        if (!$newWeaponCategoryCode->isMeleeWeaponCategory()) {
+            throw new Exceptions\InvalidWeaponCategoryForNewMeleeWeaponCode(
+                'Expected one of melee weapon categories, got ' . $newWeaponCategoryCode
+            );
+        }
+        $extended = parent::addNewCode($newMeleeWeaponCodeValue, $translations);
+        if (!$extended) {
+            return false;
+        }
+        self::$customWeaponCodePerCategory[$newWeaponCategoryCode->getValue()][$newMeleeWeaponCodeValue] = $newMeleeWeaponCodeValue;
+
+        return true;
     }
 
     /**
@@ -506,5 +544,4 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
             ],
         ];
     }
-
 }

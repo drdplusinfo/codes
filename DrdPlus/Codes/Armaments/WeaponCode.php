@@ -12,7 +12,7 @@ abstract class WeaponCode extends TranslatableExtendableCode implements Weaponli
     }
 
     /** @return bool */
-    public function isWeaponlike(): bool
+    final public function isWeaponlike(): bool
     {
         return true;
     }

@@ -48,6 +48,19 @@ class RidingAnimalCode extends TranslatableExtendableCode
         ];
     }
 
+    /**
+     * @param string $newRidingAnimalCodeValue
+     * @param array $translations
+     * @return bool
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidLanguageCode
+     * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
+     */
+    public static function addNewRidingAnimalCode(string $newRidingAnimalCodeValue, array $translations): bool
+    {
+        return static::addNewCode($newRidingAnimalCodeValue, $translations);
+    }
+
     protected function fetchTranslations(): array
     {
         return [

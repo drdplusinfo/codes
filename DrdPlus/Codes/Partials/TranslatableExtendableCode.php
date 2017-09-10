@@ -64,7 +64,7 @@ abstract class TranslatableExtendableCode extends TranslatableCode
      * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
      * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
      */
-    public static function extendByCustomValue(string $newValue, array $translations): bool
+    protected static function addNewCode(string $newValue, array $translations): bool
     {
         /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
         if (in_array($newValue, static::getPossibleValues(), true)) {

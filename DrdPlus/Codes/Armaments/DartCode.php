@@ -27,6 +27,19 @@ class DartCode extends ProjectileCode
     }
 
     /**
+     * @param string $dartCodeValue
+     * @param array $translations
+     * @return bool
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidLanguageCode
+     * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
+     */
+    public static function addNewDartCode(string $dartCodeValue, array $translations): bool
+    {
+        return static::addNewCode($dartCodeValue, $translations);
+    }
+
+    /**
      * @return bool
      */
     final public function isDart(): bool

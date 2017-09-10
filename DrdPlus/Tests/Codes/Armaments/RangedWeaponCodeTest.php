@@ -4,6 +4,7 @@ namespace DrdPlus\Tests\Codes\Armaments;
 use DrdPlus\Codes\Armaments\Exceptions\CanNotBeConvertedToMeleeWeaponCode;
 use DrdPlus\Codes\Armaments\MeleeWeaponCode;
 use DrdPlus\Codes\Armaments\RangedWeaponCode;
+use DrdPlus\Codes\Armaments\WeaponCategoryCode;
 use DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode;
 
 class RangedWeaponCodeTest extends WeaponCodeTest
@@ -272,4 +273,10 @@ class RangedWeaponCodeTest extends WeaponCodeTest
         self::assertTrue(RangedWeaponCode::getIt(RangedWeaponCode::MILITARY_CROSSBOW)->isRanged());
     }
 
+    protected function getRandomWeaponCategoryCode(): WeaponCategoryCode
+    {
+        return WeaponCategoryCode::getIt(
+            WeaponCategoryCode::getRangedWeaponCategoryValues()[array_rand(WeaponCategoryCode::getRangedWeaponCategoryValues())]
+        );
+    }
 }

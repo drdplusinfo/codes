@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Codes\Partials;
 
 use DrdPlus\Codes\Partials\TranslatableExtendableCode;
 
-class TranslatableExtendableCodeTest extends TranslatableCodeTest
+abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
 {
     public function Method_to_get_default_values_is_not_public()
     {
@@ -27,22 +27,29 @@ class TranslatableExtendableCodeTest extends TranslatableCodeTest
         $translations->setValue(null);
         $translations->setAccessible(false);
         self::assertNotContains('foo', $sutClass::getPossibleValues());
-        self::assertTrue($sutClass::extendByCustomValue('foo', []));
+        /** like @see \DrdPlus\Codes\Armaments\ArrowCode::addNewArrowCode */
+        $addNewCode = 'addNew' . $this->getSutBaseName();
+        self::assertTrue($sutClass::$addNewCode('foo', []));
         self::assertFalse(
-            $sutClass::extendByCustomValue('foo', ['en' => ['one' => 'foo']]),
+            $sutClass::$addNewCode('foo', ['en' => ['one' => 'foo']]),
             'Same custom code to register should be skipped. Have you overloaded getDefaultValues method?'
         );
         self::assertContains('foo', $sutClass::getPossibleValues());
-        self::assertTrue($sutClass::extendByCustomValue('bar', ['cs' => ['one' => 'taková laťka']]));
+        self::assertTrue($sutClass::$addNewCode('bar', ['cs' => ['one' => 'taková laťka']]));
         self::assertContains('bar', $sutClass::getPossibleValues());
         if ((new \ReflectionClass($sutClass))->isAbstract()) {
             return;
         }
         $bar = $sutClass::getIt('bar');
         self::assertSame('taková laťka', $bar->translateTo('cs'));
-        self::assertTrue($sutClass::extendByCustomValue('baz', ['cs' => ['one' => 'eee, ehm?']]));
+        self::assertTrue($sutClass::$addNewCode('baz', ['cs' => ['one' => 'eee, ehm?']]));
         $bar = $sutClass::getIt('baz');
         self::assertSame('eee, ehm?', $bar->translateTo('cs'));
+    }
+
+    protected function getSutBaseName(): string
+    {
+        return preg_replace('~^.+\\\([^\\\]+$)~', '$1', static::getSutClass());
     }
 
     /**
@@ -92,8 +99,10 @@ class TranslatableExtendableCodeTest extends TranslatableCodeTest
     {
         /** @var TranslatableExtendableCode $sutClass */
         $sutClass = self::getSutClass();
+        /** like @see \DrdPlus\Codes\Armaments\ArrowCode::addNewArrowCode */
+        $addNewCode = 'addNew' . $this->getSutBaseName();
         try {
-            $extended = $sutClass::extendByCustomValue('qux', ['cs' => ['one' => 'štěstí']]);
+            $extended = $sutClass::$addNewCode('qux', ['cs' => ['one' => 'štěstí']]);
         } catch (\Exception $exception) {
             self::fail('No exception expected so far: ' . $exception->getMessage());
 
@@ -101,7 +110,7 @@ class TranslatableExtendableCodeTest extends TranslatableCodeTest
         }
         self::assertTrue($extended, 'Code should not be already registered for this test');
         self::assertTrue(
-            $sutClass::extendByCustomValue('quux', ['a1' => 'anything here']),
+            $sutClass::$addNewCode('quux', ['a1' => 'anything here']),
             'Code should not be already registered for this test'
         );
     }
@@ -113,10 +122,12 @@ class TranslatableExtendableCodeTest extends TranslatableCodeTest
      */
     public function I_can_not_use_invalid_data_format_of_translations_for_custom_code()
     {
+        /** like @see \DrdPlus\Codes\Armaments\ArrowCode::addNewArrowCode */
+        $addNewCode = 'addNew' . $this->getSutBaseName();
         /** @var TranslatableExtendableCode $sutClass */
         $sutClass = self::getSutClass();
         self::assertTrue(
-            $sutClass::extendByCustomValue('foobar', ['uk' => 'this should be array']),
+            $sutClass::$addNewCode('foobar', ['uk' => 'this should be array']),
             'Code should not be already registered for this test'
         );
     }
@@ -128,10 +139,12 @@ class TranslatableExtendableCodeTest extends TranslatableCodeTest
      */
     public function I_can_not_use_invalid_plural_for_translation_of_custom_code()
     {
+        /** like @see \DrdPlus\Codes\Armaments\ArrowCode::addNewArrowCode */
+        $addNewCode = 'addNew' . $this->getSutBaseName();
         /** @var TranslatableExtendableCode $sutClass */
         $sutClass = self::getSutClass();
         self::assertTrue(
-            $sutClass::extendByCustomValue('foobaz', ['cs' => ['all' => 'have I missed something?']]),
+            $sutClass::$addNewCode('foobaz', ['cs' => ['all' => 'have I missed something?']]),
             'Code should not be already registered for this test'
         );
     }
@@ -143,10 +156,12 @@ class TranslatableExtendableCodeTest extends TranslatableCodeTest
      */
     public function I_can_not_use_non_string_for_translation_of_custom_code()
     {
+        /** like @see \DrdPlus\Codes\Armaments\ArrowCode::addNewArrowCode */
+        $addNewCode = 'addNew' . $this->getSutBaseName();
         /** @var TranslatableExtendableCode $sutClass */
         $sutClass = self::getSutClass();
         self::assertTrue(
-            $sutClass::extendByCustomValue('fooqux', ['cs' => ['one' => null]]),
+            $sutClass::$addNewCode('fooqux', ['cs' => ['one' => null]]),
             'Code should not be already registered for this test'
         );
     }
@@ -158,10 +173,12 @@ class TranslatableExtendableCodeTest extends TranslatableCodeTest
      */
     public function I_can_not_use_empty_string_for_translation_of_custom_code()
     {
+        /** like @see \DrdPlus\Codes\Armaments\ArrowCode::addNewArrowCode */
+        $addNewCode = 'addNew' . $this->getSutBaseName();
         /** @var TranslatableExtendableCode $sutClass */
         $sutClass = self::getSutClass();
         self::assertTrue(
-            $sutClass::extendByCustomValue('barfoo', ['cs' => ['one' => '']]),
+            $sutClass::$addNewCode('barfoo', ['cs' => ['one' => '']]),
             'Code should not be already registered for this test'
         );
     }

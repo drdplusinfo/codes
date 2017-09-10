@@ -33,6 +33,19 @@ class ArrowCode extends ProjectileCode
     }
 
     /**
+     * @param string $arrowCodeValue
+     * @param array $translations
+     * @return bool
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidLanguageCode
+     * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
+     */
+    public static function addNewArrowCode(string $arrowCodeValue, array $translations): bool
+    {
+        return static::addNewCode($arrowCodeValue, $translations);
+    }
+
+    /**
      * @return bool
      */
     final public function isArrow(): bool
@@ -60,5 +73,4 @@ class ArrowCode extends ProjectileCode
     {
         return __DIR__ . '/translations/arrow_code.csv';
     }
-
 }

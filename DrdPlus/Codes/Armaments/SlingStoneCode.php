@@ -21,6 +21,19 @@ class SlingStoneCode extends ProjectileCode
     }
 
     /**
+     * @param string $newSlingStoneCode
+     * @param array $translations
+     * @return bool
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidLanguageCode
+     * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
+     */
+    public static function addNewSlingStoneCode(string $newSlingStoneCode, array $translations): bool
+    {
+        return static::addNewCode($newSlingStoneCode, $translations);
+    }
+
+    /**
      * @return bool
      */
     final public function isSlingStone(): bool

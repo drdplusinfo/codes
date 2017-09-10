@@ -32,6 +32,19 @@ class HelmCode extends ArmorCode
     }
 
     /**
+     * @param string $helmCodeValue
+     * @param array $translations
+     * @return bool
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidLanguageCode
+     * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
+     */
+    public static function addNewHelmCode(string $helmCodeValue, array $translations): bool
+    {
+        return static::addNewCode($helmCodeValue, $translations);
+    }
+
+    /**
      * @return bool
      */
     final public function isHelm(): bool

@@ -31,6 +31,19 @@ class ShieldCode extends TranslatableExtendableCode implements MeleeWeaponlikeCo
     }
 
     /**
+     * @param string $newShieldCodeValue
+     * @param array $translations
+     * @return bool
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidLanguageCode
+     * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
+     * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
+     */
+    public static function addNewShieldCode(string $newShieldCodeValue, array $translations): bool
+    {
+        return static::addNewCode($newShieldCodeValue, $translations);
+    }
+
+    /**
      * @return bool
      */
     public function isProtectiveArmament(): bool
