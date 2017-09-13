@@ -34,7 +34,7 @@ class PropertyCode extends TranslatableCode
     const AGE = 'age';
     const HEIGHT_IN_CM = 'height_in_cm';
     const HEIGHT = 'height';
-    const WEIGHT_IN_KG = 'weight_in_kg';
+    const BODY_WEIGHT_IN_KG = 'body_weight_in_kg';
     const BODY_WEIGHT = 'body_weight';
     const SIZE = 'size';
 
@@ -47,7 +47,7 @@ class PropertyCode extends TranslatableCode
             self::AGE,
             self::HEIGHT_IN_CM,
             self::HEIGHT,
-            self::WEIGHT_IN_KG,
+            self::BODY_WEIGHT_IN_KG,
             self::BODY_WEIGHT,
             self::SIZE,
         ];
@@ -159,7 +159,7 @@ class PropertyCode extends TranslatableCode
                 self::AGE => ['one' => 'age', 'few' => 'ages', 'many' => 'ages'],
                 self::HEIGHT_IN_CM => ['one' => 'height in cm', 'few' => 'heights in cm', 'many' => 'heights in cm'],
                 self::HEIGHT => ['one' => 'height', 'few' => 'heights', 'many' => 'heights'],
-                self::WEIGHT_IN_KG => ['one' => 'weight in kg', 'few' => 'weights in kg', 'many' => 'weights in kg'],
+                self::BODY_WEIGHT_IN_KG => ['one' => 'body weight in kg', 'few' => 'body weights in kg', 'many' => 'body weights in kg'],
                 self::BODY_WEIGHT => ['one' => 'body weight', 'few' => 'body weights', 'many' => 'body weights'],
                 self::SIZE => ['one' => 'size', 'few' => 'sizes', 'many' => 'sizes'],
                 self::BEAUTY => ['one' => 'beauty', 'few' => 'beauties', 'many' => 'beauties'],
@@ -193,7 +193,7 @@ class PropertyCode extends TranslatableCode
                 self::AGE => ['one' => 'věk', 'few' => 'věky', 'many' => 'věků'],
                 self::HEIGHT_IN_CM => ['one' => 'výška v cm', 'few' => 'výšky cm', 'many' => 'výšek v cm'],
                 self::HEIGHT => ['one' => 'výška', 'few' => 'výšky', 'many' => 'výšek'],
-                self::WEIGHT_IN_KG => ['one' => 'váha v kg', 'few' => 'váhy kg', 'many' => 'váh v kg'],
+                self::BODY_WEIGHT_IN_KG => ['one' => 'váha v kg', 'few' => 'váhy kg', 'many' => 'váh v kg'],
                 self::BODY_WEIGHT => ['one' => 'váha', 'few' => 'váhy', 'many' => 'váh'],
                 self::SIZE => ['one' => 'velikost', 'few' => 'velikosti', 'many' => 'velikostí'],
                 self::BEAUTY => ['one' => 'krása', 'few' => 'krásy', 'many' => 'krás'],

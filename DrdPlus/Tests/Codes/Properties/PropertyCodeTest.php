@@ -35,7 +35,7 @@ class PropertyCodeTest extends TranslatableCodeTest
                 'age',
                 'height_in_cm',
                 'height',
-                'weight_in_kg',
+                'body_weight_in_kg',
                 'body_weight',
                 'size',
             ],
