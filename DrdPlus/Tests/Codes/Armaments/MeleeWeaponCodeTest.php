@@ -60,7 +60,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 'war_axe',
                 'two_handed_axe',
             ],
-            MeleeWeaponCode::getAxeCodes()
+            MeleeWeaponCode::getAxeValues()
         );
     }
 
@@ -77,7 +77,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 'long_knife',
                 'long_dagger',
             ],
-            MeleeWeaponCode::getKnifeAndDaggerCodes()
+            MeleeWeaponCode::getKnifeAndDaggerValues()
         );
     }
 
@@ -98,7 +98,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 'two_handed_club',
                 'heavy_sledgehammer',
             ],
-            MeleeWeaponCode::getMaceAndClubCodes()
+            MeleeWeaponCode::getMaceAndClubValues()
         );
     }
 
@@ -117,7 +117,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 'hobnailed_flail',
                 'heavy_morningstar',
             ],
-            MeleeWeaponCode::getMorningstarAndMorgensternCodes()
+            MeleeWeaponCode::getMorningstarAndMorgensternValues()
         );
     }
 
@@ -134,7 +134,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 'saber',
                 'heavy_saber',
             ],
-            MeleeWeaponCode::getSaberAndBowieKnifeCodes()
+            MeleeWeaponCode::getSaberAndBowieKnifeValues()
         );
     }
 
@@ -155,7 +155,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 'pike',
                 'metal_staff',
             ],
-            MeleeWeaponCode::getStaffAndSpearCodes()
+            MeleeWeaponCode::getStaffAndSpearValues()
         );
     }
 
@@ -174,7 +174,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 'barbarian_sword',
                 'two_handed_sword',
             ],
-            MeleeWeaponCode::getSwordCodes()
+            MeleeWeaponCode::getSwordValues()
         );
     }
 
@@ -193,7 +193,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 'heavy_trident',
                 'heavy_halberd',
             ],
-            MeleeWeaponCode::getVoulgeAndTridentCodes()
+            MeleeWeaponCode::getVoulgeAndTridentValues()
         );
     }
 
@@ -209,7 +209,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 'leg',
                 'hobnailed_boot',
             ],
-            MeleeWeaponCode::getUnarmedCodes()
+            MeleeWeaponCode::getUnarmedValues()
         );
     }
 
@@ -305,7 +305,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
             'isAxe', 'isKnifeOrDagger', 'isMaceOrClub', 'isMorningstarOrMorgenstern', 'isSaberOrBowieKnife',
             'isStaffOrSpear', 'isSword', 'isVoulgeOrTrident', 'isUnarmed',
         ];
-        foreach (MeleeWeaponCode::getAxeCodes() as $codeValue) {
+        foreach (MeleeWeaponCode::getAxeValues() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMelee());
             self::assertFalse($code->isRanged());
@@ -316,7 +316,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (MeleeWeaponCode::getKnifeAndDaggerCodes() as $codeValue) {
+        foreach (MeleeWeaponCode::getKnifeAndDaggerValues() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMelee());
             self::assertFalse($code->isRanged());
@@ -327,7 +327,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (MeleeWeaponCode::getMaceAndClubCodes() as $codeValue) {
+        foreach (MeleeWeaponCode::getMaceAndClubValues() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMelee());
             self::assertFalse($code->isRanged());
@@ -338,7 +338,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (MeleeWeaponCode::getMorningstarAndMorgensternCodes() as $codeValue) {
+        foreach (MeleeWeaponCode::getMorningstarAndMorgensternValues() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMelee());
             self::assertFalse($code->isRanged());
@@ -349,7 +349,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (MeleeWeaponCode::getSaberAndBowieKnifeCodes() as $codeValue) {
+        foreach (MeleeWeaponCode::getSaberAndBowieKnifeValues() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMelee());
             self::assertFalse($code->isRanged());
@@ -360,7 +360,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (MeleeWeaponCode::getStaffAndSpearCodes() as $codeValue) {
+        foreach (MeleeWeaponCode::getStaffAndSpearValues() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMelee());
             if ($codeValue !== MeleeWeaponCode::SPEAR) {
@@ -379,7 +379,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (MeleeWeaponCode::getSwordCodes() as $codeValue) {
+        foreach (MeleeWeaponCode::getSwordValues() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMelee());
             self::assertFalse($code->isRanged());
@@ -390,7 +390,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (MeleeWeaponCode::getVoulgeAndTridentCodes() as $codeValue) {
+        foreach (MeleeWeaponCode::getVoulgeAndTridentValues() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMelee());
             self::assertFalse($code->isRanged());
@@ -401,7 +401,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (MeleeWeaponCode::getUnarmedCodes() as $codeValue) {
+        foreach (MeleeWeaponCode::getUnarmedValues() as $codeValue) {
             $code = MeleeWeaponCode::getIt($codeValue);
             self::assertTrue($code->isMelee());
             self::assertFalse($code->isRanged());
@@ -484,7 +484,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
         foreach (MeleeWeaponCode::getPossibleValues() as $meleeWeaponCodeValue) {
             $meleeWeaponCode = MeleeWeaponCode::getIt($meleeWeaponCodeValue);
             self::assertSame(
-                in_array($meleeWeaponCodeValue, MeleeWeaponCode::getUnarmedCodes(), true),
+                in_array($meleeWeaponCodeValue, MeleeWeaponCode::getUnarmedValues(), true),
                 $meleeWeaponCode->isUnarmed()
             );
         }
@@ -495,7 +495,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 MeleeWeaponCode::LEG,
                 MeleeWeaponCode::HOBNAILED_BOOT,
             ],
-            MeleeWeaponCode::getUnarmedCodes()
+            MeleeWeaponCode::getUnarmedValues()
         );
     }
 

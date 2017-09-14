@@ -19,7 +19,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      * @param bool $withCustomValues = true
      * @return array|string[]
      */
-    public static function getAxeCodes(bool $withCustomValues = true): array
+    public static function getAxeValues(bool $withCustomValues = true): array
     {
         $defaultValues = [self::LIGHT_AXE, self::AXE, self::WAR_AXE, self::TWO_HANDED_AXE];
         if (!$withCustomValues) {
@@ -43,7 +43,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      * @param bool $withCustomValues = true
      * @return array|string[]
      */
-    public static function getKnifeAndDaggerCodes(bool $withCustomValues = true): array
+    public static function getKnifeAndDaggerValues(bool $withCustomValues = true): array
     {
         $defaultValues = [self::KNIFE, self::DAGGER, self::STABBING_DAGGER, self::LONG_KNIFE, self::LONG_DAGGER];
         if (!$withCustomValues) {
@@ -71,7 +71,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      * @param bool $withCustomValues = true
      * @return array|string[]
      */
-    public static function getMaceAndClubCodes(bool $withCustomValues = true): array
+    public static function getMaceAndClubValues(bool $withCustomValues = true): array
     {
         $defaultValues = [
             self::CUDGEL,
@@ -107,7 +107,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      * @param bool $withCustomValues = true
      * @return array|string[]
      */
-    public static function getMorningstarAndMorgensternCodes(bool $withCustomValues = true): array
+    public static function getMorningstarAndMorgensternValues(bool $withCustomValues = true): array
     {
         $defaultValues = [
             self::LIGHT_MORGENSTERN,
@@ -139,7 +139,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      * @param bool $withCustomValues = true
      * @return array|string[]
      */
-    public static function getSaberAndBowieKnifeCodes(bool $withCustomValues = true): array
+    public static function getSaberAndBowieKnifeValues(bool $withCustomValues = true): array
     {
         $defaultValues = [self::MACHETE, self::LIGHT_SABER, self::BOWIE_KNIFE, self::SABER, self::HEAVY_SABER];
         if (!$withCustomValues) {
@@ -167,7 +167,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      * @param bool $withCustomValues = true
      * @return array|string[]
      */
-    public static function getStaffAndSpearCodes(bool $withCustomValues = true): array
+    public static function getStaffAndSpearValues(bool $withCustomValues = true): array
     {
         $defaultValues = [
             self::LIGHT_SPEAR,
@@ -203,7 +203,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      * @param bool $withCustomValues = true
      * @return array|string[]
      */
-    public static function getSwordCodes(bool $withCustomValues = true): array
+    public static function getSwordValues(bool $withCustomValues = true): array
     {
         $defaultValues = [
             self::SHORT_SWORD,
@@ -234,7 +234,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      * @param bool $withCustomValues = true
      * @return array|string[]
      */
-    public static function getVoulgeAndTridentCodes(bool $withCustomValues = true): array
+    public static function getVoulgeAndTridentValues(bool $withCustomValues = true): array
     {
         $defaultValues = [
             self::PITCHFORK,
@@ -265,7 +265,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      * @param bool $withCustomValues = true
      * @return array|string[]
      */
-    public static function getUnarmedCodes(bool $withCustomValues = true): array
+    public static function getUnarmedValues(bool $withCustomValues = true): array
     {
         $defaultValues = [self::HAND, self::HOBNAILED_GLOVE, self::LEG, self::HOBNAILED_BOOT];
         if (!$withCustomValues) {
@@ -285,15 +285,15 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     {
         return array_values( // to get continual integer keys
             array_merge(
-                self::getAxeCodes(false /* without custom */),
-                self::getKnifeAndDaggerCodes(false /* without custom */),
-                self::getMaceAndClubCodes(false /* without custom */),
-                self::getMorningstarAndMorgensternCodes(false /* without custom */),
-                self::getSaberAndBowieKnifeCodes(false /* without custom */),
-                self::getStaffAndSpearCodes(false /* without custom */),
-                self::getSwordCodes(false /* without custom */),
-                self::getVoulgeAndTridentCodes(false /* without custom */),
-                self::getUnarmedCodes(false /* without custom */)
+                self::getAxeValues(false /* without custom */),
+                self::getKnifeAndDaggerValues(false /* without custom */),
+                self::getMaceAndClubValues(false /* without custom */),
+                self::getMorningstarAndMorgensternValues(false /* without custom */),
+                self::getSaberAndBowieKnifeValues(false /* without custom */),
+                self::getStaffAndSpearValues(false /* without custom */),
+                self::getSwordValues(false /* without custom */),
+                self::getVoulgeAndTridentValues(false /* without custom */),
+                self::getUnarmedValues(false /* without custom */)
             )
         );
     }
@@ -405,7 +405,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isAxe(): bool
     {
-        return in_array($this->getValue(), self::getAxeCodes(), true);
+        return in_array($this->getValue(), self::getAxeValues(), true);
     }
 
     /**
@@ -413,7 +413,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isKnifeOrDagger(): bool
     {
-        return in_array($this->getValue(), self::getKnifeAndDaggerCodes(), true);
+        return in_array($this->getValue(), self::getKnifeAndDaggerValues(), true);
     }
 
     /**
@@ -421,7 +421,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isMaceOrClub(): bool
     {
-        return in_array($this->getValue(), self::getMaceAndClubCodes(), true);
+        return in_array($this->getValue(), self::getMaceAndClubValues(), true);
     }
 
     /**
@@ -429,7 +429,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isMorningstarOrMorgenstern(): bool
     {
-        return in_array($this->getValue(), self::getMorningstarAndMorgensternCodes(), true);
+        return in_array($this->getValue(), self::getMorningstarAndMorgensternValues(), true);
     }
 
     /**
@@ -437,7 +437,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isSaberOrBowieKnife(): bool
     {
-        return in_array($this->getValue(), self::getSaberAndBowieKnifeCodes(), true);
+        return in_array($this->getValue(), self::getSaberAndBowieKnifeValues(), true);
     }
 
     /**
@@ -445,7 +445,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isStaffOrSpear(): bool
     {
-        return in_array($this->getValue(), self::getStaffAndSpearCodes(), true);
+        return in_array($this->getValue(), self::getStaffAndSpearValues(), true);
     }
 
     /**
@@ -453,7 +453,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isSword(): bool
     {
-        return in_array($this->getValue(), self::getSwordCodes(), true);
+        return in_array($this->getValue(), self::getSwordValues(), true);
     }
 
     /**
@@ -461,7 +461,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isVoulgeOrTrident(): bool
     {
-        return in_array($this->getValue(), self::getVoulgeAndTridentCodes(), true);
+        return in_array($this->getValue(), self::getVoulgeAndTridentValues(), true);
     }
 
     /**
@@ -469,7 +469,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isUnarmed(): bool
     {
-        return in_array($this->getValue(), self::getUnarmedCodes(), true);
+        return in_array($this->getValue(), self::getUnarmedValues(), true);
     }
 
     /**
