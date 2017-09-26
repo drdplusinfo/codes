@@ -32,7 +32,7 @@ class RangedWeaponCode extends WeaponCode
             return $defaultValues;
         }
 
-        return array_merge($defaultValues, static::$customRangedWeaponCodePerCategory[WeaponCategoryCode::BOW] ?? []);
+        return array_merge($defaultValues, static::$customRangedWeaponCodePerCategory[WeaponCategoryCode::BOWS] ?? []);
     }
 
     // crossbows
@@ -57,7 +57,7 @@ class RangedWeaponCode extends WeaponCode
             return $defaultValues;
         }
 
-        return array_merge($defaultValues, static::$customRangedWeaponCodePerCategory[WeaponCategoryCode::CROSSBOW] ?? []);
+        return array_merge($defaultValues, static::$customRangedWeaponCodePerCategory[WeaponCategoryCode::CROSSBOWS] ?? []);
     }
 
     // throwing weapons
@@ -94,7 +94,7 @@ class RangedWeaponCode extends WeaponCode
             return $defaultValues;
         }
 
-        return array_merge($defaultValues, static::$customRangedWeaponCodePerCategory[WeaponCategoryCode::THROWING_WEAPON] ?? []);
+        return array_merge($defaultValues, static::$customRangedWeaponCodePerCategory[WeaponCategoryCode::THROWING_WEAPONS] ?? []);
     }
 
     /**

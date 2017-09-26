@@ -2,6 +2,7 @@
 namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\Armaments\ShieldCode;
+use DrdPlus\Codes\Armaments\WeaponCategoryCode;
 use DrdPlus\Codes\Environment\LandingSurfaceCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Partials\TranslatableCode;
@@ -26,12 +27,13 @@ class AllTranslatableCodesTest extends TestWithMockery
                 "Test class $testClass should be a descendant of " . TranslatableCodeTest::class
             );
             $hasSinglesOnly = $this->hasSinglesOnly($codeClass);
+            $hasMultiplesOnly = $this->hasMultiplesOnly($codeClass);
             foreach ($codeClass::getPossibleValues() as $value) {
                 /** @var TranslatableCode $sut */
                 $sut = $codeClass::getIt($value);
                 self::assertSame($this->codeToEnglish($value), $sut->translateTo('en'));
                 self::assertSame($sut->translateTo('en'), $sut->translateTo('en', 1));
-                if ($hasSinglesOnly || in_array($value, $this->getValuesSameInEnglishForAnyNumbers(), true)) {
+                if ($hasSinglesOnly || $hasMultiplesOnly || in_array($value, $this->getValuesSameInEnglishForAnyNumbers(), true)) {
                     self::assertSame($sut->translateTo('en', 1), $sut->translateTo('en', 2));
                 } else {
                     self::assertNotSame(
@@ -58,6 +60,17 @@ class AllTranslatableCodesTest extends TestWithMockery
     {
         foreach ([SkillTypeCode::class, SkillCode::class, ShieldCode::class, ItemHoldingCode::class, LandingSurfaceCode::class] as $singleOnlyClass) {
             if (is_a($codeClass, $singleOnlyClass, true)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    protected function hasMultiplesOnly(string $codeClass): bool
+    {
+        foreach ([WeaponCategoryCode::class] as $multipleOnlyClass) {
+            if (is_a($codeClass, $multipleOnlyClass, true)) {
                 return true;
             }
         }
@@ -105,6 +118,7 @@ class AllTranslatableCodesTest extends TestWithMockery
     {
         foreach ($this->getTranslatableCodeClasses() as $codeClass) {
             $hasSinglesOnly = $this->hasSinglesOnly($codeClass);
+            $hasMultiplesOnly = $this->hasMultiplesOnly($codeClass);
             foreach ($codeClass::getPossibleValues() as $value) {
                 /** @var TranslatableCode $sut */
                 $sut = $codeClass::getIt($value);
@@ -121,7 +135,7 @@ class AllTranslatableCodesTest extends TestWithMockery
                     );
                 }
                 $twoInCzech = $sut->translateTo('cs', 2);
-                if ($hasSinglesOnly || in_array($oneInCzech, $this->getValuesSameInCzechForOneAndFew(), true)) {
+                if ($hasSinglesOnly || $hasMultiplesOnly || in_array($oneInCzech, $this->getValuesSameInCzechForOneAndFew(), true)) {
                     self::assertSame(
                         $oneInCzech,
                         $twoInCzech,
@@ -137,7 +151,7 @@ class AllTranslatableCodesTest extends TestWithMockery
                 self::assertSame($twoInCzech, $threeInCzech = $sut->translateTo('cs', 3));
                 self::assertSame($threeInCzech, $fourInCzech = $sut->translateTo('cs', 4));
                 $fiveInCzech = $sut->translateTo('cs', 5);
-                if ($hasSinglesOnly || in_array($fourInCzech, $this->getValuesSameInCzechForFewAndMany(), true)) {
+                if ($hasSinglesOnly || $hasMultiplesOnly || in_array($fourInCzech, $this->getValuesSameInCzechForFewAndMany(), true)) {
                     self::assertSame($fourInCzech, $fiveInCzech);
                 } else {
                     self::assertNotSame(

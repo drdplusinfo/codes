@@ -285,7 +285,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
      */
     public function I_can_not_add_new_ranged_weapon_code_with_not_melee_category()
     {
-        $meleeCategory = WeaponCategoryCode::getIt(WeaponCategoryCode::VOULGE_AND_TRIDENT);
+        $meleeCategory = WeaponCategoryCode::getIt(WeaponCategoryCode::VOULGES_AND_TRIDENTS);
         self::assertFalse($meleeCategory->isRangedWeaponCategory());
         RangedWeaponCode::addNewRangedWeaponCode('foo', $meleeCategory, []);
     }

@@ -3,9 +3,6 @@ namespace DrdPlus\Codes\Partials;
 
 use Granam\Tools\ValueDescriber;
 
-/**
- * @method static TranslatableExtendableCode getIt($codeValue)
- */
 abstract class TranslatableExtendableCode extends TranslatableCode
 {
     private static $customValues = [];

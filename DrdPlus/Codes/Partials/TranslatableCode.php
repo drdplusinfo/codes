@@ -4,9 +4,6 @@ namespace DrdPlus\Codes\Partials;
 use Granam\Number\NumberInterface;
 use Granam\Number\Tools\ToNumber;
 
-/**
- * @method static TranslatableCode getIt($codeValue)
- */
 abstract class TranslatableCode extends AbstractCode implements Translatable
 {
     protected static $ONE = 'one';
@@ -44,8 +41,8 @@ abstract class TranslatableCode extends AbstractCode implements Translatable
             return str_replace('_', ' ', $code); // just replacing underscores by spaces
         }
         trigger_error(
-            "Missing translation for value '{$code}', language '{$languageCode}' and plural '{$plural}'"
-            . ', english will be used instead',
+            "Missing translation for value '{$code}', language '{$languageCode}' and plural '{$plural}' for code "
+            . static::class . ', english will be used instead',
             E_USER_WARNING
         );
         $translations = $this->getTranslations('en');

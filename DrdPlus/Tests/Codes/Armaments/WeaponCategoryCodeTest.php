@@ -13,14 +13,14 @@ class WeaponCategoryCodeTest extends TranslatableCodeTest
     {
         self::assertSame(
             $codes = [
-                'axe',
-                'knife_and_dagger',
-                'mace_and_club',
-                'morningstar_and_morgenstern',
-                'saber_and_bowie_knife',
-                'staff_and_spear',
-                'sword',
-                'voulge_and_trident',
+                'axes',
+                'knives_and_daggers',
+                'maces_and_clubs',
+                'morningstars_and_morgensterns',
+                'sabers_and_bowie_knives',
+                'staffs_and_spears',
+                'swords',
+                'voulges_and_tridents',
                 'unarmed',
             ],
             WeaponCategoryCode::getMeleeWeaponCategoryValues()
@@ -39,7 +39,7 @@ class WeaponCategoryCodeTest extends TranslatableCodeTest
     public function I_can_get_ranged_weapon_category_codes()
     {
         self::assertSame(
-            $codes = ['bow', 'crossbow', 'throwing_weapon'],
+            $codes = ['bows', 'crossbows', 'throwing_weapons'],
             WeaponCategoryCode::getRangedWeaponCategoryValues()
         );
         foreach ($codes as $code) {
@@ -56,7 +56,7 @@ class WeaponCategoryCodeTest extends TranslatableCodeTest
     public function I_can_get_projectile_category_codes()
     {
         self::assertSame(
-            $codes = ['arrow', 'dart', 'sling_stone'],
+            $codes = ['arrows', 'darts', 'sling_stones'],
             WeaponCategoryCode::getProjectileCategoryValues()
         );
         foreach ($codes as $code) {
