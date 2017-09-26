@@ -65,7 +65,7 @@ abstract class AbstractCodeType extends ScalarEnumType
     }
 
     /**
-     * @param string|int|float $valueForEnum
+     * @param string|int|float|bool $valueForEnum
      * @return float|int|null|string
      * @throws \Doctrineum\Scalar\Exceptions\UnexpectedValueToEnum
      */
