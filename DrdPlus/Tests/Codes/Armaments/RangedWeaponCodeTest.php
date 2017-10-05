@@ -6,9 +6,21 @@ use DrdPlus\Codes\Armaments\MeleeWeaponCode;
 use DrdPlus\Codes\Armaments\RangedWeaponCode;
 use DrdPlus\Codes\Armaments\WeaponCategoryCode;
 use DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode;
+use Granam\String\StringTools;
 
 class RangedWeaponCodeTest extends WeaponCodeTest
 {
+
+    /**
+     * @test
+     */
+    public function I_can_easily_composer_method_to_get_weapons_of_same_category()
+    {
+        foreach (WeaponCategoryCode::getRangedWeaponCategoryValues() as $rangedWeaponCategoryValue) {
+            $getRangedWeaponOfCategory = StringTools::assembleGetterForName($rangedWeaponCategoryValue . 'Values');
+            self::assertTrue(method_exists(self::getSutClass(), $getRangedWeaponOfCategory));
+        }
+    }
 
     /**
      * @param string $weaponlikeCode
@@ -50,7 +62,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 'long_composite_bow',
                 'power_bow',
             ],
-            RangedWeaponCode::getBowValues()
+            RangedWeaponCode::getBowsValues()
         );
     }
 
@@ -66,7 +78,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 'military_crossbow',
                 'heavy_crossbow',
             ],
-            RangedWeaponCode::getCrossbowValues()
+            RangedWeaponCode::getCrossbowsValues()
         );
     }
 
@@ -88,7 +100,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 'javelin',
                 'sling',
             ],
-            RangedWeaponCode::getThrowingWeaponValues()
+            RangedWeaponCode::getThrowingWeaponsValues()
         );
     }
 
@@ -139,7 +151,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
         $questions = [
             'isBow', 'isCrossbow', 'isThrowingWeapon',
         ];
-        foreach (RangedWeaponCode::getBowValues() as $codeValue) {
+        foreach (RangedWeaponCode::getBowsValues() as $codeValue) {
             $code = RangedWeaponCode::getIt($codeValue);
             self::assertTrue($code->isRanged());
             self::assertFalse($code->isMelee());
@@ -150,7 +162,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (RangedWeaponCode::getCrossbowValues() as $codeValue) {
+        foreach (RangedWeaponCode::getCrossbowsValues() as $codeValue) {
             $code = RangedWeaponCode::getIt($codeValue);
             self::assertTrue($code->isRanged());
             self::assertFalse($code->isMelee());
@@ -161,7 +173,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 }
             }
         }
-        foreach (RangedWeaponCode::getThrowingWeaponValues() as $codeValue) {
+        foreach (RangedWeaponCode::getThrowingWeaponsValues() as $codeValue) {
             $code = RangedWeaponCode::getIt($codeValue);
             self::assertTrue($code->isRanged());
             if ($codeValue !== RangedWeaponCode::SPEAR) {

@@ -19,7 +19,7 @@ class RangedWeaponCode extends WeaponCode
      * @param bool $withCustomValues = true
      * @return array|string[]
      */
-    public static function getBowValues(bool $withCustomValues = true): array
+    public static function getBowsValues(bool $withCustomValues = true): array
     {
         $defaultValues = [
             self::SHORT_BOW,
@@ -45,7 +45,7 @@ class RangedWeaponCode extends WeaponCode
      * @param bool $withCustomValues = true
      * @return array|string[]
      */
-    public static function getCrossbowValues(bool $withCustomValues = true): array
+    public static function getCrossbowsValues(bool $withCustomValues = true): array
     {
         $defaultValues = [
             self::MINICROSSBOW,
@@ -76,7 +76,7 @@ class RangedWeaponCode extends WeaponCode
      * @param bool $withCustomValues = true
      * @return array|string[]
      */
-    public static function getThrowingWeaponValues(bool $withCustomValues = true): array
+    public static function getThrowingWeaponsValues(bool $withCustomValues = true): array
     {
         $defaultValues = [
             self::SAND,
@@ -104,9 +104,9 @@ class RangedWeaponCode extends WeaponCode
     {
         return array_values( // to get continual integer keys
             array_merge(
-                self::getBowValues(false /* without custom */),
-                self::getCrossbowValues(false /* without custom */),
-                self::getThrowingWeaponValues(false /* without custom */)
+                self::getBowsValues(false /* without custom */),
+                self::getCrossbowsValues(false /* without custom */),
+                self::getThrowingWeaponsValues(false /* without custom */)
             )
         );
     }
@@ -189,7 +189,7 @@ class RangedWeaponCode extends WeaponCode
      */
     public function isBow(): bool
     {
-        return in_array($this->getValue(), self::getBowValues(), true);
+        return in_array($this->getValue(), self::getBowsValues(), true);
     }
 
     /**
@@ -197,7 +197,7 @@ class RangedWeaponCode extends WeaponCode
      */
     public function isCrossbow(): bool
     {
-        return in_array($this->getValue(), self::getCrossbowValues(), true);
+        return in_array($this->getValue(), self::getCrossbowsValues(), true);
     }
 
     /**
@@ -205,7 +205,7 @@ class RangedWeaponCode extends WeaponCode
      */
     public function isThrowingWeapon(): bool
     {
-        return in_array($this->getValue(), self::getThrowingWeaponValues(), true);
+        return in_array($this->getValue(), self::getThrowingWeaponsValues(), true);
     }
 
     /**
