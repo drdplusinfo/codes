@@ -238,7 +238,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 'axe',
                 'war_axe',
                 'two_handed_axe',
-                // knifes and daggers
+                // knives and daggers
                 'knife',
                 'dagger',
                 'stabbing_dagger',
@@ -262,7 +262,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
                 'morningstar',
                 'hobnailed_flail',
                 'heavy_morningstar',
-                // sabers and bowie knifes
+                // sabers and bowie knives
                 'machete',
                 'light_saber',
                 'bowie_knife',

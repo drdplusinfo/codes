@@ -17,10 +17,10 @@ class PhysicalSkillCode extends SkillCode
     const FAST_MARSH = 'fast_marsh';
     const FIGHT_UNARMED = 'fight_unarmed';
     const FIGHT_WITH_AXES = 'fight_with_axes';
-    const FIGHT_WITH_KNIFES_AND_DAGGERS = 'fight_with_knifes_and_daggers';
+    const FIGHT_WITH_KNIVES_AND_DAGGERS = 'fight_with_knives_and_daggers';
     const FIGHT_WITH_MACES_AND_CLUBS = 'fight_with_maces_and_clubs';
     const FIGHT_WITH_MORNINGSTARS_AND_MORGENSTERNS = 'fight_with_morningstars_and_morgensterns';
-    const FIGHT_WITH_SABERS_AND_BOWIE_KNIFES = 'fight_with_sabers_and_bowie_knifes';
+    const FIGHT_WITH_SABERS_AND_BOWIE_KNIVES = 'fight_with_sabers_and_bowie_knives';
     const FIGHT_WITH_SHIELDS = 'fight_with_shields'; // do not search this in rules, it is additional
     const FIGHT_WITH_STAFFS_AND_SPEARS = 'fight_with_staffs_and_spears';
     const FIGHT_WITH_SWORDS = 'fight_with_swords';
@@ -51,10 +51,10 @@ class PhysicalSkillCode extends SkillCode
             self::FAST_MARSH,
             self::FIGHT_UNARMED,
             self::FIGHT_WITH_AXES,
-            self::FIGHT_WITH_KNIFES_AND_DAGGERS,
+            self::FIGHT_WITH_KNIVES_AND_DAGGERS,
             self::FIGHT_WITH_MACES_AND_CLUBS,
             self::FIGHT_WITH_MORNINGSTARS_AND_MORGENSTERNS,
-            self::FIGHT_WITH_SABERS_AND_BOWIE_KNIFES,
+            self::FIGHT_WITH_SABERS_AND_BOWIE_KNIVES,
             self::FIGHT_WITH_SHIELDS,
             self::FIGHT_WITH_STAFFS_AND_SPEARS,
             self::FIGHT_WITH_SWORDS,
@@ -85,10 +85,10 @@ class PhysicalSkillCode extends SkillCode
                 self::FAST_MARSH => ['one' => 'fast marsh'],
                 self::FIGHT_UNARMED => ['one' => 'fight unarmed'],
                 self::FIGHT_WITH_AXES => ['one' => 'fight with axes'],
-                self::FIGHT_WITH_KNIFES_AND_DAGGERS => ['one' => 'fight with knifes and daggers'],
+                self::FIGHT_WITH_KNIVES_AND_DAGGERS => ['one' => 'fight with knives and daggers'],
                 self::FIGHT_WITH_MACES_AND_CLUBS => ['one' => 'fight with maces and clubs'],
                 self::FIGHT_WITH_MORNINGSTARS_AND_MORGENSTERNS => ['one' => 'fight with morningstars and morgensterns'],
-                self::FIGHT_WITH_SABERS_AND_BOWIE_KNIFES => ['one' => 'fight with sabers and bowie knifes'],
+                self::FIGHT_WITH_SABERS_AND_BOWIE_KNIVES => ['one' => 'fight with sabers and bowie knives'],
                 self::FIGHT_WITH_SHIELDS => ['one' => 'fight with shields'],
                 self::FIGHT_WITH_STAFFS_AND_SPEARS => ['one' => 'fight with staffs and spears'],
                 self::FIGHT_WITH_SWORDS => ['one' => 'fight with swords'],
@@ -114,10 +114,10 @@ class PhysicalSkillCode extends SkillCode
                 self::FAST_MARSH => ['one' => 'rychlý pochod'],
                 self::FIGHT_UNARMED => ['one' => 'boj beze zbraně'],
                 self::FIGHT_WITH_AXES => ['one' => 'boj se sekerami'],
-                self::FIGHT_WITH_KNIFES_AND_DAGGERS => ['one' => 'boj s noži a dýkami'],
+                self::FIGHT_WITH_KNIVES_AND_DAGGERS => ['one' => 'boj s noži a dýkami'],
                 self::FIGHT_WITH_MACES_AND_CLUBS => ['one' => 'boj s palicemi a kyji'],
                 self::FIGHT_WITH_MORNINGSTARS_AND_MORGENSTERNS => ['one' => 'boj se řemdihy a bijáky'],
-                self::FIGHT_WITH_SABERS_AND_BOWIE_KNIFES => ['one' => 'boj se šavlemi a tesáky'],
+                self::FIGHT_WITH_SABERS_AND_BOWIE_KNIVES => ['one' => 'boj se šavlemi a tesáky'],
                 self::FIGHT_WITH_SHIELDS => ['one' => 'boj se štítem'],
                 self::FIGHT_WITH_STAFFS_AND_SPEARS => ['one' => 'boj s holemi a kopími'],
                 self::FIGHT_WITH_SWORDS => ['one' => 'boj s meči'],

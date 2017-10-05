@@ -32,7 +32,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
         );
     }
 
-    // knifes and daggers
+    // knives and daggers
     const KNIFE = 'knife';
     const DAGGER = 'dagger';
     const STABBING_DAGGER = 'stabbing_dagger';
@@ -506,10 +506,10 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
                 self::AXE => ['one' => 'axe', 'few' => 'axes', 'many' => 'axes'],
                 self::WAR_AXE => ['one' => 'war axe', 'few' => 'war axes', 'many' => 'war axes'],
                 self::TWO_HANDED_AXE => ['one' => 'two handed axe', 'few' => 'two handed axes', 'many' => 'two handed axes'],
-                self::KNIFE => ['one' => 'knife', 'few' => 'knifes', 'many' => 'knifes'],
+                self::KNIFE => ['one' => 'knife', 'few' => 'knives', 'many' => 'knives'],
                 self::DAGGER => ['one' => 'dagger', 'few' => 'daggers', 'many' => 'daggers'],
                 self::STABBING_DAGGER => ['one' => 'stabbing dagger', 'few' => 'stabbing daggers', 'many' => 'stabbing daggers'],
-                self::LONG_KNIFE => ['one' => 'long knife', 'few' => 'long knifes', 'many' => 'long knifes'],
+                self::LONG_KNIFE => ['one' => 'long knife', 'few' => 'long knives', 'many' => 'long knives'],
                 self::LONG_DAGGER => ['one' => 'long dagger', 'few' => 'long daggers', 'many' => 'long daggers'],
                 self::CUDGEL => ['one' => 'cudgel', 'few' => 'cudgels', 'many' => 'cudgels'],
                 self::CLUB => ['one' => 'club', 'few' => 'clubs', 'many' => 'clubs'],
@@ -529,7 +529,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
                 self::HEAVY_MORNINGSTAR => ['one' => 'heavy morningstar', 'few' => 'heavy morningstars', 'many' => 'heavy morningstars'],
                 self::MACHETE => ['one' => 'machete', 'few' => 'machetes', 'many' => 'machetes'],
                 self::LIGHT_SABER => ['one' => 'light saber', 'few' => 'light sabers', 'many' => 'light sabers'],
-                self::BOWIE_KNIFE => ['one' => 'bowie knife', 'few' => 'bowie knifes', 'many' => 'bowie knifes'],
+                self::BOWIE_KNIFE => ['one' => 'bowie knife', 'few' => 'bowie knives', 'many' => 'bowie knives'],
                 self::SABER => ['one' => 'saber', 'few' => 'sabers', 'many' => 'sabers'],
                 self::HEAVY_SABER => ['one' => 'heavy saber', 'few' => 'heavy sabers', 'many' => 'heavy sabers'],
                 self::LIGHT_SPEAR => ['one' => 'light spear', 'few' => 'light spears', 'many' => 'light spears'],
