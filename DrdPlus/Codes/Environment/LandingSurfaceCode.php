@@ -38,7 +38,7 @@ class LandingSurfaceCode extends FileBasedTranslatableCode
 
     protected function getTranslationsFileName(): string
     {
-        return __DIR__ . '/data/landing_surfaces.csv';
+        return __DIR__ . '/translations/landing_surfaces.csv';
     }
 
 }
