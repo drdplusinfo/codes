@@ -8,6 +8,7 @@ use DrdPlus\Codes\Partials\TranslatableCode;
  */
 class DistanceUnitCode extends TranslatableCode
 {
+    const DECIMETER = 'decimeter';
     const METER = 'meter';
     const KILOMETER = 'kilometer';
     const LIGHT_YEAR = 'light_year';
@@ -18,6 +19,7 @@ class DistanceUnitCode extends TranslatableCode
     public static function getPossibleValues(): array
     {
         return [
+            self::DECIMETER,
             self::METER,
             self::KILOMETER,
             self::LIGHT_YEAR,
@@ -31,11 +33,13 @@ class DistanceUnitCode extends TranslatableCode
     {
         return [
             'en' => [
+                self::DECIMETER => ['one' => 'decimeter', 'one_decimal' => 'decimeter', 'few' => 'decimeters', 'many' => 'decimeters'],
                 self::METER => ['one' => 'meter', 'one_decimal' => 'meter', 'few' => 'meters', 'many' => 'meters'],
                 self::KILOMETER => ['one' => 'kilometer', 'few' => 'kilometers', 'many' => 'kilometers'],
                 self::LIGHT_YEAR => ['one' => 'light year', 'few' => 'light years', 'many' => 'light years'],
             ],
             'cs' => [
+                self::DECIMETER => ['one' => 'decimetr', 'few' => 'decimetry', 'few_decimal' => 'decimetru', 'many' => 'decimetrů'],
                 self::METER => ['one' => 'metr', 'few' => 'metry', 'few_decimal' => 'metru', 'many' => 'metrů'],
                 self::KILOMETER => ['one' => 'kilometr', 'few' => 'kilometry', 'few_decimal' => 'kilometru', 'many' => 'kilometrů'],
                 self::LIGHT_YEAR => ['one' => 'světelný rok', 'few' => 'světelné roky', 'few_decimal' => 'světelného roku', 'many' => 'světelných let'],

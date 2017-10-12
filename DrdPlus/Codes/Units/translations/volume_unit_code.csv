@@ -2,6 +2,8 @@ code,language,one,few,many
 liter,cs,litr,litry,litrů
 cubic_meter,cs,metr krychlový,metry krychlové,metrů krychlových
 cubic_kilometer,cs,kilometr krychlový,kilometry krychlové,kilometrů krychlových
+cubic_light_year,cs,světelný rok krychlový,světelné roky krychlové,světelných let krychlových
 liter,en,liter,liters,liters
 cubic_meter,en,cubic meter,cubic meters,cubic meters
 cubic_kilometer,en,cubic kilometer,cubic kilometers,cubic kilometers
+cubic_light_year,en,cubic light year,cubic light years,cubic light years
