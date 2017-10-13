@@ -13,7 +13,6 @@ class VolumeUnitCode extends FileBasedTranslatableCode
     const LITER = 'liter';
     const CUBIC_METER = 'cubic_meter';
     const CUBIC_KILOMETER = 'cubic_kilometer';
-    const CUBIC_LIGHT_YEAR = 'cubic_light_year';
 
     public static function getPossibleValues(): array
     {
@@ -21,7 +20,6 @@ class VolumeUnitCode extends FileBasedTranslatableCode
             self::LITER,
             self::CUBIC_METER,
             self::CUBIC_KILOMETER,
-            self::CUBIC_LIGHT_YEAR,
         ];
     }
 
