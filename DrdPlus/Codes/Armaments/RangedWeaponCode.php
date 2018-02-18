@@ -32,7 +32,7 @@ class RangedWeaponCode extends WeaponCode
             return $defaultValues;
         }
 
-        return array_merge($defaultValues, static::$customRangedWeaponCodePerCategory[WeaponCategoryCode::BOWS] ?? []);
+        return \array_merge($defaultValues, static::$customRangedWeaponCodePerCategory[WeaponCategoryCode::BOWS] ?? []);
     }
 
     // crossbows
@@ -57,7 +57,7 @@ class RangedWeaponCode extends WeaponCode
             return $defaultValues;
         }
 
-        return array_merge($defaultValues, static::$customRangedWeaponCodePerCategory[WeaponCategoryCode::CROSSBOWS] ?? []);
+        return \array_merge($defaultValues, static::$customRangedWeaponCodePerCategory[WeaponCategoryCode::CROSSBOWS] ?? []);
     }
 
     // throwing weapons
@@ -94,7 +94,7 @@ class RangedWeaponCode extends WeaponCode
             return $defaultValues;
         }
 
-        return array_merge($defaultValues, static::$customRangedWeaponCodePerCategory[WeaponCategoryCode::THROWING_WEAPONS] ?? []);
+        return \array_merge($defaultValues, static::$customRangedWeaponCodePerCategory[WeaponCategoryCode::THROWING_WEAPONS] ?? []);
     }
 
     /**
@@ -150,9 +150,9 @@ class RangedWeaponCode extends WeaponCode
      * @param WeaponCategoryCode $weaponCategoryCode
      * @throws \DrdPlus\Codes\Armaments\Exceptions\RangedWeaponIsAlreadyInDifferentWeaponCategory
      */
-    private static function guardSameCategory(string $meleeWeaponValue, WeaponCategoryCode $weaponCategoryCode)
+    private static function guardSameCategory(string $meleeWeaponValue, WeaponCategoryCode $weaponCategoryCode): void
     {
-        if (!in_array($meleeWeaponValue, self::$customRangedWeaponCodePerCategory[$weaponCategoryCode->getValue()] ?? [], true)) {
+        if (!\in_array($meleeWeaponValue, self::$customRangedWeaponCodePerCategory[$weaponCategoryCode->getValue()] ?? [], true)) {
             $alreadyUsedCategory = null;
             foreach (WeaponCategoryCode::getPossibleValues() as $anotherCategory) {
                 if ($anotherCategory !== $weaponCategoryCode->getValue()

@@ -292,6 +292,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      * @expectedException \DrdPlus\Codes\Armaments\Exceptions\InvalidWeaponCategoryForNewRangedWeaponCode
      * @expectedExceptionMessageRegExp ~voulge~
      */
@@ -304,6 +305,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      * @expectedException \DrdPlus\Codes\Armaments\Exceptions\RangedWeaponIsAlreadyInDifferentWeaponCategory
      */
     public function I_can_not_extended_it_by_same_code_but_different_category()

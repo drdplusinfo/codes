@@ -527,6 +527,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      * @expectedException \DrdPlus\Codes\Armaments\Exceptions\InvalidWeaponCategoryForNewMeleeWeaponCode
      * @expectedExceptionMessageRegExp ~throwing~
      */
@@ -539,6 +540,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      * @expectedException \DrdPlus\Codes\Armaments\Exceptions\MeleeWeaponIsAlreadyInDifferentWeaponCategory
      */
     public function I_can_not_extended_it_by_same_code_but_different_category()

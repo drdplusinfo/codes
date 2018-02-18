@@ -80,6 +80,7 @@ class AllCodesTest extends TestWithMockery
         /** @var AbstractCode $codeClass */
         foreach ($this->getCodeClasses() as $codeClass) {
             foreach ((new \ReflectionClass($codeClass))->getConstants() as $constant) {
+                self::assertTrue($codeClass::hasIt($constant));
                 $code = $codeClass::getIt($constant);
                 self::assertInstanceOf($codeClass, $code);
                 self::assertSame($constant, $code->getValue());
@@ -99,6 +100,7 @@ class AllCodesTest extends TestWithMockery
     public function I_can_not_create_code_from_unknown_value(string $codeClass)
     {
         /** @var AbstractCode $codeClass */
+        self::assertFalse($codeClass::hasIt('da Vinci'));
         $codeClass::getIt('da Vinci');
     }
 
@@ -134,6 +136,7 @@ class AllCodesTest extends TestWithMockery
             /** @var string[] $givenValues */
             $givenValues = $codeClass::getPossibleValues();
             foreach ($givenValues as $givenValue) {
+                self::assertTrue($codeClass::hasIt($givenValue));
                 $code = $codeClass::getIt($givenValue);
                 self::assertSame($givenValue, (string)$code);
             }

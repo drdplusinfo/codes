@@ -3,6 +3,7 @@ namespace DrdPlus\Tests\Codes\Armaments;
 
 use DrdPlus\Codes\Armaments\WeaponCategoryCode;
 use DrdPlus\Codes\Armaments\WeaponCode;
+use DrdPlus\Codes\Partials\Translatable;
 
 abstract class WeaponCodeTest extends WeaponlikeCodeTest
 {
@@ -50,6 +51,7 @@ abstract class WeaponCodeTest extends WeaponlikeCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      */
     public function I_can_extended_it_by_custom_translatable_code()
     {
@@ -77,6 +79,7 @@ abstract class WeaponCodeTest extends WeaponlikeCodeTest
         if ((new \ReflectionClass($sutClass))->isAbstract()) {
             return;
         }
+        /** @var Translatable $bar */
         $bar = $sutClass::getIt('bar');
         self::assertSame('taková laťka', $bar->translateTo('cs'));
         self::assertTrue(
@@ -101,6 +104,7 @@ abstract class WeaponCodeTest extends WeaponlikeCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidLanguageCode
      * @expectedExceptionMessageRegExp ~a1~
      */
@@ -130,6 +134,7 @@ abstract class WeaponCodeTest extends WeaponlikeCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
      * @expectedExceptionMessageRegExp ~this should be array~
      */
@@ -147,6 +152,7 @@ abstract class WeaponCodeTest extends WeaponlikeCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
      * @expectedExceptionMessageRegExp ~all~
      */
@@ -168,6 +174,7 @@ abstract class WeaponCodeTest extends WeaponlikeCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
      * @expectedExceptionMessageRegExp ~NULL~
      */
@@ -185,6 +192,7 @@ abstract class WeaponCodeTest extends WeaponlikeCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
      * @expectedExceptionMessageRegExp ~''~
      */

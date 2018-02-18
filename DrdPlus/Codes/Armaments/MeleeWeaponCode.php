@@ -26,7 +26,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
             return $defaultValues;
         }
 
-        return array_merge(
+        return \array_merge(
             $defaultValues,
             self::$customMeleeWeaponCodePerCategory[WeaponCategoryCode::AXES] ?? []
         );
@@ -50,7 +50,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
             return $defaultValues;
         }
 
-        return array_merge(
+        return \array_merge(
             $defaultValues,
             self::$customMeleeWeaponCodePerCategory[WeaponCategoryCode::KNIVES_AND_DAGGERS] ?? []
         );
@@ -88,7 +88,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
             return $defaultValues;
         }
 
-        return array_merge(
+        return \array_merge(
             $defaultValues,
             self::$customMeleeWeaponCodePerCategory[WeaponCategoryCode::MACES_AND_CLUBS] ?? []
         );
@@ -122,7 +122,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
             return $defaultValues;
         }
 
-        return array_merge(
+        return \array_merge(
             $defaultValues,
             self::$customMeleeWeaponCodePerCategory[WeaponCategoryCode::MORNINGSTARS_AND_MORGENSTERNS] ?? []
         );
@@ -146,7 +146,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
             return $defaultValues;
         }
 
-        return array_merge(
+        return \array_merge(
             $defaultValues,
             self::$customMeleeWeaponCodePerCategory[WeaponCategoryCode::SABERS_AND_BOWIE_KNIVES] ?? []
         );
@@ -184,7 +184,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
             return $defaultValues;
         }
 
-        return array_merge(
+        return \array_merge(
             $defaultValues,
             self::$customMeleeWeaponCodePerCategory[WeaponCategoryCode::STAFFS_AND_SPEARS] ?? []
         );
@@ -218,7 +218,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
             return $defaultValues;
         }
 
-        return array_merge($defaultValues, self::$customMeleeWeaponCodePerCategory[WeaponCategoryCode::SWORDS] ?? []);
+        return \array_merge($defaultValues, self::$customMeleeWeaponCodePerCategory[WeaponCategoryCode::SWORDS] ?? []);
     }
 
     // voulges and tridents
@@ -249,7 +249,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
             return $defaultValues;
         }
 
-        return array_merge(
+        return \array_merge(
             $defaultValues,
             self::$customMeleeWeaponCodePerCategory[WeaponCategoryCode::VOULGES_AND_TRIDENTS] ?? []
         );
@@ -272,7 +272,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
             return $defaultValues;
         }
 
-        return array_merge(
+        return \array_merge(
             $defaultValues,
             self::$customMeleeWeaponCodePerCategory[WeaponCategoryCode::UNARMED] ?? []
         );

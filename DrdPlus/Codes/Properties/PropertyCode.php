@@ -136,7 +136,7 @@ class PropertyCode extends TranslatableCode
      */
     public static function getPossibleValues(): array
     {
-        return array_merge(
+        return \array_merge(
             self::getBasePropertyPossibleValues(),
             self::getBodyPropertyPossibleValues(),
             self::getDerivedPropertyPossibleValues(),

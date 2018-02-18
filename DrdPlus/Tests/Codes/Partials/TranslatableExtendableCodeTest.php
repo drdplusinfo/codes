@@ -1,6 +1,7 @@
 <?php
 namespace DrdPlus\Tests\Codes\Partials;
 
+use DrdPlus\Codes\Partials\Translatable;
 use DrdPlus\Codes\Partials\TranslatableExtendableCode;
 
 abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
@@ -15,6 +16,7 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      */
     public function I_can_extended_it_by_custom_translatable_code()
     {
@@ -40,6 +42,7 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
         if ((new \ReflectionClass($sutClass))->isAbstract()) {
             return;
         }
+        /** @var Translatable $bar */
         $bar = $sutClass::getIt('bar');
         self::assertSame('taková laťka', $bar->translateTo('cs'));
         self::assertTrue($sutClass::$addNewCode('baz', ['cs' => ['one' => 'eee, ehm?']]));
@@ -94,6 +97,7 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidLanguageCode
      * @expectedExceptionMessageRegExp ~a1~
      */
@@ -119,6 +123,7 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
      * @expectedExceptionMessageRegExp ~this should be array~
      */
@@ -136,6 +141,7 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
      * @expectedExceptionMessageRegExp ~all~
      */
@@ -153,6 +159,7 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
      * @expectedExceptionMessageRegExp ~NULL~
      */
@@ -170,6 +177,7 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
 
     /**
      * @test
+     * @runInSeparateProcess
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
      * @expectedExceptionMessageRegExp ~''~
      */

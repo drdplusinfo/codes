@@ -32,7 +32,7 @@ class MeleeCombatActionCode extends CombatActionCode
      */
     public static function getPossibleValues(): array
     {
-        return array_merge(
+        return \array_merge(
             parent::getPossibleValues(),
             self::getMeleeOnlyCombatActionValues()
         );
@@ -44,6 +44,6 @@ class MeleeCombatActionCode extends CombatActionCode
     public function isForRanged(): bool
     {
         // only actions inherited from generic combat actions can be used for ranged attack
-        return !in_array($this->getValue(), self::getMeleeOnlyCombatActionValues(), true);
+        return !\in_array($this->getValue(), self::getMeleeOnlyCombatActionValues(), true);
     }
 }

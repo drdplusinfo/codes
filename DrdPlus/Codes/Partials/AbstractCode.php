@@ -4,6 +4,7 @@ namespace DrdPlus\Codes\Partials;
 use Doctrineum\Scalar\ScalarEnum;
 use Doctrineum\Scalar\ScalarEnumInterface;
 use DrdPlus\Codes\Code;
+use Granam\Scalar\Tools\ToString;
 use Granam\String\StringInterface;
 use Granam\Tools\ValueDescriber;
 
@@ -20,6 +21,8 @@ abstract class AbstractCode extends ScalarEnum implements Code
     public static function getPossibleValues(): array
     {
         if ((static::$possibleValues[static::class] ?? null) === null) {
+            /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
+            /** @noinspection PhpUnhandledExceptionInspection */
             $reflectionClass = new \ReflectionClass(static::class);
             static::$possibleValues[static::class] = array_values($reflectionClass->getConstants());
         }
@@ -41,6 +44,16 @@ abstract class AbstractCode extends ScalarEnum implements Code
     }
 
     /**
+     * @param string|StringInterface $codeValue
+     * @return bool
+     * @throws \Granam\Scalar\Tools\Exceptions\WrongParameterType
+     */
+    public static function hasIt($codeValue): bool
+    {
+        return \in_array(ToString::toString($codeValue), self::getPossibleValues(), true);
+    }
+
+    /**
      * @param string|Code $codeValue
      * @throws \Doctrineum\Scalar\Exceptions\UnexpectedValueToEnum
      * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
@@ -55,9 +68,9 @@ abstract class AbstractCode extends ScalarEnum implements Code
      * @param string $codeValue
      * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
      */
-    private function guardCodeExistence($codeValue)
+    private function guardCodeExistence(string $codeValue)
     {
-        if (!in_array($codeValue, static::getPossibleValues(), true)) {
+        if (!\in_array($codeValue, static::getPossibleValues(), true)) {
             throw new Exceptions\UnknownValueForCode('Given code value '
                 . ValueDescriber::describe($codeValue)
                 . ' is not known to ' . static::class

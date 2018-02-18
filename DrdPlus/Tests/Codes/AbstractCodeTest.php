@@ -19,7 +19,7 @@ abstract class AbstractCodeTest extends TestWithMockery
     /**
      * @test
      */
-    public function It_is_code()
+    public function It_is_code(): void
     {
         self::assertTrue(
             class_exists(self::getSutClass()),
@@ -37,6 +37,7 @@ abstract class AbstractCodeTest extends TestWithMockery
     protected function getSut(): AbstractCode
     {
         $sutClass = self::getSutClass();
+        /** @noinspection PhpUnhandledExceptionInspection */
         $constants = (new \ReflectionClass($sutClass))->getConstants();
 
         return $sutClass::getIt(reset($constants));
@@ -48,7 +49,9 @@ abstract class AbstractCodeTest extends TestWithMockery
     public function I_can_create_code_instance_from_every_constant()
     {
         $sutClass = self::getSutClass();
+        /** @noinspection PhpUnhandledExceptionInspection */
         foreach ((new \ReflectionClass($sutClass))->getConstants() as $constant) {
+            self::assertTrue($sutClass::hasIt($constant));
             $code = $sutClass::getIt($constant);
             self::assertInstanceOf($sutClass, $code);
             self::assertSame($constant, $code->getValue());
@@ -85,8 +88,10 @@ abstract class AbstractCodeTest extends TestWithMockery
     public function All_public_constants_can_be_given_by_getter()
     {
         $sutClass = self::getSutClass();
+        /** @noinspection PhpUnhandledExceptionInspection */
         $constants = (new \ReflectionClass($sutClass))->getConstants();
-        self::assertCount(count($constants), array_unique($constants));
+        self::assertCount(\count($constants), \array_unique($constants));
+        /** @noinspection PhpUnhandledExceptionInspection */
         $givenValues = $sutClass::getPossibleValues();
         $expectedIndex = 0;
         foreach ($givenValues as $index => $value) {
@@ -103,9 +108,9 @@ abstract class AbstractCodeTest extends TestWithMockery
             $constantValues,
             $givenValues,
             'There are ' . (
-            count($missingOrDifferent = array_diff($constantValues, $givenValues)) > 0
-                ? "missing values from 'getPossibleValues' " . var_export($missingOrDifferent, true)
-                : "superfluous values from 'getPossibleValues' " . var_export(array_diff($givenValues, $constantValues), true)
+            \count($missingOrDifferent = \array_diff($constantValues, $givenValues)) > 0
+                ? "missing values from 'getPossibleValues' " . \var_export($missingOrDifferent, true)
+                : "superfluous values from 'getPossibleValues' " . \var_export(\array_diff($givenValues, $constantValues), true)
             )
         );
     }
@@ -117,9 +122,12 @@ abstract class AbstractCodeTest extends TestWithMockery
     {
         $sutClass = self::getSutClass();
         /** @var string[] $givenValues */
+        /** @noinspection PhpUnhandledExceptionInspection */
         $givenValues = $sutClass::getPossibleValues();
         foreach ($givenValues as $givenValue) {
+            self::assertTrue($sutClass::hasIt($givenValue), "'$givenValue' should be detected as code of '$sutClass'");
             $code = $sutClass::getIt($givenValue);
+            self::assertTrue($sutClass::hasIt($code));
             self::assertSame($givenValue, (string)$code);
         }
     }
@@ -129,6 +137,7 @@ abstract class AbstractCodeTest extends TestWithMockery
      */
     public function I_get_whispered_current_code_as_return_value_of_factory_method()
     {
+        /** @noinspection PhpUnhandledExceptionInspection */
         $reflectionClass = new \ReflectionClass(self::getSutClass());
         $classBaseName = preg_replace('~^.*[\\\](\w+)$~', '$1', self::getSutClass());
         self::assertSame(<<<PHPDOC
@@ -146,6 +155,7 @@ PHPDOC
     public function I_can_call_its_possible_values_even_if_they_are_empty()
     {
         $sutClass = self::getSutClass();
+        /** @noinspection PhpUnhandledExceptionInspection */
         self::assertEmpty(
             array_diff(
                 array_values((new \ReflectionClass($sutClass))->getConstants()),
@@ -159,6 +169,7 @@ PHPDOC
      */
     public function I_will_get_constant_values_from_reflection_as_fallback()
     {
+        /** @noinspection PhpUnhandledExceptionInspection */
         self::assertSame([], AbstractCode::getPossibleValues());
     }
 }

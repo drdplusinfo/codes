@@ -10,7 +10,7 @@ abstract class TranslatableExtendableCode extends TranslatableCode
 
     public static function getPossibleValues(): array
     {
-        return array_merge(static::getDefaultValues(), static::getCustomValues());
+        return \array_merge(static::getDefaultValues(), static::getCustomValues());
     }
 
     /**
@@ -107,7 +107,7 @@ abstract class TranslatableExtendableCode extends TranslatableCode
                 );
             }
             foreach ($languageTranslations as $plural => $translation) {
-                if (!in_array($plural, [self::$ONE, self::$FEW, self::$FEW_DECIMAL, self::$MANY], true)) {
+                if (!\in_array($plural, [self::$ONE, self::$FEW, self::$FEW_DECIMAL, self::$MANY], true)) {
                     throw new Exceptions\UnknownTranslationPlural(
                         'Expected one of ' . implode(',', [self::$ONE, self::$FEW, self::$FEW_DECIMAL, self::$MANY, true])
                         . ', got ' . var_export($plural, true)
