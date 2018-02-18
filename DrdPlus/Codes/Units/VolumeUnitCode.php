@@ -10,9 +10,9 @@ use DrdPlus\Codes\Partials\FileBasedTranslatableCode;
  */
 class VolumeUnitCode extends FileBasedTranslatableCode
 {
-    const LITER = 'liter';
-    const CUBIC_METER = 'cubic_meter';
-    const CUBIC_KILOMETER = 'cubic_kilometer';
+    public const LITER = 'liter';
+    public const CUBIC_METER = 'cubic_meter';
+    public const CUBIC_KILOMETER = 'cubic_kilometer';
 
     public static function getPossibleValues(): array
     {

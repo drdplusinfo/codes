@@ -8,11 +8,11 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class RemarkableSenseCode extends AbstractCode
 {
-    const HEARING = 'hearing';
-    const SIGHT = 'sight';
-    const SMELL = 'smell';
-    const TASTE = 'taste';
-    const TOUCH = 'touch';
+    public const HEARING = 'hearing';
+    public const SIGHT = 'sight';
+    public const SMELL = 'smell';
+    public const TASTE = 'taste';
+    public const TOUCH = 'touch';
 
     /**
      * @return array|string[]

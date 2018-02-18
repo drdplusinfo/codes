@@ -7,33 +7,33 @@ namespace DrdPlus\Codes\Skills;
 class PhysicalSkillCode extends SkillCode
 {
     // PHYSICAL
-    const ARMOR_WEARING = 'armor_wearing';
-    const ATHLETICS = 'athletics';
-    const BLACKSMITHING = 'blacksmithing';
-    const BOAT_DRIVING = 'boat_driving';
-    const CART_DRIVING = 'cart_driving';
-    const CITY_MOVING = 'city_moving';
-    const CLIMBING_AND_HILLWALKING = 'climbing_and_hillwalking';
-    const FAST_MARSH = 'fast_marsh';
-    const FIGHT_UNARMED = 'fight_unarmed';
-    const FIGHT_WITH_AXES = 'fight_with_axes';
-    const FIGHT_WITH_KNIVES_AND_DAGGERS = 'fight_with_knives_and_daggers';
-    const FIGHT_WITH_MACES_AND_CLUBS = 'fight_with_maces_and_clubs';
-    const FIGHT_WITH_MORNINGSTARS_AND_MORGENSTERNS = 'fight_with_morningstars_and_morgensterns';
-    const FIGHT_WITH_SABERS_AND_BOWIE_KNIVES = 'fight_with_sabers_and_bowie_knives';
-    const FIGHT_WITH_SHIELDS = 'fight_with_shields'; // do not search this in rules, it is additional
-    const FIGHT_WITH_STAFFS_AND_SPEARS = 'fight_with_staffs_and_spears';
-    const FIGHT_WITH_SWORDS = 'fight_with_swords';
-    const FIGHT_WITH_THROWING_WEAPONS = 'fight_with_throwing_weapons';
-    const FIGHT_WITH_TWO_WEAPONS = 'fight_with_two_weapons';
-    const FIGHT_WITH_VOULGES_AND_TRIDENTS = 'fight_with_voulges_and_tridents';
-    const FLYING = 'flying';
-    const FOREST_MOVING = 'forest_moving';
-    const MOVING_IN_MOUNTAINS = 'moving_in_mountains';
-    const RIDING = 'riding';
-    const SAILING = 'sailing';
-    const SHIELD_USAGE = 'shield_usage';
-    const SWIMMING = 'swimming';
+    public const ARMOR_WEARING = 'armor_wearing';
+    public const ATHLETICS = 'athletics';
+    public const BLACKSMITHING = 'blacksmithing';
+    public const BOAT_DRIVING = 'boat_driving';
+    public const CART_DRIVING = 'cart_driving';
+    public const CITY_MOVING = 'city_moving';
+    public const CLIMBING_AND_HILLWALKING = 'climbing_and_hillwalking';
+    public const FAST_MARSH = 'fast_marsh';
+    public const FIGHT_UNARMED = 'fight_unarmed';
+    public const FIGHT_WITH_AXES = 'fight_with_axes';
+    public const FIGHT_WITH_KNIVES_AND_DAGGERS = 'fight_with_knives_and_daggers';
+    public const FIGHT_WITH_MACES_AND_CLUBS = 'fight_with_maces_and_clubs';
+    public const FIGHT_WITH_MORNINGSTARS_AND_MORGENSTERNS = 'fight_with_morningstars_and_morgensterns';
+    public const FIGHT_WITH_SABERS_AND_BOWIE_KNIVES = 'fight_with_sabers_and_bowie_knives';
+    public const FIGHT_WITH_SHIELDS = 'fight_with_shields'; // do not search this in rules, it is additional
+    public const FIGHT_WITH_STAFFS_AND_SPEARS = 'fight_with_staffs_and_spears';
+    public const FIGHT_WITH_SWORDS = 'fight_with_swords';
+    public const FIGHT_WITH_THROWING_WEAPONS = 'fight_with_throwing_weapons';
+    public const FIGHT_WITH_TWO_WEAPONS = 'fight_with_two_weapons';
+    public const FIGHT_WITH_VOULGES_AND_TRIDENTS = 'fight_with_voulges_and_tridents';
+    public const FLYING = 'flying';
+    public const FOREST_MOVING = 'forest_moving';
+    public const MOVING_IN_MOUNTAINS = 'moving_in_mountains';
+    public const RIDING = 'riding';
+    public const SAILING = 'sailing';
+    public const SHIELD_USAGE = 'shield_usage';
+    public const SWIMMING = 'swimming';
 
     /**
      * @return array|string[]

@@ -7,13 +7,13 @@ namespace DrdPlus\Codes\Armaments;
 class HelmCode extends ArmorCode
 {
 
-    const WITHOUT_HELM = 'without_helm';
-    const LEATHER_CAP = 'leather_cap';
-    const CHAINMAIL_HOOD = 'chainmail_hood';
-    const CONICAL_HELM = 'conical_helm';
-    const FULL_HELM = 'full_helm';
-    const BARREL_HELM = 'barrel_helm';
-    const GREAT_HELM = 'great_helm';
+    public const WITHOUT_HELM = 'without_helm';
+    public const LEATHER_CAP = 'leather_cap';
+    public const CHAINMAIL_HOOD = 'chainmail_hood';
+    public const CONICAL_HELM = 'conical_helm';
+    public const FULL_HELM = 'full_helm';
+    public const BARREL_HELM = 'barrel_helm';
+    public const GREAT_HELM = 'great_helm';
 
     /**
      * @return array|string[]

@@ -8,8 +8,8 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class ChoiceCode extends AbstractCode
 {
-    const FORTUNE = 'fortune';
-    const PLAYER_DECISION = 'player_decision';
+    public const FORTUNE = 'fortune';
+    public const PLAYER_DECISION = 'player_decision';
 
     /**
      * @return array|string[]

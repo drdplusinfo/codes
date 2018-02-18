@@ -8,13 +8,13 @@ use DrdPlus\Codes\Partials\TranslatableCode;
  */
 class ProfessionCode extends TranslatableCode
 {
-    const COMMONER = 'commoner';
-    const FIGHTER = 'fighter';
-    const THIEF = 'thief';
-    const RANGER = 'ranger';
-    const WIZARD = 'wizard';
-    const THEURGIST = 'theurgist';
-    const PRIEST = 'priest';
+    public const COMMONER = 'commoner';
+    public const FIGHTER = 'fighter';
+    public const THIEF = 'thief';
+    public const RANGER = 'ranger';
+    public const WIZARD = 'wizard';
+    public const THEURGIST = 'theurgist';
+    public const PRIEST = 'priest';
 
     /**
      * @return array|string[]

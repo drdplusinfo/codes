@@ -8,11 +8,11 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class WoundsOriginCode extends AbstractCode
 {
-    const PSYCHICAL = 'psychical';
-    const ELEMENTAL = 'elemental';
-    const MECHANICAL_STAB = 'mechanical_stab';
-    const MECHANICAL_CUT = 'mechanical_cut';
-    const MECHANICAL_CRUSH = 'mechanical_crush';
+    public const PSYCHICAL = 'psychical';
+    public const ELEMENTAL = 'elemental';
+    public const MECHANICAL_STAB = 'mechanical_stab';
+    public const MECHANICAL_CUT = 'mechanical_cut';
+    public const MECHANICAL_CRUSH = 'mechanical_crush';
 
     /**
      * @return array|string[]
@@ -49,6 +49,6 @@ class WoundsOriginCode extends AbstractCode
      */
     public function isMechanical()
     {
-        return in_array($this->getValue(), [self::MECHANICAL_STAB, self::MECHANICAL_CUT, self::MECHANICAL_CRUSH], true);
+        return \in_array($this->getValue(), [self::MECHANICAL_STAB, self::MECHANICAL_CUT, self::MECHANICAL_CRUSH], true);
     }
 }

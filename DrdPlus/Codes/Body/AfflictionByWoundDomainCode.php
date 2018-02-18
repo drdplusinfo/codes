@@ -8,8 +8,8 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class AfflictionByWoundDomainCode extends AbstractCode
 {
-    const PHYSICAL = 'physical';
-    const PSYCHICAL = 'psychical';
+    public const PHYSICAL = 'physical';
+    public const PSYCHICAL = 'psychical';
 
     /**
      * @return array|string[]

@@ -10,10 +10,10 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     private static $customMeleeWeaponCodePerCategory = [];
 
     // axes
-    const LIGHT_AXE = 'light_axe';
-    const AXE = 'axe';
-    const WAR_AXE = 'war_axe';
-    const TWO_HANDED_AXE = 'two_handed_axe';
+    public const LIGHT_AXE = 'light_axe';
+    public const AXE = 'axe';
+    public const WAR_AXE = 'war_axe';
+    public const TWO_HANDED_AXE = 'two_handed_axe';
 
     /**
      * @param bool $withCustomValues = true
@@ -33,11 +33,11 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     }
 
     // knives and daggers
-    const KNIFE = 'knife';
-    const DAGGER = 'dagger';
-    const STABBING_DAGGER = 'stabbing_dagger';
-    const LONG_KNIFE = 'long_knife';
-    const LONG_DAGGER = 'long_dagger';
+    public const KNIFE = 'knife';
+    public const DAGGER = 'dagger';
+    public const STABBING_DAGGER = 'stabbing_dagger';
+    public const LONG_KNIFE = 'long_knife';
+    public const LONG_DAGGER = 'long_dagger';
 
     /**
      * @param bool $withCustomValues = true
@@ -57,15 +57,15 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     }
 
     // maces and clubs
-    const CUDGEL = 'cudgel';
-    const CLUB = 'club';
-    const HOBNAILED_CLUB = 'hobnailed_club';
-    const LIGHT_MACE = 'light_mace';
-    const MACE = 'mace';
-    const HEAVY_CLUB = 'heavy_club';
-    const WAR_HAMMER = 'war_hammer';
-    const TWO_HANDED_CLUB = 'two_handed_club';
-    const HEAVY_SLEDGEHAMMER = 'heavy_sledgehammer';
+    public const CUDGEL = 'cudgel';
+    public const CLUB = 'club';
+    public const HOBNAILED_CLUB = 'hobnailed_club';
+    public const LIGHT_MACE = 'light_mace';
+    public const MACE = 'mace';
+    public const HEAVY_CLUB = 'heavy_club';
+    public const WAR_HAMMER = 'war_hammer';
+    public const TWO_HANDED_CLUB = 'two_handed_club';
+    public const HEAVY_SLEDGEHAMMER = 'heavy_sledgehammer';
 
     /**
      * @param bool $withCustomValues = true
@@ -95,13 +95,13 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     }
 
     // morningstars and morgensterns
-    const LIGHT_MORGENSTERN = 'light_morgenstern';
-    const MORGENSTERN = 'morgenstern';
-    const HEAVY_MORGENSTERN = 'heavy_morgenstern';
-    const FLAIL = 'flail';
-    const MORNINGSTAR = 'morningstar';
-    const HOBNAILED_FLAIL = 'hobnailed_flail';
-    const HEAVY_MORNINGSTAR = 'heavy_morningstar';
+    public const LIGHT_MORGENSTERN = 'light_morgenstern';
+    public const MORGENSTERN = 'morgenstern';
+    public const HEAVY_MORGENSTERN = 'heavy_morgenstern';
+    public const FLAIL = 'flail';
+    public const MORNINGSTAR = 'morningstar';
+    public const HOBNAILED_FLAIL = 'hobnailed_flail';
+    public const HEAVY_MORNINGSTAR = 'heavy_morningstar';
 
     /**
      * @param bool $withCustomValues = true
@@ -129,11 +129,11 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     }
 
     // sabers and bowie knifes
-    const MACHETE = 'machete';
-    const LIGHT_SABER = 'light_saber';
-    const BOWIE_KNIFE = 'bowie_knife';
-    const SABER = 'saber';
-    const HEAVY_SABER = 'heavy_saber';
+    public const MACHETE = 'machete';
+    public const LIGHT_SABER = 'light_saber';
+    public const BOWIE_KNIFE = 'bowie_knife';
+    public const SABER = 'saber';
+    public const HEAVY_SABER = 'heavy_saber';
 
     /**
      * @param bool $withCustomValues = true
@@ -153,15 +153,15 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     }
 
     // staffs and spears
-    const LIGHT_SPEAR = 'light_spear';
-    const SHORTENED_STAFF = 'shortened_staff';
-    const LIGHT_STAFF = 'light_staff';
-    const SPEAR = 'spear';
-    const HOBNAILED_STAFF = 'hobnailed_staff';
-    const LONG_SPEAR = 'long_spear';
-    const HEAVY_HOBNAILED_STAFF = 'heavy_hobnailed_staff';
-    const PIKE = 'pike';
-    const METAL_STAFF = 'metal_staff';
+    public const LIGHT_SPEAR = 'light_spear';
+    public const SHORTENED_STAFF = 'shortened_staff';
+    public const LIGHT_STAFF = 'light_staff';
+    public const SPEAR = 'spear';
+    public const HOBNAILED_STAFF = 'hobnailed_staff';
+    public const LONG_SPEAR = 'long_spear';
+    public const HEAVY_HOBNAILED_STAFF = 'heavy_hobnailed_staff';
+    public const PIKE = 'pike';
+    public const METAL_STAFF = 'metal_staff';
 
     /**
      * @param bool $withCustomValues = true
@@ -191,13 +191,13 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     }
 
     // swords
-    const SHORT_SWORD = 'short_sword';
-    const HANGER = 'hanger';
-    const GLAIVE = 'glaive';
-    const LONG_SWORD = 'long_sword';
-    const ONE_AND_HALF_HANDED_SWORD = 'one_and_half_handed_sword';
-    const BARBARIAN_SWORD = 'barbarian_sword';
-    const TWO_HANDED_SWORD = 'two_handed_sword';
+    public const SHORT_SWORD = 'short_sword';
+    public const HANGER = 'hanger';
+    public const GLAIVE = 'glaive';
+    public const LONG_SWORD = 'long_sword';
+    public const ONE_AND_HALF_HANDED_SWORD = 'one_and_half_handed_sword';
+    public const BARBARIAN_SWORD = 'barbarian_sword';
+    public const TWO_HANDED_SWORD = 'two_handed_sword';
 
     /**
      * @param bool $withCustomValues = true
@@ -222,13 +222,13 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     }
 
     // voulges and tridents
-    const PITCHFORK = 'pitchfork';
-    const LIGHT_VOULGE = 'light_voulge';
-    const LIGHT_TRIDENT = 'light_trident';
-    const HALBERD = 'halberd';
-    const HEAVY_VOULGE = 'heavy_voulge';
-    const HEAVY_TRIDENT = 'heavy_trident';
-    const HEAVY_HALBERD = 'heavy_halberd';
+    public const PITCHFORK = 'pitchfork';
+    public const LIGHT_VOULGE = 'light_voulge';
+    public const LIGHT_TRIDENT = 'light_trident';
+    public const HALBERD = 'halberd';
+    public const HEAVY_VOULGE = 'heavy_voulge';
+    public const HEAVY_TRIDENT = 'heavy_trident';
+    public const HEAVY_HALBERD = 'heavy_halberd';
 
     /**
      * @param bool $withCustomValues = true
@@ -256,10 +256,10 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
     }
 
     // unarmed
-    const HAND = 'hand';
-    const HOBNAILED_GLOVE = 'hobnailed_glove';
-    const LEG = 'leg';
-    const HOBNAILED_BOOT = 'hobnailed_boot';
+    public const HAND = 'hand';
+    public const HOBNAILED_GLOVE = 'hobnailed_glove';
+    public const LEG = 'leg';
+    public const HOBNAILED_BOOT = 'hobnailed_boot';
 
     /**
      * @param bool $withCustomValues = true
@@ -338,11 +338,11 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     private static function guardSameCategory(string $meleeWeaponValue, WeaponCategoryCode $weaponCategoryCode)
     {
-        if (!in_array($meleeWeaponValue, self::$customMeleeWeaponCodePerCategory[$weaponCategoryCode->getValue()] ?? [], true)) {
+        if (!\in_array($meleeWeaponValue, self::$customMeleeWeaponCodePerCategory[$weaponCategoryCode->getValue()] ?? [], true)) {
             $alreadyUsedCategory = null;
             foreach (WeaponCategoryCode::getPossibleValues() as $anotherCategory) {
                 if ($anotherCategory !== $weaponCategoryCode->getValue()
-                    && in_array($meleeWeaponValue, self::$customMeleeWeaponCodePerCategory[$anotherCategory] ?? [], true)
+                    && \in_array($meleeWeaponValue, self::$customMeleeWeaponCodePerCategory[$anotherCategory] ?? [], true)
                 ) {
                     $alreadyUsedCategory = $anotherCategory;
                 }
@@ -405,7 +405,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isAxe(): bool
     {
-        return in_array($this->getValue(), self::getAxesValues(), true);
+        return \in_array($this->getValue(), self::getAxesValues(), true);
     }
 
     /**
@@ -413,7 +413,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isKnifeOrDagger(): bool
     {
-        return in_array($this->getValue(), self::getKnivesAndDaggersValues(), true);
+        return \in_array($this->getValue(), self::getKnivesAndDaggersValues(), true);
     }
 
     /**
@@ -421,7 +421,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isMaceOrClub(): bool
     {
-        return in_array($this->getValue(), self::getMacesAndClubsValues(), true);
+        return \in_array($this->getValue(), self::getMacesAndClubsValues(), true);
     }
 
     /**
@@ -429,7 +429,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isMorningstarOrMorgenstern(): bool
     {
-        return in_array($this->getValue(), self::getMorningstarsAndMorgensternsValues(), true);
+        return \in_array($this->getValue(), self::getMorningstarsAndMorgensternsValues(), true);
     }
 
     /**
@@ -437,7 +437,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isSaberOrBowieKnife(): bool
     {
-        return in_array($this->getValue(), self::getSabersAndBowieKnivesValues(), true);
+        return \in_array($this->getValue(), self::getSabersAndBowieKnivesValues(), true);
     }
 
     /**
@@ -445,7 +445,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isStaffOrSpear(): bool
     {
-        return in_array($this->getValue(), self::getStaffsAndSpearsValues(), true);
+        return \in_array($this->getValue(), self::getStaffsAndSpearsValues(), true);
     }
 
     /**
@@ -453,7 +453,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isSword(): bool
     {
-        return in_array($this->getValue(), self::getSwordsValues(), true);
+        return \in_array($this->getValue(), self::getSwordsValues(), true);
     }
 
     /**
@@ -461,7 +461,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isVoulgeOrTrident(): bool
     {
-        return in_array($this->getValue(), self::getVoulgesAndTridentsValues(), true);
+        return \in_array($this->getValue(), self::getVoulgesAndTridentsValues(), true);
     }
 
     /**
@@ -469,7 +469,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     public function isUnarmed(): bool
     {
-        return in_array($this->getValue(), self::getUnarmedValues(), true);
+        return \in_array($this->getValue(), self::getUnarmedValues(), true);
     }
 
     /**

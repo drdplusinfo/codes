@@ -8,8 +8,8 @@ use DrdPlus\Codes\Partials\TranslatableCode;
  */
 class SpeedUnitCode extends TranslatableCode
 {
-    const METER_PER_ROUND = 'meter_per_round';
-    const KILOMETER_PER_HOUR = 'kilometer_per_hour';
+    public const METER_PER_ROUND = 'meter_per_round';
+    public const KILOMETER_PER_HOUR = 'kilometer_per_hour';
 
     /**
      * @return array|string[]

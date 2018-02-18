@@ -8,9 +8,9 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class CombatCharacteristicCode extends AbstractCode
 {
-    const ATTACK = 'attack';
-    const DEFENSE = 'defense';
-    const SHOOTING = 'shooting';
+    public const ATTACK = 'attack';
+    public const DEFENSE = 'defense';
+    public const SHOOTING = 'shooting';
 
     /**
      * @return array|string[]

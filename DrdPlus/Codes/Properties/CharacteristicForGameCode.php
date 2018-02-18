@@ -9,17 +9,17 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class CharacteristicForGameCode extends AbstractCode
 {
-    const ATTACK = CombatCharacteristicCode::ATTACK;
-    const DEFENSE = CombatCharacteristicCode::DEFENSE;
-    const SHOOTING = CombatCharacteristicCode::SHOOTING;
+    public const ATTACK = CombatCharacteristicCode::ATTACK;
+    public const DEFENSE = CombatCharacteristicCode::DEFENSE;
+    public const SHOOTING = CombatCharacteristicCode::SHOOTING;
 
-    const ATTACK_NUMBER = 'attack_number';
-    const DEFENSE_NUMBER = 'defense_number';
-    const ENCOUNTER_RANGE = 'encounter_range';
-    const FIGHT = 'fight';
-    const FIGHT_NUMBER = 'fight_number';
-    const LOADING_IN_ROUNDS = 'loading_in_rounds';
-    const MAXIMAL_RANGE = 'maximal_range';
+    public const ATTACK_NUMBER = 'attack_number';
+    public const DEFENSE_NUMBER = 'defense_number';
+    public const ENCOUNTER_RANGE = 'encounter_range';
+    public const FIGHT = 'fight';
+    public const FIGHT_NUMBER = 'fight_number';
+    public const LOADING_IN_ROUNDS = 'loading_in_rounds';
+    public const MAXIMAL_RANGE = 'maximal_range';
 
     /**
      * @return array|string[]

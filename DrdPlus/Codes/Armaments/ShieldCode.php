@@ -8,12 +8,12 @@ use DrdPlus\Codes\Partials\TranslatableExtendableCode;
  */
 class ShieldCode extends TranslatableExtendableCode implements MeleeWeaponlikeCode, ProtectiveArmamentCode
 {
-    const WITHOUT_SHIELD = 'without_shield';
-    const BUCKLER = 'buckler';
-    const SMALL_SHIELD = 'small_shield';
-    const MEDIUM_SHIELD = 'medium_shield';
-    const HEAVY_SHIELD = 'heavy_shield';
-    const PAVISE = 'pavise';
+    public const WITHOUT_SHIELD = 'without_shield';
+    public const BUCKLER = 'buckler';
+    public const SMALL_SHIELD = 'small_shield';
+    public const MEDIUM_SHIELD = 'medium_shield';
+    public const HEAVY_SHIELD = 'heavy_shield';
+    public const PAVISE = 'pavise';
 
     /**
      * @return array|string[]

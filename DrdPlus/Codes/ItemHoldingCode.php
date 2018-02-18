@@ -8,9 +8,9 @@ use DrdPlus\Codes\Partials\TranslatableCode;
  */
 class ItemHoldingCode extends TranslatableCode
 {
-    const TWO_HANDS = 'two_hands';
-    const MAIN_HAND = 'main_hand';
-    const OFFHAND = 'offhand';
+    public const TWO_HANDS = 'two_hands';
+    public const MAIN_HAND = 'main_hand';
+    public const OFFHAND = 'offhand';
 
     /**
      * @return array|string[]
@@ -53,7 +53,7 @@ class ItemHoldingCode extends TranslatableCode
      */
     public function holdsByOneHand(): bool
     {
-        return in_array($this->getValue(), [self::OFFHAND, self::MAIN_HAND], true);
+        return \in_array($this->getValue(), [self::OFFHAND, self::MAIN_HAND], true);
     }
 
     /**

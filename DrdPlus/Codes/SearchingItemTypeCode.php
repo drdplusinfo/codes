@@ -8,9 +8,9 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class SearchingItemTypeCode extends AbstractCode
 {
-    const SEARCHING_SAME_TYPE_ITEM = 'searching_same_type_item';
-    const JUST_SEARCHING = 'just_searching';
-    const SEARCHING_DIFFERENT_TYPE_ITEM = 'searching_different_type_item';
+    public const SEARCHING_SAME_TYPE_ITEM = 'searching_same_type_item';
+    public const JUST_SEARCHING = 'just_searching';
+    public const SEARCHING_DIFFERENT_TYPE_ITEM = 'searching_different_type_item';
 
     /**
      * @return array|string[]

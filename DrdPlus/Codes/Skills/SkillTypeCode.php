@@ -8,9 +8,9 @@ use DrdPlus\Codes\Partials\TranslatableCode;
  */
 class SkillTypeCode extends TranslatableCode
 {
-    const PHYSICAL = 'physical';
-    const PSYCHICAL = 'psychical';
-    const COMBINED = 'combined';
+    public const PHYSICAL = 'physical';
+    public const PSYCHICAL = 'psychical';
+    public const COMBINED = 'combined';
 
     /**
      * @return array|string[]

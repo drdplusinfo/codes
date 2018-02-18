@@ -9,23 +9,23 @@ use DrdPlus\Codes\Partials\AbstractCode;
 class CombatActionCode extends AbstractCode
 {
     // See PPH page 107-109
-    const MOVE = 'move';
-    const RUN = 'run';
-    const SWAP_WEAPONS = 'swap_weapons';
-    const CONCENTRATION_ON_DEFENSE = 'concentration_on_defense'; // this is moved to generic combat action despite its categorization as melee in PPH
-    const PUT_OUT_EASILY_ACCESSIBLE_ITEM = 'put_out_easily_accessible_item'; // from belt or ground etc.
-    const PUT_OUT_HARDLY_ACCESSIBLE_ITEM = 'put_out_hardly_accessible_item'; // from backpack or just using both hands
-    const LAYING = 'laying';
-    const SITTING_OR_ON_KNEELS = 'sitting_or_on_kneels';
-    const GETTING_UP = 'getting_up';
-    const PUTTING_ON_ARMOR = 'putting_on_armor';
-    const PUTTING_ON_ARMOR_WITH_HELP = 'putting_on_armor_with_help';
-    const HELPING_TO_PUT_ON_ARMOR = 'helping_to_put_on_armor';
-    const ATTACKED_FROM_BEHIND = 'attacked_from_behind';
-    const BLINDFOLD_FIGHT = 'blindfold_fight';
-    const FIGHT_IN_REDUCED_VISIBILITY = 'fight_in_reduced_visibility';
-    const ATTACK_ON_DISABLED_OPPONENT = 'attack_on_disabled_opponent'; // this is moved to generic combat action despite its categorization as melee in PPH
-    const HANDOVER_ITEM = 'handover_item';
+    public const MOVE = 'move';
+    public const RUN = 'run';
+    public const SWAP_WEAPONS = 'swap_weapons';
+    public const CONCENTRATION_ON_DEFENSE = 'concentration_on_defense'; // this is moved to generic combat action despite its categorization as melee in PPH
+    public const PUT_OUT_EASILY_ACCESSIBLE_ITEM = 'put_out_easily_accessible_item'; // from belt or ground etc.
+    public const PUT_OUT_HARDLY_ACCESSIBLE_ITEM = 'put_out_hardly_accessible_item'; // from backpack or just using both hands
+    public const LAYING = 'laying';
+    public const SITTING_OR_ON_KNEELS = 'sitting_or_on_kneels';
+    public const GETTING_UP = 'getting_up';
+    public const PUTTING_ON_ARMOR = 'putting_on_armor';
+    public const PUTTING_ON_ARMOR_WITH_HELP = 'putting_on_armor_with_help';
+    public const HELPING_TO_PUT_ON_ARMOR = 'helping_to_put_on_armor';
+    public const ATTACKED_FROM_BEHIND = 'attacked_from_behind';
+    public const BLINDFOLD_FIGHT = 'blindfold_fight';
+    public const FIGHT_IN_REDUCED_VISIBILITY = 'fight_in_reduced_visibility';
+    public const ATTACK_ON_DISABLED_OPPONENT = 'attack_on_disabled_opponent'; // this is moved to generic combat action despite its categorization as melee in PPH
+    public const HANDOVER_ITEM = 'handover_item';
 
     /**
      * @return array|string[]

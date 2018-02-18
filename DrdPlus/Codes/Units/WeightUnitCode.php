@@ -8,7 +8,7 @@ use DrdPlus\Codes\Partials\TranslatableCode;
  */
 class WeightUnitCode extends TranslatableCode
 {
-    const KG = 'kg';
+    public const KG = 'kg';
 
     protected function fetchTranslations(): array
     {

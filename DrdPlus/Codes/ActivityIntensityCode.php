@@ -8,10 +8,10 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class ActivityIntensityCode extends AbstractCode
 {
-    const AUTOMATIC_ACTIVITY = 'automatic_activity';
-    const ACTIVITY_WITH_MODERATE_CONCENTRATION = 'activity_with_moderate_concentration';
-    const ACTIVITY_WITH_FULL_CONCENTRATION = 'activity_with_full_concentration';
-    const TRANS = 'trans';
+    public const AUTOMATIC_ACTIVITY = 'automatic_activity';
+    public const ACTIVITY_WITH_MODERATE_CONCENTRATION = 'activity_with_moderate_concentration';
+    public const ACTIVITY_WITH_FULL_CONCENTRATION = 'activity_with_full_concentration';
+    public const TRANS = 'trans';
 
     /**
      * @return array|string[]

@@ -8,21 +8,21 @@ use DrdPlus\Codes\Partials\TranslatableExtendableCode;
  */
 class RidingAnimalCode extends TranslatableExtendableCode
 {
-    const HORSE = 'horse';
-    const DRAFT_HORSE = 'draft_horse';
-    const RIDING_HORSE = 'riding_horse';
-    const WAR_HORSE = 'war_horse';
-    const CAMEL = 'camel';
-    const ELEPHANT = 'elephant';
-    const YAK = 'yak';
-    const LAME = 'lame';
-    const DONKEY = 'donkey';
-    const PONY = 'pony';
-    const HINNY = 'hinny';
-    const MULE = 'mule';
-    const COW = 'cow';
-    const BULL = 'bull';
-    const UNICORN = 'unicorn';
+    public const HORSE = 'horse';
+    public const DRAFT_HORSE = 'draft_horse';
+    public const RIDING_HORSE = 'riding_horse';
+    public const WAR_HORSE = 'war_horse';
+    public const CAMEL = 'camel';
+    public const ELEPHANT = 'elephant';
+    public const YAK = 'yak';
+    public const LAME = 'lame';
+    public const DONKEY = 'donkey';
+    public const PONY = 'pony';
+    public const HINNY = 'hinny';
+    public const MULE = 'mule';
+    public const COW = 'cow';
+    public const BULL = 'bull';
+    public const UNICORN = 'unicorn';
 
     /**
      * @return array|string[]

@@ -10,15 +10,15 @@ class WeaponCategoryCode extends FileBasedTranslatableCode
 {
     // MELEE WEAPON CATEGORIES
 
-    const AXES = 'axes';
-    const KNIVES_AND_DAGGERS = 'knives_and_daggers';
-    const MACES_AND_CLUBS = 'maces_and_clubs';
-    const MORNINGSTARS_AND_MORGENSTERNS = 'morningstars_and_morgensterns';
-    const SABERS_AND_BOWIE_KNIVES = 'sabers_and_bowie_knives';
-    const STAFFS_AND_SPEARS = 'staffs_and_spears';
-    const SWORDS = 'swords';
-    const VOULGES_AND_TRIDENTS = 'voulges_and_tridents';
-    const UNARMED = 'unarmed';
+    public const AXES = 'axes';
+    public const KNIVES_AND_DAGGERS = 'knives_and_daggers';
+    public const MACES_AND_CLUBS = 'maces_and_clubs';
+    public const MORNINGSTARS_AND_MORGENSTERNS = 'morningstars_and_morgensterns';
+    public const SABERS_AND_BOWIE_KNIVES = 'sabers_and_bowie_knives';
+    public const STAFFS_AND_SPEARS = 'staffs_and_spears';
+    public const SWORDS = 'swords';
+    public const VOULGES_AND_TRIDENTS = 'voulges_and_tridents';
+    public const UNARMED = 'unarmed';
 
     /**
      * @return array|string[]
@@ -40,16 +40,16 @@ class WeaponCategoryCode extends FileBasedTranslatableCode
 
     public function isMeleeWeaponCategory(): bool
     {
-        return in_array($this->getValue(), static::getMeleeWeaponCategoryValues(), true);
+        return \in_array($this->getValue(), static::getMeleeWeaponCategoryValues(), true);
     }
 
     // RANGE WEAPON CATEGORIES
 
     // shooting weapons
-    const BOWS = 'bows';
-    const CROSSBOWS = 'crossbows';
+    public const BOWS = 'bows';
+    public const CROSSBOWS = 'crossbows';
     // throwing weapons
-    const THROWING_WEAPONS = 'throwing_weapons';
+    public const THROWING_WEAPONS = 'throwing_weapons';
 
     /**
      * @return array|string[]
@@ -65,13 +65,13 @@ class WeaponCategoryCode extends FileBasedTranslatableCode
 
     public function isRangedWeaponCategory(): bool
     {
-        return in_array($this->getValue(), static::getRangedWeaponCategoryValues(), true);
+        return \in_array($this->getValue(), static::getRangedWeaponCategoryValues(), true);
     }
 
     // projectiles
-    const ARROWS = 'arrows';
-    const DARTS = 'darts';
-    const SLING_STONES = 'sling_stones';
+    public const ARROWS = 'arrows';
+    public const DARTS = 'darts';
+    public const SLING_STONES = 'sling_stones';
 
     /**
      * @return array|string[]
@@ -87,7 +87,7 @@ class WeaponCategoryCode extends FileBasedTranslatableCode
 
     public function isProjectileCategory(): bool
     {
-        return in_array($this->getValue(), static::getProjectileCategoryValues(), true);
+        return \in_array($this->getValue(), static::getProjectileCategoryValues(), true);
     }
 
     /**

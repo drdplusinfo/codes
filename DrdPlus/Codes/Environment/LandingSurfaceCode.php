@@ -8,15 +8,15 @@ use DrdPlus\Codes\Partials\FileBasedTranslatableCode;
  */
 class LandingSurfaceCode extends FileBasedTranslatableCode
 {
-    const DEEP_POWDER = 'deep_powder';
-    const WATER = 'water';
-    const HEAVY_WET_SNOW = 'heavy_wet_snow';
-    const FRESHLY_PLOWED_FIELD_OR_PILE_OF_LEAVES = 'freshly_plowed_field_or_pile_of_leaves';
-    const MEADOW = 'meadow';
-    const SOLID_ICE_OR_ICY_SNOW_OR_TAMPED_EARTH = 'solid_ice_or_icy_snow_or_tamped_earth';
-    const FLAT_STONE_TILES = 'flat_stone_tiles';
-    const BUMPY_ROCK = 'bumpy_rock';
-    const SHARP_ROCKS_OR_POINTED_PALES = 'sharp_rocks_or_pointed_pales';
+    public const DEEP_POWDER = 'deep_powder';
+    public const WATER = 'water';
+    public const HEAVY_WET_SNOW = 'heavy_wet_snow';
+    public const FRESHLY_PLOWED_FIELD_OR_PILE_OF_LEAVES = 'freshly_plowed_field_or_pile_of_leaves';
+    public const MEADOW = 'meadow';
+    public const SOLID_ICE_OR_ICY_SNOW_OR_TAMPED_EARTH = 'solid_ice_or_icy_snow_or_tamped_earth';
+    public const FLAT_STONE_TILES = 'flat_stone_tiles';
+    public const BUMPY_ROCK = 'bumpy_rock';
+    public const SHARP_ROCKS_OR_POINTED_PALES = 'sharp_rocks_or_pointed_pales';
 
     /**
      * @return array|string[]

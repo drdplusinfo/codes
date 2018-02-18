@@ -6,14 +6,14 @@ namespace DrdPlus\Codes\Armaments;
  */
 class ArrowCode extends ProjectileCode
 {
-    const BASIC_ARROW = 'basic_arrow';
-    const LONG_RANGE_ARROW = 'long_range_arrow';
-    const WAR_ARROW = 'war_arrow';
-    const PIERCING_ARROW = 'piercing_arrow';
-    const HOLLOW_ARROW = 'hollow_arrow';
-    const CRIPPLING_ARROW = 'crippling_arrow';
-    const INCENDIARY_ARROW = 'incendiary_arrow';
-    const SILVER_ARROW = 'silver_arrow';
+    public const BASIC_ARROW = 'basic_arrow';
+    public const LONG_RANGE_ARROW = 'long_range_arrow';
+    public const WAR_ARROW = 'war_arrow';
+    public const PIERCING_ARROW = 'piercing_arrow';
+    public const HOLLOW_ARROW = 'hollow_arrow';
+    public const CRIPPLING_ARROW = 'crippling_arrow';
+    public const INCENDIARY_ARROW = 'incendiary_arrow';
+    public const SILVER_ARROW = 'silver_arrow';
 
     /**
      * @return array|string[]

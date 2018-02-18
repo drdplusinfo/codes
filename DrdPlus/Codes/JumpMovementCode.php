@@ -8,8 +8,8 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class JumpMovementCode extends AbstractCode
 {
-    const STANDING_JUMP = 'standing_jump';
-    const FLYING_JUMP = 'flying_jump';
+    public const STANDING_JUMP = 'standing_jump';
+    public const FLYING_JUMP = 'flying_jump';
 
     /**
      * @return array|string[]

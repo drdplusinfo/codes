@@ -8,9 +8,9 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class ExceptionalityCode extends AbstractCode
 {
-    const ANCESTRY = 'ancestry';
-    const POSSESSION = 'possession';
-    const SKILLS = 'skills';
+    public const ANCESTRY = 'ancestry';
+    public const POSSESSION = 'possession';
+    public const SKILLS = 'skills';
 
     /**
      * @return array|string[]

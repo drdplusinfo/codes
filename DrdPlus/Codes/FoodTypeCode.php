@@ -8,13 +8,13 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class FoodTypeCode extends AbstractCode
 {
-    const CROP_COLLECTION = 'crop_collection';
-    const INSECTS_OR_WORMS = 'insects_or_worms';
-    const SLUGS = 'slugs';
-    const REPTILES = 'reptiles';
-    const RODENTS_OR_BIRDS_EGGS = 'rodents_or_birds_eggs';
-    const AVERAGE_MEAT = 'average_meat';
-    const QUALITY_MEAT = 'quality_meat';
+    public const CROP_COLLECTION = 'crop_collection';
+    public const INSECTS_OR_WORMS = 'insects_or_worms';
+    public const SLUGS = 'slugs';
+    public const REPTILES = 'reptiles';
+    public const RODENTS_OR_BIRDS_EGGS = 'rodents_or_birds_eggs';
+    public const AVERAGE_MEAT = 'average_meat';
+    public const QUALITY_MEAT = 'quality_meat';
 
     /**
      * @return array|string[]

@@ -8,9 +8,9 @@ use DrdPlus\Codes\Partials\TranslatableCode;
  */
 class WoundTypeCode extends TranslatableCode
 {
-    const CRUSH = 'crush';
-    const STAB = 'stab';
-    const CUT = 'cut';
+    public const CRUSH = 'crush';
+    public const STAB = 'stab';
+    public const CUT = 'cut';
 
     /**
      * @return array|string

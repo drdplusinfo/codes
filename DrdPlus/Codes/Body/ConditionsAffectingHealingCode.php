@@ -8,10 +8,10 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class ConditionsAffectingHealingCode extends AbstractCode
 {
-    const FOUL_CONDITIONS = 'foul_conditions';
-    const BAD_CONDITIONS = 'bad_conditions';
-    const IMPAIRED_CONDITIONS = 'impaired_conditions';
-    const GOOD_CONDITIONS = 'good_conditions';
+    public const FOUL_CONDITIONS = 'foul_conditions';
+    public const BAD_CONDITIONS = 'bad_conditions';
+    public const IMPAIRED_CONDITIONS = 'impaired_conditions';
+    public const GOOD_CONDITIONS = 'good_conditions';
 
     /**
      * @return array|string[]

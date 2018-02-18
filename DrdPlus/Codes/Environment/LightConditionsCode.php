@@ -8,15 +8,15 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class LightConditionsCode extends AbstractCode
 {
-    const DARK = 'dark';
-    const CLOUDY_STAR_NIGHT = 'cloudy_star_night';
-    const STAR_NIGHT = 'star_night';
-    const FULL_MOON_NIGHT = 'full_moon_night';
-    const SUNSET = 'sunset';
-    const VERY_CLOUDY = 'very_cloudy';
-    const CLOUDY = 'cloudy';
-    const DAYLIGHT = 'daylight';
-    const STRONG_DAYLIGHT = 'strong_daylight';
+    public const DARK = 'dark';
+    public const CLOUDY_STAR_NIGHT = 'cloudy_star_night';
+    public const STAR_NIGHT = 'star_night';
+    public const FULL_MOON_NIGHT = 'full_moon_night';
+    public const SUNSET = 'sunset';
+    public const VERY_CLOUDY = 'very_cloudy';
+    public const CLOUDY = 'cloudy';
+    public const DAYLIGHT = 'daylight';
+    public const STRONG_DAYLIGHT = 'strong_daylight';
 
     /**
      * @return array|string[]

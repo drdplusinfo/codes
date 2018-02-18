@@ -8,12 +8,12 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class MaterialCode extends AbstractCode
 {
-    const CLOTH_OR_PAPER_OR_ROPE = 'cloth_or_paper_or_rope';
-    const WOOD = 'wood';
-    const BAKED_CAY = 'baked_cay';
-    const STONE = 'stone';
-    const BRONZE = 'bronze';
-    const IRON_OR_STEEL = 'iron_or_steel';
+    public const CLOTH_OR_PAPER_OR_ROPE = 'cloth_or_paper_or_rope';
+    public const WOOD = 'wood';
+    public const BAKED_CAY = 'baked_cay';
+    public const STONE = 'stone';
+    public const BRONZE = 'bronze';
+    public const IRON_OR_STEEL = 'iron_or_steel';
 
     /**
      * @return array

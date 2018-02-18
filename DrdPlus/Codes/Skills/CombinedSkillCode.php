@@ -7,27 +7,27 @@ namespace DrdPlus\Codes\Skills;
 class CombinedSkillCode extends SkillCode
 {
     // COMBINED
-    const BIG_HANDWORK = 'big_handwork';
-    const COOKING = 'cooking';
-    const DANCING = 'dancing';
-    const DUSK_SIGHT = 'dusk_sight';
-    const FIGHT_WITH_BOWS = 'fight_with_bows';
-    const FIGHT_WITH_CROSSBOWS = 'fight_with_crossbows';
-    const FIRST_AID = 'first_aid';
-    const GAMBLING = 'gambling';
-    const HANDLING_WITH_ANIMALS = 'handling_with_animals';
-    const HANDWORK = 'handwork';
-    const HERBALISM = 'herbalism';
-    const HUNTING_AND_FISHING = 'hunting_and_fishing';
-    const KNOTTING = 'knotting';
-    const PAINTING = 'painting';
-    const PEDAGOGY = 'pedagogy';
-    const PLAYING_ON_MUSIC_INSTRUMENT = 'playing_on_music_instrument';
-    const SEDUCTION = 'seduction';
-    const SHOWMANSHIP = 'showmanship';
-    const SINGING = 'singing';
-    const STATUARY = 'statuary';
-    const TEACHING = 'teaching';
+    public const BIG_HANDWORK = 'big_handwork';
+    public const COOKING = 'cooking';
+    public const DANCING = 'dancing';
+    public const DUSK_SIGHT = 'dusk_sight';
+    public const FIGHT_WITH_BOWS = 'fight_with_bows';
+    public const FIGHT_WITH_CROSSBOWS = 'fight_with_crossbows';
+    public const FIRST_AID = 'first_aid';
+    public const GAMBLING = 'gambling';
+    public const HANDLING_WITH_ANIMALS = 'handling_with_animals';
+    public const HANDWORK = 'handwork';
+    public const HERBALISM = 'herbalism';
+    public const HUNTING_AND_FISHING = 'hunting_and_fishing';
+    public const KNOTTING = 'knotting';
+    public const PAINTING = 'painting';
+    public const PEDAGOGY = 'pedagogy';
+    public const PLAYING_ON_MUSIC_INSTRUMENT = 'playing_on_music_instrument';
+    public const SEDUCTION = 'seduction';
+    public const SHOWMANSHIP = 'showmanship';
+    public const SINGING = 'singing';
+    public const STATUARY = 'statuary';
+    public const TEACHING = 'teaching';
 
     /**
      * @return array|string[]

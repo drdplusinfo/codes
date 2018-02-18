@@ -6,11 +6,11 @@ namespace DrdPlus\Codes\Armaments;
  */
 class DartCode extends ProjectileCode
 {
-    const BASIC_DART = 'basic_dart';
-    const WAR_DART = 'war_dart';
-    const PIERCING_DART = 'piercing_dart';
-    const HOLLOW_DART = 'hollow_dart';
-    const SILVER_DART = 'silver_dart';
+    public const BASIC_DART = 'basic_dart';
+    public const WAR_DART = 'war_dart';
+    public const PIERCING_DART = 'piercing_dart';
+    public const HOLLOW_DART = 'hollow_dart';
+    public const SILVER_DART = 'silver_dart';
 
     /**
      * @return array|string[]

@@ -9,11 +9,11 @@ use DrdPlus\Codes\Properties\PropertyCode;
  */
 class RidingAnimalPropertyCode extends AbstractCode
 {
-    const SPEED = PropertyCode::SPEED;
-    const ENDURANCE = PropertyCode::ENDURANCE;
-    const MAXIMAL_LOAD = PropertyCode::MAXIMAL_LOAD;
-    const MAXIMAL_LOAD_IN_KG = 'maximal_load_in_kg';
-    const DEFIANCE = 'defiance';
+    public const SPEED = PropertyCode::SPEED;
+    public const ENDURANCE = PropertyCode::ENDURANCE;
+    public const MAXIMAL_LOAD = PropertyCode::MAXIMAL_LOAD;
+    public const MAXIMAL_LOAD_IN_KG = 'maximal_load_in_kg';
+    public const DEFIANCE = 'defiance';
 
     /**
      * @return array|string[]

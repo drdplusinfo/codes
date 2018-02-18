@@ -6,7 +6,7 @@ use DrdPlus\Codes\History\ChoiceCode;
 
 class ChoiceCodeType extends AbstractCodeType
 {
-    const CHOICE_CODE = 'choice_code';
+    public const CHOICE_CODE = 'choice_code';
 
     public static function registerSelf(): bool
     {

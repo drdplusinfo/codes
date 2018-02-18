@@ -8,12 +8,12 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class RaceCode extends AbstractCode
 {
-    const HUMAN = 'human';
-    const ELF = 'elf';
-    const DWARF = 'dwarf';
-    const HOBBIT = 'hobbit';
-    const KROLL = 'kroll';
-    const ORC = 'orc';
+    public const HUMAN = 'human';
+    public const ELF = 'elf';
+    public const DWARF = 'dwarf';
+    public const HOBBIT = 'hobbit';
+    public const KROLL = 'kroll';
+    public const ORC = 'orc';
 
     /**
      * @return array|string[]

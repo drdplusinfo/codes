@@ -9,30 +9,30 @@ use DrdPlus\Codes\Partials\AbstractCode;
 class SubRaceCode extends AbstractCode
 {
     // human
-    const COMMON = 'common';
-    const HIGHLANDER = 'highlander';
+    public const COMMON = 'common';
+    public const HIGHLANDER = 'highlander';
 
     // elf
     // + common
-    const GREEN = 'green';
-    const DARK = 'dark';
+    public const GREEN = 'green';
+    public const DARK = 'dark';
 
     // dwarf
     // + common
-    const WOOD = 'wood';
-    const MOUNTAIN = 'mountain';
+    public const WOOD = 'wood';
+    public const MOUNTAIN = 'mountain';
 
     // hobbit
     // + common
 
     // kroll
     // + common
-    const WILD = 'wild';
+    public const WILD = 'wild';
 
     // orc
     // + common
-    const SKURUT = 'skurut';
-    const GOBLIN = 'goblin';
+    public const SKURUT = 'skurut';
+    public const GOBLIN = 'goblin';
 
     /**
      * @return array|string[][]

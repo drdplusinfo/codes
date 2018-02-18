@@ -60,7 +60,7 @@ use DrdPlus\Codes\Units\WeightUnitCode;
 
 class CodeType extends AbstractCodeType
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
     public static function registerSelf(): bool
     {

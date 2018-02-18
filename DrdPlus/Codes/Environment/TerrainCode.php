@@ -8,14 +8,14 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class TerrainCode extends AbstractCode
 {
-    const ROAD = 'road';
-    const MEADOW = 'meadow';
-    const FOREST = 'forest';
-    const JUNGLE = 'jungle';
-    const SWAMP = 'swamp';
-    const MOUNTAINS = 'mountains';
-    const DESERT = 'desert';
-    const ICY_PLAINS = 'icy_plains';
+    public const ROAD = 'road';
+    public const MEADOW = 'meadow';
+    public const FOREST = 'forest';
+    public const JUNGLE = 'jungle';
+    public const SWAMP = 'swamp';
+    public const MOUNTAINS = 'mountains';
+    public const DESERT = 'desert';
+    public const ICY_PLAINS = 'icy_plains';
 
     /**
      * @return array|string[]

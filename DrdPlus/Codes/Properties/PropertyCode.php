@@ -8,12 +8,12 @@ use DrdPlus\Codes\Partials\TranslatableCode;
  */
 class PropertyCode extends TranslatableCode
 {
-    const STRENGTH = 'strength';
-    const AGILITY = 'agility';
-    const KNACK = 'knack';
-    const WILL = 'will';
-    const INTELLIGENCE = 'intelligence';
-    const CHARISMA = 'charisma';
+    public const STRENGTH = 'strength';
+    public const AGILITY = 'agility';
+    public const KNACK = 'knack';
+    public const WILL = 'will';
+    public const INTELLIGENCE = 'intelligence';
+    public const CHARISMA = 'charisma';
 
     /**
      * @return array|string[]
@@ -31,12 +31,12 @@ class PropertyCode extends TranslatableCode
     }
 
     // body
-    const AGE = 'age';
-    const HEIGHT_IN_CM = 'height_in_cm';
-    const HEIGHT = 'height';
-    const BODY_WEIGHT_IN_KG = 'body_weight_in_kg';
-    const BODY_WEIGHT = 'body_weight';
-    const SIZE = 'size';
+    public const AGE = 'age';
+    public const HEIGHT_IN_CM = 'height_in_cm';
+    public const HEIGHT = 'height';
+    public const BODY_WEIGHT_IN_KG = 'body_weight_in_kg';
+    public const BODY_WEIGHT = 'body_weight';
+    public const SIZE = 'size';
 
     /**
      * @return array|string[]
@@ -54,17 +54,17 @@ class PropertyCode extends TranslatableCode
     }
 
     // derived
-    const BEAUTY = 'beauty';
-    const DANGEROUSNESS = 'dangerousness';
-    const DIGNITY = 'dignity';
-    const ENDURANCE = 'endurance';
-    const FATIGUE_BOUNDARY = 'fatigue_boundary';
-    const SENSES = 'senses';
-    const SPEED = 'speed';
-    const TOUGHNESS = 'toughness';
-    const WOUND_BOUNDARY = 'wound_boundary';
-    const MOVEMENT_SPEED = 'movement_speed';
-    const MAXIMAL_LOAD = 'maximal_load';
+    public const BEAUTY = 'beauty';
+    public const DANGEROUSNESS = 'dangerousness';
+    public const DIGNITY = 'dignity';
+    public const ENDURANCE = 'endurance';
+    public const FATIGUE_BOUNDARY = 'fatigue_boundary';
+    public const SENSES = 'senses';
+    public const SPEED = 'speed';
+    public const TOUGHNESS = 'toughness';
+    public const WOUND_BOUNDARY = 'wound_boundary';
+    public const MOVEMENT_SPEED = 'movement_speed';
+    public const MAXIMAL_LOAD = 'maximal_load';
 
     /**
      * @return array|string[]
@@ -87,9 +87,9 @@ class PropertyCode extends TranslatableCode
     }
 
     // native
-    const REMARKABLE_SENSE = 'remarkable_sense';
-    const INFRAVISION = 'infravision';
-    const NATIVE_REGENERATION = 'native_regeneration';
+    public const REMARKABLE_SENSE = 'remarkable_sense';
+    public const INFRAVISION = 'infravision';
+    public const NATIVE_REGENERATION = 'native_regeneration';
 
     /**
      * @return array|string[]
@@ -104,11 +104,11 @@ class PropertyCode extends TranslatableCode
     }
 
     // remarkable senses
-    const HEARING = RemarkableSenseCode::HEARING;
-    const SIGHT = RemarkableSenseCode::SIGHT;
-    const SMELL = RemarkableSenseCode::SMELL;
-    const TASTE = RemarkableSenseCode::TASTE;
-    const TOUCH = RemarkableSenseCode::TOUCH;
+    public const HEARING = RemarkableSenseCode::HEARING;
+    public const SIGHT = RemarkableSenseCode::SIGHT;
+    public const SMELL = RemarkableSenseCode::SMELL;
+    public const TASTE = RemarkableSenseCode::TASTE;
+    public const TOUCH = RemarkableSenseCode::TOUCH;
 
     /**
      * @return array|string[]
@@ -119,7 +119,7 @@ class PropertyCode extends TranslatableCode
     }
 
     // restrictions
-    const REQUIRES_DM_AGREEMENT = 'requires_dm_agreement';
+    public const REQUIRES_DM_AGREEMENT = 'requires_dm_agreement';
 
     /**
      * @return array|string[]

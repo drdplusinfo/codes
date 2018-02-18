@@ -5,7 +5,7 @@ use DrdPlus\Codes\GenderCode;
 
 class GenderCodeType extends AbstractCodeType
 {
-    const GENDER_CODE = 'gender_code';
+    public const GENDER_CODE = 'gender_code';
 
     public static function registerSelf(): bool
     {

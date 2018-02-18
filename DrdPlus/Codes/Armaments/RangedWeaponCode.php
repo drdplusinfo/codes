@@ -9,11 +9,11 @@ class RangedWeaponCode extends WeaponCode
     private static $customRangedWeaponCodePerCategory = [];
 
     // bows
-    const SHORT_BOW = 'short_bow';
-    const LONG_BOW = 'long_bow';
-    const SHORT_COMPOSITE_BOW = 'short_composite_bow';
-    const LONG_COMPOSITE_BOW = 'long_composite_bow';
-    const POWER_BOW = 'power_bow';
+    public const SHORT_BOW = 'short_bow';
+    public const LONG_BOW = 'long_bow';
+    public const SHORT_COMPOSITE_BOW = 'short_composite_bow';
+    public const LONG_COMPOSITE_BOW = 'long_composite_bow';
+    public const POWER_BOW = 'power_bow';
 
     /**
      * @param bool $withCustomValues = true
@@ -36,10 +36,10 @@ class RangedWeaponCode extends WeaponCode
     }
 
     // crossbows
-    const MINICROSSBOW = 'minicrossbow';
-    const LIGHT_CROSSBOW = 'light_crossbow';
-    const MILITARY_CROSSBOW = 'military_crossbow';
-    const HEAVY_CROSSBOW = 'heavy_crossbow';
+    public const MINICROSSBOW = 'minicrossbow';
+    public const LIGHT_CROSSBOW = 'light_crossbow';
+    public const MILITARY_CROSSBOW = 'military_crossbow';
+    public const HEAVY_CROSSBOW = 'heavy_crossbow';
 
     /**
      * @param bool $withCustomValues = true
@@ -61,16 +61,16 @@ class RangedWeaponCode extends WeaponCode
     }
 
     // throwing weapons
-    const SAND = 'sand';
-    const ROCK = 'rock';
-    const THROWING_DAGGER = 'throwing_dagger';
-    const LIGHT_THROWING_AXE = 'light_throwing_axe';
-    const WAR_THROWING_AXE = 'war_throwing_axe';
-    const THROWING_HAMMER = 'throwing_hammer';
-    const SHURIKEN = 'shuriken';
-    const SPEAR = 'spear';
-    const JAVELIN = 'javelin';
-    const SLING = 'sling';
+    public const SAND = 'sand';
+    public const ROCK = 'rock';
+    public const THROWING_DAGGER = 'throwing_dagger';
+    public const LIGHT_THROWING_AXE = 'light_throwing_axe';
+    public const WAR_THROWING_AXE = 'war_throwing_axe';
+    public const THROWING_HAMMER = 'throwing_hammer';
+    public const SHURIKEN = 'shuriken';
+    public const SPEAR = 'spear';
+    public const JAVELIN = 'javelin';
+    public const SLING = 'sling';
 
     /**
      * @param bool $withCustomValues = true
@@ -156,7 +156,7 @@ class RangedWeaponCode extends WeaponCode
             $alreadyUsedCategory = null;
             foreach (WeaponCategoryCode::getPossibleValues() as $anotherCategory) {
                 if ($anotherCategory !== $weaponCategoryCode->getValue()
-                    && in_array($meleeWeaponValue, self::$customRangedWeaponCodePerCategory[$anotherCategory] ?? [], true)
+                    && \in_array($meleeWeaponValue, self::$customRangedWeaponCodePerCategory[$anotherCategory] ?? [], true)
                 ) {
                     $alreadyUsedCategory = $anotherCategory;
                 }
@@ -189,7 +189,7 @@ class RangedWeaponCode extends WeaponCode
      */
     public function isBow(): bool
     {
-        return in_array($this->getValue(), self::getBowsValues(), true);
+        return \in_array($this->getValue(), self::getBowsValues(), true);
     }
 
     /**
@@ -197,7 +197,7 @@ class RangedWeaponCode extends WeaponCode
      */
     public function isCrossbow(): bool
     {
-        return in_array($this->getValue(), self::getCrossbowsValues(), true);
+        return \in_array($this->getValue(), self::getCrossbowsValues(), true);
     }
 
     /**
@@ -205,7 +205,7 @@ class RangedWeaponCode extends WeaponCode
      */
     public function isThrowingWeapon(): bool
     {
-        return in_array($this->getValue(), self::getThrowingWeaponsValues(), true);
+        return \in_array($this->getValue(), self::getThrowingWeaponsValues(), true);
     }
 
     /**

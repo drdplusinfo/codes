@@ -8,12 +8,12 @@ use DrdPlus\Codes\Partials\TranslatableCode;
  */
 class TimeUnitCode extends TranslatableCode
 {
-    const ROUND = 'round';
-    const MINUTE = 'minute';
-    const HOUR = 'hour';
-    const DAY = 'day';
-    const MONTH = 'month';
-    const YEAR = 'year';
+    public const ROUND = 'round';
+    public const MINUTE = 'minute';
+    public const HOUR = 'hour';
+    public const DAY = 'day';
+    public const MONTH = 'month';
+    public const YEAR = 'year';
 
     /**
      * @return array|string[]

@@ -6,14 +6,14 @@ namespace DrdPlus\Codes\Armaments;
  */
 class BodyArmorCode extends ArmorCode
 {
-    const WITHOUT_ARMOR = 'without_armor';
-    const PADDED_ARMOR = 'padded_armor';
-    const LEATHER_ARMOR = 'leather_armor';
-    const HOBNAILED_ARMOR = 'hobnailed_armor';
-    const CHAINMAIL_ARMOR = 'chainmail_armor';
-    const SCALE_ARMOR = 'scale_armor';
-    const PLATE_ARMOR = 'plate_armor';
-    const FULL_PLATE_ARMOR = 'full_plate_armor';
+    public const WITHOUT_ARMOR = 'without_armor';
+    public const PADDED_ARMOR = 'padded_armor';
+    public const LEATHER_ARMOR = 'leather_armor';
+    public const HOBNAILED_ARMOR = 'hobnailed_armor';
+    public const CHAINMAIL_ARMOR = 'chainmail_armor';
+    public const SCALE_ARMOR = 'scale_armor';
+    public const PLATE_ARMOR = 'plate_armor';
+    public const FULL_PLATE_ARMOR = 'full_plate_armor';
 
     /**
      * @return array|string[]

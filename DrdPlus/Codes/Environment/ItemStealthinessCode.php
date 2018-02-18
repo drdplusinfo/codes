@@ -8,14 +8,14 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class ItemStealthinessCode extends AbstractCode
 {
-    const CLEARLY_VISIBLE_ITEM = 'clearly_visible_item';
-    const ITEM_IN_ALIGNMENT = 'item_in_alignment';
-    const COVERED_ITEM = 'covered_item';
-    const HIDDEN_ITEM = 'hidden_item';
-    const WELL_HIDDEN_ITEM = 'well_hidden_item';
-    const VERY_WELL_HIDDEN_ITEM = 'very_well_hidden_item';
-    const PERFECTLY_HIDDEN_ITEM = 'perfectly_hidden_item';
-    const TOTALLY_HIDDEN_ITEM = 'totally_hidden_item';
+    public const CLEARLY_VISIBLE_ITEM = 'clearly_visible_item';
+    public const ITEM_IN_ALIGNMENT = 'item_in_alignment';
+    public const COVERED_ITEM = 'covered_item';
+    public const HIDDEN_ITEM = 'hidden_item';
+    public const WELL_HIDDEN_ITEM = 'well_hidden_item';
+    public const VERY_WELL_HIDDEN_ITEM = 'very_well_hidden_item';
+    public const PERFECTLY_HIDDEN_ITEM = 'perfectly_hidden_item';
+    public const TOTALLY_HIDDEN_ITEM = 'totally_hidden_item';
 
     /**
      * @return array|string[]

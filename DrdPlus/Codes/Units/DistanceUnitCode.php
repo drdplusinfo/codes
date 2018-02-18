@@ -8,10 +8,10 @@ use DrdPlus\Codes\Partials\TranslatableCode;
  */
 class DistanceUnitCode extends TranslatableCode
 {
-    const DECIMETER = 'decimeter';
-    const METER = 'meter';
-    const KILOMETER = 'kilometer';
-    const LIGHT_YEAR = 'light_year';
+    public const DECIMETER = 'decimeter';
+    public const METER = 'meter';
+    public const KILOMETER = 'kilometer';
+    public const LIGHT_YEAR = 'light_year';
 
     /**
      * @return array|string[]

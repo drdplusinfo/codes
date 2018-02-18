@@ -8,11 +8,11 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class MovementTypeCode extends AbstractCode
 {
-    const WAITING = 'waiting';
-    const WALK = 'walk';
-    const RUSH = 'rush';
-    const RUN = 'run';
-    const SPRINT = 'sprint';
+    public const WAITING = 'waiting';
+    public const WALK = 'walk';
+    public const RUSH = 'rush';
+    public const RUN = 'run';
+    public const SPRINT = 'sprint';
 
     /**
      * @return array|string[]

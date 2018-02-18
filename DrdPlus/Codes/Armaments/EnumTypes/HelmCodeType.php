@@ -6,7 +6,7 @@ use DrdPlus\Codes\EnumTypes\AbstractCodeType;
 
 class HelmCodeType extends AbstractCodeType
 {
-    const HELM_CODE = 'helm_code';
+    public const HELM_CODE = 'helm_code';
 
     public static function registerSelf(): bool
     {

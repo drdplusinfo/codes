@@ -8,12 +8,12 @@ use DrdPlus\Codes\Partials\FileBasedTranslatableCode;
  */
 class RidingAnimalMovementCode extends FileBasedTranslatableCode
 {
-    const STILL = 'still';
-    const GAIT = 'gait';
-    const TROT = 'trot';
-    const CANTER = 'canter';
-    const GALLOP = 'gallop';
-    const JUMPING = 'jumping';
+    public const STILL = 'still';
+    public const GAIT = 'gait';
+    public const TROT = 'trot';
+    public const CANTER = 'canter';
+    public const GALLOP = 'gallop';
+    public const JUMPING = 'jumping';
 
     /**
      * @return array|string[]

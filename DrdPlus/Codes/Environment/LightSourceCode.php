@@ -8,14 +8,14 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class LightSourceCode extends AbstractCode
 {
-    const EMBERS_IN_FIRE = 'embers_in_fire';
-    const CANDLE = 'candle';
-    const TRIPLE_CANDELABRA_OR_WORSE_TORCH = 'triple_candelabra_or_worse_torch';
-    const BETTER_TORCH_OR_SEVEN_CANDELABRA = 'better_torch_or_seven_candelabra';
-    const LANTERN = 'lantern';
-    const CAMP_FIRE = 'camp_fire';
-    const BALEFIRE = 'balefire';
-    const LIGHT_HOUSE = 'light_house';
+    public const EMBERS_IN_FIRE = 'embers_in_fire';
+    public const CANDLE = 'candle';
+    public const TRIPLE_CANDELABRA_OR_WORSE_TORCH = 'triple_candelabra_or_worse_torch';
+    public const BETTER_TORCH_OR_SEVEN_CANDELABRA = 'better_torch_or_seven_candelabra';
+    public const LANTERN = 'lantern';
+    public const CAMP_FIRE = 'camp_fire';
+    public const BALEFIRE = 'balefire';
+    public const LIGHT_HOUSE = 'light_house';
 
     /**
      * @return array|string[]

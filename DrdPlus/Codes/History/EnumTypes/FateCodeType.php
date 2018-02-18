@@ -6,7 +6,7 @@ use DrdPlus\Codes\History\FateCode;
 
 class FateCodeType extends AbstractCodeType
 {
-    const FATE_CODE = 'fate_code';
+    public const FATE_CODE = 'fate_code';
 
     public static function registerSelf(): bool
     {

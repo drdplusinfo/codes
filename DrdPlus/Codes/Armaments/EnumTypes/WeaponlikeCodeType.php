@@ -9,7 +9,7 @@ use Granam\Tools\ValueDescriber;
 
 class WeaponlikeCodeType extends AbstractCodeType
 {
-    const WEAPONLIKE_CODE = 'weaponlike_code';
+    public const WEAPONLIKE_CODE = 'weaponlike_code';
 
     public static function registerSelf(): bool
     {

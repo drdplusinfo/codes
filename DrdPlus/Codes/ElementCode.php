@@ -8,10 +8,10 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class ElementCode extends AbstractCode
 {
-    const FIRE = 'fire';
-    const WATER = 'water';
-    const EARTH = 'earth';
-    const AIR = 'air';
+    public const FIRE = 'fire';
+    public const WATER = 'water';
+    public const EARTH = 'earth';
+    public const AIR = 'air';
 
     /**
      * @return array|string[]

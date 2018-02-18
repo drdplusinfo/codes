@@ -8,9 +8,9 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class FateCode extends AbstractCode
 {
-    const EXCEPTIONAL_PROPERTIES = 'exceptional_properties';
-    const COMBINATION_OF_PROPERTIES_AND_BACKGROUND = 'combination_of_properties_and_background';
-    const GOOD_BACKGROUND = 'good_background';
+    public const EXCEPTIONAL_PROPERTIES = 'exceptional_properties';
+    public const COMBINATION_OF_PROPERTIES_AND_BACKGROUND = 'combination_of_properties_and_background';
+    public const GOOD_BACKGROUND = 'good_background';
 
     /**
      * @return array|string[]

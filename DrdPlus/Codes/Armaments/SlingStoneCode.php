@@ -6,8 +6,8 @@ namespace DrdPlus\Codes\Armaments;
  */
 class SlingStoneCode extends ProjectileCode
 {
-    const SLING_STONE_LIGHT = 'sling_stone_light';
-    const SLING_STONE_HEAVIER = 'sling_stone_heavier';
+    public const SLING_STONE_LIGHT = 'sling_stone_light';
+    public const SLING_STONE_HEAVIER = 'sling_stone_heavier';
 
     /**
      * @return array|string[]

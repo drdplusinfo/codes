@@ -8,22 +8,22 @@ class PsychicalSkillCode extends SkillCode
 {
 
     // PSYCHICAL
-    const ASTRONOMY = 'astronomy';
-    const BOTANY = 'botany';
-    const ETIQUETTE_OF_GANGLAND = 'etiquette_of_gangland';
-    const FOREIGN_LANGUAGE = 'foreign_language';
-    const GEOGRAPHY_OF_A_COUNTRY = 'geography_of_a_country';
-    const HANDLING_WITH_MAGICAL_ITEMS = 'handling_with_magical_items';
-    const HISTORIOGRAPHY = 'historiography';
-    const KNOWLEDGE_OF_A_CITY = 'knowledge_of_a_city';
-    const KNOWLEDGE_OF_WORLD = 'knowledge_of_world';
-    const MAPS_DRAWING = 'maps_drawing';
-    const MYTHOLOGY = 'mythology';
-    const READING_AND_WRITING = 'reading_and_writing';
-    const SOCIAL_ETIQUETTE = 'social_etiquette';
-    const TECHNOLOGY = 'technology';
-    const THEOLOGY = 'theology';
-    const ZOOLOGY = 'zoology';
+    public const ASTRONOMY = 'astronomy';
+    public const BOTANY = 'botany';
+    public const ETIQUETTE_OF_GANGLAND = 'etiquette_of_gangland';
+    public const FOREIGN_LANGUAGE = 'foreign_language';
+    public const GEOGRAPHY_OF_A_COUNTRY = 'geography_of_a_country';
+    public const HANDLING_WITH_MAGICAL_ITEMS = 'handling_with_magical_items';
+    public const HISTORIOGRAPHY = 'historiography';
+    public const KNOWLEDGE_OF_A_CITY = 'knowledge_of_a_city';
+    public const KNOWLEDGE_OF_WORLD = 'knowledge_of_world';
+    public const MAPS_DRAWING = 'maps_drawing';
+    public const MYTHOLOGY = 'mythology';
+    public const READING_AND_WRITING = 'reading_and_writing';
+    public const SOCIAL_ETIQUETTE = 'social_etiquette';
+    public const TECHNOLOGY = 'technology';
+    public const THEOLOGY = 'theology';
+    public const ZOOLOGY = 'zoology';
 
     /**
      * @return array|string[]

@@ -8,8 +8,8 @@ use DrdPlus\Codes\Partials\AbstractCode;
  */
 class GenderCode extends AbstractCode
 {
-    const MALE = 'male';
-    const FEMALE = 'female';
+    public const MALE = 'male';
+    public const FEMALE = 'female';
 
     /**
      * @return array|string[]

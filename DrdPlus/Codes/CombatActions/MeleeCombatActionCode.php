@@ -7,11 +7,11 @@ namespace DrdPlus\Codes\CombatActions;
 class MeleeCombatActionCode extends CombatActionCode
 {
     // See PPH page 107-109
-    const HEADLESS_ATTACK = 'headless_attack';
-    const COVER_OF_ALLY = 'cover_of_ally';
-    const FLAT_ATTACK = 'flat_attack';
-    const PRESSURE = 'pressure';
-    const RETREAT = 'retreat';
+    public const HEADLESS_ATTACK = 'headless_attack';
+    public const COVER_OF_ALLY = 'cover_of_ally';
+    public const FLAT_ATTACK = 'flat_attack';
+    public const PRESSURE = 'pressure';
+    public const RETREAT = 'retreat';
 
     /**
      * @return array|string[]

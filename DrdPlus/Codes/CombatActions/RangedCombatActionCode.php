@@ -7,7 +7,7 @@ namespace DrdPlus\Codes\CombatActions;
 class RangedCombatActionCode extends CombatActionCode
 {
     // See PPH page 108
-    const AIMED_SHOT = 'aimed_shot';
+    public const AIMED_SHOT = 'aimed_shot';
 
     public static function getRangedOnlyCombatActionValues(): array
     {
