@@ -12,7 +12,7 @@ abstract class TranslatableCodeTest extends AbstractCodeTest
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
      * @expectedExceptionMessageRegExp ~da Vinci~
      */
-    public function I_can_not_create_code_from_unknown_value()
+    public function I_can_not_create_code_from_unknown_value(): void
     {
         if ((new \ReflectionClass(self::getSutClass()))->isAbstract()) {
             throw new \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode(
@@ -25,7 +25,7 @@ abstract class TranslatableCodeTest extends AbstractCodeTest
     /**
      * @test
      */
-    public function I_can_use_code_object_as_its_string_value()
+    public function I_can_use_code_object_as_its_string_value(): void
     {
         if ((new \ReflectionClass(self::getSutClass()))->isAbstract()) {
             self::assertFalse(false, 'Can not create enum from abstract class');
@@ -38,7 +38,7 @@ abstract class TranslatableCodeTest extends AbstractCodeTest
     /**
      * @test
      */
-    public function I_can_get_translation_for_few_with_decimal()
+    public function I_can_get_translation_for_few_with_decimal(): void
     {
         if ((new \ReflectionClass(self::getSutClass()))->isAbstract()) {
             self::assertFalse(false, 'Can not create enum from abstract class');

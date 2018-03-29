@@ -1,12 +1,12 @@
 <?php
 namespace DrdPlus\Codes\Environment;
 
-use DrdPlus\Codes\Partials\AbstractCode;
+use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static MaterialCode getIt($codeValue)
  */
-class MaterialCode extends AbstractCode
+class MaterialCode extends TranslatableCode
 {
     public const CLOTH_OR_PAPER_OR_ROPE = 'cloth_or_paper_or_rope';
     public const WOOD = 'wood';
@@ -27,6 +27,28 @@ class MaterialCode extends AbstractCode
             self::STONE,
             self::BRONZE,
             self::IRON_OR_STEEL,
+        ];
+    }
+
+    protected function fetchTranslations(): array
+    {
+        return [
+            'en' => [
+                self::CLOTH_OR_PAPER_OR_ROPE => ['one' => 'cloth or paper or rope'],
+                self::WOOD => ['one' => 'wood'],
+                self::BAKED_CAY => ['one' => 'baked cay'],
+                self::STONE => ['one' => 'stone'],
+                self::BRONZE => ['one' => 'bronze'],
+                self::IRON_OR_STEEL => ['one' => 'iron or steel'],
+            ],
+            'cs' => [
+                self::CLOTH_OR_PAPER_OR_ROPE => ['one' => 'oblečení, papír, lano...'],
+                self::WOOD => ['one' => 'dřevo'],
+                self::BAKED_CAY => ['one' => 'pálená hlína'],
+                self::STONE => ['one' => 'kámen'],
+                self::BRONZE => ['one' => 'bronz'],
+                self::IRON_OR_STEEL => ['one' => 'železo, ocel...'],
+            ]
         ];
     }
 

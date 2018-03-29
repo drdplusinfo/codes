@@ -8,7 +8,7 @@ class DistanceUnitCodeTest extends TranslatableCodeTest
 {
     protected function getExpectedCzechTranslationOfFewDecimal(TranslatableCode $translatableCode): string
     {
-        self::assertTrue(in_array($translatableCode->getValue(), ['decimeter', 'meter'], true));
+        self::assertTrue(\in_array($translatableCode->getValue(), ['decimeter', 'meter'], true));
 
         return $translatableCode->getValue() === 'decimeter'
             ? 'decimetru'

@@ -4,6 +4,7 @@ namespace DrdPlus\Tests\Codes;
 use DrdPlus\Codes\Armaments\ShieldCode;
 use DrdPlus\Codes\Armaments\WeaponCategoryCode;
 use DrdPlus\Codes\Environment\LandingSurfaceCode;
+use DrdPlus\Codes\Environment\MaterialCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Partials\TranslatableCode;
 use DrdPlus\Codes\Skills\SkillCode;
@@ -18,7 +19,7 @@ class AllTranslatableCodesTest extends TestWithMockery
     /**
      * @test
      */
-    public function I_can_get_its_english_translation()
+    public function I_can_get_its_english_translation(): void
     {
         foreach ($this->getTranslatableCodeClasses() as $codeClass) {
             $testClass = $this->getTestClass($codeClass);
@@ -33,7 +34,7 @@ class AllTranslatableCodesTest extends TestWithMockery
                 $sut = $codeClass::getIt($value);
                 self::assertSame($this->codeToEnglish($value), $sut->translateTo('en'));
                 self::assertSame($sut->translateTo('en'), $sut->translateTo('en', 1));
-                if ($hasSinglesOnly || $hasMultiplesOnly || in_array($value, $this->getValuesSameInEnglishForAnyNumbers(), true)) {
+                if ($hasSinglesOnly || $hasMultiplesOnly || \in_array($value, $this->getValuesSameInEnglishForAnyNumbers(), true)) {
                     self::assertSame($sut->translateTo('en', 1), $sut->translateTo('en', 2));
                 } else {
                     self::assertNotSame(
@@ -58,8 +59,8 @@ class AllTranslatableCodesTest extends TestWithMockery
 
     protected function hasSinglesOnly(string $codeClass): bool
     {
-        foreach ([SkillTypeCode::class, SkillCode::class, ShieldCode::class, ItemHoldingCode::class, LandingSurfaceCode::class] as $singleOnlyClass) {
-            if (is_a($codeClass, $singleOnlyClass, true)) {
+        foreach ([SkillTypeCode::class, SkillCode::class, ShieldCode::class, ItemHoldingCode::class, LandingSurfaceCode::class, MaterialCode::class] as $singleOnlyClass) {
+            if (\is_a($codeClass, $singleOnlyClass, true)) {
                 return true;
             }
         }
@@ -70,7 +71,7 @@ class AllTranslatableCodesTest extends TestWithMockery
     protected function hasMultiplesOnly(string $codeClass): bool
     {
         foreach ([WeaponCategoryCode::class] as $multipleOnlyClass) {
-            if (is_a($codeClass, $multipleOnlyClass, true)) {
+            if (\is_a($codeClass, $multipleOnlyClass, true)) {
                 return true;
             }
         }
@@ -85,7 +86,7 @@ class AllTranslatableCodesTest extends TestWithMockery
     {
         $translatableCodeClasses = [];
         foreach ($this->getCodeClasses() as $codeClass) {
-            if (!is_a($codeClass, TranslatableCode::class, true)) {
+            if (!\is_a($codeClass, TranslatableCode::class, true)) {
                 continue;
             }
             $translatableCodeClasses[] = $codeClass;
