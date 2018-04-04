@@ -40,7 +40,7 @@ abstract class TranslatableCode extends AbstractCode implements Translatable
         if ($languageCode === 'en') {
             return str_replace('_', ' ', $code); // just replacing underscores by spaces
         }
-        trigger_error(
+        \trigger_error(
             "Missing translation for value '{$code}', language '{$languageCode}' and plural '{$plural}' for code "
             . static::class . ', english will be used instead',
             E_USER_WARNING
@@ -59,12 +59,12 @@ abstract class TranslatableCode extends AbstractCode implements Translatable
      */
     private function convertAmountToPlural($amount): string
     {
-        $amount = abs($amount);
+        $amount = \abs($amount);
         if ((float)$amount === 1.0) {
             return self::$ONE;
         }
         if ($amount < 5) {
-            if (strpos((string)$amount, '.') !== false) {
+            if (\strpos((string)$amount, '.') !== false) {
                 return self::$FEW_DECIMAL;
             }
 
