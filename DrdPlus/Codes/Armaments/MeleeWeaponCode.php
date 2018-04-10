@@ -283,8 +283,9 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
      */
     protected static function getDefaultValues(): array
     {
-        return array_values( // to get continual integer keys
-            array_merge(
+        return \array_values( // to get continual integer keys
+            \array_merge(
+                self::getUnarmedValues(false /* without custom */),
                 self::getAxesValues(false /* without custom */),
                 self::getKnivesAndDaggersValues(false /* without custom */),
                 self::getMacesAndClubsValues(false /* without custom */),
@@ -292,8 +293,7 @@ class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
                 self::getSabersAndBowieKnivesValues(false /* without custom */),
                 self::getStaffsAndSpearsValues(false /* without custom */),
                 self::getSwordsValues(false /* without custom */),
-                self::getVoulgesAndTridentsValues(false /* without custom */),
-                self::getUnarmedValues(false /* without custom */)
+                self::getVoulgesAndTridentsValues(false /* without custom */)
             )
         );
     }

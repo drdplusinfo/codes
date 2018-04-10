@@ -6,7 +6,11 @@ use DrdPlus\Codes\Partials\TranslatableExtendableCode;
 
 abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
 {
-    public function Method_to_get_default_values_is_not_public()
+    /**
+     * @test
+     * @throws \ReflectionException
+     */
+    public function Method_to_get_default_values_is_not_public(): void
     {
         $sutClass = self::getSutClass();
         $reflectionClass = new \ReflectionClass($sutClass);
@@ -17,8 +21,9 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
     /**
      * @test
      * @runInSeparateProcess
+     * @throws \ReflectionException
      */
-    public function I_can_extended_it_by_custom_translatable_code()
+    public function I_can_extended_it_by_custom_translatable_code(): void
     {
         /** @var TranslatableExtendableCode $sutClass */
         $sutClass = self::getSutClass();
@@ -57,39 +62,40 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
 
     /**
      * @test
+     * @throws \ReflectionException
      */
-    public function All_public_constants_can_be_given_by_getter()
+    public function All_public_constants_can_be_given_by_getter(): void
     {
         $reflection = new \ReflectionClass(self::getSutClass());
         $constants = $reflection->getConstants();
-        self::assertEquals($constants, array_unique($constants));
-        asort($constants);
+        self::assertEquals($constants, \array_unique($constants));
+        \asort($constants);
         $sutClass = self::getSutClass();
         $possibleValues = $sutClass::getPossibleValues();
-        self::assertEquals($possibleValues, array_unique($possibleValues), 'Possible values should be unique');
-        sort($possibleValues);
+        self::assertEquals($possibleValues, \array_unique($possibleValues), 'Possible values should be unique');
+        \sort($possibleValues);
         self::assertSame(
             [],
-            array_diff(array_values($constants), $possibleValues),
-            'Some constants are missing in possible values: ' . implode(',', array_diff(array_values($constants), $possibleValues))
+            \array_diff(\array_values($constants), $possibleValues),
+            'Some constants are missing in possible values: ' . \implode(',', \array_diff(\array_values($constants), $possibleValues))
         );
-        $possibleValuesAndConstantsDifference = array_diff($possibleValues, array_values($constants));
+        $possibleValuesAndConstantsDifference = \array_diff($possibleValues, \array_values($constants));
         $reflectionClass = new \ReflectionClass(TranslatableExtendableCode::class);
         $customValuesReflection = $reflectionClass->getProperty('customValues');
         $customValuesReflection->setAccessible(true);
         $customValues = $customValuesReflection->getValue()[$sutClass] ?? [];
-        sort($possibleValuesAndConstantsDifference);
-        sort($customValues);
+        \sort($possibleValuesAndConstantsDifference);
+        \sort($customValues);
         self::assertEquals(
             $possibleValuesAndConstantsDifference,
             $customValues,
             'That is strange, have you overloaded getDefaultValues method?'
         );
         foreach ($possibleValues as $value) {
-            if (in_array($value, $customValues, true)) { // custom values are not as constants
+            if (\in_array($value, $customValues, true)) { // custom values are not as constants
                 continue;
             }
-            $constantName = strtoupper($value);
+            $constantName = \strtoupper($value);
             self::assertArrayHasKey($constantName, $constants);
             self::assertSame($constants[$constantName], $value);
         }
@@ -101,7 +107,7 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidLanguageCode
      * @expectedExceptionMessageRegExp ~a1~
      */
-    public function I_can_not_use_invalid_language_code_format_for_custom_code()
+    public function I_can_not_use_invalid_language_code_format_for_custom_code(): void
     {
         /** @var TranslatableExtendableCode $sutClass */
         $sutClass = self::getSutClass();
@@ -127,7 +133,7 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
      * @expectedExceptionMessageRegExp ~this should be array~
      */
-    public function I_can_not_use_invalid_data_format_of_translations_for_custom_code()
+    public function I_can_not_use_invalid_data_format_of_translations_for_custom_code(): void
     {
         /** like @see \DrdPlus\Codes\Armaments\ArrowCode::addNewArrowCode */
         $addNewCode = 'addNew' . $this->getSutBaseName();
@@ -145,7 +151,7 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
      * @expectedExceptionMessageRegExp ~all~
      */
-    public function I_can_not_use_invalid_plural_for_translation_of_custom_code()
+    public function I_can_not_use_invalid_plural_for_translation_of_custom_code(): void
     {
         /** like @see \DrdPlus\Codes\Armaments\ArrowCode::addNewArrowCode */
         $addNewCode = 'addNew' . $this->getSutBaseName();
@@ -163,7 +169,7 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
      * @expectedExceptionMessageRegExp ~NULL~
      */
-    public function I_can_not_use_non_string_for_translation_of_custom_code()
+    public function I_can_not_use_non_string_for_translation_of_custom_code(): void
     {
         /** like @see \DrdPlus\Codes\Armaments\ArrowCode::addNewArrowCode */
         $addNewCode = 'addNew' . $this->getSutBaseName();
@@ -181,7 +187,7 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
      * @expectedExceptionMessageRegExp ~''~
      */
-    public function I_can_not_use_empty_string_for_translation_of_custom_code()
+    public function I_can_not_use_empty_string_for_translation_of_custom_code(): void
     {
         /** like @see \DrdPlus\Codes\Armaments\ArrowCode::addNewArrowCode */
         $addNewCode = 'addNew' . $this->getSutBaseName();
@@ -196,7 +202,7 @@ abstract class TranslatableExtendableCodeTest extends TranslatableCodeTest
     /**
      * @test
      */
-    public function It_uses_parent_values_as_default_if_not_overloaded()
+    public function It_uses_parent_values_as_default_if_not_overloaded(): void
     {
         self::assertSame([], TranslatableExtendableCode::getPossibleValues());
     }

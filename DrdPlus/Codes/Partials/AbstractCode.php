@@ -21,9 +21,12 @@ abstract class AbstractCode extends ScalarEnum implements Code
     public static function getPossibleValues(): array
     {
         if ((static::$possibleValues[static::class] ?? null) === null) {
-            /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
-            /** @noinspection PhpUnhandledExceptionInspection */
-            $reflectionClass = new \ReflectionClass(static::class);
+            try {
+                $reflectionClass = new \ReflectionClass(static::class);
+            } catch (\ReflectionException $reflectionException) {
+                /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
+                throw new Exceptions\CanNotDeterminePossibleValuesFromClassReflection($reflectionException->getMessage());
+            }
             static::$possibleValues[static::class] = array_values($reflectionClass->getConstants());
         }
 
@@ -38,9 +41,33 @@ abstract class AbstractCode extends ScalarEnum implements Code
      * @throws \Doctrineum\Scalar\Exceptions\UnexpectedValueToEnum
      * @throws \Granam\Scalar\Tools\Exceptions\WrongParameterType
      */
-    public static function getIt($codeValue)
+    public static function getIt($codeValue): AbstractCode
     {
         return self::getEnum($codeValue);
+    }
+
+    /**
+     * @param string|StringInterface $codeValue
+     * @return AbstractCode|ScalarEnumInterface
+     * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
+     * @throws \Doctrineum\Scalar\Exceptions\CanNotCreateInstanceOfAbstractEnum
+     * @throws \Doctrineum\Scalar\Exceptions\UnexpectedValueToEnum
+     * @throws \Granam\Scalar\Tools\Exceptions\WrongParameterType
+     */
+    public static function findIt($codeValue): AbstractCode
+    {
+        if (static::hasIt($codeValue)) {
+            return self::getIt($codeValue);
+        }
+
+        return self::getIt(static::getDefaultValue());
+    }
+
+    protected static function getDefaultValue(): string
+    {
+        $possibleValues = static::getPossibleValues();
+
+        return \reset($possibleValues);
     }
 
     /**

@@ -27,7 +27,7 @@ class RidingAnimalCode extends TranslatableExtendableCode
     /**
      * @return array|string[]
      */
-    public static function getDefaultValues(): array
+    protected static function getDefaultValues(): array
     {
         return [
             self::HORSE,

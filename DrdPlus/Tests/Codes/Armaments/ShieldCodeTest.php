@@ -21,7 +21,7 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
     /**
      * @test
      */
-    public function I_can_easily_find_out_if_is_protective_armament()
+    public function I_can_easily_find_out_if_is_protective_armament(): void
     {
         $shieldCode = ShieldCode::getIt(ShieldCode::MEDIUM_SHIELD);
         self::assertTrue($shieldCode->isProtectiveArmament());
@@ -31,15 +31,16 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
     /**
      * @test
      */
-    public function I_can_easily_find_out_if_is_ranged()
+    public function I_can_easily_find_out_if_is_ranged(): void
     {
         self::assertFalse(ShieldCode::getIt(ShieldCode::WITHOUT_SHIELD)->isRanged());
     }
 
     /**
      * @test
+     * @throws \ReflectionException
      */
-    public function I_can_easily_find_out_if_is_melee()
+    public function I_can_easily_find_out_if_is_melee(): void
     {
         $reflection = new \ReflectionClass(self::getSutClass());
         /** @var ShieldCode $sut */
@@ -49,8 +50,9 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
 
     /**
      * @test
+     * @throws \ReflectionException
      */
-    public function I_can_easily_find_out_if_is_weapon()
+    public function I_can_easily_find_out_if_is_weapon(): void
     {
         $reflection = new \ReflectionClass(self::getSutClass());
         /** @var ShieldCode $sut */
@@ -61,7 +63,7 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
     /**
      * @test
      */
-    public function I_can_easily_find_out_if_is_shield()
+    public function I_can_easily_find_out_if_is_shield(): void
     {
         self::assertTrue(ShieldCode::getIt(ShieldCode::BUCKLER)->isShield());
         self::assertFalse(ShieldCode::getIt(ShieldCode::BUCKLER)->isArmor());
@@ -70,7 +72,7 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
     /**
      * @test
      */
-    public function I_can_easily_find_out_if_is_melee_weapon()
+    public function I_can_easily_find_out_if_is_melee_weapon(): void
     {
         self::assertFalse(ShieldCode::getIt(ShieldCode::BUCKLER)->isMeleeWeapon());
     }
@@ -79,7 +81,7 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
      * @test
      * @expectedException \DrdPlus\Codes\Armaments\Exceptions\CanNotBeConvertedToMeleeWeaponCode
      */
-    public function I_can_not_convert_it_to_melee_weapon_code()
+    public function I_can_not_convert_it_to_melee_weapon_code(): void
     {
         ShieldCode::getIt(ShieldCode::BUCKLER)->convertToMeleeWeaponCodeEquivalent();
     }
@@ -88,7 +90,7 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
      * @test
      * @expectedException \DrdPlus\Codes\Armaments\Exceptions\CanNotBeConvertedToRangeWeaponCode
      */
-    public function I_can_not_convert_it_to_range_weapon_code()
+    public function I_can_not_convert_it_to_range_weapon_code(): void
     {
         ShieldCode::getIt(ShieldCode::BUCKLER)->convertToRangedWeaponCodeEquivalent();
     }
@@ -96,7 +98,7 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
     /**
      * @test
      */
-    public function I_can_easily_find_out_it_is_not_projectile()
+    public function I_can_easily_find_out_it_is_not_projectile(): void
     {
         self::assertFalse(ShieldCode::getIt(ShieldCode::BUCKLER)->isProjectile());
     }
@@ -104,10 +106,19 @@ class ShieldCodeTest extends WeaponlikeCodeTest implements ProtectiveArmamentCod
     /**
      * @test
      */
-    public function I_can_easily_find_out_if_weapon_is_unarmed_in_fact()
+    public function I_can_easily_find_out_if_weapon_is_unarmed_in_fact(): void
     {
         self::assertTrue(ShieldCode::getIt(ShieldCode::WITHOUT_SHIELD)->isUnarmed());
         self::assertFalse(ShieldCode::getIt(ShieldCode::HEAVY_SHIELD)->isUnarmed());
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_get_it_with_default_value(): void
+    {
+        $sut = $this->findSut();
+        self::assertSame(ShieldCode::WITHOUT_SHIELD, $sut->getValue(), 'Expected without shield as a default value');
     }
 
 }

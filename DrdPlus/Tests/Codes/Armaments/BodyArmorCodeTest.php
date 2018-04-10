@@ -14,4 +14,14 @@ class BodyArmorCodeTest extends ArmorCodeTest
         self::assertFalse($bodyArmorCode->isHelm());
         self::assertTrue($bodyArmorCode->isBodyArmor());
     }
+
+    /**
+     * @test
+     */
+    public function I_can_get_it_with_default_value(): void
+    {
+        $sut = $this->findSut();
+        self::assertSame(BodyArmorCode::WITHOUT_ARMOR, $sut->getValue(), 'Expected without armor as a default value');
+    }
+
 }

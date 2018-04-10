@@ -14,7 +14,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
     /**
      * @test
      */
-    public function I_can_easily_composer_method_to_get_weapons_of_same_category()
+    public function I_can_easily_composer_method_to_get_weapons_of_same_category(): void
     {
         foreach (WeaponCategoryCode::getRangedWeaponCategoryValues() as $rangedWeaponCategoryValue) {
             $getRangedWeaponOfCategory = StringTools::assembleGetterForName($rangedWeaponCategoryValue . 'Values');
@@ -40,8 +40,9 @@ class RangedWeaponCodeTest extends WeaponCodeTest
 
     /**
      * @test
+     * @throws \ReflectionException
      */
-    public function I_can_easily_find_out_if_is_melee()
+    public function I_can_easily_find_out_if_is_melee(): void
     {
         $reflection = new \ReflectionClass(self::getSutClass());
         /** @var RangedWeaponCode $sut */
@@ -111,17 +112,6 @@ class RangedWeaponCodeTest extends WeaponCodeTest
     {
         self::assertSame(
             $expectedValues = [
-                // bows
-                'short_bow',
-                'long_bow',
-                'short_composite_bow',
-                'long_composite_bow',
-                'power_bow',
-                // crossbows
-                'minicrossbow',
-                'light_crossbow',
-                'military_crossbow',
-                'heavy_crossbow',
                 // throwing weapons
                 'sand',
                 'rock',
@@ -133,6 +123,17 @@ class RangedWeaponCodeTest extends WeaponCodeTest
                 'spear',
                 'javelin',
                 'sling',
+                // bows
+                'short_bow',
+                'long_bow',
+                'short_composite_bow',
+                'long_composite_bow',
+                'power_bow',
+                // crossbows
+                'minicrossbow',
+                'light_crossbow',
+                'military_crossbow',
+                'heavy_crossbow',
             ],
             RangedWeaponCode::getPossibleValues(),
             'There are ' . (
@@ -246,16 +247,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
     public function provideCodeAndUsage()
     {
         return [
-            // bows
-            ['short_bow', false, true, false],
-            ['long_bow', false, true, false],
-            ['short_composite_bow', false, true, false],
-            ['long_composite_bow', false, true, false],
-            ['power_bow', false, true, false],
-            ['minicrossbow', false, true, false],
-            ['light_crossbow', false, true, false],
-            ['military_crossbow', false, true, false],
-            ['heavy_crossbow', false, true, false],
+            // throwing weapons
             ['sand', true, false, false],
             ['rock', true, false, false],
             ['throwing_dagger', true, false, false],
@@ -266,6 +258,17 @@ class RangedWeaponCodeTest extends WeaponCodeTest
             ['spear', true, false, false],
             ['javelin', true, false, false],
             ['sling', true, false, false],
+            // bows
+            ['short_bow', false, true, false],
+            ['long_bow', false, true, false],
+            ['short_composite_bow', false, true, false],
+            ['long_composite_bow', false, true, false],
+            ['power_bow', false, true, false],
+            // crossbows
+            ['minicrossbow', false, true, false],
+            ['light_crossbow', false, true, false],
+            ['military_crossbow', false, true, false],
+            ['heavy_crossbow', false, true, false],
         ];
     }
 
@@ -296,7 +299,7 @@ class RangedWeaponCodeTest extends WeaponCodeTest
      * @expectedException \DrdPlus\Codes\Armaments\Exceptions\InvalidWeaponCategoryForNewRangedWeaponCode
      * @expectedExceptionMessageRegExp ~voulge~
      */
-    public function I_can_not_add_new_ranged_weapon_code_with_not_melee_category()
+    public function I_can_not_add_new_ranged_weapon_code_with_not_melee_category(): void
     {
         $meleeCategory = WeaponCategoryCode::getIt(WeaponCategoryCode::VOULGES_AND_TRIDENTS);
         self::assertFalse($meleeCategory->isRangedWeaponCategory());
@@ -307,8 +310,9 @@ class RangedWeaponCodeTest extends WeaponCodeTest
      * @test
      * @runInSeparateProcess
      * @expectedException \DrdPlus\Codes\Armaments\Exceptions\RangedWeaponIsAlreadyInDifferentWeaponCategory
+     * @throws \ReflectionException
      */
-    public function I_can_not_extended_it_by_same_code_but_different_category()
+    public function I_can_not_extended_it_by_same_code_but_different_category(): void
     {
         $reflectionClass = new \ReflectionClass(RangedWeaponCode::class);
         $translations = $reflectionClass->getProperty('translations');
@@ -323,5 +327,14 @@ class RangedWeaponCodeTest extends WeaponCodeTest
         $differentCategory = $this->getRandomWeaponCategoryCode($someCategory);
         self::assertNotEquals($someCategory, $differentCategory);
         RangedWeaponCode::addNewRangedWeaponCode('corge', $differentCategory, []);
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_get_it_with_default_value(): void
+    {
+        $sut = $this->findSut();
+        self::assertSame(RangedWeaponCode::SAND, $sut->getValue(), 'Expected sand as a harmless default value');
     }
 }

@@ -102,11 +102,11 @@ class RangedWeaponCode extends WeaponCode
      */
     protected static function getDefaultValues(): array
     {
-        return array_values( // to get continual integer keys
-            array_merge(
+        return \array_values( // to get continual integer keys
+            \array_merge(
+                self::getThrowingWeaponsValues(false /* without custom */),
                 self::getBowsValues(false /* without custom */),
-                self::getCrossbowsValues(false /* without custom */),
-                self::getThrowingWeaponsValues(false /* without custom */)
+                self::getCrossbowsValues(false /* without custom */)
             )
         );
     }

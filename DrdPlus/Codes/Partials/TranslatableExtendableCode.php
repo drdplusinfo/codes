@@ -36,7 +36,7 @@ abstract class TranslatableExtendableCode extends TranslatableCode
     {
         if ((self::$translations[static::class] ?? null) === null) {
             $translations = self::$customCodeTranslations[static::class] ?? [];
-            if (count($translations) === 0) {
+            if (\count($translations) === 0) {
                 $translations = $this->fetchTranslations();
             } else {
                 foreach ($this->fetchTranslations() as $languageCode => $languageTranslations) {
@@ -64,7 +64,7 @@ abstract class TranslatableExtendableCode extends TranslatableCode
     protected static function addNewCode(string $newValue, array $translations): bool
     {
         /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
-        if (in_array($newValue, static::getPossibleValues(), true)) {
+        if (\in_array($newValue, static::getPossibleValues(), true)) {
             return false;
         }
         self::$customValues[static::class][] = $newValue;
@@ -87,20 +87,20 @@ abstract class TranslatableExtendableCode extends TranslatableCode
      * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
      * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
      */
-    private static function checkTranslationsFormat(array $translations)
+    private static function checkTranslationsFormat(array $translations): void
     {
         /**
          * @var string $languageCode
          * @var array|string[] $languageTranslations
          */
         foreach ($translations as $languageCode => $languageTranslations) {
-            if (!preg_match('~^[[:alpha:]]{2}$~', $languageCode)) {
+            if (!\preg_match('~^[[:alpha:]]{2}$~', $languageCode)) {
                 throw new Exceptions\InvalidLanguageCode(
                     'Code of language used for custom code translation should be 2-char string, got ' .
-                    var_export($languageCode, true)
+                    \var_export($languageCode, true)
                 );
             }
-            if (!is_array($languageTranslations)) {
+            if (!\is_array($languageTranslations)) {
                 throw new Exceptions\InvalidTranslationFormat(
                     'Expected array of translations for singular and plural, got '
                     . ValueDescriber::describe($languageTranslations) . ' for language ' . $languageCode
@@ -109,11 +109,11 @@ abstract class TranslatableExtendableCode extends TranslatableCode
             foreach ($languageTranslations as $plural => $translation) {
                 if (!\in_array($plural, [self::$ONE, self::$FEW, self::$FEW_DECIMAL, self::$MANY], true)) {
                     throw new Exceptions\UnknownTranslationPlural(
-                        'Expected one of ' . implode(',', [self::$ONE, self::$FEW, self::$FEW_DECIMAL, self::$MANY, true])
-                        . ', got ' . var_export($plural, true)
+                        'Expected one of ' . \implode(',', [self::$ONE, self::$FEW, self::$FEW_DECIMAL, self::$MANY, true])
+                        . ', got ' . \var_export($plural, true)
                     );
                 }
-                if (!is_string($translation) || $translation === '') {
+                if (!\is_string($translation) || $translation === '') {
                     throw new Exceptions\InvalidTranslationFormat(
                         'Expected non-empty string, got ' . ValueDescriber::describe($translation)
                     );
