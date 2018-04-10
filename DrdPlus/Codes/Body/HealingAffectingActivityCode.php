@@ -4,9 +4,9 @@ namespace DrdPlus\Codes\Body;
 use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
- * @method static ActivityAffectingHealingCode getIt($codeValue)
+ * @method static HealingAffectingActivityCode getIt($codeValue)
  */
-class ActivityAffectingHealingCode extends AbstractCode
+class HealingAffectingActivityCode extends AbstractCode
 {
     public const SLEEPING_OR_REST_IN_BED = 'sleeping_or_rest_in_bed';
     public const LOUNGING_AND_RESTING = 'lounging_and_resting';

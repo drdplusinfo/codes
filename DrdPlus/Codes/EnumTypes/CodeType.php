@@ -11,7 +11,7 @@ use DrdPlus\Codes\Armaments\RangedWeaponCode;
 use DrdPlus\Codes\Armaments\ShieldCode;
 use DrdPlus\Codes\Armaments\SlingStoneCode;
 use DrdPlus\Codes\Armaments\WeaponCategoryCode;
-use DrdPlus\Codes\Body\ActivityAffectingHealingCode;
+use DrdPlus\Codes\Body\HealingAffectingActivityCode;
 use DrdPlus\Codes\Body\AfflictionByWoundDomainCode;
 use DrdPlus\Codes\Body\ConditionsAffectingHealingCode;
 use DrdPlus\Codes\Body\RestConditionsCode;
@@ -76,7 +76,7 @@ class CodeType extends AbstractCodeType
         $somethingRegistered = static::registerCode(SlingStoneCode::class) || $somethingRegistered;
         $somethingRegistered = static::registerCode(WeaponCategoryCode::class) || $somethingRegistered;
         // BODY
-        $somethingRegistered = static::registerCode(ActivityAffectingHealingCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(HealingAffectingActivityCode::class) || $somethingRegistered;
         $somethingRegistered = static::registerCode(AfflictionByWoundDomainCode::class) || $somethingRegistered;
         $somethingRegistered = static::registerCode(ConditionsAffectingHealingCode::class) || $somethingRegistered;
         $somethingRegistered = static::registerCode(RestConditionsCode::class) || $somethingRegistered;
