@@ -37,7 +37,7 @@ class SubRaceCode extends AbstractCode
     /**
      * @return array|string[][]
      */
-    public static function getRaceToSubRaceValues()
+    public static function getRaceToSubRaceValues(): array
     {
         return [
             RaceCode::HUMAN => [
@@ -85,5 +85,14 @@ class SubRaceCode extends AbstractCode
             self::SKURUT,
             self::GOBLIN,
         ];
+    }
+
+    /**
+     * @param RaceCode $raceCode
+     * @return bool
+     */
+    public function isRace(RaceCode $raceCode): bool
+    {
+        return \in_array($this->getValue(), static::getRaceToSubRaceValues()[$raceCode->getValue()] ?? [], true);
     }
 }
