@@ -18,7 +18,7 @@ class CodeTypeTest extends AbstractCodeTypeTest
      * @test
      * @expectedException \Doctrineum\Scalar\Exceptions\EnumClassNotFound
      */
-    public function I_get_enum_with_empty_string_on_conversion()
+    public function I_get_enum_with_empty_string_on_conversion(): void
     {
         // There is no default enum class for CodeType, every code needs a value
         parent::I_get_enum_with_empty_string_on_conversion();
@@ -28,7 +28,7 @@ class CodeTypeTest extends AbstractCodeTypeTest
      * @test
      * @expectedException \Doctrineum\Scalar\Exceptions\EnumClassNotFound
      */
-    public function I_get_default_enum_class_if_subtype_regexp_does_not_match()
+    public function I_get_default_enum_class_if_subtype_regexp_does_not_match(): void
     {
         // There is no default enum class for CodeType, every code needs a value
         parent::I_get_default_enum_class_if_subtype_regexp_does_not_match();

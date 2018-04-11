@@ -13,6 +13,9 @@ use Granam\Scalar\ScalarInterface;
 
 abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
 {
+    /**
+     * @throws \ReflectionException
+     */
     protected function setUp()
     {
         parent::setUp();
@@ -40,8 +43,10 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
 
     /**
      * @test
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \ReflectionException
      */
-    public function I_can_register_all_codes_at_once()
+    public function I_can_register_all_codes_at_once(): void
     {
         $typeName = $this->getExpectedTypeName();
         self::assertFalse(Type::hasType($typeName), "Type of name '{$typeName}' should not be registered yet");
@@ -80,19 +85,20 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     /**
      * @return \Mockery\MockInterface|AbstractPlatform
      */
-    private function createPlatform()
+    protected function createPlatform()
     {
         return $this->mockery(AbstractPlatform::class);
     }
 
     /**
      * @return array|AbstractCode[]
+     * @throws \ReflectionException
      */
     private function getRelatedCodeClasses(): array
     {
         $relatedRootCodeClass = $this->getRegisteredClass();
         $codeReflection = new \ReflectionClass(Code::class);
-        $rootDir = dirname($codeReflection->getFileName());
+        $rootDir = \dirname($codeReflection->getFileName());
 
         $concreteClassesFromDir = $this->getConcreteClassesFromDir($rootDir, $codeReflection->getNamespaceName());
         $relatedCodeClasses = [];
@@ -109,6 +115,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
      * @param string $rootDir
      * @param string $rootNamespace
      * @return array|string[]
+     * @throws \ReflectionException
      */
     private function getConcreteClassesFromDir($rootDir, $rootNamespace): array
     {
@@ -138,8 +145,9 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
      * @test
      * @expectedException \DrdPlus\Codes\EnumTypes\Exceptions\UnknownCodeClass
      * @expectedExceptionMessageRegExp ~non-existing-class~
+     * @throws \ReflectionException
      */
-    public function I_can_not_register_non_existing_class()
+    public function I_can_not_register_non_existing_class(): void
     {
         $reflectionClass = new \ReflectionClass(self::getSutClass());
         $registerCode = $reflectionClass->getMethod('registerCode');
@@ -151,8 +159,9 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
      * @test
      * @expectedException \DrdPlus\Codes\EnumTypes\Exceptions\ExpectedEnumClass
      * @expectedExceptionMessageRegExp ~stdClass~
+     * @throws \ReflectionException
      */
-    public function I_can_not_register_non_enum_class()
+    public function I_can_not_register_non_enum_class(): void
     {
         $reflectionClass = new \ReflectionClass(self::getSutClass());
         $registerCode = $reflectionClass->getMethod('registerCode');
@@ -163,7 +172,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     /**
      * @test
      */
-    public function I_can_get_pure_integer_in_enum()
+    public function I_can_get_pure_integer_in_enum(): void
     {
         self::assertFalse(false, 'Codes are not supposed to hold numbers');
     }
@@ -171,7 +180,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     /**
      * @test
      */
-    public function I_can_get_enum_with_pure_integer_zero()
+    public function I_can_get_enum_with_pure_integer_zero(): void
     {
         self::assertFalse(false, 'Codes are not supposed to hold numbers');
     }
@@ -179,7 +188,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     /**
      * @test
      */
-    public function I_can_get_enum_with_pure_float()
+    public function I_can_get_enum_with_pure_float(): void
     {
         self::assertFalse(false, 'Codes are not supposed to hold numbers');
     }
@@ -187,7 +196,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     /**
      * @test
      */
-    public function I_can_get_enum_with_pure_float_zero()
+    public function I_can_get_enum_with_pure_float_zero(): void
     {
         self::assertFalse(false, 'Codes are not supposed to hold numbers');
     }
@@ -195,7 +204,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     /**
      * @test
      */
-    public function I_can_get_enum_with_pure_false()
+    public function I_can_get_enum_with_pure_false(): void
     {
         self::assertFalse(false, 'Codes are not supposed to hold booleans');
     }
@@ -203,16 +212,24 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     /**
      * @test
      */
-    public function I_can_get_enum_with_pure_true()
+    public function I_can_get_enum_with_pure_true(): void
     {
         self::assertFalse(false, 'Codes are not supposed to hold booleans');
     }
 
-    public function enum_as_database_value_is_string_value_of_that_enum($value = null)
+    /**
+     * @param null $value
+     * @throws \ReflectionException
+     */
+    public function enum_as_database_value_is_string_value_of_that_enum($value = null): void
     {
         parent::enum_as_database_value_is_string_value_of_that_enum($this->getSomeValueFromDatabaseForEnum());
     }
 
+    /**
+     * @return string
+     * @throws \ReflectionException
+     */
     protected function getSomeValueFromDatabaseForEnum(): string
     {
         $codeClass = $this->getRegisteredClass();
@@ -221,16 +238,25 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
         return $codeClass . '::' . $enumValue; // value prefixed with source class full name
     }
 
+    /**
+     * @return string
+     * @throws \ReflectionException
+     */
     protected function getSomeEnumValue(): string
     {
         $codeClass = $this->getRegisteredClass();
         $reflectionClass = new \ReflectionClass($codeClass);
         $constants = $reflectionClass->getConstants();
+        self::assertNotEmpty($constants, "Code {$codeClass} does not have any constants");
 
         return $constants[array_rand($constants, 1)];
     }
 
-    public function string_to_php_value_is_enum_with_that_string(string $stringFromDb = null)
+    /**
+     * @param string|null $stringFromDb
+     * @throws \ReflectionException
+     */
+    public function string_to_php_value_is_enum_with_that_string(string $stringFromDb = null): void
     {
         parent::string_to_php_value_is_enum_with_that_string($this->getSomeValueFromDatabaseForEnum());
     }
@@ -240,7 +266,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
      * @expectedExceptionMessageRegExp ~''~
      */
-    public function I_get_enum_with_empty_string_on_conversion()
+    public function I_get_enum_with_empty_string_on_conversion(): void
     {
         parent::I_get_enum_with_empty_string_on_conversion();
     }
@@ -248,8 +274,9 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     /**
      * @test
      * @param ScalarInterface|null $toStringObject
+     * @throws \ReflectionException
      */
-    public function object_with_to_string_to_php_value_is_enum_with_that_string(ScalarInterface $toStringObject = null)
+    public function object_with_to_string_to_php_value_is_enum_with_that_string(ScalarInterface $toStringObject = null): void
     {
         $platform = $this->getPlatform();
         $value = $toStringObject ? $toStringObject->__toString() : $this->getSomeValueFromDatabaseForEnum();
@@ -266,7 +293,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
      * @expectedExceptionMessageRegExp ~without~
      */
-    public function I_get_default_enum_class_if_subtype_regexp_does_not_match()
+    public function I_get_default_enum_class_if_subtype_regexp_does_not_match(): void
     {
         parent::I_get_default_enum_class_if_subtype_regexp_does_not_match();
     }
@@ -274,15 +301,16 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     /**
      * @test
      */
-    public function I_can_use_subtype()
+    public function I_can_use_subtype(): void
     {
         self::assertTrue(true, 'Of course I can, whole code philosophy is build on sub-types');
     }
 
     /**
      * @test
+     * @throws \ReflectionException
      */
-    public function Code_value_is_prefixed_by_its_class_name_for_database_persistence()
+    public function Code_value_is_prefixed_by_its_class_name_for_database_persistence(): void
     {
         $platform = $this->getPlatform();
         $enumClass = $this->getRegisteredClass();

@@ -42,7 +42,7 @@ class SeriousWoundOriginCodeTest extends WoundOriginCodeTest
 
     /**
      * @test
-     * @expectedException \DrdPlus\Codes\Body\Exceptions\UnknownWoundOriginCode
+     * @expectedException \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
      * @expectedExceptionMessageRegExp ~Bathroom slipping~
      */
     public function I_can_not_create_custom_origin(): void

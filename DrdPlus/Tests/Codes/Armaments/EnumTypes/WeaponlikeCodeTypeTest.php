@@ -20,7 +20,7 @@ class WeaponlikeCodeTypeTest extends AbstractCodeTypeTest
      * @expectedException \DrdPlus\Codes\Armaments\EnumTypes\Exceptions\ThereIsNoDefaultEnumForWeaponlikeCode
      * @expectedExceptionMessageRegExp ~MeleeWeaponCode~
      */
-    public function I_get_enum_with_empty_string_on_conversion()
+    public function I_get_enum_with_empty_string_on_conversion(): void
     {
         parent::I_get_enum_with_empty_string_on_conversion();
     }
@@ -30,7 +30,7 @@ class WeaponlikeCodeTypeTest extends AbstractCodeTypeTest
      * @expectedException \DrdPlus\Codes\Armaments\EnumTypes\Exceptions\ThereIsNoDefaultEnumForWeaponlikeCode
      * @expectedExceptionMessageRegExp ~MeleeWeaponCode~
      */
-    public function I_get_default_enum_class_if_subtype_regexp_does_not_match()
+    public function I_get_default_enum_class_if_subtype_regexp_does_not_match(): void
     {
         parent::I_get_default_enum_class_if_subtype_regexp_does_not_match();
     }

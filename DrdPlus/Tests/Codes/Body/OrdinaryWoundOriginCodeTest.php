@@ -20,7 +20,7 @@ class OrdinaryWoundOriginCodeTest extends WoundOriginCodeTest
 
     /**
      * @test
-     * @expectedException \DrdPlus\Codes\Body\Exceptions\UnknownWoundOriginCode
+     * @expectedException \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
      * @expectedExceptionMessageRegExp ~Kitchen accident~
      */
     public function I_can_not_create_custom_ordinary_origin(): void
