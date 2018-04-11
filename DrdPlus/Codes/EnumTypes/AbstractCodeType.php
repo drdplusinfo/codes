@@ -25,10 +25,10 @@ abstract class AbstractCodeType extends ScalarEnumType
     {
         /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
         $sanitizedCodeClass = ToString::toString($codeClass);
-        if (!class_exists($sanitizedCodeClass)) {
+        if (!\class_exists($sanitizedCodeClass)) {
             throw new Exceptions\UnknownCodeClass('Given code class has not been found: ' . ValueDescriber::describe($codeClass));
         }
-        if (!is_a($sanitizedCodeClass, ScalarEnum::class, true)) {
+        if (!\is_a($sanitizedCodeClass, ScalarEnum::class, true)) {
             throw new Exceptions\ExpectedEnumClass(
                 'Given class is not an enum: ' . ValueDescriber::describe($codeClass)
             );
@@ -39,7 +39,7 @@ abstract class AbstractCodeType extends ScalarEnumType
         }
 
         /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
-        return static::addSubTypeEnum($sanitizedCodeClass, '~^' . preg_quote($sanitizedCodeClass, '~') . '::\w+$~');
+        return static::addSubTypeEnum($sanitizedCodeClass, '~^' . \preg_quote($sanitizedCodeClass, '~') . '::\w+$~');
     }
 
     /**
@@ -55,13 +55,13 @@ abstract class AbstractCodeType extends ScalarEnumType
         if ($code === null) {
             return null;
         }
-        if (!is_object($code) || !is_a($code, Code::class)) {
+        if (!\is_object($code) || !\is_a($code, Code::class)) {
             throw new UnexpectedValueToDatabaseValue(
                 'Expected NULL or instance of ' . Code::class . ', got ' . ValueDescriber::describe($code)
             );
         }
 
-        return get_class($code) . '::' . $code->getValue();
+        return \get_class($code) . '::' . $code->getValue();
     }
 
     /**
@@ -74,7 +74,7 @@ abstract class AbstractCodeType extends ScalarEnumType
         $valueForEnum = parent::prepareValueForEnum($valueForEnum);
 
         // like DrdPlus\Codes\Armaments\MeleeWeaponCode::light_axe = light_axe
-        return preg_replace('~^[^:]+::~', '', $valueForEnum);
+        return \preg_replace('~^[^:]+::~', '', $valueForEnum);
     }
 
 }

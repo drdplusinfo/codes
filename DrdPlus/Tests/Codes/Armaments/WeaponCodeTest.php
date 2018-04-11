@@ -9,7 +9,6 @@ abstract class WeaponCodeTest extends WeaponlikeCodeTest
 {
     /**
      * @test
-     * @throws \ReflectionException
      */
     public function It_is_weapon_code(): void
     {
