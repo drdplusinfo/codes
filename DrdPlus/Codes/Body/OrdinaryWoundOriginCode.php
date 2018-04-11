@@ -3,7 +3,6 @@ namespace DrdPlus\Codes\Body;
 
 use DrdPlus\Codes\Partials\AbstractCode;
 use Granam\String\StringInterface;
-use Granam\Tools\ValueDescriber;
 
 class OrdinaryWoundOriginCode extends WoundOriginCode
 {
@@ -16,24 +15,6 @@ class OrdinaryWoundOriginCode extends WoundOriginCode
     public static function getIt($codeValue = self::ORDINARY): AbstractCode
     {
         return parent::getIt($codeValue);
-    }
-
-    /**
-     * @param bool|float|int|string $enumValue
-     * @return string
-     * @throws \DrdPlus\Codes\Body\Exceptions\UnknownWoundOriginCode
-     * @throws \Doctrineum\Scalar\Exceptions\UnexpectedValueToEnum
-     */
-    protected static function convertToEnumFinalValue($enumValue): string
-    {
-        $enumFinalValue = parent::convertToEnumFinalValue($enumValue);
-        if ($enumFinalValue !== self::ORDINARY) {
-            throw new Exceptions\UnknownWoundOriginCode(
-                'Got unexpected code of wound origin ' . ValueDescriber::describe($enumValue)
-            );
-        }
-
-        return $enumFinalValue;
     }
 
     /**

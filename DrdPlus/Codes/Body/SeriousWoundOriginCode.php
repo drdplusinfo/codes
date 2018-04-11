@@ -1,8 +1,6 @@
 <?php
 namespace DrdPlus\Codes\Body;
 
-use Granam\Tools\ValueDescriber;
-
 /**
  * @method static SeriousWoundOriginCode getIt($codeValue)
  */
@@ -52,24 +50,6 @@ class SeriousWoundOriginCode extends WoundOriginCode
     public static function getPsychicalWoundOrigin(): SeriousWoundOriginCode
     {
         return static::getIt(self::PSYCHICAL);
-    }
-
-    /**
-     * @param bool|float|int|string $enumValue
-     * @return string
-     * @throws \DrdPlus\Codes\Body\Exceptions\UnknownWoundOriginCode
-     * @throws \Doctrineum\Scalar\Exceptions\UnexpectedValueToEnum
-     */
-    protected static function convertToEnumFinalValue($enumValue): string
-    {
-        $enumFinalValue = parent::convertToEnumFinalValue($enumValue);
-        if (!\in_array($enumFinalValue, self::getPossibleValues(), true)) {
-            throw new Exceptions\UnknownWoundOriginCode(
-                'Got unexpected code of wound origin ' . ValueDescriber::describe($enumValue)
-            );
-        }
-
-        return $enumFinalValue;
     }
 
     /**
