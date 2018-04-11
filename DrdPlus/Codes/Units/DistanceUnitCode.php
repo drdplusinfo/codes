@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static DistanceUnitCode getIt($codeValue)
+ * @method static DistanceUnitCode findIt($codeValue)
  */
 class DistanceUnitCode extends TranslatableCode
 {

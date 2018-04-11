@@ -3,6 +3,7 @@ namespace DrdPlus\Codes\Armaments;
 
 /**
  * @method static HelmCode getIt($codeValue)
+ * @method static HelmCode findIt($codeValue)
  */
 class HelmCode extends ArmorCode
 {

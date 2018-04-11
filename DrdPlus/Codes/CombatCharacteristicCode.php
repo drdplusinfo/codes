@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static CombatCharacteristicCode getIt($codeValue)
+ * @method static CombatCharacteristicCode findIt($codeValue)
  */
 class CombatCharacteristicCode extends AbstractCode
 {

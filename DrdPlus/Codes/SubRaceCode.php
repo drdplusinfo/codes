@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static SubRaceCode getIt($codeValue)
+ * @method static SubRaceCode findIt($codeValue)
  */
 class SubRaceCode extends AbstractCode
 {

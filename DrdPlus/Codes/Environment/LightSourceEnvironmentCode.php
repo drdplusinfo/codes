@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static LightSourceEnvironmentCode getIt($codeValue)
+ * @method static LightSourceEnvironmentCode findIt($codeValue)
  */
 class LightSourceEnvironmentCode extends AbstractCode
 {

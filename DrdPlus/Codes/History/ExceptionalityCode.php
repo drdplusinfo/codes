@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static ExceptionalityCode getIt($codeValue)
+ * @method static ExceptionalityCode findIt($codeValue)
  */
 class ExceptionalityCode extends AbstractCode
 {

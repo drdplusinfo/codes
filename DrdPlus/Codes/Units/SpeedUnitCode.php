@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static SpeedUnitCode getIt($codeValue)
+ * @method static SpeedUnitCode findIt($codeValue)
  */
 class SpeedUnitCode extends TranslatableCode
 {

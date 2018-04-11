@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\TranslatableExtendableCode;
 
 /**
  * @method static RidingAnimalCode getIt($codeValue)
+ * @method static RidingAnimalCode findIt($codeValue)
  */
 class RidingAnimalCode extends TranslatableExtendableCode
 {

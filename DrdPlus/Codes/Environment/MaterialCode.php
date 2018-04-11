@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static MaterialCode getIt($codeValue)
+ * @method static MaterialCode findIt($codeValue)
  */
 class MaterialCode extends TranslatableCode
 {

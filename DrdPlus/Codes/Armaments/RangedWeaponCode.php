@@ -3,6 +3,7 @@ namespace DrdPlus\Codes\Armaments;
 
 /**
  * @method static RangedWeaponCode getIt($codeValue)
+ * @method static RangedWeaponCode findIt($codeValue)
  */
 class RangedWeaponCode extends WeaponCode
 {

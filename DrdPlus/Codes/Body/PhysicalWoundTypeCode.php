@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static PhysicalWoundTypeCode getIt($codeValue)
+ * @method static PhysicalWoundTypeCode findIt($codeValue)
  */
 class PhysicalWoundTypeCode extends TranslatableCode
 {

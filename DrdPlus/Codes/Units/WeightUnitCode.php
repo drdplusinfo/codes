@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static WeightUnitCode getIt($codeValue)
+ * @method static WeightUnitCode findIt($codeValue)
  */
 class WeightUnitCode extends TranslatableCode
 {

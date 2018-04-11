@@ -3,6 +3,7 @@ namespace DrdPlus\Codes\Armaments;
 
 /**
  * @method static MeleeWeaponCode getIt($codeValue)
+ * @method static MeleeWeaponCode findIt($codeValue)
  */
 class MeleeWeaponCode extends WeaponCode implements MeleeWeaponlikeCode
 {

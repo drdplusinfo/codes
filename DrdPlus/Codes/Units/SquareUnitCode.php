@@ -7,6 +7,7 @@ use DrdPlus\Codes\Partials\FileBasedTranslatableCode;
 
 /**
  * @method static SquareUnitCode getIt($codeValue)
+ * @method static SquareUnitCode findIt($codeValue)
  */
 class SquareUnitCode extends FileBasedTranslatableCode
 {

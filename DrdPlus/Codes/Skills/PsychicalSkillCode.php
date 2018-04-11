@@ -3,6 +3,7 @@ namespace DrdPlus\Codes\Skills;
 
 /**
  * @method static PsychicalSkillCode getIt($codeValue)
+ * @method static PsychicalSkillCode findIt($codeValue)
  */
 class PsychicalSkillCode extends SkillCode
 {

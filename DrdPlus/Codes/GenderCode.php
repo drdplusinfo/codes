@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static GenderCode getIt($codeValue)
+ * @method static GenderCode findIt($codeValue)
  */
 class GenderCode extends AbstractCode
 {

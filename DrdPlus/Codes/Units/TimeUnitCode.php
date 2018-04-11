@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static TimeUnitCode getIt($codeValue)
+ * @method static TimeUnitCode findIt($codeValue)
  */
 class TimeUnitCode extends TranslatableCode
 {

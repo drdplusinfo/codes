@@ -6,6 +6,7 @@ use DrdPlus\Codes\Properties\PropertyCode;
 
 /**
  * @method static RidingAnimalPropertyCode getIt($codeValue)
+ * @method static RidingAnimalPropertyCode findIt($codeValue)
  */
 class RidingAnimalPropertyCode extends AbstractCode
 {

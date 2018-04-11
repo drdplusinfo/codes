@@ -3,6 +3,7 @@ namespace DrdPlus\Codes\Armaments;
 
 /**
  * @method static ArrowCode getIt($codeValue)
+ * @method static ArrowCode findIt($codeValue)
  */
 class ArrowCode extends ProjectileCode
 {

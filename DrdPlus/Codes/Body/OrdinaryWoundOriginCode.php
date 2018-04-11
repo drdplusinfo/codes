@@ -4,6 +4,9 @@ namespace DrdPlus\Codes\Body;
 use DrdPlus\Codes\Partials\AbstractCode;
 use Granam\String\StringInterface;
 
+/**
+ * @method static OrdinaryWoundOriginCode findIt($codeValue)
+ */
 class OrdinaryWoundOriginCode extends WoundOriginCode
 {
     public const ORDINARY = 'ordinary';

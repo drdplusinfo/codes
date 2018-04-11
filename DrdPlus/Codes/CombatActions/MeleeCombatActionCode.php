@@ -3,6 +3,7 @@ namespace DrdPlus\Codes\CombatActions;
 
 /**
  * @method static MeleeCombatActionCode getIt($codeValue)
+ * @method static MeleeCombatActionCode findIt($codeValue)
  */
 class MeleeCombatActionCode extends CombatActionCode
 {

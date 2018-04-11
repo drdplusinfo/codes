@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static ProfessionCode getIt($codeValue)
+ * @method static ProfessionCode findIt($codeValue)
  */
 class ProfessionCode extends TranslatableCode
 {

@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static SearchingItemTypeCode getIt($codeValue)
+ * @method static SearchingItemTypeCode findIt($codeValue)
  */
 class SearchingItemTypeCode extends AbstractCode
 {

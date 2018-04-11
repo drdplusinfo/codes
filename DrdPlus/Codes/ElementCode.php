@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static ElementCode getIt($codeValue)
+ * @method static ElementCode findIt($codeValue)
  */
 class ElementCode extends AbstractCode
 {

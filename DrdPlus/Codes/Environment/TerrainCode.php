@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static TerrainCode getIt($codeValue)
+ * @method static TerrainCode findIt($codeValue)
  */
 class TerrainCode extends AbstractCode
 {

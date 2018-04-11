@@ -3,6 +3,7 @@ namespace DrdPlus\Codes\Body;
 
 /**
  * @method static SeriousWoundOriginCode getIt($codeValue)
+ * @method static SeriousWoundOriginCode findIt($codeValue)
  */
 class SeriousWoundOriginCode extends WoundOriginCode
 {

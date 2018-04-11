@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static ItemHoldingCode getIt($codeValue)
+ * @method static ItemHoldingCode findIt($codeValue)
  */
 class ItemHoldingCode extends TranslatableCode
 {

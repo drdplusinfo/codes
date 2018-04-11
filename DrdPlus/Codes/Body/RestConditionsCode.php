@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static RestConditionsCode getIt($codeValue)
+ * @method static RestConditionsCode findIt($codeValue)
  */
 class RestConditionsCode extends AbstractCode
 {

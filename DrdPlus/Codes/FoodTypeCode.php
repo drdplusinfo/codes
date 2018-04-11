@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static FoodTypeCode getIt($codeValue)
+ * @method static FoodTypeCode findIt($codeValue)
  */
 class FoodTypeCode extends AbstractCode
 {

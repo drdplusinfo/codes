@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\FileBasedTranslatableCode;
 
 /**
  * @method static RidingAnimalMovementCode getIt($codeValue)
+ * @method static RidingAnimalMovementCode findIt($codeValue)
  */
 class RidingAnimalMovementCode extends FileBasedTranslatableCode
 {

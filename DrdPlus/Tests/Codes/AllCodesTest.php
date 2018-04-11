@@ -162,19 +162,33 @@ class AllCodesTest extends TestWithMockery
             $reflectionClass = new \ReflectionClass($codeClass);
             $classBaseName = \preg_replace('~^.*[\\\](\w+)$~', '$1', $codeClass);
             if (\strpos($reflectionClass->getDocComment(), 'getIt') !== false) {
-                self::assertSame(<<<PHPDOC
-/**
+                self::assertContains(<<<PHPDOC
  * @method static {$classBaseName} getIt(\$codeValue)
- */
 PHPDOC
-                    , $reflectionClass->getDocComment()
+                    , $reflectionClass->getDocComment(),
+                    "Missing getIt method annotation in $codeClass"
                 );
             } else {
-                self::assertStringEndsWith(<<<PHPDOC
+                self::assertContains(<<<PHPDOC
  * @return {$classBaseName}|AbstractCode
- */
 PHPDOC
-                    , \preg_replace('~ +~', ' ', $reflectionClass->getMethod('getIt')->getDocComment())
+                    , \preg_replace('~ +~', ' ', $reflectionClass->getMethod('getIt')->getDocComment()),
+                    "Missing getIt method annotation in $codeClass"
+                );
+            }
+            if (\strpos($reflectionClass->getDocComment(), 'findIt') !== false) {
+                self::assertContains(<<<PHPDOC
+ * @method static {$classBaseName} findIt(\$codeValue)
+PHPDOC
+                    , $reflectionClass->getDocComment(),
+                    "Missing findIt method annotation in $codeClass"
+                );
+            } else {
+                self::assertContains(<<<PHPDOC
+ * @return {$classBaseName}|AbstractCode
+PHPDOC
+                    , \preg_replace('~ +~', ' ', $reflectionClass->getMethod('findIt')->getDocComment()),
+                    "Missing findIt method annotation in $codeClass"
                 );
             }
         }

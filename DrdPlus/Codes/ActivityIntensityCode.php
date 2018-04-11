@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static ActivityIntensityCode getIt($codeValue)
+ * @method static ActivityIntensityCode findIt($codeValue)
  */
 class ActivityIntensityCode extends AbstractCode
 {

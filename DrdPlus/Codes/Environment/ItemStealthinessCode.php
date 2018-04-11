@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static ItemStealthinessCode getIt($codeValue)
+ * @method static ItemStealthinessCode findIt($codeValue)
  */
 class ItemStealthinessCode extends AbstractCode
 {

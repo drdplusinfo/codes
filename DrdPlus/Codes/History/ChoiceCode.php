@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static ChoiceCode getIt($codeValue)
+ * @method static ChoiceCode findIt($codeValue)
  */
 class ChoiceCode extends AbstractCode
 {

@@ -3,6 +3,7 @@ namespace DrdPlus\Codes\Armaments;
 
 /**
  * @method static SlingStoneCode getIt($codeValue)
+ * @method static SlingStoneCode findIt($codeValue)
  */
 class SlingStoneCode extends ProjectileCode
 {

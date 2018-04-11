@@ -7,6 +7,7 @@ use DrdPlus\Codes\Partials\FileBasedTranslatableCode;
 
 /**
  * @method static VolumeUnitCode getIt($codeValue)
+ * @method static VolumeUnitCode findIt($codeValue)
  */
 class VolumeUnitCode extends FileBasedTranslatableCode
 {

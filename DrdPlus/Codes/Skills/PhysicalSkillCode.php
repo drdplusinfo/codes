@@ -3,6 +3,7 @@ namespace DrdPlus\Codes\Skills;
 
 /**
  * @method static PhysicalSkillCode getIt($codeValue)
+ * @method static PhysicalSkillCode findIt($codeValue)
  */
 class PhysicalSkillCode extends SkillCode
 {

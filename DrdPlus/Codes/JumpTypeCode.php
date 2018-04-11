@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static JumpTypeCode getIt($codeValue)
+ * @method static JumpTypeCode findIt($codeValue)
  */
 class JumpTypeCode extends AbstractCode
 {

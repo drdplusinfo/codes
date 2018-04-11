@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static SkillTypeCode getIt($codeValue)
+ * @method static SkillTypeCode findIt($codeValue)
  */
 class SkillTypeCode extends TranslatableCode
 {

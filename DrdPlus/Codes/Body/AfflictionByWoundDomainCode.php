@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static AfflictionByWoundDomainCode getIt($codeValue)
+ * @method static AfflictionByWoundDomainCode findIt($codeValue)
  */
 class AfflictionByWoundDomainCode extends AbstractCode
 {

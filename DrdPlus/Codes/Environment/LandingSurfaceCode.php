@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\FileBasedTranslatableCode;
 
 /**
  * @method static LandingSurfaceCode getIt($codeValue)
+ * @method static LandingSurfaceCode findIt($codeValue)
  */
 class LandingSurfaceCode extends FileBasedTranslatableCode
 {

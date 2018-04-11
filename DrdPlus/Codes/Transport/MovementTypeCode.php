@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static MovementTypeCode getIt($codeValue)
+ * @method static MovementTypeCode findIt($codeValue)
  */
 class MovementTypeCode extends AbstractCode
 {

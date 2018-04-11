@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\FileBasedTranslatableCode;
 
 /**
  * @method static WeaponCategoryCode getIt($codeValue)
+ * @method static WeaponCategoryCode findIt($codeValue)
  */
 class WeaponCategoryCode extends FileBasedTranslatableCode
 {

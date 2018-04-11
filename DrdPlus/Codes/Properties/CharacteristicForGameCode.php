@@ -6,6 +6,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static CharacteristicForGameCode getIt($codeValue)
+ * @method static CharacteristicForGameCode findIt($codeValue)
  */
 class CharacteristicForGameCode extends AbstractCode
 {

@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static RemarkableSenseCode getIt($codeValue)
+ * @method static RemarkableSenseCode findIt($codeValue)
  */
 class RemarkableSenseCode extends AbstractCode
 {

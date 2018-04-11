@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static PropertyCode getIt($codeValue)
+ * @method static PropertyCode findIt($codeValue)
  */
 class PropertyCode extends TranslatableCode
 {

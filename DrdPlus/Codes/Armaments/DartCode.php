@@ -3,6 +3,7 @@ namespace DrdPlus\Codes\Armaments;
 
 /**
  * @method static DartCode getIt($codeValue)
+ * @method static DartCode findIt($codeValue)
  */
 class DartCode extends ProjectileCode
 {

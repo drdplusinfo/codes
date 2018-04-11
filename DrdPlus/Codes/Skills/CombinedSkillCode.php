@@ -3,6 +3,7 @@ namespace DrdPlus\Codes\Skills;
 
 /**
  * @method static CombinedSkillCode getIt($codeValue)
+ * @method static CombinedSkillCode findIt($codeValue)
  */
 class CombinedSkillCode extends SkillCode
 {

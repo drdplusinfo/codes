@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static FateCode getIt($codeValue)
+ * @method static FateCode findIt($codeValue)
  */
 class FateCode extends AbstractCode
 {

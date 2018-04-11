@@ -3,6 +3,7 @@ namespace DrdPlus\Codes\Armaments;
 
 /**
  * @method static BodyArmorCode getIt($codeValue)
+ * @method static BodyArmorCode findIt($codeValue)
  */
 class BodyArmorCode extends ArmorCode
 {

@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static AncestryCode getIt($codeValue)
+ * @method static AncestryCode findIt($codeValue)
  */
 class AncestryCode extends AbstractCode
 {

@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
  * @method static ActivityAffectingHealingCode getIt($codeValue)
+ * @method static ActivityAffectingHealingCode findIt($codeValue)
  */
 class ActivityAffectingHealingCode extends AbstractCode
 {

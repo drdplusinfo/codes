@@ -5,6 +5,7 @@ use DrdPlus\Codes\Partials\TranslatableExtendableCode;
 
 /**
  * @method static ShieldCode getIt($codeValue)
+ * @method static ShieldCode findIt($codeValue)
  */
 class ShieldCode extends TranslatableExtendableCode implements MeleeWeaponlikeCode, ProtectiveArmamentCode
 {
