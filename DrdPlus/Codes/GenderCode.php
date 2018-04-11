@@ -22,7 +22,7 @@ class GenderCode extends AbstractCode
     /**
      * @return bool
      */
-    public function isMale()
+    public function isMale(): bool
     {
         return $this->getValue() === self::MALE;
     }
@@ -30,7 +30,7 @@ class GenderCode extends AbstractCode
     /**
      * @return bool
      */
-    public function isFemale()
+    public function isFemale(): bool
     {
         return $this->getValue() === self::FEMALE;
     }
