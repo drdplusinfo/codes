@@ -144,23 +144,6 @@ abstract class AbstractCodeTest extends TestWithMockery
     /**
      * @test
      */
-    public function I_get_whispered_current_code_as_return_value_of_factory_method(): void
-    {
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $reflectionClass = new \ReflectionClass(self::getSutClass());
-        $classBaseName = \preg_replace('~^.*[\\\](\w+)$~', '$1', self::getSutClass());
-        self::assertSame(<<<PHPDOC
-/**
- * @method static {$classBaseName} getIt(\$codeValue)
- */
-PHPDOC
-            , $reflectionClass->getDocComment()
-        );
-    }
-
-    /**
-     * @test
-     */
     public function I_can_call_its_possible_values_even_if_they_are_empty(): void
     {
         $sutClass = self::getSutClass();

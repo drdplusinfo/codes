@@ -14,13 +14,14 @@ trait GetCodeClassesTrait
 
     /**
      * @return array|AbstractCode[]
+     * @throws \ReflectionException
      */
     protected function getCodeClasses(): array
     {
         if (self::$codeClasses === null) {
             /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
             $codeReflection = new \ReflectionClass(Code::class);
-            $rootDir = dirname($codeReflection->getFileName());
+            $rootDir = \dirname($codeReflection->getFileName());
             $rootNamespace = $codeReflection->getNamespaceName();
 
             self::$codeClasses = $this->scanForCodeClasses($rootDir, $rootNamespace);
@@ -33,18 +34,19 @@ trait GetCodeClassesTrait
      * @param string $rootDir
      * @param string $rootNamespace
      * @return array
+     * @throws \ReflectionException
      */
     protected function scanForCodeClasses(string $rootDir, string $rootNamespace): array
     {
         $codeClasses = [];
-        foreach (scandir($rootDir, SCANDIR_SORT_NONE) as $folder) {
+        foreach (\scandir($rootDir, SCANDIR_SORT_NONE) as $folder) {
             $folderFullPath = $rootDir . DIRECTORY_SEPARATOR . $folder;
             if ($folder !== '.' && $folder !== '..') {
-                if (is_dir($folderFullPath)) {
+                if (\is_dir($folderFullPath)) {
                     foreach ($this->scanForCodeClasses($folderFullPath, $rootNamespace . '\\' . $folder) as $foundCode) {
                         $codeClasses[] = $foundCode;
                     }
-                } else if (is_file($folderFullPath) && preg_match('~(?<classBasename>\w+(?:Code)?)\.php$~', $folder, $matches)) {
+                } else if (\is_file($folderFullPath) && \preg_match('~(?<classBasename>\w+(?:Code)?)\.php$~', $folder, $matches)) {
                     /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
                     $reflectionClass = new \ReflectionClass($rootNamespace . '\\' . $matches['classBasename']);
                     if (!$reflectionClass->isAbstract() && $reflectionClass->implementsInterface(Code::class)) {

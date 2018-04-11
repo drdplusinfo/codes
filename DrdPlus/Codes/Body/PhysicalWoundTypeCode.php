@@ -4,9 +4,9 @@ namespace DrdPlus\Codes\Body;
 use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
- * @method static WoundTypeCode getIt($codeValue)
+ * @method static PhysicalWoundTypeCode getIt($codeValue)
  */
-class WoundTypeCode extends TranslatableCode
+class PhysicalWoundTypeCode extends TranslatableCode
 {
     public const CRUSH = 'crush';
     public const STAB = 'stab';

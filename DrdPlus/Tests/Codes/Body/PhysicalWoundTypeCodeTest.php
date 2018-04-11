@@ -1,10 +1,10 @@
 <?php
 namespace DrdPlus\Tests\Codes\Body;
 
-use DrdPlus\Codes\Body\WoundTypeCode;
+use DrdPlus\Codes\Body\PhysicalWoundTypeCode;
 use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
 
-class WoundTypeCodeTest extends TranslatableCodeTest
+class PhysicalWoundTypeCodeTest extends TranslatableCodeTest
 {
     /**
      * @test
@@ -14,20 +14,20 @@ class WoundTypeCodeTest extends TranslatableCodeTest
      * @param bool $isStab
      * @param bool $isCut
      */
-    public function I_can_ask_it_for_type($value, $isCrush, $isStab, $isCut)
+    public function I_can_ask_it_for_type(string $value, bool $isCrush, bool $isStab, bool $isCut): void
     {
-        $woundTypeCode = WoundTypeCode::getIt($value);
+        $woundTypeCode = PhysicalWoundTypeCode::getIt($value);
         self::assertSame($isCrush, $woundTypeCode->isCrush());
         self::assertSame($isStab, $woundTypeCode->isStab());
         self::assertSame($isCut, $woundTypeCode->isCut());
     }
 
-    public function provideType()
+    public function provideType(): array
     {
         return [
-            [WoundTypeCode::CRUSH, true, false, false],
-            [WoundTypeCode::STAB, false, true, false],
-            [WoundTypeCode::CUT, false, false, true],
+            [PhysicalWoundTypeCode::CRUSH, true, false, false],
+            [PhysicalWoundTypeCode::STAB, false, true, false],
+            [PhysicalWoundTypeCode::CUT, false, false, true],
         ];
     }
 }

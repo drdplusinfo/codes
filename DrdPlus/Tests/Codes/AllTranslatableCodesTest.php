@@ -3,6 +3,8 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\Armaments\ShieldCode;
 use DrdPlus\Codes\Armaments\WeaponCategoryCode;
+use DrdPlus\Codes\Body\OrdinaryWoundOriginCode;
+use DrdPlus\Codes\Body\SeriousWoundOriginCode;
 use DrdPlus\Codes\Environment\LandingSurfaceCode;
 use DrdPlus\Codes\Environment\MaterialCode;
 use DrdPlus\Codes\ItemHoldingCode;
@@ -59,7 +61,10 @@ class AllTranslatableCodesTest extends TestWithMockery
 
     protected function hasSinglesOnly(string $codeClass): bool
     {
-        foreach ([SkillTypeCode::class, SkillCode::class, ShieldCode::class, ItemHoldingCode::class, LandingSurfaceCode::class, MaterialCode::class] as $singleOnlyClass) {
+        foreach ([SkillTypeCode::class, SkillCode::class, ShieldCode::class, ItemHoldingCode::class,
+                     LandingSurfaceCode::class, MaterialCode::class, SeriousWoundOriginCode::class,
+                     OrdinaryWoundOriginCode::class] as $singleOnlyClass
+        ) {
             if (\is_a($codeClass, $singleOnlyClass, true)) {
                 return true;
             }

@@ -14,9 +14,10 @@ use DrdPlus\Codes\Armaments\WeaponCategoryCode;
 use DrdPlus\Codes\Body\ActivityAffectingHealingCode;
 use DrdPlus\Codes\Body\AfflictionByWoundDomainCode;
 use DrdPlus\Codes\Body\ConditionsAffectingHealingCode;
+use DrdPlus\Codes\Body\OrdinaryWoundOriginCode;
 use DrdPlus\Codes\Body\RestConditionsCode;
-use DrdPlus\Codes\Body\WoundsOriginCode;
-use DrdPlus\Codes\Body\WoundTypeCode;
+use DrdPlus\Codes\Body\PhysicalWoundTypeCode;
+use DrdPlus\Codes\Body\SeriousWoundOriginCode;
 use DrdPlus\Codes\CombatActions\CombatActionCode;
 use DrdPlus\Codes\CombatActions\MeleeCombatActionCode;
 use DrdPlus\Codes\CombatActions\RangedCombatActionCode;
@@ -80,8 +81,9 @@ class CodeType extends AbstractCodeType
         $somethingRegistered = static::registerCode(AfflictionByWoundDomainCode::class) || $somethingRegistered;
         $somethingRegistered = static::registerCode(ConditionsAffectingHealingCode::class) || $somethingRegistered;
         $somethingRegistered = static::registerCode(RestConditionsCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(WoundsOriginCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(WoundTypeCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(SeriousWoundOriginCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(OrdinaryWoundOriginCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCode(PhysicalWoundTypeCode::class) || $somethingRegistered;
         // COMBAT ACTIONS
         $somethingRegistered = static::registerCode(CombatActionCode::class) || $somethingRegistered;
         $somethingRegistered = static::registerCode(MeleeCombatActionCode::class) || $somethingRegistered;
