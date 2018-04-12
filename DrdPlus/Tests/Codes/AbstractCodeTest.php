@@ -207,4 +207,22 @@ abstract class AbstractCodeTest extends TestWithMockery
 
         return $sutClass::findIt($withValue);
     }
+
+    /**
+     * @test
+     */
+    public function I_get_false_when_asking_if_has_null(): void
+    {
+        $sutClass = self::getSutClass();
+        self::assertFalse($sutClass::hasIt(null));
+    }
+
+    /**
+     * @test
+     */
+    public function I_get_it_with_default_value_if_finding_it_with_null(): void
+    {
+        $sutClass = self::getSutClass();
+        self::assertSame($this->getSutDefaultValue(), $sutClass::findIt(null)->getValue());
+    }
 }

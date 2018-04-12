@@ -77,6 +77,10 @@ abstract class AbstractCode extends ScalarEnum implements Code
      */
     public static function hasIt($codeValue): bool
     {
+        if ($codeValue === null) {
+            return false;
+        }
+
         return \in_array(ToString::toString($codeValue), self::getPossibleValues(), true);
     }
 
