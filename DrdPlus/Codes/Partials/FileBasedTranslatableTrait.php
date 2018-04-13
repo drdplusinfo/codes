@@ -15,7 +15,7 @@ trait FileBasedTranslatableTrait
         \array_shift($rows); // removing header row
         $translations = [];
         foreach ($rows as $row) {
-            $translation = ['one' => \trim($row[2])];
+            $translation = [self::$ONE => \trim($row[2])];
             if (\array_key_exists(3, $row)) {
                 $translation['few'] = \trim($row[3]);
                 if (\array_key_exists(4, $row)) {

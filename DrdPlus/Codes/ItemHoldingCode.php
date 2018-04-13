@@ -79,14 +79,14 @@ class ItemHoldingCode extends TranslatableCode
     {
         return [
             'en' => [
-                self::TWO_HANDS => ['one' => 'two hands'],
-                self::MAIN_HAND => ['one' => 'main hand'],
-                self::OFFHAND => ['one' => 'offhand'],
+                self::TWO_HANDS => [self::$ONE => 'two hands'],
+                self::MAIN_HAND => [self::$ONE => 'main hand'],
+                self::OFFHAND => [self::$ONE => 'offhand'],
             ],
             'cs' => [
-                self::TWO_HANDS => ['one' => 'obouručně'],
-                self::MAIN_HAND => ['one' => 'v dominantní ruce'],
-                self::OFFHAND => ['one' => 'v druhé ruce'],
+                self::TWO_HANDS => [self::$ONE => 'obouručně'],
+                self::MAIN_HAND => [self::$ONE => 'v dominantní ruce'],
+                self::OFFHAND => [self::$ONE => 'v druhé ruce'],
             ],
         ];
     }

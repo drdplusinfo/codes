@@ -137,18 +137,18 @@ class SeriousWoundOriginCode extends WoundOriginCode
     {
         return [
             'cs' => [
-                self::ELEMENTAL => ['one' => 'elementální'],
-                self::PSYCHICAL => ['one' => 'psychické'],
-                self::MECHANICAL_CRUSH => ['one' => 'fyzické drtivé'],
-                self::MECHANICAL_CUT => ['one' => 'fyzické řezné'],
-                self::MECHANICAL_STAB => ['one' => 'fyzické bodné'],
+                self::ELEMENTAL => [self::$ONE => 'elementální'],
+                self::PSYCHICAL => [self::$ONE => 'psychické'],
+                self::MECHANICAL_CRUSH => [self::$ONE => 'fyzické drtivé'],
+                self::MECHANICAL_CUT => [self::$ONE => 'fyzické řezné'],
+                self::MECHANICAL_STAB => [self::$ONE => 'fyzické bodné'],
             ],
             'en' => [
-                self::ELEMENTAL => ['one' => 'elemental'],
-                self::PSYCHICAL => ['one' => 'psychical'],
-                self::MECHANICAL_CRUSH => ['one' => 'mechanical crush'],
-                self::MECHANICAL_CUT => ['one' => 'mechanical cut'],
-                self::MECHANICAL_STAB => ['one' => 'mechanical stab'],
+                self::ELEMENTAL => [self::$ONE => 'elemental'],
+                self::PSYCHICAL => [self::$ONE => 'psychical'],
+                self::MECHANICAL_CRUSH => [self::$ONE => 'mechanical crush'],
+                self::MECHANICAL_CUT => [self::$ONE => 'mechanical cut'],
+                self::MECHANICAL_STAB => [self::$ONE => 'mechanical stab'],
             ],
         ];
     }

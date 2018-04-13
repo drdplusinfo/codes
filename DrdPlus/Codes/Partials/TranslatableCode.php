@@ -10,6 +10,8 @@ abstract class TranslatableCode extends AbstractCode implements Translatable
     protected static $FEW = 'few';
     protected static $FEW_DECIMAL = 'few_decimal';
     protected static $MANY = 'many';
+    protected static $CS = 'cs';
+    protected static $EN = 'en';
 
     /**
      * @param string $languageCode

@@ -166,20 +166,20 @@ class ShieldCode extends TranslatableExtendableCode implements MeleeWeaponlikeCo
     {
         return [
             'en' => [
-                self::WITHOUT_SHIELD => ['one' => 'without shield'],
-                self::BUCKLER => ['one' => 'buckler'],
-                self::SMALL_SHIELD => ['one' => 'small shield'],
-                self::MEDIUM_SHIELD => ['one' => 'medium shield'],
-                self::HEAVY_SHIELD => ['one' => 'heavy shield'],
-                self::PAVISE => ['one' => 'pavise'],
+                self::WITHOUT_SHIELD => [self::$ONE => 'without shield'],
+                self::BUCKLER => [self::$ONE => 'buckler'],
+                self::SMALL_SHIELD => [self::$ONE => 'small shield'],
+                self::MEDIUM_SHIELD => [self::$ONE => 'medium shield'],
+                self::HEAVY_SHIELD => [self::$ONE => 'heavy shield'],
+                self::PAVISE => [self::$ONE => 'pavise'],
             ],
             'cs' => [
-                self::WITHOUT_SHIELD => ['one' => 'bez štítu'],
-                self::BUCKLER => ['one' => 'pěstní štítek'],
-                self::SMALL_SHIELD => ['one' => 'malý štít'],
-                self::MEDIUM_SHIELD => ['one' => 'střední štít'],
-                self::HEAVY_SHIELD => ['one' => 'velký štít'],
-                self::PAVISE => ['one' => 'pavéza'],
+                self::WITHOUT_SHIELD => [self::$ONE => 'bez štítu'],
+                self::BUCKLER => [self::$ONE => 'pěstní štítek'],
+                self::SMALL_SHIELD => [self::$ONE => 'malý štít'],
+                self::MEDIUM_SHIELD => [self::$ONE => 'střední štít'],
+                self::HEAVY_SHIELD => [self::$ONE => 'velký štít'],
+                self::PAVISE => [self::$ONE => 'pavéza'],
             ],
         ];
     }

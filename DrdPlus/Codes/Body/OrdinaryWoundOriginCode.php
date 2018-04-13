@@ -39,8 +39,8 @@ class OrdinaryWoundOriginCode extends WoundOriginCode
     protected function fetchTranslations(): array
     {
         return [
-            'cs' => [self::ORDINARY => ['one' => 'bežné']],
-            'en' => [self::ORDINARY => ['one' => 'ordinary']],
+            'cs' => [self::ORDINARY => [self::$ONE => 'bežné']],
+            'en' => [self::ORDINARY => [self::$ONE => 'ordinary']],
         ];
     }
 }

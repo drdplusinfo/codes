@@ -30,12 +30,12 @@ class SpeedUnitCode extends TranslatableCode
     {
         return [
             'en' => [
-                self::METER_PER_ROUND => ['one' => 'meter per round', 'few' => 'meters per round', 'many' => 'meters per round'],
-                self::KILOMETER_PER_HOUR => ['one' => 'kilometer per hour', 'few' => 'kilometers per hour', 'many' => 'kilometers per hour'],
+                self::METER_PER_ROUND => [self::$ONE => 'meter per round', self::$FEW => 'meters per round', self::$MANY => 'meters per round'],
+                self::KILOMETER_PER_HOUR => [self::$ONE => 'kilometer per hour', self::$FEW => 'kilometers per hour', self::$MANY => 'kilometers per hour'],
             ],
             'cs' => [
-                self::METER_PER_ROUND => ['one' => 'metr za kolo', 'few' => 'metry za kolo', 'many' => 'metrů za kolo'],
-                self::KILOMETER_PER_HOUR => ['one' => 'kilometr za hodinu', 'few' => 'kilometry za hodinu', 'many' => 'kilometrů za hodinu'],
+                self::METER_PER_ROUND => [self::$ONE => 'metr za kolo', self::$FEW => 'metry za kolo', self::$MANY => 'metrů za kolo'],
+                self::KILOMETER_PER_HOUR => [self::$ONE => 'kilometr za hodinu', self::$FEW => 'kilometry za hodinu', self::$MANY => 'kilometrů za hodinu'],
             ],
         ];
     }

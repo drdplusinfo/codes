@@ -9,8 +9,10 @@ use DrdPlus\Codes\Environment\LandingSurfaceCode;
 use DrdPlus\Codes\Environment\MaterialCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Partials\TranslatableCode;
+use DrdPlus\Codes\RaceCode;
 use DrdPlus\Codes\Skills\SkillCode;
 use DrdPlus\Codes\Skills\SkillTypeCode;
+use DrdPlus\Codes\SubRaceCode;
 use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
 use Granam\Tests\Tools\TestWithMockery;
 
@@ -20,6 +22,7 @@ class AllTranslatableCodesTest extends TestWithMockery
 
     /**
      * @test
+     * @throws \ReflectionException
      */
     public function I_can_get_its_english_translation(): void
     {
@@ -63,7 +66,7 @@ class AllTranslatableCodesTest extends TestWithMockery
     {
         foreach ([SkillTypeCode::class, SkillCode::class, ShieldCode::class, ItemHoldingCode::class,
                      LandingSurfaceCode::class, MaterialCode::class, SeriousWoundOriginCode::class,
-                     OrdinaryWoundOriginCode::class] as $singleOnlyClass
+                     OrdinaryWoundOriginCode::class, RaceCode::class, SubRaceCode::class] as $singleOnlyClass
         ) {
             if (\is_a($codeClass, $singleOnlyClass, true)) {
                 return true;
@@ -86,6 +89,7 @@ class AllTranslatableCodesTest extends TestWithMockery
 
     /**
      * @return array|TranslatableCode[]
+     * @throws \ReflectionException
      */
     private function getTranslatableCodeClasses(): array
     {
@@ -119,8 +123,9 @@ class AllTranslatableCodesTest extends TestWithMockery
 
     /**
      * @test
+     * @throws \ReflectionException
      */
-    public function I_can_get_its_czech_translation()
+    public function I_can_get_its_czech_translation(): void
     {
         foreach ($this->getTranslatableCodeClasses() as $codeClass) {
             $hasSinglesOnly = $this->hasSinglesOnly($codeClass);
@@ -131,7 +136,7 @@ class AllTranslatableCodesTest extends TestWithMockery
                 $oneInEnglish = $this->codeToEnglish($value);
                 $oneInCzech = $sut->translateTo('cs');
                 self::assertSame($oneInCzech, $sut->translateTo('cs', 1));
-                if (in_array($value, $this->getValuesSameInCzechAndEnglish(), true)) {
+                if (\in_array($value, $this->getValuesSameInCzechAndEnglish(), true)) {
                     self::assertSame($oneInEnglish, $oneInCzech);
                 } else {
                     self::assertNotSame(
@@ -141,7 +146,7 @@ class AllTranslatableCodesTest extends TestWithMockery
                     );
                 }
                 $twoInCzech = $sut->translateTo('cs', 2);
-                if ($hasSinglesOnly || $hasMultiplesOnly || in_array($oneInCzech, $this->getValuesSameInCzechForOneAndFew(), true)) {
+                if ($hasSinglesOnly || $hasMultiplesOnly || \in_array($oneInCzech, $this->getValuesSameInCzechForOneAndFew(), true)) {
                     self::assertSame(
                         $oneInCzech,
                         $twoInCzech,
@@ -157,7 +162,7 @@ class AllTranslatableCodesTest extends TestWithMockery
                 self::assertSame($twoInCzech, $threeInCzech = $sut->translateTo('cs', 3));
                 self::assertSame($threeInCzech, $fourInCzech = $sut->translateTo('cs', 4));
                 $fiveInCzech = $sut->translateTo('cs', 5);
-                if ($hasSinglesOnly || $hasMultiplesOnly || in_array($fourInCzech, $this->getValuesSameInCzechForFewAndMany(), true)) {
+                if ($hasSinglesOnly || $hasMultiplesOnly || \in_array($fourInCzech, $this->getValuesSameInCzechForFewAndMany(), true)) {
                     self::assertSame($fourInCzech, $fiveInCzech);
                 } else {
                     self::assertNotSame(
@@ -177,7 +182,7 @@ class AllTranslatableCodesTest extends TestWithMockery
      */
     protected function getValuesSameInCzechAndEnglish(): array
     {
-        return ['charisma', 'pony'];
+        return ['charisma', 'pony', 'elf', 'kroll', 'skurut', 'goblin'];
     }
 
     /**
@@ -222,8 +227,9 @@ class AllTranslatableCodesTest extends TestWithMockery
 
     /**
      * @test
+     * @throws \ReflectionException
      */
-    public function I_get_warning_for_unknown_locale()
+    public function I_get_warning_for_unknown_locale(): void
     {
         foreach ($this->getTranslatableCodeClasses() as $codeClass) {
             foreach ($codeClass::getPossibleValues() as $value) {

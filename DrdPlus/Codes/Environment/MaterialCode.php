@@ -35,20 +35,20 @@ class MaterialCode extends TranslatableCode
     {
         return [
             'en' => [
-                self::CLOTH_OR_PAPER_OR_ROPE => ['one' => 'cloth or paper or rope'],
-                self::WOOD => ['one' => 'wood'],
-                self::BAKED_CAY => ['one' => 'baked cay'],
-                self::STONE => ['one' => 'stone'],
-                self::BRONZE => ['one' => 'bronze'],
-                self::IRON_OR_STEEL => ['one' => 'iron or steel'],
+                self::CLOTH_OR_PAPER_OR_ROPE => [self::$ONE => 'cloth or paper or rope'],
+                self::WOOD => [self::$ONE => 'wood'],
+                self::BAKED_CAY => [self::$ONE => 'baked cay'],
+                self::STONE => [self::$ONE => 'stone'],
+                self::BRONZE => [self::$ONE => 'bronze'],
+                self::IRON_OR_STEEL => [self::$ONE => 'iron or steel'],
             ],
             'cs' => [
-                self::CLOTH_OR_PAPER_OR_ROPE => ['one' => 'oblečení, papír, lano...'],
-                self::WOOD => ['one' => 'dřevo'],
-                self::BAKED_CAY => ['one' => 'pálená hlína'],
-                self::STONE => ['one' => 'kámen'],
-                self::BRONZE => ['one' => 'bronz'],
-                self::IRON_OR_STEEL => ['one' => 'železo, ocel...'],
+                self::CLOTH_OR_PAPER_OR_ROPE => [self::$ONE => 'oblečení, papír, lano...'],
+                self::WOOD => [self::$ONE => 'dřevo'],
+                self::BAKED_CAY => [self::$ONE => 'pálená hlína'],
+                self::STONE => [self::$ONE => 'kámen'],
+                self::BRONZE => [self::$ONE => 'bronz'],
+                self::IRON_OR_STEEL => [self::$ONE => 'železo, ocel...'],
             ]
         ];
     }

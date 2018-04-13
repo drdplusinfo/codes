@@ -25,9 +25,9 @@ class SkillTypeCode extends TranslatableCode
     {
         return [
             'cs' => [
-                self::PHYSICAL => ['one' => 'fyzický'],
-                self::PSYCHICAL => ['one' => 'psychický'],
-                self::COMBINED => ['one' => 'kombinovaný'],
+                self::PHYSICAL => [self::$ONE => 'fyzický'],
+                self::PSYCHICAL => [self::$ONE => 'psychický'],
+                self::COMBINED => [self::$ONE => 'kombinovaný'],
             ],
         ];
     }

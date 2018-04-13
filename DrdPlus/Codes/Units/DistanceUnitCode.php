@@ -34,16 +34,16 @@ class DistanceUnitCode extends TranslatableCode
     {
         return [
             'en' => [
-                self::DECIMETER => ['one' => 'decimeter', 'one_decimal' => 'decimeter', 'few' => 'decimeters', 'many' => 'decimeters'],
-                self::METER => ['one' => 'meter', 'one_decimal' => 'meter', 'few' => 'meters', 'many' => 'meters'],
-                self::KILOMETER => ['one' => 'kilometer', 'few' => 'kilometers', 'many' => 'kilometers'],
-                self::LIGHT_YEAR => ['one' => 'light year', 'few' => 'light years', 'many' => 'light years'],
+                self::DECIMETER => [self::$ONE => 'decimeter', 'one_decimal' => 'decimeter', self::$FEW => 'decimeters', self::$MANY => 'decimeters'],
+                self::METER => [self::$ONE => 'meter', 'one_decimal' => 'meter', self::$FEW => 'meters', self::$MANY => 'meters'],
+                self::KILOMETER => [self::$ONE => 'kilometer', self::$FEW => 'kilometers', self::$MANY => 'kilometers'],
+                self::LIGHT_YEAR => [self::$ONE => 'light year', self::$FEW => 'light years', self::$MANY => 'light years'],
             ],
             'cs' => [
-                self::DECIMETER => ['one' => 'decimetr', 'few' => 'decimetry', 'few_decimal' => 'decimetru', 'many' => 'decimetrů'],
-                self::METER => ['one' => 'metr', 'few' => 'metry', 'few_decimal' => 'metru', 'many' => 'metrů'],
-                self::KILOMETER => ['one' => 'kilometr', 'few' => 'kilometry', 'few_decimal' => 'kilometru', 'many' => 'kilometrů'],
-                self::LIGHT_YEAR => ['one' => 'světelný rok', 'few' => 'světelné roky', 'few_decimal' => 'světelného roku', 'many' => 'světelných let'],
+                self::DECIMETER => [self::$ONE => 'decimetr', self::$FEW => 'decimetry', self::$FEW_DECIMAL => 'decimetru', self::$MANY => 'decimetrů'],
+                self::METER => [self::$ONE => 'metr', self::$FEW => 'metry', self::$FEW_DECIMAL => 'metru', self::$MANY => 'metrů'],
+                self::KILOMETER => [self::$ONE => 'kilometr', self::$FEW => 'kilometry', self::$FEW_DECIMAL => 'kilometru', self::$MANY => 'kilometrů'],
+                self::LIGHT_YEAR => [self::$ONE => 'světelný rok', self::$FEW => 'světelné roky', self::$FEW_DECIMAL => 'světelného roku', self::$MANY => 'světelných let'],
             ],
         ];
     }

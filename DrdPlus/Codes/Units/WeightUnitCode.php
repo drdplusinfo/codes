@@ -14,8 +14,8 @@ class WeightUnitCode extends TranslatableCode
     protected function fetchTranslations(): array
     {
         return [
-            'cs' => [self::KG => ['one' => 'kilogram', 'few' => 'kilogramy', 'many' => 'kilogramů']],
-            'en' => [self::KG => ['one' => 'kg', 'few' => 'kgs', 'many' => 'kgs']],
+            'cs' => [self::KG => [self::$ONE => 'kilogram', self::$FEW => 'kilogramy', self::$MANY => 'kilogramů']],
+            'en' => [self::KG => [self::$ONE => 'kg', self::$FEW => 'kgs', self::$MANY => 'kgs']],
         ];
     }
 

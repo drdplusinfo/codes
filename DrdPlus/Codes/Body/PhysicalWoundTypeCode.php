@@ -53,14 +53,14 @@ class PhysicalWoundTypeCode extends TranslatableCode
     {
         return [
             'cs' => [
-                self::STAB => ['one' => 'bodné', 'few' => 'bodná', 'many' => 'bodných'],
-                self::CRUSH => ['one' => 'drtivé', 'few' => 'drtivá', 'many' => 'drtivých'],
-                self::CUT => ['one' => 'sečné', 'few' => 'sečná', 'many' => 'sečných'],
+                self::STAB => [self::$ONE => 'bodné', self::$FEW => 'bodná', self::$MANY => 'bodných'],
+                self::CRUSH => [self::$ONE => 'drtivé', self::$FEW => 'drtivá', self::$MANY => 'drtivých'],
+                self::CUT => [self::$ONE => 'sečné', self::$FEW => 'sečná', self::$MANY => 'sečných'],
             ],
             'en' => [
-                self::STAB => ['one' => 'stab', 'few' => 'stabs', 'many' => 'stabs'],
-                self::CRUSH => ['one' => 'crush', 'few' => 'crushes', 'many' => 'crushes'],
-                self::CUT => ['one' => 'cut', 'few' => 'cuts', 'many' => 'cuts'],
+                self::STAB => [self::$ONE => 'stab', self::$FEW => 'stabs', self::$MANY => 'stabs'],
+                self::CRUSH => [self::$ONE => 'crush', self::$FEW => 'crushes', self::$MANY => 'crushes'],
+                self::CUT => [self::$ONE => 'cut', self::$FEW => 'cuts', self::$MANY => 'cuts'],
             ],
         ];
     }

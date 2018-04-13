@@ -1,13 +1,13 @@
 <?php
 namespace DrdPlus\Codes;
 
-use DrdPlus\Codes\Partials\AbstractCode;
+use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static SubRaceCode getIt($codeValue)
  * @method static SubRaceCode findIt($codeValue)
  */
-class SubRaceCode extends AbstractCode
+class SubRaceCode extends TranslatableCode
 {
     // human
     public const COMMON = 'common';
@@ -96,4 +96,33 @@ class SubRaceCode extends AbstractCode
     {
         return \in_array($this->getValue(), static::getRaceToSubRaceValues()[$raceCode->getValue()] ?? [], true);
     }
+
+    protected function fetchTranslations(): array
+    {
+        return [
+            self::$CS => [
+                self::COMMON => [self::$ONE => 'běžný'],
+                self::HIGHLANDER => [self::$ONE => 'horal'],
+                self::GREEN => [self::$ONE => 'zelený'],
+                self::DARK => [self::$ONE => 'temný'],
+                self::WOOD => [self::$ONE => 'lesní'],
+                self::MOUNTAIN => [self::$ONE => 'horský'],
+                self::WILD => [self::$ONE => 'divoký'],
+                self::SKURUT => [self::$ONE => 'skurut'],
+                self::GOBLIN => [self::$ONE => 'goblin'],
+            ],
+            self::$EN => [
+                self::COMMON => [self::$ONE => 'common'],
+                self::HIGHLANDER => [self::$ONE => 'highlander'],
+                self::GREEN => [self::$ONE => 'green'],
+                self::DARK => [self::$ONE => 'dark'],
+                self::WOOD => [self::$ONE => 'wood'],
+                self::MOUNTAIN => [self::$ONE => 'mountain'],
+                self::WILD => [self::$ONE => 'wild'],
+                self::SKURUT => [self::$ONE => 'skurut'],
+                self::GOBLIN => [self::$ONE => 'goblin'],
+            ]
+        ];
+    }
+
 }

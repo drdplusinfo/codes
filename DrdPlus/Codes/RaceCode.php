@@ -1,13 +1,13 @@
 <?php
 namespace DrdPlus\Codes;
 
-use DrdPlus\Codes\Partials\AbstractCode;
+use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static RaceCode getIt($codeValue)
  * @method static RaceCode findIt($codeValue)
  */
-class RaceCode extends AbstractCode
+class RaceCode extends TranslatableCode
 {
     public const HUMAN = 'human';
     public const ELF = 'elf';
@@ -30,4 +30,27 @@ class RaceCode extends AbstractCode
             self::ORC,
         ];
     }
+
+    protected function fetchTranslations(): array
+    {
+        return [
+            'cs' => [
+                self::HUMAN => [self::$ONE => 'člověk'],
+                self::ELF => [self::$ONE => 'elf'],
+                self::DWARF => [self::$ONE => 'trpaslík'],
+                self::HOBBIT => [self::$ONE => 'hobit'],
+                self::KROLL => [self::$ONE => 'kroll'],
+                self::ORC => [self::$ONE => 'ork'],
+            ],
+            'en' => [
+                self::HUMAN => [self::$ONE => 'human'],
+                self::ELF => [self::$ONE => 'elf'],
+                self::DWARF => [self::$ONE => 'dwarf'],
+                self::HOBBIT => [self::$ONE => 'hobbit'],
+                self::KROLL => [self::$ONE => 'kroll'],
+                self::ORC => [self::$ONE => 'orc'],
+            ]
+        ];
+    }
+
 }

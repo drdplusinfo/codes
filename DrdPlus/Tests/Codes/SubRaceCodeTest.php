@@ -3,8 +3,9 @@ namespace DrdPlus\Tests\Codes;
 
 use DrdPlus\Codes\RaceCode;
 use DrdPlus\Codes\SubRaceCode;
+use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
 
-class SubRaceCodeTest extends AbstractCodeTest
+class SubRaceCodeTest extends TranslatableCodeTest
 {
     /**
      * @test

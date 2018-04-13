@@ -38,20 +38,20 @@ class TimeUnitCode extends TranslatableCode
     {
         return [
             'en' => [
-                self::ROUND => ['one' => 'round', 'few' => 'rounds', 'many' => 'rounds'],
-                self::MINUTE => ['one' => 'minute', 'few' => 'minutes', 'many' => 'minutes'],
-                self::HOUR => ['one' => 'hour', 'few' => 'hours', 'many' => 'hours'],
-                self::DAY => ['one' => 'day', 'few' => 'days', 'many' => 'days'],
-                self::MONTH => ['one' => 'month', 'few' => 'months', 'many' => 'months'],
-                self::YEAR => ['one' => 'year', 'few' => 'years', 'many' => 'years'],
+                self::ROUND => [self::$ONE => 'round', self::$FEW => 'rounds', self::$MANY => 'rounds'],
+                self::MINUTE => [self::$ONE => 'minute', self::$FEW => 'minutes', self::$MANY => 'minutes'],
+                self::HOUR => [self::$ONE => 'hour', self::$FEW => 'hours', self::$MANY => 'hours'],
+                self::DAY => [self::$ONE => 'day', self::$FEW => 'days', self::$MANY => 'days'],
+                self::MONTH => [self::$ONE => 'month', self::$FEW => 'months', self::$MANY => 'months'],
+                self::YEAR => [self::$ONE => 'year', self::$FEW => 'years', self::$MANY => 'years'],
             ],
             'cs' => [
-                self::ROUND => ['one' => 'kolo', 'few' => 'kola', 'many' => 'kol'],
-                self::MINUTE => ['one' => 'minuta', 'few' => 'minuty', 'many' => 'minut'],
-                self::HOUR => ['one' => 'hodina', 'few' => 'hodiny', 'many' => 'hodin'],
-                self::DAY => ['one' => 'den', 'few' => 'dny', 'many' => 'dní'],
-                self::MONTH => ['one' => 'měsíc', 'few' => 'měsíce', 'many' => 'měsíců'],
-                self::YEAR => ['one' => 'rok', 'few' => 'roky', 'many' => 'let'],
+                self::ROUND => [self::$ONE => 'kolo', self::$FEW => 'kola', self::$MANY => 'kol'],
+                self::MINUTE => [self::$ONE => 'minuta', self::$FEW => 'minuty', self::$MANY => 'minut'],
+                self::HOUR => [self::$ONE => 'hodina', self::$FEW => 'hodiny', self::$MANY => 'hodin'],
+                self::DAY => [self::$ONE => 'den', self::$FEW => 'dny', self::$MANY => 'dní'],
+                self::MONTH => [self::$ONE => 'měsíc', self::$FEW => 'měsíce', self::$MANY => 'měsíců'],
+                self::YEAR => [self::$ONE => 'rok', self::$FEW => 'roky', self::$MANY => 'let'],
             ],
         ];
     }
