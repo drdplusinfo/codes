@@ -12,7 +12,7 @@ class ChoiceCodeType extends AbstractCodeType
     {
         parent::registerSelf();
 
-        return static::registerCode(ChoiceCode::class);
+        return static::registerCodeAsSubTypeEnum(ChoiceCode::class);
     }
 
     /**

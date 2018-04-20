@@ -12,7 +12,7 @@ class BodyArmorCodeType extends AbstractCodeType
     {
         parent::registerSelf();
 
-        return static::registerCode(BodyArmorCode::class);
+        return static::registerCodeAsSubTypeEnum(BodyArmorCode::class);
     }
 
     /**

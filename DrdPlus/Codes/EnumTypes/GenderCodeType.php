@@ -12,7 +12,7 @@ class GenderCodeType extends AbstractCodeType
         parent::registerSelf();
 
         /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
-        return static::registerCode(GenderCode::class);
+        return static::registerCodeAsSubTypeEnum(GenderCode::class);
     }
 
     /**

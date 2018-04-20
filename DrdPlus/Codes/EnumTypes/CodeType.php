@@ -67,73 +67,73 @@ class CodeType extends AbstractCodeType
     {
         $somethingRegistered = parent::registerSelf();
         // ARMAMENTS
-        $somethingRegistered = static::registerCode(ArrowCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(BodyArmorCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(DartCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(HelmCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(MeleeWeaponCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(RangedWeaponCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(ShieldCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(SlingStoneCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(WeaponCategoryCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(ArrowCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(BodyArmorCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(DartCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(HelmCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(MeleeWeaponCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(RangedWeaponCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(ShieldCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(SlingStoneCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(WeaponCategoryCode::class) || $somethingRegistered;
         // BODY
-        $somethingRegistered = static::registerCode(ActivityAffectingHealingCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(AfflictionByWoundDomainCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(ConditionsAffectingHealingCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(RestConditionsCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(SeriousWoundOriginCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(OrdinaryWoundOriginCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(PhysicalWoundTypeCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(ActivityAffectingHealingCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(AfflictionByWoundDomainCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(ConditionsAffectingHealingCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(RestConditionsCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(SeriousWoundOriginCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(OrdinaryWoundOriginCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(PhysicalWoundTypeCode::class) || $somethingRegistered;
         // COMBAT ACTIONS
-        $somethingRegistered = static::registerCode(CombatActionCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(MeleeCombatActionCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(RangedCombatActionCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(CombatActionCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(MeleeCombatActionCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(RangedCombatActionCode::class) || $somethingRegistered;
         // ENVIRONMENT
-        $somethingRegistered = static::registerCode(ItemStealthinessCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(LandingSurfaceCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(LightConditionsCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(LightSourceCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(LightSourceEnvironmentCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(MaterialCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(TerrainCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(ItemStealthinessCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(LandingSurfaceCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(LightConditionsCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(LightSourceCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(LightSourceEnvironmentCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(MaterialCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(TerrainCode::class) || $somethingRegistered;
         // HISTORY
-        $somethingRegistered = static::registerCode(AncestryCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(ExceptionalityCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(ChoiceCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(FateCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(AncestryCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(ExceptionalityCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(ChoiceCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(FateCode::class) || $somethingRegistered;
         // PROPERTIES
-        $somethingRegistered = static::registerCode(CharacteristicForGameCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(CombatCharacteristicCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(PropertyCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(RemarkableSenseCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(CharacteristicForGameCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(CombatCharacteristicCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(PropertyCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(RemarkableSenseCode::class) || $somethingRegistered;
         // SKILL
-        $somethingRegistered = static::registerCode(CombinedSkillCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(PhysicalSkillCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(PsychicalSkillCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(SkillTypeCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(CombinedSkillCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(PhysicalSkillCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(PsychicalSkillCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(SkillTypeCode::class) || $somethingRegistered;
         // TRANSPORT
-        $somethingRegistered = static::registerCode(MovementTypeCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(RidingAnimalCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(RidingAnimalMovementCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(RidingAnimalPropertyCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(MovementTypeCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(RidingAnimalCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(RidingAnimalMovementCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(RidingAnimalPropertyCode::class) || $somethingRegistered;
         // UNIT
-        $somethingRegistered = static::registerCode(DistanceUnitCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(SpeedUnitCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(TimeUnitCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(WeightUnitCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(DistanceUnitCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(SpeedUnitCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(TimeUnitCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(WeightUnitCode::class) || $somethingRegistered;
         // OTHER
-        $somethingRegistered = static::registerCode(ActivityIntensityCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(CombatCharacteristicCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(ElementCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(FoodTypeCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(GenderCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(ItemHoldingCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(JumpMovementCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(JumpTypeCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(ProfessionCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(RaceCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(SearchingItemTypeCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(SubRaceCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(ActivityIntensityCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(CombatCharacteristicCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(ElementCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(FoodTypeCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(GenderCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(ItemHoldingCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(JumpMovementCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(JumpTypeCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(ProfessionCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(RaceCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(SearchingItemTypeCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(SubRaceCode::class) || $somethingRegistered;
 
         return $somethingRegistered;
     }

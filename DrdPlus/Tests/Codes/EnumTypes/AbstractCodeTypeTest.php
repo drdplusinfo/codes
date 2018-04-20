@@ -150,9 +150,9 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     public function I_can_not_register_non_existing_class(): void
     {
         $reflectionClass = new \ReflectionClass(self::getSutClass());
-        $registerCode = $reflectionClass->getMethod('registerCode');
-        $registerCode->setAccessible(true);
-        $registerCode->invoke($reflectionClass->newInstanceWithoutConstructor(), 'non-existing-class');
+        $registerCodeAsSubtypeEnum = $reflectionClass->getMethod('registerCodeAsSubtypeEnum');
+        $registerCodeAsSubtypeEnum->setAccessible(true);
+        $registerCodeAsSubtypeEnum->invoke($reflectionClass->newInstanceWithoutConstructor(), 'non-existing-class');
     }
 
     /**
@@ -164,9 +164,9 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     public function I_can_not_register_non_enum_class(): void
     {
         $reflectionClass = new \ReflectionClass(self::getSutClass());
-        $registerCode = $reflectionClass->getMethod('registerCode');
-        $registerCode->setAccessible(true);
-        $registerCode->invoke($reflectionClass->newInstanceWithoutConstructor(), \stdClass::class);
+        $registerCodeAsSubtypeEnum = $reflectionClass->getMethod('registerCodeAsSubtypeEnum');
+        $registerCodeAsSubtypeEnum->setAccessible(true);
+        $registerCodeAsSubtypeEnum->invoke($reflectionClass->newInstanceWithoutConstructor(), \stdClass::class);
     }
 
     /**

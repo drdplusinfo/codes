@@ -12,7 +12,7 @@ class HelmCodeType extends AbstractCodeType
     {
         parent::registerSelf();
 
-        return static::registerCode(HelmCode::class);
+        return static::registerCodeAsSubTypeEnum(HelmCode::class);
     }
 
     /**

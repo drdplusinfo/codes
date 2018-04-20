@@ -15,9 +15,9 @@ class WeaponlikeCodeType extends AbstractCodeType
     {
         $somethingRegistered = parent::registerSelf();
 
-        $somethingRegistered = static::registerCode(MeleeWeaponCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(RangedWeaponCode::class) || $somethingRegistered;
-        $somethingRegistered = static::registerCode(ShieldCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(MeleeWeaponCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(RangedWeaponCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(ShieldCode::class) || $somethingRegistered;
 
         return $somethingRegistered;
     }

@@ -12,7 +12,7 @@ class FateCodeType extends AbstractCodeType
     {
         parent::registerSelf();
 
-        return static::registerCode(FateCode::class);
+        return static::registerCodeAsSubTypeEnum(FateCode::class);
     }
 
     /**

@@ -4,6 +4,7 @@ namespace DrdPlus\Codes\Body\EnumTypes;
 use DrdPlus\Codes\Body\OrdinaryWoundOriginCode;
 use DrdPlus\Codes\Body\SeriousWoundOriginCode;
 use DrdPlus\Codes\EnumTypes\AbstractCodeType;
+use Granam\Tools\ValueDescriber;
 
 class WoundOriginCodeType extends AbstractCodeType
 {
@@ -17,17 +18,25 @@ class WoundOriginCodeType extends AbstractCodeType
     {
         $registered = parent::registerSelf();
         /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
-        self::registerSubTypeEnum(
-            OrdinaryWoundOriginCode::class,
-            '~^' . OrdinaryWoundOriginCode::ORDINARY . '$~'
-        );
+        self::registerCodeAsSubTypeEnum(OrdinaryWoundOriginCode::class);
         /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
-        self::registerSubTypeEnum(
-            SeriousWoundOriginCode::class,
-            '~^(?:(?!' . OrdinaryWoundOriginCode::ORDINARY . ').)*$~' // everything except the "ordinary" string
-        );
+        self::registerCodeAsSubTypeEnum(SeriousWoundOriginCode::class);
 
         return $registered;
+    }
+
+    /**
+     * @param bool|float|int|string $enumValue
+     * @return string
+     * @throws \DrdPlus\Codes\Body\EnumTypes\Exceptions\ThereIsNoDefaultEnumForWoundOriginCode
+     */
+    protected static function getDefaultEnumClass($enumValue): string
+    {
+        throw new Exceptions\ThereIsNoDefaultEnumForWoundOriginCode(
+            'Given code value ' . ValueDescriber::describe($enumValue)
+            . ' do not match to any value from any of registered subtypes: '
+            . OrdinaryWoundOriginCode::class . ' and ' . SeriousWoundOriginCode::class
+        );
     }
 
     /**

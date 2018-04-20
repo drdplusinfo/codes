@@ -6,6 +6,7 @@ use Doctrineum\Scalar\Exceptions\UnexpectedValueToDatabaseValue;
 use Doctrineum\Scalar\ScalarEnum;
 use Doctrineum\Scalar\ScalarEnumType;
 use DrdPlus\Codes\Code;
+use DrdPlus\Codes\Partials\AbstractCode;
 use Granam\Scalar\Tools\ToString;
 use Granam\String\StringInterface;
 use Granam\Tools\ValueDescriber;
@@ -21,7 +22,7 @@ abstract class AbstractCodeType extends ScalarEnumType
      * @throws \DrdPlus\Codes\EnumTypes\Exceptions\UnknownCodeClass
      * @throws \DrdPlus\Codes\EnumTypes\Exceptions\ExpectedEnumClass
      */
-    protected static function registerCode($codeClass): bool
+    protected static function registerCodeAsSubTypeEnum($codeClass): bool
     {
         /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
         $sanitizedCodeClass = ToString::toString($codeClass);
@@ -37,9 +38,21 @@ abstract class AbstractCodeType extends ScalarEnumType
         if (static::hasSubTypeEnum($sanitizedCodeClass)) {
             return false;
         }
+        if (!\is_a($sanitizedCodeClass, AbstractCode::class)) {
+
+            /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
+            return static::addSubTypeEnum($sanitizedCodeClass, '~^' . \preg_quote($sanitizedCodeClass, '~') . '::\w+$~');
+        }
+        /** @var AbstractCode $sanitizedCodeClass */
+        $values = $sanitizedCodeClass::getPossibleValues();
+        $quotedValues = \array_map(function (string $value) {
+            return \preg_quote($value, '~');
+        }, $values);
 
         /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
-        return static::addSubTypeEnum($sanitizedCodeClass, '~^' . \preg_quote($sanitizedCodeClass, '~') . '::\w+$~');
+        return static::addSubTypeEnum(
+            $sanitizedCodeClass, '~^' . \preg_quote($sanitizedCodeClass, '~') . '::' . \implode('|', $quotedValues) . '$~'
+        );
     }
 
     /**
@@ -50,7 +63,7 @@ abstract class AbstractCodeType extends ScalarEnumType
      * @return null|string
      * @throws \Doctrineum\Scalar\Exceptions\UnexpectedValueToDatabaseValue
      */
-    public function convertToDatabaseValue($code, AbstractPlatform $platform):? string
+    public function convertToDatabaseValue($code, AbstractPlatform $platform): ?string
     {
         if ($code === null) {
             return null;

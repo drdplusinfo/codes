@@ -14,9 +14,13 @@ class OrdinaryWoundOriginCode extends WoundOriginCode
     /**
      * @param string|StringInterface $codeValue
      * @return OrdinaryWoundOriginCode|AbstractCode
+     * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
+     * @throws \Doctrineum\Scalar\Exceptions\UnexpectedValueToEnum
+     * @throws \Granam\Scalar\Tools\Exceptions\WrongParameterType
      */
     public static function getIt($codeValue = self::ORDINARY): AbstractCode
     {
+        /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
         return parent::getIt($codeValue);
     }
 
