@@ -31,6 +31,15 @@ class RaceCode extends TranslatableCode
         ];
     }
 
+    /**
+     * @return SubRaceCode
+     * @throws \DrdPlus\Codes\Exceptions\UnknownRaceCode
+     */
+    public function getDefaultSubRaceCode(): SubRaceCode
+    {
+        return SubRaceCode::getDefaultSubRaceFor($this);
+    }
+
     protected function fetchTranslations(): array
     {
         return [
