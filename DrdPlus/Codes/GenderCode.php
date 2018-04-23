@@ -1,13 +1,13 @@
 <?php
 namespace DrdPlus\Codes;
 
-use DrdPlus\Codes\Partials\AbstractCode;
+use DrdPlus\Codes\Partials\TranslatableCode;
 
 /**
  * @method static GenderCode getIt($codeValue)
  * @method static GenderCode findIt($codeValue)
  */
-class GenderCode extends AbstractCode
+class GenderCode extends TranslatableCode
 {
     public const MALE = 'male';
     public const FEMALE = 'female';
@@ -35,4 +35,19 @@ class GenderCode extends AbstractCode
     {
         return $this->getValue() === self::FEMALE;
     }
+
+    protected function fetchTranslations(): array
+    {
+        return [
+            self::$CS => [
+                self::MALE => [self::$ONE => 'muž'],
+                self::FEMALE => [self::$ONE => 'žena']
+            ],
+            self::$EN => [
+                self::MALE => [self::$ONE => 'male'],
+                self::FEMALE => [self::$ONE => 'female']
+            ]
+        ];
+    }
+
 }

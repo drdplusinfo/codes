@@ -7,6 +7,7 @@ use DrdPlus\Codes\Body\OrdinaryWoundOriginCode;
 use DrdPlus\Codes\Body\SeriousWoundOriginCode;
 use DrdPlus\Codes\Environment\LandingSurfaceCode;
 use DrdPlus\Codes\Environment\MaterialCode;
+use DrdPlus\Codes\GenderCode;
 use DrdPlus\Codes\ItemHoldingCode;
 use DrdPlus\Codes\Partials\TranslatableCode;
 use DrdPlus\Codes\RaceCode;
@@ -66,7 +67,7 @@ class AllTranslatableCodesTest extends TestWithMockery
     {
         foreach ([SkillTypeCode::class, SkillCode::class, ShieldCode::class, ItemHoldingCode::class,
                      LandingSurfaceCode::class, MaterialCode::class, SeriousWoundOriginCode::class,
-                     OrdinaryWoundOriginCode::class, RaceCode::class, SubRaceCode::class] as $singleOnlyClass
+                     OrdinaryWoundOriginCode::class, RaceCode::class, SubRaceCode::class, GenderCode::class] as $singleOnlyClass
         ) {
             if (\is_a($codeClass, $singleOnlyClass, true)) {
                 return true;
