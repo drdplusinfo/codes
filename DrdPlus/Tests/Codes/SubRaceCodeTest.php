@@ -95,4 +95,41 @@ class SubRaceCodeTest extends TranslatableCodeTest
             }
         }
     }
+
+    /**
+     * @test
+     */
+    public function I_can_get_sub_race_default_to_a_race(): void
+    {
+        $defaultOrcSubRace = SubRaceCode::getDefaultSubRaceFor(RaceCode::getIt(RaceCode::ORC));
+        self::assertSame(SubRaceCode::getIt(SubRaceCode::COMMON), $defaultOrcSubRace);
+    }
+
+    /**
+     * @test
+     * @expectedException \DrdPlus\Codes\Exceptions\UnknownRaceCode
+     * @expectedExceptionMessageRegExp ~rat-at-toullie~
+     */
+    public function I_can_not_get_sub_race_default_to_an_unknown_race(): void
+    {
+        $defaultOrcSubRace = SubRaceCode::getDefaultSubRaceFor($this->createRaceCode('rat-at-toullie'));
+        self::assertSame(SubRaceCode::getIt(SubRaceCode::COMMON), $defaultOrcSubRace);
+    }
+
+    /**
+     * @param string $value
+     * @return RaceCode|\Mockery\MockInterface
+     */
+    private function createRaceCode(string $value): RaceCode
+    {
+        $raceCode = $this->mockery(RaceCode::class);
+        $raceCode->shouldReceive('getValue')
+            ->once()
+            ->andReturn($value);
+        $raceCode->shouldReceive('__toString')
+            ->zeroOrMoreTimes()
+            ->andReturn($value);
+
+        return $raceCode;
+    }
 }

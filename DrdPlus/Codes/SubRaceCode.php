@@ -90,6 +90,24 @@ class SubRaceCode extends TranslatableCode
 
     /**
      * @param RaceCode $raceCode
+     * @return SubRaceCode
+     * @throws \DrdPlus\Codes\Exceptions\UnknownRaceCode
+     */
+    public static function getDefaultSubRaceFor(RaceCode $raceCode): SubRaceCode
+    {
+        $subRace = static::getRaceToSubRaceValues()[$raceCode->getValue()][0] ?? null;
+        if ($subRace === null) {
+            throw new Exceptions\UnknownRaceCode(
+                "Given race code '{$raceCode}' does not match with known sub-races "
+                . \var_export(static::getRaceToSubRaceValues(), true)
+            );
+        }
+
+        return static::getIt($subRace);
+    }
+
+    /**
+     * @param RaceCode $raceCode
      * @return bool
      */
     public function isRace(RaceCode $raceCode): bool
