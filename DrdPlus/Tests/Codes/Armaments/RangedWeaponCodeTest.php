@@ -40,13 +40,14 @@ class RangedWeaponCodeTest extends WeaponCodeTest
 
     /**
      * @test
-     * @throws \ReflectionException
      */
     public function I_can_easily_find_out_if_is_melee(): void
     {
-        $reflection = new \ReflectionClass(self::getSutClass());
+        $sut = $this->mockery(self::getSutClass());
+        $sut->expects('getValue')
+            ->andReturn('What the hell is this?');
+        $sut->makePartial();
         /** @var RangedWeaponCode $sut */
-        $sut = $reflection->newInstanceWithoutConstructor();
         self::assertFalse($sut->isMelee());
     }
 

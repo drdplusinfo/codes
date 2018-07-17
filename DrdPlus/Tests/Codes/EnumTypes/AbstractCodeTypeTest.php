@@ -16,7 +16,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     /**
      * @throws \ReflectionException
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         // remove all types from registration
@@ -220,6 +220,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     /**
      * @param null $value
      * @throws \ReflectionException
+     * @throws \Doctrine\DBAL\DBALException
      */
     public function enum_as_database_value_is_string_value_of_that_enum($value = null): void
     {
@@ -255,6 +256,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     /**
      * @param string|null $stringFromDb
      * @throws \ReflectionException
+     * @throws \Doctrine\DBAL\DBALException
      */
     public function string_to_php_value_is_enum_with_that_string(string $stringFromDb = null): void
     {
@@ -265,6 +267,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
      * @test
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
      * @expectedExceptionMessageRegExp ~''~
+     * @throws \Doctrine\DBAL\DBALException
      */
     public function I_get_enum_with_empty_string_on_conversion(): void
     {
@@ -275,6 +278,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
      * @test
      * @param ScalarInterface|null $toStringObject
      * @throws \ReflectionException
+     * @throws \Doctrine\DBAL\DBALException
      */
     public function object_with_to_string_to_php_value_is_enum_with_that_string(ScalarInterface $toStringObject = null): void
     {
@@ -292,6 +296,8 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
      * @test
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
      * @expectedExceptionMessageRegExp ~without~
+     * @throws \ReflectionException
+     * @throws \Doctrine\DBAL\DBALException
      */
     public function I_get_default_enum_class_if_subtype_regexp_does_not_match(): void
     {
@@ -309,6 +315,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     /**
      * @test
      * @throws \ReflectionException
+     * @throws \Doctrine\DBAL\DBALException
      */
     public function Code_value_is_prefixed_by_its_class_name_for_database_persistence(): void
     {

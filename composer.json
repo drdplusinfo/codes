@@ -10,14 +10,14 @@
   },
   "require": {
     "php": ">=7.1",
-    "roave/security-advisories": "dev-master",
-    "granam/string": "dev-master",
-    "doctrineum/scalar": "dev-master",
-    "granam/number": "dev-master"
+    "doctrineum/scalar": "^3.1",
+    "granam/number": "^4.0",
+    "granam/string": "^3.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~6.0",
-    "mockery/mockery": "~0.9",
+    "roave/security-advisories": "dev-master",
+    "phpunit/phpunit": "~7.0",
+    "mockery/mockery": "~1.0",
     "granam/exceptions-hierarchy": "~4.0"
   },
   "minimum-stability": "dev",

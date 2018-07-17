@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1); // on PHP 7+ are standard PHP methods strict to types of given parameters
+
 namespace DrdPlus\Codes\Partials;
 
 use Doctrineum\Scalar\ScalarEnum;
@@ -108,4 +110,10 @@ abstract class AbstractCode extends ScalarEnum implements Code
             );
         }
     }
+
+    public function getValue(): string
+    {
+        return parent::getValue();
+    }
+
 }
