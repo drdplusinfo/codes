@@ -6,10 +6,39 @@ use Doctrine\DBAL\Types\Type;
 use DrdPlus\Codes\Body\EnumTypes\WoundOriginCodeType;
 use DrdPlus\Codes\Body\OrdinaryWoundOriginCode;
 use DrdPlus\Codes\Body\SeriousWoundOriginCode;
-use DrdPlus\Tests\Codes\EnumTypes\AbstractCodeTypeTest;
+use DrdPlus\Tests\Codes\EnumTypes\AbstractCodeTypeWithoutSubTypesTest;
 
-class WoundOriginCodeTypeTest extends AbstractCodeTypeTest
+class WoundOriginCodeTypeTest extends AbstractCodeTypeWithoutSubTypesTest
 {
+    /**
+     * @test
+     * @dataProvider provideValuesFromDb
+     * @param mixed $valueFromDb = null
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    public function Scalar_value_is_converted_to_enum_with_that_value($valueFromDb = null): void
+    {
+        $platform = $this->getPlatform();
+        $enum = $this->createSut()->convertToPHPValue($valueFromDb, $platform);
+        if ($valueFromDb === null) {
+            self::assertNull($enum);
+        } else {
+            self::assertInstanceOf($this->getRegisteredClass(), $enum);
+            // something like SeriousWoundOriginCode::psychical
+            self::assertSame(\explode('::', $valueFromDb)[1], $enum->getValue());
+        }
+    }
+
+    public function provideValuesFromDb(): array
+    {
+        return \array_map(
+            function (string $woundOrigin) {
+                return [SeriousWoundOriginCode::class . '::' . $woundOrigin];
+            },
+            SeriousWoundOriginCode::getPossibleValues() // for example
+        );
+    }
+
     /**
      * @return Type|string
      */
@@ -48,7 +77,6 @@ class WoundOriginCodeTypeTest extends AbstractCodeTypeTest
         }
     }
 
-
     /**
      * @test
      * @expectedException \DrdPlus\Codes\Body\EnumTypes\Exceptions\ThereIsNoDefaultEnumForWoundOriginCode
@@ -57,16 +85,6 @@ class WoundOriginCodeTypeTest extends AbstractCodeTypeTest
     public function I_get_enum_with_empty_string_on_conversion(): void
     {
         parent::I_get_enum_with_empty_string_on_conversion();
-    }
-
-    /**
-     * @test
-     * @expectedException \DrdPlus\Codes\Body\EnumTypes\Exceptions\ThereIsNoDefaultEnumForWoundOriginCode
-     * @expectedExceptionMessageRegExp ~SeriousWoundOrigin~
-     */
-    public function I_get_default_enum_class_if_subtype_regexp_does_not_match(): void
-    {
-        parent::I_get_default_enum_class_if_subtype_regexp_does_not_match();
     }
 
     protected function getSomeEnumValue(): string

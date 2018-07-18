@@ -1,9 +1,9 @@
 <?php
 namespace DrdPlus\Tests\Codes\History\EnumTypes;
 
-use DrdPlus\Tests\Codes\EnumTypes\AbstractCodeTypeTest;
+use DrdPlus\Tests\Codes\EnumTypes\AbstractCodeTypeWithoutSubTypesTest;
 
-class ChoiceCodeTypeTest extends AbstractCodeTypeTest
+class ChoiceCodeTypeTest extends AbstractCodeTypeWithoutSubTypesTest
 {
 
 }

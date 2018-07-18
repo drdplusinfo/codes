@@ -41,6 +41,15 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
         return $registeredClass;
     }
 
+    public function provideValuesFromDb(): array
+    {
+        /** @var AbstractCode $registeredClass */
+        $registeredClass = $this->getRegisteredClass();
+        return \array_map(function (string $bodyArmor) {
+            return [$bodyArmor];
+        }, $registeredClass::getPossibleValues());
+    }
+
     /**
      * @test
      * @throws \Doctrine\DBAL\DBALException
@@ -254,16 +263,6 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     }
 
     /**
-     * @param string|null $stringFromDb
-     * @throws \ReflectionException
-     * @throws \Doctrine\DBAL\DBALException
-     */
-    public function string_to_php_value_is_enum_with_that_string(string $stringFromDb = null): void
-    {
-        parent::string_to_php_value_is_enum_with_that_string($this->getSomeValueFromDatabaseForEnum());
-    }
-
-    /**
      * @test
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
      * @expectedExceptionMessageRegExp ~''~
@@ -296,7 +295,6 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
      * @test
      * @expectedException \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode
      * @expectedExceptionMessageRegExp ~without~
-     * @throws \ReflectionException
      * @throws \Doctrine\DBAL\DBALException
      */
     public function I_get_default_enum_class_if_subtype_regexp_does_not_match(): void

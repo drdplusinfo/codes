@@ -1,9 +1,8 @@
 <?php
 namespace DrdPlus\Codes\Tests\Armaments\EnumTypes;
 
-use DrdPlus\Tests\Codes\EnumTypes\AbstractCodeTypeTest;
+use DrdPlus\Tests\Codes\EnumTypes\AbstractCodeTypeWithoutSubTypesTest;
 
-class BodyArmorCodeTypeTest extends AbstractCodeTypeTest
+class BodyArmorCodeTypeTest extends AbstractCodeTypeWithoutSubTypesTest
 {
-
 }
