@@ -35,8 +35,11 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
      */
     protected function getRegisteredClass(): string
     {
-        $registeredClass = preg_replace('~(?:\\\EnumTypes)?(\\\[[:alpha:]]+)Type$~', '$1', $this->getTypeClass());
-        self::assertTrue(class_exists($registeredClass), "Estimated registered enum class {$registeredClass} does not exist");
+        $registeredClass = \preg_replace('~(?:\\\EnumTypes)?(\\\[[:alpha:]]+)Type$~', '$1', $this->getTypeClass());
+        self::assertTrue(
+            \is_a($registeredClass, Code::class, true),
+            "Estimated registered enum class {$registeredClass} should be child of " . Code::class
+        );
 
         return $registeredClass;
     }
@@ -45,9 +48,61 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
     {
         /** @var AbstractCode $registeredClass */
         $registeredClass = $this->getRegisteredClass();
-        return \array_map(function (string $bodyArmor) {
-            return [$bodyArmor];
-        }, $registeredClass::getPossibleValues());
+
+        return \array_map(
+            function (string $value) use ($registeredClass) {
+                return [$registeredClass . '::' . $value];
+            },
+            $registeredClass::getPossibleValues()
+        );
+    }
+
+    /**
+     * @test
+     * @dataProvider provideValuesFromDb
+     * @param mixed $valueFromDb = null
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    public function Scalar_value_is_converted_to_enum_with_that_value($valueFromDb = null): void
+    {
+        $platform = $this->getPlatform();
+        $enum = $this->createSut()->convertToPHPValue($valueFromDb, $platform);
+        if ($valueFromDb === null) {
+            self::assertNull($enum);
+        } else {
+            self::assertInstanceOf($this->getRegisteredClass(), $enum);
+            self::assertSame($this->parseEnumValueFromDatabaseValue($valueFromDb), $enum->getValue());
+        }
+    }
+
+    /**
+     * @test
+     * @dataProvider provideValuesFromDb
+     * @param mixed $valueFromDb = null
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    public function Scalar_value_is_converted_to_enum_subtype_with_that_value($valueFromDb = null): void
+    {
+        $platform = $this->getPlatform();
+        /** @var ScalarEnumType $scalaEnumTypeClass */
+        $scalaEnumTypeClass = static::getSutClass();
+        $scalaEnumTypeClass::registerSubTypeEnum($this->getSubTypeEnumClass(), '~^.*$~' /* everything goes to sub-type */);
+        $enum = $this->createSut()->convertToPHPValue($valueFromDb, $platform);
+        if ($valueFromDb === null) {
+            self::assertNull($enum);
+        } else {
+            self::assertInstanceOf($this->getSubTypeEnumClass(), $enum);
+            self::assertSame($this->parseEnumValueFromDatabaseValue($valueFromDb), $enum->getValue());
+        }
+        $scalaEnumTypeClass::removeSubTypeEnum($this->getSubTypeEnumClass());
+    }
+
+    protected function parseEnumValueFromDatabaseValue(string $valueFromDb): string
+    {
+        $parts = \explode('::', $valueFromDb);
+        self::assertCount(2, $parts, "Unexpected value from database '$valueFromDb'");
+
+        return $parts[1];
     }
 
     /**
@@ -103,7 +158,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
      * @return array|AbstractCode[]
      * @throws \ReflectionException
      */
-    private function getRelatedCodeClasses(): array
+    protected function getRelatedCodeClasses(): array
     {
         $relatedRootCodeClass = $this->getRegisteredClass();
         $codeReflection = new \ReflectionClass(Code::class);
@@ -112,7 +167,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
         $concreteClassesFromDir = $this->getConcreteClassesFromDir($rootDir, $codeReflection->getNamespaceName());
         $relatedCodeClasses = [];
         foreach ($concreteClassesFromDir as $class) {
-            if (is_a($class, $relatedRootCodeClass, true /* instance is not needed */)) {
+            if (\is_a($class, $relatedRootCodeClass, true /* instance is not needed */)) {
                 $relatedCodeClasses[] = $class;
             }
         }
@@ -286,7 +341,7 @@ abstract class AbstractCodeTypeTest extends ScalarEnumTypeTest
         $enum = $this->createSut()->convertToPHPValue($toStringObject ?? new WithToStringTestObject($value), $platform);
         self::assertInstanceOf($this->getRegisteredClass(), $enum);
         // its always persisted as a sub-type with value prefixed code class
-        $expectedValue = preg_replace('~^[^:]+::~', '', $value);
+        $expectedValue = $this->parseEnumValueFromDatabaseValue($value);
         self::assertSame($expectedValue, $enum->getValue());
         self::assertSame($expectedValue, (string)$enum);
     }

@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace DrdPlus\Codes\Body\EnumTypes\Exceptions;
 
-class ThereIsNoDefaultEnumForWoundOriginCode extends \LogicException implements Logic
+use Doctrineum\Scalar\Exceptions\EnumClassNotFound;
+
+class ThereIsNoDefaultEnumForWoundOriginCode extends EnumClassNotFound implements Logic
 {
 
 }

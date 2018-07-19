@@ -1,7 +1,7 @@
 <?php
 namespace DrdPlus\Tests\Codes\EnumTypes;
 
-class GenderCodeTypeTest extends AbstractCodeTypeWithoutSubTypesTest
+class GenderCodeTypeTest extends AbstractCodeTypeTest
 {
 
 }

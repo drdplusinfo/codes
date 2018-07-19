@@ -1,8 +1,8 @@
 <?php
 namespace DrdPlus\Tests\Codes\History\EnumTypes;
 
-use DrdPlus\Tests\Codes\EnumTypes\AbstractCodeTypeWithoutSubTypesTest;
+use DrdPlus\Tests\Codes\EnumTypes\AbstractCodeTypeTest;
 
-class FateCodeTypeTest extends AbstractCodeTypeWithoutSubTypesTest
+class FateCodeTypeTest extends AbstractCodeTypeTest
 {
 }

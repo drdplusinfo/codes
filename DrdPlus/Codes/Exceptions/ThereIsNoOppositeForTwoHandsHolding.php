@@ -3,7 +3,9 @@ declare(strict_types=1); // on PHP 7+ are standard PHP methods strict to types o
 
 namespace DrdPlus\Codes\Exceptions;
 
-class ThereIsNoOppositeForTwoHandsHolding extends \LogicException implements Logic
+use Doctrineum\Scalar\Exceptions\EnumClassNotFound;
+
+class ThereIsNoOppositeForTwoHandsHolding extends EnumClassNotFound implements Logic
 {
 
 }

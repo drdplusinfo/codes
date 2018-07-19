@@ -8,14 +8,10 @@ use Doctrineum\Scalar\Exceptions\UnexpectedValueToDatabaseValue;
 use Doctrineum\Scalar\ScalarEnum;
 use Doctrineum\Scalar\ScalarEnumType;
 use DrdPlus\Codes\Code;
-use DrdPlus\Codes\Partials\AbstractCode;
 use Granam\Scalar\Tools\ToString;
 use Granam\String\StringInterface;
 use Granam\Tools\ValueDescriber;
 
-/**
- * @method static bool registerSelf()
- */
 abstract class AbstractCodeType extends ScalarEnumType
 {
     /**
@@ -26,7 +22,6 @@ abstract class AbstractCodeType extends ScalarEnumType
      */
     protected static function registerCodeAsSubTypeEnum($codeClass): bool
     {
-        /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
         $sanitizedCodeClass = ToString::toString($codeClass);
         if (!\class_exists($sanitizedCodeClass)) {
             throw new Exceptions\UnknownCodeClass('Given code class has not been found: ' . ValueDescriber::describe($codeClass));
@@ -36,25 +31,11 @@ abstract class AbstractCodeType extends ScalarEnumType
                 'Given class is not an enum: ' . ValueDescriber::describe($codeClass)
             );
         }
-        /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
         if (static::hasSubTypeEnum($sanitizedCodeClass)) {
             return false;
         }
-        if (!\is_a($sanitizedCodeClass, AbstractCode::class)) {
 
-            /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
-            return static::addSubTypeEnum($sanitizedCodeClass, '~^' . \preg_quote($sanitizedCodeClass, '~') . '::\w+$~');
-        }
-        /** @var AbstractCode $sanitizedCodeClass */
-        $values = $sanitizedCodeClass::getPossibleValues();
-        $quotedValues = \array_map(function (string $value) {
-            return \preg_quote($value, '~');
-        }, $values);
-
-        /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
-        return static::addSubTypeEnum(
-            $sanitizedCodeClass, '~^' . \preg_quote($sanitizedCodeClass, '~') . '::' . \implode('|', $quotedValues) . '$~'
-        );
+        return static::addSubTypeEnum($sanitizedCodeClass, '~^' . \preg_quote($sanitizedCodeClass, '~') . '::\w+$~');
     }
 
     /**

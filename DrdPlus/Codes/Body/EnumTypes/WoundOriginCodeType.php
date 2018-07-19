@@ -19,9 +19,7 @@ class WoundOriginCodeType extends AbstractCodeType
     public static function registerSelf(): bool
     {
         $registered = parent::registerSelf();
-        /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
         self::registerCodeAsSubTypeEnum(OrdinaryWoundOriginCode::class);
-        /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
         self::registerCodeAsSubTypeEnum(SeriousWoundOriginCode::class);
 
         return $registered;
