@@ -19,7 +19,6 @@ trait GetCodeClassesTrait
     protected function getCodeClasses(): array
     {
         if (self::$codeClasses === null) {
-            /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
             $codeReflection = new \ReflectionClass(Code::class);
             $rootDir = \dirname($codeReflection->getFileName());
             $rootNamespace = $codeReflection->getNamespaceName();
@@ -47,7 +46,6 @@ trait GetCodeClassesTrait
                         $codeClasses[] = $foundCode;
                     }
                 } else if (\is_file($folderFullPath) && \preg_match('~(?<classBasename>\w+(?:Code)?)\.php$~', $folder, $matches)) {
-                    /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
                     $reflectionClass = new \ReflectionClass($rootNamespace . '\\' . $matches['classBasename']);
                     if (!$reflectionClass->isAbstract() && $reflectionClass->implementsInterface(Code::class)) {
                         self::assertRegExp(
