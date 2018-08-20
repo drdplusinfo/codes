@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1); // on PHP 7+ are standard PHP methods strict to types of given parameters
+declare(strict_types=1); 
 
 namespace DrdPlus\Codes\EnumTypes;
 
@@ -63,6 +63,7 @@ use DrdPlus\Codes\Units\SquareUnitCode;
 use DrdPlus\Codes\Units\TimeUnitCode;
 use DrdPlus\Codes\Units\VolumeUnitCode;
 use DrdPlus\Codes\Units\WeightUnitCode;
+use DrdPlus\Codes\Wizard\SpellCode;
 
 class CodeType extends AbstractCodeType
 {
@@ -129,6 +130,8 @@ class CodeType extends AbstractCodeType
         $somethingRegistered = static::registerCodeAsSubTypeEnum(WeightUnitCode::class) || $somethingRegistered;
         $somethingRegistered = static::registerCodeAsSubTypeEnum(SquareUnitCode::class) || $somethingRegistered;
         $somethingRegistered = static::registerCodeAsSubTypeEnum(VolumeUnitCode::class) || $somethingRegistered;
+        // WIZARD
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(SpellCode::class) || $somethingRegistered;
         // OTHER
         $somethingRegistered = static::registerCodeAsSubTypeEnum(ActivityIntensityCode::class) || $somethingRegistered;
         $somethingRegistered = static::registerCodeAsSubTypeEnum(CombatCharacteristicCode::class) || $somethingRegistered;
