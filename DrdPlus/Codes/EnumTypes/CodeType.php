@@ -25,6 +25,14 @@ use DrdPlus\Codes\CombatActions\CombatActionCode;
 use DrdPlus\Codes\CombatActions\MeleeCombatActionCode;
 use DrdPlus\Codes\CombatActions\RangedCombatActionCode;
 use DrdPlus\Codes\CombatCharacteristicCode;
+use DrdPlus\Codes\Theurgist\AffectionPeriodCode;
+use DrdPlus\Codes\Theurgist\FormCode;
+use DrdPlus\Codes\Theurgist\FormulaCode;
+use DrdPlus\Codes\Theurgist\FormulaMutableSpellParameterCode;
+use DrdPlus\Codes\Theurgist\ModifierCode;
+use DrdPlus\Codes\Theurgist\ModifierMutableSpellParameterCode;
+use DrdPlus\Codes\Theurgist\ProfileCode;
+use DrdPlus\Codes\Theurgist\SpellTraitCode;
 use DrdPlus\Codes\Units\DistanceUnitCode;
 use DrdPlus\Codes\ElementCode;
 use DrdPlus\Codes\Environment\ItemStealthinessCode;
@@ -132,6 +140,15 @@ class CodeType extends AbstractCodeType
         $somethingRegistered = static::registerCodeAsSubTypeEnum(VolumeUnitCode::class) || $somethingRegistered;
         // WIZARD
         $somethingRegistered = static::registerCodeAsSubTypeEnum(SpellCode::class) || $somethingRegistered;
+        // THEURGIST
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(AffectionPeriodCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(FormCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(FormulaCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(FormulaMutableSpellParameterCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(ModifierCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(ModifierMutableSpellParameterCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(ProfileCode::class) || $somethingRegistered;
+        $somethingRegistered = static::registerCodeAsSubTypeEnum(SpellTraitCode::class) || $somethingRegistered;
         // OTHER
         $somethingRegistered = static::registerCodeAsSubTypeEnum(ActivityIntensityCode::class) || $somethingRegistered;
         $somethingRegistered = static::registerCodeAsSubTypeEnum(CombatCharacteristicCode::class) || $somethingRegistered;
