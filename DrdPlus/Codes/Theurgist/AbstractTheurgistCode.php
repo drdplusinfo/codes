@@ -15,22 +15,22 @@ abstract class AbstractTheurgistCode extends AbstractCode
     {
         $code = $this->getValue();
         $translations = $this->getTranslations($languageCode);
-        if (\array_key_exists($code, $translations)) {
+        if (array_key_exists($code, $translations)) {
             return $translations[$code];
         }
         if ($languageCode === 'en') {
-            return \str_replace('_', ' ', $code); // just replacing underscores by spaces
+            return str_replace('_', ' ', $code); // just replacing underscores by spaces
         }
-        \trigger_error(
+        trigger_error(
             "Missing translation for value '{$code}' and language '{$languageCode}', english will be used instead",
             E_USER_WARNING
         );
         $translations = $this->getTranslations('en');
-        if (\array_key_exists($code, $translations)) {
+        if (array_key_exists($code, $translations)) {
             return $translations[$code];
         }
 
-        return \str_replace('_', ' ', $code); // just replacing underscores by spaces
+        return str_replace('_', ' ', $code); // just replacing underscores by spaces
     }
 
     /**

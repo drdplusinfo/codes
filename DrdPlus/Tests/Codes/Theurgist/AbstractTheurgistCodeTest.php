@@ -33,7 +33,7 @@ abstract class AbstractTheurgistCodeTest extends AbstractCodeTest
      */
     private function codeToEnglish(string $code): string
     {
-        return \str_replace(['venus', 'mars', '_'], ['♀', '♂', ' '], $code);
+        return str_replace(['venus', 'mars', '_'], ['♀', '♂', ' '], $code);
     }
 
     /**
@@ -48,7 +48,7 @@ abstract class AbstractTheurgistCodeTest extends AbstractCodeTest
             $sut = $sutClass::getIt($value);
             $inEnglish = $this->codeToEnglish($value);
             self::assertSame($inEnglish, $sut->translateTo('en'));
-            if (\in_array($value, $this->getValuesSameInCzechAndEnglish(), true)) {
+            if (in_array($value, $this->getValuesSameInCzechAndEnglish(), true)) {
                 self::assertSame($inEnglish, $sut->translateTo('cs'));
             } else {
                 self::assertNotSame(
@@ -90,12 +90,12 @@ abstract class AbstractTheurgistCodeTest extends AbstractCodeTest
             /** @var AbstractTheurgistCode $sut */
             $sut = $sutClass::getIt($value);
             $inEnglish = $this->codeToEnglish($value);
-            $previousErrorReporting = \error_reporting(-1 ^ E_USER_WARNING);
-            \error_clear_last();
+            $previousErrorReporting = error_reporting(-1 ^ E_USER_WARNING);
+            error_clear_last();
             self::assertSame($inEnglish, @$sut->translateTo('demonic'));
-            $lastError = \error_get_last();
-            \error_reporting($previousErrorReporting);
-            \error_clear_last();
+            $lastError = error_get_last();
+            error_reporting($previousErrorReporting);
+            error_clear_last();
             self::assertNotEmpty($lastError);
             self::assertSame(E_USER_WARNING, $lastError['type']);
             self::assertContains($value, $lastError['message']);

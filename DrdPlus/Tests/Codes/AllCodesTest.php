@@ -34,9 +34,9 @@ class AllCodesTest extends TestWithMockery
         foreach ($this->getCodeClasses() as $codeClass) {
             $reflection = new \ReflectionClass($codeClass);
             $constants = $reflection->getConstants();
-            \asort($constants);
+            asort($constants);
             $values = $codeClass::getPossibleValues();
-            \sort($values);
+            sort($values);
             self::assertSame(array_values($constants), $values, 'Expected different possible values from code ' . $codeClass);
             foreach ($values as $value) {
                 $constantName = strtoupper($value);
@@ -54,7 +54,7 @@ class AllCodesTest extends TestWithMockery
     {
         foreach ($this->getCodeClasses() as $codeClass) {
             $constantValues = (new \ReflectionClass($codeClass))->getConstants();
-            \sort($constantValues); // re-index by numbers
+            sort($constantValues); // re-index by numbers
             /** @var string[] $givenValues */
             $givenValues = $codeClass::getPossibleValues();
             $expectedIndex = 0;
@@ -62,12 +62,12 @@ class AllCodesTest extends TestWithMockery
                 self::assertSame($expectedIndex, $index, 'Indexes of all values should be continual.');
                 $expectedIndex++;
             }
-            \sort($givenValues);
+            sort($givenValues);
             self::assertSame(
                 $constantValues,
                 $givenValues,
                 'There are ' . (
-                \count($missingOrDifferent = \array_diff($constantValues, $givenValues)) > 0
+                count($missingOrDifferent = array_diff($constantValues, $givenValues)) > 0
                     ? "missing values from 'getPossibleValues' " . var_export($missingOrDifferent, true)
                     : "superfluous values from 'getPossibleValues' " . var_export(array_diff($givenValues, $constantValues), true)
                 )
@@ -114,7 +114,7 @@ class AllCodesTest extends TestWithMockery
      */
     public function provideCodeClasses(): array
     {
-        return \array_map(
+        return array_map(
             function (string $className) {
                 return [$className];
             },
@@ -160,8 +160,8 @@ class AllCodesTest extends TestWithMockery
     {
         foreach ($this->getCodeClasses() as $codeClass) {
             $reflectionClass = new \ReflectionClass($codeClass);
-            $classBaseName = \preg_replace('~^.*[\\\](\w+)$~', '$1', $codeClass);
-            if (\strpos($reflectionClass->getDocComment(), 'getIt') !== false) {
+            $classBaseName = preg_replace('~^.*[\\\](\w+)$~', '$1', $codeClass);
+            if (strpos($reflectionClass->getDocComment(), 'getIt') !== false) {
                 self::assertContains(<<<PHPDOC
  * @method static {$classBaseName} getIt(\$codeValue)
 PHPDOC
@@ -172,11 +172,11 @@ PHPDOC
                 self::assertContains(<<<PHPDOC
  * @return {$classBaseName}|AbstractCode
 PHPDOC
-                    , \preg_replace('~ +~', ' ', $reflectionClass->getMethod('getIt')->getDocComment()),
+                    , preg_replace('~ +~', ' ', $reflectionClass->getMethod('getIt')->getDocComment()),
                     "Missing getIt method annotation in $codeClass"
                 );
             }
-            if (\strpos($reflectionClass->getDocComment(), 'findIt') !== false) {
+            if (strpos($reflectionClass->getDocComment(), 'findIt') !== false) {
                 self::assertContains(<<<PHPDOC
  * @method static {$classBaseName} findIt(\$codeValue)
 PHPDOC
@@ -187,7 +187,7 @@ PHPDOC
                 self::assertContains(<<<PHPDOC
  * @return {$classBaseName}|AbstractCode
 PHPDOC
-                    , \preg_replace('~ +~', ' ', $reflectionClass->getMethod('findIt')->getDocComment()),
+                    , preg_replace('~ +~', ' ', $reflectionClass->getMethod('findIt')->getDocComment()),
                     "Missing findIt method annotation in $codeClass"
                 );
             }
