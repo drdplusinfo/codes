@@ -1,5 +1,4 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace DrdPlus\Codes\Theurgist;
 
@@ -27,21 +26,20 @@ class DemonBodyCode extends AbstractTheurgistCode
         return self::CLOCK;
     }
 
-    private static $translations = [
-        'cs' => [
-            self::CLOCK => 'hodiny',
-            self::PEBBLE => 'kamínek, oblázek',
-            self::WAND_OR_RING => 'hůl, hůlka, prsten',
-        ],
-    ];
-
     /**
-     * @param string $languageCode
      * @return array|string[]
      */
-    protected function getTranslations(string $languageCode): array
+    protected function fetchTranslations(): array
     {
-        return self::$translations[$languageCode] ?? [];
+        return [
+            'cs' => [
+                'one' => [
+                    self::CLOCK => 'hodiny',
+                    self::PEBBLE => 'kamínek, oblázek',
+                    self::WAND_OR_RING => 'hůl, hůlka, prsten',
+                ],
+            ],
+        ];
     }
 
 }

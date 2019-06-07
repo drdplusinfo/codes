@@ -1,5 +1,4 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace DrdPlus\Codes\Theurgist;
 
@@ -47,32 +46,28 @@ class ModifierMutableSpellParameterCode extends AbstractTheurgistCode
         ];
     }
 
-    private static $translations = [
-        'cs' => [
-            self::SPELL_RADIUS => 'poloměr',
-            self::EPICENTER_SHIFT => 'posun',
-            self::SPELL_POWER => 'síla',
-            self::NOISE => 'síla zvuku',
-            self::SPELL_ATTACK => 'útočnost',
-            self::GRAFTS => 'štěpy',
-            self::SPELL_SPEED => 'rychlost',
-            self::NUMBER_OF_WAYPOINTS => 'počet průchodů',
-            self::INVISIBILITY => 'neviditelnost',
-            self::QUALITY => 'kvalita',
-            self::NUMBER_OF_CONDITIONS => 'počet podmínek',
-            self::RESISTANCE => 'odolnost',
-            self::NUMBER_OF_SITUATIONS => 'počet situací',
-            self::THRESHOLD => 'práh citlivosti',
-        ],
-    ];
-
-    /**
-     * @param string $languageCode
-     * @return array|string[]
-     */
-    protected function getTranslations(string $languageCode): array
+    protected function fetchTranslations(): array
     {
-        return self::$translations[$languageCode] ?? [];
+        return [
+            'cs' => [
+                'one' => [
+                    self::SPELL_RADIUS => 'poloměr',
+                    self::EPICENTER_SHIFT => 'posun',
+                    self::SPELL_POWER => 'síla',
+                    self::NOISE => 'síla zvuku',
+                    self::SPELL_ATTACK => 'útočnost',
+                    self::GRAFTS => 'štěpy',
+                    self::SPELL_SPEED => 'rychlost',
+                    self::NUMBER_OF_WAYPOINTS => 'počet průchodů',
+                    self::INVISIBILITY => 'neviditelnost',
+                    self::QUALITY => 'kvalita',
+                    self::NUMBER_OF_CONDITIONS => 'počet podmínek',
+                    self::RESISTANCE => 'odolnost',
+                    self::NUMBER_OF_SITUATIONS => 'počet situací',
+                    self::THRESHOLD => 'práh citlivosti',
+                ],
+            ],
+        ];
     }
 
 }

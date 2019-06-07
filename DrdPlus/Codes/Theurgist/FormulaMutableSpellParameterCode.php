@@ -1,5 +1,4 @@
-<?php
-declare(strict_types = 1);
+<?php declare(strict_types=1);
 
 namespace DrdPlus\Codes\Theurgist;
 
@@ -37,27 +36,23 @@ class FormulaMutableSpellParameterCode extends AbstractTheurgistCode
         ];
     }
 
-    private static $translations = [
-        'cs' => [
-            self::SPELL_RADIUS => 'poloměr',
-            self::SPELL_DURATION => 'doba trvání',
-            self::SPELL_POWER => 'síla',
-            self::SPELL_ATTACK => 'útočnost',
-            self::SIZE_CHANGE => 'změna velikosti',
-            self::DETAIL_LEVEL => 'detailnost',
-            self::SPELL_BRIGHTNESS => 'jas',
-            self::SPELL_SPEED => 'rychlost',
-            self::EPICENTER_SHIFT => 'posun',
-        ],
-    ];
-
-    /**
-     * @param string $languageCode
-     * @return array|string[]
-     */
-    protected function getTranslations(string $languageCode): array
+    protected function fetchTranslations(): array
     {
-        return self::$translations[$languageCode] ?? [];
+        return [
+            'cs' => [
+                'one' => [
+                    self::SPELL_RADIUS => 'poloměr',
+                    self::SPELL_DURATION => 'doba trvání',
+                    self::SPELL_POWER => 'síla',
+                    self::SPELL_ATTACK => 'útočnost',
+                    self::SIZE_CHANGE => 'změna velikosti',
+                    self::DETAIL_LEVEL => 'detailnost',
+                    self::SPELL_BRIGHTNESS => 'jas',
+                    self::SPELL_SPEED => 'rychlost',
+                    self::EPICENTER_SHIFT => 'posun',
+                ],
+            ],
+        ];
     }
 
 }

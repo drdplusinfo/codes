@@ -1,12 +1,11 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace DrdPlus\Tests\Codes\Theurgist;
 
 use DrdPlus\Codes\Theurgist\AbstractTheurgistCode;
-use DrdPlus\Tests\Codes\AbstractCodeTest;
+use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
 
-abstract class AbstractTheurgistCodeTest extends AbstractCodeTest
+abstract class AbstractTheurgistCodeTest extends TranslatableCodeTest
 {
     protected function setUp(): void
     {
