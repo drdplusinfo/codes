@@ -213,7 +213,7 @@ class AllTranslatableCodesTest extends TestWithMockery
         return [
             'charisma', 'pony', 'elf', 'kroll', 'skurut', 'goblin',
             'nekrakosa', 'genius loci', 'berserk', 'delirium', // wizard
-            'golem', 'receptor ♀', 'receptor ♂', 'receptor' // theurgist
+            'golem', 'receptor ♀', 'receptor ♂', 'receptor', 'amulet' // theurgist
         ];
     }
 
