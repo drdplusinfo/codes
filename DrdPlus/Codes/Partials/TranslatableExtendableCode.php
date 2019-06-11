@@ -88,7 +88,7 @@ abstract class TranslatableExtendableCode extends TranslatableCode
      * @throws \DrdPlus\Codes\Partials\Exceptions\InvalidTranslationFormat
      * @throws \DrdPlus\Codes\Partials\Exceptions\UnknownTranslationPlural
      */
-    private static function checkTranslationsFormat(array $translations): void
+    private static function checkTranslationsFormat(array $translations)
     {
         /**
          * @var string $languageCode

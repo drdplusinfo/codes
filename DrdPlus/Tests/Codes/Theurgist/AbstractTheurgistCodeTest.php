@@ -7,7 +7,7 @@ use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
 
 abstract class AbstractTheurgistCodeTest extends TranslatableCodeTest
 {
-    protected function setUp(): void
+    protected function setUp()
     {
         self::assertContains(__NAMESPACE__, static::class, 'Code test has to be in "Tests" namespace');
     }
@@ -15,7 +15,7 @@ abstract class AbstractTheurgistCodeTest extends TranslatableCodeTest
     /**
      * @test
      */
-    public function I_can_get_its_english_translation(): void
+    public function I_can_get_its_english_translation()
     {
         /** @var AbstractTheurgistCode $sutClass */
         $sutClass = self::getSutClass();
@@ -38,7 +38,7 @@ abstract class AbstractTheurgistCodeTest extends TranslatableCodeTest
     /**
      * @test
      */
-    public function I_can_get_its_czech_translation(): void
+    public function I_can_get_its_czech_translation()
     {
         /** @var AbstractTheurgistCode $sutClass */
         $sutClass = self::getSutClass();
@@ -67,7 +67,7 @@ abstract class AbstractTheurgistCodeTest extends TranslatableCodeTest
     /**
      * @test
      */
-    public function I_can_get_original_value(): void
+    public function I_can_get_original_value()
     {
         /** @var AbstractTheurgistCode $sutClass */
         $sutClass = self::getSutClass();
@@ -81,7 +81,7 @@ abstract class AbstractTheurgistCodeTest extends TranslatableCodeTest
     /**
      * @test
      */
-    public function I_get_warning_for_unknown_locale(): void
+    public function I_get_warning_for_unknown_locale()
     {
         /** @var AbstractTheurgistCode $sutClass */
         $sutClass = self::getSutClass();

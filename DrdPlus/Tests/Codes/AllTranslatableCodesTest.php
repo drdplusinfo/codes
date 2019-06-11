@@ -40,7 +40,7 @@ class AllTranslatableCodesTest extends TestWithMockery
      * @test
      * @throws \ReflectionException
      */
-    public function I_can_get_its_english_translation(): void
+    public function I_can_get_its_english_translation()
     {
         foreach ($this->getTranslatableCodeClasses() as $codeClass) {
             $testClass = $this->getTestClass($codeClass);
@@ -152,7 +152,7 @@ class AllTranslatableCodesTest extends TestWithMockery
      * @test
      * @throws \ReflectionException
      */
-    public function I_can_get_its_czech_translation(): void
+    public function I_can_get_its_czech_translation()
     {
         foreach ($this->getTranslatableCodeClasses() as $codeClass) {
             $hasSinglesOnly = $this->hasSinglesOnly($codeClass);
@@ -261,7 +261,7 @@ class AllTranslatableCodesTest extends TestWithMockery
      * @test
      * @throws \ReflectionException
      */
-    public function I_get_warning_for_unknown_locale(): void
+    public function I_get_warning_for_unknown_locale()
     {
         foreach ($this->getTranslatableCodeClasses() as $codeClass) {
             foreach ($codeClass::getPossibleValues() as $value) {

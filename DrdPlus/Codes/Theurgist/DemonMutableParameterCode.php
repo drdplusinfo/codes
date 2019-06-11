@@ -21,6 +21,24 @@ class DemonMutableParameterCode extends AbstractTheurgistCode
     const DEMON_AGILITY = 'demon_agility';
     const DEMON_KNACK = 'demon_knack';
 
+    public static function getPossibleValues(): array
+    {
+        return [
+            self::DEMON_CAPACITY,
+            self::DEMON_ENDURANCE,
+            self::DEMON_ACTIVATION_DURATION,
+            self::DEMON_QUALITY,
+            self::DEMON_RADIUS,
+            self::DEMON_AREA,
+            self::DEMON_INVISIBILITY,
+            self::DEMON_ARMOR,
+            self::SPELL_SPEED,
+            self::DEMON_STRENGTH,
+            self::DEMON_AGILITY,
+            self::DEMON_KNACK,
+        ];
+    }
+
     protected function fetchTranslations(): array
     {
         return [
