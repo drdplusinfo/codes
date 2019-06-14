@@ -22,9 +22,9 @@ use DrdPlus\Codes\Theurgist\DemonMutableParameterCode;
 use DrdPlus\Codes\Theurgist\DemonTraitCode;
 use DrdPlus\Codes\Theurgist\FormCode;
 use DrdPlus\Codes\Theurgist\FormulaCode;
-use DrdPlus\Codes\Theurgist\FormulaMutableSpellParameterCode;
+use DrdPlus\Codes\Theurgist\FormulaMutableParameterCode;
 use DrdPlus\Codes\Theurgist\ModifierCode;
-use DrdPlus\Codes\Theurgist\ModifierMutableSpellParameterCode;
+use DrdPlus\Codes\Theurgist\ModifierMutableParameterCode;
 use DrdPlus\Codes\Theurgist\ProfileCode;
 use DrdPlus\Codes\Theurgist\SpellTraitCode;
 use DrdPlus\Codes\Wizard\SpellCode;
@@ -85,9 +85,9 @@ class AllTranslatableCodesTest extends TestWithMockery
                 SkillTypeCode::class, SkillCode::class, ShieldCode::class, ItemHoldingCode::class,
                 LandingSurfaceCode::class, MaterialCode::class, SeriousWoundOriginCode::class,
                 OrdinaryWoundOriginCode::class, RaceCode::class, SubRaceCode::class, GenderCode::class,
-                SpellCode::class, FormulaMutableSpellParameterCode::class, FormCode::class, DemonCode::class,
+                SpellCode::class, FormulaMutableParameterCode::class, FormCode::class, DemonCode::class,
                 DemonMutableParameterCode::class, AffectionPeriodCode::class, DemonTraitCode::class,
-                DemonBodyCode::class, FormulaCode::class, ModifierMutableSpellParameterCode::class, ProfileCode::class,
+                DemonBodyCode::class, FormulaCode::class, ModifierMutableParameterCode::class, ProfileCode::class,
                 ModifierCode::class, SpellTraitCode::class, DemonKindCode::class,
             ] as $singleOnlyClass
         ) {

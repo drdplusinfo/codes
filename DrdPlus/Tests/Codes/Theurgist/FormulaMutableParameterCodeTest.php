@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace DrdPlus\Tests\Codes\Theurgist;
 
-class ModifierMutableSpellParameterCodeTest extends AbstractTheurgistCodeTest
+class FormulaMutableParameterCodeTest extends AbstractTheurgistCodeTest
 {
     protected function getValuesSameInCzechAndEnglish(): array
     {

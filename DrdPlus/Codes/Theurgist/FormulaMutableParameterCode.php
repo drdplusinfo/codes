@@ -3,10 +3,10 @@
 namespace DrdPlus\Codes\Theurgist;
 
 /**
- * @method static FormulaMutableSpellParameterCode getIt($codeValue)
- * @method static FormulaMutableSpellParameterCode findIt($codeValue)
+ * @method static FormulaMutableParameterCode getIt($codeValue)
+ * @method static FormulaMutableParameterCode findIt($codeValue)
  */
-class FormulaMutableSpellParameterCode extends AbstractTheurgistCode
+class FormulaMutableParameterCode extends AbstractTheurgistCode
 {
     public const SPELL_RADIUS = 'spell_radius';
     public const SPELL_DURATION = 'spell_duration';

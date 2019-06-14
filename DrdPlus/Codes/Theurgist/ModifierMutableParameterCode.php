@@ -3,18 +3,18 @@
 namespace DrdPlus\Codes\Theurgist;
 
 /**
- * @method static ModifierMutableSpellParameterCode getIt($codeValue)
- * @method static ModifierMutableSpellParameterCode findIt($codeValue)
+ * @method static ModifierMutableParameterCode getIt($codeValue)
+ * @method static ModifierMutableParameterCode findIt($codeValue)
  */
-class ModifierMutableSpellParameterCode extends AbstractTheurgistCode
+class ModifierMutableParameterCode extends AbstractTheurgistCode
 {
-    public const SPELL_RADIUS = FormulaMutableSpellParameterCode::SPELL_RADIUS;
-    public const EPICENTER_SHIFT = FormulaMutableSpellParameterCode::EPICENTER_SHIFT;
-    public const SPELL_POWER = FormulaMutableSpellParameterCode::SPELL_POWER;
+    public const SPELL_RADIUS = FormulaMutableParameterCode::SPELL_RADIUS;
+    public const EPICENTER_SHIFT = FormulaMutableParameterCode::EPICENTER_SHIFT;
+    public const SPELL_POWER = FormulaMutableParameterCode::SPELL_POWER;
     public const NOISE = 'noise';
-    public const SPELL_ATTACK = FormulaMutableSpellParameterCode::SPELL_ATTACK;
+    public const SPELL_ATTACK = FormulaMutableParameterCode::SPELL_ATTACK;
     public const GRAFTS = 'grafts';
-    public const SPELL_SPEED = FormulaMutableSpellParameterCode::SPELL_SPEED;
+    public const SPELL_SPEED = FormulaMutableParameterCode::SPELL_SPEED;
     public const NUMBER_OF_WAYPOINTS = 'number_of_waypoints';
     public const INVISIBILITY = 'invisibility';
     public const QUALITY = 'quality';
