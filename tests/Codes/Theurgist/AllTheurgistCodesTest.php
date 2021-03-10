@@ -5,7 +5,7 @@ namespace DrdPlus\Tests\Codes\Theurgist;
 use DrdPlus\Codes\Theurgist\AbstractTheurgistCode;
 use DrdPlus\Codes\Theurgist\DemonCode;
 use DrdPlus\Tests\Codes\GetCodeClassesTrait;
-use Granam\Tests\Tools\TestWithMockery;
+use Granam\TestWithMockery\TestWithMockery;
 
 class AllTheurgistCodesTest extends TestWithMockery
 {

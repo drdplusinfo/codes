@@ -25,7 +25,7 @@ class OrdinaryWoundOriginCodeTest extends WoundOriginCodeTest
     public function I_can_not_create_custom_ordinary_origin()
     {
         $this->expectException(\DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode::class);
-        $this->expectExceptionMessageRegExp('~Kitchen accident~');
+        $this->expectExceptionMessageMatches('~Kitchen accident~');
         OrdinaryWoundOriginCode::getEnum('Kitchen accident');
     }
 }

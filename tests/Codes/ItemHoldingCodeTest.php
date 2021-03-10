@@ -52,7 +52,7 @@ class ItemHoldingCodeTest extends TranslatableCodeTest
     public function I_can_not_get_opposite_holding_for_two_hands()
     {
         $this->expectException(\DrdPlus\Codes\Exceptions\ThereIsNoOppositeForTwoHandsHolding::class);
-        $this->expectExceptionMessageRegExp('~two_hands~');
+        $this->expectExceptionMessageMatches('~two_hands~');
         ItemHoldingCode::getIt(ItemHoldingCode::TWO_HANDS)->getOpposite();
     }
 }

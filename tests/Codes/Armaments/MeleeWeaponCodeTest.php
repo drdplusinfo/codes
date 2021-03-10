@@ -443,7 +443,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     public function I_can_not_convert_anything_to_melee_weapon_code()
     {
         $this->expectException(\DrdPlus\Codes\Armaments\Exceptions\CanNotBeConvertedToRangeWeaponCode::class);
-        $this->expectExceptionMessageRegExp('~cudgel~');
+        $this->expectExceptionMessageMatches('~cudgel~');
         $wantItRange = MeleeWeaponCode::getIt(MeleeWeaponCode::CUDGEL);
         self::assertFalse($wantItRange->isRanged());
         $wantItRange->convertToRangedWeaponCodeEquivalent();
@@ -523,7 +523,7 @@ class MeleeWeaponCodeTest extends WeaponCodeTest
     public function I_can_not_add_new_melee_weapon_code_with_not_melee_category()
     {
         $this->expectException(\DrdPlus\Codes\Armaments\Exceptions\InvalidWeaponCategoryForNewMeleeWeaponCode::class);
-        $this->expectExceptionMessageRegExp('~throwing~');
+        $this->expectExceptionMessageMatches('~throwing~');
         $throwingCategory = WeaponCategoryCode::getIt(WeaponCategoryCode::THROWING_WEAPONS);
         self::assertFalse($throwingCategory->isMeleeWeaponCategory());
         MeleeWeaponCode::addNewMeleeWeaponCode('foo', $throwingCategory, []);

@@ -30,7 +30,7 @@ use DrdPlus\Codes\Theurgist\ProfileCode;
 use DrdPlus\Codes\Theurgist\SpellTraitCode;
 use DrdPlus\Codes\Wizard\SpellCode;
 use DrdPlus\Tests\Codes\Partials\TranslatableCodeTest;
-use Granam\Tests\Tools\TestWithMockery;
+use Granam\TestWithMockery\TestWithMockery;
 
 class AllTranslatableCodesTest extends TestWithMockery
 {

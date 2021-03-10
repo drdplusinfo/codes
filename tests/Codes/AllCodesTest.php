@@ -5,7 +5,7 @@ namespace DrdPlus\Tests\Codes;
 use DrdPlus\Codes\Code;
 use DrdPlus\Codes\Partials\AbstractCode;
 use DrdPlus\Codes\Partials\TranslatableExtendableCode;
-use Granam\Tests\Tools\TestWithMockery;
+use Granam\TestWithMockery\TestWithMockery;
 
 class AllCodesTest extends TestWithMockery
 {
@@ -104,7 +104,7 @@ class AllCodesTest extends TestWithMockery
     public function I_can_not_create_code_from_unknown_value(string $codeClass)
     {
         $this->expectException(\DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode::class);
-        $this->expectExceptionMessageRegExp('~da Vinci~');
+        $this->expectExceptionMessageMatches('~da Vinci~');
         /** @var AbstractCode $codeClass */
         self::assertFalse($codeClass::hasIt('da Vinci'));
         $codeClass::getIt('da Vinci');
@@ -132,7 +132,7 @@ class AllCodesTest extends TestWithMockery
     public function I_can_not_create_code_from_invalid_value_format(string $codeClass)
     {
         $this->expectException(\Granam\ScalarEnum\Exceptions\WrongValueForScalarEnum::class);
-        $this->expectExceptionMessageRegExp('~\DateTime~');
+        $this->expectExceptionMessageMatches('~\DateTime~');
         /** @var AbstractCode $codeClass */
         $codeClass::getIt(new \DateTime());
     }

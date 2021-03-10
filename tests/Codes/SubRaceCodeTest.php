@@ -112,7 +112,7 @@ class SubRaceCodeTest extends TranslatableCodeTest
     public function I_can_not_get_sub_race_default_to_an_unknown_race()
     {
         $this->expectException(\DrdPlus\Codes\Exceptions\UnknownRaceCode::class);
-        $this->expectExceptionMessageRegExp('~rat-at-toullie~');
+        $this->expectExceptionMessageMatches('~rat-at-toullie~');
         $defaultOrcSubRace = SubRaceCode::getDefaultSubRaceFor($this->createRaceCode('rat-at-toullie'));
         self::assertSame(SubRaceCode::getIt(SubRaceCode::COMMON), $defaultOrcSubRace);
     }

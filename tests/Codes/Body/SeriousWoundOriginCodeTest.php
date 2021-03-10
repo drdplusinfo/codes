@@ -47,7 +47,7 @@ class SeriousWoundOriginCodeTest extends WoundOriginCodeTest
     public function I_can_not_create_custom_origin()
     {
         $this->expectException(\DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode::class);
-        $this->expectExceptionMessageRegExp('~Bathroom slipping~');
+        $this->expectExceptionMessageMatches('~Bathroom slipping~');
         SeriousWoundOriginCode::getEnum('Bathroom slipping');
     }
 

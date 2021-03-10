@@ -6,7 +6,7 @@ use DrdPlus\Codes\Code;
 use DrdPlus\Codes\Partials\AbstractCode;
 
 /**
- * @method static assertRegExp($regexp, $value, $message = '')
+ * @method static assertMatchesRegularExpression($regexp, $value, $message = '')
  */
 trait GetCodeClassesTrait
 {
@@ -50,7 +50,7 @@ trait GetCodeClassesTrait
                 } elseif (\is_file($folderFullPath) && \preg_match('~(?<classBasename>\w+(?:Code)?)\.php$~', $folder, $matches)) {
                     $reflectionClass = new \ReflectionClass($rootNamespace . '\\' . $matches['classBasename']);
                     if (!$reflectionClass->isAbstract() && $reflectionClass->implementsInterface(Code::class)) {
-                        self::assertRegExp(
+                        self::assertMatchesRegularExpression(
                             '~Code$~',
                             $reflectionClass->getName(),
                             'Every single code should ends by "Code"'

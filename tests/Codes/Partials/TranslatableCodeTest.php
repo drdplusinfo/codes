@@ -15,7 +15,7 @@ abstract class TranslatableCodeTest extends AbstractCodeTest
     public function I_can_not_create_code_from_unknown_value()
     {
         $this->expectException(\DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode::class);
-        $this->expectExceptionMessageRegExp('~da Vinci~');
+        $this->expectExceptionMessageMatches('~da Vinci~');
         if ((new \ReflectionClass(self::getSutClass()))->isAbstract()) {
             throw new \DrdPlus\Codes\Partials\Exceptions\UnknownValueForCode(
                 'Even da Vinci can not create instance from abstract class'
